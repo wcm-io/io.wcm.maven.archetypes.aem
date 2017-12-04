@@ -28,7 +28,18 @@
       <artifactId>org.apache.sling.caconfig.impl</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.apache.sling</groupId>
+      <artifactId>org.apache.sling.models.api</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.sling</groupId>
+      <artifactId>org.apache.sling.models.impl</artifactId>
+      <scope>test</scope>
+    </dependency>
 
+#if ( $optionWcmioHandler == "y" )
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.sling.models</artifactId>
@@ -80,6 +91,7 @@
       <scope>compile</scope>
     </dependency>
 
+#end
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.testing.aem-mock</artifactId>
@@ -104,12 +116,13 @@
     </dependency>
     <dependency>
       <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.testing.wcm-io-mock.sling</artifactId>
+      <artifactId>io.wcm.testing.wcm-io-mock.caconfig</artifactId>
       <scope>test</scope>
     </dependency>
+#if ( $optionWcmioHandler == "y" )
     <dependency>
       <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.testing.wcm-io-mock.caconfig</artifactId>
+      <artifactId>io.wcm.testing.wcm-io-mock.sling</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -117,6 +130,7 @@
       <artifactId>io.wcm.testing.wcm-io-mock.handler</artifactId>
       <scope>test</scope>
     </dependency>
+#end
 
     <dependency>
       <groupId>org.osgi</groupId>
@@ -164,9 +178,11 @@
 
             <Sling-Initial-Content>
 #if ( $optionMultiBundleLayout == "y" )
+#if ( $optionWcmioHandler == "y" )
+              SLING-INF/app-config;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName}/config,
+#end
               SLING-INF/app-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName}/core,
-              SLING-INF/app-i18n;overwrite:=true;ignoreImportProviders:=json;path:=/apps/${projectName}/core/i18n,
-              SLING-INF/app-config;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName}/config
+              SLING-INF/app-i18n;overwrite:=true;ignoreImportProviders:=json;path:=/apps/${projectName}/core/i18n
 #else
               SLING-INF/app-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName},
               SLING-INF/app-i18n;overwrite:=true;ignoreImportProviders:=json;path:=/apps/${projectName}/i18n,

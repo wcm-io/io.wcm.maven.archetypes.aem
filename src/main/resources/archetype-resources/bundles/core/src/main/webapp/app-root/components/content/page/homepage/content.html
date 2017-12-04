@@ -5,4 +5,4 @@
 
 <hr/>
 
-<div data-sly-resource="${symbol_dollar}{'./content' @ resourceType='wcm-io/wcm/parsys/components/parsys'}"></div>
+<div data-sly-resource="${symbol_dollar}{'./content' @ resourceType='#if($optionWcmioHandler=='y')wcm-io/wcm/parsys/components/parsys#{else}foundation/components/parsys#end'}"></div>

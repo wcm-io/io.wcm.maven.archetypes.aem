@@ -69,6 +69,15 @@
            </configuration>
         </plugin>
 
+        <!-- Skip JSON validation -->
+        <plugin>
+          <groupId>org.apache.sling</groupId>
+          <artifactId>maven-sling-plugin</artifactId>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
+        </plugin>
+
       </plugins>
     </pluginManagement>
   </build>
