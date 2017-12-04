@@ -21,7 +21,9 @@ nodes:
 config:
   contentPackage.group: ${packageGroupName}
   app:
+#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
     confContent: true
+#end
     sampleContent: true
 
   # Log levels

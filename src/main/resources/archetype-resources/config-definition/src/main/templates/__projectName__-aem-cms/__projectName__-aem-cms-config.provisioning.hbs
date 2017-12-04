@@ -18,6 +18,7 @@
     org.apache.sling.commons.log.names=["io.wcm","${package}"]
     org.apache.sling.commons.log.pattern="{0,date,dd.MM.yyyy\ HH:mm:ss.SSS}\ *{4}*\ [{2}]\ {3}\ {5}"
 
+#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
 #if( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" )
   # Configure Sling Context-Aware Configuration for AEM - add lookup in jcr:content subnodes, ignore cq:* properties
    org.apache.sling.caconfig.resource.impl.def.DefaultContextPathStrategy
@@ -25,7 +26,6 @@
     configRefPropertyNames=["cq:conf"]
 
 #end
-#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
   org.apache.sling.caconfig.resource.impl.def.DefaultConfigurationResourceResolvingStrategy
     fallbackPaths=["/conf/global","/apps","/libs"]
     configCollectionInheritancePropertyNames=["jcr:content/sling:configCollectionInherit", "jcr:content/mergeList","mergeList"]

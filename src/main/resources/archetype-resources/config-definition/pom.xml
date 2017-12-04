@@ -33,6 +33,7 @@
       <type>zip</type>
       <scope>compile</scope>
     </dependency>
+#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
     <dependency>
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.conf-content</artifactId>
@@ -40,6 +41,7 @@
       <type>zip</type>
       <scope>compile</scope>
     </dependency>
+#end
     <dependency>
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.sample-content</artifactId>

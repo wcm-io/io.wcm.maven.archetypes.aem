@@ -9,6 +9,7 @@ def optionWcmioHandler = request.getProperties().get("optionWcmioHandler")
 
 def coreBundle = new File(rootDir, "bundles/core")
 def clientlibsBundle = new File(rootDir, "bundles/clientlibs")
+def confContentPackage = new File(rootDir, "content-packages/conf-content")
 def sampleContentPackage = new File(rootDir, "content-packages/sample-content")
 def rootPom = new File(rootDir, "pom.xml")
 
@@ -75,6 +76,9 @@ else {
 }
 
 // remove parts of sample content when caconfig is not activated
-if (optionContextAwareConfig == "n") {
+if (optionContextAwareConfig == "n" && optionWcmioHandler == "n") {
   assert new File(sampleContentPackage, "jcr_root/content/${projectName}/en/tools").deleteDir()
+  // remove bundles/clientlibs module entry from root pom
+  removeModule(rootPom, "content-packages/conf-content")
+  confContentPackage.deleteDir()
 }

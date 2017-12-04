@@ -78,11 +78,13 @@ files:
 - url: mvn:${groupId}/${rootArtifactId}.complete//zip
   dir: packages
 
+#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
 # Application conf content package
 - url: mvn:${groupId}/${rootArtifactId}.conf-content//zip
   dir: packages
   condition: ${app.confContent}
 
+#end
 # Application sample content package
 - url: mvn:${groupId}/${rootArtifactId}.sample-content//zip
   dir: packages
@@ -96,7 +98,9 @@ config:
     #[[version: ${version}]]#
 
   app:
+#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
     confContent: true
+#end
     sampleContent: false
 
   # Log levels
