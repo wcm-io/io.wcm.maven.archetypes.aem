@@ -1,4 +1,4 @@
-<img src="http://wcm.io/images/favicon-16@2x.png"/> wcm.io Maven Archetype
+<img src="http://wcm.io/images/favicon-16@2x.png"/> wcm.io Maven Archetype for AEM
 ======
 [![Build Status](https://travis-ci.org/wcm-io/wcm-io-archetype.png?branch=develop)](https://travis-ci.org/wcm-io/wcm-io-archetype)
 
