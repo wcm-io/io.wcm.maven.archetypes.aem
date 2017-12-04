@@ -6,6 +6,12 @@ nodes:
   roles:
   - role: ${projectName}-aem-cms
     variant: aem-author
+  config:
+    replication.author.publishTargets:
+    - name: publish1
+      url: http://localhost:${aemPublishPort}
+      transportUser: admin
+      transportPassword: admin
 
 - node: aem-publish
   roles:
@@ -14,8 +20,16 @@ nodes:
 
 config:
   contentPackage.group: ${packageGroupName}
-  app.sampleContent: true
+  app:
+#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
+    confContent: true
+#end
+    sampleContent: true
 
   # Log levels
   log:
     projectSpecificLogLevel: info
+
+  quickstart:
+    # Enable Apache Sling DavEx Servlet to be able to use CRXDE Lite
+    enableDavEx: true

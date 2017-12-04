@@ -4,10 +4,13 @@ def rootDir = new File(request.getOutputDirectory() + "/" + request.getArtifactI
 def javaPackage = request.getProperties().get("package")
 def optionAemVersion = request.getProperties().get("optionAemVersion")
 def optionMultiBundleLayout = request.getProperties().get("optionMultiBundleLayout")
+def optionContextAwareConfig = request.getProperties().get("optionContextAwareConfig")
 def optionWcmioHandler = request.getProperties().get("optionWcmioHandler")
 
 def coreBundle = new File(rootDir, "bundles/core")
 def clientlibsBundle = new File(rootDir, "bundles/clientlibs")
+def confContentPackage = new File(rootDir, "content-packages/conf-content")
+def sampleContentPackage = new File(rootDir, "content-packages/sample-content")
 def rootPom = new File(rootDir, "pom.xml")
 
 // helper methods
@@ -70,4 +73,12 @@ if (optionAemVersion == "6.1" || optionAemVersion == "6.2") {
 }
 else {
   assert new File(coreBundle, "src/main/webapp/app-root-aem61").deleteDir()
+}
+
+// remove parts of sample content when caconfig is not activated
+if (optionContextAwareConfig == "n" && optionWcmioHandler == "n") {
+  assert new File(sampleContentPackage, "jcr_root/content/${projectName}/en/tools").deleteDir()
+  // remove bundles/clientlibs module entry from root pom
+  removeModule(rootPom, "content-packages/conf-content")
+  confContentPackage.deleteDir()
 }
