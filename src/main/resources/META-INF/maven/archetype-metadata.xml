@@ -101,12 +101,10 @@
     </requiredProperty>
     -->
     <!-- Setup project using wcm.io AEM libraries, especiall the Handler infrastructure -->
-    <!--
     <requiredProperty key="optionWcmioHandler">
       <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    -->
     <!-- Deploy ACS Commons -->
     <!--
     <requiredProperty key="optionAcsCommons">
