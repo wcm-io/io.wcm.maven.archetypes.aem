@@ -35,6 +35,13 @@
     </dependency>
     <dependency>
       <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.conf-content</artifactId>
+      <version>${version}</version>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.sample-content</artifactId>
       <version>${version}</version>
       <type>zip</type>

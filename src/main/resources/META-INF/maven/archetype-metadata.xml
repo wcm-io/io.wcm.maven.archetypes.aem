@@ -209,6 +209,24 @@
 
     <module id="${rootArtifactId}.complete" dir="content-packages/complete" name="${rootArtifactId}.complete"/>
 
+    <module id="${rootArtifactId}.conf-content" dir="content-packages/conf-content" name="${rootArtifactId}.conf-content">
+      <fileSets>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>content-download.sh</include>
+            <include>content-upload.sh</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>jcr_root</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
     <module id="${rootArtifactId}.sample-content" dir="content-packages/sample-content" name="${rootArtifactId}.sample-content">
       <fileSets>
         <fileSet encoding="UTF-8">
