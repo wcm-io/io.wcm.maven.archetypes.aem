@@ -2,6 +2,7 @@
   "jcr:primaryType": "cq:Component",
   "jcr:title": "Content Richtext",
   "componentGroup": "Content",
+#if ($optionWcmioHandler=='y')
 
   "cq:editConfig": {
     "jcr:primaryType": "cq:EditConfig",
@@ -12,5 +13,8 @@
       "configPath": "/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/include/richTextConfig"
     }
   }
+#else
+  "sling:resourceSuperType": "core/wcm/components/text/v1/text"
+#end
 
 }

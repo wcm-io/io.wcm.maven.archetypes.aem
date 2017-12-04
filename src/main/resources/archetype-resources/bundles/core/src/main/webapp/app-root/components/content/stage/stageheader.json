@@ -2,6 +2,7 @@
   "jcr:primaryType": "cq:Component",
   "componentGroup": "Stage",
   "jcr:title": "Stage Header",
+#if ($optionWcmioHandler=='y')
 
   "cq:editConfig": {
     "jcr:primaryType": "cq:EditConfig"
@@ -52,4 +53,8 @@
       }
     }
   }
+#else
+  "sling:resourceSuperType": "core/wcm/components/image/v1/image"
+#end
+
 }
