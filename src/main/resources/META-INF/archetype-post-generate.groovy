@@ -76,9 +76,12 @@ else {
 }
 
 // remove parts of sample content when caconfig is not activated
-if (optionContextAwareConfig == "n" && optionWcmioHandler == "n") {
+if (optionContextAwareConfig == "n" && optionWcmioHandler == "n" ) {
   assert new File(sampleContentPackage, "jcr_root/content/${projectName}/en/tools").deleteDir()
-  // remove bundles/clientlibs module entry from root pom
+}
+
+// remove conf-content package if not required
+if (optionContextAwareConfig == "n" && optionWcmioHandler == "n" && optionEditableTemplates == "n") {
   removeModule(rootPom, "content-packages/conf-content")
   confContentPackage.deleteDir()
 }

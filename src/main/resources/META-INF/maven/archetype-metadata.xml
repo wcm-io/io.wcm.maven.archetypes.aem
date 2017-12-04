@@ -82,23 +82,21 @@
     </requiredProperty>
     -->
     <!-- Use editable templates (AEM 6.3+) -->
-    <!--
     <requiredProperty key="optionEditableTemplates">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    -->
     <!-- Split up AEM application in multiple bundles -->
     <requiredProperty key="optionMultiBundleLayout">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Setup project with Sling Context-Aware Configuration and wcm.io Context-Aware Configuration extensions (implicitely enabled when optionWcmioHandler is enabled) -->
+    <!-- Setup project with Sling Context-Aware Configuration and wcm.io Context-Aware Configuration extensions (implicitly enabled when optionWcmioHandler is enabled) -->
     <requiredProperty key="optionContextAwareConfig">
       <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Setup project using wcm.io AEM libraries, especiall the Handler infrastructure -->
+    <!-- Setup project using wcm.io AEM libraries, especially the Handler infrastructure -->
     <requiredProperty key="optionWcmioHandler">
       <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
