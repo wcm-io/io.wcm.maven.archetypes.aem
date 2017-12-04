@@ -19,3 +19,7 @@ config:
   # Log levels
   log:
     projectSpecificLogLevel: info
+
+  quickstart:
+    # Enable Apache Sling DavEx Servlet to be able to use CRXDE Lite
+    enableDavEx: true
