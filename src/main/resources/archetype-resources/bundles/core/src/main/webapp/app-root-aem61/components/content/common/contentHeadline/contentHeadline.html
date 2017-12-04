@@ -1,0 +1,6 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<h1 data-emptytext="Headline"
+    data-sly-element="${symbol_dollar}{properties.smaller ? 'h2' : 'h1'}">${symbol_dollar}{properties.headline}</h1>
+<div class="cq-placeholder" data-emptytext="${symbol_dollar}{component.title}" data-sly-test="${symbol_dollar}{!properties.headline}"></div>

@@ -1,0 +1,21 @@
+# AEM configuration for local development environment
+
+nodes:
+
+- node: aem-author
+  roles:
+  - role: ${projectName}-aem-cms
+    variant: aem-author
+
+- node: aem-publish
+  roles:
+  - role: ${projectName}-aem-cms
+    variant: aem-publish
+
+config:
+  contentPackage.group: ${packageGroupName}
+  app.sampleContent: true
+
+  # Log levels
+  log:
+    projectSpecificLogLevel: info

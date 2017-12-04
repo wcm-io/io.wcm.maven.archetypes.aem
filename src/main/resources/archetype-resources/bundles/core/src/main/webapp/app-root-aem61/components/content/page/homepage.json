@@ -1,0 +1,24 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "sling:resourceSuperType": "${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/page",
+
+  "wcmio:parsysConfig": {
+    "jcr:primaryType": "nt:unstructured",
+    "paths": {
+
+      "stage": {
+        "allowedChildren": [
+          "${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/stage/stageheader"
+        ]
+      },
+      "content": {
+        "allowedChildren": [
+          "${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/common/contentHeadline",
+          "${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/common/contentRichText"
+        ]
+      }
+
+    }
+  }
+
+}

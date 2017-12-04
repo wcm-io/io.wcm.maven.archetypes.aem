@@ -1,0 +1,23 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!doctype html>
+<html>
+
+  <head>
+    <sly data-sly-resource="${symbol_dollar}{@ resourceType='${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/wcmInit' }" />
+    <sly data-sly-resource="${symbol_dollar}{@ resourceType='${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/structure/htmlHead' }" />
+  </head>
+
+  <body>
+
+    <sly data-sly-include="content.html" />
+
+    <hr />
+
+    <sly data-sly-resource="${symbol_dollar}{@ resourceType='${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/structure/pageFooter'}" />
+    <sly data-sly-resource="${symbol_dollar}{@ resourceType='${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/structure/pageFooterJavaScript'}" />
+
+  </body>
+
+</html>
