@@ -93,13 +93,11 @@
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Deploy i18n files below /content to allow translation by customer at run-time -->
-    <!--
-    <requiredProperty key="optionI18nInContent">
-      <defaultValue>n</defaultValue>
+    <!-- Setup project with Sling Context-Aware Configuration and wcm.io Context-Aware Configuration extensions (implicitely enabled when optionWcmioHandler is enabled) -->
+    <requiredProperty key="optionContextAwareConfig">
+      <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    -->
     <!-- Setup project using wcm.io AEM libraries, especiall the Handler infrastructure -->
     <requiredProperty key="optionWcmioHandler">
       <defaultValue>y</defaultValue>
@@ -108,6 +106,13 @@
     <!-- Deploy ACS Commons -->
     <!--
     <requiredProperty key="optionAcsCommons">
+      <defaultValue>n</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
+    -->
+    <!-- Deploy i18n files below /content to allow translation by customer at run-time -->
+    <!--
+    <requiredProperty key="optionI18nInContent">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
