@@ -1,8 +1,10 @@
 import java.util.regex.Pattern
 
 def rootDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId())
+def javaPackage = request.getProperties().get("package")
 def optionAemVersion = request.getProperties().get("optionAemVersion")
 def optionMultiBundleLayout = request.getProperties().get("optionMultiBundleLayout")
+def optionWcmioHandler = request.getProperties().get("optionWcmioHandler")
 
 def coreBundle = new File(rootDir, "bundles/core")
 def clientlibsBundle = new File(rootDir, "bundles/clientlibs")
@@ -42,4 +44,9 @@ if (optionAemVersion == "6.1" || optionAemVersion == "6.2") {
 }
 else {
   assert new File(coreBundle, "src/main/webapp/app-root-aem61").deleteDir()
+}
+
+// remove files only relevant for wcm.io Handler projects
+if (optionWcmioHandler == "n") {
+  assert new File(coreBundle, "src/main/java/" + javaPackage.replace('.','/') + "/config").deleteDir()
 }
