@@ -3,12 +3,16 @@
 #set( $symbol_escape = '\' )
 package ${package}.testcontext;
 
+#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
 import static io.wcm.testing.mock.wcmio.caconfig.ContextPlugins.WCMIO_CACONFIG;
+#end
 #if ( $optionWcmioHandler == "y" )
 import static io.wcm.testing.mock.wcmio.handler.ContextPlugins.WCMIO_HANDLER;
 import static io.wcm.testing.mock.wcmio.sling.ContextPlugins.WCMIO_SLING;
 #end
+#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
 import static org.apache.sling.testing.mock.caconfig.ContextPlugins.CACONFIG;
+#end
 
 import java.io.IOException;
 
@@ -20,7 +24,9 @@ import io.wcm.handler.media.spi.MediaFormatProvider;
 import io.wcm.testing.mock.aem.junit.AemContext;
 import io.wcm.testing.mock.aem.junit.AemContextBuilder;
 import io.wcm.testing.mock.aem.junit.AemContextCallback;
+#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
 import io.wcm.testing.mock.wcmio.caconfig.MockCAConfig;
+#end
 
 #if ( $optionWcmioHandler == "y" )
 import ${package}.config.AppTemplate;
@@ -39,10 +45,12 @@ public final class AppAemContext {
 
   public static AemContext newAemContext() {
     return new AemContextBuilder()
+#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
         .plugin(CACONFIG)
+#end
 #if ( $optionWcmioHandler == "y" )
         .plugin(WCMIO_SLING, WCMIO_CACONFIG, WCMIO_HANDLER)
-#else
+#elseif ( $optionContextAwareConfig == "y" )
         .plugin(WCMIO_CACONFIG)
 #end
         .afterSetUp(SETUP_CALLBACK)
@@ -56,6 +64,7 @@ public final class AppAemContext {
     @Override
     public void execute(AemContext context) throws PersistenceException, IOException {
 
+#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
       // context path strategy
 #if ( $optionWcmioHandler == "y" )
       MockCAConfig.contextPathStrategyRootTemplate(context, AppTemplate.EDITORIAL_HOMEPAGE.getTemplatePath());
@@ -63,6 +72,7 @@ public final class AppAemContext {
       MockCAConfig.contextPathStrategyRootTemplate(context, "/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/content/homepage");
 #end
 
+#end
 #if ( $optionWcmioHandler == "y" )
       // setup handler
       context.registerInjectActivateService(new LinkHandlerConfigImpl());

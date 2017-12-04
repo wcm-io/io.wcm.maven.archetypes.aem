@@ -25,6 +25,7 @@
     configRefPropertyNames=["cq:conf"]
 
 #end
+#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
   org.apache.sling.caconfig.resource.impl.def.DefaultConfigurationResourceResolvingStrategy
     fallbackPaths=["/conf/global","/apps","/libs"]
     configCollectionInheritancePropertyNames=["jcr:content/sling:configCollectionInherit", "jcr:content/mergeList","mergeList"]
@@ -45,7 +46,7 @@
   io.wcm.caconfig.extensions.persistence.impl.PagePersistenceStrategy
     enabled=B"true"
 
-
+#end
 [configurations runModes=author]
 
   # Show "Sites" view in TouchUI after login
