@@ -36,9 +36,12 @@ if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/content/page/homepage").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/content/stage").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/global/include").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/global/page").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/global/page/html.html").delete()
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/global/wcmInit.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/structure").deleteDir()
+}
+else {
+  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/global/page/body.html").delete()
 }
 
 // refactor project layout when multi bundle layout is switched off
