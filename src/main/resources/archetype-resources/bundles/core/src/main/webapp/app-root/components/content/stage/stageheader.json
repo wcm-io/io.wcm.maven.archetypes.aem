@@ -1,7 +1,8 @@
 {
   "jcr:primaryType": "cq:Component",
-  "componentGroup": "Stage",
   "jcr:title": "Stage Header",
+  "componentGroup": "${projectName}",
+  "cq:icon": "image",
 #if ($optionWcmioHandler=='y')
 
   "cq:editConfig": {

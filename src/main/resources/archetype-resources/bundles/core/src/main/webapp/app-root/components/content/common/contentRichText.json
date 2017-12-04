@@ -1,7 +1,8 @@
 {
   "jcr:primaryType": "cq:Component",
   "jcr:title": "Content Richtext",
-  "componentGroup": "Content",
+  "componentGroup": "${projectName}",
+  "cq:icon": "textLeft",
 #if ($optionWcmioHandler=='y')
 
   "cq:editConfig": {

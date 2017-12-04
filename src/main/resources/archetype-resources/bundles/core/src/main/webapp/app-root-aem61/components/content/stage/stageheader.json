@@ -1,7 +1,7 @@
 {
   "jcr:primaryType": "cq:Component",
-  "componentGroup": "Stage",
   "jcr:title": "Stage Header",
+  "componentGroup": "${projectName}",
 
   "cq:editConfig": {
     "jcr:primaryType": "cq:EditConfig"

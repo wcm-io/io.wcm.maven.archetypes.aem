@@ -1,7 +1,7 @@
 {
   "jcr:primaryType": "cq:Component",
   "jcr:title": "Content Richtext",
-  "componentGroup": "Content",
+  "componentGroup": "${projectName}",
 
   "cq:editConfig": {
     "jcr:primaryType": "cq:EditConfig",
