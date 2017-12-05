@@ -9,7 +9,7 @@
         cq:template="#if($optionEditableTemplates == "y" && $optionAemVersion != "6.1" && $optionAemVersion != "6.2")/conf/${projectName}/settings/wcm/templates/homepage#{else}/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/content/homepage#end"
         jcr:primaryType="cq:PageContent"
         jcr:title="en"
-        sling:resourceType="#if($optionEditableTemplates == "y" && $optionAemVersion != "6.1" && $optionAemVersion != "6.2")${projectName}/components/global/page#{else}${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/page/homepage#end"
+        sling:resourceType="#if($optionEditableTemplates == "y" && $optionAemVersion != "6.1" && $optionAemVersion != "6.2")${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/page#{else}${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/page/homepage#end"
         navTitle="HOME"
         pageTitle="${projectName} Sample Site">
 #if ($optionWcmioHandler=='y' || ($optionAemVersion!='6.1' && $optionAemVersion!='6.2'))
