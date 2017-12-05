@@ -75,12 +75,10 @@
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
     <!-- Deploy AEM application content as part of OSGi bundle with Sling-Initial-Content -->
-    <!--
     <requiredProperty key="optionSlingInitialContentBundle">
       <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    -->
     <!-- Use editable templates (AEM 6.3+) -->
     <requiredProperty key="optionEditableTemplates">
       <defaultValue>n</defaultValue>
