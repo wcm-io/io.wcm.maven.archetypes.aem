@@ -42,6 +42,13 @@
     <maven.archetype.version>3.0.1</maven.archetype.version>
   </properties>
 
+  <scm>
+    <connection>scm:git:https://github.com/wcm-io/wcm-io-maven-archetype-aem.git</connection>
+    <developerConnection>scm:git:https://github.com/wcm-io/wcm-io-maven-archetype-aem.git</developerConnection>
+    <url>https://github.com/wcm-io/wcm-io-maven-archetype-aem</url>
+    <tag>HEAD</tag>
+  </scm>
+
   <build>
     <extensions>
       <extension>
