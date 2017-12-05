@@ -34,22 +34,6 @@
           <group>${contentPackage.group}</group>
           <packageType>content</packageType>
           <accessControlHandling>merge</accessControlHandling>
-          <filters>
-            <filter>
-              <root>/conf/${projectName}</root>
-              <includes>
-                <include>/conf/${projectName}/rep:policy</include>
-              </includes>
-              <excludes>
-                <exclude>/conf/${projectName}/*</exclude>
-              </excludes>
-            </filter>
-#if( $optionEditableTemplates == "y" && $optionAemVersion != "6.1" && $optionAemVersion != "6.2" )
-            <filter>
-              <root>/conf/${projectName}/settings/wcm</root>
-            </filter>
-#end
-          </filters>
         </configuration>
       </plugin>
 

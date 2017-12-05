@@ -33,14 +33,6 @@
           <name>${contentPackage.name}</name>
           <group>${contentPackage.group}</group>
           <packageType>content</packageType>
-          <filters>
-            <filter>
-              <root>/apps/${projectName}</root>
-            </filter>
-            <filter>
-              <root>/etc/clientlibs/${projectName}</root>
-            </filter>
-          </filters>
         </configuration>
       </plugin>
 

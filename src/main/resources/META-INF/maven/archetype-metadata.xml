@@ -231,6 +231,12 @@
             <include>**/*.png</include>
           </includes>
         </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>META-INF/vault</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
       </fileSets>
     </module>
 
@@ -247,6 +253,12 @@
         </fileSet>
         <fileSet filtered="true" encoding="UTF-8">
           <directory>jcr_root</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>META-INF/vault</directory>
           <includes>
             <include>**/*.xml</include>
           </includes>
@@ -277,6 +289,12 @@
             <include>**/*.png/_jcr_content/renditions/original</include>
             <include>**/*.png</include>
             <include>**/*.jpeg</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>META-INF/vault</directory>
+          <includes>
+            <include>**/*.xml</include>
           </includes>
         </fileSet>
       </fileSets>
