@@ -39,7 +39,7 @@
                     <media
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/include"
-                        path="alphaProject/components/global/include/mediaRefTab"/>
+                        path="${projectName}/components/global/include/mediaRefTab"/>
                 </items>
             </tabs>
         </items>

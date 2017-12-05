@@ -3,4 +3,4 @@
     cq:icon="textLeft"
     jcr:primaryType="cq:Component"
     jcr:title="Content Richtext"
-    componentGroup="alphaProject"/>
+    componentGroup="${projectName}"/>

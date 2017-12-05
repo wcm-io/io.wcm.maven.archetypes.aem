@@ -5,7 +5,7 @@
     enabled="{Boolean}true"
     generatorType="htmlparser"
     order="1"
-    resourceTypes="[alphaProject/components/global/page]"
+    resourceTypes="[${projectName}/components/global/page]"
     serializerType="htmlwriter"
     transformerTypes="[wcm-io-urlhandler-externalizer]">
     <transformer-wcm-io-urlhandler-externalizer

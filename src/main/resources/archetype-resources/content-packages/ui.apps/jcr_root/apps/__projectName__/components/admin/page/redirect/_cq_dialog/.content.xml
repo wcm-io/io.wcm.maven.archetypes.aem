@@ -10,7 +10,7 @@
                         jcr:title="Redirect Link"
                         sling:orderBefore="advanced"
                         sling:resourceType="granite/ui/components/foundation/include"
-                        path="alphaProject/components/global/include/linkRefNoTitleTab"/>
+                        path="${projectName}/components/global/include/linkRefNoTitleTab"/>
                 </items>
             </tabs>
         </items>

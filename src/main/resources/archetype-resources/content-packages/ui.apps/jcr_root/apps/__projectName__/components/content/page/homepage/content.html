@@ -1,5 +1,8 @@
-<div data-sly-resource="${'./stage' @ resourceType='alphaProject/components/content/stage/stageheader'}"></div>
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<div data-sly-resource="${symbol_dollar}{'./stage' @ resourceType='${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/stage/stageheader'}"></div>
 
 <hr/>
 
-<div data-sly-resource="${'./content' @ resourceType='wcm-io/wcm/parsys/components/parsys'}"></div>
+<div data-sly-resource="${symbol_dollar}{'./content' @ resourceType='#if($optionWcmioHandler=='y')wcm-io/wcm/parsys/components/parsys#{else}foundation/components/parsys#end'}"></div>

@@ -33,7 +33,7 @@
             <linkDialogConfig jcr:primaryType="nt:unstructured">
                 <dialogProperties
                     jcr:primaryType="nt:unstructured"
-                    rootPath="/content/alphaProject"/>
+                    rootPath="/content/${projectName}"/>
             </linkDialogConfig>
         </links>
         <format

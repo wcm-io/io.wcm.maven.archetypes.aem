@@ -3,4 +3,4 @@
     cq:icon="image"
     jcr:primaryType="cq:Component"
     jcr:title="Stage Header"
-    componentGroup="alphaProject"/>
+    componentGroup="${projectName}"/>

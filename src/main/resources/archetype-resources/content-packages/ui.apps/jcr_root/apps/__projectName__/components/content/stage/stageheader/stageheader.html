@@ -1,10 +1,13 @@
-<div data-sly-use.media="${'io.wcm.handler.media.ui.ResourceMedia' @ mediaFormat='content'}">
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<div data-sly-use.media="${symbol_dollar}{'io.wcm.handler.media.ui.ResourceMedia' @ mediaFormat='content'}">
   
-  ${media.markup @ context='html'}
+  ${symbol_dollar}{media.markup @ context='html'}
 
   <div>
-    <h2 data-sly-test="${properties.title}">${properties.title}</h2>
-    <p data-sly-test="${properties.subtitle}">${properties.subtitle}</p>
+    <h2 data-sly-test="${symbol_dollar}{properties.title}">${symbol_dollar}{properties.title}</h2>
+    <p data-sly-test="${symbol_dollar}{properties.subtitle}">${symbol_dollar}{properties.subtitle}</p>
   </div>
 
 </div>

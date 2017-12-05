@@ -5,4 +5,4 @@
     fieldDescription="Reference to asset from DAM"
     fieldLabel="Asset reference"
     name="./mediaRef"
-    rootPath="/content/dam/alphaProject"/>
+    rootPath="/content/dam/${projectName}"/>

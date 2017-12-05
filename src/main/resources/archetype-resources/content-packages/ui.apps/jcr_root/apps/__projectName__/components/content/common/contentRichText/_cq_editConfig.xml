@@ -4,6 +4,6 @@
     <cq:inplaceEditing
         jcr:primaryType="cq:InplaceEditingConfig"
         active="{Boolean}true"
-        configPath="/apps/alphaProject/components/global/include/richTextConfig"
+        configPath="/apps/${projectName}/components/global/include/richTextConfig"
         editorType="text"/>
 </jcr:root>
