@@ -182,7 +182,7 @@
         <configuration>
           <instructions>
 
-#if ( $optionSlingInitialContentBundle == "y")
+#if ( $optionSlingInitialContentBundle == "y" )
             <Sling-Initial-Content>
 #if ( $optionMultiBundleLayout == "y" )
 #if ( $optionWcmioHandler == "y" )
@@ -212,7 +212,7 @@
         </configuration>
       </plugin>
 
-#if ( $optionMultiBundleLayout != "y" )
+#if ( $optionMultiBundleLayout != "y" && $optionSlingInitialContentBundle == "y" )
       <!-- Apply maven filtering to clientlib definitions (cache key) -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
