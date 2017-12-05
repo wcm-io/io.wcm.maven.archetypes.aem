@@ -44,6 +44,11 @@
                 <exclude>/conf/${projectName}/*</exclude>
               </excludes>
             </filter>
+#if( $optionEditableTemplates == "y" && $optionAemVersion != "6.1" && $optionAemVersion != "6.2" )
+            <filter>
+              <root>/conf/${projectName}/settings/wcm</root>
+            </filter>
+#end
           </filters>
         </configuration>
       </plugin>

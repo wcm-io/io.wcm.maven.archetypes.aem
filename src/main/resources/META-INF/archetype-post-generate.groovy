@@ -3,6 +3,7 @@ import java.util.regex.Pattern
 def rootDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId())
 def javaPackage = request.getProperties().get("package")
 def optionAemVersion = request.getProperties().get("optionAemVersion")
+def optionEditableTemplates = request.getProperties().get("optionEditableTemplates")
 def optionMultiBundleLayout = request.getProperties().get("optionMultiBundleLayout")
 def optionContextAwareConfig = request.getProperties().get("optionContextAwareConfig")
 def optionWcmioHandler = request.getProperties().get("optionWcmioHandler")
@@ -76,9 +77,22 @@ else {
 }
 
 // remove parts of sample content when caconfig is not activated
-if (optionContextAwareConfig == "n" && optionWcmioHandler == "n") {
+if (optionContextAwareConfig == "n" && optionWcmioHandler == "n" ) {
   assert new File(sampleContentPackage, "jcr_root/content/${projectName}/en/tools").deleteDir()
-  // remove bundles/clientlibs module entry from root pom
+}
+
+// remove conf-content package if not required
+if (optionContextAwareConfig == "n" && optionWcmioHandler == "n" && optionEditableTemplates == "n") {
   removeModule(rootPom, "content-packages/conf-content")
   confContentPackage.deleteDir()
+}
+
+// prepare project for editable templates
+if (optionEditableTemplates == "y" && optionAemVersion != "6.1" && optionAemVersion != "6.2") {
+  assert new File(coreBundle, "src/main/webapp/app-root/components/content/page").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/global/page/body.html").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root/templates").deleteDir()
+}
+else {
+  assert new File(confContentPackage, "jcr_root/conf/${projectName}/settings").deleteDir()
 }

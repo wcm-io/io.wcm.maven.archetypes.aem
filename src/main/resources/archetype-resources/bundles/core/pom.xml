@@ -18,6 +18,7 @@
 
   <dependencies>
   
+#if( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
 #if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
     <dependency>
       <groupId>org.apache.sling</groupId>
@@ -41,6 +42,7 @@
       <scope>test</scope>
     </dependency>
 
+#end
 #if ( $optionWcmioHandler == "y" )
     <dependency>
       <groupId>io.wcm</groupId>
@@ -202,7 +204,7 @@
 
 #end
             <!-- All wcm.io Handler SPI implementation only get active for the resource paths of this application -->
-            <Wcmio-CAService-ContextPathRegex>^/content/(dam/)?${projectName}(/.*)?$</Wcmio-CAService-ContextPathRegex>
+            <Wcmio-CAService-ContextPathRegex>^(/content|/content/dam|/conf)/?${projectName}(/.*)?$</Wcmio-CAService-ContextPathRegex>
 
           </instructions>
         </configuration>
