@@ -40,6 +40,7 @@
 #end
 
     <!-- Additional bundles -->
+#if( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.models.api</artifactId>
@@ -84,6 +85,7 @@
       <artifactId>org.apache.sling.jcr.contentloader</artifactId>
       <scope>compile</scope>
     </dependency>
+#end
 #if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
     <dependency>
       <groupId>io.wcm</groupId>
@@ -127,13 +129,14 @@
                 ${groupId}
               </groupId>
             </embedded>
+#if( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
             <!-- Include some Apache Sling bundles newer than those shipped with AEM -->
             <embedded>
               <groupId>
                 org.apache.sling
               </groupId>
               <artifactId>
-                <!-- Latest Sling Models version (AEM 6.1 and 6.2 contain quite old versions) -->
+                <!-- Latest Sling Models -->
                 org.apache.sling.models.api,
                 org.apache.sling.models.impl,
                 <!-- Latest Sling Context-Aware Configuration -->
@@ -145,6 +148,7 @@
                 org.apache.sling.jcr.contentloader
               </artifactId>
             </embedded>
+#end
 #if( $optionAemVersion == "6.1" )
             <embedded>
               <groupId>
