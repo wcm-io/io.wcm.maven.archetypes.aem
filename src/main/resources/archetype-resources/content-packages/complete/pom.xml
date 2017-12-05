@@ -38,6 +38,15 @@
       <scope>compile</scope>
     </dependency>
 #end
+#if ( $optionSlingInitialContentBundle == "n" )
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.ui.apps</artifactId>
+      <version>${version}</version>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+#end
 
     <!-- Additional bundles -->
 #if( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
@@ -75,16 +84,20 @@
       <scope>compile</scope>
     </dependency>
 #end
+#if ( $optionSlingInitialContentBundle == "y" || $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.commons.johnzon</artifactId>
       <scope>compile</scope>
     </dependency>
+#end
+#if ( $optionSlingInitialContentBundle == "y")
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.jcr.contentloader</artifactId>
       <scope>compile</scope>
     </dependency>
+#end
 #end
 #if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
     <dependency>
@@ -128,6 +141,9 @@
                 io.wcm,
                 ${groupId}
               </groupId>
+#if ( $optionSlingInitialContentBundle == "n" )
+              <type>jar</type>
+#end
             </embedded>
 #if( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
             <!-- Include some Apache Sling bundles newer than those shipped with AEM -->
@@ -139,14 +155,23 @@
                 <!-- Latest Sling Models -->
                 org.apache.sling.models.api,
                 org.apache.sling.models.impl,
+#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
                 <!-- Latest Sling Context-Aware Configuration -->
                 org.apache.sling.caconfig.api,
                 org.apache.sling.caconfig.spi,
                 org.apache.sling.caconfig.impl,
+#end
+#if ( $optionSlingInitialContentBundle == "y" || $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
                 org.apache.sling.commons.johnzon,
+#end
+#if ( $optionSlingInitialContentBundle == "y")
                 <!-- Latest JCR Content Loader to support i18n json files directly -->
-                org.apache.sling.jcr.contentloader
+                org.apache.sling.jcr.contentloader,
+#end
               </artifactId>
+#if ( $optionSlingInitialContentBundle == "n" )
+              <type>jar</type>
+#end
             </embedded>
 #end
 #if( $optionAemVersion == "6.1" )
@@ -157,10 +182,23 @@
               <artifactId>
                 commons-lang3
               </artifactId>
+#if ( $optionSlingInitialContentBundle == "n" )
+              <type>jar</type>
+#end
             </embedded>
 #end
           </embeddeds>
 
+#if( $optionSlingInitialContentBundle == "n" )
+          <subPackages>
+            <subPackage>
+              <groupId>${groupId}</groupId>
+              <artifactId>${rootArtifactId}.ui.apps</artifactId>
+              <filter>true</filter>
+            </subPackage>
+          </subPackages>
+
+#end
         </configuration>
       </plugin>
 

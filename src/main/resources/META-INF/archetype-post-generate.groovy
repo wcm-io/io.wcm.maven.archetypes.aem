@@ -3,6 +3,7 @@ import java.util.regex.Pattern
 def rootDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId())
 def javaPackage = request.getProperties().get("package")
 def optionAemVersion = request.getProperties().get("optionAemVersion")
+def optionSlingInitialContentBundle = request.getProperties().get("optionSlingInitialContentBundle")
 def optionEditableTemplates = request.getProperties().get("optionEditableTemplates")
 def optionMultiBundleLayout = request.getProperties().get("optionMultiBundleLayout")
 def optionContextAwareConfig = request.getProperties().get("optionContextAwareConfig")
@@ -12,6 +13,7 @@ def coreBundle = new File(rootDir, "bundles/core")
 def clientlibsBundle = new File(rootDir, "bundles/clientlibs")
 def confContentPackage = new File(rootDir, "content-packages/conf-content")
 def sampleContentPackage = new File(rootDir, "content-packages/sample-content")
+def uiAppsPackage = new File(rootDir, "content-packages/ui.apps")
 def rootPom = new File(rootDir, "pom.xml")
 
 // helper methods
@@ -95,4 +97,13 @@ if (optionEditableTemplates == "y" && optionAemVersion != "6.1" && optionAemVers
 }
 else {
   assert new File(confContentPackage, "jcr_root/conf/${projectName}/settings").deleteDir()
+}
+
+// sling-initial-content bundle or filevault xml package
+if (optionSlingInitialContentBundle == "y" && optionAemVersion != "6.1" && optionAemVersion != "6.2") {
+  removeModule(rootPom, "content-packages/ui.apps")
+  uiAppsPackage.deleteDir()
+}
+else {
+  assert new File(coreBundle, "src/main/webapp").deleteDir()
 }
