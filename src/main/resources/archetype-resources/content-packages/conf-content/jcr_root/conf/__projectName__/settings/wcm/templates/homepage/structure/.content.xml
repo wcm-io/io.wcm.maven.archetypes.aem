@@ -3,15 +3,15 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
-        cq:template="/conf/etaProject/settings/wcm/templates/homepage"
+        cq:template="/conf/${projectName}/settings/wcm/templates/homepage"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="etaProject/components/global/page">
+        sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/page">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
             <stage
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="etaProject/components/content/stage/stageheader"
+                sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/stage/stageheader"
                 editable="{Boolean}true"/>
             <content
                 jcr:primaryType="nt:unstructured"
@@ -21,7 +21,7 @@
             </content>
             <imprint
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="etaProject/components/structure/imprint"/>
+                sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/structure/imprint"/>
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
