@@ -74,7 +74,7 @@
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Deploy AEM application content as part of OSGi bundle with Sling-Initial-Content -->
+    <!-- Deploy AEM application content as part of OSGi bundle with Sling-Initial-Content. If disabled, a FileVault XML package is used for the AEM application (which is only support for AEM 6.3+). -->
     <requiredProperty key="optionSlingInitialContentBundle">
       <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
@@ -84,7 +84,7 @@
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Split up AEM application in multiple bundles -->
+    <!-- Split up AEM application in multiple bundles. Only supported if optionSlingInitialContentBundle is also activated. -->
     <requiredProperty key="optionMultiBundleLayout">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
@@ -246,6 +246,37 @@
             <include>**/*.png/_jcr_content/renditions/original</include>
             <include>**/*.png</include>
             <include>**/*.jpeg</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
+    <module id="${rootArtifactId}.ui.apps" dir="content-packages/ui.apps" name="${rootArtifactId}.ui.apps">
+      <fileSets>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>content-download.sh</include>
+            <include>content-upload.sh</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>jcr_root</directory>
+          <includes>
+            <include>**/*.css</include>
+            <include>**/*.js</include>
+            <include>**/*.json</include>
+            <include>**/*.txt</include>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>jcr_root</directory>
+          <includes>
+            <include>**/*.html</include>
+            <include>**/*.jpg</include>
+            <include>**/*.ico</include>
+            <include>**/*.png</include>
           </includes>
         </fileSet>
       </fileSets>

@@ -1,0 +1,5 @@
+<div data-sly-use.richtext="io.wcm.handler.richtext.ui.ResourceRichText" data-sly-test="${richtext.valid}">
+  ${richtext.markup @ context='html'}
+</div>
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${template.placeholder @ isEmpty=!richtext.valid}"></sly>

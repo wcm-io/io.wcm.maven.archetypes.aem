@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:ClientLibraryFolder"
+    categories="[alphaProject.all]"
+    embed="[core.wcm.components.image.v1,alphaProject.app]"
+    jsProcessor="[default:none,min:gcc;compilationLevel=whitespace]"
+    longCacheKey="1.0.0-SNAPSHOT-e79253bf"/>

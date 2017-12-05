@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <htmlRules jcr:primaryType="nt:unstructured">
+        <docType
+            jcr:primaryType="nt:unstructured"
+            baseType="xhtml"
+            version="1.0">
+            <typeConfig
+                jcr:primaryType="nt:unstructured"
+                isXhtmlStrict="{Boolean}false"
+                useSemanticMarkup="{Boolean}true">
+                <semanticMarkupMap
+                    jcr:primaryType="nt:unstructured"
+                    b="strong"
+                    i="em"/>
+            </typeConfig>
+        </docType>
+        <links
+            jcr:primaryType="nt:unstructured"
+            cssMode="keep"
+            ensureInternalLinkExt="{Boolean}false"
+            protocols="[http://,https://,mailto:]">
+            <targetConfig
+                jcr:primaryType="nt:unstructured"
+                mode="blank"/>
+        </links>
+    </htmlRules>
+    <rtePlugins jcr:primaryType="nt:unstructured">
+        <links
+            jcr:primaryType="nt:unstructured"
+            features="[modifylink,unlink]">
+            <linkDialogConfig jcr:primaryType="nt:unstructured">
+                <dialogProperties
+                    jcr:primaryType="nt:unstructured"
+                    rootPath="/content/alphaProject"/>
+            </linkDialogConfig>
+        </links>
+        <format
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <misctools
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <edit
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <findreplace
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <keys
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <justify
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <lists
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <paraformat
+            jcr:primaryType="nt:unstructured"
+            features="*">
+            <formats
+                jcr:primaryType="nt:unstructured"
+                h1="Heading 1"
+                h2="Heading 2"
+                h3="Heading 3"
+                h4="Heading 4"
+                p="Paragraph"/>
+        </paraformat>
+        <spellcheck
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <undo
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+    </rtePlugins>
+    <uiSettings jcr:primaryType="nt:unstructured">
+        <cui jcr:primaryType="nt:unstructured">
+            <inline
+                jcr:primaryType="nt:unstructured"
+                toolbar="[format#bold,#lists,-,links#modifylink,links#unlink,-,#paraformat,-,fullscreen#start,-,control#close,control#save]">
+                <popovers jcr:primaryType="nt:unstructured">
+                    <lists
+                        jcr:primaryType="nt:unstructured"
+                        icon="text"
+                        items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                        ref="lists"/>
+                    <paraformat
+                        jcr:primaryType="nt:unstructured"
+                        items="paraformat:getFormats:paraformat-pulldown"
+                        ref="paraformat"/>
+                </popovers>
+            </inline>
+            <fullscreen
+                jcr:primaryType="nt:unstructured"
+                toolbar="[format#bold,-,links#modifylink,links#unlink,links#anchor,-,findreplace#find,findreplace#replace,-,undo#undo,undo#redo,-,justify#justifyleft,justify#justifycenter,justify#justifyright,-,lists#unordered,lists#ordered,lists#outdent,lists#indent,-,misctools#specialchars,-,#paraformat,-,fullscreen#finish]">
+                <popovers jcr:primaryType="nt:unstructured">
+                    <paraformat
+                        jcr:primaryType="nt:unstructured"
+                        items="paraformat:getFormats:paraformat-pulldown"
+                        ref="paraformat"/>
+                </popovers>
+            </fullscreen>
+            <icons jcr:primaryType="nt:unstructured">
+                <justify
+                    jcr:primaryType="nt:unstructured"
+                    command="#justify"
+                    icon="coral-Icon coral-Icon--textCenter"/>
+            </icons>
+        </cui>
+    </uiSettings>
+</jcr:root>
