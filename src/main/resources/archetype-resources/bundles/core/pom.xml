@@ -182,6 +182,7 @@
         <configuration>
           <instructions>
 
+#if ( $optionSlingInitialContentBundle == "y" )
             <Sling-Initial-Content>
 #if ( $optionMultiBundleLayout == "y" )
 #if ( $optionWcmioHandler == "y" )
@@ -195,7 +196,8 @@
               SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/etc/clientlibs/${projectName}
 #end
             </Sling-Initial-Content>
-            
+
+#end
 ## Sling-Model-Package is no longer required since Sling Models Impl 1.3.4/AEM 6.3 with bnd plugin enabled
 #if( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" )
             <Sling-Model-Packages>
@@ -210,7 +212,7 @@
         </configuration>
       </plugin>
 
-#if ( $optionMultiBundleLayout != "y" )
+#if ( $optionMultiBundleLayout != "y" && $optionSlingInitialContentBundle == "y" )
       <!-- Apply maven filtering to clientlib definitions (cache key) -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>

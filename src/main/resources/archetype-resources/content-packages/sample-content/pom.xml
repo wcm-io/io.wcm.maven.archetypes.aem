@@ -33,14 +33,6 @@
           <name>${contentPackage.name}</name>
           <group>${contentPackage.group}</group>
           <packageType>content</packageType>
-          <filters>
-            <filter>
-              <root>/content/dam/${projectName}</root>
-            </filter>
-            <filter>
-              <root>/content/${projectName}</root>
-            </filter>
-          </filters>
         </configuration>
       </plugin>
 
