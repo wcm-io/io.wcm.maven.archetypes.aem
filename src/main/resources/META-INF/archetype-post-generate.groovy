@@ -29,12 +29,14 @@ def removeModule(pomFile, module) {
 // remove files only relevant for wcm.io Handler projects
 if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/java/" + javaPackage.replace('.','/') + "/config").deleteDir()
+  
   assert new File(coreBundle, "src/main/webapp/app-config").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/content/common/contentRichText").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/components/content/stage/stageheader").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/global/include").deleteDir()
+
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/templates/admin/redirect").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/admin/page/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/content/common").deleteDir()
@@ -45,6 +47,13 @@ if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/global/page/html.html").delete()
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/global/wcmInit.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/structure").deleteDir()
+
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/config").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/templates/admin/redirect").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/admin/page/redirect").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/common/contentRichText/contentRichText.html").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/stage/stageheader/stageheader.html").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/global/include").deleteDir()
 }
 else {
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/global/page/body.html").delete()
@@ -94,6 +103,13 @@ if (optionEditableTemplates == "y" && optionAemVersion != "6.1" && optionAemVers
   assert new File(coreBundle, "src/main/webapp/app-root/components/content/page").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/components/global/page/body.html").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/templates").deleteDir()
+
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/common/contentRichText/_cq_editConfig.xml").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/page").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/stage/stageheader/_cq_editConfig.xml").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/stage/stageheader/_cq_dialog").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/global/page/body.html").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/templates").deleteDir()
 }
 else {
   assert new File(confContentPackage, "jcr_root/conf/${projectName}/settings").deleteDir()
