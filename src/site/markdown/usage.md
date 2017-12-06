@@ -1,6 +1,6 @@
 ## Maven Archetype for AEM usage
 
-### Basic Usage
+### Basic usage
 
 Generate a new AEM project using interactive mode by executing:
 
@@ -17,12 +17,12 @@ As minimal input parameters you have to enter a value for `groupId` and `project
 
 | Parameter                           | Default | Description
 |-------------------------------------|---------|-------------
-| **projectName** \*)                 |         | Project name is used for building AEM apps path, content path, CONGA role names etc.
-| **groupId** \*)                     |         | Maven artifact groupId for all projects
-| **artifactId** \*)                  | +)      | Maven artifact "root" artifactId, is suffixed for the individual modules
-| **version**                         | +)      | Maven artifact version - e.g. 1.0.0-SNAPSHOT
-| **package**                         | +)      | Java class package name
-| **packageGroupName**                | +)      | Group name for AEM content package
+| **projectName**                     |         | Project name is used for building AEM apps path, content path, CONGA role names etc.
+| **groupId**                         |         | Maven artifact groupId for all projects
+| **artifactId**                      | \*)     | Maven artifact "root" artifactId, is suffixed for the individual modules
+| **version**                         | \*)     | Maven artifact version - e.g. 1.0.0-SNAPSHOT
+| **package**                         | \*)     | Java class package name
+| **packageGroupName**                | \*)     | Group name for AEM content package
 | **aemAuthorPort**                   | 4502    | Default port for local AEM author instance
 | **aemPublishPort**                  | 4503    | Default port for local AEM publish instance
 | **optionAemVersion**                | 6.3     | AEM major version (6.1, 6.2 or 6.3)
@@ -34,7 +34,7 @@ As minimal input parameters you have to enter a value for `groupId` and `project
 | **optionWcmioHandler**              | y       | Setup project using wcm.io AEM libraries, especially the [wcm.io Handler][wcmio-handler] infrastructure. _Requires optionContextAwareConfig='y'._
 | **optionAcsCommons**                | n       | Deploy [ACS AEM Commons][acs-aem-commons].
 
-\*) Parameter is mandatory +) Sensible default
+\*) Sensible default
 
 
 ### Archetype examples
@@ -60,7 +60,7 @@ mvn archetype:generate \
   -DoptionMultiBundleLayout=n \
   -DoptionContextAwareConfig=y \
   -DoptionWcmioHandler=y \
-  -DoptionAcsCommons
+  -DoptionAcsCommons=n
 ```
 
 ##### Minimal AEM project with FileVault package layout
@@ -84,7 +84,7 @@ mvn archetype:generate \
   -DoptionMultiBundleLayout=n \
   -DoptionContextAwareConfig=y \
   -DoptionWcmioHandler=n \
-  -DoptionAcsCommons
+  -DoptionAcsCommons=y
 ```
 
 
