@@ -26,6 +26,9 @@ if (optionSlingInitialContentBundle == "n" && (optionAemVersion == "6.1" || opti
 if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
   throw new RuntimeException("Parameter optionMultiBundleLayout='y' is only supported with optionSlingInitialContentBundle='y'.")
 }
+if (optionWcmioHandler == "y" && optionContextAwareConfig == "n") {
+  throw new RuntimeException("Parameter optionWcmioHandler='y' is only supported with optionContextAwareConfig='y'.")
+}
 
 // helper methods
 def removeModule(pomFile, module) {

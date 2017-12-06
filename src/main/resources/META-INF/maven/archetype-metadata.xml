@@ -27,7 +27,7 @@
   <requiredProperties>
   
     <!-- *** basic properties *** -->
-    <!-- Project name is used for building AEM apps path, content path, CONGA roles etc. -->
+    <!-- Project name is used for building AEM apps path, content path, CONGA role names etc. -->
     <requiredProperty key="projectName">
       <validationRegex>^[a-zA-Z0-9\-_]+$</validationRegex>
     </requiredProperty>
@@ -40,51 +40,55 @@
       <defaultValue>${groupId}.${projectName}</defaultValue>
       <validationRegex>^[a-zA-Z0-9\.\-_]+$</validationRegex>
     </requiredProperty>
-    <!-- Project version -->
+    <!-- Maven artifact version - e.g. 1.0.0-SNAPSHOT -->
     <requiredProperty key="version">
       <defaultValue>1.0.0-SNAPSHOT</defaultValue>
       <validationRegex>^\d+(\.\d+){0,2}(\-SNAPSHOT)?$</validationRegex>
     </requiredProperty>
-    <!-- Java package -->
+    <!-- Java class package name -->
     <requiredProperty key="package">
       <defaultValue>${groupId}.${projectName}</defaultValue>
       <validationRegex>^[a-z0-9\.]+$</validationRegex>
     </requiredProperty>
+    <!-- Group name for AEM content package -->
     <requiredProperty key="packageGroupName">
       <defaultValue>${projectName}</defaultValue>
       <validationRegex>^[a-zA-Z0-9\-_]+$</validationRegex>
     </requiredProperty>
+    <!-- Default port for local AEM author instance -->
     <requiredProperty key="aemAuthorPort">
       <defaultValue>4502</defaultValue>
       <validationRegex>^\d{1,5}$</validationRegex>
     </requiredProperty>
+    <!-- Default port for local AEM publish instance -->
     <requiredProperty key="aemPublishPort">
       <defaultValue>4503</defaultValue>
       <validationRegex>^\d{1,5}$</validationRegex>
     </requiredProperty>
     
     <!-- *** feature flags *** -->
-    <!-- AEM major version -->
+    <!-- AEM major version (6.1, 6.2 or 6.3) -->
     <requiredProperty key="optionAemVersion">
       <defaultValue>6.3</defaultValue>
       <validationRegex>^(6\.1|6\.2|6\.3)$</validationRegex>
     </requiredProperty>
-    <!-- Use latest service pack for AEM version - you need to deploy artifacs, see https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
+    <!-- Use latest service pack for AEM version - you need to deploy artifacts following these conventions https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
     <requiredProperty key="optionAemServicePack">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Deploy AEM application content as part of OSGi bundle with Sling-Initial-Content. If disabled, a FileVault XML package is used for the AEM application (which is only support for AEM 6.3+). -->
+    <!-- y: AEM application projects is set up with scripts and content parts as JSON files within the OSGi bundle with Sling-Initial Content, suitable for File System Resource Provider. Works with all AEM versions.
+         n: Projects are set up with FileVault package layout, suitable for AEM Developer Tools for Eclipse (Sling IDE). Only supported for AEM 6.3+. -->
     <requiredProperty key="optionSlingInitialContentBundle">
       <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Use editable templates (AEM 6.3+) -->
+    <!-- Set up projects using editable templates.  Only supported for AEM 6.3+. -->
     <requiredProperty key="optionEditableTemplates">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Split up AEM application in multiple bundles. Only supported if optionSlingInitialContentBundle is also activated. -->
+    <!-- Split up AEM application in multiple bundles for modularizing large AM applications.. Only supported if optionSlingInitialContentBundle='y'. -->
     <requiredProperty key="optionMultiBundleLayout">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
@@ -94,12 +98,12 @@
       <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Setup project using wcm.io AEM libraries, especially the Handler infrastructure -->
+    <!-- Setup project using wcm.io AEM libraries, especially the wcm.io Handler infrastructure. Requires optionContextAwareConfig='y'. -->
     <requiredProperty key="optionWcmioHandler">
       <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Deploy ACS Commons -->
+    <!-- Deploy ACS AEM Commons. -->
     <requiredProperty key="optionAcsCommons">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>

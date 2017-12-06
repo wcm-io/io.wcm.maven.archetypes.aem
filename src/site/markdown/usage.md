@@ -6,8 +6,8 @@ Generate a new AEM project using interactive mode by executing:
 
 ```
 mvn archetype:generate \
- -DarchetypeGroupId=io.wcm.maven.archetypes \
- -DarchetypeArtifactId=io.wcm.maven.archetypes.aem
+  -DarchetypeGroupId=io.wcm.maven.archetypes \
+  -DarchetypeArtifactId=io.wcm.maven.archetypes.aem
 ```
 
 As minimal input parameters you have to enter a value for `groupId` and `projectName` - all other parameters can be derived from these or have sensible default parameters. But in most cases you want to specify more parameters, see next chapters for all available parameters and some examples.
@@ -15,12 +15,77 @@ As minimal input parameters you have to enter a value for `groupId` and `project
 
 ### Archetype parameters
 
-TBD
+| Parameter                           | Default | Description
+|-------------------------------------|---------|-------------
+| **projectName** \*)                 |         | Project name is used for building AEM apps path, content path, CONGA role names etc.
+| **groupId** \*)                     |         | Maven artifact groupId for all projects
+| **artifactId** \*)                  | +)      | Maven artifact "root" artifactId, is suffixed for the individual modules
+| **version**                         | +)      | Maven artifact version - e.g. 1.0.0-SNAPSHOT
+| **package**                         | +)      | Java class package name
+| **packageGroupName**                | +)      | Group name for AEM content package
+| **aemAuthorPort**                   | 4502    | Default port for local AEM author instance
+| **aemPublishPort**                  | 4503    | Default port for local AEM publish instance
+| **optionAemVersion**                | 6.3     | AEM major version (6.1, 6.2 or 6.3)
+| **optionAemServicePack**            | n       | Use latest service pack for AEM version - you need to deploy artifacts following [these conventions][aem-binaries-conventions]
+| **optionSlingInitialContentBundle** | y       | **y**: AEM application projects is set up with scripts and content parts as JSON files within the OSGi bundle with Sling-Initial Content, suitable for [File System Resource Provider][fsresource-adaptto-talk]. _Works with all AEM versions._<br/>**n**: Projects are set up with FileVault package layout, suitable for [AEM Developer Tools for Eclipse][aem-eclipse-ide] ([Sling IDE][sling-eclipse-ide]). _Only supported for AEM 6.3+._
+  **optionEditableTemplates**         | n       | Set up projects using editable templates.  _Only supported for AEM 6.3+._
+| **optionMultiBundleLayout**         | n       | Split up AEM application in multiple bundles for modularizing large AM applications. _Only supported if optionSlingInitialContentBundle='y'._
+| **optionContextAwareConfig**        | y       | Setup project with [Sling Context-Aware Configuration][sling-caconfig] and [wcm.io Context-Aware Configuration][wcmio-caconfig] extensions.
+| **optionWcmioHandler**              | y       | Setup project using wcm.io AEM libraries, especially the [wcm.io Handler][wcmio-handler] infrastructure. _Requires optionContextAwareConfig='y'._
+| **optionAcsCommons**                | n       | Deploy [ACS AEM Commons][acs-aem-commons].
+
+\*) Parameter is mandatory +) Sensible default
 
 
 ### Archetype examples
 
-TBD
+##### AEM project with wcm.io and Sling-Initial-Content project layout
+
+```
+mvn archetype:generate \
+  -DarchetypeGroupId=io.wcm.maven.archetypes \
+  -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
+  -DprojectName=myproject1 \
+  -DgroupId=mycompany.myprojectgroup \
+  -DartifactId=mycompany.myprojectgroup.myproject1 \
+  -Dversion=1.0.0-SNAPSHOT \
+  -Dpackage=mycompany.myprojectgroup.myproject1 \
+  -DpackageGroupName=mycompany \
+  -DaemAuthorPort=4502 \
+  -DaemPublishPort=4503 \
+  -DoptionAemVersion=6.3 \
+  -DoptionAemServicePack=n \
+  -DoptionSlingInitialContentBundle=y \
+  -DoptionEditableTemplates=y \
+  -DoptionMultiBundleLayout=n \
+  -DoptionContextAwareConfig=y \
+  -DoptionWcmioHandler=y \
+  -DoptionAcsCommons
+```
+
+##### Minimal AEM project with FileVault package layout
+
+```
+mvn archetype:generate \
+  -DarchetypeGroupId=io.wcm.maven.archetypes \
+  -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
+  -DprojectName=myproject2 \
+  -DgroupId=mycompany.myprojectgroup \
+  -DartifactId=mycompany.myprojectgroup.myproject2 \
+  -Dversion=1.0.0-SNAPSHOT \
+  -Dpackage=mycompany.myprojectgroup.myproject2 \
+  -DpackageGroupName=mycompany \
+  -DaemAuthorPort=4502 \
+  -DaemPublishPort=4503 \
+  -DoptionAemVersion=6.3 \
+  -DoptionAemServicePack=n \
+  -DoptionSlingInitialContentBundle=n \
+  -DoptionEditableTemplates=y \
+  -DoptionMultiBundleLayout=n \
+  -DoptionContextAwareConfig=y \
+  -DoptionWcmioHandler=n \
+  -DoptionAcsCommons
+```
 
 
 ### Requirements
@@ -35,4 +100,11 @@ TBD
 
 [adobe-public-maven-repo]: https://repo.adobe.com/nexus/content/groups/public/
 [wcmio-maven]: http://wcm.io/maven.html
-[aem-binaries-conventions]: [wcmio-maven]
+[aem-binaries-conventions]: https://wcm-io.atlassian.net/wiki/x/AYC9Aw
+[aem-eclipse-ide]: https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/aem-eclipse.html
+[sling-eclipse-ide]: https://sling.apache.org/documentation/development/ide-tooling.html
+[fsresource-adaptto-talk]: https://adapt.to/2017/en/schedule/ease-development-with-apache-sling-file-system-resource-provider.html
+[sling-caconfig]: https://sling.apache.org/documentation/bundles/context-aware-configuration/context-aware-configuration.html
+[wcmio-caconfig]: http://wcm.io/caconfig/
+[wcmio-handler]: http://wcm.io/handler
+[acs-aem-commons]: https://adobe-consulting-services.github.io/acs-aem-commons/
