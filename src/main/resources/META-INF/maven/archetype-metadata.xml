@@ -100,12 +100,10 @@
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
     <!-- Deploy ACS Commons -->
-    <!--
     <requiredProperty key="optionAcsCommons">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    -->
     <!-- Deploy i18n files below /content to allow translation by customer at run-time -->
     <!--
     <requiredProperty key="optionI18nInContent">

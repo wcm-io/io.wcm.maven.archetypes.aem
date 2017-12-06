@@ -4,7 +4,7 @@
         <include pattern="/conf/${projectName}/rep:policy"/>
         <exclude pattern="/conf/${projectName}/*"/>
     </filter>
-#if( $optionEditableTemplates == "y" && $optionAemVersion != "6.1" && $optionAemVersion != "6.2" )
+#if( $optionEditableTemplates == "y" )
     <filter root="/conf/${projectName}/settings/wcm"/>
 #end
 </workspaceFilter>

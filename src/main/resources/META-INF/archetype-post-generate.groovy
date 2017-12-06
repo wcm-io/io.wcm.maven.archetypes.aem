@@ -99,7 +99,7 @@ if (optionContextAwareConfig == "n" && optionWcmioHandler == "n" && optionEditab
 }
 
 // prepare project for editable templates
-if (optionEditableTemplates == "y" && optionAemVersion != "6.1" && optionAemVersion != "6.2") {
+if (optionEditableTemplates == "y") {
   assert new File(coreBundle, "src/main/webapp/app-root/components/content/page").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/components/global/page/body.html").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/templates").deleteDir()
@@ -116,7 +116,7 @@ else {
 }
 
 // sling-initial-content bundle or filevault xml package
-if (optionSlingInitialContentBundle == "y" && optionAemVersion != "6.1" && optionAemVersion != "6.2") {
+if (optionSlingInitialContentBundle == "y") {
   removeModule(rootPom, "content-packages/ui.apps")
   uiAppsPackage.deleteDir()
 }
