@@ -1,5 +1,5 @@
 {
-  "jcr:primaryType": "cq:Component"#if($optionEditableTemplates == "y" && $optionAemVersion != "6.1" && $optionAemVersion != "6.2"),
+  "jcr:primaryType": "cq:Component"#if($optionEditableTemplates=="y"),
   "jcr:title": "Imprint",
   "componentGroup": "${projectName}",
 

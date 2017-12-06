@@ -161,6 +161,13 @@
       <scope>compile</scope>
     </dependency>
 #end
+#if( $optionAcsCommons == "y" )
+    <dependency>
+      <groupId>com.adobe.acs</groupId>
+      <artifactId>acs-aem-commons-bundle</artifactId>
+      <scope>compile</scope>
+    </dependency>
+#end
 
   </dependencies>
 

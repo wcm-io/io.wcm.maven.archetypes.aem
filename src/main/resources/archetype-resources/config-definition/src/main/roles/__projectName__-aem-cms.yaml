@@ -12,14 +12,14 @@ templateDir: ${projectName}-aem-cms
 
 files:
 
-#if ($optionAemServicePack == 'y')
-#if ($optionAemVersion == '6.1')
+#if ( $optionAemServicePack == 'y' )
+#if ( $optionAemVersion == '6.1' )
 # AEM Service Pack
 - url: mvn:adobe.binary.aem.61.servicepack/AEM-6.1-Service-Pack-2/6.1.SP2/zip
   dir: packages
   modelOptions:
     delayAfterInstallSec: 60
-#elseif ($optionAemVersion == '6.2')
+#elseif ( $optionAemVersion == '6.2' )
 # AEM Service Pack
 - url: mvn:adobe.binary.aem.62.hotfix/cq-6.2.0-hotfix-12785/7.0/zip
   dir: packages
@@ -29,7 +29,7 @@ files:
   dir: packages
   modelOptions:
     delayAfterInstallSec: 60
-#elseif ($optionAemVersion == '6.3')
+#elseif ( $optionAemVersion == '6.3' )
 # AEM Service Pack
 - url: mvn:adobe.binary.aem.63.servicepack/AEM-6.3-Service-Pack-1/6.3.1/zip
   dir: packages
@@ -42,8 +42,14 @@ files:
 # AEM Core WCM components
 - url: mvn:com.adobe.cq/core.wcm.components.all//zip
   dir: packages
-#end
 
+#end
+#if( $optionAcsCommons == "y" )
+# ACS AEM Commons
+- url: mvn:com.adobe.acs/acs-aem-commons-content//zip/min
+  dir: packages
+
+#end
 # AEM OSGi System Configuration
 - file: ${projectName}-aem-cms-config.provisioning
   dir: packages
