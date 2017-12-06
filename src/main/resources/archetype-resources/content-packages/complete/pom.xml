@@ -161,7 +161,7 @@
                 org.apache.sling.caconfig.spi,
                 org.apache.sling.caconfig.impl,
 #end
-#if ( $optionSlingInitialContentBundle == "y" || $optionWcmioHandler == "y" )
+#if ( $optionSlingInitialContentBundle == "y" || $optionContextAwareConfig == "y" )
                 org.apache.sling.commons.johnzon,
 #end
 #if ( $optionSlingInitialContentBundle == "y")
