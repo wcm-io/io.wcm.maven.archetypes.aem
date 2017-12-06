@@ -47,7 +47,7 @@
 #end
 #end
     </jcr:content>
-#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
+#if ( $optionContextAwareConfig == "y" )
     <tools/>
 #end
 </jcr:root>

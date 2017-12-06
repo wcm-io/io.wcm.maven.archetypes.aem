@@ -21,7 +21,7 @@ nodes:
 config:
   contentPackage.group: ${packageGroupName}
   app:
-#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" || $optionEditableTemplates == "y" )
+#if ( $optionContextAwareConfig == "y" || $optionEditableTemplates == "y" )
     confContent: true
 #end
     sampleContent: true

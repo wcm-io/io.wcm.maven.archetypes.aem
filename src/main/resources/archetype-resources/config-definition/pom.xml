@@ -33,7 +33,7 @@
       <type>zip</type>
       <scope>compile</scope>
     </dependency>
-#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" || $optionEditableTemplates == "y" )
+#if ( $optionContextAwareConfig == "y" || $optionEditableTemplates == "y" )
     <dependency>
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.conf-content</artifactId>

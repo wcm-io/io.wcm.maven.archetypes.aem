@@ -3,14 +3,14 @@
 #set( $symbol_escape = '\' )
 package ${package}.testcontext;
 
-#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
+#if ( $optionContextAwareConfig == "y" )
 import static io.wcm.testing.mock.wcmio.caconfig.ContextPlugins.WCMIO_CACONFIG;
 #end
 #if ( $optionWcmioHandler == "y" )
 import static io.wcm.testing.mock.wcmio.handler.ContextPlugins.WCMIO_HANDLER;
 import static io.wcm.testing.mock.wcmio.sling.ContextPlugins.WCMIO_SLING;
 #end
-#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
+#if ( $optionContextAwareConfig == "y" )
 import static org.apache.sling.testing.mock.caconfig.ContextPlugins.CACONFIG;
 #end
 
@@ -24,7 +24,7 @@ import io.wcm.handler.media.spi.MediaFormatProvider;
 import io.wcm.testing.mock.aem.junit.AemContext;
 import io.wcm.testing.mock.aem.junit.AemContextBuilder;
 import io.wcm.testing.mock.aem.junit.AemContextCallback;
-#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
+#if ( $optionContextAwareConfig == "y" )
 import io.wcm.testing.mock.wcmio.caconfig.MockCAConfig;
 #end
 
@@ -45,7 +45,7 @@ public final class AppAemContext {
 
   public static AemContext newAemContext() {
     return new AemContextBuilder()
-#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
+#if ( $optionContextAwareConfig == "y" )
         .plugin(CACONFIG)
 #end
 #if ( $optionWcmioHandler == "y" )
