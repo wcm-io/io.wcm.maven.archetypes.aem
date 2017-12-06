@@ -90,6 +90,7 @@ mvn archetype:generate \
 
 ### Requirements
 
+* JDK 1.8
 * Apache Maven 3.3.9 or higher
 * AEM 6.1, 6.2 or 6.3 running on your local machine
 * Include the [Adobe Public Maven Repository][adobe-public-maven-repo] in your maven settings, see [wcm.io Maven Repositories][wcmio-maven] for details.
