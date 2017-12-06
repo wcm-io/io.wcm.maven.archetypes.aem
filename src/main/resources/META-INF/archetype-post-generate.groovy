@@ -16,6 +16,17 @@ def sampleContentPackage = new File(rootDir, "content-packages/sample-content")
 def uiAppsPackage = new File(rootDir, "content-packages/ui.apps")
 def rootPom = new File(rootDir, "pom.xml")
 
+// validate parameters - throw exceptions for invalid combinations
+if (optionEditableTemplates == "y" && (optionAemVersion == "6.1" || optionAemVersion == "6.2")) {
+  throw new RuntimeException("Parameter optionEditableTemplates='y' is only supported for optionAemVersion='6.3' and up.")
+}
+if (optionSlingInitialContentBundle == "n" && (optionAemVersion == "6.1" || optionAemVersion == "6.2")) {
+  throw new RuntimeException("Parameter optionSlingInitialContentBundle='n' is only supported for optionAemVersion='6.3' and up.")
+}
+if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
+  throw new RuntimeException("Parameter optionMultiBundleLayout='y' is only supported with optionSlingInitialContentBundle='y'.")
+}
+
 // helper methods
 def removeModule(pomFile, module) {
   def pattern = Pattern.compile("\\s*<module>" + Pattern.quote(module) + "</module>", Pattern.MULTILINE)
