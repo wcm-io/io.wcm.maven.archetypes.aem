@@ -36,6 +36,7 @@
   
   <name>wcm.io Maven Archetype for AEM</name>
   <description>Maven Archetype for creating new AEM projects.</description>
+  <url>${site.url}/${site.url.module.prefix}/</url>
 
   <properties>
     <site.url.module.prefix>tooling/maven/archetypes/aem</site.url.module.prefix>
