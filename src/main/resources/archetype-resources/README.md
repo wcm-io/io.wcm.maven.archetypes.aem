@@ -32,8 +32,8 @@ $symbol_pound$symbol_pound$symbol_pound System requirements
 
 * JDK 1.8
 * Apache Maven 3.3.9 or higher
-* AEM ${aemVersion} author instance running on port ${aemAuthorPort}
-* Optional: AEM ${aemVersion} publish instance running on port ${aemPublishPort}
+* AEM ${optionAemVersion} author instance running on port ${aemAuthorPort}
+* Optional: AEM ${optionAemVersion} publish instance running on port ${aemPublishPort}
 * Include the [Adobe Public Maven Repository][adobe-public-maven-repo] in your maven settings, see [wcm.io Maven Repositories][wcmio-maven] for details.
 * To obtain the latest service packs via Maven you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
 

@@ -1,4 +1,5 @@
 import java.util.regex.Pattern
+import groovy.io.FileType
 
 def rootDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId())
 def javaPackage = request.getProperties().get("package")
@@ -136,4 +137,12 @@ if (optionSlingInitialContentBundle == "y") {
 }
 else {
   assert new File(coreBundle, "src/main/webapp").deleteDir()
+}
+
+// convert all line endings to unix-style
+rootDir.eachFileRecurse(FileType.FILES) { file ->
+  def fileContent = file.text.replaceAll('\r\n', '\n')
+  file.newWriter().withWriter { w ->
+    w << fileContent
+  }
 }
