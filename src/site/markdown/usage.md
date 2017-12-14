@@ -29,7 +29,7 @@ As minimal input parameters you have to enter a value for `groupId` and `project
 | **optionAemServicePack**            | n       | Use latest service pack for AEM version - you need to deploy artifacts following [these conventions][aem-binaries-conventions]
 | **optionSlingInitialContentBundle** | y       | **y**: AEM application projects is set up with scripts and content parts as JSON files within the OSGi bundle with Sling-Initial Content, suitable for [File System Resource Provider][fsresource-adaptto-talk]. _Works with all AEM versions._<br/>**n**: Projects are set up with FileVault package layout, suitable for [AEM Developer Tools for Eclipse][aem-eclipse-ide] ([Sling IDE][sling-eclipse-ide]). _Only supported for AEM 6.3+._
   **optionEditableTemplates**         | n       | Set up projects using editable templates.  _Only supported for AEM 6.3+._
-| **optionMultiBundleLayout**         | n       | Split up AEM application in multiple bundles for modularizing large AM applications. _Only supported if optionSlingInitialContentBundle='y'._
+| **optionMultiBundleLayout**         | n       | Split up AEM application in multiple bundles for modularizing large AM applications. _Requires optionSlingInitialContentBundle='y'._
 | **optionContextAwareConfig**        | y       | Setup project with [Sling Context-Aware Configuration][sling-caconfig] and [wcm.io Context-Aware Configuration][wcmio-caconfig] extensions.
 | **optionWcmioHandler**              | y       | Setup project using wcm.io AEM libraries, especially the [wcm.io Handler][wcmio-handler] infrastructure. _Requires optionContextAwareConfig='y'._
 | **optionAcsCommons**                | n       | Deploy [ACS AEM Commons][acs-aem-commons].
@@ -37,7 +37,7 @@ As minimal input parameters you have to enter a value for `groupId` and `project
 \*) Sensible default
 
 
-### Archetype examples
+### Usage examples
 
 ##### AEM project with wcm.io and Sling-Initial-Content project layout
 
