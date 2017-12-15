@@ -5,7 +5,7 @@
 <jcr:root xmlns:Iptc4xmpCore="http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef${symbol_pound}" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="dam:Asset">
     <jcr:content
-        cq:name="stageheader-outside2.jpg"
+        cq:name="sample-image.jpg"
         cq:parentPath="/content/dam/${projectName}/content"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -22,7 +22,7 @@
             dam:Progressive="no"
             dam:size="{Long}102447"
             dam:writebackEnable="False"
-            dc:creator="[Alexander Muthmann,Alexander Muthmann,Alexander Muthmann,Alexander Muthmann]"
+            dc:creator="[Alexander Muthmann]"
             dc:creator_xmpArrayType="rdf:Seq"
             dc:format="image/jpeg"
             jcr:primaryType="nt:unstructured"
