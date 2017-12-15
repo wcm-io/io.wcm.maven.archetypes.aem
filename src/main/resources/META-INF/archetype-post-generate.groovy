@@ -144,8 +144,10 @@ else {
 
 // convert all line endings to unix-style
 rootDir.eachFileRecurse(FileType.FILES) { file ->
-  def fileContent = file.text.replaceAll('\r\n', '\n')
-  file.newWriter().withWriter { w ->
-    w << fileContent
+  if (file.getName() =~ /\.(java|html|txt|json|xml|css|js|yaml|hbs|sh)$/) {
+    def fileContent = file.getText("UTF-8").replaceAll('\r\n', '\n')
+    file.newWriter("UTF-8").withWriter { w ->
+      w << fileContent
+    }
   }
 }
