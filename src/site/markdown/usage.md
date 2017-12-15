@@ -27,6 +27,7 @@ As minimal input parameters you have to enter a value for `groupId` and `project
 | **aemPublishPort**                  | 4503    | Default port for local AEM publish instance
 | **optionAemVersion**                | 6.3     | AEM major version (6.1, 6.2 or 6.3)
 | **optionAemServicePack**            | n       | Use latest service pack for AEM version - you need to deploy artifacts following [these conventions][aem-binaries-conventions]
+| **optionSlingModelsLatest**         | y       | Use latest Sling Models version
 | **optionSlingInitialContentBundle** | y       | **y**: AEM application projects is set up with scripts and content parts as JSON files within the OSGi bundle with Sling-Initial Content, suitable for [File System Resource Provider][fsresource-adaptto-talk]. _Works with all AEM versions._<br/>**n**: Projects are set up with FileVault package layout, suitable for [AEM Developer Tools for Eclipse][aem-eclipse-ide] ([Sling IDE][sling-eclipse-ide]). _Only supported for AEM 6.3+._
   **optionEditableTemplates**         | n       | Set up projects using editable templates.  _Only supported for AEM 6.3+._
 | **optionMultiBundleLayout**         | n       | Split up AEM application in multiple bundles for modularizing large AM applications. _Requires optionSlingInitialContentBundle='y'._
@@ -55,6 +56,7 @@ mvn archetype:generate -DinteractiveMode=false \
   -DaemPublishPort=4503 \
   -DoptionAemVersion=6.3 \
   -DoptionAemServicePack=n \
+  -DoptionSlingModelsLatest=y \
   -DoptionSlingInitialContentBundle=y \
   -DoptionEditableTemplates=y \
   -DoptionMultiBundleLayout=n \
@@ -79,6 +81,7 @@ mvn archetype:generate -DinteractiveMode=false \
   -DaemPublishPort=4503 \
   -DoptionAemVersion=6.3 \
   -DoptionAemServicePack=n \
+  -DoptionSlingModelsLatest=n \
   -DoptionSlingInitialContentBundle=n \
   -DoptionEditableTemplates=y \
   -DoptionMultiBundleLayout=n \

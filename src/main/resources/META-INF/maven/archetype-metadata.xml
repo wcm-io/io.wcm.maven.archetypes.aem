@@ -77,6 +77,11 @@
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
+    <!-- Use latest Sling Models version -->
+    <requiredProperty key="optionSlingModelsLatest">
+      <defaultValue>y</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
     <!-- y: AEM application projects is set up with scripts and content parts as JSON files within the OSGi bundle with Sling-Initial Content, suitable for File System Resource Provider. Works with all AEM versions.
          n: Projects are set up with FileVault package layout, suitable for AEM Developer Tools for Eclipse (Sling IDE). Only supported for AEM 6.3+. -->
     <requiredProperty key="optionSlingInitialContentBundle">
