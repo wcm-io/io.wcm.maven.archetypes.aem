@@ -42,7 +42,7 @@ As minimal input parameters you have to enter a value for `groupId` and `project
 ##### AEM project with wcm.io and Sling-Initial-Content project layout
 
 ```
-mvn archetype:generate \
+mvn archetype:generate -DinteractiveMode=false \
   -DarchetypeGroupId=io.wcm.maven.archetypes \
   -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
   -DprojectName=myproject1 \
@@ -66,7 +66,7 @@ mvn archetype:generate \
 ##### Minimal AEM project with FileVault package layout
 
 ```
-mvn archetype:generate \
+mvn archetype:generate -DinteractiveMode=false \
   -DarchetypeGroupId=io.wcm.maven.archetypes \
   -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
   -DprojectName=myproject2 \
