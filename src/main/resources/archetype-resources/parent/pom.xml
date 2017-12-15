@@ -44,7 +44,7 @@
   <dependencyManagement>
     <dependencies>
 
-#if( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
+#if ( $optionSlingModelsLatest == "y" )
       <!-- Sling -->
       <dependency>
         <groupId>org.apache.sling</groupId>
@@ -56,12 +56,13 @@
         <artifactId>org.apache.sling.models.impl</artifactId>
         <version>1.4.4</version>
       </dependency>
-#if( $optionAemVersion == "6.1" )
+#if ( $optionAemVersion == "6.1" )
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
         <version>3.4</version>
       </dependency>
+#end
 #end
 #if ( $optionContextAwareConfig == "y" )
       <dependency>
@@ -95,7 +96,6 @@
       </dependency>
 #end
 
-#end
       <!-- wcm.io -->
 #if ( $optionContextAwareConfig == "y" )
       <dependency>
@@ -221,7 +221,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>6.1.0.0000</version>
+        <version>6.1.0.0001-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -229,7 +229,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>6.2.0.0001</version>
+        <version>6.2.0.0002-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -237,7 +237,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=='y')6.3.1.0000-SNAPSHOT#{else}6.3.0.0000#end</version>
+        <version>#if($optionAemServicePack=='y')6.3.1.0000-SNAPSHOT#{else}6.3.0.0001-SNAPSHOT#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
