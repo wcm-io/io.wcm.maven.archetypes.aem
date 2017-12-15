@@ -37,7 +37,7 @@ def removeModule(pomFile, module) {
   def pattern = Pattern.compile("\\s*<module>" + Pattern.quote(module) + "</module>", Pattern.MULTILINE)
   def pomContent = pomFile.getText("UTF-8")
   pomContent = pomContent.replaceAll(pattern, "")
-  pomFile.newWriter().withWriter { w ->
+  pomFile.newWriter("UTF-8").withWriter { w ->
     w << pomContent
   }
 }
@@ -144,7 +144,7 @@ else {
 
 // convert all line endings to unix-style
 rootDir.eachFileRecurse(FileType.FILES) { file ->
-  if (file.getName() =~ /\.(java|html|txt|json|xml|css|js|yaml|hbs|sh)$/) {
+  if (file.name =~ /\.(java|html|txt|json|xml|css|js|yaml|hbs|sh)$/) {
     def fileContent = file.getText("UTF-8").replaceAll('\r\n', '\n')
     file.newWriter("UTF-8").withWriter { w ->
       w << fileContent
