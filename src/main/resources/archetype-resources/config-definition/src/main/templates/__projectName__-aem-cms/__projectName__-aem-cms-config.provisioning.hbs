@@ -19,7 +19,7 @@
     org.apache.sling.commons.log.pattern="{0,date,dd.MM.yyyy\ HH:mm:ss.SSS}\ *{4}*\ [{2}]\ {3}\ {5}"
 
 #if ( $optionContextAwareConfig == "y" )
-#if( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" )
+#if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" )
   # Configure Sling Context-Aware Configuration for AEM - add lookup in jcr:content subnodes, ignore cq:* properties
    org.apache.sling.caconfig.resource.impl.def.DefaultContextPathStrategy
     configRefResourceNames=["jcr:content","."]
@@ -53,14 +53,18 @@
   com.day.cq.commons.servlets.RootMappingServlet
     rootmapping.target="/sites.html"
 
+#if ( $optionWcmioHandler == "y" )
   # Define service user for wcm.io Media Handler
   org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}
     user.mapping=["io.wcm.handler.media\=wcmioDamSystemUser"]
 
+#if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" )
   # Configure Responsive Preview Mode
   io.wcm.wcm.ui.granite.emulator.impl.EmulatorProviderImpl-${projectName}
     templatePathPatterns=["^/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/.*$"]
 
+#end
+#end
 
 [configurations runModes=publish]
   

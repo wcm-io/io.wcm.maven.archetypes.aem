@@ -63,6 +63,7 @@ files:
       filters:
       - filter: /apps/${projectName}-aem-cms-config
 
+#if ( $optionWcmioHandler == "y" )
 # AEM Systems users with ACLs (Author)
 - file: ${projectName}-aem-cms-author-systemusers.json
   dir: packages
@@ -80,6 +81,7 @@ files:
       - filter: /content/dam/rep:policy
       - filter: /home/users/system/${projectName}/wcmioDamSystemUser
 
+#end
 # Application package
 - url: mvn:${groupId}/${rootArtifactId}.complete//zip
   dir: packages

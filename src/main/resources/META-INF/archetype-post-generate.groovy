@@ -15,6 +15,7 @@ def clientlibsBundle = new File(rootDir, "bundles/clientlibs")
 def confContentPackage = new File(rootDir, "content-packages/conf-content")
 def sampleContentPackage = new File(rootDir, "content-packages/sample-content")
 def uiAppsPackage = new File(rootDir, "content-packages/ui.apps")
+def configDefinition = new File(rootDir, "config-definition")
 def rootPom = new File(rootDir, "pom.xml")
 
 // validate parameters - throw exceptions for invalid combinations
@@ -69,6 +70,8 @@ if (optionWcmioHandler == "n") {
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/common/contentRichText/contentRichText.html").delete()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/stage/stageheader/stageheader.html").delete()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/global/include").deleteDir()
+
+  assert new File(configDefinition, "src/main/templates/${projectName}-aem-cms/${projectName}-aem-cms-author-systemusers.json.hbs").delete()
 }
 else {
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/global/page/body.html").delete()
