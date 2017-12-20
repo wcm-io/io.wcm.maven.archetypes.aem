@@ -1,0 +1,16 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Content Richtext",
+  "componentGroup": "${projectName}",
+
+  "cq:editConfig": {
+    "jcr:primaryType": "cq:EditConfig",
+    "cq:inplaceEditing": {
+      "jcr:primaryType": "cq:InplaceEditingConfig",
+      "active": true,
+      "editorType": "text",
+      "configPath": "/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/include/richTextConfig"
+    }
+  }
+
+}

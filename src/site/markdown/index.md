@@ -1,0 +1,54 @@
+About Maven Archetype for AEM
+=============================
+
+Maven Archetype for creating new AEM projects.
+
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.wcm.maven.archetypes/io.wcm.maven.archetypes.aem/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.wcm.maven.archetypes/io.wcm.maven.archetypes.aem)
+
+
+### Documentation
+
+* [Usage][usage]
+* [Changelog][changelog]
+
+
+### Overview
+
+The wcm.io Maven Archetype for AEM allows you to set up new Maven projects for developing AEM applications. The archetype is very flexible and can be customized to your needs using several options.
+
+Features:
+
+* Supports AEM 6.1, AEM 6.2 and AEM 6.3
+* Supports both Sling-Initial-Content JSON-style project layout and FileVault package layout
+* Based on [CONGA][conga] to manage AEM configuration and package deployment
+* AEM 6.3 projects based on [AEM Core WCM Components][aem-core-wcm-components], using Editable Templates is optional
+* Optional inclusion of latest service packs
+* Optional support for [Sling Context-Aware Configuration][sling-caconfig] and [wcm.io Context-Aware Configuration Extensions][wcmio-caconfig]
+* Optional support for [wcm.io Handler][wcmio-handler] Infrastructure
+* Optional support for [ACS AEM Commons][acs-aem-commons]
+
+See [Usage][usage] for a detailed documentation.
+
+For more information about the "Sling-Initial-Content JSON-style project layout" and its benefits see [this talk][fsresource-adaptto-talk] form adaptTo() 2017.
+
+
+### Alternatives
+
+Alternatively to the wcm.io AEM archetype you can use these tools to set up new AEM projects:
+
+* [Adobe AEM project archetype][adobe-aem-archetype] - Supports only FileVault package layout and the most recent AEM version, not very flexible
+* [ACS AEM Lazybones Templates][acs-aem-lazybones] - Supports only FileVault package layout. Configuration is quite flexible regarding AEM versions and ACS AEM Commons usage. Lazybones is a bit uncommon in the maven world.
+
+
+
+[usage]: usage.html
+[changelog]: changes-report.html
+[conga]: http://devops.wcm.io/conga
+[aem-core-wcm-components]: https://github.com/Adobe-Marketing-Cloud/aem-core-wcm-components
+[sling-caconfig]: https://sling.apache.org/documentation/bundles/context-aware-configuration/context-aware-configuration.html
+[wcmio-caconfig]: http://wcm.io/caconfig/
+[wcmio-handler]: http://wcm.io/handler
+[acs-aem-commons]: https://adobe-consulting-services.github.io/acs-aem-commons/
+[adobe-aem-archetype]: https://github.com/Adobe-Marketing-Cloud/aem-project-archetype
+[acs-aem-lazybones]: https://github.com/Adobe-Consulting-Services/lazybones-aem-templates
+[fsresource-adaptto-talk]: https://adapt.to/2017/en/schedule/ease-development-with-apache-sling-file-system-resource-provider.html

@@ -1,0 +1,5 @@
+{
+  "jcr:primaryType": "cq:Component"#if ($optionWcmioHandler=='y')
+,
+  "sling:resourceSuperType": "wcm-io/wcm/commons/components/page/structureElement"#end
+}

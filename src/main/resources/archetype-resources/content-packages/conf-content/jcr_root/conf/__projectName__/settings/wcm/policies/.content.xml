@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <rep:policy/>
+    <wcm jcr:primaryType="nt:unstructured">
+        <foundation jcr:primaryType="nt:unstructured">
+            <components jcr:primaryType="nt:unstructured">
+                <responsivegrid jcr:primaryType="nt:unstructured">
+                    <root-container
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Root Container"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/libs/wcm/foundation/components/responsivegrid,/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/structure/imprint,/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/stage/stageheader]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </root-container>
+                    <content-container
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Content Container"
+                        sling:resourceType="wcm/core/components/policy/policy"
+                        components="[/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/common/contentRichText,/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/stage/stageheader]">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                    </content-container>
+                </responsivegrid>
+            </components>
+        </foundation>
+    </wcm>
+</jcr:root>

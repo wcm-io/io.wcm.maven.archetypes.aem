@@ -1,0 +1,1 @@
+Separate list of test projects to be used on travis-ci - which does not have access to non-public Adobe binaries.

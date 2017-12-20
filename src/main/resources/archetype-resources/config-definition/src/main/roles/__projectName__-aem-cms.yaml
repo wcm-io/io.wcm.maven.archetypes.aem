@@ -1,0 +1,116 @@
+# Project-specific AEM configuration
+
+# Inherit default AEM functionality from "AEM Definitions", see http://devops.wcm.io/conga/definitions/aem/
+inherits:
+- role: aem-cms
+
+variants:
+- variant: aem-author
+- variant: aem-publish
+
+templateDir: ${projectName}-aem-cms
+
+files:
+
+#if ( $optionAemServicePack == 'y' )
+#if ( $optionAemVersion == '6.1' )
+# AEM Service Pack
+- url: mvn:adobe.binary.aem.61.servicepack/AEM-6.1-Service-Pack-2/6.1.SP2/zip
+  dir: packages
+  modelOptions:
+    delayAfterInstallSec: 60
+#elseif ( $optionAemVersion == '6.2' )
+# AEM Service Pack
+- url: mvn:adobe.binary.aem.62.hotfix/cq-6.2.0-hotfix-12785/7.0/zip
+  dir: packages
+  modelOptions:
+    delayAfterInstallSec: 60
+- url: mvn:adobe.binary.aem.62.servicepack/AEM-6.2-Service-Pack-1/6.2.SP1/zip
+  dir: packages
+  modelOptions:
+    delayAfterInstallSec: 60
+#elseif ( $optionAemVersion == '6.3' )
+# AEM Service Pack
+- url: mvn:adobe.binary.aem.63.servicepack/AEM-6.3-Service-Pack-1/6.3.1/zip
+  dir: packages
+  modelOptions:
+    delayAfterInstallSec: 30
+#end
+#end
+
+#if( $optionAemVersion != "6.1" && $optionAemVersion != "6.2" )
+# AEM Core WCM components
+- url: mvn:com.adobe.cq/core.wcm.components.all//zip
+  dir: packages
+
+#end
+#if( $optionAcsCommons == "y" )
+# ACS AEM Commons
+- url: mvn:com.adobe.acs/acs-aem-commons-content//zip/min
+  dir: packages
+
+#end
+# AEM OSGi System Configuration
+- file: ${projectName}-aem-cms-config.provisioning
+  dir: packages
+  template: ${projectName}-aem-cms-config.provisioning.hbs
+  postProcessors:
+  - aem-contentpackage-osgiconfig
+  postProcessorOptions:
+    contentPackage:
+      name: ${projectName}-aem-cms-config
+      rootPath: /apps/${projectName}-aem-cms-config/config
+      filters:
+      - filter: /apps/${projectName}-aem-cms-config
+
+#if ( $optionWcmioHandler == "y" )
+# AEM Systems users with ACLs (Author)
+- file: ${projectName}-aem-cms-author-systemusers.json
+  dir: packages
+  template: ${projectName}-aem-cms-author-systemusers.json.hbs
+  variants:
+  - aem-author
+  postProcessors:
+  - aem-contentpackage
+  postProcessorOptions:
+    contentPackage:
+      name: ${projectName}-aem-cms-author-systemusers
+      acHandling: merge
+      rootPath: /
+      filters:
+      - filter: /content/dam/rep:policy
+      - filter: /home/users/system/${projectName}/wcmioDamSystemUser
+
+#end
+# Application package
+- url: mvn:${groupId}/${rootArtifactId}.complete//zip
+  dir: packages
+
+#if ( $optionContextAwareConfig == "y" || $optionEditableTemplates == "y" )
+# Application conf content package
+- url: mvn:${groupId}/${rootArtifactId}.conf-content//zip
+  dir: packages
+  condition: ${app.confContent}
+
+#end
+# Application sample content package
+- url: mvn:${groupId}/${rootArtifactId}.sample-content//zip
+  dir: packages
+  condition: ${app.sampleContent}
+
+
+# Defines configuration parameters and default values
+config:
+  contentPackage:
+    group: ${packageGroupName}
+    #[[version: ${version}]]#
+
+  app:
+#if ( $optionContextAwareConfig == "y" || $optionEditableTemplates == "y" )
+    confContent: true
+#end
+    sampleContent: false
+
+  # Log levels
+  log:
+    projectSpecificLogLevel: warn

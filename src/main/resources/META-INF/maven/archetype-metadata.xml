@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  #%L
+  wcm.io
+  %%
+  Copyright (C) 2017 wcm.io
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+
+<archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
+    xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    name="io.wcm.samples">
+
+  <requiredProperties>
+  
+    <!-- *** basic properties *** -->
+    <!-- Project name is used for building AEM apps path, content path, CONGA role names etc. -->
+    <requiredProperty key="projectName">
+      <validationRegex>^[a-zA-Z0-9\-_]+$</validationRegex>
+    </requiredProperty>
+    <!-- Maven artifact groupId for all projects -->
+    <requiredProperty key="groupId">
+      <validationRegex>^[a-zA-Z0-9\.\-_]+$</validationRegex>
+    </requiredProperty>
+    <!-- Maven artifact "root" artifactId, is suffixed for the individual modules -->
+    <requiredProperty key="artifactId">
+      <defaultValue>${groupId}.${projectName}</defaultValue>
+      <validationRegex>^[a-zA-Z0-9\.\-_]+$</validationRegex>
+    </requiredProperty>
+    <!-- Maven artifact version - e.g. 1.0.0-SNAPSHOT -->
+    <requiredProperty key="version">
+      <defaultValue>1.0.0-SNAPSHOT</defaultValue>
+      <validationRegex>^\d+(\.\d+){0,2}(\-SNAPSHOT)?$</validationRegex>
+    </requiredProperty>
+    <!-- Java class package name -->
+    <requiredProperty key="package">
+      <defaultValue>${groupId}.${projectName}</defaultValue>
+      <validationRegex>^[a-z0-9\.]+$</validationRegex>
+    </requiredProperty>
+    <!-- Group name for AEM content package -->
+    <requiredProperty key="packageGroupName">
+      <defaultValue>${projectName}</defaultValue>
+      <validationRegex>^[a-zA-Z0-9\-_]+$</validationRegex>
+    </requiredProperty>
+    <!-- Default port for local AEM author instance -->
+    <requiredProperty key="aemAuthorPort">
+      <defaultValue>4502</defaultValue>
+      <validationRegex>^\d{1,5}$</validationRegex>
+    </requiredProperty>
+    <!-- Default port for local AEM publish instance -->
+    <requiredProperty key="aemPublishPort">
+      <defaultValue>4503</defaultValue>
+      <validationRegex>^\d{1,5}$</validationRegex>
+    </requiredProperty>
+    
+    <!-- *** feature flags *** -->
+    <!-- AEM major version (6.1, 6.2 or 6.3) -->
+    <requiredProperty key="optionAemVersion">
+      <defaultValue>6.3</defaultValue>
+      <validationRegex>^(6\.1|6\.2|6\.3)$</validationRegex>
+    </requiredProperty>
+    <!-- Use latest service pack for AEM version - you need to deploy artifacts following these conventions https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
+    <requiredProperty key="optionAemServicePack">
+      <defaultValue>n</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
+    <!-- Use latest Sling Models version -->
+    <requiredProperty key="optionSlingModelsLatest">
+      <defaultValue>y</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
+    <!-- y: AEM application projects is set up with scripts and content parts as JSON files within the OSGi bundle with Sling-Initial Content, suitable for File System Resource Provider. Works with all AEM versions.
+         n: Projects are set up with FileVault package layout, suitable for AEM Developer Tools for Eclipse (Sling IDE). Only supported for AEM 6.3+. -->
+    <requiredProperty key="optionSlingInitialContentBundle">
+      <defaultValue>y</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
+    <!-- Set up projects using editable templates.  Only supported for AEM 6.3+. -->
+    <requiredProperty key="optionEditableTemplates">
+      <defaultValue>n</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
+    <!-- Split up AEM application in multiple bundles for modularizing large AM applications.. Only supported if optionSlingInitialContentBundle='y'. -->
+    <requiredProperty key="optionMultiBundleLayout">
+      <defaultValue>n</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
+    <!-- Setup project with Sling Context-Aware Configuration and wcm.io Context-Aware Configuration extensions (implicitly enabled when optionWcmioHandler is enabled) -->
+    <requiredProperty key="optionContextAwareConfig">
+      <defaultValue>y</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
+    <!-- Setup project using wcm.io AEM libraries, especially the wcm.io Handler infrastructure. Requires optionContextAwareConfig='y'. -->
+    <requiredProperty key="optionWcmioHandler">
+      <defaultValue>y</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
+    <!-- Deploy ACS AEM Commons. -->
+    <requiredProperty key="optionAcsCommons">
+      <defaultValue>n</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
+    
+  </requiredProperties>
+  
+  <fileSets>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>build-deploy-publish.sh</include>
+        <include>build-deploy.sh</include>
+        <include>README.md</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>.gitattributes</include>
+        <include>.gitignore</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+
+  <modules>
+    <module id="${rootArtifactId}.parent" dir="parent" name="${rootArtifactId}.parent" />
+
+    <module id="${rootArtifactId}.core" dir="bundles/core" name="${rootArtifactId}.core">
+      <fileSets>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/webapp</directory>
+          <includes>
+            <include>**/*.html</include>
+            <include>**/*.txt</include>
+            <include>**/*.json</include>
+            <include>**/*.xml</include>
+          </includes>
+          <excludes>
+            <exclude>**/README.txt</exclude>
+          </excludes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/main/webapp</directory>
+          <includes>
+            <include>**/*.png</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+          <directory>src/test/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/test/resources</directory>
+          <includes>
+            <include>**/*.json</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
+    <module id="${rootArtifactId}.clientlibs" dir="bundles/clientlibs" name="${rootArtifactId}.clientlibs">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/webapp</directory>
+          <includes>
+            <include>**/*.css</include>
+            <include>**/*.js</include>
+            <include>**/*.json</include>
+            <include>**/*.txt</include>
+          </includes>
+          <excludes>
+            <exclude>**/README.txt</exclude>
+          </excludes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/main/webapp</directory>
+          <includes>
+            <include>**/*.jpg</include>
+            <include>**/*.ico</include>
+            <include>**/*.png</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
+    <module id="${rootArtifactId}.ui.apps" dir="content-packages/ui.apps" name="${rootArtifactId}.ui.apps">
+      <fileSets>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>content-download.sh</include>
+            <include>content-upload.sh</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>jcr_root</directory>
+          <includes>
+            <include>**/*.css</include>
+            <include>**/*.html</include>
+            <include>**/*.js</include>
+            <include>**/*.json</include>
+            <include>**/*.txt</include>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>jcr_root</directory>
+          <includes>
+            <include>**/*.jpg</include>
+            <include>**/*.ico</include>
+            <include>**/*.png</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>META-INF/vault</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
+    <module id="${rootArtifactId}.complete" dir="content-packages/complete" name="${rootArtifactId}.complete"/>
+
+    <module id="${rootArtifactId}.conf-content" dir="content-packages/conf-content" name="${rootArtifactId}.conf-content">
+      <fileSets>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>content-download.sh</include>
+            <include>content-upload.sh</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>jcr_root</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>META-INF/vault</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
+    <module id="${rootArtifactId}.sample-content" dir="content-packages/sample-content" name="${rootArtifactId}.sample-content">
+      <fileSets>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>content-download.sh</include>
+            <include>content-upload.sh</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>jcr_root</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>jcr_root</directory>
+          <includes>
+            <include>**/*.</include>
+            <include>**/*.jpg/_jcr_content/renditions/original</include>
+            <include>**/*.png/_jcr_content/renditions/original</include>
+            <include>**/*.png</include>
+            <include>**/*.jpeg</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>META-INF/vault</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
+    <module id="${rootArtifactId}.config-definition" dir="config-definition" name="${rootArtifactId}.config-definition">
+      <fileSets>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>packages-upload.sh</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/roles</directory>
+          <includes>
+            <include>**/*.yaml</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/templates</directory>
+          <includes>
+            <include>**/*.hbs</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/dev-environments</directory>
+          <includes>
+            <include>**/*.yaml</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+  </modules>
+
+</archetype-descriptor>
