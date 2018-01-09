@@ -48,12 +48,14 @@ if (optionWcmioHandler == "n") {
   
   assert new File(coreBundle, "src/main/webapp/app-config").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/content/common/contentRichText").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/components/content/stage/stageheader").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root/global/include").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/global/include").deleteDir()
 
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/templates/admin/redirect").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root-aem61/templates/admin/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/admin/page/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/content/common").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/content/page/content").deleteDir()
@@ -93,6 +95,30 @@ if (optionMultiBundleLayout == "n") {
   }
 }
 
+// remove parts of sample content when caconfig is not activated
+if (optionContextAwareConfig == "n" && optionWcmioHandler == "n" ) {
+  assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/configEditor").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/configEditor.json").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/structureElement").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/structureElement.json").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/configEditor.json").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/structureElement.json").delete()
+
+  assert new File(coreBundle, "src/main/webapp/app-root-aem61/templates/admin/configEditor").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root-aem61/templates/admin/configEditor.json").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root-aem61/templates/admin/structureElement").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root-aem61/templates/admin/structureElement.json").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/admin/page/configEditor.json").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/admin/page/structureElement.json").delete()
+
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/templates/admin/configEditor").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/templates/admin/structureElement").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/admin/page/configEditor").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/admin/page/structureElement").deleteDir()
+
+  assert new File(sampleContentPackage, "jcr_root/content/${projectName}/en/tools").deleteDir()
+}
+
 // use webapp for AEM 6.3+ or AEM 6.1/2
 if (optionAemVersion == "6.1" || optionAemVersion == "6.2") {
   if (optionMultiBundleLayout == "n" && optionWcmioHandler == "y") {
@@ -103,11 +129,6 @@ if (optionAemVersion == "6.1" || optionAemVersion == "6.2") {
 }
 else {
   assert new File(coreBundle, "src/main/webapp/app-root-aem61").deleteDir()
-}
-
-// remove parts of sample content when caconfig is not activated
-if (optionContextAwareConfig == "n" && optionWcmioHandler == "n" ) {
-  assert new File(sampleContentPackage, "jcr_root/content/${projectName}/en/tools").deleteDir()
 }
 
 // remove conf-content package if not required
