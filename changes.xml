@@ -30,6 +30,9 @@
       <action type="update" dev="sseifert">
         Use oakAuthorizableUuid CONGA handlebars helper to generate authorizable UUID.
       </action>
+      <action type="fix" dev="sseifert">
+        Generate Wcmio-CAService-ContextPathRegex bundle header only for wcm.io Handler projects.
+      </action>
     </release>
 
     <release version="1.0.0" date="2017-12-20">
