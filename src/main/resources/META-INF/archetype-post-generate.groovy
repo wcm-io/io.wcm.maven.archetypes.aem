@@ -146,10 +146,7 @@ if (optionEditableTemplates == "y") {
   assert new File(coreBundle, "src/main/webapp/app-root/components/global/page/body.html").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/templates").deleteDir()
 
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/common/contentRichText/_cq_editConfig.xml").delete()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/page").deleteDir()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/stage/stageheader/_cq_editConfig.xml").delete()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/stage/stageheader/_cq_dialog").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/global/page/body.html").delete()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/templates").deleteDir()
 }
