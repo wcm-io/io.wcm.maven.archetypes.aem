@@ -70,7 +70,10 @@ if (optionWcmioHandler == "n") {
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/templates/admin/redirect").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/admin/page/redirect").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/common/contentRichText/contentRichText.html").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/common/contentRichText/_cq_editConfig.xml").delete()   
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/stage/stageheader/stageheader.html").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/stage/stageheader/_cq_editConfig.xml").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/stage/stageheader/_cq_dialog").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/global/include").deleteDir()
 
   assert new File(configDefinition, "src/main/templates/${projectName}-aem-cms/${projectName}-aem-cms-author-systemusers.json.hbs").delete()
