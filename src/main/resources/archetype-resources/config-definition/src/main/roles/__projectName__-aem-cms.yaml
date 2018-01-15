@@ -79,7 +79,7 @@ files:
       rootPath: /
       filters:
       - filter: /content/dam/rep:policy
-      - filter: /home/users/system/${projectName}/wcmioDamSystemUser
+      - filter: /home/users/system/${projectName}/${projectName}DamSystemUser
 
 #end
 # Application package

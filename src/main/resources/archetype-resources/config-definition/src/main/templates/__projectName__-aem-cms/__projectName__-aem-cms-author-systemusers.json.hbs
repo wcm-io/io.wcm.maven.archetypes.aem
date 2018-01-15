@@ -1,5 +1,5 @@
 {{!--
-  Create system user "wcmioDamSystemUser" and grant read/write/replicate access to everything below /content/dam.
+  Create system user "${projectName}DamSystemUser" and grant read/write/replicate access to everything below /content/dam.
 --}}
 {
   "jcr:primaryType": "rep:root",
@@ -12,9 +12,9 @@
 
       "rep:policy": {
         "jcr:primaryType": "rep:ACL",
-        "allow-wcmioDamSystemUser": {
+        "allow-${projectName}DamSystemUser": {
           "jcr:primaryType": "rep:GrantACE",
-          "rep:principalName": "wcmioDamSystemUser",
+          "rep:principalName": "${projectName}DamSystemUser",
           "rep:privileges": [ "rep:write", "crx:replicate" ]
         }
       }
@@ -34,14 +34,11 @@
         "${projectName}": {
           "jcr:primaryType": "rep:AuthorizableFolder",
 
-          "wcmioDamSystemUser": {
+          "${projectName}DamSystemUser": {
             "jcr:primaryType": "rep:SystemUser",
-            /* The UUID is important - create a system user with the defined path and principalName via CRX user administration, 
-               and then paste the UUID here. There seems to be some relation from UUID to principalName.
-               Otherwise import of package may fail with NPE in org.apache.jackrabbit.oak.security.user.UserImporter. */
-            "jcr:uuid": "04fdc272-3f39-3999-9e06-ea9e1a5f4f04",
-            "rep:authorizableId": "wcmioDamSystemUser",
-            "rep:principalName": "wcmioDamSystemUser"
+            "jcr:uuid": "{{oakAuthorizableUuid "${projectName}DamSystemUser"}}",
+            "rep:authorizableId": "${projectName}DamSystemUser",
+            "rep:principalName": "${projectName}DamSystemUser"
           }
 
         }

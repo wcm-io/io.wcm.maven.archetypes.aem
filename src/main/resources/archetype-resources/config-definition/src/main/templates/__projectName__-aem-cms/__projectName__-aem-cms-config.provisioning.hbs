@@ -56,7 +56,7 @@
 #if ( $optionWcmioHandler == "y" )
   # Define service user for wcm.io Media Handler
   org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}
-    user.mapping=["io.wcm.handler.media\=wcmioDamSystemUser"]
+    user.mapping=["io.wcm.handler.media\=${projectName}DamSystemUser"]
 
 #if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" )
   # Configure Responsive Preview Mode
