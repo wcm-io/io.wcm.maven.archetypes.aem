@@ -24,6 +24,12 @@
   <body>
 
     <release version="1.0.4" date="not released">
+      <action type="update" dev="sseifert">
+        Update to aem-global-parent 1.2.16.
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
       <action type="fix" dev="sseifert">
         Disable Configuration Editor on publish.
       </action>

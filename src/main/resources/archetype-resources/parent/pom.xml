@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.2.14</version>
+    <version>1.2.15-SNAPSHOT</version>
     <relativePath/>
   </parent>
 
@@ -78,7 +78,7 @@
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.caconfig.impl</artifactId>
-        <version>1.4.8</version>
+        <version>1.4.10</version>
       </dependency>
 #end
 #if ( $optionSlingInitialContentBundle == "y" || $optionContextAwareConfig == "y" )
@@ -263,7 +263,7 @@
 #if ( $optionAemVersion=='6.1' )
   #set( $acsCommonsVersion = "2.14.0" )
 #else
-  #set( $acsCommonsVersion = "3.13.0" )
+  #set( $acsCommonsVersion = "3.14.0" )
 #end
       <!-- ACS AEM Commons -->
       <dependency>
