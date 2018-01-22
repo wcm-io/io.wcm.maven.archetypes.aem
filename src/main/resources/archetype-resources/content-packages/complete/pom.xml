@@ -140,9 +140,7 @@
                 io.wcm,
                 ${groupId}
               </groupId>
-#if ( $optionSlingInitialContentBundle == "n" )
               <type>jar</type>
-#end
             </embedded>
 #if( $optionSlingModelsLatest == "y" || $optionContextAwareConfig == "y" || $optionSlingInitialContentBundle == "y" || $optionContextAwareConfig == "y" )
             <!-- Include some Apache Sling bundles newer than those shipped with AEM -->
@@ -170,9 +168,7 @@
                 org.apache.sling.jcr.contentloader,
 #end
               </artifactId>
-#if ( $optionSlingInitialContentBundle == "n" )
               <type>jar</type>
-#end
             </embedded>
 #end
 #if( $optionAemVersion == "6.1" )
@@ -183,9 +179,7 @@
               <artifactId>
                 commons-lang3
               </artifactId>
-#if ( $optionSlingInitialContentBundle == "n" )
               <type>jar</type>
-#end
             </embedded>
 #end
           </embeddeds>
