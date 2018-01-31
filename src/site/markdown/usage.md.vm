@@ -46,6 +46,7 @@ As minimal input parameters you have to enter a value for `groupId` and `project
 mvn archetype:generate -DinteractiveMode=false \
   -DarchetypeGroupId=io.wcm.maven.archetypes \
   -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
+  -DarchetypeVersion=${project.version} \
   -DprojectName=myproject1 \
   -DgroupId=mycompany.myprojectgroup \
   -DartifactId=mycompany.myprojectgroup.myproject1 \
@@ -71,6 +72,7 @@ mvn archetype:generate -DinteractiveMode=false \
 mvn archetype:generate -DinteractiveMode=false \
   -DarchetypeGroupId=io.wcm.maven.archetypes \
   -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
+  -DarchetypeVersion=${project.version} \
   -DprojectName=myproject2 \
   -DgroupId=mycompany.myprojectgroup \
   -DartifactId=mycompany.myprojectgroup.myproject2 \
