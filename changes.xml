@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Update to aem-global-parent 1.2.16.
       </action>
+      <action type="update" dev="sseifert" issue="WTOOL-44">
+        Add extra validation to make sure java package name is valid.
+      </action>
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>

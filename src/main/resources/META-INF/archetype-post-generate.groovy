@@ -31,6 +31,9 @@ if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
 if (optionWcmioHandler == "y" && optionContextAwareConfig == "n") {
   throw new RuntimeException("Parameter optionWcmioHandler='y' is only supported with optionContextAwareConfig='y'.")
 }
+if (!(javaPackage ==~ /^[a-z0-9\.]+$/)) {
+  throw new RuntimeException("Java package name is invalid: " + javaPackage)
+}
 
 // helper methods
 def removeModule(pomFile, module) {
