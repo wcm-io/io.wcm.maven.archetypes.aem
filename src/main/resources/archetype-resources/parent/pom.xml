@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.2.14</version>
+    <version>1.2.16</version>
     <relativePath/>
   </parent>
 
@@ -78,7 +78,7 @@
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.caconfig.impl</artifactId>
-        <version>1.4.8</version>
+        <version>1.4.10</version>
       </dependency>
 #end
 #if ( $optionSlingInitialContentBundle == "y" || $optionContextAwareConfig == "y" )
@@ -106,7 +106,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.2.10</version>
+        <version>1.2.12</version>
       </dependency>
 #end
 #if ( $optionWcmioHandler == "y" )
@@ -128,12 +128,12 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.url</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.6</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -164,7 +164,7 @@
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
         <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
-        <version>1.1.0</version>
+        <version>1.2.0</version>
       </dependency>
       
       <!-- wcm.io Testing -->
@@ -183,7 +183,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock</artifactId>
-        <version>2.2.10</version>
+        <version>2.2.12</version>
       </dependency>
 #end
       <dependency>
@@ -263,7 +263,7 @@
 #if ( $optionAemVersion=='6.1' )
   #set( $acsCommonsVersion = "2.14.0" )
 #else
-  #set( $acsCommonsVersion = "3.13.0" )
+  #set( $acsCommonsVersion = "3.14.6" )
 #end
       <!-- ACS AEM Commons -->
       <dependency>

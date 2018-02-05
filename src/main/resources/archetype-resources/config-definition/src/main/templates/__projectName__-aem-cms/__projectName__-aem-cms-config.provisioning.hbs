@@ -67,8 +67,14 @@
 #end
 
 [configurations runModes=publish]
-  
-  # Disable built-in JSON and XML access features for resources
+
+#if ( $optionContextAwareConfig == "y" )
+  # Disable Configuration Editor on publish
+  io.wcm.caconfig.editor.impl.EditorConfig
+    enabled=B"false"
+
+#end
+  # Disable default renderings for Sling GET servlet on publish
   org.apache.sling.servlets.get.DefaultGetServlet
     enable.html=B"false"
     enable.json=B"false"
@@ -77,4 +83,4 @@
     index=B"false"
     index.files="[index,index.html]"
     aliases="xml:pdf"
-    json.maximumresults=I"1000"
+    json.maximumresults=I"100"

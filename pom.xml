@@ -31,7 +31,7 @@
 
   <groupId>io.wcm.maven.archetypes</groupId>
   <artifactId>io.wcm.maven.archetypes.aem</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.4</version>
   <packaging>maven-archetype</packaging>
   
   <name>wcm.io Maven Archetype for AEM</name>
@@ -41,6 +41,8 @@
   <properties>
     <site.url.module.prefix>tooling/maven/archetypes/aem</site.url.module.prefix>
     <maven.archetype.version>3.0.1</maven.archetype.version>
+    <!-- Control execution of archetype integration tests via -Pfast or -Dmaven.test.skip -->
+    <archetype.test.skip>${integrationtests.skip}</archetype.test.skip>
   </properties>
 
   <scm>
