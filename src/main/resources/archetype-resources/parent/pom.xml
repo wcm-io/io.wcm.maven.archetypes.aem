@@ -54,7 +54,7 @@
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.models.impl</artifactId>
-        <version>1.4.6</version>
+        <version>1.4.8</version>
       </dependency>
 #if ( $optionAemVersion == "6.1" )
       <dependency>
