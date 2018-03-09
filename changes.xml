@@ -30,6 +30,9 @@
       <action type="update" dev="sseifert">
         Update link rewriter config.
       </action>
+      <action type="update" dev="sseifert">
+        Declare OSGi and AEM dependencies provided - so each project has full control about their positions.
+      </action>
     </release>
 
     <release version="1.0.4" date="2018-02-05">
