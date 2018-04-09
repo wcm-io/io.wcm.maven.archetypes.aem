@@ -31,7 +31,7 @@ files:
     delayAfterInstallSec: 60
 #elseif ( $optionAemVersion == '6.3' )
 # AEM Service Pack
-- url: mvn:adobe.binary.aem.63.servicepack/AEM-6.3-Service-Pack-1/6.3.1/zip
+- url: mvn:adobe.binary.aem.63.servicepack/AEM-6.3-Service-Pack-2/6.3.2/zip
   dir: packages
   modelOptions:
     delayAfterInstallSec: 30
