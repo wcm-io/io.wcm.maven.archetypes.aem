@@ -24,14 +24,17 @@
   <body>
 
     <release version="1.0.6" date="not released">
+      <action type="fix" dev="sseifert">
+        Enable JSON for Sling Default Get Servlet on publish - required for some OOTB administrative features.
+      </action>
       <action type="update" dev="sseifert">
-        Update dependencies.
+        Declare OSGi and AEM dependencies provided - each project should have full control about the dependency order of them.
       </action>
       <action type="update" dev="sseifert">
         Update link rewriter config.
       </action>
       <action type="update" dev="sseifert">
-        Declare OSGi and AEM dependencies provided - so each project has full control about their positions.
+        Update dependencies.
       </action>
     </release>
 
