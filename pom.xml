@@ -33,7 +33,7 @@
   <artifactId>io.wcm.maven.archetypes.aem</artifactId>
   <version>1.0.5-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
-  
+
   <name>wcm.io Maven Archetype for AEM</name>
   <description>Maven Archetype for creating new AEM projects.</description>
   <url>${site.url}/${site.url.module.prefix}/</url>
@@ -62,7 +62,7 @@
     </extensions>
 
     <plugins>
-    
+
       <!-- Skip JSON validation -->
       <plugin>
         <groupId>org.apache.sling</groupId>

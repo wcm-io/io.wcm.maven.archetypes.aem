@@ -22,7 +22,7 @@
 
     <!-- Sling instance parameters -->
     <sling.url>http://localhost:${aemAuthorPort}</sling.url>
-    
+
   </properties>
 
   <dependencies>
@@ -40,7 +40,7 @@
     </dependency>
 
   </dependencies>
-  
+
   <dependencyManagement>
     <dependencies>
 
@@ -166,7 +166,7 @@
         <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
         <version>1.2.0</version>
       </dependency>
-      
+
       <!-- wcm.io Testing -->
 #if( $optionAemVersion == "6.1" )
       <dependency>
@@ -294,11 +294,11 @@
 
     </dependencies>
   </dependencyManagement>
-  
+
   <build>
     <pluginManagement>
       <plugins>
-  
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
@@ -306,7 +306,7 @@
             <autoVersionSubmodules>true</autoVersionSubmodules>
           </configuration>
         </plugin>
-  
+
       </plugins>
     </pluginManagement>
   </build>

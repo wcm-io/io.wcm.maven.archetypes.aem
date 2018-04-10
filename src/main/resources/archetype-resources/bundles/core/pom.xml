@@ -17,7 +17,7 @@
   <name>${projectName} Core</name>
 
   <dependencies>
-  
+
 #if ( $optionSlingModelsLatest == "y" )
     <dependency>
       <groupId>org.apache.sling</groupId>
