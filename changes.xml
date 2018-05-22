@@ -24,6 +24,9 @@
   <body>
 
     <release version="1.0.6" date="not released">
+      <action type="update" dev="sseifert">
+        Update to Core WCM Components 2.0.0 (for AEM 6.3 incl. SP).
+      </action>
       <action type="fix" dev="sseifert">
         Enable JSON for Sling Default Get Servlet on publish - required for some OOTB administrative features.
       </action>

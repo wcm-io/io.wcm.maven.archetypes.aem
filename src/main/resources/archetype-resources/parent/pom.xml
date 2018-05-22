@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.2.18</version>
+    <version>1.2.19-SNAPSHOT</version>
     <relativePath/>
   </parent>
 
@@ -249,12 +249,12 @@
         <groupId>com.adobe.cq</groupId>
         <artifactId>core.wcm.components.core</artifactId>
 ## stick with old core componetns version for AEM without service pack
-        <version>#if($optionAemServicePack=='y')1.1.0#{else}1.0.6#end</version>
+        <version>#if($optionAemServicePack=='y')2.0.0#{else}1.0.6#end</version>
       </dependency>
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>core.wcm.components.all</artifactId>
-        <version>#if($optionAemServicePack=='y')1.1.0#{else}1.0.6#end</version>
+        <version>#if($optionAemServicePack=='y')2.0.0#{else}1.0.6#end</version>
         <type>zip</type>
       </dependency>
 
