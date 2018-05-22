@@ -171,6 +171,19 @@
       <classifier>apis</classifier>
       <scope>provided</scope>
     </dependency>
+#if( $optionAemVersion == "6.1" )
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <scope>provided</scope>
+    </dependency>
+#else
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-atinject_1.0_spec</artifactId>
+      <scope>provided</scope>
+    </dependency>
+#end
 
   </dependencies>
 
