@@ -8,7 +8,7 @@ Generate a new AEM project using interactive mode by executing:
 mvn archetype:generate \
   -DarchetypeGroupId=io.wcm.maven.archetypes \
   -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
-  -DarchetypeVersion=${project.version}
+  -DarchetypeVersion=${project.properties['releasedVersion.version']}
 ```
 
 As minimal input parameters you have to enter a value for `groupId` and `projectName` - all other parameters can be derived from these or have sensible default parameters. But in most cases you want to specify more parameters, see next chapters for all available parameters and some examples.
@@ -47,7 +47,7 @@ As minimal input parameters you have to enter a value for `groupId` and `project
 mvn archetype:generate -DinteractiveMode=false \
   -DarchetypeGroupId=io.wcm.maven.archetypes \
   -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
-  -DarchetypeVersion=${project.version} \
+  -DarchetypeVersion=${project.properties['releasedVersion.version']} \
   -DprojectName=myproject1 \
   -DgroupId=mycompany.myprojectgroup \
   -DartifactId=mycompany.myprojectgroup.myproject1 \
@@ -73,7 +73,7 @@ mvn archetype:generate -DinteractiveMode=false \
 mvn archetype:generate -DinteractiveMode=false \
   -DarchetypeGroupId=io.wcm.maven.archetypes \
   -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
-  -DarchetypeVersion=${project.version} \
+  -DarchetypeVersion=${project.properties['releasedVersion.version']} \
   -DprojectName=myproject2 \
   -DgroupId=mycompany.myprojectgroup \
   -DartifactId=mycompany.myprojectgroup.myproject2 \
