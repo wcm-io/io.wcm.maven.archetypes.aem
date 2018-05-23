@@ -263,7 +263,7 @@
 #if ( $optionAemVersion=='6.1' )
   #set( $acsCommonsVersion = "2.14.0" )
 #else
-  #set( $acsCommonsVersion = "3.16.0" )
+  #set( $acsCommonsVersion = "3.17.0" )
 #end
       <!-- ACS AEM Commons -->
       <dependency>
