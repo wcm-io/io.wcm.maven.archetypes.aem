@@ -18,10 +18,10 @@ The wcm.io Maven Archetype for AEM allows you to set up new Maven projects for d
 
 Features:
 
-* Supports AEM 6.1, AEM 6.2 and AEM 6.3
+* Supports AEM 6.1, AEM 6.2, AEM 6.3 and AEM 6.4
 * Supports both Sling-Initial-Content JSON-style project layout and FileVault package layout
 * Based on [CONGA][conga] to manage AEM configuration and package deployment
-* AEM 6.3 projects based on [AEM Core WCM Components][aem-core-wcm-components], using Editable Templates is optional
+* AEM 6.3 and 6.4 projects based on [AEM Core WCM Components][aem-core-wcm-components], using Editable Templates is optional
 * Optional inclusion of latest service packs
 * Optional support for [Sling Context-Aware Configuration][sling-caconfig] and [wcm.io Context-Aware Configuration Extensions][wcmio-caconfig]
 * Optional support for [wcm.io Handler][wcmio-handler] Infrastructure
