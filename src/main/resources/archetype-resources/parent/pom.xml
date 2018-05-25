@@ -262,7 +262,7 @@
   ## stick with old core components version for AEM without service pack
   #set( $coreComponentsVersion = "1.0.6" )
 #else
-  #set( $coreComponentsVersion = "2.0.0" )
+  #set( $coreComponentsVersion = "2.0.6" )
 #end
       <!-- AEM Core WCM Components -->
       <dependency>
