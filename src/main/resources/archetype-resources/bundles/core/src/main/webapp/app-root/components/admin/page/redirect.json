@@ -1,7 +1,7 @@
 {
   "jcr:primaryType": "cq:Component",
   "sling:resourceSuperType": "wcm-io/handler/link/components/page/redirect",
-  
+
   "cq:dialog": {
     "jcr:primaryType": "nt:unstructured",
     "content": {

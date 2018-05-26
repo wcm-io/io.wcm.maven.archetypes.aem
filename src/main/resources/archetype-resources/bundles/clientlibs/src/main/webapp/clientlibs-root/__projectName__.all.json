@@ -7,7 +7,7 @@
 #if( $optionAemVersion != "6.1" && $optionAemVersion != "6.2" )
     "core.wcm.components.image.v1",
 #end
-    "${projectName}.app"    
+    "${projectName}.app"
   ],
   "jsProcessor": [
     "default:none",

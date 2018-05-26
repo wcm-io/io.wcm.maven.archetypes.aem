@@ -30,7 +30,7 @@
             }
           }
         },
-        
+
         "internalWell": {
           "sling:resourceType": "granite/ui/components/coral/foundation/well",
           "granite:class": "hide option-linktype-showhide-target foundation-layout-util-vmargin",
@@ -46,7 +46,7 @@
             }
           }
         },
-        
+
         "externalWell": {
           "sling:resourceType": "granite/ui/components/coral/foundation/well",
           "granite:class": "hide option-linktype-showhide-target foundation-layout-util-vmargin",
@@ -62,7 +62,7 @@
             }
           }
         },
-        
+
         "mediaWell": {
           "sling:resourceType": "granite/ui/components/coral/foundation/well",
           "granite:class": "hide option-linktype-showhide-target foundation-layout-util-vmargin",
@@ -85,7 +85,7 @@
             }
           }
         },
-        
+
         "linkWindowTarget": {
           "sling:resourceType": "granite/ui/components/foundation/form/select",
           "name": "./linkWindowTarget",

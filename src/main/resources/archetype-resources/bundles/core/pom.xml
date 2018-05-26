@@ -17,13 +17,15 @@
   <name>${projectName} Core</name>
 
   <dependencies>
-  
+
 #if ( $optionSlingModelsLatest == "y" )
+#if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.models.api</artifactId>
       <scope>compile</scope>
     </dependency>
+#end
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.models.impl</artifactId>
@@ -32,11 +34,13 @@
 
 #end
 #if ( $optionContextAwareConfig == "y" )
+#if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.caconfig.api</artifactId>
       <scope>compile</scope>
     </dependency>
+#end
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.caconfig.impl</artifactId>
@@ -153,22 +157,37 @@
       <scope>compile</scope>
     </dependency>
 #end
+
+    <!-- OSGi and AEM dependencies provided - so each project has full control about their positions (should always be last in the list). -->
     <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>osgi.core</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>osgi.cmpn</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.adobe.aem</groupId>
       <artifactId>uber-jar</artifactId>
       <classifier>apis</classifier>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
+#if( $optionAemVersion == "6.1" )
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <scope>provided</scope>
+    </dependency>
+#else
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-atinject_1.0_spec</artifactId>
+      <scope>provided</scope>
+    </dependency>
+#end
 
   </dependencies>
 

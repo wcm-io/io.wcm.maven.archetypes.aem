@@ -8,8 +8,6 @@
 
       "content": {
         "allowedChildren": [
-          "core/wcm/components/title/v1/title",
-          "core/wcm/components/image/v1/image",
           "${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/common/contentRichText"
         ]
       }

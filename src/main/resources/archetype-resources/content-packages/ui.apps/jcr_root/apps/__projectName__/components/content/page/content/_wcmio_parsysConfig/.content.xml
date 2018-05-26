@@ -4,6 +4,6 @@
     <paths jcr:primaryType="nt:unstructured">
         <content
             jcr:primaryType="nt:unstructured"
-            allowedChildren="[core/wcm/components/title/v1/title,core/wcm/components/image/v1/image,${projectName}/components/content/common/contentRichText]"/>
+            allowedChildren="[${projectName}/components/content/common/contentRichText]"/>
     </paths>
 </jcr:root>

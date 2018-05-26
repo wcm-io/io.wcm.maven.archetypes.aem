@@ -22,7 +22,7 @@ To build and deploy the application to your local AEM instance use these scripts
 
 The first deployment may take a while until all updated OSGi bundles are installed.
 
-After deployment you can open the sample content page in your browser: 
+After deployment you can open the sample content page in your browser:
 
 * Author: http://localhost:${aemAuthorPort}/editor.html/content/${projectName}/en.html
 * Publish: http://localhost:${aemPublishPort}/content/${projectName}/en.html

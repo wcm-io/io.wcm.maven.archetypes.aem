@@ -25,7 +25,7 @@
     name="io.wcm.samples">
 
   <requiredProperties>
-  
+
     <!-- *** basic properties *** -->
     <!-- Project name is used for building AEM apps path, content path, CONGA role names etc. -->
     <requiredProperty key="projectName">
@@ -65,12 +65,12 @@
       <defaultValue>4503</defaultValue>
       <validationRegex>^\d{1,5}$</validationRegex>
     </requiredProperty>
-    
+
     <!-- *** feature flags *** -->
-    <!-- AEM major version (6.1, 6.2 or 6.3) -->
+    <!-- AEM major version (6.1, 6.2, 6.3 or 6.4) -->
     <requiredProperty key="optionAemVersion">
-      <defaultValue>6.3</defaultValue>
-      <validationRegex>^(6\.1|6\.2|6\.3)$</validationRegex>
+      <defaultValue>6.4</defaultValue>
+      <validationRegex>^(6\.1|6\.2|6\.3|6\.4)$</validationRegex>
     </requiredProperty>
     <!-- Use latest service pack for AEM version - you need to deploy artifacts following these conventions https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
     <requiredProperty key="optionAemServicePack">
@@ -113,9 +113,9 @@
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    
+
   </requiredProperties>
-  
+
   <fileSets>
     <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
