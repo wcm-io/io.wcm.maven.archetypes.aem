@@ -1,6 +1,9 @@
-## Maven Archetype for AEM usage
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+$symbol_pound$symbol_pound Maven Archetype for AEM usage
 
-### Basic usage
+$symbol_pound$symbol_pound$symbol_pound Basic usage
 
 Generate a new AEM project using interactive mode by executing:
 
@@ -14,7 +17,7 @@ mvn archetype:generate \
 As minimal input parameters you have to enter a value for `groupId` and `projectName` - all other parameters can be derived from these or have sensible default parameters. But in most cases you want to specify more parameters, see next chapters for all available parameters and some examples.
 
 
-### Archetype parameters
+$symbol_pound$symbol_pound$symbol_pound Archetype parameters
 
 | Parameter                           | Default | Description
 |-------------------------------------|---------|-------------
@@ -39,9 +42,9 @@ As minimal input parameters you have to enter a value for `groupId` and `project
 \*) Sensible default
 
 
-### Usage examples
+$symbol_pound$symbol_pound$symbol_pound Usage examples
 
-##### AEM project with wcm.io and Sling-Initial-Content project layout
+$symbol_pound$symbol_pound$symbol_pound$symbol_pound$symbol_pound AEM project with wcm.io and Sling-Initial-Content project layout
 
 ```
 mvn archetype:generate -DinteractiveMode=false \
@@ -67,7 +70,7 @@ mvn archetype:generate -DinteractiveMode=false \
   -DoptionAcsCommons=n
 ```
 
-##### Minimal AEM project with FileVault package layout
+$symbol_pound$symbol_pound$symbol_pound$symbol_pound$symbol_pound Minimal AEM project with FileVault package layout
 
 ```
 mvn archetype:generate -DinteractiveMode=false \
@@ -94,7 +97,7 @@ mvn archetype:generate -DinteractiveMode=false \
 ```
 
 
-### Requirements
+$symbol_pound$symbol_pound$symbol_pound Requirements
 
 * JDK 1.8
 * Apache Maven 3.3.9 or higher
