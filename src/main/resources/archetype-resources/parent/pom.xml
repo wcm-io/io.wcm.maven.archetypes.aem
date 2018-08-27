@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.2.25-SNAPSHOT</version>
+    <version>1.2.26</version>
     <relativePath/>
   </parent>
 
@@ -191,18 +191,23 @@
         <artifactId>org.apache.sling.testing.osgi-mock.junit4</artifactId>
         <version>2.4.0</version>
       </dependency>
-#else
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.testing.aem-mock</artifactId>
-        <version>2.2.16</version>
-      </dependency>
-#end
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.testing.logging-mock</artifactId>
         <version>1.0.0</version>
       </dependency>
+#else
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.aem-mock.junit4</artifactId>
+        <version>2.3.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.sling</groupId>
+        <artifactId>org.apache.sling.testing.logging-mock</artifactId>
+        <version>2.0.0</version>
+      </dependency>
+#end
 #if ( $optionContextAwareConfig == "y" )
       <dependency>
         <groupId>org.apache.sling</groupId>
@@ -212,19 +217,19 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.caconfig</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.2</version>
       </dependency>
 #end
 #if ( $optionWcmioHandler == "y" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.sling</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.handler</artifactId>
-        <version>1.0.2</version>
+        <version>1.0.4</version>
       </dependency>
 #end
 
