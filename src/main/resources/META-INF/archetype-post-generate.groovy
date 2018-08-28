@@ -175,3 +175,18 @@ rootDir.eachFileRecurse(FileType.FILES) { file ->
     }
   }
 }
+
+// remove all empty folders
+Closure<Boolean> removeEmptyFolders = {
+  def emptyFolders = []
+  rootDir.eachFileRecurse(FileType.DIRECTORIES) { file ->
+    if (file.isDirectory() && file.list().length == 0) {
+      emptyFolders.add(file)
+    }
+  }
+  emptyFolders.each { file ->
+    assert file.deleteDir()
+  }
+  return !emptyFolders.empty
+}
+while (removeEmptyFolders()) continue
