@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-<p data-sly-use.currentDate="${package}.models.CurrentDate">
+<p data-sly-use.currentDate="${package}.components.CurrentDate">
 
   ${symbol_dollar}{'Credits: ©{0} My Company' @ i18n, hint='${projectName}', format=[currentDate.year]}
 
