@@ -17,13 +17,14 @@ import static org.apache.sling.testing.mock.caconfig.ContextPlugins.CACONFIG;
 import java.io.IOException;
 
 import org.apache.sling.api.resource.PersistenceException;
+import org.jetbrains.annotations.NotNull;
 
 #if ( $optionWcmioHandler == "y" )
 import io.wcm.handler.media.spi.MediaFormatProvider;
 #end
-import io.wcm.testing.mock.aem.junit.AemContext;
-import io.wcm.testing.mock.aem.junit.AemContextBuilder;
-import io.wcm.testing.mock.aem.junit.AemContextCallback;
+import io.wcm.testing.mock.aem.junit5.AemContext;
+import io.wcm.testing.mock.aem.junit5.AemContextBuilder;
+import io.wcm.testing.mock.aem.junit5.AemContextCallback;
 #if ( $optionContextAwareConfig == "y" )
 import io.wcm.testing.mock.wcmio.caconfig.MockCAConfig;
 #end
@@ -62,7 +63,7 @@ public final class AppAemContext {
    */
   private static final AemContextCallback SETUP_CALLBACK = new AemContextCallback() {
     @Override
-    public void execute(AemContext context) throws PersistenceException, IOException {
+    public void execute(@NotNull AemContext context) throws PersistenceException, IOException {
 
 #if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
       // context path strategy

@@ -133,7 +133,7 @@
 
           <embeddedTarget>/apps/${contentPackage.name}/install</embeddedTarget>
           <embeddeds>
-            <!-- Include application bundles and their dependencies from io.wcm -->
+            <!-- Include application bundles and their dependencies -->
             <embedded>
               <groupId>
 #if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )

@@ -103,7 +103,7 @@
 #end
     <dependency>
       <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.testing.aem-mock.junit4</artifactId>
+      <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -164,6 +164,11 @@
       <groupId>com.adobe.aem</groupId>
       <artifactId>uber-jar</artifactId>
       <classifier>apis</classifier>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>

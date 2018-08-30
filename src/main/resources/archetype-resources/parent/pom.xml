@@ -23,19 +23,44 @@
     <!-- Sling instance parameters -->
     <sling.url>http://localhost:${aemAuthorPort}</sling.url>
 
+    <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
+    <eclipse.settings.nullanalysis>enabled</eclipse.settings.nullanalysis>
+
   </properties>
 
   <dependencies>
 
+    <!-- Global dependency for nullability annotations -->
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
     <!-- Testing -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
       <scope>test</scope>
     </dependency>
 
@@ -169,8 +194,8 @@
       <!-- wcm.io Testing -->
       <dependency>
         <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.testing.aem-mock.junit4</artifactId>
-        <version>2.3.0</version>
+        <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
+        <version>2.3.1-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.apache.sling</groupId>
@@ -221,7 +246,7 @@
       </dependency>
 #end
 
-  #set( $coreComponentsVersion = "2.0.8" )
+#set( $coreComponentsVersion = "2.0.8" )
       <!-- AEM Core WCM Components -->
       <dependency>
         <groupId>com.adobe.cq</groupId>
@@ -236,7 +261,7 @@
       </dependency>
 
 #if( $optionAcsCommons == "y" )
-  #set( $acsCommonsVersion = "3.17.4" )
+#set( $acsCommonsVersion = "3.17.4" )
       <!-- ACS AEM Commons -->
       <dependency>
         <groupId>com.adobe.acs</groupId>
@@ -254,14 +279,22 @@
 #end
       <!-- Testing -->
       <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.12</version>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.2.0</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
+#set( $mockitoVersion = "2.21.0" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
-        <version>2.21.0</version>
+        <version>${mockitoVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-junit-jupiter</artifactId>
+        <version>${mockitoVersion}</version>
       </dependency>
 
     </dependencies>
