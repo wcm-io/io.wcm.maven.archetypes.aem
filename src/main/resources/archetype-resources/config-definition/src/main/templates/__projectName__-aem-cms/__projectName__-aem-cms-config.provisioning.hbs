@@ -26,12 +26,14 @@
     configRefPropertyNames=["cq:conf"]
 
 #end
+#if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
   org.apache.sling.caconfig.resource.impl.def.DefaultConfigurationResourceResolvingStrategy
     fallbackPaths=["/conf/global","/apps","/libs"]
-    configCollectionInheritancePropertyNames=["jcr:content/sling:configCollectionInherit", "jcr:content/mergeList","mergeList"]
+    configCollectionInheritancePropertyNames=["jcr:content/sling:configCollectionInherit","jcr:content/mergeList","mergeList"]
 
+#end
   org.apache.sling.caconfig.management.impl.ConfigurationManagementSettingsImpl
-    ignorePropertyNameRegex=["^(jcr|cq):.+$"]
+    ignorePropertyNameRegex=["^(jcr|cq):.+$","^sling:resourceType$"]
     configCollectionPropertiesResourceNames=["jcr:content","."]
   
   # Context path strategy
