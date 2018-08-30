@@ -143,7 +143,9 @@
             <!-- Include application bundles and their dependencies from io.wcm -->
             <embedded>
               <groupId>
+#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
                 io.wcm,
+#end
                 ${groupId}
               </groupId>
               <type>jar</type>
