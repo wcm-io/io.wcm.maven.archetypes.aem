@@ -5,6 +5,8 @@ package ${package}.components;
 
 import java.util.Calendar;
 
+import javax.annotation.PostConstruct;
+
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Model;
 
@@ -16,10 +18,8 @@ public class CurrentDate {
 
   private int year;
 
-  /**
-   * Constructor
-   */
-  public CurrentDate() {
+  @PostConstruct
+  private void activate() {
     year = Calendar.getInstance().get(Calendar.YEAR);
   }
 

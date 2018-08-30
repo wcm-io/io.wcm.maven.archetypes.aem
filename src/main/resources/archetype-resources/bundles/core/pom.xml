@@ -148,6 +148,13 @@
       <scope>compile</scope>
     </dependency>
 #end
+#if ( $optionAemVersion == "6.3" )
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <scope>compile</scope>
+    </dependency>
+#end
 
     <!-- OSGi and AEM dependencies provided - so each project has full control about their positions (should always be last in the list). -->
     <dependency>
