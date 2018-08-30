@@ -49,7 +49,7 @@
 #end
 
 #if ( $optionSlingModelsLatest == "y" )
-#if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
+#if ( $optionAemVersion == "6.3" )
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.models.api</artifactId>
@@ -61,16 +61,9 @@
       <artifactId>org.apache.sling.models.impl</artifactId>
       <scope>compile</scope>
     </dependency>
-#if( $optionAemVersion == "6.1" )
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <scope>compile</scope>
-    </dependency>
-#end
 #end
 #if ( $optionContextAwareConfig == "y" )
-#if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
+#if ( $optionAemVersion == "6.3" )
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.caconfig.api</artifactId>
@@ -88,7 +81,7 @@
       <scope>compile</scope>
     </dependency>
 #end
-#if ($optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3")
+#if ( $optionAemVersion == "6.3" )
 #if ( $optionSlingInitialContentBundle == "y" || $optionContextAwareConfig == "y" )
     <dependency>
       <groupId>org.apache.sling</groupId>
@@ -157,20 +150,20 @@
               <artifactId>
 #if ( $optionSlingModelsLatest == "y" )
                 <!-- Latest Sling Models -->
-#if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
+#if ( $optionAemVersion == "6.3" )
                 org.apache.sling.models.api,
 #end
                 org.apache.sling.models.impl,
 #end
 #if ( $optionContextAwareConfig == "y" )
                 <!-- Latest Sling Context-Aware Configuration -->
-#if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
+#if ( $optionAemVersion == "6.3" )
                 org.apache.sling.caconfig.api,
                 org.apache.sling.caconfig.spi,
 #end
                 org.apache.sling.caconfig.impl,
 #end
-#if ($optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3")
+#if ( $optionAemVersion == "6.3" )
 #if ( $optionSlingInitialContentBundle == "y" || $optionContextAwareConfig == "y" )
                 org.apache.sling.commons.johnzon,
 #end
@@ -179,17 +172,6 @@
                 org.apache.sling.jcr.contentloader,
 #end
 #end
-              </artifactId>
-              <type>jar</type>
-            </embedded>
-#end
-#if( $optionAemVersion == "6.1" )
-            <embedded>
-              <groupId>
-                org.apache.commons
-              </groupId>
-              <artifactId>
-                commons-lang3
               </artifactId>
               <type>jar</type>
             </embedded>

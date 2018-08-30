@@ -15,7 +15,7 @@
     }
   }
 #else
-  "sling:resourceSuperType": "#if($optionAemServicePack=='y')core/wcm/components/text/v2/text#{else}core/wcm/components/text/v1/text#end"
+  "sling:resourceSuperType": "core/wcm/components/text/v2/text"
 #end
 
 }

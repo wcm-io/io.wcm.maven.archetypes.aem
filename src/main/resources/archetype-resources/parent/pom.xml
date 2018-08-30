@@ -46,7 +46,7 @@
 
 #if ( $optionSlingModelsLatest == "y" )
       <!-- Sling -->
-#if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
+#if ( $optionAemVersion == "6.3" )
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.models.api</artifactId>
@@ -58,16 +58,9 @@
         <artifactId>org.apache.sling.models.impl</artifactId>
         <version>1.4.8</version>
       </dependency>
-#if ( $optionAemVersion == "6.1" )
-      <dependency>
-        <groupId>org.apache.commons</groupId>
-        <artifactId>commons-lang3</artifactId>
-        <version>3.4</version>
-      </dependency>
-#end
 #end
 #if ( $optionContextAwareConfig == "y" )
-#if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
+#if ( $optionAemVersion == "6.3" )
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.caconfig.api</artifactId>
@@ -85,7 +78,7 @@
         <version>1.4.12</version>
       </dependency>
 #end
-#if ($optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3")
+#if ( $optionAemVersion == "6.3" )
 #if ( $optionSlingInitialContentBundle == "y" || $optionContextAwareConfig == "y" )
       <dependency>
         <groupId>org.apache.sling</groupId>
@@ -174,29 +167,6 @@
       </dependency>
 
       <!-- wcm.io Testing -->
-#if( $optionAemVersion == "6.1" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.testing.aem-mock</artifactId>
-        <version>1.9.8</version>
-        <exclusions>
-          <exclusion>
-            <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.testing.osgi-mock</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.sling</groupId>
-        <artifactId>org.apache.sling.testing.osgi-mock.junit4</artifactId>
-        <version>2.4.0</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.sling</groupId>
-        <artifactId>org.apache.sling.testing.logging-mock</artifactId>
-        <version>1.0.0</version>
-      </dependency>
-#else
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit4</artifactId>
@@ -207,7 +177,6 @@
         <artifactId>org.apache.sling.testing.logging-mock</artifactId>
         <version>2.0.0</version>
       </dependency>
-#end
 #if ( $optionContextAwareConfig == "y" )
       <dependency>
         <groupId>org.apache.sling</groupId>
@@ -234,23 +203,7 @@
 #end
 
       <!-- AEM dependencies -->
-#if( $optionAemVersion == "6.1" )
-      <dependency>
-        <groupId>io.wcm.maven</groupId>
-        <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>6.1.0.0001</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-#elseif( $optionAemVersion == "6.2" )
-      <dependency>
-        <groupId>io.wcm.maven</groupId>
-        <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>6.2.0.0002</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-#elseif( $optionAemVersion == "6.3" )
+#if ( $optionAemVersion == "6.3" )
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
@@ -268,13 +221,7 @@
       </dependency>
 #end
 
-#if( $optionAemVersion != "6.1" && $optionAemVersion != "6.2" )
-#if ( $optionAemVersion=='6.3' && $optionAemServicePack=='n')
-  ## stick with old core components version for AEM without service pack
-  #set( $coreComponentsVersion = "1.0.6" )
-#else
-  #set( $coreComponentsVersion = "2.0.6" )
-#end
+  #set( $coreComponentsVersion = "2.0.8" )
       <!-- AEM Core WCM Components -->
       <dependency>
         <groupId>com.adobe.cq</groupId>
@@ -288,13 +235,8 @@
         <type>zip</type>
       </dependency>
 
-#end
 #if( $optionAcsCommons == "y" )
-#if ( $optionAemVersion=='6.1' )
-  #set( $acsCommonsVersion = "2.14.0" )
-#else
   #set( $acsCommonsVersion = "3.17.4" )
-#end
       <!-- ACS AEM Commons -->
       <dependency>
         <groupId>com.adobe.acs</groupId>

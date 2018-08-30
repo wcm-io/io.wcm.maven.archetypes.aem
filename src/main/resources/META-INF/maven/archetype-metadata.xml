@@ -67,10 +67,10 @@
     </requiredProperty>
 
     <!-- *** feature flags *** -->
-    <!-- AEM major version (6.1, 6.2, 6.3 or 6.4) -->
+    <!-- AEM major version (6.3 or 6.4) -->
     <requiredProperty key="optionAemVersion">
       <defaultValue>6.4</defaultValue>
-      <validationRegex>^(6\.1|6\.2|6\.3|6\.4)$</validationRegex>
+      <validationRegex>^(6\.3|6\.4)$</validationRegex>
     </requiredProperty>
     <!-- Use latest service pack for AEM version - you need to deploy artifacts following these conventions https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
     <requiredProperty key="optionAemServicePack">
@@ -153,9 +153,6 @@
             <include>**/*.json</include>
             <include>**/*.xml</include>
           </includes>
-          <excludes>
-            <exclude>**/README.txt</exclude>
-          </excludes>
         </fileSet>
         <fileSet encoding="UTF-8">
           <directory>src/main/webapp</directory>
@@ -188,9 +185,6 @@
             <include>**/*.json</include>
             <include>**/*.txt</include>
           </includes>
-          <excludes>
-            <exclude>**/README.txt</exclude>
-          </excludes>
         </fileSet>
         <fileSet encoding="UTF-8">
           <directory>src/main/webapp</directory>

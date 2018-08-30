@@ -55,7 +55,7 @@
     }
   }
 #else
-  "sling:resourceSuperType": "#if($optionAemServicePack=='y')core/wcm/components/image/v2/image#{else}core/wcm/components/image/v1/image#end"
+  "sling:resourceSuperType": "core/wcm/components/image/v2/image"
 #end
 
 }

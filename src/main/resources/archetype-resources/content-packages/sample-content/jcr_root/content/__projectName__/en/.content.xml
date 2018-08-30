@@ -12,7 +12,6 @@
         sling:resourceType="#if($optionEditableTemplates=="y")${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/page#{else}${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/page/homepage#end"
         navTitle="HOME"
         pageTitle="${projectName} Sample Site">
-#if ($optionWcmioHandler=='y' || ($optionAemVersion!='6.1' && $optionAemVersion!='6.2'))
 #if ($optionEditableTemplates == "y")
         <root jcr:primaryType="nt:unstructured" sling:resourceType="wcm/foundation/components/responsivegrid">
 #end
@@ -44,7 +43,6 @@
         </content>
 #if ($optionEditableTemplates == "y")
         </root>
-#end
 #end
     </jcr:content>
 #if ( $optionContextAwareConfig == "y" )

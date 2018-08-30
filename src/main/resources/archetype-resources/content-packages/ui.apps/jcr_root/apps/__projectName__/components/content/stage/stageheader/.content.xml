@@ -4,4 +4,4 @@
     jcr:primaryType="cq:Component"
     jcr:title="Stage Header"
     componentGroup="${projectName}"#if($optionWcmioHandler=='n')
-    sling:resourceSuperType="#if($optionAemServicePack=='y')core/wcm/components/image/v2/image#{else}core/wcm/components/image/v1/image#end"#end/>
+    sling:resourceSuperType="core/wcm/components/image/v2/image"#end/>
