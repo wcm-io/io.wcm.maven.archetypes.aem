@@ -1,4 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-${symbol_pound}base=css
+${symbol_pound}base=js
+
+jquery.js
+bootstrap.bundle.js

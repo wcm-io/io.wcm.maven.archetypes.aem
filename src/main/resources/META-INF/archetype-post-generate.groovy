@@ -50,18 +50,18 @@ if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/redirect.json").delete()
-  assert new File(coreBundle, "src/main/webapp/app-root/components/content/common/contentRichText").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root/components/content/stage/stageheader").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/content/text").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/content/image").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/components/global/include").deleteDir()
 
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/config").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/templates/admin/redirect").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/admin/page/redirect").deleteDir()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/common/contentRichText/contentRichText.html").delete()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/common/contentRichText/_cq_editConfig.xml").delete()   
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/stage/stageheader/stageheader.html").delete()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/stage/stageheader/_cq_editConfig.xml").delete()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/stage/stageheader/_cq_dialog").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/text/text.html").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/text/_cq_editConfig.xml").delete()   
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/image/image.html").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/image/_cq_editConfig.xml").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/image/_cq_dialog").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/global/include").deleteDir()
 
   assert new File(configDefinition, "src/main/templates/${projectName}-aem-cms/${projectName}-aem-cms-author-systemusers.json.hbs").delete()
@@ -108,11 +108,11 @@ if (optionContextAwareConfig == "n" && optionEditableTemplates == "n") {
 
 // prepare project for editable templates
 if (optionEditableTemplates == "y") {
-  assert new File(coreBundle, "src/main/webapp/app-root/components/content/page").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/page").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/components/global/page/body.html").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/templates").deleteDir()
 
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/page").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/page").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/global/page/body.html").delete()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/templates").deleteDir()
 }

@@ -5,6 +5,7 @@
   ],
   "embed": [
     "core.wcm.components.image.v1",
+    "${projectName}.3rdparty",
     "${projectName}.app"
   ],
   "jsProcessor": [

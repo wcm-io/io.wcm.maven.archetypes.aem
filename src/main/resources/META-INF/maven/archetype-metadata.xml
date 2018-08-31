@@ -180,8 +180,6 @@
         <fileSet filtered="true" encoding="UTF-8">
           <directory>src/main/webapp</directory>
           <includes>
-            <include>**/*.css</include>
-            <include>**/*.js</include>
             <include>**/*.json</include>
             <include>**/*.txt</include>
           </includes>
@@ -189,6 +187,8 @@
         <fileSet encoding="UTF-8">
           <directory>src/main/webapp</directory>
           <includes>
+            <include>**/*.css</include>
+            <include>**/*.js</include>
             <include>**/*.jpg</include>
             <include>**/*.ico</include>
             <include>**/*.png</include>
@@ -209,9 +209,7 @@
         <fileSet filtered="true" encoding="UTF-8">
           <directory>jcr_root</directory>
           <includes>
-            <include>**/*.css</include>
             <include>**/*.html</include>
-            <include>**/*.js</include>
             <include>**/*.json</include>
             <include>**/*.txt</include>
             <include>**/*.xml</include>
@@ -220,6 +218,8 @@
         <fileSet encoding="UTF-8">
           <directory>jcr_root</directory>
           <includes>
+            <include>**/*.css</include>
+            <include>**/*.js</include>
             <include>**/*.jpg</include>
             <include>**/*.ico</include>
             <include>**/*.png</include>

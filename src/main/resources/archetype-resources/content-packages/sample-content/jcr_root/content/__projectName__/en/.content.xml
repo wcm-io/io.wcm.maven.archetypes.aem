@@ -9,7 +9,7 @@
         cq:template="#if($optionEditableTemplates=="y")/conf/${projectName}/settings/wcm/templates/homepage#{else}/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/content/homepage#end"
         jcr:primaryType="cq:PageContent"
         jcr:title="en"
-        sling:resourceType="#if($optionEditableTemplates=="y")${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/page#{else}${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/page/homepage#end"
+        sling:resourceType="#if($optionEditableTemplates=="y")${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/page#{else}${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/page/homepage#end"
         navTitle="HOME"
         pageTitle="${projectName} Sample Site">
 #if ($optionEditableTemplates == "y")
@@ -17,7 +17,7 @@
 #end
         <stage
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/stage/stageheader"
+            sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/image"
 #if ($optionWcmioHandler=='y')
             linkMediaDownload="{Boolean}false"
             linkType="internal"
@@ -35,7 +35,7 @@
             sling:resourceType="#if($optionEditableTemplates == "y")wcm/foundation/components/responsivegrid#{else}#if($optionWcmioHandler=='y')wcm-io/wcm/parsys/components/parsys#{else}foundation/components/parsys#end#end">
             <contentrichtext
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/common/contentRichText"
+                sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/text"
 #if ($optionWcmioHandler=='n')
                 textIsRich="true"
 #end
