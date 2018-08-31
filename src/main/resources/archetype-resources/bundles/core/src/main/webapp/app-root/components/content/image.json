@@ -2,8 +2,8 @@
   "jcr:primaryType": "cq:Component",
   "jcr:title": "Image",
   "componentGroup": "${projectName}",
-  "cq:icon": "image",
 #if ($optionWcmioHandler=='y')
+  "cq:icon": "image",
 
   "cq:editConfig": {
     "jcr:primaryType": "cq:EditConfig"

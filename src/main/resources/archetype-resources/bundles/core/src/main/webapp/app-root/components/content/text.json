@@ -2,8 +2,8 @@
   "jcr:primaryType": "cq:Component",
   "jcr:title": "Text",
   "componentGroup": "${projectName}",
-  "cq:icon": "textLeft",
 #if ($optionWcmioHandler=='y')
+  "cq:icon": "textLeft",
 
   "cq:editConfig": {
     "jcr:primaryType": "cq:EditConfig",
