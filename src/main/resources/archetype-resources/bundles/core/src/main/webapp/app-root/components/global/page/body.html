@@ -1,5 +1,18 @@
-<sly data-sly-include="content.html" />
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<div class="container">
 
-<hr />
+#if ($optionEditableTemplates == "y")
+  <sly data-sly-use.templatedContainer="com.day.cq.wcm.foundation.TemplatedContainer"
+       data-sly-repeat.child="${symbol_dollar}{templatedContainer.structureResources}"
+       data-sly-resource="${symbol_dollar}{child.path @ resourceType=child.resourceType, decorationTagName='div'}"></sly>
+#else
+  <sly data-sly-include="content.html" />
 
-<sly data-sly-resource="${symbol_dollar}{@ resourceType='${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/structure/imprint'}"/>
+  <hr />
+
+  <sly data-sly-resource="${symbol_dollar}{@ resourceType='${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/structure/imprint'}"/>
+#end
+
+</div>

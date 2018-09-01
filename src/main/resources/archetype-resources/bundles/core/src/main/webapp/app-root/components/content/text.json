@@ -17,5 +17,4 @@
 #else
   "sling:resourceSuperType": "core/wcm/components/text/v2/text"
 #end
-
 }

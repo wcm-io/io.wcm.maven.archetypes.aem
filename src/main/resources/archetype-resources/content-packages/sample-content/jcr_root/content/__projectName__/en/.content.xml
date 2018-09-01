@@ -37,7 +37,7 @@
                 sling:resourceType="#if($optionEditableTemplates == "y")wcm/foundation/components/responsivegrid#{else}#if($optionWcmioHandler=='y')wcm-io/wcm/parsys/components/parsys#{else}foundation/components/parsys#end#end">
                 <title
                     jcr:primaryType="nt:unstructured"
-                    jcr:title="My Title"
+                    jcr:title="Hello ${projectName}"
                     sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/title"
                     type="h1"/>
                 <contentrichtext
