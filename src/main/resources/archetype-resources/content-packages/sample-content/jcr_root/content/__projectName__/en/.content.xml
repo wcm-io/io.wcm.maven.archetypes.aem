@@ -6,7 +6,7 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
-        cq:template="#if($optionEditableTemplates=="y")/conf/${projectName}/settings/wcm/templates/homepage#{else}/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/content/homepage#end"
+        cq:template="#if($optionEditableTemplates=="y")/conf/${projectName}/settings/wcm/templates/homepage#{else}/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/homepage#end"
         jcr:primaryType="cq:PageContent"
         jcr:title="en"
         sling:resourceType="#if($optionEditableTemplates=="y")${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/page#{else}${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/page/homepage#end"

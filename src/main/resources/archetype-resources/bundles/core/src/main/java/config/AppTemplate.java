@@ -24,12 +24,12 @@ public enum AppTemplate implements TemplatePathInfo {
   /**
    * Content
    */
-  EDITORIAL_CONTENT("/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/content/content"),
+  EDITORIAL_CONTENT("/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/content"),
 
   /**
    * Homepage
    */
-  EDITORIAL_HOMEPAGE("/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/content/homepage");
+  EDITORIAL_HOMEPAGE("/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/homepage");
 
   private final String templatePath;
   private final String resourceType;
