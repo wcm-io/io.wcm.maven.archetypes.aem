@@ -4,6 +4,6 @@
     <paths jcr:primaryType="nt:unstructured">
         <content
             jcr:primaryType="nt:unstructured"
-            allowedChildren="[${projectName}/components/content/text]"/>
+            allowedChildren="[${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/image,${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/text,${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/title]"/>
     </paths>
 </jcr:root>

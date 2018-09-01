@@ -27,7 +27,7 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 #end
 import org.apache.sling.models.annotations.injectorspecific.Self;
-#if ($optionWcmioHandler == 'y')
+#if ($optionWcmioHandler == 'n')
 import org.apache.sling.models.factory.ModelFactory;
 #end
 

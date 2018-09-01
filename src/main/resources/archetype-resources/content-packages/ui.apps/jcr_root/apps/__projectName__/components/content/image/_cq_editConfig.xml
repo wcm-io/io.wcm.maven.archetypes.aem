@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:primaryType="cq:EditConfig"/>
+    jcr:primaryType="cq:EditConfig">
+#if ($optionWcmioHandler=='y')
+  <cq:dropTargets jcr:primaryType="nt:unstructured">
+    <image 
+      jcr:primaryType="cq:DropTargetConfig"
+      accept="[image/gif,image/jpeg,image/png]"
+      groups="[media]"
+      propertyName="./mediaRef" />
+  </cq:dropTargets>
+#end
+</jcr:root>

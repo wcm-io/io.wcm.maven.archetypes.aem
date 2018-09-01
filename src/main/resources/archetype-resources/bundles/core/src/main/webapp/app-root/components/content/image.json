@@ -6,7 +6,15 @@
   "cq:icon": "image",
 
   "cq:editConfig": {
-    "jcr:primaryType": "cq:EditConfig"
+    "jcr:primaryType": "cq:EditConfig",
+    "cq:dropTargets": {
+      "image": {
+        "jcr:primaryType": "cq:DropTargetConfig",
+        "accept": ["image/gif","image/jpeg","image/png"],
+        "groups": ["media"],
+        "propertyName": "./mediaRef"
+      }
+    }
   },
 
   "cq:dialog": {
