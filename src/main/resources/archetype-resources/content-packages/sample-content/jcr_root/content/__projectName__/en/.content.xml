@@ -20,16 +20,22 @@
                 <slides jcr:primaryType="nt:unstructured">
                     <item0
                         jcr:primaryType="nt:unstructured"
+#if ($optionWcmioHandler == 'n')
                         sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/image"
-                        fileReference="/content/dam/${projectName}/chicago.jpg"/>
+#end
+                        #if($optionWcmioHandler=='n')fileReference#{else}mediaRef#end="/content/dam/${projectName}/chicago.jpg"/>
                     <item1
                         jcr:primaryType="nt:unstructured"
+#if ($optionWcmioHandler == 'n')
                         sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/image"
-                        fileReference="/content/dam/${projectName}/nature.jpg"/>
+#end
+                        #if($optionWcmioHandler=='n')fileReference#{else}mediaRef#end="/content/dam/${projectName}/nature.jpg"/>
                     <item2
                         jcr:primaryType="nt:unstructured"
+#if ($optionWcmioHandler == 'n')
                         sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/image"
-                        fileReference="/content/dam/${projectName}/prague.jpg"/>
+#end
+                        #if($optionWcmioHandler=='n')fileReference#{else}mediaRef#end="/content/dam/${projectName}/prague.jpg"/>
                 </slides>
             </carousel>
             <content
@@ -40,7 +46,7 @@
                     jcr:title="Hello ${projectName}"
                     sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/title"
                     type="h1"/>
-                <contentrichtext
+                <text
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/text"
                     text="&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras arcu mi, commodo ut interdum quis, aliquet sed sapien. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer sit amet venenatis velit, sit amet pulvinar dolor. Donec in risus enim. Nullam ultricies dui posuere blandit euismod. Aenean varius porta aliquet. Mauris sed tempor massa, malesuada rhoncus tortor. Vestibulum vitae viverra enim. Duis feugiat mollis tortor, a efficitur massa fringilla ut.&lt;/p&gt;"

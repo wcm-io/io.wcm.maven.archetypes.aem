@@ -3,7 +3,11 @@
 #set( $symbol_escape = '\' )
 package ${package}.components;
 
+#if ($optionWcmioHandler == 'n')
 import static com.day.cq.commons.DownloadResource.PN_REFERENCE;
+#else
+import static io.wcm.handler.media.MediaNameConstants.PN_MEDIA_REF;
+#end
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -15,10 +19,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+#if ($optionWcmioHandler == 'n')
 import com.adobe.cq.wcm.core.components.models.Image;
+#end
 import com.day.cq.wcm.api.Page;
 import com.google.common.collect.ImmutableList;
 
+#if ($optionWcmioHandler == 'y')
+import io.wcm.handler.media.Media;
+#end
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 
@@ -49,21 +58,30 @@ public class CarouselTest {
 
   @Test
   public void testSlideImageUrls() {
-    context.create().asset("/content/dam/slides/slide1.png", 10, 10, "image/png");
-    context.create().asset("/content/dam/slides/slide2.png", 10, 10, "image/png");
+    context.create().asset("/content/dam/slides/slide1.png", 80, 30, "image/png");
+    context.create().asset("/content/dam/slides/slide2.png", 80, 30, "image/png");
 
     context.build().resource(resource.getPath() + "/" + NN_SLIDES)
         .siblingsMode()
-        .resource("item1", PN_REFERENCE, "/content/dam/slides/slide1.png")
-        .resource("item2", PN_REFERENCE, "/content/dam/slides/slide2.png");
+        .resource("item1", #if($optionWcmioHandler=='n')PN_REFERENCE#{else}PN_MEDIA_REF#end, "/content/dam/slides/slide1.png")
+        .resource("item2", #if($optionWcmioHandler=='n')PN_REFERENCE#{else}PN_MEDIA_REF#end, "/content/dam/slides/slide2.png");
 
     Carousel underTest = context.request().adaptTo(Carousel.class);
+#if ($optionWcmioHandler == 'n')
     assertEquals(ImmutableList.of(
         "/content/mypage/_jcr_content/myresource/slides/item1.img.png",
         "/content/mypage/_jcr_content/myresource/slides/item2.img.png"),
         underTest.getSlideImages().stream()
             .map(Image::getSrc)
             .collect(Collectors.toList()));
+#else
+    assertEquals(ImmutableList.of(
+        "/content/dam/slides/slide1.png/_jcr_content/renditions/original./slide1.png",
+        "/content/dam/slides/slide2.png/_jcr_content/renditions/original./slide2.png"),
+        underTest.getSlideImages().stream()
+            .map(Media::getUrl)
+            .collect(Collectors.toList()));
+#end
   }
 
   @Test

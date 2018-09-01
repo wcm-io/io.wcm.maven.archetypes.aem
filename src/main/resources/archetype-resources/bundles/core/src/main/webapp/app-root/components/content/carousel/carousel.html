@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-<div data-sly-use.carousel="de.provision.rnd.aemfearchetype.components.Carousel"
+<div data-sly-use.carousel="${package}.components.Carousel"
     id="${symbol_dollar}{carousel.id}" class="carousel slide">
   <ol class="carousel-indicators">
     <li data-sly-repeat.image="${symbol_dollar}{carousel.slideImages}"
@@ -10,7 +10,11 @@
   <div class="carousel-inner">
     <div data-sly-repeat.image="${symbol_dollar}{carousel.slideImages}"
         class="carousel-item ${symbol_dollar}{imageList.first ? 'active' : ''}">
+#if ($optionWcmioHandler == 'n')
       <img class="d-block w-100" src="${symbol_dollar}{image.src}" alt="${symbol_dollar}{image.alt}">
+#else
+      ${symbol_dollar}{image.markup @ context='html'}
+#end
     </div>
   </div>
   <a class="carousel-control-prev" href="#${symbol_dollar}{carousel.id}" role="button" data-slide="prev">

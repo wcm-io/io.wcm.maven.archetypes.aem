@@ -28,14 +28,15 @@
                 "items": {
                   "fileReference": {
                     "sling:resourceType": "granite/ui/components/coral/foundation/form/pathfield",
-                    "name": "./fileReference",
-                    "rootPath": "/content/dam"
-                  },
+                    "name": "./#if($optionWcmioHandler=='n')fileReference#{else}mediaRef#end",
+                    "rootPath": "/content/dam/${projectName}"
+                  }#if ($optionWcmioHandler == 'n'),
                   "resourceType": {
                     "sling:resourceType": "granite/ui/components/coral/foundation/form/hidden",
                     "name": "./sling:resourceType",
                     "value": "aem-fe-archetype/components/content/image"
-                  }
+                  }#end
+
                 }
               }
             }

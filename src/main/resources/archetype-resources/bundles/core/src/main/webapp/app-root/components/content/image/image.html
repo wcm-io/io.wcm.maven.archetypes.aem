@@ -4,3 +4,5 @@
 <div data-sly-use.media="${symbol_dollar}{'io.wcm.handler.media.ui.ResourceMedia' @ mediaFormat='content'}">
   ${symbol_dollar}{media.markup @ context='html'}
 </div>
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${symbol_dollar}{template.placeholder @ isEmpty=!media.valid}"></sly>

@@ -23,13 +23,15 @@
                             <fileReference
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                name="./fileReference"
+                                name="./#if($optionWcmioHandler=='n')fileReference#{else}mediaRef#end"
                                 rootPath="/content/dam/${projectName}"/>
+#if ($optionWcmioHandler == 'n')
                             <resourceType
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
                                 name="./sling:resourceType"
                                 value="${projectName}/components/content/image"/>
+#end
                         </items>
                     </field>
                 </slideMedia>

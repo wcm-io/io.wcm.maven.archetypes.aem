@@ -3,6 +3,8 @@
 #set( $symbol_escape = '\' )
 package ${package}.config;
 
+import org.jetbrains.annotations.NotNull;
+
 import io.wcm.wcm.commons.util.Template;
 import io.wcm.wcm.commons.util.TemplatePathInfo;
 
@@ -49,7 +51,7 @@ public enum AppTemplate implements TemplatePathInfo {
    * @return Path
    */
   @Override
-  public String getTemplatePath() {
+  public @NotNull String getTemplatePath() {
     return templatePath;
   }
 
