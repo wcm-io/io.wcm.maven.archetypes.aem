@@ -45,10 +45,14 @@ def removeModule(pomFile, module) {
 // frontend
 if (optionFrontend == "y") {
   assert new File(clientlibsBundle, "src").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/etc/clientlibs/${projectName}/${projectName}.3rdparty").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/etc/clientlibs/${projectName}/${projectName}.all").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/etc/clientlibs/${projectName}/${projectName}.app").deleteDir()
 }
 else {
   assert new File(rootDir, "frontend").deleteDir()
   assert new File(clientlibsBundle, ".gitignore").delete()
+  assert new File(uiAppsPackage, ".gitignore").delete()
   // remove frontend module entry from root pom
   removeModule(rootPom, "frontend")
 }

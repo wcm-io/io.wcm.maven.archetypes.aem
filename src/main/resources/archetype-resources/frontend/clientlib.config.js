@@ -1,10 +1,12 @@
 #if ( $optionSlingInitialContentBundle == "y" )
+#set( $serializationFormat = "json" )
 #if ($optionMultiBundleLayout=="y")
 #set( $clientlibDestPath = "bundles/clientlibs/src/main/webapp/clientlibs-root" )
 #else
 #set( $clientlibDestPath = "bundles/core/src/main/webapp/clientlibs-root" )
 #end
 #else
+#set( $serializationFormat = "xml" )
 #set( $clientlibDestPath = "content-packages/ui.apps/jcr_root/etc/clientlibs/${projectName}" )
 #end
 module.exports = {
@@ -18,6 +20,7 @@ module.exports = {
   libs: [
     {
       name: "${projectName}.app",
+      serializationFormat: "${serializationFormat}",
       assets: {
         js: [
           "dist/static/js/index.js",
@@ -38,6 +41,7 @@ module.exports = {
     },
     {
       name: "${projectName}.all",
+      serializationFormat: "${serializationFormat}",
       embed: [
         "core.wcm.components.image.v1",
         "${projectName}.app"

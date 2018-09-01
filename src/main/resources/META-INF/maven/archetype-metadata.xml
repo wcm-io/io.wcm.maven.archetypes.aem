@@ -238,6 +238,12 @@
 
     <module id="${rootArtifactId}.ui.apps" dir="content-packages/ui.apps" name="${rootArtifactId}.ui.apps">
       <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>.gitignore</include>
+          </includes>
+        </fileSet>
         <fileSet encoding="UTF-8">
           <directory></directory>
           <includes>
