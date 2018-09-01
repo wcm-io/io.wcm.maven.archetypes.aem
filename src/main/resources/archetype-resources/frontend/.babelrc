@@ -1,0 +1,22 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "IE >= 11",
+            "not ie <= 10",
+            "not dead",
+            "not op_mini all",
+            "not < 1%"
+          ]
+        },
+        "useBuiltIns": true,
+        "es6": true
+      }
+    ]
+  ],
+  "plugins": ["transform-class-properties", "transform-es2015-arrow-functions"]
+}

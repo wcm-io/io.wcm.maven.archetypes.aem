@@ -103,6 +103,11 @@
       <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
+    <!-- Setup frontend build project with webpack -->
+    <requiredProperty key="optionFrontend">
+      <defaultValue>y</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
     <!-- Setup project using wcm.io AEM libraries, especially the wcm.io Handler infrastructure. Requires optionContextAwareConfig='y'. -->
     <requiredProperty key="optionWcmioHandler">
       <defaultValue>y</defaultValue>
@@ -136,6 +141,32 @@
 
   <modules>
     <module id="${rootArtifactId}.parent" dir="parent" name="${rootArtifactId}.parent" />
+
+    <module id="${rootArtifactId}.frontend" dir="frontend" name="${rootArtifactId}.frontend">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>clientlib.config.js</include>
+            <include>package.json</include>
+            <include>package-lock.json</include>
+            <include>src\index.hbs</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>**/*</include>
+          </includes>
+          <excludes>
+            <exclude>clientlib.config.js</exclude>
+            <exclude>package.json</exclude>
+            <exclude>package-lock.json</exclude>
+            <exclude>src\index.hbs</exclude>
+          </excludes>
+        </fileSet>
+      </fileSets>
+    </module>
 
     <module id="${rootArtifactId}.core" dir="bundles/core" name="${rootArtifactId}.core">
       <fileSets>
@@ -192,6 +223,12 @@
             <include>**/*.jpg</include>
             <include>**/*.ico</include>
             <include>**/*.png</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>.gitignore</include>
           </includes>
         </fileSet>
       </fileSets>
@@ -322,6 +359,7 @@
         </fileSet>
       </fileSets>
     </module>
+
   </modules>
 
 </archetype-descriptor>

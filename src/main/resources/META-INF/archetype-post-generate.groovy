@@ -42,6 +42,17 @@ def removeModule(pomFile, module) {
   }
 }
 
+// frontend
+if (optionFrontend == "y") {
+  assert new File(clientlibsBundle, "src").deleteDir()
+}
+else {
+  assert new File(rootDir, "frontend").deleteDir()
+  assert new File(clientlibsBundle, ".gitignore").delete()
+  // remove frontend module entry from root pom
+  removeModule(rootPom, "frontend")
+}
+
 // remove files only relevant for wcm.io Handler projects
 if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/java/" + javaPackage.replace('.','/') + "/config").deleteDir()
@@ -69,8 +80,14 @@ if (optionWcmioHandler == "n") {
 
 // refactor project layout when multi bundle layout is switched off
 if (optionMultiBundleLayout == "n") {
-  // move clientlibs-root
-  assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root").renameTo(new File(coreBundle, "src/main/webapp/clientlibs-root"))
+  // move .gitignore for clientlibs-root
+  if (optionFrontend == "y") {
+    assert new File(clientlibsBundle, ".gitignore").renameTo(new File(coreBundle, ".gitignore"))
+  }
+  else {
+    // move clientlibs-root
+    assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root").renameTo(new File(coreBundle, "src/main/webapp/clientlibs-root"))
+  }
   // delete clientlibs bundle
   assert clientlibsBundle.deleteDir()
   // remove bundles/clientlibs module entry from root pom

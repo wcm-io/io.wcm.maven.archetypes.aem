@@ -45,6 +45,9 @@ $symbol_pound$symbol_pound$symbol_pound Project overview
 Modules of this project:
 
 * [parent](parent/): Parent POM with dependency management for the whole project. All 3rdparty artifact versions used in the project are defined here.
+#if ( $optionFrontend == "y" )
+* [frontend](frontend/): Frontend build project with webpack
+#end
 #if ( $optionSlingInitialContentBundle == "y" )
 * [bundles/core](bundles/core/): OSGi bundle containing:
   * Java classes (e.g. Sling Models, Servlets, business logic)
