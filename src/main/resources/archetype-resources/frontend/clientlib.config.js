@@ -1,9 +1,18 @@
+#if ( $optionSlingInitialContentBundle == "y" )
+#if ($optionMultiBundleLayout=="y")
+#set( $clientlibDestPath = "bundles/clientlibs/src/main/webapp/clientlibs-root" )
+#else
+#set( $clientlibDestPath = "bundles/core/src/main/webapp/clientlibs-root" )
+#end
+#else
+#set( $clientlibDestPath = "content-packages/ui.apps/jcr_root/etc/clientlibs/${projectName}" )
+#end
 module.exports = {
   // default working directory (can be changed per 'cwd' in every asset option)
   context: __dirname,
 
   // path to the clientlib root folder (output)
-  clientLibRoot: "../bundles/core/src/main/webapp/clientlibs-root",
+  clientLibRoot: "../${clientlibDestPath}",
 
   // define all clientlib options here as array... (multiple clientlibs)
   libs: [

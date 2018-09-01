@@ -147,6 +147,7 @@
         <fileSet filtered="true" encoding="UTF-8">
           <directory></directory>
           <includes>
+            <include>README.md</include>
             <include>clientlib.config.js</include>
             <include>package.json</include>
             <include>package-lock.json</include>
@@ -159,6 +160,7 @@
             <include>**/*</include>
           </includes>
           <excludes>
+            <exclude>README.md</exclude>
             <exclude>clientlib.config.js</exclude>
             <exclude>package.json</exclude>
             <exclude>package-lock.json</exclude>
