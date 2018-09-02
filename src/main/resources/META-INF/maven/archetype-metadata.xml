@@ -151,7 +151,7 @@
             <include>clientlib.config.js</include>
             <include>package.json</include>
             <include>package-lock.json</include>
-            <include>src\index.hbs</include>
+            <include>src\index.*</include>
           </includes>
         </fileSet>
         <fileSet encoding="UTF-8">
@@ -164,7 +164,7 @@
             <exclude>clientlib.config.js</exclude>
             <exclude>package.json</exclude>
             <exclude>package-lock.json</exclude>
-            <exclude>src\index.hbs</exclude>
+            <exclude>src\index.*</exclude>
           </excludes>
         </fileSet>
       </fileSets>

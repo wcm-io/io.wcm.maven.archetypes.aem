@@ -16,6 +16,7 @@ def confContentPackage = new File(rootDir, "content-packages/conf-content")
 def sampleContentPackage = new File(rootDir, "content-packages/sample-content")
 def uiAppsPackage = new File(rootDir, "content-packages/ui.apps")
 def configDefinition = new File(rootDir, "config-definition")
+def frontend = new File(rootDir, "frontend")
 def rootPom = new File(rootDir, "pom.xml")
 
 // validate parameters - throw exceptions for invalid combinations
@@ -71,6 +72,10 @@ if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/webapp/app-root/components/content/text").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/components/content/image").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/components/global/include").deleteDir()
+
+  assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root/${projectName}.app/css").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/etc/clientlibs/${projectName}/${projectName}.app/css").deleteDir()
+  assert new File(frontend, "src/components/image").deleteDir()
 
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/config").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/templates/admin/redirect").deleteDir()

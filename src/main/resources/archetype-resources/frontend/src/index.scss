@@ -1,2 +1,7 @@
 // Externals
 @import "~bootstrap/scss/bootstrap";
+#if ( $optionWcmioHandler == "y" )
+
+// Components
+@import "components/image/image.scss";
+#end

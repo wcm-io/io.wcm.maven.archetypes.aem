@@ -2,3 +2,7 @@
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
 ${symbol_pound}base=css
+#if ( $optionWcmioHandler == "y" )
+
+image.css
+#end
