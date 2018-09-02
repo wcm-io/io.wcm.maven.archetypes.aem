@@ -79,7 +79,7 @@
     </requiredProperty>
     <!-- Use latest Sling Models version -->
     <requiredProperty key="optionSlingModelsLatest">
-      <defaultValue>y</defaultValue>
+      <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
     <!-- y: AEM application projects is set up with scripts and content parts as JSON files within the OSGi bundle with Sling-Initial Content, suitable for File System Resource Provider. Works with all AEM versions.
@@ -90,7 +90,7 @@
     </requiredProperty>
     <!-- Set up projects using editable templates.  Only supported for AEM 6.3+. -->
     <requiredProperty key="optionEditableTemplates">
-      <defaultValue>n</defaultValue>
+      <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
     <!-- Split up AEM application in multiple bundles for modularizing large AM applications.. Only supported if optionSlingInitialContentBundle='y'. -->
@@ -105,12 +105,12 @@
     </requiredProperty>
     <!-- Setup frontend build project with webpack -->
     <requiredProperty key="optionFrontend">
-      <defaultValue>y</defaultValue>
+      <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
     <!-- Setup project using wcm.io AEM libraries, especially the wcm.io Handler infrastructure. Requires optionContextAwareConfig='y'. -->
     <requiredProperty key="optionWcmioHandler">
-      <defaultValue>y</defaultValue>
+      <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
     <!-- Deploy ACS AEM Commons. -->

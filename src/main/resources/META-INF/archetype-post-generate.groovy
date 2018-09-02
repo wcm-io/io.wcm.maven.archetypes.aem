@@ -28,6 +28,9 @@ if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
 if (optionWcmioHandler == "y" && optionContextAwareConfig == "n") {
   throw new RuntimeException("Parameter optionWcmioHandler='y' is only supported with optionContextAwareConfig='y'.")
 }
+if (optionEditableTemplates == "n" && optionWcmioHandler == "n") {
+  throw new RuntimeException("You have to specify either parameter optionEditableTemplates='y' or optionWcmioHandler='y'.")
+}
 if (!(javaPackage ==~ /^[a-z0-9\.]+$/)) {
   throw new RuntimeException("Java package name is invalid: " + javaPackage)
 }
