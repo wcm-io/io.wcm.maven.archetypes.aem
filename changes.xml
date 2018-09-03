@@ -24,11 +24,11 @@
   <body>
 
     <release version="2.0.0" date="not released">
-      <action type="update" dev="sseifert">
-        Refactor sample components and sample content.
+      <action type="add" dev="sseifert">
+        Add webpack-based frontend build.
       </action>
       <action type="update" dev="sseifert">
-        Add webpack-based frontend build.
+        Refactor sample components and sample content.
       </action>
       <action type="update" dev="sseifert">
         Switch to JUnit 5 for unit tests.
@@ -45,7 +45,7 @@
     </release>
 
     <release version="1.1.0" date="2018-05-26">
-      <action type="update" dev="sseifert">
+      <action type="add" dev="sseifert">
         Add support for AEM 6.4.
       </action>
       <action type="update" dev="sseifert">
