@@ -168,10 +168,25 @@ else {
 
 // convert all line endings to unix-style
 rootDir.eachFileRecurse(FileType.FILES) { file ->
-  if (file.name =~ /\.(java|html|txt|json|xml|css|js|yaml|hbs|sh)$/) {
+  if (file.name =~ /\.(cfg|conf|config|css|dtd|esp|ecma|groovy|hbrs|hbs|htm|html|java|jpage|js|json|jsp|md|mustache|tld|launch|log|php|pl|project|properties|props|py|sass|scss|sh|shtm|shtml|sql|svg|tf|txt|vm|xml|xsd|xsl|xslt|yml|yaml)$/) {
     def fileContent = file.getText("UTF-8").replaceAll('\r\n', '\n')
     file.newWriter("UTF-8").withWriter { w ->
       w << fileContent
     }
   }
 }
+
+// remove all empty folders
+Closure<Boolean> removeEmptyFolders = {
+  def emptyFolders = []
+  rootDir.eachFileRecurse(FileType.DIRECTORIES) { file ->
+    if (file.isDirectory() && file.list().length == 0) {
+      emptyFolders.add(file)
+    }
+  }
+  emptyFolders.each { file ->
+    assert file.deleteDir()
+  }
+  return !emptyFolders.empty
+}
+while (removeEmptyFolders()) continue

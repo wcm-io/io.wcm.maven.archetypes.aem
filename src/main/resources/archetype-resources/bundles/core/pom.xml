@@ -101,15 +101,23 @@
     </dependency>
 
 #end
+#if( $optionAemVersion == "6.1" )
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.testing.aem-mock</artifactId>
       <scope>test</scope>
     </dependency>
+#else
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.testing.aem-mock.junit4</artifactId>
+      <scope>test</scope>
+    </dependency>
+#end
 #if( $optionAemVersion == "6.1" )
     <dependency>
       <groupId>org.apache.sling</groupId>
-      <artifactId>org.apache.sling.testing.osgi-mock</artifactId>
+      <artifactId>org.apache.sling.testing.osgi-mock.junit4</artifactId>
       <scope>test</scope>
     </dependency>
 #end

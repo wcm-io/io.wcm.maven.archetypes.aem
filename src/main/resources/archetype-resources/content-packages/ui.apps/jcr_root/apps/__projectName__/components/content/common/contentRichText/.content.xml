@@ -4,4 +4,4 @@
     jcr:primaryType="cq:Component"
     jcr:title="Content Richtext"
     componentGroup="${projectName}"#if($optionWcmioHandler=='n')
-    sling:resourceSuperType="#if($optionAemServicePack=='y')core/wcm/components/text/v2/text#{else}core/wcm/components/text/v1/text#end"#end/>
+    sling:resourceSuperType="#if($optionAemServicePack=='y' || $optionAemVersion!='6.3')core/wcm/components/text/v2/text#{else}core/wcm/components/text/v1/text#end"#end/>

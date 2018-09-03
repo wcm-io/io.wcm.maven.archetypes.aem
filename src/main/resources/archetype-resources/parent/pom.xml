@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.2.20</version>
+    <version>1.2.26</version>
     <relativePath/>
   </parent>
 
@@ -107,12 +107,12 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.extensions</artifactId>
-        <version>1.3.0</version>
+        <version>1.4.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.3.0</version>
+        <version>1.3.2</version>
       </dependency>
 #end
 #if ( $optionWcmioHandler == "y" )
@@ -124,7 +124,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.sling.commons</artifactId>
-        <version>1.2.0</version>
+        <version>1.2.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -134,43 +134,43 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.url</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.4</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.0.6</version>
-      </dependency>
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.handler.media</artifactId>
         <version>1.0.8</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.handler.media</artifactId>
+        <version>1.0.10</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.richtext</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.commons</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.4</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.4</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.1.4</version>
+        <version>1.1.6</version>
       </dependency>
 #end
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
         <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
-        <version>1.3.0</version>
+        <version>1.4.2</version>
       </dependency>
 
       <!-- wcm.io Testing -->
@@ -179,24 +179,35 @@
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock</artifactId>
         <version>1.9.8</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.testing.osgi-mock</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
       <dependency>
         <groupId>org.apache.sling</groupId>
-        <artifactId>org.apache.sling.testing.osgi-mock</artifactId>
-        <version>2.3.4</version>
+        <artifactId>org.apache.sling.testing.osgi-mock.junit4</artifactId>
+        <version>2.4.0</version>
       </dependency>
-#else
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.testing.aem-mock</artifactId>
-        <version>2.2.14</version>
-      </dependency>
-#end
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.testing.logging-mock</artifactId>
         <version>1.0.0</version>
       </dependency>
+#else
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.aem-mock.junit4</artifactId>
+        <version>2.3.2</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.sling</groupId>
+        <artifactId>org.apache.sling.testing.logging-mock</artifactId>
+        <version>2.0.0</version>
+      </dependency>
+#end
 #if ( $optionContextAwareConfig == "y" )
       <dependency>
         <groupId>org.apache.sling</groupId>
@@ -206,19 +217,19 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.caconfig</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.2</version>
       </dependency>
 #end
 #if ( $optionWcmioHandler == "y" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.sling</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.handler</artifactId>
-        <version>1.0.2</version>
+        <version>1.0.4</version>
       </dependency>
 #end
 
@@ -243,7 +254,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=='y')6.3.2.0000#{else}6.3.0.0002#end</version>
+        <version>#if($optionAemServicePack=="y")6.3.2.0000#{else}6.3.0.0002#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -251,18 +262,18 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>6.4.0.0000</version>
+        <version>#if($optionAemServicePack=="y")6.4.1.0000#{else}6.4.0.0000#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
 #end
 
 #if( $optionAemVersion != "6.1" && $optionAemVersion != "6.2" )
-#if ( $optionAemVersion=='6.3' && $optionAemServicePack=='n')
+#if ( $optionAemVersion == "6.3" && $optionAemServicePack == "n")
   ## stick with old core components version for AEM without service pack
   #set( $coreComponentsVersion = "1.0.6" )
 #else
-  #set( $coreComponentsVersion = "2.0.6" )
+  #set( $coreComponentsVersion = "2.0.8" )
 #end
       <!-- AEM Core WCM Components -->
       <dependency>
@@ -279,10 +290,10 @@
 
 #end
 #if( $optionAcsCommons == "y" )
-#if ( $optionAemVersion=='6.1' )
+#if ( $optionAemVersion == "6.1" )
   #set( $acsCommonsVersion = "2.14.0" )
 #else
-  #set( $acsCommonsVersion = "3.17.0" )
+  #set( $acsCommonsVersion = "3.17.4" )
 #end
       <!-- ACS AEM Commons -->
       <dependency>
@@ -308,7 +319,7 @@
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
-        <version>2.12.0</version>
+        <version>2.21.0</version>
       </dependency>
 
     </dependencies>

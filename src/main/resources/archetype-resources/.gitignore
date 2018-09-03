@@ -21,6 +21,7 @@ npm-debug.log
 .vagrant
 *.iml
 .DS_Store
+*.retry
 .rubygems
 .sass-cache
 .rubygems-gem-maven-plugin

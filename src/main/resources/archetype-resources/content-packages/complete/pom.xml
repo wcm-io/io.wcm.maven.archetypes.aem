@@ -143,7 +143,9 @@
             <!-- Include application bundles and their dependencies from io.wcm -->
             <embedded>
               <groupId>
+#if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
                 io.wcm,
+#end
                 ${groupId}
               </groupId>
               <type>jar</type>
@@ -213,7 +215,6 @@
       <plugin>
         <groupId>io.wcm.devops.maven.plugins</groupId>
         <artifactId>eclipse-maven-plugin</artifactId>
-        <inherited>true</inherited>
         <configuration>
           <skip>true</skip>
         </configuration>
