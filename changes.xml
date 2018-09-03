@@ -23,6 +23,18 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
+    <release version="2.0.0" date="Not released">
+      <action type="update" dev="sseifert">
+        Refactor sample components and sample content.
+      </action>
+      <action type="update" dev="sseifert">
+        Add webpack-based frontend build.
+      </action>
+      <action type="update" dev="sseifert">
+        Drop support for AEM 6.1 and AEM 6.2.
+      </action>
+    </release>
+
     <release version="1.1.2" date="2018-09-03">
       <action type="update" dev="sseifert">
         Update dependencies.
