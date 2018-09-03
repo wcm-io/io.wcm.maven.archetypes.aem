@@ -16,20 +16,21 @@ def confContentPackage = new File(rootDir, "content-packages/conf-content")
 def sampleContentPackage = new File(rootDir, "content-packages/sample-content")
 def uiAppsPackage = new File(rootDir, "content-packages/ui.apps")
 def configDefinition = new File(rootDir, "config-definition")
+def frontend = new File(rootDir, "frontend")
 def rootPom = new File(rootDir, "pom.xml")
 
 // validate parameters - throw exceptions for invalid combinations
-if (optionEditableTemplates == "y" && (optionAemVersion == "6.1" || optionAemVersion == "6.2")) {
-  throw new RuntimeException("Parameter optionEditableTemplates='y' is only supported for optionAemVersion='6.3' and up.")
-}
-if (optionSlingInitialContentBundle == "n" && (optionAemVersion == "6.1" || optionAemVersion == "6.2")) {
-  throw new RuntimeException("Parameter optionSlingInitialContentBundle='n' is only supported for optionAemVersion='6.3' and up.")
+if (optionAemServicePack == "n" && optionAemVersion == "6.3") {
+  throw new RuntimeException("For AEM 6.3 optionAemServicePack='y' is required because AEM 6.3 is only supported with latest service pack.")
 }
 if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
   throw new RuntimeException("Parameter optionMultiBundleLayout='y' is only supported with optionSlingInitialContentBundle='y'.")
 }
 if (optionWcmioHandler == "y" && optionContextAwareConfig == "n") {
   throw new RuntimeException("Parameter optionWcmioHandler='y' is only supported with optionContextAwareConfig='y'.")
+}
+if (optionEditableTemplates == "n" && optionWcmioHandler == "n") {
+  throw new RuntimeException("You have to specify either parameter optionEditableTemplates='y' or optionWcmioHandler='y'.")
 }
 if (!(javaPackage ==~ /^[a-z0-9\.]+$/)) {
   throw new RuntimeException("Java package name is invalid: " + javaPackage)
@@ -45,6 +46,21 @@ def removeModule(pomFile, module) {
   }
 }
 
+// frontend
+if (optionFrontend == "y") {
+  assert new File(clientlibsBundle, "src").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/etc/clientlibs/${projectName}/${projectName}.3rdparty").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/etc/clientlibs/${projectName}/${projectName}.all").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/etc/clientlibs/${projectName}/${projectName}.app").deleteDir()
+}
+else {
+  assert new File(rootDir, "frontend").deleteDir()
+  assert new File(clientlibsBundle, ".gitignore").delete()
+  assert new File(uiAppsPackage, ".gitignore").delete()
+  // remove frontend module entry from root pom
+  removeModule(rootPom, "frontend")
+}
+
 // remove files only relevant for wcm.io Handler projects
 if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/java/" + javaPackage.replace('.','/') + "/config").deleteDir()
@@ -53,42 +69,37 @@ if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/redirect.json").delete()
-  assert new File(coreBundle, "src/main/webapp/app-root/components/content/common/contentRichText").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root/components/content/stage/stageheader").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/content/text").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/content/image").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/components/global/include").deleteDir()
 
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/templates/admin/redirect").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/templates/admin/redirect.json").delete()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/admin/page/redirect.json").delete()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/content/common").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/content/page/content").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/content/page/homepage").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/content/stage").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/global/include").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/global/page/html.html").delete()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/global/wcmInit.json").delete()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/structure").deleteDir()
+  assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root/${projectName}.app/css").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/etc/clientlibs/${projectName}/${projectName}.app/css").deleteDir()
+  assert new File(frontend, "src/components/image").deleteDir()
 
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/config").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/templates/admin/redirect").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/admin/page/redirect").deleteDir()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/common/contentRichText/contentRichText.html").delete()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/common/contentRichText/_cq_editConfig.xml").delete()   
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/stage/stageheader/stageheader.html").delete()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/stage/stageheader/_cq_editConfig.xml").delete()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/stage/stageheader/_cq_dialog").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/text/text.html").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/text/_cq_editConfig.xml").delete()   
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/image/image.html").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/image/_cq_editConfig.xml").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/image/_cq_dialog").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/global/include").deleteDir()
 
   assert new File(configDefinition, "src/main/templates/${projectName}-aem-cms/${projectName}-aem-cms-author-systemusers.json.hbs").delete()
 }
-else {
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/global/page/body.html").delete()
-}
 
 // refactor project layout when multi bundle layout is switched off
 if (optionMultiBundleLayout == "n") {
-  // move clientlibs-root
-  assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root").renameTo(new File(coreBundle, "src/main/webapp/clientlibs-root"))
+  // move .gitignore for clientlibs-root
+  if (optionFrontend == "y") {
+    assert new File(clientlibsBundle, ".gitignore").renameTo(new File(coreBundle, ".gitignore"))
+  }
+  else {
+    // move clientlibs-root
+    assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root").renameTo(new File(coreBundle, "src/main/webapp/clientlibs-root"))
+  }
   // delete clientlibs bundle
   assert clientlibsBundle.deleteDir()
   // remove bundles/clientlibs module entry from root pom
@@ -110,31 +121,12 @@ if (optionContextAwareConfig == "n" && optionWcmioHandler == "n" ) {
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/configEditor.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/structureElement.json").delete()
 
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/templates/admin/configEditor").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/templates/admin/configEditor.json").delete()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/templates/admin/structureElement").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/templates/admin/structureElement.json").delete()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/admin/page/configEditor.json").delete()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61/components/admin/page/structureElement.json").delete()
-
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/templates/admin/configEditor").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/templates/admin/structureElement").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/admin/page/configEditor").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/admin/page/structureElement").deleteDir()
 
   assert new File(sampleContentPackage, "jcr_root/content/${projectName}/en/tools").deleteDir()
-}
-
-// use webapp for AEM 6.3+ or AEM 6.1/2
-if (optionAemVersion == "6.1" || optionAemVersion == "6.2") {
-  if (optionMultiBundleLayout == "n" && optionWcmioHandler == "y") {
-    assert new File(coreBundle, "src/main/webapp/app-root/config").renameTo(new File(coreBundle, "src/main/webapp/app-root-aem61/config"))
-  }
-  assert new File(coreBundle, "src/main/webapp/app-root").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61").renameTo(new File(coreBundle, "src/main/webapp/app-root"))
-}
-else {
-  assert new File(coreBundle, "src/main/webapp/app-root-aem61").deleteDir()
 }
 
 // remove conf-content package if not required
@@ -145,12 +137,10 @@ if (optionContextAwareConfig == "n" && optionEditableTemplates == "n") {
 
 // prepare project for editable templates
 if (optionEditableTemplates == "y") {
-  assert new File(coreBundle, "src/main/webapp/app-root/components/content/page").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root/components/global/page/body.html").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/page").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates").deleteDir()
 
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/page").deleteDir()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/global/page/body.html").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/page").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/templates").deleteDir()
 }
 else {

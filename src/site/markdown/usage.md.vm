@@ -29,14 +29,15 @@ $symbol_pound$symbol_pound$symbol_pound Archetype parameters
 | **packageGroupName**                | \*)     | Group name for AEM content package
 | **aemAuthorPort**                   | 4502    | Default port for local AEM author instance
 | **aemPublishPort**                  | 4503    | Default port for local AEM publish instance
-| **optionAemVersion**                | 6.4     | AEM major version (6.1, 6.2, 6.3 or 6.4)
+| **optionAemVersion**                | 6.4     | AEM major version (6.3 or 6.4)
 | **optionAemServicePack**            | n       | Use latest service pack for AEM version - you need to deploy artifacts following [these conventions][aem-binaries-conventions]
-| **optionSlingModelsLatest**         | y       | Use latest Sling Models version
+| **optionSlingModelsLatest**         | n       | Use latest Sling Models version
 | **optionSlingInitialContentBundle** | y       | **y**: AEM application projects is set up with scripts and content parts as JSON files within the OSGi bundle with Sling-Initial Content, suitable for [File System Resource Provider][fsresource-adaptto-talk]. _Works with all AEM versions._<br/>**n**: Projects are set up with FileVault package layout, suitable for [AEM Developer Tools for Eclipse][aem-eclipse-ide] ([Sling IDE][sling-eclipse-ide]). _Only supported for AEM 6.3+._
-  **optionEditableTemplates**         | n       | Set up projects using editable templates.  _Only supported for AEM 6.3+._
+| **optionEditableTemplates**         | y       | Set up projects using editable templates.  _Only supported for AEM 6.3+._
 | **optionMultiBundleLayout**         | n       | Split up AEM application in multiple bundles for modularizing large AM applications. _Requires optionSlingInitialContentBundle='y'._
 | **optionContextAwareConfig**        | y       | Setup project with [Sling Context-Aware Configuration][sling-caconfig] and [wcm.io Context-Aware Configuration][wcmio-caconfig] extensions.
-| **optionWcmioHandler**              | y       | Setup project using wcm.io AEM libraries, especially the [wcm.io Handler][wcmio-handler] infrastructure. _Requires optionContextAwareConfig='y'._
+| **optionFrontend**                  | n       | Setup frontend build project with [webpack][webpack]
+| **optionWcmioHandler**              | n       | Setup project using wcm.io AEM libraries, especially the [wcm.io Handler][wcmio-handler] infrastructure. _Requires optionContextAwareConfig='y'._
 | **optionAcsCommons**                | n       | Deploy [ACS AEM Commons][acs-aem-commons].
 
 \*) Sensible default
@@ -101,7 +102,7 @@ $symbol_pound$symbol_pound$symbol_pound Requirements
 
 * JDK 1.8
 * Apache Maven 3.3.9 or higher
-* AEM 6.1, 6.2, 6.3 or 6.4 running on your local machine
+* AEM 6.3 or 6.4 running on your local machine
 * Include the [Adobe Public Maven Repository][adobe-public-maven-repo] in your maven settings, see [wcm.io Maven Repositories][wcmio-maven] for details.
 * Optional: If you want to install latest service packs you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
 
@@ -118,3 +119,4 @@ $symbol_pound$symbol_pound$symbol_pound Requirements
 [wcmio-caconfig]: http://wcm.io/caconfig/
 [wcmio-handler]: http://wcm.io/handler
 [acs-aem-commons]: https://adobe-consulting-services.github.io/acs-aem-commons/
+[webpack]: https://webpack.js.org/

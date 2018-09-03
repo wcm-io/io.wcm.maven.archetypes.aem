@@ -8,5 +8,5 @@
     <jcr:content
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="${projectName}/components/content/page/homepage"/>
+        sling:resourceType="${projectName}/components/page/homepage"/>
 </jcr:root>

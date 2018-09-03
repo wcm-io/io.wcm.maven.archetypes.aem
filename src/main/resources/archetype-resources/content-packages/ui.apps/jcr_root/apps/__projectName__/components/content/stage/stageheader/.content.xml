@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    cq:icon="image"
-    jcr:primaryType="cq:Component"
-    jcr:title="Stage Header"
-    componentGroup="${projectName}"#if($optionWcmioHandler=='n')
-    sling:resourceSuperType="#if($optionAemServicePack=='y' || $optionAemVersion!='6.3')core/wcm/components/image/v2/image#{else}core/wcm/components/image/v1/image#end"#end/>

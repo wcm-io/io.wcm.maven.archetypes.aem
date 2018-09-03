@@ -4,9 +4,8 @@
     "${projectName}.all"
   ],
   "embed": [
-#if( $optionAemVersion != "6.1" && $optionAemVersion != "6.2" )
     "core.wcm.components.image.v1",
-#end
+    "${projectName}.3rdparty",
     "${projectName}.app"
   ],
   "jsProcessor": [

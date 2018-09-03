@@ -50,7 +50,6 @@
       <scope>compile</scope>
     </dependency>
 
-#if( $optionAemVersion != "6.1" && $optionAemVersion != "6.2" )
     <!-- Core WCM Components -->
     <dependency>
       <groupId>com.adobe.cq</groupId>
@@ -59,7 +58,6 @@
       <scope>compile</scope>
     </dependency>
 
-#end
 #if( $optionAcsCommons == "y" )
       <!-- ACS AEM Commons -->
     <dependency>

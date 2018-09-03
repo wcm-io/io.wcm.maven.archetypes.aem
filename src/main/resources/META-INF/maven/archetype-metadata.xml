@@ -67,10 +67,10 @@
     </requiredProperty>
 
     <!-- *** feature flags *** -->
-    <!-- AEM major version (6.1, 6.2, 6.3 or 6.4) -->
+    <!-- AEM major version (6.3 or 6.4) -->
     <requiredProperty key="optionAemVersion">
       <defaultValue>6.4</defaultValue>
-      <validationRegex>^(6\.1|6\.2|6\.3|6\.4)$</validationRegex>
+      <validationRegex>^(6\.3|6\.4)$</validationRegex>
     </requiredProperty>
     <!-- Use latest service pack for AEM version - you need to deploy artifacts following these conventions https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
     <requiredProperty key="optionAemServicePack">
@@ -79,7 +79,7 @@
     </requiredProperty>
     <!-- Use latest Sling Models version -->
     <requiredProperty key="optionSlingModelsLatest">
-      <defaultValue>y</defaultValue>
+      <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
     <!-- y: AEM application projects is set up with scripts and content parts as JSON files within the OSGi bundle with Sling-Initial Content, suitable for File System Resource Provider. Works with all AEM versions.
@@ -90,7 +90,7 @@
     </requiredProperty>
     <!-- Set up projects using editable templates.  Only supported for AEM 6.3+. -->
     <requiredProperty key="optionEditableTemplates">
-      <defaultValue>n</defaultValue>
+      <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
     <!-- Split up AEM application in multiple bundles for modularizing large AM applications.. Only supported if optionSlingInitialContentBundle='y'. -->
@@ -103,9 +103,14 @@
       <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
+    <!-- Setup frontend build project with webpack -->
+    <requiredProperty key="optionFrontend">
+      <defaultValue>n</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
     <!-- Setup project using wcm.io AEM libraries, especially the wcm.io Handler infrastructure. Requires optionContextAwareConfig='y'. -->
     <requiredProperty key="optionWcmioHandler">
-      <defaultValue>y</defaultValue>
+      <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
     <!-- Deploy ACS AEM Commons. -->
@@ -137,6 +142,34 @@
   <modules>
     <module id="${rootArtifactId}.parent" dir="parent" name="${rootArtifactId}.parent" />
 
+    <module id="${rootArtifactId}.frontend" dir="frontend" name="${rootArtifactId}.frontend">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>README.md</include>
+            <include>clientlib.config.js</include>
+            <include>package.json</include>
+            <include>package-lock.json</include>
+            <include>src\index.*</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>**/*</include>
+          </includes>
+          <excludes>
+            <exclude>README.md</exclude>
+            <exclude>clientlib.config.js</exclude>
+            <exclude>package.json</exclude>
+            <exclude>package-lock.json</exclude>
+            <exclude>src\index.*</exclude>
+          </excludes>
+        </fileSet>
+      </fileSets>
+    </module>
+
     <module id="${rootArtifactId}.core" dir="bundles/core" name="${rootArtifactId}.core">
       <fileSets>
         <fileSet filtered="true" packaged="true" encoding="UTF-8">
@@ -153,9 +186,6 @@
             <include>**/*.json</include>
             <include>**/*.xml</include>
           </includes>
-          <excludes>
-            <exclude>**/README.txt</exclude>
-          </excludes>
         </fileSet>
         <fileSet encoding="UTF-8">
           <directory>src/main/webapp</directory>
@@ -183,21 +213,24 @@
         <fileSet filtered="true" encoding="UTF-8">
           <directory>src/main/webapp</directory>
           <includes>
-            <include>**/*.css</include>
-            <include>**/*.js</include>
             <include>**/*.json</include>
             <include>**/*.txt</include>
           </includes>
-          <excludes>
-            <exclude>**/README.txt</exclude>
-          </excludes>
         </fileSet>
         <fileSet encoding="UTF-8">
           <directory>src/main/webapp</directory>
           <includes>
+            <include>**/*.css</include>
+            <include>**/*.js</include>
             <include>**/*.jpg</include>
             <include>**/*.ico</include>
             <include>**/*.png</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>.gitignore</include>
           </includes>
         </fileSet>
       </fileSets>
@@ -205,6 +238,12 @@
 
     <module id="${rootArtifactId}.ui.apps" dir="content-packages/ui.apps" name="${rootArtifactId}.ui.apps">
       <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>.gitignore</include>
+          </includes>
+        </fileSet>
         <fileSet encoding="UTF-8">
           <directory></directory>
           <includes>
@@ -215,9 +254,7 @@
         <fileSet filtered="true" encoding="UTF-8">
           <directory>jcr_root</directory>
           <includes>
-            <include>**/*.css</include>
             <include>**/*.html</include>
-            <include>**/*.js</include>
             <include>**/*.json</include>
             <include>**/*.txt</include>
             <include>**/*.xml</include>
@@ -226,6 +263,8 @@
         <fileSet encoding="UTF-8">
           <directory>jcr_root</directory>
           <includes>
+            <include>**/*.css</include>
+            <include>**/*.js</include>
             <include>**/*.jpg</include>
             <include>**/*.ico</include>
             <include>**/*.png</include>
@@ -328,6 +367,7 @@
         </fileSet>
       </fileSets>
     </module>
+
   </modules>
 
 </archetype-descriptor>

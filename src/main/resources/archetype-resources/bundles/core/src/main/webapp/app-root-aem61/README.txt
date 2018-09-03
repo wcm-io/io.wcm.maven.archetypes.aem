@@ -1,1 +1,0 @@
-This contains AEM webapp in Sling-Initial-Content format for AEM 6.1 and 6.2 using standalone components.

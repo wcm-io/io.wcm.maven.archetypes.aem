@@ -3,6 +3,7 @@
 #set( $symbol_escape = '\' )
 package ${package}.config.impl;
 
+import org.jetbrains.annotations.NotNull;
 import org.osgi.service.component.annotations.Component;
 
 import com.day.cq.wcm.api.Page;
@@ -19,12 +20,12 @@ import ${package}.config.AppTemplate;
 public class LinkHandlerConfigImpl extends LinkHandlerConfig {
 
   @Override
-  public boolean isValidLinkTarget(Page page) {
+  public boolean isValidLinkTarget(@NotNull Page page) {
     return !Template.is(page, AppTemplate.ADMIN_STRUCTURE_ELEMENT);
   }
 
   @Override
-  public boolean isRedirect(Page page) {
+  public boolean isRedirect(@NotNull Page page) {
     return Template.is(page, AppTemplate.ADMIN_REDIRECT);
   }
 

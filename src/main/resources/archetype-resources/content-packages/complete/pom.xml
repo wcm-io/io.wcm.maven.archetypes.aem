@@ -49,7 +49,7 @@
 #end
 
 #if ( $optionSlingModelsLatest == "y" )
-#if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
+#if ( $optionAemVersion == "6.3" )
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.models.api</artifactId>
@@ -61,16 +61,9 @@
       <artifactId>org.apache.sling.models.impl</artifactId>
       <scope>compile</scope>
     </dependency>
-#if( $optionAemVersion == "6.1" )
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <scope>compile</scope>
-    </dependency>
-#end
 #end
 #if ( $optionContextAwareConfig == "y" )
-#if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
+#if ( $optionAemVersion == "6.3" )
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.caconfig.api</artifactId>
@@ -87,8 +80,16 @@
       <artifactId>org.apache.sling.caconfig.impl</artifactId>
       <scope>compile</scope>
     </dependency>
+#if ( $optionAemVersion == "6.4" )
+    <!-- Update Sling Tenant in AEM 6.4 due to https://issues.apache.org/jira/browse/SLING-7880 -->
+    <dependency>
+      <groupId>org.apache.sling</groupId>
+      <artifactId>org.apache.sling.tenant</artifactId>
+      <scope>compile</scope>
+    </dependency>
 #end
-#if ($optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3")
+#end
+#if ( $optionAemVersion == "6.3" )
 #if ( $optionSlingInitialContentBundle == "y" || $optionContextAwareConfig == "y" )
     <dependency>
       <groupId>org.apache.sling</groupId>
@@ -140,7 +141,7 @@
 
           <embeddedTarget>/apps/${contentPackage.name}/install</embeddedTarget>
           <embeddeds>
-            <!-- Include application bundles and their dependencies from io.wcm -->
+            <!-- Include application bundles and their dependencies -->
             <embedded>
               <groupId>
 #if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
@@ -150,7 +151,7 @@
               </groupId>
               <type>jar</type>
             </embedded>
-#if( $optionSlingModelsLatest == "y" || $optionContextAwareConfig == "y" || $optionSlingInitialContentBundle == "y" || $optionContextAwareConfig == "y" )
+#if( $optionSlingModelsLatest == "y" || $optionContextAwareConfig == "y" || ($optionSlingInitialContentBundle == "y" && $optionAemVersion == "6.3") )
             <!-- Include some Apache Sling bundles newer than those shipped with AEM -->
             <embedded>
               <groupId>
@@ -159,20 +160,23 @@
               <artifactId>
 #if ( $optionSlingModelsLatest == "y" )
                 <!-- Latest Sling Models -->
-#if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
+#if ( $optionAemVersion == "6.3" )
                 org.apache.sling.models.api,
 #end
                 org.apache.sling.models.impl,
 #end
 #if ( $optionContextAwareConfig == "y" )
                 <!-- Latest Sling Context-Aware Configuration -->
-#if ( $optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3" )
+#if ( $optionAemVersion == "6.3" )
                 org.apache.sling.caconfig.api,
                 org.apache.sling.caconfig.spi,
 #end
                 org.apache.sling.caconfig.impl,
+#if ( $optionAemVersion == "6.4" )
+                org.apache.sling.tenant,
 #end
-#if ($optionAemVersion == "6.1" || $optionAemVersion == "6.2" || $optionAemVersion == "6.3")
+#end
+#if ( $optionAemVersion == "6.3" )
 #if ( $optionSlingInitialContentBundle == "y" || $optionContextAwareConfig == "y" )
                 org.apache.sling.commons.johnzon,
 #end
@@ -181,17 +185,6 @@
                 org.apache.sling.jcr.contentloader,
 #end
 #end
-              </artifactId>
-              <type>jar</type>
-            </embedded>
-#end
-#if( $optionAemVersion == "6.1" )
-            <embedded>
-              <groupId>
-                org.apache.commons
-              </groupId>
-              <artifactId>
-                commons-lang3
               </artifactId>
               <type>jar</type>
             </embedded>

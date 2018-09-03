@@ -8,9 +8,9 @@
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
-            <stage
+            <carousel
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/stage/stageheader"/>
+                sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/carousel"/>
             <content
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/foundation/components/responsivegrid"/>
