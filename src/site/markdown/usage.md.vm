@@ -1,9 +1,9 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-$symbol_pound$symbol_pound Maven Archetype for AEM usage
+${symbol_pound}${symbol_pound} Maven Archetype for AEM usage
 
-$symbol_pound$symbol_pound$symbol_pound Basic usage
+${symbol_pound}${symbol_pound}${symbol_pound} Basic usage
 
 Generate a new AEM project using interactive mode by executing:
 
@@ -17,7 +17,7 @@ mvn archetype:generate \
 As minimal input parameters you have to enter a value for `groupId` and `projectName` - all other parameters can be derived from these or have sensible default parameters. But in most cases you want to specify more parameters, see next chapters for all available parameters and some examples.
 
 
-$symbol_pound$symbol_pound$symbol_pound Archetype parameters
+${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 
 | Parameter                           | Default | Description
 |-------------------------------------|---------|-------------
@@ -43,9 +43,9 @@ $symbol_pound$symbol_pound$symbol_pound Archetype parameters
 \*) Sensible default
 
 
-$symbol_pound$symbol_pound$symbol_pound Usage examples
+${symbol_pound}${symbol_pound}${symbol_pound} Usage examples
 
-$symbol_pound$symbol_pound$symbol_pound$symbol_pound$symbol_pound AEM project with wcm.io and Sling-Initial-Content project layout
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} AEM project with wcm.io and Sling-Initial-Content project layout
 
 ```
 mvn archetype:generate -DinteractiveMode=false \
@@ -68,10 +68,11 @@ mvn archetype:generate -DinteractiveMode=false \
   -DoptionMultiBundleLayout=n \
   -DoptionContextAwareConfig=y \
   -DoptionWcmioHandler=y \
-  -DoptionAcsCommons=n
+  -DoptionAcsCommons=n \
+  -DoptionFrontend=y
 ```
 
-$symbol_pound$symbol_pound$symbol_pound$symbol_pound$symbol_pound Minimal AEM project with FileVault package layout
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Minimal AEM project with FileVault package layout
 
 ```
 mvn archetype:generate -DinteractiveMode=false \
@@ -94,11 +95,12 @@ mvn archetype:generate -DinteractiveMode=false \
   -DoptionMultiBundleLayout=n \
   -DoptionContextAwareConfig=y \
   -DoptionWcmioHandler=n \
-  -DoptionAcsCommons=y
+  -DoptionAcsCommons=y \
+  -DoptionFrontend=n
 ```
 
 
-$symbol_pound$symbol_pound$symbol_pound Requirements
+${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 
 * JDK 1.8
 * Apache Maven 3.3.9 or higher
