@@ -1,0 +1,50 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Carousel",
+  "componentGroup": "${projectName}",
+  
+  "cq:editConfig": {
+    "jcr:primaryType": "cq:EditConfig"
+  },
+
+  "cq:dialog": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "cq/gui/components/authoring/dialog",
+    "jcr:title": "Carousel",
+    "content": {
+      "sling:resourceType": "granite/ui/components/coral/foundation/fixedcolumns",
+      "items": {
+        "column": {
+          "sling:resourceType": "granite/ui/components/coral/foundation/container",
+          "items": {
+            
+            "slideMedia": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/form/multifield",
+              "composite": true,
+              "fieldLabel": "Slide Assets",
+              "field": {
+                "sling:resourceType": "granite/ui/components/coral/foundation/container",
+                "name": "./slides",
+                "items": {
+                  "fileReference": {
+                    "sling:resourceType": "granite/ui/components/coral/foundation/form/pathfield",
+                    "name": "./#if($optionWcmioHandler=='n')fileReference#{else}mediaRef#end",
+                    "rootPath": "/content/dam/${projectName}"
+                  }#if ($optionWcmioHandler == 'n'),
+                  "resourceType": {
+                    "sling:resourceType": "granite/ui/components/coral/foundation/form/hidden",
+                    "name": "./sling:resourceType",
+                    "value": "aem-fe-archetype/components/content/image"
+                  }#end
+
+                }
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+  
+}

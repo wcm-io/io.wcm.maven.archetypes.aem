@@ -1,3 +1,8 @@
-#base=css
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+${symbol_pound}base=css
+#if ( $optionWcmioHandler == "y" )
 
-sample.css
+image.css
+#end

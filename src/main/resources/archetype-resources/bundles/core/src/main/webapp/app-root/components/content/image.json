@@ -1,0 +1,44 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Image",
+  "componentGroup": "${projectName}",
+#if ($optionWcmioHandler=='y')
+  "cq:icon": "image",
+
+  "cq:editConfig": {
+    "jcr:primaryType": "cq:EditConfig",
+    "cq:dropTargets": {
+      "image": {
+        "jcr:primaryType": "cq:DropTargetConfig",
+        "accept": ["image/gif","image/jpeg","image/png"],
+        "groups": ["media"],
+        "propertyName": "./mediaRef"
+      }
+    }
+  },
+
+  "cq:dialog": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "cq/gui/components/authoring/dialog",
+    "jcr:title": "Image",
+    "content": {
+      "sling:resourceType": "granite/ui/components/coral/foundation/container",
+      "items": {
+        "tabs": {
+          "sling:resourceType": "granite/ui/components/coral/foundation/tabs",
+          "items": {
+
+            "media": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/include",
+              "path": "${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/include/mediaRefTab"
+            }
+
+          }
+        }
+      }
+    }
+  }
+#else
+  "sling:resourceSuperType": "core/wcm/components/image/v2/image"
+#end
+}

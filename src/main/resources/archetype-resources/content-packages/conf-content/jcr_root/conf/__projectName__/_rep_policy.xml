@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+<jcr:root xmlns:crx="http://www.day.com/crx/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
     jcr:primaryType="rep:ACL">
     <allow
         jcr:primaryType="rep:GrantACE"
@@ -16,5 +16,5 @@
     <allow2
         jcr:primaryType="rep:GrantACE"
         rep:principalName="version-manager-service"
-        rep:privileges="{Name}[jcr:read,jcr:versionManagement,rep:write]"/>
+        rep:privileges="{Name}[jcr:versionManagement,jcr:read,rep:write]"/>
 </jcr:root>

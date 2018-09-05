@@ -1,1 +1,0 @@
-This contains AEM webapp in Sling-Initial-Content format for AEM 6.3+ using AEM WCM Core Components.

@@ -17,12 +17,11 @@ public final class MediaFormats {
   }
 
   /**
-   * Stage header (1.33)
+   * Content (2.66 : 1)
    */
   public static final MediaFormat CONTENT = create("content")
       .label("Content (1:3.33)")
-      .ratio(10, 3)
-      .fixedDimension(1000, 300)
+      .ratio(8, 3)
       .extensions("gif", "jpg", "jpeg", "png")
       .build();
 

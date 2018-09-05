@@ -1,8 +1,0 @@
-{
-  /*
-   * Initialize WCM Script Environment for a Page in Authoring mode.
-   * This is a replacement for '/libs/wcm/init/init.jsp'.
-   */
-  "jcr:primaryType": "cq:Component",
-  "sling:resourceSuperType": "wcm-io/wcm/commons/components/global/wcmInit"
-}

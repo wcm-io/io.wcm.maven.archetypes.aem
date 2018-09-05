@@ -18,8 +18,8 @@ The wcm.io Maven Archetype for AEM allows you to set up new Maven projects for d
 
 Features:
 
-* Supports AEM 6.1, AEM 6.2, AEM 6.3 and AEM 6.4
-* Unit Tests based on JUnit 4 and [AEM Mocks][aem-mock]
+* Supports AEM 6.3 SP2 and AEM 6.4
+* Unit Tests based on JUnit 5 and [AEM Mocks][aem-mock]
 * Supports both Sling-Initial-Content JSON-style project layout and FileVault package layout
 * Based on [CONGA][conga] to manage AEM configuration and package deployment
 * AEM 6.3 and 6.4 projects based on [AEM Core WCM Components][aem-core-wcm-components], using Editable Templates is optional
@@ -31,6 +31,8 @@ Features:
 See [Usage][usage] for a detailed documentation.
 
 For more information about the "Sling-Initial-Content JSON-style project layout" and its benefits see [this talk][fsresource-adaptto-talk] form adaptTo() 2017.
+
+If you want to setup AEM infrastructure for deployment of this project you can use the [Maven Archetype for AEM Configuration Management][aem-confmgmt-archetype].
 
 
 ### Alternatives
@@ -54,3 +56,4 @@ Alternatively to the wcm.io AEM archetype you can use these tools to set up new 
 [adobe-aem-archetype]: https://github.com/Adobe-Marketing-Cloud/aem-project-archetype
 [acs-aem-lazybones]: https://github.com/Adobe-Consulting-Services/lazybones-aem-templates
 [fsresource-adaptto-talk]: https://adapt.to/2017/en/schedule/ease-development-with-apache-sling-file-system-resource-provider.html
+[aem-confmgmt-archetype]: ../aem-confmgmt/

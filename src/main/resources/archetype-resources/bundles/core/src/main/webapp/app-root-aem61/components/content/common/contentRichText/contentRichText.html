@@ -1,7 +1,0 @@
-#set( $symbol_pound = '#' )
-#set( $symbol_dollar = '$' )
-#set( $symbol_escape = '\' )
-<div data-sly-use.richtext="io.wcm.handler.richtext.ui.ResourceRichText" data-sly-unwrap>
-  ${symbol_dollar}{richtext.markup @ context='html'}
-</div>
-<div class="cq-placeholder" data-emptytext="${symbol_dollar}{component.title}" data-sly-test="${symbol_dollar}{!richtext.valid}"></div>
