@@ -16,19 +16,19 @@ import ${package}.testcontext.AppAemContext;
 
 @ExtendWith(AemContextExtension.class)
 @SuppressWarnings("null")
-public class CurrentDateTest {
+class CurrentDateTest {
 
   private final AemContext context = AppAemContext.newAemContext();
 
   private CurrentDate underTest;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     underTest = context.request().adaptTo(CurrentDate.class);
   }
 
   @Test
-  public void testYear() {
+  void testYear() {
     assertTrue(underTest.getYear() >= 2018);
   }
 
