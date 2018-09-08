@@ -154,6 +154,9 @@ if (optionSlingInitialContentBundle == "y") {
 }
 else {
   assert new File(coreBundle, "src/main/webapp").deleteDir()
+  if (optionFrontend == "y") {
+    assert new File(coreBundle, ".gitignore").delete()
+  }
 }
 
 // convert all line endings to unix-style
