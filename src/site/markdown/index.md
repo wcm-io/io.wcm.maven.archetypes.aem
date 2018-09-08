@@ -36,7 +36,7 @@ If you want to setup AEM infrastructure for deployment of this project you can u
 ### Further Resources
 
 * [Maven Archetypes for AEM][adaptto-talk-aem-archetypes] - Talk from adaptTo() 2018 about AEM project archetypes
-* [Ease Development with Apache Sling File System Resource Provider] - Talk from adaptTo() 2017 about the "Sling-Initial-Content JSON-style" project layout and it's benefits
+* [Ease Development with Apache Sling File System Resource Provider][adaptto-talk-fsresource] - Talk from adaptTo() 2017 about the "Sling-Initial-Content JSON-style" project layout and it's benefits
 
 
 ### Alternatives
