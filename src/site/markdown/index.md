@@ -30,17 +30,21 @@ Features:
 
 See [Usage][usage] for a detailed documentation.
 
-For more information about the "Sling-Initial-Content JSON-style project layout" and its benefits see [this talk][fsresource-adaptto-talk] form adaptTo() 2017.
-
 If you want to setup AEM infrastructure for deployment of this project you can use the [Maven Archetype for AEM Configuration Management][aem-confmgmt-archetype].
+
+
+### Further Resources
+
+* [Maven Archetypes for AEM][adaptto-talk-aem-archetypes] - Talk from adaptTo() 2018 about AEM project archetypes
+* [Ease Development with Apache Sling File System Resource Provider] - Talk from adaptTo() 2017 about the "Sling-Initial-Content JSON-style" project layout and it's benefits
 
 
 ### Alternatives
 
 Alternatively to the wcm.io AEM archetype you can use these tools to set up new AEM projects:
 
-* [Adobe AEM project archetype][adobe-aem-archetype] - Supports only FileVault package layout and the most recent AEM version, not very flexible
-* [ACS AEM Lazybones Templates][acs-aem-lazybones] - Supports only FileVault package layout. Configuration is quite flexible regarding AEM versions and ACS AEM Commons usage. Lazybones is a bit uncommon in the maven world.
+* [Adobe AEM project archetype][adobe-aem-archetype] - Supports only FileVault package layout and the most recent AEM version
+* [ACS AEM Lazybones Templates][acs-aem-lazybones] - Supports only FileVault package layout. Configuration is quite flexible regarding AEM versions and ACS AEM Commons usage.
 
 
 
@@ -55,5 +59,6 @@ Alternatively to the wcm.io AEM archetype you can use these tools to set up new 
 [acs-aem-commons]: https://adobe-consulting-services.github.io/acs-aem-commons/
 [adobe-aem-archetype]: https://github.com/Adobe-Marketing-Cloud/aem-project-archetype
 [acs-aem-lazybones]: https://github.com/Adobe-Consulting-Services/lazybones-aem-templates
-[fsresource-adaptto-talk]: https://adapt.to/2017/en/schedule/ease-development-with-apache-sling-file-system-resource-provider.html
 [aem-confmgmt-archetype]: ../aem-confmgmt/
+[adaptto-talk-aem-archetypes]: https://adapt.to/2018/en/schedule/maven-archetypes-for-aem.html
+[adaptto-talk-fsresource]: https://adapt.to/2017/en/schedule/ease-development-with-apache-sling-file-system-resource-provider.html
