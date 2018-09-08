@@ -35,8 +35,8 @@ If you want to setup AEM infrastructure for deployment of this project you can u
 
 ### Further Resources
 
-* [Maven Archetypes for AEM][adaptto-talk-aem-archetypes] - Talk from adaptTo() 2018 about AEM project archetypes
-* [Ease Development with Apache Sling File System Resource Provider][adaptto-talk-fsresource] - Talk from adaptTo() 2017 about the "Sling-Initial-Content JSON-style" project layout and it's benefits
+* [adaptTo() 2018 Talk: Maven Archetypes for AEM][adaptto-talk-2018-aem-archetypes]
+* [adaptTo() 2017 Talk: Ease Development with Apache Sling File System Resource Provider][adaptto-talk-2017-fsresource] - about the "Sling-Initial-Content JSON-style" project layout and it's benefits
 
 
 ### Alternatives
@@ -60,5 +60,5 @@ Alternatively to the wcm.io AEM archetype you can use these tools to set up new 
 [adobe-aem-archetype]: https://github.com/Adobe-Marketing-Cloud/aem-project-archetype
 [acs-aem-lazybones]: https://github.com/Adobe-Consulting-Services/lazybones-aem-templates
 [aem-confmgmt-archetype]: ../aem-confmgmt/
-[adaptto-talk-aem-archetypes]: https://adapt.to/2018/en/schedule/maven-archetypes-for-aem.html
-[adaptto-talk-fsresource]: https://adapt.to/2017/en/schedule/ease-development-with-apache-sling-file-system-resource-provider.html
+[adaptto-talk-2018-aem-archetypes]: https://adapt.to/2018/en/schedule/maven-archetypes-for-aem.html
+[adaptto-talk-2017-fsresource]: https://adapt.to/2017/en/schedule/ease-development-with-apache-sling-file-system-resource-provider.html
