@@ -269,7 +269,7 @@
       </dependency>
 
 #if( $optionAcsCommons == "y" )
-#set( $acsCommonsVersion = "3.17.4" )
+#set( $acsCommonsVersion = "3.18.0" )
       <!-- ACS AEM Commons -->
       <dependency>
         <groupId>com.adobe.acs</groupId>
@@ -293,7 +293,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "2.21.0" )
+#set( $mockitoVersion = "2.22.0" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
