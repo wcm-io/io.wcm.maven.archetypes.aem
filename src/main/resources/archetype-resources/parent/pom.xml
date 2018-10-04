@@ -248,13 +248,17 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.4.1.0000#{else}6.4.0.0000#end</version>
+        <version>#if($optionAemServicePack=="y")6.4.2.0000-SNAPSHOT#{else}6.4.0.0000#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
 #end
 
+#if ( $optionAemVersion == "6.4" && $optionAemServicePack == "y" )
+#set( $coreComponentsVersion = "2.1.0" )
+#else
 #set( $coreComponentsVersion = "2.0.8" )
+#end
       <!-- AEM Core WCM Components -->
       <dependency>
         <groupId>com.adobe.cq</groupId>
@@ -269,7 +273,7 @@
       </dependency>
 
 #if( $optionAcsCommons == "y" )
-#set( $acsCommonsVersion = "3.18.0" )
+#set( $acsCommonsVersion = "3.18.2" )
       <!-- ACS AEM Commons -->
       <dependency>
         <groupId>com.adobe.acs</groupId>
