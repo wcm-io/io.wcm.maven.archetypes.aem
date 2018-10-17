@@ -255,7 +255,7 @@
 #end
 
 #if ( $optionAemVersion == "6.4" && $optionAemServicePack == "y" )
-#set( $coreComponentsVersion = "2.1.0" )
+#set( $coreComponentsVersion = "2.2.0" )
 #else
 #set( $coreComponentsVersion = "2.0.8" )
 #end
