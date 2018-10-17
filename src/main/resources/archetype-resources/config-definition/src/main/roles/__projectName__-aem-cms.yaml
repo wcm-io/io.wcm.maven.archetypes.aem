@@ -15,13 +15,13 @@ files:
 #if ( $optionAemServicePack == 'y' )
 #if ( $optionAemVersion == '6.3' )
 # AEM Service Pack
-- url: mvn:adobe.binary.aem.63.servicepack/AEM-6.3-Service-Pack-2/6.3.2/zip
+- url: mvn:adobe.binary.aem.63.servicepack/AEM-6.3.3.0/6.3.3/zip
   dir: packages
   modelOptions:
     delayAfterInstallSec: 30
 #elseif ( $optionAemVersion == '6.4' )
 # AEM Service Pack
-- url: mvn:adobe.binary.aem.64.servicepack/AEM-6.4.1.0/6.4.1/zip
+- url: mvn:adobe.binary.aem.64.servicepack/AEM-6.4.2.0/6.4.2/zip
   dir: packages
   modelOptions:
     delayAfterInstallSec: 30

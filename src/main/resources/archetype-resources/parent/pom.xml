@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.2.26</version>
+    <version>1.2.28</version>
     <relativePath/>
   </parent>
 
@@ -165,7 +165,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.0.8</version>
+        <version>1.0.10</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -240,7 +240,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.3.2.0000#{else}6.3.0.0002#end</version>
+        <version>#if($optionAemServicePack=="y")6.3.3.0000#{else}6.3.0.0002#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -248,13 +248,17 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.4.1.0000#{else}6.4.0.0000#end</version>
+        <version>#if($optionAemServicePack=="y")6.4.2.0000#{else}6.4.0.0000#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
 #end
 
+#if ( $optionAemVersion == "6.4" && $optionAemServicePack == "y" )
+#set( $coreComponentsVersion = "2.2.0" )
+#else
 #set( $coreComponentsVersion = "2.0.8" )
+#end
       <!-- AEM Core WCM Components -->
       <dependency>
         <groupId>com.adobe.cq</groupId>
@@ -269,7 +273,7 @@
       </dependency>
 
 #if( $optionAcsCommons == "y" )
-#set( $acsCommonsVersion = "3.17.4" )
+#set( $acsCommonsVersion = "3.18.2" )
       <!-- ACS AEM Commons -->
       <dependency>
         <groupId>com.adobe.acs</groupId>
@@ -289,11 +293,11 @@
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>5.3.0</version>
+        <version>5.3.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "2.21.0" )
+#set( $mockitoVersion = "2.22.0" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
