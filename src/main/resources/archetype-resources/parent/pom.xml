@@ -273,7 +273,7 @@
       </dependency>
 
 #if( $optionAcsCommons == "y" )
-#set( $acsCommonsVersion = "3.18.2" )
+#set( $acsCommonsVersion = "3.19.0" )
       <!-- ACS AEM Commons -->
       <dependency>
         <groupId>com.adobe.acs</groupId>
