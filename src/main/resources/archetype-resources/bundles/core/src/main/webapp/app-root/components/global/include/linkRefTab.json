@@ -2,6 +2,7 @@
   "sling:resourceType": "granite/ui/components/coral/foundation/fixedcolumns",
   "jcr:title": "Link",
   "margin": true,
+  "cq:showOnCreate": false,
   "items": {
     "column": {
       "sling:resourceType": "granite/ui/components/coral/foundation/container",

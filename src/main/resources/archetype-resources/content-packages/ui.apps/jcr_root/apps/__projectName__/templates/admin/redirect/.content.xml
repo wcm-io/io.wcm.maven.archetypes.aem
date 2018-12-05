@@ -3,7 +3,7 @@
     jcr:primaryType="cq:Template"
     jcr:title="${projectName} Redirect"
     allowedChildren="^/apps/${projectName}/templates/.*$"
-    allowedParents="^/apps/${projectName}/templates/.*$"
+    allowedParents="#if($optionEditableTemplates=='y')[#end^/apps/${projectName}/templates/.*$#if($optionEditableTemplates=='y'),^/conf/${projectName}/settings/wcm/templates/.*$]#end"
     allowedPaths="^/content/${projectName}/.+$"
     ranking="{Long}110">
     <jcr:content

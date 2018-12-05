@@ -4,7 +4,7 @@
   "ranking": 110,
 
   "allowedPaths": "^/content/${projectName}/.+$",
-  "allowedParents": "^/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/.*$",
+  "allowedParents": #if($optionEditableTemplates=='y')[#end"^/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/.*$"#if($optionEditableTemplates=='y'),"^/conf/${projectName}/settings/wcm/templates/.*$"]#end,
   "allowedChildren": "^/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/.*$",
 
   "jcr:content": {

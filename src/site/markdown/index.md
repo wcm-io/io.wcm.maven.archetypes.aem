@@ -24,6 +24,7 @@ Features:
 * Based on [CONGA][conga] to manage AEM configuration and package deployment
 * AEM 6.3 and 6.4 projects based on [AEM Core WCM Components][aem-core-wcm-components], using Editable Templates is optional
 * Optional inclusion of latest service packs
+* Optional integration with a [Webpack][webpack]-based Frontend Build
 * Optional support for [Sling Context-Aware Configuration][sling-caconfig] and [wcm.io Context-Aware Configuration Extensions][wcmio-caconfig]
 * Optional support for [wcm.io Handler][wcmio-handler] Infrastructure
 * Optional support for [ACS AEM Commons][acs-aem-commons]
@@ -62,3 +63,4 @@ Alternatively to the wcm.io AEM archetype you can use these tools to set up new 
 [aem-confmgmt-archetype]: ../aem-confmgmt/
 [adaptto-talk-2018-aem-archetypes]: https://adapt.to/2018/en/schedule/maven-archetypes-for-aem.html
 [adaptto-talk-2017-fsresource]: https://adapt.to/2017/en/schedule/ease-development-with-apache-sling-file-system-resource-provider.html
+[webpack]: https://webpack.js.org/

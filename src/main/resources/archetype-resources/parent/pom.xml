@@ -160,12 +160,12 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.url</artifactId>
-        <version>1.1.4</version>
+        <version>1.1.6</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.0.10</version>
+        <version>1.0.12</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -273,7 +273,7 @@
       </dependency>
 
 #if( $optionAcsCommons == "y" )
-#set( $acsCommonsVersion = "3.18.2" )
+#set( $acsCommonsVersion = "3.19.0" )
       <!-- ACS AEM Commons -->
       <dependency>
         <groupId>com.adobe.acs</groupId>
