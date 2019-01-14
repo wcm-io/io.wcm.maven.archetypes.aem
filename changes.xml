@@ -30,6 +30,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="update" dev="sseifert">
+        Disable built-in AEM link checker by default (enable it only when configured properly).
+      </action>
     </release>
 
     <release version="2.0.6" date="2018-12-05">
