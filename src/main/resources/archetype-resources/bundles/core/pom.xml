@@ -219,7 +219,7 @@
 #end
 #if ( $optionWcmioHandler == "y" )
             <!-- All wcm.io Handler SPI implementation only get active for the resource paths of this application -->
-            <Wcmio-CAService-ContextPathRegex>^(/content|/content/dam|/conf)/?${projectName}(/.*)?$</Wcmio-CAService-ContextPathRegex>
+            <Wcmio-CAService-ContextPathRegex>^(/content|/content/dam|/conf)/${projectName}(/.*)?$</Wcmio-CAService-ContextPathRegex>
 
 #end
           </instructions>
