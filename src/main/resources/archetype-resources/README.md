@@ -31,7 +31,7 @@ After deployment you can open the sample content page in your browser:
 $symbol_pound$symbol_pound$symbol_pound System requirements
 
 * JDK 1.8
-* Apache Maven 3.3.9 or higher
+* Apache Maven 3.5.2 or higher
 * AEM ${optionAemVersion} author instance running on port ${aemAuthorPort}
 * Optional: AEM ${optionAemVersion} publish instance running on port ${aemPublishPort}
 * Include the [Adobe Public Maven Repository][adobe-public-maven-repo] in your maven settings, see [wcm.io Maven Repositories][wcmio-maven] for details.
