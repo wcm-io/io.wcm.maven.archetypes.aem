@@ -24,6 +24,9 @@
   <body>
 
     <release version="2.0.10" date="not released">
+      <action type="update" dev="sseifert">
+        Do not use ordered folder for assets.
+      </action>
       <action type="fix" dev="sseifert">
         Remove superfluous ? from Wcmio-CAService-ContextPathRegex bundle header.
       </action>
