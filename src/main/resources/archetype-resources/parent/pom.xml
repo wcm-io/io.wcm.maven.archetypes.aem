@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.2.29-SNAPSHOT</version>
+    <version>1.2.30</version>
     <relativePath/>
   </parent>
 
@@ -107,7 +107,7 @@
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.tenant</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.4</version>
       </dependency>
 #end
 #end
@@ -196,7 +196,7 @@
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
         <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
-        <version>1.4.3-SNAPSHOT</version>
+        <version>1.4.4</version>
       </dependency>
 
       <!-- wcm.io Testing -->
@@ -248,7 +248,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.4.3.0000-SNAPSHOT#{else}6.4.0.0000#end</version>
+        <version>#if($optionAemServicePack=="y")6.4.3.0000#{else}6.4.0.0000#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
