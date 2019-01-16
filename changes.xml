@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Do not use ordered folder for assets.
       </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
       <action type="fix" dev="sseifert">
         Remove superfluous ? from Wcmio-CAService-ContextPathRegex bundle header.
       </action>

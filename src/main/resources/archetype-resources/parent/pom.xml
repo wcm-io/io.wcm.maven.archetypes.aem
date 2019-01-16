@@ -255,7 +255,7 @@
 #end
 
 #if ( $optionAemVersion == "6.4" && $optionAemServicePack == "y" )
-#set( $coreComponentsVersion = "2.2.0" )
+#set( $coreComponentsVersion = "2.2.2" )
 #else
 #set( $coreComponentsVersion = "2.0.8" )
 #end
@@ -293,11 +293,11 @@
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>5.3.1</version>
+        <version>5.3.2</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "2.22.0" )
+#set( $mockitoVersion = "2.23.4" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
