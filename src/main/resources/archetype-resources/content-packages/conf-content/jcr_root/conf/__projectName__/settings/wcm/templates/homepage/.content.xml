@@ -5,7 +5,6 @@
         cq:templateType="/conf/${projectName}/settings/wcm/template-types/content"
         jcr:primaryType="cq:PageContent"
         jcr:title="${projectName} Homepage"
-        allowedChildren="^/conf/${projectName}/settings/wcm/templates/.*$"
         allowedPaths="^/content/${projectName}(/.+)?$"
         ranking="{Long}20"
         status="enabled"/>
