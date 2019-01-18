@@ -36,6 +36,9 @@
       <action type="fix" dev="sseifert">
         Remove allowedChildren setting for editable templates - has no effect anyway.
       </action>
+      <action type="fix" dev="sseifert">
+        Include clientlib core.wcm.components.image.v2 by default.
+      </action>
     </release>
 
     <release version="2.0.8" date="2019-01-16">
