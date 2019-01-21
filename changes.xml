@@ -28,6 +28,9 @@
         Do not use ordered folder for assets.
       </action>
       <action type="update" dev="sseifert">
+        Do not generate conf-content content package if editable templates is not enabled.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
       <action type="fix" dev="sseifert">
