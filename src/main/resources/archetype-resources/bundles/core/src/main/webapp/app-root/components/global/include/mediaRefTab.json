@@ -8,7 +8,7 @@
       "items": {
         "mediaRef": {
           "sling:resourceType": "granite/ui/components/coral/foundation/form/pathfield",
-          "name": "./mediaRef",
+          "name": "./fileReference",
           "fieldLabel": "Asset reference",
           "fieldDescription": "Reference to asset from DAM",
           "rootPath": "/content/dam/${projectName}"

@@ -4,5 +4,5 @@
     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
     fieldDescription="Reference to asset from DAM"
     fieldLabel="Asset reference"
-    name="./mediaRef"
+    name="./fileReference"
     rootPath="/content/dam/${projectName}"/>

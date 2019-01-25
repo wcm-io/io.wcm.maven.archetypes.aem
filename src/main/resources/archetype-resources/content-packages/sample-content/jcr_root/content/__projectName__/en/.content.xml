@@ -23,19 +23,19 @@
 #if ($optionWcmioHandler == 'n')
                         sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/image"
 #end
-                        #if($optionWcmioHandler=='n')fileReference#{else}mediaRef#end="/content/dam/${projectName}/chicago.jpg"/>
+                        fileReference="/content/dam/${projectName}/chicago.jpg"/>
                     <item1
                         jcr:primaryType="nt:unstructured"
 #if ($optionWcmioHandler == 'n')
                         sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/image"
 #end
-                        #if($optionWcmioHandler=='n')fileReference#{else}mediaRef#end="/content/dam/${projectName}/nature.jpg"/>
+                        fileReference="/content/dam/${projectName}/nature.jpg"/>
                     <item2
                         jcr:primaryType="nt:unstructured"
 #if ($optionWcmioHandler == 'n')
                         sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/image"
 #end
-                        #if($optionWcmioHandler=='n')fileReference#{else}mediaRef#end="/content/dam/${projectName}/prague.jpg"/>
+                        fileReference="/content/dam/${projectName}/prague.jpg"/>
                 </slides>
             </carousel>
             <content

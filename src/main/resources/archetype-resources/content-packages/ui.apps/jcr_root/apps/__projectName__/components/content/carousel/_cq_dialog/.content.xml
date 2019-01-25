@@ -24,7 +24,7 @@
                                 <fileReference
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                    name="./#if($optionWcmioHandler=='n')fileReference#{else}mediaRef#end"
+                                    name="./fileReference"
                                     rootPath="/content/dam/${projectName}"/>
 #if ($optionWcmioHandler == 'n')
                                 <resourceType
