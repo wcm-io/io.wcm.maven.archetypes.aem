@@ -18,67 +18,7 @@
   <cq:inplaceEditing
       jcr:primaryType="cq:InplaceEditingConfig"
       active="{Boolean}true"
-      editorType="image">
-      <config jcr:primaryType="nt:unstructured">
-          <plugins jcr:primaryType="nt:unstructured">
-              <crop
-                  jcr:primaryType="nt:unstructured"
-                  features="*">
-                  <aspectRatios jcr:primaryType="nt:unstructured">
-                      <wideLandscape
-                          jcr:primaryType="nt:unstructured"
-                          name="Wide Landscape"
-                          ratio="0.6180"/>
-                      <landscape
-                          jcr:primaryType="nt:unstructured"
-                          name="Landscape"
-                          ratio="0.8284"/>
-                      <square
-                          jcr:primaryType="nt:unstructured"
-                          name="Square"
-                          ratio="1"/>
-                      <portrait
-                          jcr:primaryType="nt:unstructured"
-                          name="Portrait"
-                          ratio="1.6180"/>
-                      <_x0031_6-9
-                          jcr:primaryType="nt:unstructured"
-                          name="16:9"
-                          ratio="0.5625"/>
-                  </aspectRatios>
-              </crop>
-              <map
-                  jcr:primaryType="nt:unstructured"
-                  features="*"/>
-              <rotate
-                  jcr:primaryType="nt:unstructured"
-                  features="*"/>
-              <zoom
-                  jcr:primaryType="nt:unstructured"
-                  features="*"/>
-          </plugins>
-          <ui jcr:primaryType="nt:unstructured">
-              <inline
-                  jcr:primaryType="nt:unstructured"
-                  toolbar="[crop#launch,rotate#right,history#undo,history#redo,fullscreen#fullscreen,control#close,control#finish]">
-                  <replacementToolbars
-                      jcr:primaryType="nt:unstructured"
-                      crop="[crop#identifier,crop#unlaunch,crop#confirm]"/>
-              </inline>
-              <fullscreen jcr:primaryType="nt:unstructured">
-                  <toolbar
-                      jcr:primaryType="nt:unstructured"
-                      left="[crop#launchwithratio,rotate#left,rotate#right,map#launch,zoom#popupslider,zoom#reset100]"
-                      right="[history#undo,history#redo,fullscreen#fullscreenexit]"/>
-                  <replacementToolbars jcr:primaryType="nt:unstructured">
-                      <crop
-                          jcr:primaryType="nt:unstructured"
-                          left="[crop#identifier]"
-                          right="[crop#unlaunch,crop#confirm]"/>
-                  </replacementToolbars>
-              </fullscreen>
-          </ui>
-      </config>
-  </cq:inplaceEditing>
+      editorType="image"
+      configPath="/apps/${projectName}/components/global/include/imageEditConfig"/>
 #end
 </jcr:root>
