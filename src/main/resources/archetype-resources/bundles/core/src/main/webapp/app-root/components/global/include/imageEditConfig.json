@@ -1,10 +1,16 @@
 {       
+  "jcr:primaryType": "nt:unstructured",
+
   /* Configure plugins for Image IPE */
   "plugins": {
     
     "crop": {
       "features": "*",
       "aspectRatios": {
+        "freeCrop": {
+          "name": "Free Crop",
+          "ratio": "0"
+        },
         "wideLandscape": {
           "name": "Wide Landscape",
           "ratio": "0.6180"

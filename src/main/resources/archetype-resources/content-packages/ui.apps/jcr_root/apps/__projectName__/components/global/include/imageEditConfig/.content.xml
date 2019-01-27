@@ -6,6 +6,10 @@
             jcr:primaryType="nt:unstructured"
             features="*">
             <aspectRatios jcr:primaryType="nt:unstructured">
+                <freeCrop
+                    jcr:primaryType="nt:unstructured"
+                    name="Free Crop"
+                    ratio="0"/>
                 <wideLandscape
                     jcr:primaryType="nt:unstructured"
                     name="Wide Landscape"
