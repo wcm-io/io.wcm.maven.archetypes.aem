@@ -23,7 +23,7 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
-    <release version="2.1.0" date="not released">
+    <release version="2.1.0" date="2019-01-29">
       <action type="update" dev="sseifert">
         Use standard names for asset references and enable in-place edit mode for image components with wcm.io Media handler.
       </action>
