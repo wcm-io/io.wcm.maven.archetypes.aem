@@ -130,7 +130,7 @@ if (optionContextAwareConfig == "n" && optionWcmioHandler == "n" ) {
 }
 
 // remove conf-content package if not required
-if (optionContextAwareConfig == "n" && optionEditableTemplates == "n") {
+if (optionEditableTemplates == "n") {
   removeModule(rootPom, "content-packages/conf-content")
   confContentPackage.deleteDir()
 }

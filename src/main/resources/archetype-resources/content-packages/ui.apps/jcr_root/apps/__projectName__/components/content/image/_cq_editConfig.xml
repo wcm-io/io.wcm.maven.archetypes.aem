@@ -7,7 +7,18 @@
       jcr:primaryType="cq:DropTargetConfig"
       accept="[image/gif,image/jpeg,image/png]"
       groups="[media]"
-      propertyName="./mediaRef" />
+      propertyName="./fileReference">
+      <parameters
+          jcr:primaryType="nt:unstructured"
+          imageCrop=""
+          imageMap=""
+          imageRotate=""/>
+    </image>
   </cq:dropTargets>
+  <cq:inplaceEditing
+      jcr:primaryType="cq:InplaceEditingConfig"
+      active="{Boolean}true"
+      editorType="image"
+      configPath="/apps/${projectName}/components/global/include/imageEditConfig"/>
 #end
 </jcr:root>

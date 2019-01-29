@@ -7,14 +7,28 @@
 
   "cq:editConfig": {
     "jcr:primaryType": "cq:EditConfig",
+    
     "cq:dropTargets": {
       "image": {
         "jcr:primaryType": "cq:DropTargetConfig",
         "accept": ["image/gif","image/jpeg","image/png"],
         "groups": ["media"],
-        "propertyName": "./mediaRef"
+        "propertyName": "./fileReference",
+        "parameters": {
+          "imageCrop": "",
+          "imageMap": "",
+          "imageRotate": ""
+        }
       }
+    },
+
+    "cq:inplaceEditing": {
+      "jcr:primaryType": "cq:InplaceEditingConfig",
+      "active": true,
+      "editorType": "image",
+      "configPath": "/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/component/global/include/imageEditConfig"
     }
+
   },
 
   "cq:dialog": {

@@ -20,6 +20,16 @@
                         sling:resourceType="wcm/core/components/policy/policy"
                         components="[/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/image,/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/text,/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/title]">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:authoring jcr:primaryType="nt:unstructured">
+                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                <image
+                                    jcr:primaryType="nt:unstructured"
+                                    assetGroup="media"
+                                    assetMimetype="[image/gif,image/jpeg,image/png]"
+                                    droptarget="image"
+                                    resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/image"/>
+                            </assetToComponentMapping>
+                        </cq:authoring>
                     </content-container>
                 </responsivegrid>
             </components>

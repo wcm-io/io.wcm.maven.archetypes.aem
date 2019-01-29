@@ -74,7 +74,7 @@ files:
 - url: mvn:${groupId}/${rootArtifactId}.complete//zip
   dir: packages
 
-#if ( $optionContextAwareConfig == "y" || $optionEditableTemplates == "y" )
+#if ( $optionEditableTemplates == "y" )
 # Application conf content package
 - url: mvn:${groupId}/${rootArtifactId}.conf-content//zip
   dir: packages

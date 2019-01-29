@@ -4,7 +4,7 @@
     "${projectName}.all"
   ],
   "embed": [
-    "core.wcm.components.image.v1",
+    "core.wcm.components.image.v2",
     "${projectName}.3rdparty",
     "${projectName}.app"
   ],

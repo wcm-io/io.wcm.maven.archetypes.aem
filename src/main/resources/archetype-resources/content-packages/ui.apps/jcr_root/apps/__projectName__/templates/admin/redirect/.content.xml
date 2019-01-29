@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Template"
     jcr:title="${projectName} Redirect"
-    allowedChildren="^/apps/${projectName}/templates/.*$"
+    allowedChildren="#if($optionEditableTemplates=='y')[#end^/apps/${projectName}/templates/.*$#if($optionEditableTemplates=='y'),^/conf/${projectName}/settings/wcm/templates/.*$]#end"
     allowedParents="#if($optionEditableTemplates=='y')[#end^/apps/${projectName}/templates/.*$#if($optionEditableTemplates=='y'),^/conf/${projectName}/settings/wcm/templates/.*$]#end"
     allowedPaths="^/content/${projectName}/.+$"
     ranking="{Long}110">

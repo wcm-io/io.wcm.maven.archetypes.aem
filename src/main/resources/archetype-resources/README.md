@@ -76,8 +76,6 @@ Modules of this project:
 * [content-packages/complete](content-packages/complete/): AEM content package containing all OSGi bundles of the application and their dependencies
 #if ( $optionEditableTemplates == "y" )
 * [content-packages/conf-content](content-packages/conf-content/): AEM content package with editable templates stored at `/conf`
-#elseif ( $optionContextAwareConfig == "y" )
-* [content-packages/conf-content](content-packages/conf-content/): AEM content package with root folders for `/conf`
 #end
 * [content-packages/sample-content](content-packages/sample-content/): AEM content package containing sample content (for development and test purposes)
 * [config-definition](config-definition/): Defines the CONGA roles and templates for this application. Also contains a `development` CONGA environment for deploying to local development instances.
