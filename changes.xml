@@ -24,6 +24,9 @@
   <body>
 
     <release version="2.1.2" date="not released">
+      <action type="update" dev="sseifert">
+        Enable auto-cropping for image and carousel components (with wcm.io Handler).
+      </action>
       <action type="fix" dev="sseifert">
         Keep aspect ratio for both image and carousel components (CSS fix).
       </action>

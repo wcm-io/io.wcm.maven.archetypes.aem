@@ -5,6 +5,9 @@
 #if ($optionWcmioHandler=='y')
   "cq:icon": "image",
 
+  "mediaFormat": ["content"],
+  "mediaCropAuto": true,
+
   "cq:editConfig": {
     "jcr:primaryType": "cq:EditConfig",
     
