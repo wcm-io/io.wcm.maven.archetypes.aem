@@ -3,11 +3,6 @@
   "jcr:title": "Carousel",
   "componentGroup": "${projectName}",
   
-#if ($optionWcmioHandler=='y')
-  "mediaFormat": ["content"],
-  "mediaCropAuto": true,
-
-#end
   "cq:editConfig": {
     "jcr:primaryType": "cq:EditConfig"
   },
