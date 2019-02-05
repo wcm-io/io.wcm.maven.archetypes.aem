@@ -29,7 +29,7 @@
       "jcr:primaryType": "cq:InplaceEditingConfig",
       "active": true,
       "editorType": "image",
-      "configPath": "/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/component/global/include/imageEditConfig"
+      "configPath": "/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/include/imageEditConfig"
     }
 
   },
