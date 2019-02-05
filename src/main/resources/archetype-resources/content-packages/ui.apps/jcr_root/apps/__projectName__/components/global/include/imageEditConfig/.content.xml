@@ -4,34 +4,7 @@
     <plugins jcr:primaryType="nt:unstructured">
         <crop
             jcr:primaryType="nt:unstructured"
-            features="*">
-            <aspectRatios jcr:primaryType="nt:unstructured">
-                <freeCrop
-                    jcr:primaryType="nt:unstructured"
-                    name="Free Crop"
-                    ratio="0"/>
-                <wideLandscape
-                    jcr:primaryType="nt:unstructured"
-                    name="Wide Landscape"
-                    ratio="0.6180"/>
-                <landscape
-                    jcr:primaryType="nt:unstructured"
-                    name="Landscape"
-                    ratio="0.8284"/>
-                <square
-                    jcr:primaryType="nt:unstructured"
-                    name="Square"
-                    ratio="1"/>
-                <portrait
-                    jcr:primaryType="nt:unstructured"
-                    name="Portrait"
-                    ratio="1.6180"/>
-                <_x0031_6-9
-                    jcr:primaryType="nt:unstructured"
-                    name="16:9"
-                    ratio="0.5625"/>
-            </aspectRatios>
-        </crop>
+            features="*"/>
         <map
             jcr:primaryType="nt:unstructured"
             features="*"/>

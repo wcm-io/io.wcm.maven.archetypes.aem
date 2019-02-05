@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+<jcr:root#if($optionWcmioHandler=='y') xmlns:wcmio="http://wcm.io/ns"#end xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
 #if($optionWcmioHandler=='n')
     cq:icon="image"
 #end
     jcr:primaryType="cq:Component"
     jcr:title="Image"
     componentGroup="${projectName}"#if($optionWcmioHandler=='y')
-    mediaFormat="[content]"
-    mediaCropAuto="{Boolean}true"#else
+    wcmio:mediaCropAuto="{Boolean}true"#else
     sling:resourceSuperType="core/wcm/components/image/v2/image"#end/>
