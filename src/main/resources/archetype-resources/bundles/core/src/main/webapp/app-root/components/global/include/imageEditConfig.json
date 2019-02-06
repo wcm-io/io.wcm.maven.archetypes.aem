@@ -5,33 +5,7 @@
   "plugins": {
     
     "crop": {
-      "features": "*",
-      "aspectRatios": {
-        "freeCrop": {
-          "name": "Free Crop",
-          "ratio": "0"
-        },
-        "wideLandscape": {
-          "name": "Wide Landscape",
-          "ratio": "0.6180"
-        },
-        "landscape": {
-          "name": "Landscape",
-          "ratio": "0.8284"
-        },
-        "square": {
-          "name": "Square",
-          "ratio": "1"
-        },
-        "portrait": {
-          "name": "Portrait",
-          "ratio": "1.6180"
-        },
-        "16-9": {
-          "name": "16:9",
-          "ratio": "0.5625"
-        }
-      }
+      "features": "*"
     },
     
     "map": {

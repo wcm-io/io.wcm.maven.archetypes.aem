@@ -58,8 +58,8 @@ class CarouselTest {
 
   @Test
   void testSlideImageUrls() {
-    context.create().asset("/content/dam/slides/slide1.png", 80, 30, "image/png");
-    context.create().asset("/content/dam/slides/slide2.png", 80, 30, "image/png");
+    context.create().asset("/content/dam/slides/slide1.png", 1200, 450, "image/png");
+    context.create().asset("/content/dam/slides/slide2.png", 1200, 450, "image/png");
 
     context.build().resource(resource.getPath() + "/" + NN_SLIDES)
         .siblingsMode()
