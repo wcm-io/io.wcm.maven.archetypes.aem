@@ -9,10 +9,8 @@
       "items": {
 
         "mediaRef": {
-          "sling:resourceType": "granite/ui/components/coral/foundation/form/pathfield",
-          "name": "./fileReference",
+          "sling:resourceType": "wcm-io/handler/media/components/granite/form/fileupload",
           "fieldLabel": "Asset reference",
-          "fieldDescription": "Reference to asset from DAM",
           "rootPath": "/content/dam/${projectName}"
         },
 
