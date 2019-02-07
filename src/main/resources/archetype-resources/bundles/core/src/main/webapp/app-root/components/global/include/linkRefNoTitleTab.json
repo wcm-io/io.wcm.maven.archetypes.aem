@@ -41,7 +41,7 @@
           },
           "items": {
             "linkContentRef": {
-              "sling:resourceType": "wcm-io/wcm/ui/granite/components/form/configScopePathBrowser",
+              "sling:resourceType": "wcm-io/handler/url/components/granite/form/siteRootPathField",
               "name": "./linkContentRef",
               "fieldLabel": "Internal page",
               "fieldDescription": "Link to target page in CMS (same site)"

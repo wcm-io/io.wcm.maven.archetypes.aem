@@ -44,7 +44,7 @@
                     <items jcr:primaryType="nt:unstructured">
                         <linkContentRef
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="wcm-io/wcm/ui/granite/components/form/configScopePathBrowser"
+                            sling:resourceType="wcm-io/handler/url/components/granite/form/siteRootPathField"
                             fieldDescription="Link to target page in CMS (same site)"
                             fieldLabel="Internal page"
                             name="./linkContentRef"/>

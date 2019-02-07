@@ -30,11 +30,17 @@
       <action type="update" dev="sseifert">
         Use wcm.io Media Handler File Upload Granite UI widget.
       </action>
+      <action type="update" dev="sseifert">
+        Use "Site Root Path" Granite UI widget in link dialogs.
+      </action>
       <action type="fix" dev="sseifert">
         Keep aspect ratio for both image and carousel components (CSS fix).
       </action>
       <action type="fix" dev="sseifert">
         Fix path to imageEditConfig.
+      </action>
+      <action type="fix" dev="sseifert">
+        Fix Context-Aware Configuration Home Template configuration with editable templates.
       </action>
     </release>
 
