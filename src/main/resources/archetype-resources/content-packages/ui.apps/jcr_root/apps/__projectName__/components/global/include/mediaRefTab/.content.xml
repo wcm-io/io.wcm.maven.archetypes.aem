@@ -13,8 +13,6 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm-io/handler/media/components/granite/form/fileupload"
                     fieldLabel="Asset reference"
-                    allowUpload="{Boolean}false"
-                    mimeTypes="[image,image/gif,image/jpeg,image/png]"
                     rootPath="/content/dam/${projectName}"/>
                 <alt
                     jcr:primaryType="nt:unstructured"

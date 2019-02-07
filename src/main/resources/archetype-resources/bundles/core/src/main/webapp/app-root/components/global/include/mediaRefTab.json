@@ -11,8 +11,6 @@
         "mediaRef": {
           "sling:resourceType": "wcm-io/handler/media/components/granite/form/fileupload",
           "fieldLabel": "Asset reference",
-          "allowUpload": false,
-          "mimeTypes": ["image","image/gif","image/jpeg","image/png"],
           "rootPath": "/content/dam/${projectName}"
         },
 
