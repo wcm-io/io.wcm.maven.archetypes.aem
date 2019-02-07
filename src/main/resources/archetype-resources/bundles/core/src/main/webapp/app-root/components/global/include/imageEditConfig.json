@@ -3,32 +3,30 @@
 
   /* Configure plugins for Image IPE */
   "plugins": {
-    
     "crop": {
       "features": "*"
     },
-    
     "map": {
-      "features": "*"
+      "features": "-"
     },
-    
     "rotate": {
-      "features": "*"
+      "features": "-"
     },
-              
+    "flip": {
+      "features": "-"
+    },
     "zoom": {
       "features": "*"
     }
   },
 
-  /* Configure UI: Which features should be displayed inline, which in fullscreen mode */
   "ui": {
-    
+
     /* Toolbar items displayed in inline mode */
     "inline": {
       "toolbar": [
-        "crop#launch",
-        "rotate#right",
+        /* disable cropping in inline mode: supports only free cropping, we want only the allowed ratios */
+        /*"crop#launch",*/
         "history#undo",
         "history#redo",
         "fullscreen#fullscreen",
@@ -44,14 +42,11 @@
       }
     },
 
-    /* Toolbar items displayed in fullscreen mode*/
+    /* Toolbar items displayed in fullscreen mode */
     "fullscreen": {
       "toolbar": {
         "left": [
           "crop#launchwithratio",
-          "rotate#left",
-          "rotate#right",
-          "map#launch",
           "zoom#popupslider",
           "zoom#reset100"
         ],
@@ -61,8 +56,6 @@
           "fullscreen#fullscreenexit"
         ]
       },
-      
-      /* Toolbars that are displayed instead of the main toolbar when the given plugin is active */
       "replacementToolbars": {
         "crop": {
           "left": [
