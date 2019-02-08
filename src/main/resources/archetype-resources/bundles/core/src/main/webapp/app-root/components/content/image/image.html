@@ -5,5 +5,5 @@
     data-sly-test="${symbol_dollar}{media.valid}">
   ${symbol_dollar}{media.markup @ context='html'}
 </sly>
-<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
-    data-sly-call="${symbol_dollar}{template.placeholder @ isEmpty=!media.valid, classAppend='cq-dd-image'}"></sly>
+<sly data-sly-use.template="wcm-io/handler/media/components/placeholder/mediaPlaceholder.html"
+    data-sly-call="${symbol_dollar}{template.placeholder @ isEmpty=!media.valid, media=media.metadata}"></sly>
