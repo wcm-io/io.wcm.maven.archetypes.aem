@@ -5,6 +5,7 @@
 #if ($optionWcmioHandler=='y')
   "cq:icon": "image",
 
+  "wcmio:mediaFormats": ["content"],
   "wcmio:mediaCropAuto": true,
 
   "cq:editConfig": {

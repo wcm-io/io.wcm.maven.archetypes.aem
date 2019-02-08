@@ -6,5 +6,6 @@
     jcr:primaryType="cq:Component"
     jcr:title="Image"
     componentGroup="${projectName}"#if($optionWcmioHandler=='y')
-    wcmio:mediaCropAuto="{Boolean}true"#else
+    wcmio:mediaCropAuto="{Boolean}true"
+    wcmio:mediaFormats="[content]"#else
     sling:resourceSuperType="core/wcm/components/image/v2/image"#end/>

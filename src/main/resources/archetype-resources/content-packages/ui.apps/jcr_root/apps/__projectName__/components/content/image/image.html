@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-<sly data-sly-use.media="${symbol_dollar}{'io.wcm.handler.media.ui.ResourceMedia' @ mediaFormat='content'}"
+<sly data-sly-use.media="io.wcm.handler.media.ui.ResourceMedia"
     data-sly-test="${symbol_dollar}{media.valid}">
   ${symbol_dollar}{media.markup @ context='html'}
 </sly>
