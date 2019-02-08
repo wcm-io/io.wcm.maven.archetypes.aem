@@ -28,7 +28,7 @@
         Enable auto-cropping for image and carousel components (with wcm.io Handler).
       </action>
       <action type="update" dev="sseifert">
-        Use wcm.io Media Handler File Upload Granite UI widget.
+        Use wcm.io Media Handler File Upload and Path Field Granite UI widgets.
       </action>
       <action type="update" dev="sseifert">
         Use "Site Root Path" Granite UI widget in link dialogs.

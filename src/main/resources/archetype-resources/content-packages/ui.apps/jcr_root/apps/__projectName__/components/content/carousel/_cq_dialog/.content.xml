@@ -21,12 +21,20 @@
                             sling:resourceType="granite/ui/components/coral/foundation/container"
                             name="./slides">
                             <items jcr:primaryType="nt:unstructured">
+#if ($optionWcmioHandler == 'y')
+                                <fileReference
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="wcm-io/handler/media/components/granite/form/pathfield"
+                                    name="./fileReference"
+                                    rootPath="/content/dam/${projectName}"
+                                    mediaFormats="[content]"
+                                    mediaCropAuto="{Boolean}true"/>
+#else
                                 <fileReference
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                     name="./fileReference"
                                     rootPath="/content/dam/${projectName}"/>
-#if ($optionWcmioHandler == 'n')
                                 <resourceType
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/hidden"
