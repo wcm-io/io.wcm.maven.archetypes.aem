@@ -38,6 +38,7 @@
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "cq/gui/components/authoring/dialog",
     "jcr:title": "Image",
+    "height": 550,
     "content": {
       "sling:resourceType": "granite/ui/components/coral/foundation/container",
       "items": {
