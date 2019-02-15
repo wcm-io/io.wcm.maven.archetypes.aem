@@ -22,7 +22,7 @@ Features:
 * Unit Tests based on JUnit 5 and [AEM Mocks][aem-mock]
 * Supports both Sling-Initial-Content JSON-style project layout and FileVault package layout
 * Based on [CONGA][conga] to manage AEM configuration and package deployment
-* AEM 6.3 and 6.4 projects based on [AEM Core WCM Components][aem-core-wcm-components], using Editable Templates is optional
+* Based on [AEM Core WCM Components][aem-core-wcm-components], using Editable Templates is optional
 * Optional inclusion of latest service packs
 * Optional integration with a [Webpack][webpack]-based Frontend Build
 * Optional support for [Sling Context-Aware Configuration][sling-caconfig] and [wcm.io Context-Aware Configuration Extensions][wcmio-caconfig]
