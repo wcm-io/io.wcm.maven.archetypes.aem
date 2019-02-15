@@ -254,8 +254,8 @@
       </dependency>
 #end
 
-#if ( $optionAemVersion == "6.4" && $optionAemServicePack == "y" )
-#set( $coreComponentsVersion = "2.2.2" )
+#if ( $optionAemServicePack == "y" )
+#set( $coreComponentsVersion = "2.3.0" )
 #else
 #set( $coreComponentsVersion = "2.0.8" )
 #end
