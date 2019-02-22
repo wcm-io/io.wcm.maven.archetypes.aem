@@ -4,40 +4,16 @@
     <plugins jcr:primaryType="nt:unstructured">
         <crop
             jcr:primaryType="nt:unstructured"
-            features="*">
-            <aspectRatios jcr:primaryType="nt:unstructured">
-                <freeCrop
-                    jcr:primaryType="nt:unstructured"
-                    name="Free Crop"
-                    ratio="0"/>
-                <wideLandscape
-                    jcr:primaryType="nt:unstructured"
-                    name="Wide Landscape"
-                    ratio="0.6180"/>
-                <landscape
-                    jcr:primaryType="nt:unstructured"
-                    name="Landscape"
-                    ratio="0.8284"/>
-                <square
-                    jcr:primaryType="nt:unstructured"
-                    name="Square"
-                    ratio="1"/>
-                <portrait
-                    jcr:primaryType="nt:unstructured"
-                    name="Portrait"
-                    ratio="1.6180"/>
-                <_x0031_6-9
-                    jcr:primaryType="nt:unstructured"
-                    name="16:9"
-                    ratio="0.5625"/>
-            </aspectRatios>
-        </crop>
+            features="*"/>
         <map
             jcr:primaryType="nt:unstructured"
-            features="*"/>
+            features="-"/>
         <rotate
             jcr:primaryType="nt:unstructured"
-            features="*"/>
+            features="-"/>
+        <flip
+            jcr:primaryType="nt:unstructured"
+            features="-"/>
         <zoom
             jcr:primaryType="nt:unstructured"
             features="*"/>
@@ -45,7 +21,7 @@
     <ui jcr:primaryType="nt:unstructured">
         <inline
             jcr:primaryType="nt:unstructured"
-            toolbar="[crop#launch,rotate#right,history#undo,history#redo,fullscreen#fullscreen,control#close,control#finish]">
+            toolbar="[history#undo,history#redo,fullscreen#fullscreen,control#close,control#finish]">
             <replacementToolbars
                 jcr:primaryType="nt:unstructured"
                 crop="[crop#identifier,crop#unlaunch,crop#confirm]"/>
@@ -53,7 +29,7 @@
         <fullscreen jcr:primaryType="nt:unstructured">
             <toolbar
                 jcr:primaryType="nt:unstructured"
-                left="[crop#launchwithratio,rotate#left,rotate#right,map#launch,zoom#popupslider,zoom#reset100]"
+                left="[crop#launchwithratio,zoom#popupslider,zoom#reset100]"
                 right="[history#undo,history#redo,fullscreen#fullscreenexit]"/>
             <replacementToolbars jcr:primaryType="nt:unstructured">
                 <crop

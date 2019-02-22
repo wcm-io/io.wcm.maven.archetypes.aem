@@ -9,12 +9,10 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/container">
             <items jcr:primaryType="nt:unstructured">
-                <mediaRef
+                <fileReference
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                    fieldDescription="Reference to asset from DAM"
+                    sling:resourceType="wcm-io/handler/media/components/granite/form/fileupload"
                     fieldLabel="Asset reference"
-                    name="./fileReference"
                     rootPath="/content/dam/${projectName}"/>
                 <alt
                     jcr:primaryType="nt:unstructured"

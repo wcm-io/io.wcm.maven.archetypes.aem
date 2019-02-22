@@ -26,20 +26,29 @@
                 "sling:resourceType": "granite/ui/components/coral/foundation/container",
                 "name": "./slides",
                 "items": {
+#if ($optionWcmioHandler == 'y')
+                  "fileReference": {
+                    "sling:resourceType": "wcm-io/handler/media/components/granite/form/pathfield",
+                    "name": "./fileReference",
+                    "rootPath": "/content/dam/${projectName}",
+                    "mediaFormats": ["content"],
+                    "mediaCropAuto": true
+                  }
+#else
                   "fileReference": {
                     "sling:resourceType": "granite/ui/components/coral/foundation/form/pathfield",
                     "name": "./fileReference",
                     "rootPath": "/content/dam/${projectName}"
-                  }#if ($optionWcmioHandler == 'n'),
+                  },
                   "resourceType": {
                     "sling:resourceType": "granite/ui/components/coral/foundation/form/hidden",
                     "name": "./sling:resourceType",
                     "value": "aem-fe-archetype/components/content/image"
-                  }#end
-
                   }
+#end
                 }
               }
+            }
 
           }
         }

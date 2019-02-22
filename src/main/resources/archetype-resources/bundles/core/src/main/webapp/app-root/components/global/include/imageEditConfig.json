@@ -3,58 +3,30 @@
 
   /* Configure plugins for Image IPE */
   "plugins": {
-    
     "crop": {
-      "features": "*",
-      "aspectRatios": {
-        "freeCrop": {
-          "name": "Free Crop",
-          "ratio": "0"
-        },
-        "wideLandscape": {
-          "name": "Wide Landscape",
-          "ratio": "0.6180"
-        },
-        "landscape": {
-          "name": "Landscape",
-          "ratio": "0.8284"
-        },
-        "square": {
-          "name": "Square",
-          "ratio": "1"
-        },
-        "portrait": {
-          "name": "Portrait",
-          "ratio": "1.6180"
-        },
-        "16-9": {
-          "name": "16:9",
-          "ratio": "0.5625"
-        }
-      }
+      "features": "*"
     },
-    
     "map": {
-      "features": "*"
+      "features": "-"
     },
-    
     "rotate": {
-      "features": "*"
+      "features": "-"
     },
-              
+    "flip": {
+      "features": "-"
+    },
     "zoom": {
       "features": "*"
     }
   },
 
-  /* Configure UI: Which features should be displayed inline, which in fullscreen mode */
   "ui": {
-    
+
     /* Toolbar items displayed in inline mode */
     "inline": {
       "toolbar": [
-        "crop#launch",
-        "rotate#right",
+        /* disable cropping in inline mode: supports only free cropping, we want only the allowed ratios */
+        /*"crop#launch",*/
         "history#undo",
         "history#redo",
         "fullscreen#fullscreen",
@@ -70,14 +42,11 @@
       }
     },
 
-    /* Toolbar items displayed in fullscreen mode*/
+    /* Toolbar items displayed in fullscreen mode */
     "fullscreen": {
       "toolbar": {
         "left": [
           "crop#launchwithratio",
-          "rotate#left",
-          "rotate#right",
-          "map#launch",
           "zoom#popupslider",
           "zoom#reset100"
         ],
@@ -87,8 +56,6 @@
           "fullscreen#fullscreenexit"
         ]
       },
-      
-      /* Toolbars that are displayed instead of the main toolbar when the given plugin is active */
       "replacementToolbars": {
         "crop": {
           "left": [

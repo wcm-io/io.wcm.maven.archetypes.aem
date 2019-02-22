@@ -47,7 +47,7 @@
           },
           "items": {
             "linkContentRef": {
-              "sling:resourceType": "wcm-io/wcm/ui/granite/components/form/configScopePathBrowser",
+              "sling:resourceType": "wcm-io/handler/url/components/granite/form/siteRootPathField",
               "name": "./linkContentRef",
               "fieldLabel": "Internal page",
               "fieldDescription": "Link to target page in CMS (same site)"
@@ -79,11 +79,11 @@
           },
           "items": {
             "linkMediaRef": {
-              "sling:resourceType": "granite/ui/components/coral/foundation/form/pathfield",
+              "sling:resourceType": "wcm-io/handler/media/components/granite/form/pathfield",
               "name": "./linkMediaRef",
               "fieldLabel": "Asset reference",
-              "fieldDescription": "Reference to asset from DAM",
-              "rootPath": "/content/dam/${projectName}"
+              "rootPath": "/content/dam/${projectName}",
+              "mediaFormats": ["download"]
             },
             "linkMediaDownload": {
               "sling:resourceType": "wcm-io/wcm/ui/granite/components/form/checkbox",
