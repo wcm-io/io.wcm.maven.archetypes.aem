@@ -36,15 +36,13 @@
   // Configure rich text plugins
   "rtePlugins": {
     "links": {
+      "features": "-"
+    },
+    "wcmio.handler.richtext.links": {
       "features": [
         "modifylink",
         "unlink"
-      ],
-      "linkDialogConfig": {
-        "dialogProperties": {
-          "rootPath": "/content/${projectName}"
-        }
-      }
+      ]
     },
     "format": {
       "features": "*"
@@ -93,8 +91,8 @@
           "format#bold",
           "#lists",
           "-",
-          "links#modifylink",
-          "links#unlink",
+          "wcmio.handler.richtext.links#modifylink",
+          "wcmio.handler.richtext.links#unlink",
           "-",
           "#paraformat",
           "-",
@@ -124,9 +122,8 @@
         "toolbar": [
           "format#bold",
           "-",
-          "links#modifylink",
-          "links#unlink",
-          "links#anchor",
+          "wcmio.handler.richtext.links#modifylink",
+          "wcmio.handler.richtext.links#unlink",
           "-",
           "findreplace#find",
           "findreplace#replace",

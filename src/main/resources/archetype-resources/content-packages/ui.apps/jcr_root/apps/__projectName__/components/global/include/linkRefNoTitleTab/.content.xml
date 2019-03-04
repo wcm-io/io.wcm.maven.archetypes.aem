@@ -10,101 +10,10 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/container">
             <items jcr:primaryType="nt:unstructured">
-                <linkType
-                    granite:class="cq-dialog-dropdown-showhide"
+                <linkRef
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                    fieldLabel="Link type"
-                    name="./linkType">
-                    <granite:data
-                        jcr:primaryType="nt:unstructured"
-                        cq-dialog-dropdown-showhide-target=".option-linktype-showhide-target"/>
-                    <items jcr:primaryType="nt:unstructured">
-                        <internal
-                            jcr:primaryType="nt:unstructured"
-                            text="Internal"
-                            value="internal"/>
-                        <external
-                            jcr:primaryType="nt:unstructured"
-                            text="External"
-                            value="external"/>
-                        <media
-                            jcr:primaryType="nt:unstructured"
-                            text="Asset"
-                            value="media"/>
-                    </items>
-                </linkType>
-                <internalWell
-                    granite:class="hide option-linktype-showhide-target foundation-layout-util-vmargin"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/well">
-                    <granite:data
-                        jcr:primaryType="nt:unstructured"
-                        showhidetargetvalue="internal"/>
-                    <items jcr:primaryType="nt:unstructured">
-                        <linkContentRef
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="wcm-io/handler/url/components/granite/form/siteRootPathField"
-                            fieldDescription="Link to target page in CMS (same site)"
-                            fieldLabel="Internal page"
-                            name="./linkContentRef"/>
-                    </items>
-                </internalWell>
-                <externalWell
-                    granite:class="hide option-linktype-showhide-target foundation-layout-util-vmargin"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/well">
-                    <granite:data
-                        jcr:primaryType="nt:unstructured"
-                        showhidetargetvalue="external"/>
-                    <items jcr:primaryType="nt:unstructured">
-                        <linkExternalRef
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                            fieldDescription="Link to external destination"
-                            fieldLabel="URL"
-                            name="./linkExternalRef"/>
-                    </items>
-                </externalWell>
-                <mediaWell
-                    granite:class="hide option-linktype-showhide-target foundation-layout-util-vmargin"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/well">
-                    <granite:data
-                        jcr:primaryType="nt:unstructured"
-                        showhidetargetvalue="media"/>
-                    <items jcr:primaryType="nt:unstructured">
-                        <linkMediaRef
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="wcm-io/handler/media/components/granite/form/pathfield"
-                            fieldLabel="Asset reference"
-                            name="./linkMediaRef"
-                            rootPath="/content/dam/${projectName}"
-                            mediaFormats="[download]"/>
-                        <linkMediaDownload
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="wcm-io/wcm/ui/granite/components/form/checkbox"
-                            fieldDescription="Open DAM asset item with download dialog"
-                            name="./linkMediaDownload"
-                            text="Download"/>
-                    </items>
-                </mediaWell>
-                <linkWindowTarget
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/foundation/form/select"
-                    fieldLabel="Window target"
-                    name="./linkWindowTarget">
-                    <items jcr:primaryType="nt:unstructured">
-                        <_self
-                            jcr:primaryType="nt:unstructured"
-                            text="Same window"
-                            value="_self"/>
-                        <_blank
-                            jcr:primaryType="nt:unstructured"
-                            text="New window"
-                            value="_blank"/>
-                    </items>
-                </linkWindowTarget>
+                    sling:resourceType="wcm-io/handler/link/components/granite/form/linkRefContainer"
+                    showLinkTitle="{Boolean}false"/>
             </items>
         </column>
     </items>

@@ -25,6 +25,12 @@
 
     <release version="2.1.4" date="not released">
       <action type="update" dev="sseifert">
+        Use wcm.io Link Handler Link Reference Container and Granite UI widgets for link selection.
+      </action>
+      <action type="update" dev="sseifert">
+        Use wcm.io Rich Text Handler RTE Custom Link plugin.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
