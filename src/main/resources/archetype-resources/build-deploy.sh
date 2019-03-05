@@ -153,6 +153,9 @@ completion_message() {
   fi
   echo ""
 
+  ELAPSED_TIME=$(($SECONDS - $START_TIME))
+  echo "duration: $(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"
+
   pause_message
 }
 
@@ -213,6 +216,9 @@ exit_with_error() {
 }
 
 ####
+
+# saving time for displaying execution duration
+START_TIME=$SECONDS
 
 parse_parameters "$@"
 welcome_message
