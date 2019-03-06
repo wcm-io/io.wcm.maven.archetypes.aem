@@ -143,18 +143,18 @@ welcome_message() {
 }
 
 completion_message() {
+  ELAPSED_TIME=$(($SECONDS - $START_TIME))
+  TOTAL_TIME="($(($ELAPSED_TIME/60)):$(($ELAPSED_TIME%60)) min)"
+
   echo ""
   if [ "$BUILD" = true ] && [ "$DEPLOY" = true ]; then
-    echo -e "*** \e[1mBuild+Deploy complete\e[0m ***"
+    echo -e "*** \e[1mBuild+Deploy complete\e[0m $TOTAL_TIME ***"
   elif [ "$BUILD" = true ]; then
-    echo -e "*** \e[1mBuild complete\e[0m ***"
+    echo -e "*** \e[1mBuild complete\e[0m $TOTAL_TIME ***"
   elif [ "$DEPLOY" = true ]; then
-    echo -e "*** \e[1mDeploy complete\e[0m ***"
+    echo -e "*** \e[1mDeploy complete\e[0m $TOTAL_TIME ***"
   fi
   echo ""
-
-  ELAPSED_TIME=$(($SECONDS - $START_TIME))
-  echo "duration: $(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"
 
   pause_message
 }
@@ -217,7 +217,6 @@ exit_with_error() {
 
 ####
 
-# saving time for displaying execution duration
 START_TIME=$SECONDS
 
 parse_parameters "$@"
