@@ -31,6 +31,12 @@
         Use wcm.io Rich Text Handler RTE Custom Link plugin.
       </action>
       <action type="update" dev="sseifert">
+        Update build-deploy.sh to display total script execution time.
+      </action>
+      <action type="update" dev="sseifert">
+        Use bash shebang in all shell scripts.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
