@@ -144,7 +144,7 @@ welcome_message() {
 
 completion_message() {
   ELAPSED_TIME=$(($SECONDS - $START_TIME))
-  TOTAL_TIME="($(($ELAPSED_TIME/60)):$(($ELAPSED_TIME%60)) min)"
+  TOTAL_TIME="($(($ELAPSED_TIME/60)):$(printf "%02d" $(($ELAPSED_TIME%60))) min)"
 
   echo ""
   if [ "$BUILD" = true ] && [ "$DEPLOY" = true ]; then
