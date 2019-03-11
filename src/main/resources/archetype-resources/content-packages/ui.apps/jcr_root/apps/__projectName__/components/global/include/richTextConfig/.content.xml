@@ -41,7 +41,14 @@
             features="*"/>
         <edit
             jcr:primaryType="nt:unstructured"
-            features="*"/>
+            features="*">
+            <htmlPasteRules
+                jcr:primaryType="nt:unstructured">
+                <allowedAttributes
+                    jcr:primaryType="nt:unstructured"
+                    a="[href,name,title,alt,data-link-type,data-link-content-ref,data-link-cross-context-content-ref,data-link-media-ref,data-link-external-ref,data-link-window-target,data-link-media-download]"/>
+            </htmlPasteRules>
+        </edit>
         <findreplace
             jcr:primaryType="nt:unstructured"
             features="*"/>
