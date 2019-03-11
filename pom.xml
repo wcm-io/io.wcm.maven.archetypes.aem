@@ -25,7 +25,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.parent</artifactId>
-    <version>1.0.10</version>
+    <version>1.0.11-SNAPSHOT</version>
     <relativePath />
   </parent>
 
@@ -66,7 +66,7 @@
       <!-- Skip JSON validation -->
       <plugin>
         <groupId>org.apache.sling</groupId>
-        <artifactId>maven-sling-plugin</artifactId>
+        <artifactId>sling-maven-plugin</artifactId>
         <configuration>
           <skip>true</skip>
         </configuration>

@@ -37,6 +37,9 @@
         Use bash shebang in all shell scripts.
       </action>
       <action type="update" dev="sseifert">
+        Make build compatible with Java 11.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
