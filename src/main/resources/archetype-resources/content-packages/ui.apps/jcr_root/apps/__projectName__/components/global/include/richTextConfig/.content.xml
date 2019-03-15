@@ -29,13 +29,10 @@
     <rtePlugins jcr:primaryType="nt:unstructured">
         <links
             jcr:primaryType="nt:unstructured"
-            features="[modifylink,unlink]">
-            <linkDialogConfig jcr:primaryType="nt:unstructured">
-                <dialogProperties
-                    jcr:primaryType="nt:unstructured"
-                    rootPath="/content/${projectName}"/>
-            </linkDialogConfig>
-        </links>
+            features="-"/>
+        <wcmio.handler.richtext.links
+            jcr:primaryType="nt:unstructured"
+            features="[modifylink,unlink]"/>
         <format
             jcr:primaryType="nt:unstructured"
             features="*"/>
@@ -44,7 +41,14 @@
             features="*"/>
         <edit
             jcr:primaryType="nt:unstructured"
-            features="*"/>
+            features="*">
+            <htmlPasteRules
+                jcr:primaryType="nt:unstructured">
+                <allowedAttributes
+                    jcr:primaryType="nt:unstructured"
+                    a="[href,name,title,alt,data-link-type,data-link-content-ref,data-link-cross-context-content-ref,data-link-media-ref,data-link-external-ref,data-link-window-target,data-link-media-download]"/>
+            </htmlPasteRules>
+        </edit>
         <findreplace
             jcr:primaryType="nt:unstructured"
             features="*"/>
@@ -79,7 +83,7 @@
         <cui jcr:primaryType="nt:unstructured">
             <inline
                 jcr:primaryType="nt:unstructured"
-                toolbar="[format#bold,#lists,-,links#modifylink,links#unlink,-,#paraformat,-,fullscreen#start,-,control#close,control#save]">
+                toolbar="[format#bold,#lists,-,wcmio.handler.richtext.links#modifylink,wcmio.handler.richtext.links#unlink,-,#paraformat,-,fullscreen#start,-,control#close,control#save]">
                 <popovers jcr:primaryType="nt:unstructured">
                     <lists
                         jcr:primaryType="nt:unstructured"
@@ -94,7 +98,7 @@
             </inline>
             <fullscreen
                 jcr:primaryType="nt:unstructured"
-                toolbar="[format#bold,-,links#modifylink,links#unlink,links#anchor,-,findreplace#find,findreplace#replace,-,undo#undo,undo#redo,-,justify#justifyleft,justify#justifycenter,justify#justifyright,-,lists#unordered,lists#ordered,lists#outdent,lists#indent,-,misctools#specialchars,-,#paraformat,-,fullscreen#finish]">
+                toolbar="[format#bold,-,wcmio.handler.richtext.links#modifylink,wcmio.handler.richtext.links#unlink,-,findreplace#find,findreplace#replace,-,undo#undo,undo#redo,-,justify#justifyleft,justify#justifycenter,justify#justifyright,-,lists#unordered,lists#ordered,lists#outdent,lists#indent,-,misctools#specialchars,-,#paraformat,-,fullscreen#finish]">
                 <popovers jcr:primaryType="nt:unstructured">
                     <paraformat
                         jcr:primaryType="nt:unstructured"

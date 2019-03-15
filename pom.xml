@@ -25,13 +25,13 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.parent</artifactId>
-    <version>1.0.10</version>
+    <version>1.0.12</version>
     <relativePath />
   </parent>
 
   <groupId>io.wcm.maven.archetypes</groupId>
   <artifactId>io.wcm.maven.archetypes.aem</artifactId>
-  <version>2.1.2</version>
+  <version>2.1.4</version>
   <packaging>maven-archetype</packaging>
 
   <name>wcm.io Maven Archetype for AEM</name>
@@ -66,7 +66,7 @@
       <!-- Skip JSON validation -->
       <plugin>
         <groupId>org.apache.sling</groupId>
-        <artifactId>maven-sling-plugin</artifactId>
+        <artifactId>sling-maven-plugin</artifactId>
         <configuration>
           <skip>true</skip>
         </configuration>

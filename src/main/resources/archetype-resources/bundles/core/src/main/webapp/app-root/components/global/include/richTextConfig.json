@@ -36,15 +36,13 @@
   // Configure rich text plugins
   "rtePlugins": {
     "links": {
+      "features": "-"
+    },
+    "wcmio.handler.richtext.links": {
       "features": [
         "modifylink",
         "unlink"
-      ],
-      "linkDialogConfig": {
-        "dialogProperties": {
-          "rootPath": "/content/${projectName}"
-        }
-      }
+      ]
     },
     "format": {
       "features": "*"
@@ -53,7 +51,17 @@
       "features": "*"
     },
     "edit": {
-      "features": "*"
+      "features": "*",
+      "htmlPasteRules": {
+        "allowedAttributes": {
+          "a": [
+            "href", "name", "title", "alt",
+            // allow attributes of custom RTE link plugin
+            "data-link-type", "data-link-content-ref", "data-link-cross-context-content-ref",
+            "data-link-media-ref", "data-link-external-ref", "data-link-window-target", "data-link-media-download"
+          ]
+        }
+      }
     },
     "findreplace": {
       "features": "*"
@@ -93,8 +101,8 @@
           "format#bold",
           "#lists",
           "-",
-          "links#modifylink",
-          "links#unlink",
+          "wcmio.handler.richtext.links#modifylink",
+          "wcmio.handler.richtext.links#unlink",
           "-",
           "#paraformat",
           "-",
@@ -124,9 +132,8 @@
         "toolbar": [
           "format#bold",
           "-",
-          "links#modifylink",
-          "links#unlink",
-          "links#anchor",
+          "wcmio.handler.richtext.links#modifylink",
+          "wcmio.handler.richtext.links#unlink",
           "-",
           "findreplace#find",
           "findreplace#replace",

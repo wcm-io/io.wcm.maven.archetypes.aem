@@ -80,9 +80,6 @@ public final class AppAemContext {
       context.registerService(MediaFormatProvider.class, new MediaFormatProviderImpl());
 
 #end
-      // register sling models
-      context.addModelsForPackage("${package}");
-
     }
   };
 
