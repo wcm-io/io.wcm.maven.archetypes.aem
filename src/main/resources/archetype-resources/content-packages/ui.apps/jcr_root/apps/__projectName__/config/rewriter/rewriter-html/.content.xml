@@ -10,7 +10,7 @@
     transformerTypes="[wcm-io-urlhandler-externalizer]">
     <transformer-wcm-io-urlhandler-externalizer
         jcr:primaryType="nt:unstructured"
-        rewriteElements="[img:src,link:href,script:src,use:xlink:href]"/>
+        rewriteElements="[a:href,img:src,link:href,script:src,use:xlink:href]"/>
     <generator-htmlparser
         jcr:primaryType="nt:unstructured"
         includeTags="[A,/A,IMG,AREA,FORM,BASE,LINK,SCRIPT,BODY,/BODY,USE,/USE]"/>
