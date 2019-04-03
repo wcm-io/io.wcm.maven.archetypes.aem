@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:ns1_1_="http://cipa.jp/exif/1.0/" xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:psAux="http://ns.adobe.com/exif/1.0/aux/" xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:ns1_1_="http://cipa.jp/exif/1.0/" xmlns:Iptc4xmpCore="http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/" xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:psAux="http://ns.adobe.com/exif/1.0/aux/" xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="dam:Asset">
-    <jcr:content jcr:primaryType="dam:AssetContent">
+    <jcr:content
+        cq:name="nature.jpg"
+        cq:parentPath="/content/dam/alpha64Project"
+        jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
             dam:Fileformat="JPEG"
@@ -9,71 +12,58 @@
             dam:Numberofimages="{Long}1"
             dam:Numberoftextualcomments="{Long}0"
             dam:Physicalheightindpi="{Long}300"
-            dam:Physicalheightininches="{Decimal}1.5"
+            dam:Physicalheightininches="{Decimal}4.266666889190674"
             dam:Physicalwidthindpi="{Long}300"
-            dam:Physicalwidthininches="{Decimal}4.0"
+            dam:Physicalwidthininches="{Decimal}6.400000095367432"
             dam:Progressive="no"
-            dam:TimeCreated="155602+0000"
-            dc:date="{Long}[20180818]"
-            dc:date_xmpArrayType="rdf:Bag"
+            dc:description="Image by Schwoaze from Pixabay - https://pixabay.com/photos/nature-landscape-mountains-sky-3616194/"
             dc:format="image/jpeg"
-            exif:ApertureValue="5655638/1000000"
-            exif:ColorSpace="{Long}65535"
+            dc:title="Nature"
             exif:DateTimeOriginal="{Date}2018-08-18T15:56:02.000+02:00"
-            exif:ExifVersion="0221"
             exif:ExposureTime="1/1000"
             exif:FNumber="71/10"
             exif:FocalLength="500/10"
-            exif:PixelXDimension="{Long}1200"
-            exif:PixelYDimension="{Long}450"
-            exif:ShutterSpeedValue="9965784/1000000"
             jcr:primaryType="nt:unstructured"
             ns1_1_:LensModel="E 18-135mm F3.5-5.6 OSS"
-            photoshop:ColorMode="{Long}3"
             photoshop:DateCreated="{Date}2018-08-18T15:56:02.000+02:00"
             psAux:Lens="E 18-135mm F3.5-5.6 OSS"
-            tiff:BitsPerSample="{Long}[8,8,8]"
-            tiff:BitsPerSample_xmpArrayType="rdf:Seq"
-            tiff:ImageLength="{Long}450"
-            tiff:ImageWidth="{Long}1200"
+            tiff:ImageLength="{Long}1280"
+            tiff:ImageWidth="{Long}1920"
             tiff:Make="SONY"
-            tiff:Model="ILCE-6000"
-            tiff:Orientation="{Long}1"
-            tiff:PhotometricInterpretation="{Long}2"
-            tiff:ResolutionUnit="{Long}2"
-            tiff:SamplesPerPixel="{Long}3"
-            tiff:XResolution="3000000/10000"
-            tiff:YResolution="3000000/10000"
-            xmp:CreateDate="{Date}2018-08-18T15:56:02.000+02:00"
-            xmp:CreatorTool="Adobe Photoshop CC 2017 (Windows)"
-            xmp:MetadataDate="{Date}2018-08-28T23:35:01.000+02:00"
-            xmp:ModifyDate="{Date}2018-08-28T23:35:01.000+02:00"
-            xmpMM:DocumentID="adobe:docid:photoshop:29f7ff12-ab0a-11e8-ad31-874e79d1cb91"
-            xmpMM:InstanceID="xmp.iid:7daa2f9e-26d9-af46-97e6-78283cecb15e"
-            xmpMM:OriginalDocumentID="5D224BABDEA649FF8FD3233ABAAFF2C3">
-            <xmpMM:History
-                jcr:primaryType="nt:unstructured"
-                xmpArraySize="{Long}2"
-                xmpArrayType="rdf:Seq"
-                xmpNodeType="xmpArray">
-                <_x0031_
-                    jcr:primaryType="nt:unstructured"
-                    stEvt:action="saved"
-                    stEvt:changed="/"
-                    stEvt:instanceID="xmp.iid:512c6579-7e06-174f-b0e3-23a4745e53a6"
-                    stEvt:softwareAgent="Adobe Photoshop CC 2017 (Windows)"
-                    stEvt:when="{Date}2018-08-28T23:35:01.000+02:00"
-                    xmpNodeType="xmpStruct"/>
-                <_x0032_
-                    jcr:primaryType="nt:unstructured"
-                    stEvt:action="saved"
-                    stEvt:changed="/"
-                    stEvt:instanceID="xmp.iid:7daa2f9e-26d9-af46-97e6-78283cecb15e"
-                    stEvt:softwareAgent="Adobe Photoshop CC 2017 (Windows)"
-                    stEvt:when="{Date}2018-08-28T23:35:01.000+02:00"
-                    xmpNodeType="xmpStruct"/>
-            </xmpMM:History>
+            tiff:Model="ILCE-6000">
+            <Iptc4xmpCore:CreatorContactInfo jcr:primaryType="nt:unstructured"/>
         </metadata>
         <related jcr:primaryType="nt:unstructured"/>
+        <renditionsMetadata jcr:primaryType="nt:unstructured">
+            <cq5dam.thumbnail.48.48.png
+                jcr:primaryType="nt:unstructured"
+                imageHeight="{Long}31"
+                imageWidth="{Long}48"/>
+            <cq5dam.thumbnail.140.100.png
+                jcr:primaryType="nt:unstructured"
+                imageHeight="{Long}93"
+                imageWidth="{Long}140"/>
+            <cq5dam.thumbnail.319.319.png
+                jcr:primaryType="nt:unstructured"
+                imageHeight="{Long}212"
+                imageWidth="{Long}319"/>
+            <cq5dam.web.1280.1280.jpeg
+                jcr:primaryType="nt:unstructured"
+                imageHeight="{Long}853"
+                imageWidth="{Long}1280"/>
+            <nature-8to3.jpg
+                jcr:primaryType="nt:unstructured"
+                imageHeight="{Long}720"
+                imageWidth="{Long}1920"/>
+        </renditionsMetadata>
+        <usages
+            dam:score="{Long}1"
+            jcr:primaryType="nt:unstructured"
+            usedBy="[aem]">
+            <aem
+                jcr:primaryType="nt:unstructured"
+                count="{Long}1"
+                lastUsed="{Date}2019-04-03T15:44:10.331+02:00"/>
+        </usages>
     </jcr:content>
 </jcr:root>
