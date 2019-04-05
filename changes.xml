@@ -25,6 +25,9 @@
 
     <release version="2.1.6" date="not released">
       <action type="update" dev="sseifert">
+        Support AEM 6.4 SP4.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
       <action type="fix" dev="bdang">
