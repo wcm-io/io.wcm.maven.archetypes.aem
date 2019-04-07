@@ -27,8 +27,8 @@ import com.google.common.collect.ImmutableList;
 
 #if ($optionWcmioHandler == 'y')
 import io.wcm.handler.media.Media;
-#end
 import io.wcm.sling.commons.adapter.AdaptTo;
+#end
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 
@@ -52,7 +52,11 @@ class CarouselTest {
 
   @Test
   void testId() {
+#if ($optionWcmioHandler == 'y')
     Carousel underTest = AdaptTo.notNull(context.request(), Carousel.class);
+#else
+    Carousel underTest = context.request().adaptTo(Carousel.class);
+#end
     assertNotNull(underTest.getId());
   }
 
@@ -66,7 +70,11 @@ class CarouselTest {
         .resource("item1", #if($optionWcmioHandler=='n')PN_REFERENCE#{else}PN_MEDIA_REF#end, "/content/dam/slides/slide1.png")
         .resource("item2", #if($optionWcmioHandler=='n')PN_REFERENCE#{else}PN_MEDIA_REF#end, "/content/dam/slides/slide2.png");
 
+#if ($optionWcmioHandler == 'y')
     Carousel underTest = AdaptTo.notNull(context.request(), Carousel.class);
+#else
+    Carousel underTest = context.request().adaptTo(Carousel.class);
+#end
 #if ($optionWcmioHandler == 'n')
     assertEquals(ImmutableList.of(
         "/content/mypage/_jcr_content/myresource/slides/item1.img.png",
@@ -86,7 +94,11 @@ class CarouselTest {
 
   @Test
   void testEmptySlideImageUrls() {
+#if ($optionWcmioHandler == 'y')
     Carousel underTest = AdaptTo.notNull(context.request(), Carousel.class);
+#else
+    Carousel underTest = context.request().adaptTo(Carousel.class);
+#end
     assertTrue(underTest.getSlideImages().isEmpty());
   }
 

@@ -9,7 +9,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+#if ($optionWcmioHandler == 'y')
 import io.wcm.sling.commons.adapter.AdaptTo;
+#end
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 
@@ -24,7 +26,11 @@ class CurrentDateTest {
 
   @BeforeEach
   void setUp() {
+#if ($optionWcmioHandler == 'y')
     underTest = AdaptTo.notNull(context.request(), CurrentDate.class);
+#else
+    underTest = context.request().adaptTo(CurrentDate.class);
+#end
   }
 
   @Test
