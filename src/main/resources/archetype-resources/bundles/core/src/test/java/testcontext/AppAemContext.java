@@ -44,6 +44,9 @@ public final class AppAemContext {
     // static methods only
   }
 
+  /**
+   * @return {@link AemContext}
+   */
   public static AemContext newAemContext() {
     return new AemContextBuilder()
 #if ( $optionContextAwareConfig == "y" )

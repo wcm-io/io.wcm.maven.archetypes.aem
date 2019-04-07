@@ -9,13 +9,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import io.wcm.sling.commons.adapter.AdaptTo;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 
 import ${package}.testcontext.AppAemContext;
 
 @ExtendWith(AemContextExtension.class)
-@SuppressWarnings("null")
 class CurrentDateTest {
 
   private final AemContext context = AppAemContext.newAemContext();
@@ -24,7 +24,7 @@ class CurrentDateTest {
 
   @BeforeEach
   void setUp() {
-    underTest = context.request().adaptTo(CurrentDate.class);
+    underTest = AdaptTo.notNull(context.request(), CurrentDate.class);
   }
 
   @Test
