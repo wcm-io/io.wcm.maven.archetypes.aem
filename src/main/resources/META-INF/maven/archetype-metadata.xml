@@ -67,10 +67,10 @@
     </requiredProperty>
 
     <!-- *** feature flags *** -->
-    <!-- AEM major version (6.3 or 6.4) -->
+    <!-- AEM major version (6.3, 6.4 or 6.5) -->
     <requiredProperty key="optionAemVersion">
-      <defaultValue>6.4</defaultValue>
-      <validationRegex>^(6\.3|6\.4)$</validationRegex>
+      <defaultValue>6.5</defaultValue>
+      <validationRegex>^(6\.3|6\.4|6\.5)$</validationRegex>
     </requiredProperty>
     <!-- Use latest service pack for AEM version - you need to deploy artifacts following these conventions https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
     <requiredProperty key="optionAemServicePack">
