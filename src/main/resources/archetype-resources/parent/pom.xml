@@ -16,9 +16,9 @@
 
   <properties>
 
-    <!-- compiler settings -->
-    <build.compiler.source>1.8</build.compiler.source>
-    <build.compiler.target>1.8</build.compiler.target>
+    <!-- Java version -->
+    <java.version>1.8</java.version>
+    <build.compiler.release>8</build.compiler.release>
 
     <!-- Sling instance parameters -->
     <sling.url>http://localhost:${aemAuthorPort}</sling.url>
@@ -312,9 +312,9 @@
 
       <!-- For build compatibility with Java 11 -->
       <dependency>
-        <groupId>javax.annotation</groupId>
-        <artifactId>javax.annotation-api</artifactId>
-        <version>1.3.2</version>
+        <groupId>org.apache.geronimo.specs</groupId>
+        <artifactId>geronimo-annotation_1.3_spec</artifactId>
+        <version>1.0</version>
       </dependency>
 
     </dependencies>
