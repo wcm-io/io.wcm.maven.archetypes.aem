@@ -183,8 +183,9 @@
       <artifactId>geronimo-atinject_1.0_spec</artifactId>
       <scope>provided</scope>
     </dependency>
-
+#if ( $optionJavaVersion == "8" )
     <!-- For build compatibility with Java 11 -->
+#end
     <dependency>
       <groupId>org.apache.geronimo.specs</groupId>
       <artifactId>geronimo-annotation_1.3_spec</artifactId>
@@ -224,6 +225,7 @@
             <Wcmio-CAService-ContextPathRegex>^(/content|/content/dam|/content/experience-fragments|/conf)/${projectName}(/.*)?$</Wcmio-CAService-ContextPathRegex>
 
 #end
+#if ( $optionJavaVersion == "8" )
 
             <!-- For build compatibility with Java 11 -->
             <Import-Package>
@@ -231,6 +233,7 @@
               *
             </Import-Package>
 
+#end
           </instructions>
         </configuration>
       </plugin>

@@ -17,8 +17,12 @@
   <properties>
 
     <!-- Java version -->
+#if ( $optionJavaVersion == "8" )
     <java.version>1.8</java.version>
     <build.compiler.release>8</build.compiler.release>
+#else
+    <java.version>${optionJavaVersion}</java.version>
+#end
 
     <!-- Sling instance parameters -->
     <sling.url>http://localhost:${aemAuthorPort}</sling.url>
@@ -203,7 +207,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
-        <version>2.4.6</version>
+        <version>2.4.7-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.apache.sling</groupId>
@@ -244,7 +248,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#else
+#elseif ( $optionAemVersion == "6.4" )
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
@@ -252,12 +256,20 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+#else
+      <dependency>
+        <groupId>io.wcm.maven</groupId>
+        <artifactId>io.wcm.maven.aem-dependencies</artifactId>
+        <version>6.5.0.0000-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
 #end
 
-#if ( $optionAemServicePack == "y" )
-#set( $coreComponentsVersion = "2.3.2" )
-#else
+#if ( ($optionAemVersion == "6.3" || $optionAemVersion == "6.4") && $optionAemServicePack == "n" )
 #set( $coreComponentsVersion = "2.0.8" )
+#else
+#set( $coreComponentsVersion = "2.3.2" )
 #end
       <!-- AEM Core WCM Components -->
       <dependency>
@@ -310,6 +322,7 @@
         <version>${mockitoVersion}</version>
       </dependency>
 
+#if ( $optionAemVersion == "6.3" || $optionAemVersion == "6.4" )
       <!-- For build compatibility with Java 11 -->
       <dependency>
         <groupId>org.apache.geronimo.specs</groupId>
@@ -317,6 +330,7 @@
         <version>1.0</version>
       </dependency>
 
+#end
     </dependencies>
   </dependencyManagement>
 
