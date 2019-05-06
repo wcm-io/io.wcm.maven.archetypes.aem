@@ -29,6 +29,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 | **packageGroupName**                | \*)     | Group name for AEM content package
 | **aemAuthorPort**                   | 4502    | Default port for local AEM author instance
 | **aemPublishPort**                  | 4503    | Default port for local AEM publish instance
+| **optionJavaVersion**               | 8       | Java version (8 or 11)
 | **optionAemVersion**                | 6.5     | AEM major version (6.3, 6.4 or 6.5)
 | **optionAemServicePack**            | n       | Use latest service pack for AEM version - you need to deploy artifacts following [these conventions][aem-binaries-conventions]
 | **optionSlingModelsLatest**         | n       | Use latest Sling Models version
@@ -45,7 +46,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Usage examples
 
-${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} AEM project with wcm.io and Sling-Initial-Content project layout
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} AEM project with wcm.io and Sling-Initial-Content project layout and Java 11
 
 ```
 mvn archetype:generate -DinteractiveMode=false \
@@ -60,6 +61,7 @@ mvn archetype:generate -DinteractiveMode=false \
   -DpackageGroupName=mycompany \
   -DaemAuthorPort=4502 \
   -DaemPublishPort=4503 \
+  -DoptionJavaVersion=11 \
   -DoptionAemVersion=6.5 \
   -DoptionAemServicePack=n \
   -DoptionSlingModelsLatest=y \
@@ -72,7 +74,7 @@ mvn archetype:generate -DinteractiveMode=false \
   -DoptionFrontend=y
 ```
 
-${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Minimal AEM project with FileVault package layout
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Minimal AEM project with FileVault package layout and Java 8
 
 ```
 mvn archetype:generate -DinteractiveMode=false \
@@ -87,6 +89,7 @@ mvn archetype:generate -DinteractiveMode=false \
   -DpackageGroupName=mycompany \
   -DaemAuthorPort=4502 \
   -DaemPublishPort=4503 \
+  -DoptionJavaVersion=8 \
   -DoptionAemVersion=6.5 \
   -DoptionAemServicePack=n \
   -DoptionSlingModelsLatest=n \
@@ -102,7 +105,7 @@ mvn archetype:generate -DinteractiveMode=false \
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 
-* JDK 1.8
+* Java 8 or Java 11
 * Apache Maven 3.3.9 or higher
 * AEM 6.3, 6.4 or 6.5 running on your local machine
 * Include the [Adobe Public Maven Repository][adobe-public-maven-repo] in your maven settings, see [wcm.io Maven Repositories][wcmio-maven] for details.

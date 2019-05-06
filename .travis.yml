@@ -20,7 +20,6 @@
 language: java
 
 jdk:
-- oraclejdk8
 - openjdk11
 
 # Make sure travis can use container-based infrastructure

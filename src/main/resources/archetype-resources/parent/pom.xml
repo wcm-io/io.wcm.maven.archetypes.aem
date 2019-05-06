@@ -17,8 +17,12 @@
   <properties>
 
     <!-- Java version -->
+#if ( $optionJavaVersion == "8" )
     <java.version>1.8</java.version>
     <build.compiler.release>8</build.compiler.release>
+#else
+    <java.version>${optionJavaVersion}</java.version>
+#end
 
     <!-- Sling instance parameters -->
     <sling.url>http://localhost:${aemAuthorPort}</sling.url>

@@ -35,6 +35,9 @@ if (optionEditableTemplates == "n" && optionWcmioHandler == "n") {
 if (!(javaPackage ==~ /^[a-z0-9\.]+$/)) {
   throw new RuntimeException("Java package name is invalid: " + javaPackage)
 }
+if (optionJavaVersion == "11" && (optionAemVersion == "6.3" || optionAemVersion == "6.4")) {
+  throw new RuntimeException("Java 11 is only supported for AEM 6.5 and higher.")
+}
 
 // helper methods
 def removeModule(pomFile, module) {

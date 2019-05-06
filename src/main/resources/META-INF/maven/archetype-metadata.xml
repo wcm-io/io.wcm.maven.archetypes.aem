@@ -67,6 +67,11 @@
     </requiredProperty>
 
     <!-- *** feature flags *** -->
+    <!-- Java version (8 or 11) -->
+    <requiredProperty key="optionJavaVersion">
+      <defaultValue>8</defaultValue>
+      <validationRegex>^(8|11)$</validationRegex>
+    </requiredProperty>
     <!-- AEM major version (6.3, 6.4 or 6.5) -->
     <requiredProperty key="optionAemVersion">
       <defaultValue>6.5</defaultValue>
