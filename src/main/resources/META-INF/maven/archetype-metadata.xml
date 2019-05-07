@@ -113,6 +113,11 @@
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
+    <!-- Use wcm.io Node JS plugin for frontend build (recommended when Maven NodeJS Proxy is used). If not enabled the frontend-maven-plugin is used instead. -->
+    <requiredProperty key="optionNodeJsPlugin">
+      <defaultValue>n</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
     <!-- Setup project using wcm.io AEM libraries, especially the wcm.io Handler infrastructure. Requires optionContextAwareConfig='y'. -->
     <requiredProperty key="optionWcmioHandler">
       <defaultValue>n</defaultValue>

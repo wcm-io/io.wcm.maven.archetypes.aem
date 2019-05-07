@@ -27,6 +27,9 @@
       <action type="add" dev="sseifert">
         Add new parameter "optionJavaVersion" with support for Java 8 and Java 11.
       </action>
+      <action type="add" dev="sseifert">
+        Add new parameter "optionNodeJsPlugin" to switch between wcm.io NodeJS plugin and frontend-maven-plugin.
+      </action>
       <action type="update" dev="sseifert">
         Add support for AEM 6.5 and AEM 6.4 SP4.
       </action>
