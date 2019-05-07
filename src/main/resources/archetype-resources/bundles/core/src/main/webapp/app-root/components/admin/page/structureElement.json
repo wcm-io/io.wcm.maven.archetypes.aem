@@ -1,5 +1,4 @@
 {
-  "jcr:primaryType": "cq:Component"#if ($optionWcmioHandler=='y')
-,
-  "sling:resourceSuperType": "wcm-io/wcm/commons/components/page/structureElement"#end
+  "jcr:primaryType": "cq:Component",
+  "sling:resourceSuperType": "#if($optionWcmioHandler=='y')wcm-io/wcm/commons/components/page/structureElement#{else}core/wcm/components/page/v2/page#end"
 }

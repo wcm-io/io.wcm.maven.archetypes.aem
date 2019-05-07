@@ -92,6 +92,10 @@ if (optionWcmioHandler == "n") {
 
   assert new File(configDefinition, "src/main/templates/${projectName}-aem-cms/${projectName}-aem-cms-author-systemusers.json.hbs").delete()
 }
+else {
+  assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/structureElement").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/admin/page/structureElement/structureElement.html").delete()
+}
 
 // refactor project layout when multi bundle layout is switched off
 if (optionMultiBundleLayout == "n") {
@@ -124,6 +128,7 @@ if (optionContextAwareConfig == "n" && optionWcmioHandler == "n" ) {
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/configEditor.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/structureElement.json").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/structureElement").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin").deleteDir()
 
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/templates/admin/configEditor").deleteDir()

@@ -1,0 +1,23 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!DOCTYPE html>
+<html data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+  <head>
+    <title>${symbol_dollar}{currentPage.title}</title>
+    <style data-sly-call="${symbol_dollar}{clientLib.css @ categories='coralui2'}" data-sly-unwrap/>
+    <style>
+      body { margin: 15px; }
+    </style>
+  </head>
+  <body class="coral--light">
+
+    <h1>${symbol_dollar}{currentPage.title}</h1>
+
+    <ul data-sly-list.childPage="${symbol_dollar}{currentPage.listChildren}">
+      <li><a href="${symbol_dollar}{childPage.path}.html">${symbol_dollar}{childPage.title}</a></li>
+    </ul>
+
+  </body>
+</html>
+</div>
