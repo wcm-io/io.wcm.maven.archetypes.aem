@@ -4,11 +4,11 @@
   "ranking": 110,
 
   "allowedPaths": "^/content/${projectName}/.+$",
-  "allowedParents": #if($optionEditableTemplates=='y')[#end"^/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/.*$"#if($optionEditableTemplates=='y'),"^/conf/${projectName}/settings/wcm/templates/.*$"]#end,
-  "allowedChildren": #if($optionEditableTemplates=='y')[#end"^/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/.*$"#if($optionEditableTemplates=='y'),"^/conf/${projectName}/settings/wcm/templates/.*$"]#end,
+  "allowedParents": #if($optionEditableTemplates=='y')[#end"^/apps/${projectName}/core/templates/.*$"#if($optionEditableTemplates=='y'),"^/conf/${projectName}/settings/wcm/templates/.*$"]#end,
+  "allowedChildren": #if($optionEditableTemplates=='y')[#end"^/apps/${projectName}/core/templates/.*$"#if($optionEditableTemplates=='y'),"^/conf/${projectName}/settings/wcm/templates/.*$"]#end,
 
   "jcr:content": {
     "jcr:primaryType": "cq:PageContent",
-    "sling:resourceType": "${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/admin/page/redirect"
+    "sling:resourceType": "${projectName}/core/components/admin/page/redirect"
   }
 }

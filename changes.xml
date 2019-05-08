@@ -34,6 +34,13 @@
         Add support for AEM 6.5 and AEM 6.4 SP4.
       </action>
       <action type="update" dev="sseifert">
+        Move rewriter configuration to CONGA template.
+      </action>
+      <action type="update" dev="sseifert" issue="WTOOL-48">
+        Restructure generated folder structure: always generate "/core" subfolder für AEM webapp, regardless of optionMultiBundleLayout setting.
+        Put install folder (complete package) and config folder (CONGA-generated) below main application folder in /apps.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
       <action type="fix" dev="bdang">
