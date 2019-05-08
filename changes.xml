@@ -41,6 +41,9 @@
         Put install folder (complete package) and config folder (CONGA-generated) below main application folder in /apps.
       </action>
       <action type="update" dev="sseifert">
+        Exclude folder thumbnails from DAM sample content.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
       <action type="fix" dev="bdang">
