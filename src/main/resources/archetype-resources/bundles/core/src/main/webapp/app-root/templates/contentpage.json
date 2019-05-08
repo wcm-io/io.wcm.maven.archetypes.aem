@@ -8,6 +8,6 @@
 
   "jcr:content": {
     "jcr:primaryType": "cq:PageContent",
-    "sling:resourceType": "${projectName}/core/components/page/content"
+    "sling:resourceType": "${projectName}/core/components/page/contentpage"
   }
 }

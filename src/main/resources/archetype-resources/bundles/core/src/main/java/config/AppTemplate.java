@@ -24,14 +24,14 @@ public enum AppTemplate implements TemplatePathInfo {
   ADMIN_REDIRECT("/apps/${projectName}/core/templates/admin/redirect"),
 
   /**
-   * Content
+   * Content page
    */
-  EDITORIAL_CONTENT("/apps/${projectName}/core/templates/content"),
+  CONTENTPAGE("#if($optionEditableTemplates=='y')/conf/${projectName}/settings/wcm/templates/contentpage#{else}/apps/${projectName}/core/templates/contentpage#end"),
 
   /**
-   * Homepage
+   * Home page
    */
-  EDITORIAL_HOMEPAGE("/apps/${projectName}/core/templates/homepage");
+  HOMEPAGE("#if($optionEditableTemplates=='y')/conf/${projectName}/settings/wcm/templates/homepage#{else}/apps/${projectName}/core/templates/homepage#end");
 
   private final String templatePath;
   private final String resourceType;

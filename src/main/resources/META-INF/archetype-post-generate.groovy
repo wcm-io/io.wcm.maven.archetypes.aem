@@ -143,11 +143,13 @@ if (optionEditableTemplates == "n") {
 // prepare project for editable templates
 if (optionEditableTemplates == "y") {
   assert new File(coreBundle, "src/main/webapp/app-root/components/page").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root/templates/content.json").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root/templates/contentpage.json").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root/templates/contentpage").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/homepage.json").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root/templates/homepage").deleteDir()
 
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/page").deleteDir()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/content").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/contentpage").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/homepage").deleteDir()
 }
 else {
