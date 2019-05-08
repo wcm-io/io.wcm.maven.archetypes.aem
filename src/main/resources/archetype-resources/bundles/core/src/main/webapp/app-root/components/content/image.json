@@ -29,7 +29,7 @@
       "jcr:primaryType": "cq:InplaceEditingConfig",
       "active": true,
       "editorType": "image",
-      "configPath": "/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/include/imageEditConfig"
+      "configPath": "/apps/${projectName}/core/components/global/include/imageEditConfig"
     }
 
   },
@@ -48,7 +48,7 @@
 
             "media": {
               "sling:resourceType": "granite/ui/components/coral/foundation/include",
-              "path": "${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/include/mediaRefTab"
+              "path": "${projectName}/core/components/global/include/mediaRefTab"
             }
 
           }

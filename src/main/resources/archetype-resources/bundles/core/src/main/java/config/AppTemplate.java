@@ -16,22 +16,22 @@ public enum AppTemplate implements TemplatePathInfo {
   /**
    * Structure element
    */
-  ADMIN_STRUCTURE_ELEMENT("/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/admin/structureElement"),
+  ADMIN_STRUCTURE_ELEMENT("/apps/${projectName}/core/templates/admin/structureElement"),
 
   /**
    * Redirect
    */
-  ADMIN_REDIRECT("/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/admin/redirect"),
+  ADMIN_REDIRECT("/apps/${projectName}/core/templates/admin/redirect"),
 
   /**
    * Content
    */
-  EDITORIAL_CONTENT("/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/content"),
+  EDITORIAL_CONTENT("/apps/${projectName}/core/templates/content"),
 
   /**
    * Homepage
    */
-  EDITORIAL_HOMEPAGE("/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/homepage");
+  EDITORIAL_HOMEPAGE("/apps/${projectName}/core/templates/homepage");
 
   private final String templatePath;
   private final String resourceType;

@@ -5,7 +5,7 @@
         cq:deviceGroups="[/etc/mobile/groups/responsive]"
         cq:template="/conf/${projectName}/settings/wcm/templates/content"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/page">
+        sling:resourceType="${projectName}/core/components/global/page">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
@@ -17,7 +17,7 @@
             </content>
             <imprint
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/structure/imprint"/>
+                sling:resourceType="${projectName}/core/components/structure/imprint"/>
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">

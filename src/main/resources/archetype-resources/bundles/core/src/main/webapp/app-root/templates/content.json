@@ -4,10 +4,10 @@
   "ranking": 10,
 
   "allowedPaths": "^/content/${projectName}/.+$",
-  "allowedChildren": "^/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/.*$",
+  "allowedChildren": "^/apps/${projectName}/core/.*$",
 
   "jcr:content": {
     "jcr:primaryType": "cq:PageContent",
-    "sling:resourceType": "${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/page/content"
+    "sling:resourceType": "${projectName}/core/components/page/content"
   }
 }

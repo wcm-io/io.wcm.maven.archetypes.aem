@@ -206,14 +206,11 @@
 
 #if ( $optionSlingInitialContentBundle == "y" )
             <Sling-Initial-Content>
-#if ( $optionMultiBundleLayout == "y" )
+#if ( $optionMultiBundleLayout == "n" )
+              SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/etc/clientlibs/${projectName},
+#end
               SLING-INF/app-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName}/core,
               SLING-INF/app-i18n;overwrite:=true;ignoreImportProviders:=json;path:=/apps/${projectName}/core/i18n
-#else
-              SLING-INF/app-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName},
-              SLING-INF/app-i18n;overwrite:=true;ignoreImportProviders:=json;path:=/apps/${projectName}/i18n,
-              SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/etc/clientlibs/${projectName}
-#end
             </Sling-Initial-Content>
 
 #end
@@ -223,7 +220,6 @@
 
 #end
 #if ( $optionJavaVersion == "8" )
-
             <!-- For build compatibility with Java 11 -->
             <Import-Package>
               javax.annotation;version="[0.0,2)",

@@ -36,6 +36,9 @@
       <action type="update" dev="sseifert">
         Move rewriter configuration to CONGA template.
       </action>
+      <action type="update" dev="sseifert" issue="WTOOL-48">
+        Restructure generated folder structure: always generate "/core" subfolder für AEM webapp, regardless of optionMultiBundleLayout setting.
+      </action>
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>

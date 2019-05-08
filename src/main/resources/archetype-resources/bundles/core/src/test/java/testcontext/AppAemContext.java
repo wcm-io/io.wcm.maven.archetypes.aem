@@ -73,7 +73,7 @@ public final class AppAemContext {
 #if ( $optionWcmioHandler == "y" )
       MockCAConfig.contextPathStrategyRootTemplate(context, AppTemplate.EDITORIAL_HOMEPAGE.getTemplatePath());
 #else
-      MockCAConfig.contextPathStrategyRootTemplate(context, "/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/homepage");
+      MockCAConfig.contextPathStrategyRootTemplate(context, "/apps/${projectName}/core/templates/homepage");
 #end
 
 #end
