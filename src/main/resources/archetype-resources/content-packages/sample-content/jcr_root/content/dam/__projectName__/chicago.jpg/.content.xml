@@ -3,7 +3,7 @@
     jcr:primaryType="dam:Asset">
     <jcr:content
         cq:name="chicago.jpg"
-        cq:parentPath="/content/dam/alpha64Project"
+        cq:parentPath="/content/dam/${projectName}"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
