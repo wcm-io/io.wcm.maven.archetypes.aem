@@ -49,9 +49,24 @@ files:
       name: ${projectName}-aem-cms-config
       rootPath: /apps/${projectName}-aem-cms-config/config
       filters:
-      - filter: /apps/${projectName}-aem-cms-config
+      - filter: /apps/${projectName}-aem-cms-config/config
+        rules:
+        - rule: exclude
+          pattern: /apps/${projectName}-aem-cms-config/config/rewriter
 
 #if ( $optionWcmioHandler == "y" )
+# Include URL handler in Sling Rewriter configuration
+- file: ${projectName}-aem-cms-rewriter-config.json
+  dir: packages
+  template: ${projectName}-aem-cms-rewriter-config.json.hbs
+  postProcessors:
+  - aem-contentpackage
+  postProcessorOptions:
+    contentPackage:
+      name: ${projectName}-aem-cms-rewriter-config
+      acHandling: merge
+      rootPath: /apps/${projectName}-aem-cms-config/config/rewriter
+
 # AEM Systems users with ACLs (Author)
 - file: ${projectName}-aem-cms-author-systemusers.json
   dir: packages

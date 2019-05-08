@@ -68,7 +68,6 @@ else {
 if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/java/" + javaPackage.replace('.','/') + "/config").deleteDir()
   
-  assert new File(coreBundle, "src/main/webapp/app-config").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/redirect.json").delete()
@@ -80,7 +79,6 @@ if (optionWcmioHandler == "n") {
   assert new File(uiAppsPackage, "jcr_root/etc/clientlibs/${projectName}/${projectName}.app/css").deleteDir()
   assert new File(frontend, "src/components/image").deleteDir()
 
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/config").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/templates/admin/redirect").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/admin/page/redirect").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/content/text/text.html").delete()
@@ -91,6 +89,7 @@ if (optionWcmioHandler == "n") {
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/components/global/include").deleteDir()
 
   assert new File(configDefinition, "src/main/templates/${projectName}-aem-cms/${projectName}-aem-cms-author-systemusers.json.hbs").delete()
+  assert new File(configDefinition, "src/main/templates/${projectName}-aem-cms/${projectName}-aem-cms-rewriter-config.json.hbs").delete()
 }
 else {
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/structureElement").deleteDir()
@@ -111,12 +110,6 @@ if (optionMultiBundleLayout == "n") {
   assert clientlibsBundle.deleteDir()
   // remove bundles/clientlibs module entry from root pom
   removeModule(rootPom, "bundles/clientlibs")
-  // move rewriter config to app-root/config
-  if (optionWcmioHandler == "y") {
-    assert new File(coreBundle, "src/main/webapp/app-root/config").mkdir()
-    assert new File(coreBundle, "src/main/webapp/app-config/rewriter").renameTo(new File(coreBundle, "src/main/webapp/app-root/config/rewriter"))
-    assert new File(coreBundle, "src/main/webapp/app-config").deleteDir()
-  }
 }
 
 // remove parts of sample content when caconfig is not activated
