@@ -3,5 +3,5 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/page"/>
+        sling:resourceType="${projectName}/core/components/global/page"/>
 </jcr:root>

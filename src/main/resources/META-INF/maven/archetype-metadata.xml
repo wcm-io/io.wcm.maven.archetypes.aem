@@ -67,10 +67,15 @@
     </requiredProperty>
 
     <!-- *** feature flags *** -->
-    <!-- AEM major version (6.3 or 6.4) -->
+    <!-- Java version (8 or 11) -->
+    <requiredProperty key="optionJavaVersion">
+      <defaultValue>8</defaultValue>
+      <validationRegex>^(8|11)$</validationRegex>
+    </requiredProperty>
+    <!-- AEM major version (6.3, 6.4 or 6.5) -->
     <requiredProperty key="optionAemVersion">
-      <defaultValue>6.4</defaultValue>
-      <validationRegex>^(6\.3|6\.4)$</validationRegex>
+      <defaultValue>6.5</defaultValue>
+      <validationRegex>^(6\.3|6\.4|6\.5)$</validationRegex>
     </requiredProperty>
     <!-- Use latest service pack for AEM version - you need to deploy artifacts following these conventions https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
     <requiredProperty key="optionAemServicePack">
@@ -105,6 +110,11 @@
     </requiredProperty>
     <!-- Setup frontend build project with webpack -->
     <requiredProperty key="optionFrontend">
+      <defaultValue>n</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
+    <!-- Use wcm.io Node JS plugin for frontend build (recommended when Maven NodeJS Proxy is used). If not enabled the frontend-maven-plugin is used instead. -->
+    <requiredProperty key="optionNodeJsPlugin">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>

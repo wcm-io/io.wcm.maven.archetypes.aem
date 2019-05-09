@@ -11,7 +11,7 @@
       "jcr:primaryType": "cq:InplaceEditingConfig",
       "active": true,
       "editorType": "text",
-      "configPath": "/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/global/include/richTextConfig"
+      "configPath": "/apps/${projectName}/core/components/global/include/richTextConfig"
     }
   }
 #else

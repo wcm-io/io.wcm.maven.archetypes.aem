@@ -23,6 +23,37 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
+    <release version="2.2.0" date="2019-05-09">
+      <action type="add" dev="sseifert">
+        Add new parameter "optionJavaVersion" with support for Java 8 and Java 11.
+      </action>
+      <action type="add" dev="sseifert">
+        Add new parameter "optionNodeJsPlugin" to switch between wcm.io NodeJS plugin and frontend-maven-plugin.
+      </action>
+      <action type="update" dev="sseifert">
+        Add support for AEM 6.5 and AEM 6.4 SP4.
+      </action>
+      <action type="update" dev="sseifert">
+        Move rewriter configuration to CONGA template.
+      </action>
+      <action type="update" dev="sseifert" issue="WTOOL-48">
+        Restructure generated folder structure: always generate "/core" subfolder für AEM webapp, regardless of optionMultiBundleLayout setting.
+        Put install folder (complete package) and config folder (CONGA-generated) below main application folder in /apps.
+      </action>
+      <action type="update" dev="sseifert">
+        Exclude folder thumbnails from DAM sample content.
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+      <action type="fix" dev="bdang">
+        Align url handler externalizer's rewriteElements config for FileVault layout to the state of Sling-Initial content layout.
+      </action>
+      <action type="fix" dev="sseifert">
+        aem-cms-config: Use correct array syntax for DefaultGetServlet configuration.
+      </action>
+    </release>
+
     <release version="2.1.4" date="2019-03-15">
       <action type="update" dev="sseifert">
         Use wcm.io Link Handler Link Reference Container and Granite UI widgets for link selection.

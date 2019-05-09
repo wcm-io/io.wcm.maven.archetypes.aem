@@ -4,11 +4,11 @@
   "ranking": 20,
 
   "allowedPaths": "^/content/${projectName}(/.+)?$",
-  "allowedChildren": "^/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/.*$",
+  "allowedChildren": "^/apps/${projectName}/core/.*$",
 
   "jcr:content": {
     "jcr:primaryType": "cq:PageContent",
-    "sling:resourceType": "${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/page/homepage",
+    "sling:resourceType": "${projectName}/core/components/page/homepage",
 
     /* This is only required for the homepage to enable responsive preview mode */
     "cq:deviceGroups": ["/etc/mobile/groups/responsive"]

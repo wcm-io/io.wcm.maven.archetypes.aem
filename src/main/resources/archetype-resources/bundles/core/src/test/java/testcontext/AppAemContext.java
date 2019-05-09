@@ -44,6 +44,9 @@ public final class AppAemContext {
     // static methods only
   }
 
+  /**
+   * @return {@link AemContext}
+   */
   public static AemContext newAemContext() {
     return new AemContextBuilder()
 #if ( $optionContextAwareConfig == "y" )
@@ -68,9 +71,9 @@ public final class AppAemContext {
 #if ( $optionContextAwareConfig == "y" || $optionWcmioHandler == "y" )
       // context path strategy
 #if ( $optionWcmioHandler == "y" )
-      MockCAConfig.contextPathStrategyRootTemplate(context, AppTemplate.EDITORIAL_HOMEPAGE.getTemplatePath());
+      MockCAConfig.contextPathStrategyRootTemplate(context, AppTemplate.HOMEPAGE.getTemplatePath());
 #else
-      MockCAConfig.contextPathStrategyRootTemplate(context, "/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/homepage");
+      MockCAConfig.contextPathStrategyRootTemplate(context, "/apps/${projectName}/core/templates/homepage");
 #end
 
 #end

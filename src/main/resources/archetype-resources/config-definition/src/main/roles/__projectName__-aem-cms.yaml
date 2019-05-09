@@ -21,7 +21,7 @@ files:
     delayAfterInstallSec: 30
 #elseif ( $optionAemVersion == '6.4' )
 # AEM Service Pack
-- url: mvn:adobe.binary.aem.64.servicepack/AEM-6.4.3.0/6.4.3/zip
+- url: mvn:adobe.binary.aem.64.servicepack/AEM-6.4.4.0/6.4.4/zip
   dir: packages
   modelOptions:
     delayAfterInstallSec: 30
@@ -47,11 +47,26 @@ files:
   postProcessorOptions:
     contentPackage:
       name: ${projectName}-aem-cms-config
-      rootPath: /apps/${projectName}-aem-cms-config/config
+      rootPath: /apps/${projectName}/config
       filters:
-      - filter: /apps/${projectName}-aem-cms-config
+      - filter: /apps/${projectName}/config
+        rules:
+        - rule: exclude
+          pattern: /apps/${projectName}/config/rewriter
 
 #if ( $optionWcmioHandler == "y" )
+# Include URL handler in Sling Rewriter configuration
+- file: ${projectName}-aem-cms-rewriter-config.json
+  dir: packages
+  template: ${projectName}-aem-cms-rewriter-config.json.hbs
+  postProcessors:
+  - aem-contentpackage
+  postProcessorOptions:
+    contentPackage:
+      name: ${projectName}-aem-cms-rewriter-config
+      acHandling: merge
+      rootPath: /apps/${projectName}/config/rewriter
+
 # AEM Systems users with ACLs (Author)
 - file: ${projectName}-aem-cms-author-systemusers.json
   dir: packages

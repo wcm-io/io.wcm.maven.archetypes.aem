@@ -38,7 +38,7 @@
   
   # Context path strategy
   io.wcm.caconfig.extensions.contextpath.impl.RootTemplateContextPathStrategy-${projectName}
-    templatePaths=["#if($optionEditableTemplates=='y')/conf/${projectName}/settings/wcm/templates/homepage#else/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/templates/homepage#end"]
+    templatePaths=["#if($optionEditableTemplates=='y')/conf/${projectName}/settings/wcm/templates/homepage#else/apps/${projectName}/core/templates/homepage#end"]
     minLevel=I"1"
     maxLevel=I"5"
     contextPathRegex="^/content/(dam/)?(${projectName}/.*)?$"
@@ -77,6 +77,6 @@
     enable.txt=B"false"
     enable.xml=B"false"
     index=B"false"
-    index.files="[index,index.html]"
+    index.files=["index","index.html"]
     aliases="xml:pdf"
     json.maximumresults=I"100"

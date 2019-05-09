@@ -135,11 +135,11 @@
 
           <filters>
             <filter>
-              <root>/apps/${contentPackage.name}</root>
+              <root>/apps/${projectName}/install</root>
             </filter>
           </filters>
 
-          <embeddedTarget>/apps/${contentPackage.name}/install</embeddedTarget>
+          <embeddedTarget>/apps/${projectName}/install</embeddedTarget>
           <embeddeds>
             <!-- Include application bundles and their dependencies -->
             <embedded>

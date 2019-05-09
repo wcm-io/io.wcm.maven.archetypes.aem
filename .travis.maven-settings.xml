@@ -69,9 +69,9 @@
         </repository>
 
         <repository>
-          <id>netbeans-releases</id>
-          <name>Netbeans Repository</name>
-          <url>http://bits.netbeans.org/nexus/content/groups/netbeans</url>
+          <id>maven-nodejs-proxy</id>
+          <url>https://maven-nodejs-proxy.pvtool.org</url>
+          <layout>default</layout>
           <releases>
             <enabled>true</enabled>
             <updatePolicy>never</updatePolicy>

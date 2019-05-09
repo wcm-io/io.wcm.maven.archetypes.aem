@@ -1,0 +1,13 @@
+{
+  "jcr:primaryType": "cq:Template",
+  "jcr:title": "${projectName} Content",
+  "ranking": 10,
+
+  "allowedPaths": "^/content/${projectName}/.+$",
+  "allowedChildren": "^/apps/${projectName}/core/.*$",
+
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "sling:resourceType": "${projectName}/core/components/page/contentpage"
+  }
+}

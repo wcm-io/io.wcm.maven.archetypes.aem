@@ -11,14 +11,14 @@
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Root Container"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/libs/wcm/foundation/components/responsivegrid,/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/carousel,/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/image,/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/structure/imprint]">
+                        components="[/libs/wcm/foundation/components/responsivegrid,/apps/${projectName}/core/components/content/carousel,/apps/${projectName}/core/components/content/image,/apps/${projectName}/core/components/structure/imprint]">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
                     </root-container>
                     <content-container
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Content Container"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/image,/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/text,/apps/${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/title]">
+                        components="[/apps/${projectName}/core/components/content/image,/apps/${projectName}/core/components/content/text,/apps/${projectName}/core/components/content/title]">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
                         <cq:authoring jcr:primaryType="nt:unstructured">
                             <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -27,7 +27,7 @@
                                     assetGroup="media"
                                     assetMimetype="[image/gif,image/jpeg,image/png]"
                                     droptarget="image"
-                                    resourceType="${projectName}#if($optionMultiBundleLayout=='y')/core#end/components/content/image"/>
+                                    resourceType="${projectName}/core/components/content/image"/>
                             </assetToComponentMapping>
                         </cq:authoring>
                     </content-container>
