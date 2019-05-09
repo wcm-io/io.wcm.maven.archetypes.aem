@@ -269,7 +269,7 @@
 #if ( ($optionAemVersion == "6.3" || $optionAemVersion == "6.4") && $optionAemServicePack == "n" )
 #set( $coreComponentsVersion = "2.0.8" )
 #else
-#set( $coreComponentsVersion = "2.3.2" )
+#set( $coreComponentsVersion = "2.4.0" )
 #end
       <!-- AEM Core WCM Components -->
       <dependency>
