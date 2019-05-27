@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="update" dev="sseifert">
+        Update Mobile Device Emulator Configurations for AEM 6.4+.
+      </action>
     </release>
 
     <release version="2.2.0" date="2019-05-09">
