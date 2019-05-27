@@ -1,28 +1,31 @@
-import path from "path";
 import webpackMerge from "webpack-merge";
 
-import handleSCSS from "./build-utils/webpack/scss";
-import handleES6 from "./build-utils/webpack/es6";
-import handleHtml from "./build-utils/webpack/html";
-import handleClean from "./build-utils/webpack/clean";
-import handleHandlebars from "./build-utils/webpack/handlebars";
+import { baseConfig } from "./config/webpack/base";
+import { devConfig } from "./config/webpack/dev";
+import { prodConfig } from "./config/webpack/prod";
 
-export default (env, argv) => {
-  return webpackMerge(
-    {
-      devtool: "source-map",
-      output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "[name]"
-      },
-      devServer: {
-        contentBase: "./public"
-      }
-    },
-    handleClean(),
-    handleES6(),
-    handleSCSS(),
-    handleHandlebars(),
-    handleHtml()
-  );
+/**
+ * Get the configuration file based on webpacks `mode` parameter.
+ *
+ * @param {String} runMode - Webpack mode (like: "development", "production", "test", "...");
+ */
+const getConfig = runMode => {
+  switch (runMode) {
+    case "development":
+      return devConfig;
+    case "production":
+      return prodConfig;
+    default:
+      return prodConfig;
+  }
+};
+
+/**
+ * Compose the webpack config
+ */
+export default (_, argv) => {
+  const runMode = argv.mode ? argv.mode : "production";
+  const runModeConfig = getConfig(runMode);
+
+  return webpackMerge(baseConfig, runModeConfig);
 };

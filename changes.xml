@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="update" dev="ifahrentholz">
+        Update frontend build dependencies and apply latest best practices to build.
+      </action>
     </release>
 
     <release version="2.2.0" date="2019-05-09">

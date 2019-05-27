@@ -1,6 +1,7 @@
 import path from "path";
+import { pathConfig } from "../../../path.config";
 
-export default () => ({
+export const handlebars = {
   module: {
     rules: [
       {
@@ -9,11 +10,11 @@ export default () => ({
           {
             loader: "handlebars-loader",
             options: {
-              partialDirs: [path.join("src")]
+              partialDirs: [path.resolve(pathConfig.paths.src)]
             }
           }
         ]
       }
     ]
   }
-});
+};

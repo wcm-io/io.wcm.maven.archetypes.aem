@@ -19,7 +19,7 @@
   <build>
 
     <plugins>
-    
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
@@ -44,7 +44,7 @@
           </execution>
         </executions>
         <configuration>
-          <nodeJsVersion>10.15.3</nodeJsVersion>
+          <nodeJsVersion>10.15.1</nodeJsVersion>
           <tasks>
             <npmInstallTask>
               <workingDirectory>${project.basedir}</workingDirectory>
@@ -73,7 +73,7 @@
             </goals>
             <phase>process-resources</phase>
             <configuration>
-              <nodeVersion>v10.15.3</nodeVersion>
+              <nodeVersion>v10.15.1</nodeVersion>
             </configuration>
           </execution>
           <execution>
@@ -87,7 +87,7 @@
             </configuration>
           </execution>
           <execution>
-            <id>npm run build:clientlibs</id>
+            <id>npm production</id>
             <goals>
               <goal>npm</goal>
             </goals>
@@ -97,7 +97,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>      
+      </plugin>
 #end
 
       <!-- Do not generate eclipse project files -->
