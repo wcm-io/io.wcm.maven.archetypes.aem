@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "${projectName}-frontend",
   "version": "1.0.0",
   "description": "Frontend build pipeline for AEM projects",
@@ -9,13 +10,6 @@
     "build:prod": "webpack --mode production",
     "build:clientlibs": "npm run build:prod && clientlib"
   },
-  "keywords": [
-    "AEM",
-    "Frontend",
-    "Build"
-  ],
-  "author": "wcm.io",
-  "license": "Apache-2.0",
   "dependencies": {
     "bootstrap": "4.3.1",
     "jquery": "3.4.1",
