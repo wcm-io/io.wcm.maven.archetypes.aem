@@ -22,39 +22,25 @@ module.exports = {
       name: "${projectName}.app",
       serializationFormat: "${serializationFormat}",
       assets: {
-        js: [
-          "dist/static/js/index.js",
-          "dist/static/js/index.js.map"
-        ],
-        css: [
-          "dist/static/css/index.css",
-          "dist/static/css/index.css.map"
-        ],
+        js: ["dist/static/js/app.js", "dist/static/js/app.js.map"],
+        css: ["dist/static/styles/app.css", "dist/static/styles/app.css.map"],
         resources: {
-          "cwd": "./public/",
-          "flatten": false,
-          "files": [
-            "**/*.*"
-          ]
+          cwd: "./public/",
+          flatten: false,
+          files: ["**/*.*"]
         }
       }
     },
     {
       name: "${projectName}.all",
       serializationFormat: "${serializationFormat}",
-      embed: [
-        "core.wcm.components.image.v1",
-        "${projectName}.app"
-      ],
-      jsProcessor: [
-        "default:none",
-        "min:gcc;compilationLevel=whitespace"
-      ],
+      embed: ["core.wcm.components.image.v1", "${projectName}.app"],
+      jsProcessor: ["default:none", "min:gcc;compilationLevel=whitespace"],
       longCacheKey: "${project.version}-${buildNumber}",
       assets: {
         js: [],
         css: []
       }
-    },
+    }
   ]
-}
+};

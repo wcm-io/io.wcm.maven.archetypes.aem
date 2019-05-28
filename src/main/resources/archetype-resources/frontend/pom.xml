@@ -19,7 +19,7 @@
   <build>
 
     <plugins>
-    
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
@@ -87,7 +87,7 @@
             </configuration>
           </execution>
           <execution>
-            <id>npm run build:clientlibs</id>
+            <id>npm production</id>
             <goals>
               <goal>npm</goal>
             </goals>
@@ -97,7 +97,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>      
+      </plugin>
 #end
 
       <!-- Do not generate eclipse project files -->

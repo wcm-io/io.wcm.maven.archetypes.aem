@@ -1,15 +1,11 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { pathConfig } from "../../../path.config";
 
-export default () => ({
-  entry: {
-    "./static/css/index": "./src/index.scss"
-  },
+export const scss = {
   plugins: [
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: "[name].css",
-      chunkFilename: "[id].css"
+      filename: `${pathConfig.paths.styleTarget}/[name].css`,
+      chunkFilename: `${pathConfig.paths.styleTarget}/[id].css`
     })
   ],
   module: {
@@ -20,4 +16,4 @@ export default () => ({
       }
     ]
   }
-});
+};
