@@ -74,6 +74,8 @@
             <phase>process-resources</phase>
             <configuration>
               <nodeVersion>v10.16.0</nodeVersion>
+## Explicitly define NPM version for frontend-maven-plugin to avoid build problems on Jenkins
+              <npmVersion>6.9.0</npmVersion>
             </configuration>
           </execution>
           <execution>
