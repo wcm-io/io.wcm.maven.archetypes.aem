@@ -7,7 +7,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build:dev": "webpack --mode development",
-    "build:prod": "webpack --mode production",
+    "build:prod": "webpack --mode production --verbose",
     "build:clientlibs": "npm run build:prod && clientlib"
   },
   "dependencies": {
