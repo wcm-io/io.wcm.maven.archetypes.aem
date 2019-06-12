@@ -44,8 +44,7 @@
           </execution>
         </executions>
         <configuration>
-          <nodeJsVersion>10.16.0</nodeJsVersion>
-          <npmVersion>6.9.0</npmVersion>
+          <nodeJsVersion>10.15.3</nodeJsVersion>
           <tasks>
             <npmInstallTask>
               <workingDirectory>${project.basedir}</workingDirectory>
@@ -61,7 +60,7 @@
             </nodeJsTask>
           </tasks>
         </configuration>
-      </plugin>
+      </plugin>      
 #else
       <plugin>
         <groupId>com.github.eirslett</groupId>
@@ -74,8 +73,7 @@
             </goals>
             <phase>process-resources</phase>
             <configuration>
-              <nodeVersion>v10.16.0</nodeVersion>
-              <npmVersion>6.9.0</npmVersion>
+              <nodeVersion>v10.15.3</nodeVersion>
             </configuration>
           </execution>
           <execution>
