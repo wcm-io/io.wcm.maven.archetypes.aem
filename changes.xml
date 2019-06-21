@@ -33,6 +33,9 @@
       <action type="update" dev="ifahrentholz">
         Update frontend build dependencies and apply latest best practices to build.
       </action>
+      <action type="fix" dev="sseifert">
+        Fix package filter in aem-cms-config package to ensure configurations depending on run modes is deployed as well.
+      </action>
     </release>
 
     <release version="2.2.0" date="2019-05-09">
