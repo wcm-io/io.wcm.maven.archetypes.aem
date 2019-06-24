@@ -13,7 +13,7 @@ npm install
 $symbol_pound$symbol_pound Run local Development Server
 
 ```
-npm run server
+npm run start
 ```
 
 $symbol_pound$symbol_pound Run Build Tasks
