@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/apps/${projectName}/core"/>
-    <filter root="/etc/clientlibs/${projectName}"/>
+  <filter root="/apps/${projectName}/clientlibs"/>
+  <filter root="/apps/${projectName}/core"/>
 </workspaceFilter>

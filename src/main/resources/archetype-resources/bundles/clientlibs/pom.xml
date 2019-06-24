@@ -27,7 +27,7 @@
           <instructions>
 
             <Sling-Initial-Content>
-              SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/etc/clientlibs/${projectName}
+              SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName}/clientlibs
             </Sling-Initial-Content>
 
           </instructions>

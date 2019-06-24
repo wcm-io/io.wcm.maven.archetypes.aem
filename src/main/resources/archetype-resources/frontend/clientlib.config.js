@@ -7,7 +7,7 @@
 #end
 #else
 #set( $serializationFormat = "xml" )
-#set( $clientlibDestPath = "content-packages/ui.apps/jcr_root/etc/clientlibs/${projectName}" )
+#set( $clientlibDestPath = "content-packages/ui.apps/jcr_root/apps/${projectName}/clientlibs" )
 #end
 module.exports = {
   // default working directory (can be changed per 'cwd' in every asset option)
