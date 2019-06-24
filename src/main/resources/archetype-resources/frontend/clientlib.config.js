@@ -7,7 +7,7 @@
 #end
 #else
 #set( $serializationFormat = "xml" )
-#set( $clientlibDestPath = "content-packages/ui.apps/jcr_root/etc/clientlibs/${projectName}" )
+#set( $clientlibDestPath = "content-packages/ui.apps/jcr_root/apps/${projectName}/clientlibs" )
 #end
 module.exports = {
   // default working directory (can be changed per 'cwd' in every asset option)
@@ -21,6 +21,7 @@ module.exports = {
     {
       name: "${projectName}.app",
       serializationFormat: "${serializationFormat}",
+      allowProxy: true,
       assets: {
         js: ["dist/static/js/app.js", "dist/static/js/app.js.map"],
         css: ["dist/static/styles/app.css", "dist/static/styles/app.css.map"],
@@ -37,6 +38,7 @@ module.exports = {
       embed: ["core.wcm.components.image.v1", "${projectName}.app"],
       jsProcessor: ["default:none", "min:gcc;compilationLevel=whitespace"],
       longCacheKey: "${project.version}-${buildNumber}",
+      allowProxy: true,
       assets: {
         js: [],
         css: []

@@ -25,6 +25,9 @@
 
     <release version="2.2.2" date="not released">
       <action type="update" dev="sseifert">
+        Deploy client libraries to /apps with proxy mode.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
       <action type="update" dev="sseifert">

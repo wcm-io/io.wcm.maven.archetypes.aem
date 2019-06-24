@@ -52,9 +52,9 @@ def removeModule(pomFile, module) {
 // frontend
 if (optionFrontend == "y") {
   assert new File(clientlibsBundle, "src").deleteDir()
-  assert new File(uiAppsPackage, "jcr_root/etc/clientlibs/${projectName}/${projectName}.3rdparty").deleteDir()
-  assert new File(uiAppsPackage, "jcr_root/etc/clientlibs/${projectName}/${projectName}.all").deleteDir()
-  assert new File(uiAppsPackage, "jcr_root/etc/clientlibs/${projectName}/${projectName}.app").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs/${projectName}.3rdparty").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs/${projectName}.all").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs/${projectName}.app").deleteDir()
 }
 else {
   assert new File(rootDir, "frontend").deleteDir()
@@ -76,7 +76,7 @@ if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/webapp/app-root/components/global/include").deleteDir()
 
   assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root/${projectName}.app/css").deleteDir()
-  assert new File(uiAppsPackage, "jcr_root/etc/clientlibs/${projectName}/${projectName}.app/css").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs/${projectName}.app/css").deleteDir()
   assert new File(frontend, "src/components/image").deleteDir()
 
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/admin/redirect").deleteDir()

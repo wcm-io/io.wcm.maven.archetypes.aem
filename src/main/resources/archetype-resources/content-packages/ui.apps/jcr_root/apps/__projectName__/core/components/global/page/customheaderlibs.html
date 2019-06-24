@@ -1,4 +1,4 @@
-<link rel="shortcut icon" href="/etc/clientlibs/${projectName}/${projectName}.app/resources/img/favicon.ico" />
+<link rel="shortcut icon" href="#if($optionWcmioHandler=='y')/apps#{else}/etc.clientlibs#{end}/${projectName}/clientlibs/${projectName}.app/resources/img/favicon.ico" />
 
 <sly
     data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
