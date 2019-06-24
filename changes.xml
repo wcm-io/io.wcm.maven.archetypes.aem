@@ -28,6 +28,9 @@
         Deploy client libraries to /apps with proxy mode.
       </action>
       <action type="update" dev="sseifert">
+        Use wcm.io Clientlibs UI Extensions for including AEM clientlibs (when wcm.io Handler is enabled).
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
       <action type="update" dev="sseifert">
