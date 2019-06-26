@@ -13,7 +13,7 @@ npm install
 $symbol_pound$symbol_pound Run local Development Server
 
 ```
-npm run server
+npm run start
 ```
 
 $symbol_pound$symbol_pound Run Build Tasks
@@ -43,6 +43,6 @@ npm run build:clientlibs
 #set( $clientlibDestPath = "bundles/core/src/main/webapp/clientlibs-root" )
 #end
 #else
-#set( $clientlibDestPath = "content-packages/ui.apps/jcr_root/etc/clientlibs/${projectName}" )
+#set( $clientlibDestPath = "content-packages/ui.apps/jcr_root/apps/${projectName}/clientlibs" )
 #end
 This task generates the client libraries in folder `${clientlibDestPath}`.

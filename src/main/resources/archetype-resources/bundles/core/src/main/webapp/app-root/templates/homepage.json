@@ -11,7 +11,7 @@
     "sling:resourceType": "${projectName}/core/components/page/homepage",
 
     /* This is only required for the homepage to enable responsive preview mode */
-    "cq:deviceGroups": ["/etc/mobile/groups/responsive"]
+    "cq:deviceGroups": ["#if($optionAemVersion == "6.3")/etc/#{end}mobile/groups/responsive"]
 
   }
 }

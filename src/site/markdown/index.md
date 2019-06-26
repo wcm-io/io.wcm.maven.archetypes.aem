@@ -52,12 +52,12 @@ Alternatively to the wcm.io AEM archetype you can use these tools to set up new 
 
 [usage]: usage.html
 [changelog]: changes-report.html
-[aem-mock]: http://wcm.io/testing/aem-mock/
-[conga]: http://devops.wcm.io/conga
+[aem-mock]: https://wcm.io/testing/aem-mock/
+[conga]: https://devops.wcm.io/conga
 [aem-core-wcm-components]: https://github.com/Adobe-Marketing-Cloud/aem-core-wcm-components
 [sling-caconfig]: https://sling.apache.org/documentation/bundles/context-aware-configuration/context-aware-configuration.html
-[wcmio-caconfig]: http://wcm.io/caconfig/
-[wcmio-handler]: http://wcm.io/handler
+[wcmio-caconfig]: https://wcm.io/caconfig/
+[wcmio-handler]: https://wcm.io/handler
 [acs-aem-commons]: https://adobe-consulting-services.github.io/acs-aem-commons/
 [adobe-aem-archetype]: https://github.com/Adobe-Marketing-Cloud/aem-project-archetype
 [acs-aem-lazybones]: https://github.com/Adobe-Consulting-Services/lazybones-aem-templates

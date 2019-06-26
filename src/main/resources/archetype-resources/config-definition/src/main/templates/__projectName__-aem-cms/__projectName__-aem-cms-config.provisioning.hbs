@@ -49,6 +49,12 @@
     enabled=B"true"
 
 #end
+#if ( $optionWcmioHandler == "y" )
+  # Define service user for wcm.io URL handler
+  org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-url
+    user.mapping=["io.wcm.handler.url:clientlibs-service\=sling-scripting"]
+
+#end
 [configurations runModes=author]
 
   # Show "Sites" view in TouchUI after login
@@ -57,7 +63,7 @@
 
 #if ( $optionWcmioHandler == "y" )
   # Define service user for wcm.io Media Handler
-  org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}
+  org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-media
     user.mapping=["io.wcm.handler.media\=${projectName}DamSystemUser"]
 
 #end

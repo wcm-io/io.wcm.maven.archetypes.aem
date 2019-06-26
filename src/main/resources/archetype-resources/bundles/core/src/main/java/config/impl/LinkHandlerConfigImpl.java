@@ -35,7 +35,7 @@ public class LinkHandlerConfigImpl extends LinkHandlerConfig {
   @Override
   public @Nullable String getLinkRootPath(@NotNull Page page, @NotNull String linkTypeId) {
     if (StringUtils.equals(linkTypeId, MediaLinkType.ID)) {
-      return "/content/dam/${projectName}";
+      return MediaHandlerConfigImpl.DAM_ROOT;
     }
     return super.getLinkRootPath(page, linkTypeId);
   }

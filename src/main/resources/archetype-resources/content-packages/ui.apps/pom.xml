@@ -66,8 +66,8 @@
             <configuration>
               <resources>
                 <resource>
-                  <directory>jcr_root/etc/clientlibs/${projectName}</directory>
-                  <targetPath>${project.build.directory}/vault-work/jcr_root/etc/clientlibs/${projectName}</targetPath>
+                  <directory>jcr_root/apps/${projectName}/clientlibs</directory>
+                  <targetPath>${project.build.directory}/vault-work/jcr_root/apps/${projectName}/clientlibs</targetPath>
                   <filtering>true</filtering>
                   <includes>
                     <include>**/.content.xml</include>

@@ -81,6 +81,6 @@ Modules of this project:
 * [config-definition](config-definition/): Defines the CONGA roles and templates for this application. Also contains a `development` CONGA environment for deploying to local development instances.
 
 
-[wcmio-maven-archetype-aem]: http://wcm.io/tooling/maven/archetypes/aem/
+[wcmio-maven-archetype-aem]: https://wcm.io/tooling/maven/archetypes/aem/
 [adobe-public-maven-repo]: https://repo.adobe.com/nexus/content/groups/public/
-[wcmio-maven]: http://wcm.io/maven.html
+[wcmio-maven]: https://wcm.io/maven.html

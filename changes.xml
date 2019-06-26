@@ -23,6 +23,27 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
+    <release version="2.3.0" date="2019-06-26">
+      <action type="update" dev="sseifert">
+        Deploy client libraries to /apps with proxy mode.
+      </action>
+      <action type="update" dev="sseifert">
+        Use wcm.io Clientlibs UI Extensions for including AEM clientlibs (when wcm.io Handler is enabled).
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+      <action type="update" dev="sseifert">
+        Update Mobile Device Emulator Configurations for AEM 6.4+.
+      </action>
+      <action type="update" dev="ifahrentholz">
+        Update frontend build dependencies and apply latest best practices to build.
+      </action>
+      <action type="fix" dev="sseifert">
+        Fix package filter in aem-cms-config package to ensure configurations depending on run modes is deployed as well.
+      </action>
+    </release>
+
     <release version="2.2.0" date="2019-05-09">
       <action type="add" dev="sseifert">
         Add new parameter "optionJavaVersion" with support for Java 8 and Java 11.

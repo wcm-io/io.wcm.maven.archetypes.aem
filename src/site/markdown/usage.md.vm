@@ -118,16 +118,16 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 
 
 [adobe-public-maven-repo]: https://repo.adobe.com/nexus/content/groups/public/
-[wcmio-maven]: http://wcm.io/maven.html
+[wcmio-maven]: https://wcm.io/maven.html
 [aem-binaries-conventions]: https://wcm-io.atlassian.net/wiki/x/AYC9Aw
 [aem-eclipse-ide]: https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/aem-eclipse.html
 [sling-eclipse-ide]: https://sling.apache.org/documentation/development/ide-tooling.html
 [fsresource-adaptto-talk]: https://adapt.to/2017/en/schedule/ease-development-with-apache-sling-file-system-resource-provider.html
 [sling-caconfig]: https://sling.apache.org/documentation/bundles/context-aware-configuration/context-aware-configuration.html
-[wcmio-caconfig]: http://wcm.io/caconfig/
-[wcmio-handler]: http://wcm.io/handler
+[wcmio-caconfig]: https://wcm.io/caconfig/
+[wcmio-handler]: https://wcm.io/handler
 [acs-aem-commons]: https://adobe-consulting-services.github.io/acs-aem-commons/
 [webpack]: https://webpack.js.org/
-[nodejs-maven--plugin]: http://wcm.io/tooling/maven/plugins/nodejs-maven-plugin/
+[nodejs-maven--plugin]: https://wcm.io/tooling/maven/plugins/nodejs-maven-plugin/
 [frontend-maven-plugin]: https://github.com/eirslett/frontend-maven-plugin
 [maven-nodejs-proxy]: https://github.com/wcm-io-devops/maven-nodejs-proxy

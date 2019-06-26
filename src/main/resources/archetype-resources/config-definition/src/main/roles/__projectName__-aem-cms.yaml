@@ -49,8 +49,10 @@ files:
       name: ${projectName}-aem-cms-config
       rootPath: /apps/${projectName}/config
       filters:
-      - filter: /apps/${projectName}/config
+      - filter: /apps/${projectName}
         rules:
+        - rule: include
+          pattern: /apps/${projectName}/config(\..*)?
         - rule: exclude
           pattern: /apps/${projectName}/config/rewriter
 

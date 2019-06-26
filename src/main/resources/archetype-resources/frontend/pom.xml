@@ -19,7 +19,7 @@
   <build>
 
     <plugins>
-    
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
@@ -44,7 +44,7 @@
           </execution>
         </executions>
         <configuration>
-          <nodeJsVersion>10.15.3</nodeJsVersion>
+          <nodeJsVersion>10.16.0</nodeJsVersion>
           <tasks>
             <npmInstallTask>
               <workingDirectory>${project.basedir}</workingDirectory>
@@ -60,7 +60,7 @@
             </nodeJsTask>
           </tasks>
         </configuration>
-      </plugin>      
+      </plugin>
 #else
       <plugin>
         <groupId>com.github.eirslett</groupId>
@@ -73,7 +73,9 @@
             </goals>
             <phase>process-resources</phase>
             <configuration>
-              <nodeVersion>v10.15.3</nodeVersion>
+              <nodeVersion>v10.16.0</nodeVersion>
+## Explicitly define NPM version for frontend-maven-plugin to avoid build problems on Jenkins
+              <npmVersion>6.9.0</npmVersion>
             </configuration>
           </execution>
           <execution>
@@ -87,7 +89,7 @@
             </configuration>
           </execution>
           <execution>
-            <id>npm run build:clientlibs</id>
+            <id>npm production</id>
             <goals>
               <goal>npm</goal>
             </goals>
@@ -97,7 +99,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>      
+      </plugin>
 #end
 
       <!-- Do not generate eclipse project files -->
