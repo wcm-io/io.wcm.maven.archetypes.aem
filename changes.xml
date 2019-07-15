@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Add support for AEM 6.5 SP1 and AEM 6.4 SP5.
       </action>
+      <action type="fix" dev="ifahrentholz">
+        Frontend: Fix source map generation for SCSS.
+      </action>
     </release>
 
     <release version="2.3.0" date="2019-06-26">
