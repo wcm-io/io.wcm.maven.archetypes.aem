@@ -23,6 +23,11 @@
 
   <build>
     <finalName>${contentPackage.name}-${project.version}</finalName>
+    <resources>
+      <resource>
+        <directory>jcr_root</directory>
+      </resource>
+    </resources>
 
     <plugins>
       <plugin>

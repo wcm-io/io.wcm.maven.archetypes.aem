@@ -30,6 +30,9 @@
       <action type="fix" dev="ifahrentholz">
         Frontend: Fix source map generation for SCSS.
       </action>
+      <action type="fix" dev="sseifert">
+        Add resource definition for jcr_root folders in content package modules to support sling:fsmount goal.
+      </action>
     </release>
 
     <release version="2.3.0" date="2019-06-26">
