@@ -186,6 +186,11 @@
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.core.components</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
         <version>1.3.2</version>
       </dependency>
