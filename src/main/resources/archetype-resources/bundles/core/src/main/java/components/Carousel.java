@@ -42,6 +42,11 @@ import ${package}.config.MediaFormats;
 
 /**
  * Model for the carousel component.
+ * <p>
+ * Please note: There is already is a pre-built "Carousel" Core Component which does basically the same
+ * as this component with a much more sophisticated edit mode support. Use it, instead of this demo component!
+ * This demo component is only an example for a custom standalone component.
+ * </p>
  */
 @Model(adaptables = SlingHttpServletRequest.class)
 public class Carousel {

@@ -4,7 +4,7 @@
   "componentGroup": "${projectName}",
   
 #if ($optionWcmioHandler == 'y')
-  "wcmio:mediaFormats": ["content"],
+  "wcmio:mediaFormats": ["wide"],
   "wcmio:mediaCropAuto": true,
 
 #end

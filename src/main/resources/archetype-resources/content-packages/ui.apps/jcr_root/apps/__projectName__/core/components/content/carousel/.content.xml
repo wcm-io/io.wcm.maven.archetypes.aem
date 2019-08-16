@@ -4,6 +4,6 @@
     jcr:title="Carousel"
 #if ($optionWcmioHandler == 'y')
     wcmio:mediaCropAuto="{Boolean}true"
-    wcmio:mediaFormats="[content]"
+    wcmio:mediaFormats="[wide]"
 #end
     componentGroup="${projectName}"/>
