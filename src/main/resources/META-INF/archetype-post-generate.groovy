@@ -23,6 +23,9 @@ def rootPom = new File(rootDir, "pom.xml")
 if (optionAemServicePack == "n" && optionAemVersion == "6.3") {
   throw new RuntimeException("For AEM 6.3 optionAemServicePack='y' is required because AEM 6.3 is only supported with latest service pack.")
 }
+if (optionAemServicePack == "n" && optionAemVersion == "6.4") {
+  throw new RuntimeException("For AEM 6.4 optionAemServicePack='y' is required because AEM 6.4 is only supported with latest service pack.")
+}
 if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
   throw new RuntimeException("Parameter optionMultiBundleLayout='y' is only supported with optionSlingInitialContentBundle='y'.")
 }
