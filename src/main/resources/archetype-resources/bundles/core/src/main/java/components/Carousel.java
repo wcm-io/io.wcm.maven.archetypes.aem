@@ -91,8 +91,6 @@ public class Carousel {
         }
 #else
         Media img = mediaHandler.get(slide)
-            .mediaFormat(MediaFormats.CONTENT)
-            .autoCrop(true)
             .property(PROP_CSS_CLASS, "d-block w-100")
             .build();
         if (img.isValid()) {

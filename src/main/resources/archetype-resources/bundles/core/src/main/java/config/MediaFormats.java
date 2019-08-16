@@ -21,8 +21,8 @@ public final class MediaFormats {
    */
   public static final MediaFormat CONTENT = create("content")
       .label("Content")
-      .fixedDimension(1200, 450)
-      .extensions("gif", "jpg", "jpeg", "png")
+      .ratio(16, 9)
+      .extensions("gif", "jpg", "jpeg", "png", "tif", "svg")
       .build();
 
   /**

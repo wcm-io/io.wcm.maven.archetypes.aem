@@ -3,4 +3,4 @@
     jcr:primaryType="cq:Component"
     jcr:title="Title"
     componentGroup="${projectName}"
-    sling:resourceSuperType="core/wcm/components/title/v2/title"/>
+    sling:resourceSuperType="#if($optionWcmioHandler=='y')wcm-io/wcm/core/components/title/v2/title#{else}core/wcm/components/title/v2/title#end"/>
