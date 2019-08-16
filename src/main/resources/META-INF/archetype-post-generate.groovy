@@ -23,6 +23,9 @@ def rootPom = new File(rootDir, "pom.xml")
 if (optionAemServicePack == "n" && optionAemVersion == "6.3") {
   throw new RuntimeException("For AEM 6.3 optionAemServicePack='y' is required because AEM 6.3 is only supported with latest service pack.")
 }
+if (optionAemServicePack == "n" && optionAemVersion == "6.4") {
+  throw new RuntimeException("For AEM 6.4 optionAemServicePack='y' is required because AEM 6.4 is only supported with latest service pack.")
+}
 if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
   throw new RuntimeException("Parameter optionMultiBundleLayout='y' is only supported with optionSlingInitialContentBundle='y'.")
 }
@@ -71,22 +74,17 @@ if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/redirect.json").delete()
-  assert new File(coreBundle, "src/main/webapp/app-root/components/content/text").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root/components/content/image").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root/components/global/include").deleteDir()
 
   assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root/${projectName}.app/css").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs/${projectName}.app/css").deleteDir()
-  assert new File(frontend, "src/components/image").deleteDir()
+  
+  if (optionFrontend == "y") {
+    assert new File(frontend, "src/components/carousel/carousel.scss").delete()
+    assert new File(frontend, "src/components/image").deleteDir()
+  }
 
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/admin/redirect").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/admin/page/redirect").deleteDir()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/content/text/text.html").delete()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/content/text/_cq_editConfig.xml").delete()   
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/content/image/image.html").delete()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/content/image/_cq_editConfig.xml").delete()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/content/image/_cq_dialog").deleteDir()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/global/include").deleteDir()
 
   assert new File(configDefinition, "src/main/templates/${projectName}-aem-cms/${projectName}-aem-cms-author-systemusers.json.hbs").delete()
   assert new File(configDefinition, "src/main/templates/${projectName}-aem-cms/${projectName}-aem-cms-rewriter-config.json.hbs").delete()

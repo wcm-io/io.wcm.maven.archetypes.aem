@@ -23,7 +23,10 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
-    <release version="2.3.2" date="not released">
+    <release version="2.4.0" date="not released">
+      <action type="add" dev="sseifert"><![CDATA[
+        Make use of <a href="https://wcm.io/wcm/core-components/">wcm.io WCM Core Components</a> when wcm.io Handler is activated.
+      ]]></action>
       <action type="update" dev="sseifert">
         Add support for AEM 6.5 SP1 and AEM 6.4 SP5.
       </action>

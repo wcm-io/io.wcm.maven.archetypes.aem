@@ -3,6 +3,11 @@
   "jcr:title": "Carousel",
   "componentGroup": "${projectName}",
   
+#if ($optionWcmioHandler == 'y')
+  "wcmio:mediaFormats": ["wide"],
+  "wcmio:mediaCropAuto": true,
+
+#end
   "cq:editConfig": {
     "jcr:primaryType": "cq:EditConfig"
   },
@@ -28,11 +33,7 @@
                 "items": {
 #if ($optionWcmioHandler == 'y')
                   "fileReference": {
-                    "sling:resourceType": "wcm-io/handler/media/components/granite/form/pathfield",
-                    "name": "./fileReference",
-                    "rootPath": "/content/dam/${projectName}",
-                    "mediaFormats": ["content"],
-                    "mediaCropAuto": true
+                    "sling:resourceType": "wcm-io/handler/media/components/granite/form/pathfield"
                   }
 #else
                   "fileReference": {
@@ -43,7 +44,7 @@
                   "resourceType": {
                     "sling:resourceType": "granite/ui/components/coral/foundation/form/hidden",
                     "name": "./sling:resourceType",
-                    "value": "aem-fe-archetype/components/content/image"
+                    "value": "${projectName}/components/content/image"
                   }
 #end
                 }

@@ -1,4 +1,4 @@
 {
   "jcr:primaryType": "cq:Component",
-  "sling:resourceSuperType": "core/wcm/components/page/v2/page"
+  "sling:resourceSuperType": "#if($optionWcmioHandler=='y')wcm-io/wcm/core/components/page/v2/page#{else}core/wcm/components/page/v2/page#end"
 }

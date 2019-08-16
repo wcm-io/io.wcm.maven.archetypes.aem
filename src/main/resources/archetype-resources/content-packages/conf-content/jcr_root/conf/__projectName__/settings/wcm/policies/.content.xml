@@ -25,7 +25,7 @@
                                 <image
                                     jcr:primaryType="nt:unstructured"
                                     assetGroup="media"
-                                    assetMimetype="[image/gif,image/jpeg,image/png]"
+                                    assetMimetype="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
                                     droptarget="image"
                                     resourceType="${projectName}/core/components/content/image"/>
                             </assetToComponentMapping>
