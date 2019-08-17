@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.2.36</version>
+    <version>1.2.37-SNAPSHOT</version>
     <relativePath/>
   </parent>
 
@@ -26,6 +26,7 @@
 
     <!-- Sling instance parameters -->
     <sling.url>http://localhost:${aemAuthorPort}</sling.url>
+    <sling.publish.url>http://localhost:${aemPublishPort}</sling.publish.url>
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
     <eclipse.settings.nullanalysis>enabled</eclipse.settings.nullanalysis>

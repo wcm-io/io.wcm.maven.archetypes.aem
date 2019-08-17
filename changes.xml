@@ -28,6 +28,9 @@
         Make use of <a href="https://wcm.io/wcm/core-components/">wcm.io WCM Core Components</a> when wcm.io Handler is activated.
       ]]></action>
       <action type="update" dev="sseifert">
+        Remove AEM instance URLs/port numbers from build-deploy.sh and build-deploy-publish.sh and read them from parent POM.
+      </action>
+      <action type="update" dev="sseifert">
         Add support for AEM 6.5 SP1 and AEM 6.4 SP5.
       </action>
       <action type="fix" dev="ifahrentholz">
