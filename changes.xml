@@ -24,6 +24,7 @@
   <body>
 
     <release version="2.4.0" date="not released">
+      <action type="add">See <![CDATA[<a href="https://wcm-io.atlassian.net/wiki/x/BgCKS">What's new in Maven Archetype for AEM 2.4.0</a>]]> for an overview of the new features.</action>
       <action type="add" dev="sseifert"><![CDATA[
         Make use of <a href="https://wcm.io/wcm/core-components/">wcm.io WCM Core Components</a> when wcm.io Handler is activated.
       ]]></action>
