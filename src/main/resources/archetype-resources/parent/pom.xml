@@ -24,7 +24,7 @@
     <java.version>${optionJavaVersion}</java.version>
 #end
 
-    <!-- Sling instance parameters -->
+    <!-- AEM instance parameters -->
     <sling.url>http://localhost:${aemAuthorPort}</sling.url>
     <sling.publish.url>http://localhost:${aemPublishPort}</sling.publish.url>
 
