@@ -6,7 +6,7 @@ package ${package}.components;
 #if ($optionWcmioHandler == 'n')
 import static com.day.cq.commons.DownloadResource.PN_REFERENCE;
 #else
-import static io.wcm.handler.media.MediaNameConstants.PN_MEDIA_REF;
+import static io.wcm.handler.media.MediaNameConstants.PN_MEDIA_REF_STANDARD;
 #end
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -67,8 +67,8 @@ class CarouselTest {
 
     context.build().resource(resource.getPath() + "/" + NN_SLIDES)
         .siblingsMode()
-        .resource("item1", #if($optionWcmioHandler=='n')PN_REFERENCE#{else}PN_MEDIA_REF#end, "/content/dam/slides/slide1.png")
-        .resource("item2", #if($optionWcmioHandler=='n')PN_REFERENCE#{else}PN_MEDIA_REF#end, "/content/dam/slides/slide2.png");
+        .resource("item1", #if($optionWcmioHandler=='n')PN_REFERENCE#{else}PN_MEDIA_REF_STANDARD#end, "/content/dam/slides/slide1.png")
+        .resource("item2", #if($optionWcmioHandler=='n')PN_REFERENCE#{else}PN_MEDIA_REF_STANDARD#end, "/content/dam/slides/slide2.png");
 
 #if ($optionWcmioHandler == 'y')
     Carousel underTest = AdaptTo.notNull(context.request(), Carousel.class);

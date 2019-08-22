@@ -33,6 +33,7 @@ import io.wcm.testing.mock.wcmio.caconfig.MockCAConfig;
 import ${package}.config.AppTemplate;
 import ${package}.config.impl.LinkHandlerConfigImpl;
 import ${package}.config.impl.MediaFormatProviderImpl;
+import ${package}.config.impl.MediaHandlerConfigImpl;
 
 #end
 /**
@@ -80,7 +81,8 @@ public final class AppAemContext {
 #if ( $optionWcmioHandler == "y" )
       // setup handler
       context.registerInjectActivateService(new LinkHandlerConfigImpl());
-      context.registerService(MediaFormatProvider.class, new MediaFormatProviderImpl());
+      context.registerInjectActivateService(new MediaHandlerConfigImpl());
+      context.registerInjectActivateService(new MediaFormatProviderImpl());
 
 #end
     }
