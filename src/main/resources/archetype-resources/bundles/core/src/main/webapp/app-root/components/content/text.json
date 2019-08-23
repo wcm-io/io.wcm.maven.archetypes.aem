@@ -2,19 +2,5 @@
   "jcr:primaryType": "cq:Component",
   "jcr:title": "Text",
   "componentGroup": "${projectName}",
-#if ($optionWcmioHandler=='y')
-  "cq:icon": "textLeft",
-
-  "cq:editConfig": {
-    "jcr:primaryType": "cq:EditConfig",
-    "cq:inplaceEditing": {
-      "jcr:primaryType": "cq:InplaceEditingConfig",
-      "active": true,
-      "editorType": "text",
-      "configPath": "/apps/${projectName}/core/components/global/include/richTextConfig"
-    }
-  }
-#else
-  "sling:resourceSuperType": "core/wcm/components/text/v2/text"
-#end
+  "sling:resourceSuperType": "#if($optionWcmioHandler=='y')wcm-io/wcm/core/components/text/v2/text#{else}core/wcm/components/text/v2/text#end"
 }

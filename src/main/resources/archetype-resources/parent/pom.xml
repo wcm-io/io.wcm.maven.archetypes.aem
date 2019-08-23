@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.2.36</version>
+    <version>1.3.0</version>
     <relativePath/>
   </parent>
 
@@ -24,11 +24,18 @@
     <java.version>${optionJavaVersion}</java.version>
 #end
 
-    <!-- Sling instance parameters -->
+    <!-- AEM instance parameters -->
     <sling.url>http://localhost:${aemAuthorPort}</sling.url>
+    <sling.publish.url>http://localhost:${aemPublishPort}</sling.publish.url>
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
     <eclipse.settings.nullanalysis>enabled</eclipse.settings.nullanalysis>
+
+    <!-- Versions -->
+    <core.wcm.components.version>2.5.0</core.wcm.components.version>
+#if( $optionAcsCommons == "y" )
+    <acs.aem.commons.version>4.3.0</acs.aem.commons.version>
+#end
 
   </properties>
 
@@ -89,22 +96,20 @@
       </dependency>
 #end
 #if ( $optionContextAwareConfig == "y" )
-#if ( $optionAemVersion == "6.3" )
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.caconfig.api</artifactId>
-        <version>1.1.0</version>
+        <version>1.2.0</version>
       </dependency>
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.caconfig.spi</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.4</version>
       </dependency>
-#end
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.caconfig.impl</artifactId>
-        <version>1.4.16</version>
+        <version>1.5.0</version>
       </dependency>
 #if ( $optionAemVersion == "6.4" )
       <!-- Update Sling Tenant in AEM 6.4 due to https://issues.apache.org/jira/browse/SLING-7880 -->
@@ -142,14 +147,14 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.5.0</version>
+        <version>1.6.0</version>
       </dependency>
 #end
 #if ( $optionWcmioHandler == "y" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.sling.models</artifactId>
-        <version>1.4.0</version>
+        <version>1.5.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -159,7 +164,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.commons</artifactId>
-        <version>1.2.0</version>
+        <version>1.3.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -169,22 +174,27 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.2.4</version>
-      </dependency>
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.5.2</version>
-      </dependency>
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.handler.richtext</artifactId>
         <version>1.3.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.handler.media</artifactId>
+        <version>1.7.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.handler.richtext</artifactId>
+        <version>1.3.2</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.commons</artifactId>
-        <version>1.4.0</version>
+        <version>1.5.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.core.components</artifactId>
+        <version>1.0.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -212,7 +222,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
-        <version>2.5.2</version>
+        <version>2.7.0</version>
       </dependency>
       <dependency>
         <groupId>org.apache.sling</groupId>
@@ -240,7 +250,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.handler</artifactId>
-        <version>1.1.0</version>
+        <version>1.3.0</version>
       </dependency>
 #end
 
@@ -257,7 +267,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.4.4.0000#{else}6.4.0.0000#end</version>
+        <version>#if($optionAemServicePack=="y")6.4.5.0000#{else}6.4.0.0000#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -265,42 +275,36 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>6.5.0.0000</version>
+        <version>#if($optionAemServicePack=="y")6.5.1.0000#{else}6.5.0.0000#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
 #end
 
-#if ( ($optionAemVersion == "6.3" || $optionAemVersion == "6.4") && $optionAemServicePack == "n" )
-#set( $coreComponentsVersion = "2.0.8" )
-#else
-#set( $coreComponentsVersion = "2.5.0" )
-#end
       <!-- AEM Core WCM Components -->
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>core.wcm.components.core</artifactId>
-        <version>${coreComponentsVersion}</version>
+        <version>${core.wcm.components.version}</version>
       </dependency>
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>core.wcm.components.all</artifactId>
-        <version>${coreComponentsVersion}</version>
+        <version>${core.wcm.components.version}</version>
         <type>zip</type>
       </dependency>
 
 #if( $optionAcsCommons == "y" )
-#set( $acsCommonsVersion = "4.1.0" )
       <!-- ACS AEM Commons -->
       <dependency>
         <groupId>com.adobe.acs</groupId>
         <artifactId>acs-aem-commons-bundle</artifactId>
-        <version>${acsCommonsVersion}</version>
+        <version>${acs.aem.commons.version}</version>
       </dependency>
       <dependency>
         <groupId>com.adobe.acs</groupId>
         <artifactId>acs-aem-commons-content</artifactId>
-        <version>${acsCommonsVersion}</version>
+        <version>${acs.aem.commons.version}</version>
         <classifier>min</classifier>
         <type>zip</type>
       </dependency>

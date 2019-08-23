@@ -17,8 +17,8 @@ mvn clean install
 
 To build and deploy the application to your local AEM instance use these scripts:
 
-* `build-deploy.sh` - Build and deploy to author instances
-* `build-deploy-publish.sh` - Build and deploy to publish instances
+* `build-deploy.sh` - Build and deploy to author instance
+* `build-deploy-publish.sh` - Build and deploy to publish instance
 
 The first deployment may take a while until all updated OSGi bundles are installed.
 
@@ -27,6 +27,10 @@ After deployment you can open the sample content page in your browser:
 * Author: http://localhost:${aemAuthorPort}/editor.html/content/${projectName}/en.html
 * Publish: http://localhost:${aemPublishPort}/content/${projectName}/en.html
 
+You can deploy individual bundles or content packages to the local AEM instances by using:
+
+* `mvn -Pfast cq:install` - Install and deploy bundle or content package to author instance
+* `mvn -Pfast,publish cq:install` - Install and deploy bundle or content package to publish instance
 
 $symbol_pound$symbol_pound$symbol_pound System requirements
 
