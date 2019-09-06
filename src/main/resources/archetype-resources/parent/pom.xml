@@ -32,7 +32,7 @@
     <eclipse.settings.nullanalysis>enabled</eclipse.settings.nullanalysis>
 
     <!-- Versions -->
-    <core.wcm.components.version>2.5.0</core.wcm.components.version>
+    <core.wcm.components.version>2.6.0</core.wcm.components.version>
 #if( $optionAcsCommons == "y" )
     <acs.aem.commons.version>4.3.0</acs.aem.commons.version>
 #end

@@ -25,6 +25,9 @@
 
     <release version="2.4.2" date="not released">
       <action type="update" dev="sseifert">
+        Update to Core Components 2.6.0.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
