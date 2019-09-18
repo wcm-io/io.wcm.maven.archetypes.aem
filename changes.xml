@@ -28,6 +28,12 @@
         Update to Core Components 2.6.0.
       </action>
       <action type="update" dev="sseifert">
+        Exclude dam:thumbnail nodes for editable template definitions.
+      </action>
+      <action type="update" dev="sseifert">
+        Include "core.wcm.components.image.v2" in clientlibs only when wcm.io WCM Core Components are not used.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
