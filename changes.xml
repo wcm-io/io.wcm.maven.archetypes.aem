@@ -34,7 +34,7 @@
         Include "core.wcm.components.image.v2" in clientlibs only when wcm.io WCM Core Components are not used.
       </action>
       <action type="update" dev="sseifert">
-        Add support for AEM 6.5 SP2.
+        Add support for AEM 6.5 SP2, AEM 6.5 SP6.
       </action>
       <action type="update" dev="sseifert">
         Update dependencies.
