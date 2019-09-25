@@ -194,7 +194,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.2-2.6.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
