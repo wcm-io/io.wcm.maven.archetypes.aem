@@ -1,1 +1,1 @@
--U clean package
+-f ../epsilon63Project -U clean package

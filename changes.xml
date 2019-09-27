@@ -37,6 +37,9 @@
         Add support for AEM 6.5 SP2, AEM 6.5 SP6.
       </action>
       <action type="update" dev="sseifert">
+        Rename folder with generated project to project name after generation.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
       <action type="fix" dev="sseifert">
