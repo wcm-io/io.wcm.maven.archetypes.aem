@@ -25,7 +25,7 @@
 
     <release version="2.4.2" date="not released">
       <action type="update" dev="sseifert">
-        Update to Core Components 2.6.0.
+        Update to Core Components 2.7.0.
       </action>
       <action type="update" dev="sseifert">
         Exclude dam:thumbnail nodes for editable template definitions.
