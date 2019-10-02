@@ -5,6 +5,8 @@
         <exclude pattern="/conf/${projectName}/*"/>
     </filter>
 #if( $optionEditableTemplates == "y" )
-    <filter root="/conf/${projectName}/settings/wcm"/>
+    <filter root="/conf/${projectName}/settings/wcm">
+        <exclude pattern="^.*/dam:thumbnails(/.*)?$"/>
+    </filter>
 #end
 </workspaceFilter>

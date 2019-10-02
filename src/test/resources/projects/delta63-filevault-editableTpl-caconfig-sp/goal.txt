@@ -1,1 +1,1 @@
--U clean package
+-f ../delta63Project -U clean package

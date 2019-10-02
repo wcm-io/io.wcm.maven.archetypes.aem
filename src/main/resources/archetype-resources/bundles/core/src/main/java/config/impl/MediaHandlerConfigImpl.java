@@ -3,12 +3,18 @@
 #set( $symbol_escape = '\' )
 package ${package}.config.impl;
 
+import java.util.List;
+
 import org.jetbrains.annotations.NotNull;
 import org.osgi.service.component.annotations.Component;
 
 import com.day.cq.wcm.api.Page;
+import com.google.common.collect.ImmutableList;
 
 import io.wcm.handler.media.spi.MediaHandlerConfig;
+import io.wcm.handler.media.spi.MediaSource;
+import io.wcm.handler.mediasource.dam.DamMediaSource;
+import io.wcm.handler.mediasource.inline.InlineMediaSource;
 
 /**
  * Media handler configuration.
@@ -17,6 +23,15 @@ import io.wcm.handler.media.spi.MediaHandlerConfig;
 public class MediaHandlerConfigImpl extends MediaHandlerConfig {
 
   static final String DAM_ROOT = "/content/dam/${projectName}";
+
+  private static final List<Class<? extends MediaSource>> MEDIA_SOURCES = ImmutableList.<Class<? extends MediaSource>>of(
+      DamMediaSource.class,
+      InlineMediaSource.class);
+
+  @Override
+  public @NotNull List<Class<? extends MediaSource>> getSources() {
+    return MEDIA_SOURCES;
+  }
 
   @Override
   public boolean useAdobeStandardNames() {

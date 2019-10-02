@@ -1,4 +1,6 @@
 import java.util.regex.Pattern
+import java.nio.file.Files
+import java.nio.file.StandardCopyOption
 import groovy.io.FileType
 
 def rootDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId())
@@ -194,3 +196,8 @@ Closure<Boolean> removeEmptyFolders = {
   return !emptyFolders.empty
 }
 while (removeEmptyFolders()) continue
+
+// rename root folder to project name
+def newRootDir = new File(request.getOutputDirectory() + "/" + projectName)
+Files.move(rootDir.toPath(), newRootDir.toPath(), StandardCopyOption.REPLACE_EXISTING)
+assert newRootDir.exists()

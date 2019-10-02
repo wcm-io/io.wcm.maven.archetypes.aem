@@ -12,7 +12,7 @@
             "link": {
               "sling:resourceType": "granite/ui/components/foundation/include",
               "jcr:title": "Redirect Link",
-              "path": "${projectName}/core/components/global/include/linkRefNoTitleTab",
+              "path": "wcm-io/handler/link/components/global/include/linkRefNoTitleTab",
               "sling:orderBefore": "advanced"
             }
 

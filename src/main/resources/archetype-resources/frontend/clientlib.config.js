@@ -35,7 +35,7 @@ module.exports = {
     {
       name: "${projectName}.all",
       serializationFormat: "${serializationFormat}",
-      embed: ["core.wcm.components.image.v1", "${projectName}.app"],
+      embed: [#if($optionWcmioHandler!='y')"core.wcm.components.image.v1", #{end}"${projectName}.app"],
       jsProcessor: ["default:none", "min:gcc;compilationLevel=whitespace"],
       longCacheKey: "${project.version}-${buildNumber}",
       allowProxy: true,

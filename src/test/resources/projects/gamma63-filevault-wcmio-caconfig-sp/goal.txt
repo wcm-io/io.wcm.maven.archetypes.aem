@@ -1,1 +1,1 @@
--U clean package
+-f ../gamma63Project -U clean package

@@ -1,1 +1,1 @@
--U clean package
+-f ../beta63Project -U clean package

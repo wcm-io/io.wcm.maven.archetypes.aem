@@ -1,1 +1,1 @@
--U clean package
+-f ../alpha64Project -U clean package
