@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="fix" dev="sseifert">
+        Fix package filter in conf-content package for conf root node.
+      </action>
     </release>
 
     <release version="2.4.2" date="2019-10-02">
