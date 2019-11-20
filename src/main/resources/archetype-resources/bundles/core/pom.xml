@@ -12,7 +12,7 @@
   <groupId>${groupId}</groupId>
   <artifactId>${artifactId}</artifactId>
   <version>${version}</version>
-  <packaging>bundle</packaging>
+  <packaging>jar</packaging>
 
   <name>${projectName} Core</name>
 
@@ -209,35 +209,44 @@
     <plugins>
 
       <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
+        <groupId>biz.aQute.bnd</groupId>
+        <artifactId>bnd-maven-plugin</artifactId>
         <configuration>
-          <instructions>
-
+          <bnd>
+            <!-- Export all non-internal packages by default -->
+            Export-Package: !*.impl.*,!*.internal.*,\
+              ${package}.*
 #if ( $optionSlingInitialContentBundle == "y" )
-            <Sling-Initial-Content>
-#if ( $optionMultiBundleLayout == "n" )
-              SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName}/clientlibs,
-#end
-              SLING-INF/app-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName}/core,
-              SLING-INF/app-i18n;overwrite:=true;ignoreImportProviders:=json;path:=/apps/${projectName}/core/i18n
-            </Sling-Initial-Content>
 
+            Sling-Initial-Content: \
+#if ( $optionMultiBundleLayout == "n" )
+              SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName}/clientlibs, \
+#end
+              SLING-INF/app-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName}/core, \
+              SLING-INF/app-i18n;overwrite:=true;ignoreImportProviders:=json;path:=/apps/${projectName}/core/i18n
 #end
 #if ( $optionWcmioHandler == "y" )
-            <!-- All wcm.io Handler SPI implementation only get active for the resource paths of this application -->
-            <Wcmio-CAService-ContextPathRegex>^(/content|/content/dam|/content/experience-fragments|/conf)/${projectName}(/.*)?$</Wcmio-CAService-ContextPathRegex>
 
+            <!-- All wcm.io Handler SPI implementation only get active for the resource paths of this application -->
+            Wcmio-CAService-ContextPathRegex: ^(/content|/content/dam|/content/experience-fragments|/conf)/${projectName}(/.*)?$
 #end
 #if ( $optionJavaVersion == "8" )
-            <!-- For build compatibility with Java 11 -->
-            <Import-Package>
-              javax.annotation;version="[0.0,2)",
-              *
-            </Import-Package>
 
+            <!-- For build compatibility with Java 11 -->
+            Import-Package:  \
+              javax.annotation;version="[0.0,2)", \
+              *
 #end
-          </instructions>
+          </bnd>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
         </configuration>
       </plugin>
 
