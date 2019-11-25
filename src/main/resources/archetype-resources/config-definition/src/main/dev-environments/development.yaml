@@ -1,3 +1,6 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 # AEM configuration for local development environment
 
 nodes:
@@ -9,7 +12,7 @@ nodes:
   config:
     replication.author.publishTargets:
     - name: publish1
-      url: http://localhost:${aemPublishPort}
+      url: ${symbol_dollar}{maven::sling.publish.url}
       transportUser: admin
       transportPassword: admin
 
