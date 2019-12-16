@@ -23,6 +23,15 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
+    <release version="2.4.6" date="2019-12-16">
+      <action type="update" dev="sseifert">
+        Add support for AEM 6.5 SP3, AEM 6.4 SP7.
+      </action>
+      <action type="fix" dev="sseifert">
+        Fix generation of long cache keys for client libraries after switch to bnd-maven-plugin.
+      </action>
+    </release>
+
     <release version="2.4.4" date="2019-11-25">
       <action type="update" dev="sseifert">
         Switch from maven-bundle-plugin to bnd Maven plugins.
@@ -46,7 +55,7 @@
         Include "core.wcm.components.image.v2" in clientlibs only when wcm.io WCM Core Components are not used.
       </action>
       <action type="update" dev="sseifert">
-        Add support for AEM 6.5 SP2, AEM 6.5 SP6.
+        Add support for AEM 6.5 SP2, AEM 6.4 SP6.
       </action>
       <action type="update" dev="sseifert">
         Rename folder with generated project to project name after generation.

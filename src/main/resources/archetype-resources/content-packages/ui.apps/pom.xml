@@ -26,6 +26,15 @@
     <resources>
       <resource>
         <directory>jcr_root</directory>
+        <filtering>false</filtering>
+      </resource>
+      <!-- Apply maven filtering to clientlib definitions (cache key) -->
+      <resource>
+        <directory>jcr_root</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>apps/${projectName}/clientlibs/**/.content.xml</include>
+        </includes>
       </resource>
     </resources>
 
@@ -38,6 +47,7 @@
           <name>${contentPackage.name}</name>
           <group>${contentPackage.group}</group>
           <packageType>content</packageType>
+          <jcrRootSourceDirectory>${project.build.outputDirectory}</jcrRootSourceDirectory>
         </configuration>
       </plugin>
 
@@ -57,31 +67,6 @@
         <configuration>
           <attach>false</attach>
         </configuration>
-      </plugin>
-
-      <!-- Apply maven filtering to clientlib definitions (cache key) -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>add-resource</goal>
-            </goals>
-            <configuration>
-              <resources>
-                <resource>
-                  <directory>jcr_root/apps/${projectName}/clientlibs</directory>
-                  <targetPath>${project.build.directory}/vault-work/jcr_root/apps/${projectName}/clientlibs</targetPath>
-                  <filtering>true</filtering>
-                  <includes>
-                    <include>**/.content.xml</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
 
     </plugins>
