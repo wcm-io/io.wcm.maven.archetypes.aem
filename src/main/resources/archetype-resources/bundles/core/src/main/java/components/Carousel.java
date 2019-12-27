@@ -36,8 +36,6 @@ import com.adobe.cq.wcm.core.components.models.Image;
 #else
 import io.wcm.handler.media.Media;
 import io.wcm.handler.media.MediaHandler;
-
-import ${package}.config.MediaFormats;
 #end
 
 /**
@@ -77,9 +75,6 @@ public class Carousel {
     return "carousel-" + request.getResource().getPath().hashCode();
   }
 
-#if ($optionWcmioHandler == 'n')
-  @SuppressWarnings("null")
-#end
   private List<$imageClass> buildSlideImages() {
     List<$imageClass> images = new ArrayList<>();
 

@@ -19,9 +19,6 @@ import java.io.IOException;
 import org.apache.sling.api.resource.PersistenceException;
 import org.jetbrains.annotations.NotNull;
 
-#if ( $optionWcmioHandler == "y" )
-import io.wcm.handler.media.spi.MediaFormatProvider;
-#end
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextBuilder;
 import io.wcm.testing.mock.aem.junit5.AemContextCallback;
