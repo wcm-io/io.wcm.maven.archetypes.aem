@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="update" dev="sseifert">
+        Add io.wcm.testing.wcm-io-mock.wcm as test dependency.
+      </action>
     </release>
 
     <release version="2.4.6" date="2019-12-16">

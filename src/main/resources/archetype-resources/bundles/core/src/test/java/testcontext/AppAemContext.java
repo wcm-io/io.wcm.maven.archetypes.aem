@@ -9,6 +9,7 @@ import static io.wcm.testing.mock.wcmio.caconfig.ContextPlugins.WCMIO_CACONFIG;
 #if ( $optionWcmioHandler == "y" )
 import static io.wcm.testing.mock.wcmio.handler.ContextPlugins.WCMIO_HANDLER;
 import static io.wcm.testing.mock.wcmio.sling.ContextPlugins.WCMIO_SLING;
+import static io.wcm.testing.mock.wcmio.wcm.ContextPlugins.WCMIO_WCM;
 #end
 #if ( $optionContextAwareConfig == "y" )
 import static org.apache.sling.testing.mock.caconfig.ContextPlugins.CACONFIG;
@@ -51,7 +52,7 @@ public final class AppAemContext {
         .plugin(CACONFIG)
 #end
 #if ( $optionWcmioHandler == "y" )
-        .plugin(WCMIO_SLING, WCMIO_CACONFIG, WCMIO_HANDLER)
+        .plugin(WCMIO_SLING, WCMIO_WCM, WCMIO_CACONFIG, WCMIO_HANDLER)
 #elseif ( $optionContextAwareConfig == "y" )
         .plugin(WCMIO_CACONFIG)
 #end
