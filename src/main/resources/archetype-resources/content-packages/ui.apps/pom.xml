@@ -26,15 +26,6 @@
     <resources>
       <resource>
         <directory>jcr_root</directory>
-        <filtering>false</filtering>
-      </resource>
-      <!-- Apply maven filtering to clientlib definitions (cache key) -->
-      <resource>
-        <directory>jcr_root</directory>
-        <filtering>true</filtering>
-        <includes>
-          <include>apps/${projectName}/clientlibs/**/.content.xml</include>
-        </includes>
       </resource>
     </resources>
 
@@ -46,8 +37,16 @@
         <configuration>
           <name>${contentPackage.name}</name>
           <group>${contentPackage.group}</group>
-          <packageType>content</packageType>
+          <packageType>application</packageType>
           <jcrRootSourceDirectory>${project.build.outputDirectory}</jcrRootSourceDirectory>
+          <enableJcrRootFiltering>true</enableJcrRootFiltering>
+          <validatorsSettings>
+            <jackrabbit-filter>
+              <options>
+                <validRoots>/apps/${projectName}</validRoots>
+              </options>
+            </jackrabbit-filter>
+          </validatorsSettings>
         </configuration>
       </plugin>
 
