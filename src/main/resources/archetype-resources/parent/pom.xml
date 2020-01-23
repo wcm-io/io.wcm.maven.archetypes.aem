@@ -214,11 +214,19 @@
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
         <version>3.0.0-SNAPSHOT</version>
       </dependency>
+#if ( $optionAemVersion == "6.3" || $optionAemVersion == "6.4" || ($optionAemVersion == "6.5" && $optionAemServicePack=="n") )
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.testing.logging-mock</artifactId>
         <version>2.0.0</version>
       </dependency>
+#else
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.logging.logback</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+      </dependency>
+#end
 #if ( $optionContextAwareConfig == "y" )
       <dependency>
         <groupId>org.apache.sling</groupId>

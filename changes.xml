@@ -30,6 +30,9 @@
       <action type="update" dev="sseifert">
         Add io.wcm.testing.wcm-io-mock.wcm as test dependency.
       </action>
+      <action type="update" dev="sseifert">
+        Use io.wcm.testing.logging.logback test dependency instead of org.apache.sling.testing.logging-mock for AEM 6.5.3 and up.
+      </action>
     </release>
 
     <release version="2.4.6" date="2019-12-16">
