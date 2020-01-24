@@ -19,7 +19,8 @@ files:
   dir: packages
   modelOptions:
     delayAfterInstallSec: 30
-- url: mvn:adobe.binary.aem.63.cumulativefixpack/AEM-CFP-6.3.3.7/7.0/zip
+# Minimum CFP required by AEM core components. There was a "first deployment" problem with CFP7, so use CFP4.
+- url: mvn:adobe.binary.aem.63.cumulativefixpack/AEM-CFP-6.3.3.4/4.0/zip
   dir: packages
   modelOptions:
     delayAfterInstallSec: 30
