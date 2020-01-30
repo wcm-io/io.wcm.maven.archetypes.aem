@@ -116,11 +116,19 @@
       <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
       <scope>test</scope>
     </dependency>
+#if ( $optionAemVersion == "6.3" || $optionAemVersion == "6.4" || ($optionAemVersion == "6.5" && $optionAemServicePack=="n") )
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.testing.logging-mock</artifactId>
       <scope>test</scope>
     </dependency>
+#else
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.testing.logging.logback</artifactId>
+      <scope>test</scope>
+    </dependency>
+#end
 #if ( $optionContextAwareConfig == "y" )
     <dependency>
       <groupId>org.apache.sling</groupId>
@@ -137,6 +145,11 @@
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.testing.wcm-io-mock.sling</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.testing.wcm-io-mock.wcm</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>

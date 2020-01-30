@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.4.0</version>
+    <version>1.4.4</version>
     <relativePath/>
   </parent>
 
@@ -32,9 +32,9 @@
     <eclipse.settings.nullanalysis>enabled</eclipse.settings.nullanalysis>
 
     <!-- Versions -->
-    <core.wcm.components.version>2.7.0</core.wcm.components.version>
+    <core.wcm.components.version>2.8.0</core.wcm.components.version>
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>4.3.0</acs.aem.commons.version>
+    <acs.aem.commons.version>4.4.0</acs.aem.commons.version>
 #end
 
   </properties>
@@ -51,17 +51,7 @@
     <!-- Testing -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-api</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-params</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
+      <artifactId>junit-jupiter</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -147,7 +137,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.6.2</version>
+        <version>1.7.0</version>
       </dependency>
 #end
 #if ( $optionWcmioHandler == "y" )
@@ -159,7 +149,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.sling.commons</artifactId>
-        <version>1.2.4</version>
+        <version>1.3.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -174,12 +164,12 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.4.0</version>
+        <version>1.5.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.7.2</version>
+        <version>1.8.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -189,22 +179,22 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.commons</artifactId>
-        <version>1.5.4</version>
+        <version>1.6.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.2.0-2.7.0</version>
+        <version>1.2.2-2.8.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
-        <version>1.3.2</version>
+        <version>1.4.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.5.2</version>
+        <version>1.6.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -215,20 +205,28 @@
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
         <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
-        <version>1.6.0</version>
+        <version>1.6.2</version>
       </dependency>
 
       <!-- wcm.io Testing -->
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
-        <version>2.7.2</version>
+        <version>3.0.0</version>
       </dependency>
+#if ( $optionAemVersion == "6.3" || $optionAemVersion == "6.4" || ($optionAemVersion == "6.5" && $optionAemServicePack=="n") )
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.testing.logging-mock</artifactId>
         <version>2.0.0</version>
       </dependency>
+#else
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.logging.logback</artifactId>
+        <version>1.0.0</version>
+      </dependency>
+#end
 #if ( $optionContextAwareConfig == "y" )
       <dependency>
         <groupId>org.apache.sling</groupId>
@@ -246,6 +244,11 @@
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.sling</artifactId>
         <version>1.0.4</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.wcm-io-mock.wcm</artifactId>
+        <version>1.0.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -275,7 +278,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.5.3.0000#{else}6.5.0.0000#end</version>
+        <version>#if($optionAemServicePack=="y")6.5.3.0001#{else}6.5.0.0001#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -314,12 +317,11 @@
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <!-- Stick with JUnit 5.3.2 until Eclipse Inifinittest plugin supports newer versions -->
-        <version>5.3.2</version>
+        <version>5.5.2</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "2.25.1" )
+#set( $mockitoVersion = "3.2.4" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>

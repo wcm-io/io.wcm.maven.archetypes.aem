@@ -16,6 +16,7 @@ npm-debug.log
 .settings
 .externalToolBuilders
 .pmd
+.eclipse-pmd
 .checkstyle
 .idea
 .vagrant
@@ -28,3 +29,6 @@ npm-debug.log
 *.sublime-*
 *nbactions*.xml
 .temp/
+.vlt
+.vlt-sync*
+.brackets.json
