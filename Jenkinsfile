@@ -34,7 +34,10 @@ Map config = [
     (STAGE_FEATURE_PREPARATION_MERGE): [
       (STAGE_FEATURE_PREPARATION_MERGE_ENABLED): false
     ]
-  ]
+  ],
+  (TOOLS) : [
+    (TOOL_JDK): "sun-java11-jdk"
+  ],
 ]
 
 routeDefaultJenkinsFile(config)
