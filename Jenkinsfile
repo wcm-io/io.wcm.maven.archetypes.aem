@@ -25,6 +25,9 @@ Map config = [
   (STAGE_COMPILE): [
     (MAVEN): [
       (MAVEN_GOALS): ["clean", "deploy", "site-deploy"],
+      (MAVEN_DEFINES): [
+        "archetype.test.settingsFile" : '$MVN_GLOBAL_SETTINGS'
+      ]
     ]
   ],
   (STAGE_FEATURE_PREPARATION): [
