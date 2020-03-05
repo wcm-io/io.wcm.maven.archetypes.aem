@@ -28,6 +28,9 @@
         Enable "reproducible builds" in Maven Build process.
       </action>
       <action type="update" dev="sseifert">
+        Use repoinit to define service users.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>

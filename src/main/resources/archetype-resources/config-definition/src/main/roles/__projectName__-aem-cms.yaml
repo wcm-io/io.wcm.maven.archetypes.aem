@@ -80,23 +80,6 @@ files:
       acHandling: merge
       rootPath: /apps/${projectName}/config/rewriter
 
-# AEM Systems users with ACLs (Author)
-- file: ${projectName}-aem-cms-author-systemusers.json
-  dir: packages
-  template: ${projectName}-aem-cms-author-systemusers.json.hbs
-  variants:
-  - aem-author
-  postProcessors:
-  - aem-contentpackage
-  postProcessorOptions:
-    contentPackage:
-      name: ${projectName}-aem-cms-author-systemusers
-      acHandling: merge
-      rootPath: /
-      filters:
-      - filter: /content/dam/rep:policy
-      - filter: /home/users/system/${projectName}/${projectName}DamSystemUser
-
 #end
 # Application package
 - url: mvn:${groupId}/${rootArtifactId}.complete//zip

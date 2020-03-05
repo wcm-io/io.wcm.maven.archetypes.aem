@@ -88,7 +88,6 @@ if (optionWcmioHandler == "n") {
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/admin/redirect").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/admin/page/redirect").deleteDir()
 
-  assert new File(configDefinition, "src/main/templates/${projectName}-aem-cms/${projectName}-aem-cms-author-systemusers.json.hbs").delete()
   assert new File(configDefinition, "src/main/templates/${projectName}-aem-cms/${projectName}-aem-cms-rewriter-config.json.hbs").delete()
 }
 else {
