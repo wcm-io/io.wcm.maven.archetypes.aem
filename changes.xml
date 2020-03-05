@@ -31,6 +31,9 @@
         Use repoinit to define service users.
       </action>
       <action type="update" dev="sseifert">
+        Set packageType and enable FileVault validation for all CONGA-generated content packages.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>

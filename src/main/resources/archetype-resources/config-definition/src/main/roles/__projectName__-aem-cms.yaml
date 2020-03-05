@@ -58,25 +58,32 @@ files:
   postProcessorOptions:
     contentPackage:
       name: ${projectName}-aem-cms-config
+      packageType: container
       rootPath: /apps/${projectName}/config
       filters:
       - filter: /apps/${projectName}
         rules:
         - rule: include
-          pattern: /apps/${projectName}/config(\..*)?
+          pattern: /apps/${projectName}/config(\..*)?(/.*)?
         - rule: exclude
-          pattern: /apps/${projectName}/config/rewriter
+          pattern: /apps/${projectName}/config/rewriter(/.*)?
 
 #if ( $optionWcmioHandler == "y" )
 # Include URL handler in Sling Rewriter configuration
 - file: ${projectName}-aem-cms-rewriter-config.json
   dir: packages
   template: ${projectName}-aem-cms-rewriter-config.json.hbs
+  validatorOptions:
+    contentPackageValidatorsSettings:
+      jackrabbit-filter:
+        options:
+          validRoots: /apps/${projectName}/config
   postProcessors:
   - aem-contentpackage
   postProcessorOptions:
     contentPackage:
       name: ${projectName}-aem-cms-rewriter-config
+      packageType: application
       acHandling: merge
       rootPath: /apps/${projectName}/config/rewriter
 
