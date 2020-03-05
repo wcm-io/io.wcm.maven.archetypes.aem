@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.4.4</version>
+    <version>1.4.5-SNAPSHOT</version>
     <relativePath/>
   </parent>
 
@@ -36,6 +36,9 @@
 #if( $optionAcsCommons == "y" )
     <acs.aem.commons.version>4.4.0</acs.aem.commons.version>
 #end
+
+    <!-- Enable reproducible builds -->
+    <project.build.outputTimestamp>${timestamp}</project.build.outputTimestamp>
 
   </properties>
 
