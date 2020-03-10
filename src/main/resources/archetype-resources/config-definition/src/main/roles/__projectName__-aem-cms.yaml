@@ -74,7 +74,7 @@ files:
   dir: packages
   template: ${projectName}-aem-cms-rewriter-config.json.hbs
   validatorOptions:
-    contentPackageValidatorsSettings:
+    contentPackage.validatorsSettings:
       jackrabbit-filter:
         options:
           validRoots: /apps/${projectName}/config
