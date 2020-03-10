@@ -58,7 +58,6 @@ files:
   postProcessorOptions:
     contentPackage:
       name: ${projectName}-aem-cms-config
-      packageType: container
       rootPath: /apps/${projectName}/config
       filters:
       - filter: /apps/${projectName}
