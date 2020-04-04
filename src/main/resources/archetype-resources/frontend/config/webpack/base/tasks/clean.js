@@ -1,14 +1,12 @@
 import path from "path";
-import CleanWebpackPlugin from "clean-webpack-plugin";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import { pathConfig } from "../../../path.config";
 
 const pathsToClean = [pathConfig.paths.target];
 
-const cleanOptions = {
-  root: path.resolve("./"),
-  verbose: false
-};
-
 export const clean = {
-  plugins: [new CleanWebpackPlugin(pathsToClean, cleanOptions)]
+  plugins: [new CleanWebpackPlugin({
+    cleanOnceBeforeBuildPatterns: pathsToClean,
+    verbose: false
+  })]
 };
