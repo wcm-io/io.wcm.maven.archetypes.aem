@@ -300,12 +300,14 @@
         <artifactId>core.wcm.components.core</artifactId>
         <version>${core.wcm.components.version}</version>
       </dependency>
+#if ( $optionAemVersion != "cloud" )
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>core.wcm.components.all</artifactId>
         <version>${core.wcm.components.version}</version>
         <type>zip</type>
       </dependency>
+#end
 
 #if( $optionAcsCommons == "y" )
       <!-- ACS AEM Commons -->

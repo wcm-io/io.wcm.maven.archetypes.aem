@@ -137,6 +137,13 @@
             </filter>
           </filters>
 
+#if ( $optionAemVersion == "cloud" )
+          <!-- Do not deploy directly via AEM cloud manager, only as part of CONGA-generated "all" package -->
+          <properties>
+            <cloudManagerTarget>none</cloudManagerTarget>
+          </properties>
+
+#end
           <embeddedTarget>/apps/${projectName}/install</embeddedTarget>
           <embeddeds>
             <!-- Include application bundles and their dependencies -->

@@ -50,6 +50,7 @@
       <scope>compile</scope>
     </dependency>
 
+#if ( $optionAemVersion != "cloud" )
     <!-- Core WCM Components -->
     <dependency>
       <groupId>com.adobe.cq</groupId>
@@ -58,6 +59,7 @@
       <scope>compile</scope>
     </dependency>
 
+#end
 #if( $optionAcsCommons == "y" )
       <!-- ACS AEM Commons -->
     <dependency>
@@ -95,6 +97,28 @@
         </executions>
       </plugin>
 
+#if ( $optionAemVersion == "cloud" )
+      <plugin>
+        <groupId>io.wcm.devops.conga.plugins</groupId>
+        <artifactId>conga-aem-maven-plugin</artifactId>
+        <executions>
+
+          <!-- Generate "all" packages including all packages from CONGA configuration for deployment via Adobe Cloud Manager -->
+          <execution>
+            <id>all-package</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>all-package</goal>
+            </goals>
+            <configuration>
+              <group>${packageGroupName}</group>
+            </configuration>
+          </execution>
+
+        </executions>
+      </plugin>
+
+#end
       <!-- Do not generate eclipse project files -->
       <plugin>
         <groupId>io.wcm.devops.maven.plugins</groupId>

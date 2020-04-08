@@ -40,6 +40,14 @@
           <packageType>application</packageType>
           <jcrRootSourceDirectory>${project.build.outputDirectory}</jcrRootSourceDirectory>
           <enableJcrRootFiltering>true</enableJcrRootFiltering>
+
+#if ( $optionAemVersion == "cloud" )
+          <!-- Do not deploy directly via AEM cloud manager, only as part of CONGA-generated "all" package -->
+          <properties>
+            <cloudManagerTarget>none</cloudManagerTarget>
+          </properties>
+
+#end
           <validatorsSettings>
             <jackrabbit-filter>
               <options>
@@ -47,6 +55,7 @@
               </options>
             </jackrabbit-filter>
           </validatorsSettings>
+
         </configuration>
       </plugin>
 
