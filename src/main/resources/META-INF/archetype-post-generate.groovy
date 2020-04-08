@@ -28,6 +28,9 @@ if (optionAemServicePack == "n" && optionAemVersion == "6.3") {
 if (optionAemServicePack == "n" && optionAemVersion == "6.4") {
   throw new RuntimeException("For AEM 6.4 optionAemServicePack='y' is required because AEM 6.4 is only supported with latest service pack.")
 }
+if (optionAemServicePack == "y" && optionAemVersion == "cloud") {
+  throw new RuntimeException("For AEM Cloud Service optionAemServicePack='y' is not allowed - there are no service packs for the cloud.")
+}
 if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
   throw new RuntimeException("Parameter optionMultiBundleLayout='y' is only supported with optionSlingInitialContentBundle='y'.")
 }

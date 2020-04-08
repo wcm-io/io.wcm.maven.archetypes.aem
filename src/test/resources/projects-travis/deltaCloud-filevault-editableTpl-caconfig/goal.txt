@@ -1,0 +1,1 @@
+-f ../deltacloudProject -U clean package

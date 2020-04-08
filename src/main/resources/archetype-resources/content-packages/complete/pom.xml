@@ -48,7 +48,7 @@
     </dependency>
 #end
 
-#if ( $optionSlingModelsLatest == "y" )
+#if ( $optionSlingModelsLatest == "y" && $optionAemVersion != "cloud" )
 #if ( $optionAemVersion == "6.3" )
     <dependency>
       <groupId>org.apache.sling</groupId>
@@ -149,14 +149,14 @@
               </groupId>
               <type>jar</type>
             </embedded>
-#if( $optionSlingModelsLatest == "y" || $optionContextAwareConfig == "y" || ($optionSlingInitialContentBundle == "y" && $optionAemVersion == "6.3") )
+#if( ($optionSlingModelsLatest == "y" && $optionAemVersion != "cloud") || $optionContextAwareConfig == "y" || ($optionSlingInitialContentBundle == "y" && $optionAemVersion == "6.3") )
             <!-- Include some Apache Sling bundles newer than those shipped with AEM -->
             <embedded>
               <groupId>
                 org.apache.sling
               </groupId>
               <artifactId>
-#if ( $optionSlingModelsLatest == "y" )
+#if ( $optionSlingModelsLatest == "y" && $optionAemVersion != "cloud" )
                 <!-- Latest Sling Models -->
 #if ( $optionAemVersion == "6.3" )
                 org.apache.sling.models.api,
