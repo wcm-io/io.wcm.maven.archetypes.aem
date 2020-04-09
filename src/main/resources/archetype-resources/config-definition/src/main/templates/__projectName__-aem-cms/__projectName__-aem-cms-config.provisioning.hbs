@@ -3,6 +3,7 @@
 
 [configurations]
 
+#if ( $optionAemVersion != "cloud" )
   # Default LogManager configuration
   org.apache.sling.commons.log.LogManager
     org.apache.sling.commons.log.pattern="{0,date,dd.MM.yyyy\ HH:mm:ss.SSS}\ *{4}*\ [{2}]\ {3}\ {5}"
@@ -12,6 +13,7 @@
     org.apache.sling.commons.log.file.number=I"7"
     org.apache.sling.commons.log.numOfLines=I"10000"
 
+#end
   # Set loglevel for project-specific bundles
   org.apache.sling.commons.log.LogManager.factory.config-${projectName}
     org.apache.sling.commons.log.pattern="{0,date,dd.MM.yyyy\ HH:mm:ss.SSS}\ *{4}*\ [{2}]\ {3}\ {5}"
@@ -31,11 +33,13 @@
     configCollectionInheritancePropertyNames=["jcr:content/sling:configCollectionInherit","jcr:content/mergeList","mergeList"]
 
 #end
+#if ( $optionAemVersion == "6.3" or $optionAemVersion == "6.4" or $optionAemVersion == "6.5" )
   # Update Context-Aware config settings as it is configured by default in latest AEM version
   org.apache.sling.caconfig.management.impl.ConfigurationManagementSettingsImpl
     ignorePropertyNameRegex=["^(jcr|cq):.+$","^sling:resourceType$"]
     configCollectionPropertiesResourceNames=["jcr:content","."]
   
+#end
   # Context path strategy
   io.wcm.caconfig.extensions.contextpath.impl.RootTemplateContextPathStrategy-${projectName}
     templatePaths=["#if($optionEditableTemplates=='y')/conf/${projectName}/settings/wcm/templates/homepage#else/apps/${projectName}/core/templates/homepage#end"]
