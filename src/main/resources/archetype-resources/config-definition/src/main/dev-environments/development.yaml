@@ -20,6 +20,14 @@ nodes:
   roles:
   - role: ${projectName}-aem-cms
     variant: aem-publish
+#if ($optionAemVersion == "cloud")
+
+- node: aem-dispatcher
+  roles:
+  - role: aem-dispatcher-cloud
+    variant: aem-publish
+#end
+
 
 config:
   contentPackage.group: ${packageGroupName}
@@ -36,3 +44,14 @@ config:
   quickstart:
     # Enable Apache Sling DavEx Servlet to be able to use CRXDE Lite
     enableDavEx: true
+#if ($optionAemVersion == "cloud")
+
+
+tenants:
+- tenant: ${projectName}
+  config:
+    httpd:
+      serverName: ${projectName}.com
+      rootRedirect.url: /en.html
+    sling.mapping.rootPath: /content/${projectName}
+#end

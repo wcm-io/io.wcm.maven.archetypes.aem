@@ -105,14 +105,23 @@
 
           <!-- Generate "all" packages including all packages from CONGA configuration for deployment via Adobe Cloud Manager -->
           <execution>
-            <id>all-package</id>
+            <id>cloudmanager-all-package</id>
             <phase>generate-resources</phase>
             <goals>
-              <goal>all-package</goal>
+              <goal>cloudmanager-all-package</goal>
             </goals>
             <configuration>
               <group>${packageGroupName}</group>
             </configuration>
+          </execution>
+
+          <!-- Generate Dispatcher configuration ZPI file for deployment via Adobe Cloud Manager -->
+          <execution>
+            <id>cloudmanager-dispatcher-config</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>cloudmanager-dispatcher-config</goal>
+            </goals>
           </execution>
 
         </executions>
