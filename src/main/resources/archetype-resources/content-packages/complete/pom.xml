@@ -199,18 +199,15 @@
               <type>jar</type>
             </embedded>
 #end
-          </embeddeds>
-
 #if( $optionSlingInitialContentBundle == "n" )
-          <subPackages>
-            <subPackage>
+            <embedded>
               <groupId>${groupId}</groupId>
               <artifactId>${rootArtifactId}.ui.apps</artifactId>
-              <filter>true</filter>
-            </subPackage>
-          </subPackages>
-
+              <type>zip</type>
+            </embedded>
 #end
+          </embeddeds>
+
           <repositoryStructurePackages>
             <repositoryStructurePackage>
               <groupId>${groupId}</groupId>
