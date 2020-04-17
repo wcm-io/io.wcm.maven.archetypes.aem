@@ -21,6 +21,11 @@
     org.apache.sling.commons.log.level="{{log.projectSpecificLogLevel}}"
     org.apache.sling.commons.log.names=["io.wcm","${package}"]    
 
+  # Create root folder below /apps for application
+  org.apache.sling.jcr.repoinit.RepositoryInitializer-${projectName}-rootfolders
+    references=[]
+    scripts=["create path /apps/${projectName}(sling:Folder)"]
+
   # Disable built-in AEM link checker by default (enable it only when configured properly).
   com.day.cq.rewriter.linkchecker.impl.LinkCheckerTransformerFactory
     linkcheckertransformer.disableChecking=B"true"
@@ -69,7 +74,7 @@
   # Create service user for wcm.io Media Handler
   org.apache.sling.jcr.repoinit.RepositoryInitializer-${projectName}-wcmio-handler-media
     references=[]
-    scripts=["create\ service\ user\ ${projectName}DamSystemUser\nset\ ACL\ on\ /content/dam\n\ \ allow\ jcr:read,rep:write\ for\ ${projectName}DamSystemUser\nend\ncreate path /apps/${projectName}(sling:Folder)"]
+    scripts=["create\ service\ user\ ${projectName}DamSystemUser\nset\ ACL\ on\ /content/dam\n\ \ allow\ jcr:read,rep:write\ for\ ${projectName}DamSystemUser\nend"]
 
   # Service user mapping for wcm.io Media Handler
   org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-media
