@@ -38,6 +38,13 @@
       <scope>compile</scope>
     </dependency>
 #end
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.apps-repository-structure</artifactId>
+      <version>${version}</version>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
 #if ( $optionSlingInitialContentBundle == "n" )
     <dependency>
       <groupId>${groupId}</groupId>
@@ -204,6 +211,13 @@
           </subPackages>
 
 #end
+          <repositoryStructurePackages>
+            <repositoryStructurePackage>
+              <groupId>${groupId}</groupId>
+              <artifactId>${rootArtifactId}.apps-repository-structure</artifactId>
+            </repositoryStructurePackage>
+          </repositoryStructurePackages>
+
         </configuration>
       </plugin>
 
@@ -228,4 +242,5 @@
     </plugins>
 
   </build>
+
 </project>

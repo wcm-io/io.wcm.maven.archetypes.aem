@@ -69,7 +69,7 @@
   # Create service user for wcm.io Media Handler
   org.apache.sling.jcr.repoinit.RepositoryInitializer-${projectName}-wcmio-handler-media
     references=[]
-    scripts=["create\ service\ user\ ${projectName}DamSystemUser\nset\ ACL\ on\ /content/dam\n\ \ allow\ jcr:read,rep:write\ for\ ${projectName}DamSystemUser\nend"]
+    scripts=["create\ service\ user\ ${projectName}DamSystemUser\nset\ ACL\ on\ /content/dam\n\ \ allow\ jcr:read,rep:write\ for\ ${projectName}DamSystemUser\nend\ncreate path /apps/${projectName}(sling:Folder)"]
 
   # Service user mapping for wcm.io Media Handler
   org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-media

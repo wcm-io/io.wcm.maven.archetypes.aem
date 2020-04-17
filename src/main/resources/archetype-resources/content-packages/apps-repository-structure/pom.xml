@@ -14,59 +14,45 @@
   <version>${version}</version>
   <packaging>content-package</packaging>
 
-  <description>AEM Application</description>
-
-  <properties>
-    <contentPackage.name>${projectName}-ui.apps</contentPackage.name>
-    <contentPackage.group>${packageGroupName}</contentPackage.group>
-  </properties>
-  
-  <dependencies>
-
-    <dependency>
-      <groupId>${groupId}</groupId>
-      <artifactId>${rootArtifactId}.apps-repository-structure</artifactId>
-      <version>${version}</version>
-      <type>zip</type>
-      <scope>compile</scope>
-    </dependency>
-
-  </dependencies>
+  <name>${projectName} Application - Repository Structure</name>
+  <description>
+    Empty package that defines the structure of the Adobe Experience Manager repository the Code packages in this project deploy into.
+    Any roots in the Code packages of this project should have their parent enumerated in the Filters list below.
+  </description>
 
   <build>
-    <finalName>${contentPackage.name}-${project.version}</finalName>
-    <resources>
-      <resource>
-        <directory>jcr_root</directory>
-      </resource>
-    </resources>
-
     <plugins>
+
       <plugin>
         <groupId>org.apache.jackrabbit</groupId>
         <artifactId>filevault-package-maven-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
-          <name>${contentPackage.name}</name>
-          <group>${contentPackage.group}</group>
-          <packageType>application</packageType>
-          <jcrRootSourceDirectory>${project.build.outputDirectory}</jcrRootSourceDirectory>
-          <enableJcrRootFiltering>true</enableJcrRootFiltering>
 
-#if ( $optionAemVersion == "cloud" )
           <!-- Do not deploy directly via AEM cloud manager, only as part of CONGA-generated "all" package -->
           <properties>
             <cloudManagerTarget>none</cloudManagerTarget>
           </properties>
 
-#end
-          <repositoryStructurePackages>
-            <repositoryStructurePackage>
-              <groupId>${groupId}</groupId>
-              <artifactId>${rootArtifactId}.apps-repository-structure</artifactId>
-            </repositoryStructurePackage>
-          </repositoryStructurePackages>
+          <filters>
 
+            <!-- /apps root -->
+            <filter><root>/apps</root></filter>
+
+            <!-- Common overlay roots -->
+            <filter><root>/apps/sling</root></filter>
+            <filter><root>/apps/cq</root></filter>
+            <filter><root>/apps/dam</root></filter>
+            <filter><root>/apps/wcm</root></filter>
+            <filter><root>/apps/msm</root></filter>
+
+            <!-- Immutable context-aware configurations -->
+            <filter><root>/apps/settings</root></filter>
+
+            <!-- project-specific /apps root defined via repoinit -->
+            <filter><root>/apps/${projectName}</root></filter>
+
+          </filters>
         </configuration>
       </plugin>
 
@@ -89,6 +75,7 @@
       </plugin>
 
     </plugins>
+
   </build>
 
 </project>

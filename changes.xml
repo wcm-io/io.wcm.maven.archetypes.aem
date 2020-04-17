@@ -27,6 +27,9 @@
       <action type="add" dev="sseifert">
         Add support for AEM Cloud Service.
       </action>
+      <action type="add" dev="sseifert">
+        Add apps-repository-structure package for validating application content packages root folders.
+      </action>
       <action type="update" dev="sseifert">
         Enable "reproducible builds" in Maven Build process.
       </action>
