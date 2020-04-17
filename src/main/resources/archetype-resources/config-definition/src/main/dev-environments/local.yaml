@@ -32,14 +32,14 @@ nodes:
 config:
   contentPackage.group: ${packageGroupName}
   app:
+    # Default log level for application code
+    logLevel: info
 #if ( $optionContextAwareConfig == "y" || $optionEditableTemplates == "y" )
+    # Whether to deploy conf content with editable template definitions
     confContent: true
 #end
+    # Whether to deploy sample content
     sampleContent: true
-
-  # Log levels
-  log:
-    projectSpecificLogLevel: info
 
   quickstart:
     # Enable Apache Sling DavEx Servlet to be able to use CRXDE Lite

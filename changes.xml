@@ -43,6 +43,12 @@
         complete package: include ui.apps package using embedd instead of subPackage.
       </action>
       <action type="update" dev="sseifert">
+        Rename CONGA environment "development" to "local".
+      </action>
+      <action type="update" dev="sseifert">
+        Rename CONGA parameter "log.projectSpecificLogLevel" to "app.logLevel".
+      </action>
+      <action type="update" dev="sseifert">
         Add support for AEM 6.5 SP4, AEM 6.4 SP8.
       </action>
       <action type="update" dev="sseifert">
