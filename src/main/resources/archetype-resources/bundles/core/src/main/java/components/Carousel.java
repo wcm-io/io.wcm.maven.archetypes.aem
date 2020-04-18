@@ -13,6 +13,7 @@ import static io.wcm.handler.media.MediaNameConstants.PROP_CSS_CLASS;
 
 #end
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -114,7 +115,7 @@ public class Carousel {
    * @return List of images for each slide
    */
   public List<$imageClass> getSlideImages() {
-    return this.slideImages;
+    return Collections.unmodifiableList(this.slideImages);
   }
 
 }
