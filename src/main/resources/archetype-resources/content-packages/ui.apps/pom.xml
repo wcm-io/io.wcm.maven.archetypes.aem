@@ -28,7 +28,7 @@
       <artifactId>${rootArtifactId}.apps-repository-structure</artifactId>
       <version>${version}</version>
       <type>zip</type>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 
   </dependencies>

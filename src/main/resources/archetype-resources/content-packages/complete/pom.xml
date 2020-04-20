@@ -28,14 +28,14 @@
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.core</artifactId>
       <version>${version}</version>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #if ( $optionMultiBundleLayout == "y" )
     <dependency>
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.clientlibs</artifactId>
       <version>${version}</version>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
     <dependency>
@@ -43,7 +43,7 @@
       <artifactId>${rootArtifactId}.apps-repository-structure</artifactId>
       <version>${version}</version>
       <type>zip</type>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #if ( $optionSlingInitialContentBundle == "n" )
     <dependency>
@@ -51,7 +51,7 @@
       <artifactId>${rootArtifactId}.ui.apps</artifactId>
       <version>${version}</version>
       <type>zip</type>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
 
@@ -60,37 +60,37 @@
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.models.api</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.models.impl</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
 #if ( $optionContextAwareConfig == "y" )
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.caconfig.api</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.caconfig.spi</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.caconfig.impl</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #if ( $optionAemVersion == "6.4" )
     <!-- Update Sling Tenant in AEM 6.4 due to https://issues.apache.org/jira/browse/SLING-7880 -->
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.tenant</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
 #end
@@ -99,14 +99,14 @@
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.commons.johnzon</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
 #if ( $optionSlingInitialContentBundle == "y")
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.jcr.contentloader</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
 #end
@@ -114,12 +114,12 @@
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.caconfig.extensions</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.caconfig.editor</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
 
