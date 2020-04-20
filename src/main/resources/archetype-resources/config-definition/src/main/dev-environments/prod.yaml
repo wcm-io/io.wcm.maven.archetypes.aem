@@ -1,0 +1,56 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+# AEM configuration for AEM Cloud Service (STAGE + PROD)
+
+nodes:
+
+- node: aem-author
+  roles:
+  - role: ${projectName}-aem-cms
+    variant: aem-author
+
+- node: aem-publish
+  roles:
+  - role: ${projectName}-aem-cms
+    variant: aem-publish
+
+- node: aem-dispatcher
+  roles:
+  - role: aem-dispatcher-cloud
+    variant: aem-publish
+
+
+config:
+  contentPackage.group: ${packageGroupName}
+  app:
+    # Default log level for application code
+    logLevel: warn
+#if ( $optionContextAwareConfig == "y" || $optionEditableTemplates == "y" )
+    # Whether to deploy conf content with editable template definitions
+    confContent: true
+#end
+    # Whether to deploy sample content
+    sampleContent: false
+
+  # Replication configuration not required for AEM cloud service
+  replication:
+    author.generatePackage: false
+    publish.generatePackage: false
+
+  # Use this AEM configuration for STAGE and PROD environments in AEM Cloud service
+  # Please note: the dispatcher configuration is used for DEV as well, because AEM cloud service supports only a single dispatcher configuration
+  cloudManager.target:
+  - stage
+  - prod
+
+
+tenants:
+- tenant: ${projectName}
+  config:
+    httpd:
+      serverName: publish
+      serverAliasNames:
+      - "*"
+      rootRedirect.url: /en.html
+    sling.mapping.rootPath: /content/${projectName}

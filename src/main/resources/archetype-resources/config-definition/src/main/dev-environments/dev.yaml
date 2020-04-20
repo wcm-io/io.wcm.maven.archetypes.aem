@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-# AEM configuration for local development environment
+# AEM configuration for AEM Cloud Service (DEV)
 
 nodes:
 
@@ -9,12 +9,6 @@ nodes:
   roles:
   - role: ${projectName}-aem-cms
     variant: aem-author
-  config:
-    replication.author.publishTargets:
-    - name: publish1
-      url: ${symbol_dollar}{maven::sling.publish.url}
-      transportUser: admin
-      transportPassword: admin
 
 - node: aem-publish
   roles:
@@ -34,12 +28,12 @@ config:
     # Whether to deploy sample content
     sampleContent: true
 
-  quickstart:
-    # Enable Apache Sling DavEx Servlet to be able to use CRXDE Lite
-    enableDavEx: true
-#if ($optionAemVersion == "cloud")
+  # Replication configuration not required for AEM cloud service
+  replication:
+    author.generatePackage: false
+    publish.generatePackage: false
 
-  # Not used for AEM cloud
+  # Use this AEM configuration for DEV environments in AEM Cloud service
+  # For the DEV dispatcher the PROD configuration is reused
   cloudManager.target:
-  - none
-#end
+  - dev
