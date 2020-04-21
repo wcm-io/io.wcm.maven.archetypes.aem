@@ -112,10 +112,8 @@
             </goals>
             <configuration>
               <group>${packageGroupName}</group>
-#if ( $optionSlingInitialContentBundle == "y" )
               <!-- workaround to fix package dependency chain when "complete" package is eliminated because it only contains bundles, no direct /apps content -->
               <autoDependenciesSeparateMutable>true</autoDependenciesSeparateMutable>
-#end
             </configuration>
           </execution>
 
