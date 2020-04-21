@@ -4,5 +4,12 @@
     categories="[${projectName}.all]"
     embed="[#if($optionWcmioHandler!='y')core.wcm.components.image.v2,#{end}${projectName}.3rdparty,${projectName}.app]"
     jsProcessor="[default:none,min:gcc;compilationLevel=whitespace]"
+#if ( $optionAemVersion != "cloud" )
     longCacheKey="${project.version}-${buildNumber}"
+#end
     allowProxy="{Boolean}true"/>
+#if ( $optionAemVersion == "cloud" )
+
+  <!-- Workaround: disabled because AEM Cloud Service does not support it currently -->
+  <!-- longCacheKey="${project.version}-${buildNumber}" -->
+#end
