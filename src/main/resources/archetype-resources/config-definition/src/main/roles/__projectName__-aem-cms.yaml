@@ -47,8 +47,14 @@ files:
 #end
 #if( $optionAcsCommons == "y" )
 # ACS AEM Commons
-- url: mvn:com.adobe.acs/acs-aem-commons-content//zip/min
+- url: mvn:com.adobe.acs/acs-aem-commons-ui.apps//zip/min
   dir: packages
+  postProcessorOptions:
+    contentPackage.packageType: application
+- url: mvn:com.adobe.acs/acs-aem-commons-ui.content//zip/min
+  dir: packages
+  postProcessorOptions:
+    contentPackage.packageType: content
 
 #end
 # AEM OSGi System Configuration

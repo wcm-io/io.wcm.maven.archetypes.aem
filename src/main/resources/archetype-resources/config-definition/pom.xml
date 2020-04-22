@@ -61,10 +61,17 @@
 
 #end
 #if( $optionAcsCommons == "y" )
-      <!-- ACS AEM Commons -->
+    <!-- ACS AEM Commons -->
     <dependency>
       <groupId>com.adobe.acs</groupId>
-      <artifactId>acs-aem-commons-content</artifactId>
+      <artifactId>acs-aem-commons-ui.apps</artifactId>
+      <classifier>min</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.adobe.acs</groupId>
+      <artifactId>acs-aem-commons-ui.content</artifactId>
       <classifier>min</classifier>
       <type>zip</type>
       <scope>compile</scope>
