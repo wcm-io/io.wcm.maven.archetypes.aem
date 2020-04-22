@@ -15,7 +15,7 @@
     "min:gcc;compilationLevel=whitespace"
   ],
 #if ( $optionAemVersion == "cloud" )
-  /* Workaround: disabled because AEM Cloud Service does not support it currently */
+  /* Workaround: disabled because AEM Cloud 2020.4 does not support it currently */
   /*"longCacheKey": "${project.version}-${buildNumber}",*/
 #else
   "longCacheKey": "${project.version}-${buildNumber}",

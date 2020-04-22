@@ -374,7 +374,7 @@
   </build>
 #if ( $optionAemVersion == "cloud" )
 
-  <!-- Workaround to download aem-sdk-api from Experience Cloud Maven repository -->
+  <!-- Workaround to obtain aem-sdk-api from Experience Cloud Maven repository -->
   <repositories>
     <repository>
       <id>adobe-experiencecloud</id>
