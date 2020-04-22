@@ -112,7 +112,7 @@
             </goals>
             <configuration>
               <group>${packageGroupName}</group>
-              <!-- workaround to fix package dependency chain when "complete" package is eliminated because it only contains bundles, no direct /apps content -->
+              <!-- Use separate dependency chains for immutable and mutable packages -->
               <autoDependenciesSeparateMutable>true</autoDependenciesSeparateMutable>
             </configuration>
           </execution>

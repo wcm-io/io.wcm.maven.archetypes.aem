@@ -107,7 +107,7 @@ create path /apps/${projectName}(sling:Folder)
 [:repoinit runModes=author]
 # Create service user for wcm.io Media Handler
 create service user ${projectName}DamSystemUser
-  set ACL on /content/dam
+set ACL on /content/dam
   allow jcr:read,rep:write for ${projectName}DamSystemUser
 end
 
