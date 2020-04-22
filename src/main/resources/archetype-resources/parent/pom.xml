@@ -384,15 +384,15 @@
   <!-- Workaround to obtain aem-sdk-api from Experience Cloud Maven repository -->
   <repositories>
     <repository>
-      <id>adobe-experiencecloud</id>
+      <id>adobe-aem-releases</id>
+      <name>Adobe AEM Repository</name>
       <url>https://downloads.experiencecloud.adobe.com/content/maven/public/</url>
-      <layout>default</layout>
       <releases>
         <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
       </releases>
       <snapshots>
         <enabled>false</enabled>
-        <updatePolicy>always</updatePolicy>
       </snapshots>
     </repository>
   </repositories>
