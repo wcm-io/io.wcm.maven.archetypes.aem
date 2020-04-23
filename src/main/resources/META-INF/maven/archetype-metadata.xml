@@ -74,7 +74,7 @@
     </requiredProperty>
     <!-- AEM major version (6.3, 6.4, 6.5 or cloud) -->
     <requiredProperty key="optionAemVersion">
-      <defaultValue>6.5</defaultValue>
+      <defaultValue>cloud</defaultValue>
       <validationRegex>^(6\.3|6\.4|6\.5|cloud)$</validationRegex>
     </requiredProperty>
     <!-- Use latest service pack for AEM version - you need to deploy artifacts following these conventions https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
