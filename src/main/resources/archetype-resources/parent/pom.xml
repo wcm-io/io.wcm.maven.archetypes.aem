@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.4.4</version>
+    <version>1.4.8</version>
     <relativePath/>
   </parent>
 
@@ -34,8 +34,11 @@
     <!-- Versions -->
     <core.wcm.components.version>2.8.0</core.wcm.components.version>
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>4.4.0</acs.aem.commons.version>
+    <acs.aem.commons.version>4.5.2</acs.aem.commons.version>
 #end
+
+    <!-- Enable reproducible builds -->
+    <project.build.outputTimestamp>${timestamp}</project.build.outputTimestamp>
 
   </properties>
 
@@ -70,19 +73,18 @@
   <dependencyManagement>
     <dependencies>
 
-#if ( $optionSlingModelsLatest == "y" )
-      <!-- Sling -->
+#if ( $optionSlingModelsLatest == "y" && $optionAemVersion != "cloud" )
 #if ( $optionAemVersion == "6.3" )
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.models.api</artifactId>
-        <version>1.3.6</version>
+        <version>1.3.8</version>
       </dependency>
 #end
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.models.impl</artifactId>
-        <version>1.4.8</version>
+        <version>1.4.10</version>
       </dependency>
 #end
 #if ( $optionContextAwareConfig == "y" )
@@ -132,7 +134,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.extensions</artifactId>
-        <version>1.6.0</version>
+        <version>1.7.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -159,7 +161,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.url</artifactId>
-        <version>1.3.2</version>
+        <version>1.4.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -179,7 +181,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.commons</artifactId>
-        <version>1.6.0</version>
+        <version>1.6.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -205,7 +207,7 @@
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
         <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
-        <version>1.6.2</version>
+        <version>1.7.0</version>
       </dependency>
 
       <!-- wcm.io Testing -->
@@ -270,7 +272,15 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.4.7.0000#{else}6.4.0.0000#end</version>
+        <version>#if($optionAemServicePack=="y")6.4.8.0001#{else}6.4.0.0000#end</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+#elseif ( $optionAemVersion == "cloud" )
+      <dependency>
+        <groupId>io.wcm.maven</groupId>
+        <artifactId>io.wcm.maven.aem-cloud-dependencies</artifactId>
+        <version>2020.04.2793.20200403T195013Z-200130.0000</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -278,7 +288,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.5.3.0001#{else}6.5.0.0001#end</version>
+        <version>#if($optionAemServicePack=="y")6.5.4.0001#{else}6.5.0.0001#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -290,12 +300,14 @@
         <artifactId>core.wcm.components.core</artifactId>
         <version>${core.wcm.components.version}</version>
       </dependency>
+#if ( $optionAemVersion != "cloud" )
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>core.wcm.components.all</artifactId>
         <version>${core.wcm.components.version}</version>
         <type>zip</type>
       </dependency>
+#end
 
 #if( $optionAcsCommons == "y" )
       <!-- ACS AEM Commons -->
@@ -306,7 +318,14 @@
       </dependency>
       <dependency>
         <groupId>com.adobe.acs</groupId>
-        <artifactId>acs-aem-commons-content</artifactId>
+        <artifactId>acs-aem-commons-ui.apps</artifactId>
+        <version>${acs.aem.commons.version}</version>
+        <classifier>min</classifier>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+        <groupId>com.adobe.acs</groupId>
+        <artifactId>acs-aem-commons-ui.content</artifactId>
         <version>${acs.aem.commons.version}</version>
         <classifier>min</classifier>
         <type>zip</type>
@@ -360,5 +379,23 @@
       </plugins>
     </pluginManagement>
   </build>
+#if ( $optionAemVersion == "cloud" )
+
+  <!-- Workaround to obtain aem-sdk-api from Experience Cloud Maven repository -->
+  <repositories>
+    <repository>
+      <id>adobe-aem-releases</id>
+      <name>Adobe AEM Repository</name>
+      <url>https://downloads.experiencecloud.adobe.com/content/maven/public/</url>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+#end
 
 </project>

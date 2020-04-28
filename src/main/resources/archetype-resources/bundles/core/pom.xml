@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -18,7 +18,7 @@
 
   <dependencies>
 
-#if ( $optionSlingModelsLatest == "y" )
+#if ( $optionSlingModelsLatest == "y" && $optionAemVersion != "cloud" )
 #if ( $optionAemVersion == "6.3" )
     <dependency>
       <groupId>org.apache.sling</groupId>
@@ -34,13 +34,11 @@
 
 #end
 #if ( $optionContextAwareConfig == "y" )
-#if ( $optionAemVersion == "6.3" )
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.caconfig.api</artifactId>
       <scope>compile</scope>
     </dependency>
-#end
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.caconfig.impl</artifactId>
@@ -190,12 +188,20 @@
       <artifactId>osgi.cmpn</artifactId>
       <scope>provided</scope>
     </dependency>
+#if ( $optionAemVersion == "cloud" )
+    <dependency>
+      <groupId>com.adobe.aem</groupId>
+      <artifactId>aem-sdk-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+#else
     <dependency>
       <groupId>com.adobe.aem</groupId>
       <artifactId>uber-jar</artifactId>
       <classifier>apis</classifier>
       <scope>provided</scope>
     </dependency>
+#end
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>

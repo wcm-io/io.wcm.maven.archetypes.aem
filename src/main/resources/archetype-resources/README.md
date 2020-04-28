@@ -77,6 +77,7 @@ Modules of this project:
   * HTML client libraries with JavaScript and CSS
   * i18n
 #end
+* [content-packages/apps-repository-structure](content-packages/apps-repository-structure/): AEM content package defining root paths for application package validation
 * [content-packages/complete](content-packages/complete/): AEM content package containing all OSGi bundles of the application and their dependencies
 #if ( $optionEditableTemplates == "y" )
 * [content-packages/conf-content](content-packages/conf-content/): AEM content package with editable templates stored at `/conf`

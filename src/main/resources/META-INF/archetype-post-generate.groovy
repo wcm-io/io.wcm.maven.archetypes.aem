@@ -28,6 +28,9 @@ if (optionAemServicePack == "n" && optionAemVersion == "6.3") {
 if (optionAemServicePack == "n" && optionAemVersion == "6.4") {
   throw new RuntimeException("For AEM 6.4 optionAemServicePack='y' is required because AEM 6.4 is only supported with latest service pack.")
 }
+if (optionAemServicePack == "y" && optionAemVersion == "cloud") {
+  throw new RuntimeException("For AEM Cloud Service optionAemServicePack='y' is not allowed - there are no service packs for the cloud.")
+}
 if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
   throw new RuntimeException("Parameter optionMultiBundleLayout='y' is only supported with optionSlingInitialContentBundle='y'.")
 }
@@ -88,7 +91,6 @@ if (optionWcmioHandler == "n") {
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/admin/redirect").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/admin/page/redirect").deleteDir()
 
-  assert new File(configDefinition, "src/main/templates/${projectName}-aem-cms/${projectName}-aem-cms-author-systemusers.json.hbs").delete()
   assert new File(configDefinition, "src/main/templates/${projectName}-aem-cms/${projectName}-aem-cms-rewriter-config.json.hbs").delete()
 }
 else {
@@ -170,6 +172,12 @@ else {
   if (optionFrontend == "y") {
     assert new File(coreBundle, ".gitignore").delete()
   }
+}
+
+// remove environments only relevant for AEM Cloud service
+if (optionAemVersion != "cloud") {
+  assert new File(configDefinition, "src/main/dev-environments/dev.yaml").delete()
+  assert new File(configDefinition, "src/main/dev-environments/prod.yaml").delete()
 }
 
 // convert all line endings to unix-style

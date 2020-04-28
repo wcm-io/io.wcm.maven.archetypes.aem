@@ -19,19 +19,19 @@
   #L%
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.parent</artifactId>
-    <version>1.1.2</version>
+    <version>1.1.4</version>
     <relativePath />
   </parent>
 
   <groupId>io.wcm.maven.archetypes</groupId>
   <artifactId>io.wcm.maven.archetypes.aem</artifactId>
-  <version>2.4.8</version>
+  <version>3.0.0</version>
   <packaging>maven-archetype</packaging>
 
   <name>wcm.io Maven Archetype for AEM</name>
@@ -40,6 +40,7 @@
 
   <properties>
     <site.url.module.prefix>tooling/maven/archetypes/aem</site.url.module.prefix>
+    <!-- Stick with version 3.1.0 until https://issues.apache.org/jira/browse/ARCHETYPE-584 is solved -->
     <maven.archetype.version>3.1.0</maven.archetype.version>
     <!-- Control execution of archetype integration tests via -Pfast or -Dmaven.test.skip -->
     <archetype.test.skip>${integrationtests.skip}</archetype.test.skip>

@@ -72,10 +72,10 @@
       <defaultValue>8</defaultValue>
       <validationRegex>^(8|11)$</validationRegex>
     </requiredProperty>
-    <!-- AEM major version (6.3, 6.4 or 6.5) -->
+    <!-- AEM major version (6.3, 6.4, 6.5 or cloud) -->
     <requiredProperty key="optionAemVersion">
-      <defaultValue>6.5</defaultValue>
-      <validationRegex>^(6\.3|6\.4|6\.5)$</validationRegex>
+      <defaultValue>cloud</defaultValue>
+      <validationRegex>^(6\.3|6\.4|6\.5|cloud)$</validationRegex>
     </requiredProperty>
     <!-- Use latest service pack for AEM version - you need to deploy artifacts following these conventions https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
     <requiredProperty key="optionAemServicePack">
@@ -290,6 +290,17 @@
     </module>
 
     <module id="${rootArtifactId}.complete" dir="content-packages/complete" name="${rootArtifactId}.complete"/>
+
+    <module id="${rootArtifactId}.apps-repository-structure" dir="content-packages/apps-repository-structure" name="${rootArtifactId}.apps-repository-structure">
+      <fileSets>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>README.md</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
 
     <module id="${rootArtifactId}.conf-content" dir="content-packages/conf-content" name="${rootArtifactId}.conf-content">
       <fileSets>

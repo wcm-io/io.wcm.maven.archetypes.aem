@@ -1,0 +1,1 @@
+-f ../alphacloudProject -U clean package

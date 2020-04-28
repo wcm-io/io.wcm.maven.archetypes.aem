@@ -3,6 +3,7 @@
 
 [configurations]
 
+#if ( $optionAemVersion != "cloud" )
   # Default LogManager configuration
   org.apache.sling.commons.log.LogManager
     org.apache.sling.commons.log.pattern="{0,date,dd.MM.yyyy\ HH:mm:ss.SSS}\ *{4}*\ [{2}]\ {3}\ {5}"
@@ -12,11 +13,12 @@
     org.apache.sling.commons.log.file.number=I"7"
     org.apache.sling.commons.log.numOfLines=I"10000"
 
+#end
   # Set loglevel for project-specific bundles
   org.apache.sling.commons.log.LogManager.factory.config-${projectName}
     org.apache.sling.commons.log.pattern="{0,date,dd.MM.yyyy\ HH:mm:ss.SSS}\ *{4}*\ [{2}]\ {3}\ {5}"
     org.apache.sling.commons.log.file="logs/error.log"
-    org.apache.sling.commons.log.level="{{log.projectSpecificLogLevel}}"
+    org.apache.sling.commons.log.level="{{app.logLevel}}"
     org.apache.sling.commons.log.names=["io.wcm","${package}"]    
 
   # Disable built-in AEM link checker by default (enable it only when configured properly).
@@ -31,11 +33,13 @@
     configCollectionInheritancePropertyNames=["jcr:content/sling:configCollectionInherit","jcr:content/mergeList","mergeList"]
 
 #end
+#if ( $optionAemVersion == "6.3" or $optionAemVersion == "6.4" or $optionAemVersion == "6.5" )
   # Update Context-Aware config settings as it is configured by default in latest AEM version
   org.apache.sling.caconfig.management.impl.ConfigurationManagementSettingsImpl
     ignorePropertyNameRegex=["^(jcr|cq):.+$","^sling:resourceType$"]
     configCollectionPropertiesResourceNames=["jcr:content","."]
   
+#end
   # Context path strategy
   io.wcm.caconfig.extensions.contextpath.impl.RootTemplateContextPathStrategy-${projectName}
     templatePaths=["#if($optionEditableTemplates=='y')/conf/${projectName}/settings/wcm/templates/homepage#else/apps/${projectName}/core/templates/homepage#end"]
@@ -54,6 +58,13 @@
   org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-wcm
     user.mapping=["io.wcm.handler.url:clientlibs-service\=sling-scripting","io.wcm.wcm.commons:component-properties\=sling-scripting"]
 
+#elseif ( $optionAemVersion == "cloud" )
+  # Workaround for missing AEM core components "corimg" registration in AEM Cloud 2020.4
+  com.adobe.cq.wcm.core.components.internal.servlets.AdaptiveImageServletMappingConfigurationFactory-coreimg-${projectName}
+    resource.types=["core/wcm/components/image","cq/Page"]
+    selectors=["coreimg"]
+    extensions=["jpg","jpeg","png","gif","svg"]
+
 #end
 [configurations runModes=author]
 
@@ -62,7 +73,7 @@
     rootmapping.target="/sites.html"
 
 #if ( $optionWcmioHandler == "y" )
-  # Define service user for wcm.io Media Handler
+  # Service user mapping for wcm.io Media Handler
   org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-media
     user.mapping=["io.wcm.handler.media\=${projectName}DamSystemUser"]
 
@@ -86,3 +97,18 @@
     index.files=["index","index.html"]
     aliases="xml:pdf"
     json.maximumresults=I"100"
+
+
+[:repoinit]
+# Create root folder below /apps for application
+create path /apps/${projectName}(sling:Folder)
+
+#if ( $optionWcmioHandler == "y" )
+[:repoinit runModes=author]
+# Create service user for wcm.io Media Handler
+create service user ${projectName}DamSystemUser
+set ACL on /content/dam
+  allow jcr:read,rep:write for ${projectName}DamSystemUser
+end
+
+#end

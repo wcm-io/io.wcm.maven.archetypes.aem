@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -50,6 +50,7 @@
       <scope>compile</scope>
     </dependency>
 
+#if ( $optionAemVersion != "cloud" )
     <!-- Core WCM Components -->
     <dependency>
       <groupId>com.adobe.cq</groupId>
@@ -58,11 +59,19 @@
       <scope>compile</scope>
     </dependency>
 
+#end
 #if( $optionAcsCommons == "y" )
-      <!-- ACS AEM Commons -->
+    <!-- ACS AEM Commons -->
     <dependency>
       <groupId>com.adobe.acs</groupId>
-      <artifactId>acs-aem-commons-content</artifactId>
+      <artifactId>acs-aem-commons-ui.apps</artifactId>
+      <classifier>min</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.adobe.acs</groupId>
+      <artifactId>acs-aem-commons-ui.content</artifactId>
       <classifier>min</classifier>
       <type>zip</type>
       <scope>compile</scope>
@@ -80,7 +89,7 @@
         <artifactId>conga-maven-plugin</artifactId>
         <executions>
 
-          <!-- Generate configuration for local development AEM instance -->
+          <!-- Generate configuration for environments defined in this application code repository -->
           <execution>
             <id>dev-environment-config</id>
             <phase>generate-resources</phase>
@@ -95,6 +104,39 @@
         </executions>
       </plugin>
 
+#if ( $optionAemVersion == "cloud" )
+      <plugin>
+        <groupId>io.wcm.devops.conga.plugins</groupId>
+        <artifactId>conga-aem-maven-plugin</artifactId>
+        <executions>
+
+          <!-- Generate "all" packages including all packages from CONGA configuration for deployment via Adobe Cloud Manager -->
+          <execution>
+            <id>cloudmanager-all-package</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>cloudmanager-all-package</goal>
+            </goals>
+            <configuration>
+              <group>${packageGroupName}</group>
+              <!-- Use separate dependency chains for immutable and mutable packages -->
+              <autoDependenciesSeparateMutable>true</autoDependenciesSeparateMutable>
+            </configuration>
+          </execution>
+
+          <!-- Generate Dispatcher configuration ZIP file for deployment via Adobe Cloud Manager -->
+          <execution>
+            <id>cloudmanager-dispatcher-config</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>cloudmanager-dispatcher-config</goal>
+            </goals>
+          </execution>
+
+        </executions>
+      </plugin>
+
+#end
       <!-- Do not generate eclipse project files -->
       <plugin>
         <groupId>io.wcm.devops.maven.plugins</groupId>
@@ -107,4 +149,22 @@
     </plugins>
   </build>
 
+#if ( $optionAemVersion == "cloud" )
+  <profiles>
+  
+    <!-- Skip building of Cloud Manager ZIP in "fast" profile -->
+    <profile>
+      <id>fast</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+        <conga.cloudManager.allPackage.skip>true</conga.cloudManager.allPackage.skip>
+        <conga.cloudManager.dispatcherConfig.skip>true</conga.cloudManager.dispatcherConfig.skip>
+      </properties>
+    </profile>
+  
+  </profiles>
+
+#end
 </project>

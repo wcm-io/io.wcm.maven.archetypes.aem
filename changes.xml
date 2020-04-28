@@ -20,8 +20,41 @@
   -->
 
 <document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/changes/1.0.0"
-    xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
+
+    <release version="3.0.0" date="2020-04-28">
+      <action type="add" dev="sseifert">
+        Add support for AEM Cloud Service.
+      </action>
+      <action type="add" dev="sseifert">
+        Add apps-repository-structure package for validating application content packages root folders.
+      </action>
+      <action type="update" dev="sseifert">
+        Enable "reproducible builds" in Maven Build process.
+      </action>
+      <action type="update" dev="sseifert">
+        Use repoinit to define service users.
+      </action>
+      <action type="update" dev="sseifert">
+        Set packageType and enable FileVault validation for all CONGA-generated content packages.
+      </action>
+      <action type="update" dev="sseifert">
+        complete package: include ui.apps package using embedd instead of subPackage.
+      </action>
+      <action type="update" dev="sseifert">
+        Rename CONGA environment "development" to "local".
+      </action>
+      <action type="update" dev="sseifert">
+        Rename CONGA parameter "log.projectSpecificLogLevel" to "app.logLevel".
+      </action>
+      <action type="update" dev="sseifert">
+        Add support for AEM 6.5 SP4, AEM 6.4 SP8.
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+    </release>
 
     <release version="2.4.8" date="2020-01-30">
       <action type="update" dev="sseifert">

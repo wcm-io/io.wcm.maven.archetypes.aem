@@ -1,0 +1,1 @@
+-f ../gammacloudProject -U clean package

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -28,62 +28,69 @@
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.core</artifactId>
       <version>${version}</version>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #if ( $optionMultiBundleLayout == "y" )
     <dependency>
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.clientlibs</artifactId>
       <version>${version}</version>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.apps-repository-structure</artifactId>
+      <version>${version}</version>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
 #if ( $optionSlingInitialContentBundle == "n" )
     <dependency>
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.ui.apps</artifactId>
       <version>${version}</version>
       <type>zip</type>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
 
-#if ( $optionSlingModelsLatest == "y" )
+#if ( $optionSlingModelsLatest == "y" && $optionAemVersion != "cloud" )
 #if ( $optionAemVersion == "6.3" )
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.models.api</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.models.impl</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
 #if ( $optionContextAwareConfig == "y" )
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.caconfig.api</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.caconfig.spi</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.caconfig.impl</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #if ( $optionAemVersion == "6.4" )
     <!-- Update Sling Tenant in AEM 6.4 due to https://issues.apache.org/jira/browse/SLING-7880 -->
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.tenant</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
 #end
@@ -92,14 +99,14 @@
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.commons.johnzon</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
 #if ( $optionSlingInitialContentBundle == "y")
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.jcr.contentloader</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
 #end
@@ -107,12 +114,12 @@
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.caconfig.extensions</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.caconfig.editor</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
 #end
 
@@ -137,6 +144,13 @@
             </filter>
           </filters>
 
+#if ( $optionAemVersion == "cloud" )
+          <!-- Do not deploy directly via AEM cloud manager, only as part of CONGA-generated "all" package -->
+          <properties>
+            <cloudManagerTarget>none</cloudManagerTarget>
+          </properties>
+
+#end
           <embeddedTarget>/apps/${projectName}/install</embeddedTarget>
           <embeddeds>
             <!-- Include application bundles and their dependencies -->
@@ -149,14 +163,14 @@
               </groupId>
               <type>jar</type>
             </embedded>
-#if( $optionSlingModelsLatest == "y" || $optionContextAwareConfig == "y" || ($optionSlingInitialContentBundle == "y" && $optionAemVersion == "6.3") )
+#if( ($optionSlingModelsLatest == "y" && $optionAemVersion != "cloud") || $optionContextAwareConfig == "y" || ($optionSlingInitialContentBundle == "y" && $optionAemVersion == "6.3") )
             <!-- Include some Apache Sling bundles newer than those shipped with AEM -->
             <embedded>
               <groupId>
                 org.apache.sling
               </groupId>
               <artifactId>
-#if ( $optionSlingModelsLatest == "y" )
+#if ( $optionSlingModelsLatest == "y" && $optionAemVersion != "cloud" )
                 <!-- Latest Sling Models -->
 #if ( $optionAemVersion == "6.3" )
                 org.apache.sling.models.api,
@@ -185,18 +199,22 @@
               <type>jar</type>
             </embedded>
 #end
-          </embeddeds>
-
 #if( $optionSlingInitialContentBundle == "n" )
-          <subPackages>
-            <subPackage>
+            <embedded>
               <groupId>${groupId}</groupId>
               <artifactId>${rootArtifactId}.ui.apps</artifactId>
-              <filter>true</filter>
-            </subPackage>
-          </subPackages>
-
+              <type>zip</type>
+            </embedded>
 #end
+          </embeddeds>
+
+          <repositoryStructurePackages>
+            <repositoryStructurePackage>
+              <groupId>${groupId}</groupId>
+              <artifactId>${rootArtifactId}.apps-repository-structure</artifactId>
+            </repositoryStructurePackage>
+          </repositoryStructurePackages>
+
         </configuration>
       </plugin>
 
@@ -221,4 +239,5 @@
     </plugins>
 
   </build>
+
 </project>

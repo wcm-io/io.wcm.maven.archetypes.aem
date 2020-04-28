@@ -1,0 +1,39 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+# AEM configuration for AEM Cloud Service (DEV)
+
+nodes:
+
+- node: aem-author
+  roles:
+  - role: ${projectName}-aem-cms
+    variant: aem-author
+
+- node: aem-publish
+  roles:
+  - role: ${projectName}-aem-cms
+    variant: aem-publish
+
+
+config:
+  contentPackage.group: ${packageGroupName}
+  app:
+    # Default log level for application code
+    logLevel: info
+#if ( $optionContextAwareConfig == "y" || $optionEditableTemplates == "y" )
+    # Whether to deploy conf content with editable template definitions
+    confContent: true
+#end
+    # Whether to deploy sample content
+    sampleContent: true
+
+  # Replication configuration not required for AEM cloud service
+  replication:
+    author.generatePackage: false
+    publish.generatePackage: false
+
+  # Use this AEM configuration for DEV environments in AEM Cloud service
+  # For the DEV dispatcher the PROD configuration is reused
+  cloudManager.target:
+  - dev
