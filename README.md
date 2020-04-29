@@ -7,7 +7,8 @@ Maven Archetype for creating new AEM projects.
 Documentation: https://wcm.io/tooling/maven/archetypes/aem/<br/>
 Issues: https://wcm-io.atlassian.net/browse/WTOOL<br/>
 Wiki: https://wcm-io.atlassian.net/wiki/<br/>
-Continuous Integration: https://travis-ci.org/wcm-io/wcm-io-maven-archetype-aem/
+Continuous Integration: https://travis-ci.org/wcm-io/wcm-io-maven-archetype-aem/<br/>
+Commercial support: https://wcm.io/commercial-support.html
 
 
 ## Build from sources
