@@ -117,6 +117,18 @@
         </plugin>
 
         <plugin>
+          <groupId>com.amashchenko.maven.plugin</groupId>
+          <artifactId>gitflow-maven-plugin</artifactId>
+          <configuration>
+            <!-- Do not prefix release numbers with artifactId - GIT contains only one released artifact -->
+            <gitFlowConfig combine.self="override">
+              <releaseBranchPrefix>release/</releaseBranchPrefix>
+              <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
+              <versionTagPrefix />
+            </gitFlowConfig>
+          </configuration>
+        </plugin>
+        <plugin>
           <groupId>external.atlassian.jgitflow</groupId>
           <artifactId>jgitflow-maven-plugin</artifactId>
           <configuration>
