@@ -25,6 +25,9 @@
 
     <release version="3.0.2" date="not released">
       <action type="update" dev="sseifert">
+        conf-content package: Set replication status for all cq:Page and cq:Template nodes to "Activated" by default.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
