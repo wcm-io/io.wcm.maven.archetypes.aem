@@ -280,7 +280,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-cloud-dependencies</artifactId>
-        <version>2020.5.3306.20200514T034007Z-200507.0000</version>
+        <version>WCMIO_AEM_CLOUD_DEPENDENCIES_LATEST_VERSION</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

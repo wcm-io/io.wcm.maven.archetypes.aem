@@ -28,6 +28,9 @@
         conf-content package: Set replication status for all cq:Page and cq:Template nodes to "Activated" by default.
       </action>
       <action type="update" dev="sseifert">
+        When generating a new project for AEM Cloud service: Dynamically use latest version of io.wcm.maven.aem-cloud-dependencies that is available.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>

@@ -1,7 +1,9 @@
+@Grab(group="org.codehaus.groovy", module="groovy-xml", version="2.4.16")
 import java.util.regex.Pattern
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 import groovy.io.FileType
+import groovy.util.XmlSlurper
 
 def rootDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId())
 def javaPackage = request.getProperties().get("package")
@@ -20,6 +22,7 @@ def uiAppsPackage = new File(rootDir, "content-packages/ui.apps")
 def configDefinition = new File(rootDir, "config-definition")
 def frontend = new File(rootDir, "frontend")
 def rootPom = new File(rootDir, "pom.xml")
+def parentPom = new File(rootDir, "parent/pom.xml")
 
 // validate parameters - throw exceptions for invalid combinations
 if (optionAemServicePack == "n" && optionAemVersion == "6.3") {
@@ -174,8 +177,19 @@ else {
   }
 }
 
-// remove environments only relevant for AEM Cloud service
-if (optionAemVersion != "cloud") {
+if (optionAemVersion == "cloud") {
+  // insert latest version of io.wcm.maven.aem-cloud-dependencies available on maven central
+  def metadata = new XmlSlurper().parse("https://repo1.maven.org/maven2/io/wcm/maven/io.wcm.maven.aem-cloud-dependencies/maven-metadata.xml")
+  def wcmioAemCloudDependenciesLatestVersion = metadata.versioning.latest.toString()
+  assert wcmioAemCloudDependenciesLatestVersion != null && wcmioAemCloudDependenciesLatestVersion != ""
+  def pomContent = parentPom.getText("UTF-8")
+  pomContent = pomContent.replaceAll("WCMIO_AEM_CLOUD_DEPENDENCIES_LATEST_VERSION", wcmioAemCloudDependenciesLatestVersion)
+  parentPom.newWriter("UTF-8").withWriter { w ->
+    w << pomContent
+  }
+}
+else {
+  // remove environments only relevant for AEM Cloud service
   assert new File(configDefinition, "src/main/dev-environments/dev.yaml").delete()
   assert new File(configDefinition, "src/main/dev-environments/prod.yaml").delete()
 }
