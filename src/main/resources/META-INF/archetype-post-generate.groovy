@@ -25,9 +25,6 @@ def rootPom = new File(rootDir, "pom.xml")
 def parentPom = new File(rootDir, "parent/pom.xml")
 
 // validate parameters - throw exceptions for invalid combinations
-if (optionAemServicePack == "n" && optionAemVersion == "6.3") {
-  throw new RuntimeException("For AEM 6.3 optionAemServicePack='y' is required because AEM 6.3 is only supported with latest service pack.")
-}
 if (optionAemServicePack == "n" && optionAemVersion == "6.4") {
   throw new RuntimeException("For AEM 6.4 optionAemServicePack='y' is required because AEM 6.4 is only supported with latest service pack.")
 }
@@ -46,7 +43,7 @@ if (optionEditableTemplates == "n" && optionWcmioHandler == "n") {
 if (!(javaPackage ==~ /^[a-z0-9\.]+$/)) {
   throw new RuntimeException("Java package name is invalid: " + javaPackage)
 }
-if (optionJavaVersion == "11" && (optionAemVersion == "6.3" || optionAemVersion == "6.4")) {
+if (optionJavaVersion == "11" && (optionAemVersion == "6.4")) {
   throw new RuntimeException("Java 11 is only supported for AEM 6.5 and higher.")
 }
 

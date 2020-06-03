@@ -26,14 +26,7 @@
     linkcheckertransformer.disableChecking=B"true"
 
 #if ( $optionContextAwareConfig == "y" )
-#if ( $optionAemVersion == "6.3" )
-  # Update Context-Aware config settings as it is configured by default in latest AEM version
-  org.apache.sling.caconfig.resource.impl.def.DefaultConfigurationResourceResolvingStrategy
-    fallbackPaths=["/conf/global","/apps","/libs"]
-    configCollectionInheritancePropertyNames=["jcr:content/sling:configCollectionInherit","jcr:content/mergeList","mergeList"]
-
-#end
-#if ( $optionAemVersion == "6.3" or $optionAemVersion == "6.4" or $optionAemVersion == "6.5" )
+#if ( $optionAemVersion == "6.4" or $optionAemVersion == "6.5" )
   # Update Context-Aware config settings as it is configured by default in latest AEM version
   org.apache.sling.caconfig.management.impl.ConfigurationManagementSettingsImpl
     ignorePropertyNameRegex=["^(jcr|cq):.+$","^sling:resourceType$"]

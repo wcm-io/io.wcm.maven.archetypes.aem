@@ -56,13 +56,6 @@
 #end
 
 #if ( $optionSlingModelsLatest == "y" && $optionAemVersion != "cloud" )
-#if ( $optionAemVersion == "6.3" )
-    <dependency>
-      <groupId>org.apache.sling</groupId>
-      <artifactId>org.apache.sling.models.api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-#end
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.models.impl</artifactId>
@@ -90,22 +83,6 @@
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.tenant</artifactId>
-      <scope>provided</scope>
-    </dependency>
-#end
-#end
-#if ( $optionAemVersion == "6.3" )
-#if ( $optionSlingInitialContentBundle == "y" || $optionContextAwareConfig == "y" )
-    <dependency>
-      <groupId>org.apache.sling</groupId>
-      <artifactId>org.apache.sling.commons.johnzon</artifactId>
-      <scope>provided</scope>
-    </dependency>
-#end
-#if ( $optionSlingInitialContentBundle == "y")
-    <dependency>
-      <groupId>org.apache.sling</groupId>
-      <artifactId>org.apache.sling.jcr.contentloader</artifactId>
       <scope>provided</scope>
     </dependency>
 #end
@@ -163,7 +140,7 @@
               </groupId>
               <type>jar</type>
             </embedded>
-#if( ($optionSlingModelsLatest == "y" && $optionAemVersion != "cloud") || $optionContextAwareConfig == "y" || ($optionSlingInitialContentBundle == "y" && $optionAemVersion == "6.3") )
+#if( ($optionSlingModelsLatest == "y" && $optionAemVersion != "cloud") || $optionContextAwareConfig == "y" )
             <!-- Include some Apache Sling bundles newer than those shipped with AEM -->
             <embedded>
               <groupId>
@@ -172,9 +149,6 @@
               <artifactId>
 #if ( $optionSlingModelsLatest == "y" && $optionAemVersion != "cloud" )
                 <!-- Latest Sling Models -->
-#if ( $optionAemVersion == "6.3" )
-                org.apache.sling.models.api,
-#end
                 org.apache.sling.models.impl,
 #end
 #if ( $optionContextAwareConfig == "y" )
@@ -184,15 +158,6 @@
                 org.apache.sling.caconfig.impl,
 #if ( $optionAemVersion == "6.4" )
                 org.apache.sling.tenant,
-#end
-#end
-#if ( $optionAemVersion == "6.3" )
-#if ( $optionSlingInitialContentBundle == "y" || $optionContextAwareConfig == "y" )
-                org.apache.sling.commons.johnzon,
-#end
-#if ( $optionSlingInitialContentBundle == "y")
-                <!-- Latest JCR Content Loader to support i18n json files directly -->
-                org.apache.sling.jcr.contentloader,
 #end
 #end
               </artifactId>
