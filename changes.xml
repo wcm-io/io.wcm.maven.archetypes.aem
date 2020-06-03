@@ -31,6 +31,9 @@
         When generating a new project for AEM Cloud service: Dynamically use latest version of io.wcm.maven.aem-cloud-dependencies that is available.
       </action>
       <action type="update" dev="sseifert">
+        Add support for AEM 6.5 SP5.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
