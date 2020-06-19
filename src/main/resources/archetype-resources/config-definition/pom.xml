@@ -14,7 +14,8 @@
   <version>${version}</version>
   <packaging>config-definition</packaging>
 
-  <description>AEM Application CONGA roles and templates</description>
+  <name>${projectName} config-definition</name>
+  <description>CONGA roles and template definitions</description>
 
   <dependencies>
 

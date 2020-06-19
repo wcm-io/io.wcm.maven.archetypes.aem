@@ -14,6 +14,7 @@
   <version>${version}</version>
   <packaging>content-package</packaging>
 
+  <name>${projectName} Package ui.apps</name>
   <description>AEM Application</description>
 
   <properties>

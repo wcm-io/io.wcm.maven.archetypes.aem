@@ -14,7 +14,7 @@
   <version>${version}</version>
   <packaging>content-package</packaging>
 
-  <name>${projectName} Application</name>
+  <name>${projectName} Package complete</name>
   <description>AEM content package with all application bundles and dependencies.</description>
 
   <properties>
