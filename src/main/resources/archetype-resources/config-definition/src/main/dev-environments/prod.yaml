@@ -19,6 +19,13 @@ nodes:
   roles:
   - role: aem-dispatcher-cloud
     variant: aem-publish
+  config:
+    dispatcher:
+      filter:
+      - _merge_
+      # Uncomment this to allow access to Package Manager on Publish
+      #- url: /crx/packmgr(/.*)?
+      #  type: allow
 
 
 config:
