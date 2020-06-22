@@ -14,6 +14,8 @@
     "default:none",
     "min:gcc;compilationLevel=whitespace"
   ],
+#if ( $optionAemVersion != "cloud" )
   "longCacheKey": "${project.version}-${buildNumber}",
+#end
   "allowProxy": true
 }

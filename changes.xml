@@ -31,6 +31,9 @@
         When generating a new project for AEM Cloud service: Dynamically use latest version of io.wcm.maven.aem-cloud-dependencies that is available.
       </action>
       <action type="update" dev="sseifert">
+        Do not set longCacheKey for AEM client libraries on AEM cloud service - it's active by default by generating a hash for each client library.
+      </action>
+      <action type="update" dev="sseifert">
         Add support for AEM 6.5 SP5.
       </action>
       <action type="update" dev="sseifert">

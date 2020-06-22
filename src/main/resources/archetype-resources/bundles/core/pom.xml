@@ -210,7 +210,7 @@
   </dependencies>
 
   <build>
-#if ( $optionMultiBundleLayout != "y" && $optionSlingInitialContentBundle == "y" )
+#if ( $optionMultiBundleLayout != "y" && $optionSlingInitialContentBundle == "y" && $optionAemVersion != "cloud" )
     <resources>
       <!-- copy webapp resources to SLING-INF/app-root -->
       <resource>
