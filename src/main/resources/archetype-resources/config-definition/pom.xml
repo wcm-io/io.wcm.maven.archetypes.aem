@@ -120,8 +120,8 @@
             </goals>
             <configuration>
               <group>${packageGroupName}</group>
-              <!-- Use separate dependency chains for immutable and mutable packages -->
-              <autoDependenciesSeparateMutable>true</autoDependenciesSeparateMutable>
+              <!-- Workaround because Cloud Manager does not properly support dependencies for mutable content packages yet -->
+              <autoDependenciesMode>IMMUTABLE_ONLY</autoDependenciesMode>
             </configuration>
           </execution>
 
