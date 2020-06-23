@@ -25,6 +25,9 @@
 
     <release version="3.1.0" date="not released">
       <action type="update" dev="sseifert">
+        AEM cloud service: Set default expiration time for text/html responses to 0 minutes.
+      </action>
+      <action type="update" dev="sseifert">
         conf-content package: Set replication status for all cq:Page and cq:Template nodes to "Activated" by default.
       </action>
       <action type="update" dev="sseifert">

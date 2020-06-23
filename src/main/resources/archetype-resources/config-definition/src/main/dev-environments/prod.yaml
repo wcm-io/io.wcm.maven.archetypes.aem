@@ -40,6 +40,11 @@ config:
     # Whether to deploy sample content
     sampleContent: false
 
+  httpd:
+    headers:
+      # Set default expiration time for text/html responses (also affects dispatcher caching/invalidation)
+      htmlExpirationTimeMin: 0
+
   # Replication configuration not required for AEM cloud service
   replication:
     author.generatePackage: false
