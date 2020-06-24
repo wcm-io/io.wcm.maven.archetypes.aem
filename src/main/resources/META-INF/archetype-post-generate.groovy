@@ -187,8 +187,7 @@ if (optionAemVersion == "cloud") {
 }
 else {
   // remove environments only relevant for AEM Cloud service
-  assert new File(configDefinition, "src/main/dev-environments/dev.yaml").delete()
-  assert new File(configDefinition, "src/main/dev-environments/prod.yaml").delete()
+  assert new File(configDefinition, "src/main/dev-environments/cloud.yaml").delete()
 }
 
 // convert all line endings to unix-style

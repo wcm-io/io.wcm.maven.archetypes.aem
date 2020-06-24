@@ -25,6 +25,9 @@
 
     <release version="3.1.0" date="not released">
       <action type="update" dev="sseifert">
+        AEM cloud service: Use a single "cloud" CONGA environment for all cloud environments because AEM cloud service does not yet support deploying environment runmode-depending packages.
+      </action>
+      <action type="update" dev="sseifert">
         AEM cloud service: Set default expiration time for text/html responses to 0 minutes.
       </action>
       <action type="update" dev="sseifert">

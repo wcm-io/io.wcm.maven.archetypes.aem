@@ -21,9 +21,9 @@ nodes:
     variant: aem-publish
   config:
     dispatcher:
-      filter:
-      - _merge_
       # Uncomment this to allow access to Package Manager on Publish
+      #filter:
+      #- _merge_
       #- url: /crx/packmgr(/.*)?
       #  type: allow
 
@@ -38,7 +38,7 @@ config:
     confContent: true
 #end
     # Whether to deploy sample content
-    sampleContent: false
+    sampleContent: true
 
   httpd:
     headers:
@@ -50,19 +50,25 @@ config:
     author.generatePackage: false
     publish.generatePackage: false
 
-  # Use this AEM configuration for STAGE and PROD environments in AEM Cloud service
-  # Please note: the dispatcher configuration is used for DEV as well, because AEM cloud service supports only a single dispatcher configuration
-  cloudManager.target:
-  - stage
-  - prod
-
 
 tenants:
 - tenant: ${projectName}
   config:
     httpd:
+      # Simplified server name setup that can be deployed to any host name using "*" als server alias
+#if ( $optionWcmioHandler != "y" )
+      # This simplified setup may lead to invalid links generated on the publish instances - use the alternative listed below instead
+#end
       serverName: publish
       serverAliasNames:
       - "*"
+      # Alternative: Use this setup to configure individual hostnames for dev/stage/prod in the cloud
+      #cloudManagerConditional:
+      #- targetEnvironment: dev
+      #  serverName: publish-XXX.adobeaemcloud.com
+      #- targetEnvironment: stage
+      #  serverName: publish-XXX.adobeaemcloud.com
+      #- targetEnvironment: prod
+      #  serverName: publish-XXX.adobeaemcloud.com
       rootRedirect.url: /en.html
     sling.mapping.rootPath: /content/${projectName}
