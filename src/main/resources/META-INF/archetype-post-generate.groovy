@@ -75,14 +75,14 @@ else {
 // remove files only relevant for wcm.io Handler projects
 if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/java/" + javaPackage.replace('.','/') + "/config").deleteDir()
-  
+
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/redirect.json").delete()
 
   assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root/${projectName}.app/css").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs/${projectName}.app/css").deleteDir()
-  
+
   if (optionFrontend == "y") {
     assert new File(frontend, "src/components/carousel/carousel.scss").delete()
     assert new File(frontend, "src/components/image").deleteDir()

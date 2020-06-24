@@ -21,7 +21,7 @@
     <contentPackage.name>${projectName}-ui.apps</contentPackage.name>
     <contentPackage.group>${packageGroupName}</contentPackage.group>
   </properties>
-  
+
   <dependencies>
 
     <dependency>

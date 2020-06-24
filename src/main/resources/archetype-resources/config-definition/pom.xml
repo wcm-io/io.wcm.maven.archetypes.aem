@@ -152,7 +152,7 @@
 
 #if ( $optionAemVersion == "cloud" )
   <profiles>
-  
+
     <!-- Skip building of Cloud Manager ZIP in "fast" profile -->
     <profile>
       <id>fast</id>
@@ -164,7 +164,7 @@
         <conga.cloudManager.dispatcherConfig.skip>true</conga.cloudManager.dispatcherConfig.skip>
       </properties>
     </profile>
-  
+
   </profiles>
 
 #end
