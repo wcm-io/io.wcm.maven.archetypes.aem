@@ -12,7 +12,7 @@
     <allow1
         jcr:primaryType="rep:GrantACE"
         rep:principalName="content-authors"
-        rep:privileges="{Name}[jcr:read,crx:replicate]"/>
+        rep:privileges="{Name}[crx:replicate,jcr:read]"/>
     <allow2
         jcr:primaryType="rep:GrantACE"
         rep:principalName="version-manager-service"

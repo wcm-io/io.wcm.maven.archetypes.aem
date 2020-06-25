@@ -141,6 +141,17 @@ if (optionEditableTemplates == "n") {
   removeModule(rootPom, "content-packages/conf-content")
   confContentPackage.deleteDir()
 }
+else {
+  // set last activated date in conf-content to current date
+  confContentPackage.eachFileRecurse(FileType.FILES) { file ->
+    if (file.name =~ /\.content\.xml$/) {
+      def fileContent = file.getText("UTF-8").replaceAll('\\Q2020-01-01T00:00:00.000+02:00\\E', new Date().format("yyyy-MM-dd'T00:00:00.000'XXX"))
+      file.newWriter("UTF-8").withWriter { w ->
+        w << fileContent
+      }
+    }
+  }  
+}
 
 // prepare project for editable templates
 if (optionEditableTemplates == "y") {
