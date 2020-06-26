@@ -64,11 +64,8 @@ tenants:
       - "*"
       # Alternative: Use this setup to configure individual hostnames for dev/stage/prod in the cloud
       #cloudManagerConditional:
-      #- targetEnvironment: dev
-      #  serverName: publish-XXX.adobeaemcloud.com
-      #- targetEnvironment: stage
-      #  serverName: publish-XXX.adobeaemcloud.com
-      #- targetEnvironment: prod
-      #  serverName: publish-XXX.adobeaemcloud.com
+      #  dev.serverName: publish-XXX.adobeaemcloud.com
+      #  stage.serverName: publish-XXX.adobeaemcloud.com
+      #  prod.serverName: publish-XXX.adobeaemcloud.com
       rootRedirect.url: /en.html
     sling.mapping.rootPath: /content/${projectName}
