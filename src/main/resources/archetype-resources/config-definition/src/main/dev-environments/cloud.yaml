@@ -21,11 +21,13 @@ nodes:
     variant: aem-publish
   config:
     dispatcher:
-      # Uncomment this to allow access to Package Manager on Publish
-      #filter:
-      #- _merge_
-      #- url: /crx/packmgr(/.*)?
-      #  type: allow
+      # Allow access to model.json
+      filter:
+      - _merge_
+      - url: /content(/.*)?
+        extension: json
+        selectors: model
+        type: allow
 
 
 config:

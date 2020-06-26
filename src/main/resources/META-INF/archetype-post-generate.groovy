@@ -134,6 +134,7 @@ if (optionContextAwareConfig == "n" && optionWcmioHandler == "n" ) {
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/admin").deleteDir()
 
   assert new File(sampleContentPackage, "jcr_root/content/${projectName}/en/tools").deleteDir()
+  assert new File(sampleContentPackage, "jcr_root/conf").deleteDir()
 }
 
 // remove conf-content package if not required
