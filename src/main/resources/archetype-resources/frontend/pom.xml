@@ -44,7 +44,7 @@
           </execution>
         </executions>
         <configuration>
-          <nodeJsVersion>12.16.1</nodeJsVersion>
+          <nodeJsVersion>12.18.1</nodeJsVersion>
           <tasks>
             <npmInstallTask>
               <workingDirectory>${project.basedir}</workingDirectory>
@@ -73,9 +73,9 @@
             </goals>
             <phase>process-resources</phase>
             <configuration>
-              <nodeVersion>v12.16.1</nodeVersion>
+              <nodeVersion>v12.18.1</nodeVersion>
 ## Explicitly define NPM version for frontend-maven-plugin to avoid build problems on Jenkins
-              <npmVersion>6.13.4</npmVersion>
+              <npmVersion>6.14.5</npmVersion>
             </configuration>
           </execution>
           <execution>
