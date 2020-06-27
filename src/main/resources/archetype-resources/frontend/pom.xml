@@ -114,4 +114,21 @@
     </plugins>
   </build>
 
+#if ( $optionNodeJsPlugin == "y" && $optionAemVersion == "cloud" )
+  <!-- Proxy repository to download NodeJS binaries -->
+  <repositories>
+    <repository>
+      <id>maven-nodejs-proxy</id>
+      <url>https://maven-nodejs-proxy.pvtool.org/</url>
+      <layout>default</layout>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+#end
 </project>
