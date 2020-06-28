@@ -166,12 +166,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-#if ( $optionAemVersion == "cloud" )
-        <!-- Workaround for OSGi wiring problem accessing package com.adobe.cq.wcm.core.components.models.datalayer on AEM Cloud service -->
-        <version>1.2.2-2.8.0</version>
-#else
         <version>1.4.0-2.10.0</version>
-#end
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
