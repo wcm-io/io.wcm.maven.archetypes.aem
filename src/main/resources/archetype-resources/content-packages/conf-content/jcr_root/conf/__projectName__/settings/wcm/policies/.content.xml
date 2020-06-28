@@ -12,14 +12,22 @@
                         jcr:title="Root Container"
                         sling:resourceType="wcm/core/components/policy/policy"
                         components="[/libs/wcm/foundation/components/responsivegrid,/apps/${projectName}/core/components/content/carousel,/apps/${projectName}/core/components/content/image,/apps/${projectName}/core/components/structure/imprint]">
-                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
+                            cq:lastReplicationAction="Activate"/>
                     </root-container>
                     <content-container
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Content Container"
                         sling:resourceType="wcm/core/components/policy/policy"
                         components="[/apps/${projectName}/core/components/content/image,/apps/${projectName}/core/components/content/text,/apps/${projectName}/core/components/content/title]">
-                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <jcr:content
+                            jcr:primaryType="nt:unstructured"
+                            jcr:mixinTypes="[cq:ReplicationStatus]"
+                            cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
+                            cq:lastReplicationAction="Activate"/>
                         <cq:authoring jcr:primaryType="nt:unstructured">
                             <assetToComponentMapping jcr:primaryType="nt:unstructured">
                                 <image

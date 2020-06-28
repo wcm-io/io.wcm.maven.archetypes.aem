@@ -72,10 +72,10 @@
       <defaultValue>8</defaultValue>
       <validationRegex>^(8|11)$</validationRegex>
     </requiredProperty>
-    <!-- AEM major version (6.3, 6.4, 6.5 or cloud) -->
+    <!-- AEM major version (6.4, 6.5 or cloud) -->
     <requiredProperty key="optionAemVersion">
       <defaultValue>cloud</defaultValue>
-      <validationRegex>^(6\.3|6\.4|6\.5|cloud)$</validationRegex>
+      <validationRegex>^(6\.4|6\.5|cloud)$</validationRegex>
     </requiredProperty>
     <!-- Use latest service pack for AEM version - you need to deploy artifacts following these conventions https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
     <requiredProperty key="optionAemServicePack">
@@ -88,12 +88,12 @@
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
     <!-- y: AEM application projects is set up with scripts and content parts as JSON files within the OSGi bundle with Sling-Initial Content, suitable for File System Resource Provider. Works with all AEM versions.
-         n: Projects are set up with FileVault package layout, suitable for AEM Developer Tools for Eclipse (Sling IDE). Only supported for AEM 6.3+. -->
+         n: Projects are set up with FileVault package layout, suitable for AEM Developer Tools for Eclipse (Sling IDE). -->
     <requiredProperty key="optionSlingInitialContentBundle">
       <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Set up projects using editable templates.  Only supported for AEM 6.3+. -->
+    <!-- Set up projects using editable templates. -->
     <requiredProperty key="optionEditableTemplates">
       <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>

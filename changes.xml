@@ -23,6 +23,36 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
+    <release version="3.1.0" date="2020-06-28">
+      <action type="update" dev="sseifert">
+        AEM cloud service: Use a single "cloud" CONGA environment for all cloud environments because AEM cloud service does not yet support deploying environment runmode-depending packages.
+      </action>
+      <action type="update" dev="sseifert">
+        AEM cloud service: Set default expiration time for text/html responses to 0 minutes.
+      </action>
+      <action type="update" dev="sseifert">
+        conf-content package: Set replication status for all cq:Page and cq:Template nodes to "Activated" by default.
+      </action>
+      <action type="update" dev="sseifert">
+        When generating a new project for AEM Cloud service: Dynamically use latest version of io.wcm.maven.aem-cloud-dependencies that is available.
+      </action>
+      <action type="update" dev="sseifert">
+        Do not set longCacheKey for AEM client libraries on AEM cloud service - it's active by default by generating a hash for each client library.
+      </action>
+      <action type="update" dev="sseifert">
+        Enable Data Layer by default.
+      </action>
+      <action type="update" dev="sseifert">
+        Add support for AEM 6.5 SP5.
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+      <action type="remove" dev="sseifert">
+        Drop support for AEM 6.3.
+      </action>
+    </release>
+
     <release version="3.0.0" date="2020-04-28">
       <action type="add" dev="sseifert">
         Add support for AEM Cloud Service.

@@ -14,6 +14,7 @@
   <version>${version}</version>
   <packaging>content-package</packaging>
 
+  <name>${projectName} Package conf-content</name>
   <description>AEM Application conf content</description>
 
   <properties>
@@ -46,6 +47,20 @@
             <cloudManagerTarget>none</cloudManagerTarget>
           </properties>
 #end
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>io.wcm.maven.plugins</groupId>
+        <artifactId>wcmio-content-package-maven-plugin</artifactId>
+        <configuration>
+          <!--
+            Set replication status for all cq:Page and cq:Template nodes to "Activated"
+            It is assumed that this package is deployed always on author and publish instances, thus
+            it's not required to activate template definitions manually after each deployment.
+            If this is not case, remove this configuration.
+          -->
+          <markReplicationActivated>true</markReplicationActivated>
         </configuration>
       </plugin>
 

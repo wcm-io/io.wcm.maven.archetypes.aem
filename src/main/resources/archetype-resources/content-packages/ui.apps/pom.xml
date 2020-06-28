@@ -14,13 +14,14 @@
   <version>${version}</version>
   <packaging>content-package</packaging>
 
+  <name>${projectName} Package ui.apps</name>
   <description>AEM Application</description>
 
   <properties>
     <contentPackage.name>${projectName}-ui.apps</contentPackage.name>
     <contentPackage.group>${packageGroupName}</contentPackage.group>
   </properties>
-  
+
   <dependencies>
 
     <dependency>
@@ -51,7 +52,9 @@
           <group>${contentPackage.group}</group>
           <packageType>application</packageType>
           <jcrRootSourceDirectory>${project.build.outputDirectory}</jcrRootSourceDirectory>
+#if ( $optionAemVersion != "cloud" )
           <enableJcrRootFiltering>true</enableJcrRootFiltering>
+#end
 
 #if ( $optionAemVersion == "cloud" )
           <!-- Do not deploy directly via AEM cloud manager, only as part of CONGA-generated "all" package -->

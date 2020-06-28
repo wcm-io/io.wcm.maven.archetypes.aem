@@ -2,10 +2,13 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:deviceGroups="[#if($optionAemVersion == "6.3")/etc/#{end}mobile/groups/responsive]"
+        cq:deviceGroups="[mobile/groups/responsive]"
         cq:template="/conf/${projectName}/settings/wcm/templates/homepage"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="${projectName}/core/components/global/page">
+        sling:resourceType="${projectName}/core/components/global/page"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
+        cq:lastReplicationAction="Activate">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">

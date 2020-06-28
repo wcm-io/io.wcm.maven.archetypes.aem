@@ -19,13 +19,6 @@
   <dependencies>
 
 #if ( $optionSlingModelsLatest == "y" && $optionAemVersion != "cloud" )
-#if ( $optionAemVersion == "6.3" )
-    <dependency>
-      <groupId>org.apache.sling</groupId>
-      <artifactId>org.apache.sling.models.api</artifactId>
-      <scope>compile</scope>
-    </dependency>
-#end
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.models.impl</artifactId>
@@ -114,7 +107,7 @@
       <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
       <scope>test</scope>
     </dependency>
-#if ( $optionAemVersion == "6.3" || $optionAemVersion == "6.4" || ($optionAemVersion == "6.5" && $optionAemServicePack=="n") )
+#if ( $optionAemVersion == "6.4" || ($optionAemVersion == "6.5" && $optionAemServicePack=="n") )
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.testing.logging-mock</artifactId>
@@ -169,13 +162,6 @@
       <scope>compile</scope>
     </dependency>
 #end
-#if ( $optionAemVersion == "6.3" )
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <scope>compile</scope>
-    </dependency>
-#end
 
     <!-- OSGi and AEM dependencies provided - so each project has full control about their positions (should always be last in the list). -->
     <dependency>
@@ -224,7 +210,7 @@
   </dependencies>
 
   <build>
-#if ( $optionMultiBundleLayout != "y" && $optionSlingInitialContentBundle == "y" )
+#if ( $optionMultiBundleLayout != "y" && $optionSlingInitialContentBundle == "y" && $optionAemVersion != "cloud" )
     <resources>
       <!-- copy webapp resources to SLING-INF/app-root -->
       <resource>

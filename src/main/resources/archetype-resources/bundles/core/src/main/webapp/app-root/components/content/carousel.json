@@ -2,7 +2,7 @@
   "jcr:primaryType": "cq:Component",
   "jcr:title": "Carousel",
   "componentGroup": "${projectName}",
-  
+
 #if ($optionWcmioHandler == 'y')
   "wcmio:mediaFormats": ["wide"],
   "wcmio:mediaCropAuto": true,
@@ -22,7 +22,7 @@
         "column": {
           "sling:resourceType": "granite/ui/components/coral/foundation/container",
           "items": {
-            
+
             "slideMedia": {
               "sling:resourceType": "granite/ui/components/coral/foundation/form/multifield",
               "composite": true,
@@ -56,5 +56,5 @@
       }
     }
   }
-  
+
 }

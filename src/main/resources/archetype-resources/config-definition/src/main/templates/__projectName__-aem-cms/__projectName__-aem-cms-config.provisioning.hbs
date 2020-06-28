@@ -19,26 +19,19 @@
     org.apache.sling.commons.log.pattern="{0,date,dd.MM.yyyy\ HH:mm:ss.SSS}\ *{4}*\ [{2}]\ {3}\ {5}"
     org.apache.sling.commons.log.file="logs/error.log"
     org.apache.sling.commons.log.level="{{app.logLevel}}"
-    org.apache.sling.commons.log.names=["io.wcm","${package}"]    
+    org.apache.sling.commons.log.names=["io.wcm","${package}"]
 
   # Disable built-in AEM link checker by default (enable it only when configured properly).
   com.day.cq.rewriter.linkchecker.impl.LinkCheckerTransformerFactory
     linkcheckertransformer.disableChecking=B"true"
 
 #if ( $optionContextAwareConfig == "y" )
-#if ( $optionAemVersion == "6.3" )
-  # Update Context-Aware config settings as it is configured by default in latest AEM version
-  org.apache.sling.caconfig.resource.impl.def.DefaultConfigurationResourceResolvingStrategy
-    fallbackPaths=["/conf/global","/apps","/libs"]
-    configCollectionInheritancePropertyNames=["jcr:content/sling:configCollectionInherit","jcr:content/mergeList","mergeList"]
-
-#end
-#if ( $optionAemVersion == "6.3" or $optionAemVersion == "6.4" or $optionAemVersion == "6.5" )
+#if ( $optionAemVersion == "6.4" or $optionAemVersion == "6.5" )
   # Update Context-Aware config settings as it is configured by default in latest AEM version
   org.apache.sling.caconfig.management.impl.ConfigurationManagementSettingsImpl
     ignorePropertyNameRegex=["^(jcr|cq):.+$","^sling:resourceType$"]
     configCollectionPropertiesResourceNames=["jcr:content","."]
-  
+
 #end
   # Context path strategy
   io.wcm.caconfig.extensions.contextpath.impl.RootTemplateContextPathStrategy-${projectName}
@@ -57,13 +50,6 @@
   # Define service user for wcm.io URL handler
   org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-wcm
     user.mapping=["io.wcm.handler.url:clientlibs-service\=sling-scripting","io.wcm.wcm.commons:component-properties\=sling-scripting"]
-
-#elseif ( $optionAemVersion == "cloud" )
-  # Workaround for missing AEM core components "corimg" registration in AEM Cloud 2020.4
-  com.adobe.cq.wcm.core.components.internal.servlets.AdaptiveImageServletMappingConfigurationFactory-coreimg-${projectName}
-    resource.types=["core/wcm/components/image","cq/Page"]
-    selectors=["coreimg"]
-    extensions=["jpg","jpeg","png","gif","svg"]
 
 #end
 [configurations runModes=author]

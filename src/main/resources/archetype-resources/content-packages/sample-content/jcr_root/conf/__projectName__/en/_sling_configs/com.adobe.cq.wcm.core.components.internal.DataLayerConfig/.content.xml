@@ -3,8 +3,6 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="${projectName}/core/components/global/page"
-        jcr:mixinTypes="[cq:ReplicationStatus]"
-        cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
-        cq:lastReplicationAction="Activate"/>
+        sling:configPropertyInherit="{Boolean}false"
+        enabled="{Boolean}true"/>
 </jcr:root>

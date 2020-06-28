@@ -12,12 +12,12 @@
   },
   "dependencies": {
     "bootstrap": "4.4.1",
-    "jquery": "3.4.1",
+    "jquery": "3.5.1",
     "popper.js": "1.16.1"
   },
   "devDependencies": {
     "@babel/core": "7.9.0",
-    "aem-clientlib-generator": "1.7.1",
+    "aem-clientlib-generator": "1.7.4",
     "babel-core": "6.26.3",
     "babel-loader": "8.1.0",
     "babel-plugin-transform-class-properties": "6.24.1",
@@ -36,7 +36,7 @@
     "sass-loader": "8.0.2",
     "webpack": "4.42.1",
     "webpack-cli": "3.3.11",
-    "webpack-dev-server": "3.10.3",
+    "webpack-dev-server": "3.11.0",
     "webpack-merge": "4.2.2"
   }
 }

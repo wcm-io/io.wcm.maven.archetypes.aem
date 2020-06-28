@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.4.8</version>
+    <version>1.4.12</version>
     <relativePath/>
   </parent>
 
@@ -13,6 +13,8 @@
   <artifactId>${artifactId}</artifactId>
   <version>${version}</version>
   <packaging>pom</packaging>
+
+  <name>${projectName} Parent</name>
 
   <properties>
 
@@ -32,8 +34,9 @@
     <eclipse.settings.nullanalysis>enabled</eclipse.settings.nullanalysis>
 
     <!-- Versions -->
-    <core.wcm.components.version>2.8.0</core.wcm.components.version>
+    <core.wcm.components.version>2.10.0</core.wcm.components.version>
 #if( $optionAcsCommons == "y" )
+    <!-- Stick with version 4.5.2 until https://github.com/Adobe-Consulting-Services/acs-aem-commons/issues/2298 is solved -->
     <acs.aem.commons.version>4.5.2</acs.aem.commons.version>
 #end
 
@@ -74,13 +77,6 @@
     <dependencies>
 
 #if ( $optionSlingModelsLatest == "y" && $optionAemVersion != "cloud" )
-#if ( $optionAemVersion == "6.3" )
-      <dependency>
-        <groupId>org.apache.sling</groupId>
-        <artifactId>org.apache.sling.models.api</artifactId>
-        <version>1.3.8</version>
-      </dependency>
-#end
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.models.impl</artifactId>
@@ -112,22 +108,6 @@
       </dependency>
 #end
 #end
-#if ( $optionAemVersion == "6.3" )
-#if ( $optionSlingInitialContentBundle == "y" || $optionContextAwareConfig == "y" )
-      <dependency>
-        <groupId>org.apache.sling</groupId>
-        <artifactId>org.apache.sling.commons.johnzon</artifactId>
-        <version>1.1.0</version>
-      </dependency>
-#end
-#if ( $optionSlingInitialContentBundle == "y")
-      <dependency>
-        <groupId>org.apache.sling</groupId>
-        <artifactId>org.apache.sling.jcr.contentloader</artifactId>
-        <version>2.2.4</version>
-      </dependency>
-#end
-#end
 
       <!-- wcm.io -->
 #if ( $optionContextAwareConfig == "y" )
@@ -139,7 +119,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.7.0</version>
+        <version>1.7.2</version>
       </dependency>
 #end
 #if ( $optionWcmioHandler == "y" )
@@ -166,12 +146,12 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.5.0</version>
+        <version>1.5.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.8.2</version>
+        <version>1.9.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -186,17 +166,22 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
+#if ( $optionAemVersion == "cloud" )
+        <!-- Workaround for OSGi wiring problem accessing package com.adobe.cq.wcm.core.components.models.datalayer on AEM Cloud service -->
         <version>1.2.2-2.8.0</version>
+#else
+        <version>1.4.0-2.10.0</version>
+#end
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
-        <version>1.4.0</version>
+        <version>1.5.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.6.0</version>
+        <version>1.6.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -207,16 +192,16 @@
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
         <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
-        <version>1.7.0</version>
+        <version>1.8.0</version>
       </dependency>
 
       <!-- wcm.io Testing -->
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.2</version>
       </dependency>
-#if ( $optionAemVersion == "6.3" || $optionAemVersion == "6.4" || ($optionAemVersion == "6.5" && $optionAemServicePack=="n") )
+#if ( $optionAemVersion == "6.4" || ($optionAemVersion == "6.5" && $optionAemServicePack=="n") )
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.testing.logging-mock</artifactId>
@@ -260,15 +245,7 @@
 #end
 
       <!-- AEM dependencies -->
-#if ( $optionAemVersion == "6.3" )
-      <dependency>
-        <groupId>io.wcm.maven</groupId>
-        <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.3.3.0000#{else}6.3.0.0002#end</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-#elseif ( $optionAemVersion == "6.4" )
+#if ( $optionAemVersion == "6.4" )
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
@@ -280,7 +257,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-cloud-dependencies</artifactId>
-        <version>2020.04.2793.20200403T195013Z-200130.0000</version>
+        <version>WCMIO_AEM_CLOUD_DEPENDENCIES_LATEST_VERSION</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -288,7 +265,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.5.4.0001#{else}6.5.0.0001#end</version>
+        <version>#if($optionAemServicePack=="y")6.5.5.0000#{else}6.5.0.0001#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -336,11 +313,11 @@
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>5.5.2</version>
+        <version>5.6.2</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "3.2.4" )
+#set( $mockitoVersion = "3.3.3" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
@@ -352,7 +329,7 @@
         <version>${mockitoVersion}</version>
       </dependency>
 
-#if ( $optionAemVersion == "6.3" || $optionAemVersion == "6.4" )
+#if ( $optionAemVersion == "6.4" )
       <!-- For build compatibility with Java 11 -->
       <dependency>
         <groupId>org.apache.geronimo.specs</groupId>
@@ -379,23 +356,5 @@
       </plugins>
     </pluginManagement>
   </build>
-#if ( $optionAemVersion == "cloud" )
-
-  <!-- Workaround to obtain aem-sdk-api from Experience Cloud Maven repository -->
-  <repositories>
-    <repository>
-      <id>adobe-aem-releases</id>
-      <name>Adobe AEM Repository</name>
-      <url>https://downloads.experiencecloud.adobe.com/content/maven/public/</url>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-#end
 
 </project>

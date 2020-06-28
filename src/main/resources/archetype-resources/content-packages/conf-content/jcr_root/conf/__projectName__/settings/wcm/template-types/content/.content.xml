@@ -5,5 +5,8 @@
     <jcr:content
         jcr:description="Editable content template"
         jcr:primaryType="cq:PageContent"
-        jcr:title="${projectName} Content"/>
+        jcr:title="${projectName} Content"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
+        cq:lastReplicationAction="Activate"/>
 </jcr:root>

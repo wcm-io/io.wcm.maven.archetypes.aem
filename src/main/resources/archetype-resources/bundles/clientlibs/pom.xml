@@ -17,6 +17,7 @@
   <name>${projectName} Clientlibs</name>
 
   <build>
+#if ( $optionAemVersion != "cloud" )
     <resources>
       <!-- copy webapp resources to SLING-INF/app-root -->
       <resource>
@@ -35,6 +36,7 @@
       </resource>
     </resources>
 
+#end
     <plugins>
 
       <plugin>

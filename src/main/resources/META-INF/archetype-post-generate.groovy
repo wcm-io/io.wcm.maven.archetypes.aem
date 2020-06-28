@@ -1,7 +1,9 @@
+@Grab(group="org.codehaus.groovy", module="groovy-xml", version="2.4.16")
 import java.util.regex.Pattern
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 import groovy.io.FileType
+import groovy.util.XmlSlurper
 
 def rootDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId())
 def javaPackage = request.getProperties().get("package")
@@ -20,11 +22,9 @@ def uiAppsPackage = new File(rootDir, "content-packages/ui.apps")
 def configDefinition = new File(rootDir, "config-definition")
 def frontend = new File(rootDir, "frontend")
 def rootPom = new File(rootDir, "pom.xml")
+def parentPom = new File(rootDir, "parent/pom.xml")
 
 // validate parameters - throw exceptions for invalid combinations
-if (optionAemServicePack == "n" && optionAemVersion == "6.3") {
-  throw new RuntimeException("For AEM 6.3 optionAemServicePack='y' is required because AEM 6.3 is only supported with latest service pack.")
-}
 if (optionAemServicePack == "n" && optionAemVersion == "6.4") {
   throw new RuntimeException("For AEM 6.4 optionAemServicePack='y' is required because AEM 6.4 is only supported with latest service pack.")
 }
@@ -43,7 +43,7 @@ if (optionEditableTemplates == "n" && optionWcmioHandler == "n") {
 if (!(javaPackage ==~ /^[a-z0-9\.]+$/)) {
   throw new RuntimeException("Java package name is invalid: " + javaPackage)
 }
-if (optionJavaVersion == "11" && (optionAemVersion == "6.3" || optionAemVersion == "6.4")) {
+if (optionJavaVersion == "11" && (optionAemVersion == "6.4")) {
   throw new RuntimeException("Java 11 is only supported for AEM 6.5 and higher.")
 }
 
@@ -75,14 +75,14 @@ else {
 // remove files only relevant for wcm.io Handler projects
 if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/java/" + javaPackage.replace('.','/') + "/config").deleteDir()
-  
+
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/redirect.json").delete()
 
   assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root/${projectName}.app/css").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs/${projectName}.app/css").deleteDir()
-  
+
   if (optionFrontend == "y") {
     assert new File(frontend, "src/components/carousel/carousel.scss").delete()
     assert new File(frontend, "src/components/image").deleteDir()
@@ -134,12 +134,24 @@ if (optionContextAwareConfig == "n" && optionWcmioHandler == "n" ) {
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/admin").deleteDir()
 
   assert new File(sampleContentPackage, "jcr_root/content/${projectName}/en/tools").deleteDir()
+  assert new File(sampleContentPackage, "jcr_root/conf").deleteDir()
 }
 
 // remove conf-content package if not required
 if (optionEditableTemplates == "n") {
   removeModule(rootPom, "content-packages/conf-content")
   confContentPackage.deleteDir()
+}
+else {
+  // set last activated date in conf-content to current date
+  confContentPackage.eachFileRecurse(FileType.FILES) { file ->
+    if (file.name =~ /\.content\.xml$/) {
+      def fileContent = file.getText("UTF-8").replaceAll('\\Q2020-01-01T00:00:00.000+02:00\\E', new Date().format("yyyy-MM-dd'T00:00:00.000'XXX"))
+      file.newWriter("UTF-8").withWriter { w ->
+        w << fileContent
+      }
+    }
+  }  
 }
 
 // prepare project for editable templates
@@ -174,10 +186,20 @@ else {
   }
 }
 
-// remove environments only relevant for AEM Cloud service
-if (optionAemVersion != "cloud") {
-  assert new File(configDefinition, "src/main/dev-environments/dev.yaml").delete()
-  assert new File(configDefinition, "src/main/dev-environments/prod.yaml").delete()
+if (optionAemVersion == "cloud") {
+  // insert latest version of io.wcm.maven.aem-cloud-dependencies available on maven central
+  def metadata = new XmlSlurper().parse("https://repo1.maven.org/maven2/io/wcm/maven/io.wcm.maven.aem-cloud-dependencies/maven-metadata.xml")
+  def wcmioAemCloudDependenciesLatestVersion = metadata.versioning.latest.toString()
+  assert wcmioAemCloudDependenciesLatestVersion != null && wcmioAemCloudDependenciesLatestVersion != ""
+  def pomContent = parentPom.getText("UTF-8")
+  pomContent = pomContent.replaceAll("WCMIO_AEM_CLOUD_DEPENDENCIES_LATEST_VERSION", wcmioAemCloudDependenciesLatestVersion)
+  parentPom.newWriter("UTF-8").withWriter { w ->
+    w << pomContent
+  }
+}
+else {
+  // remove environments only relevant for AEM Cloud service
+  assert new File(configDefinition, "src/main/dev-environments/cloud.yaml").delete()
 }
 
 // convert all line endings to unix-style

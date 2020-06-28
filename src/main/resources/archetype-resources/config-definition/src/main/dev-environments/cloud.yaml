@@ -19,6 +19,15 @@ nodes:
   roles:
   - role: aem-dispatcher-cloud
     variant: aem-publish
+  config:
+    dispatcher:
+      # Allow access to model.json
+      filter:
+      - _merge_
+      - url: /content(/.*)?
+        extension: json
+        selectors: model
+        type: allow
 
 
 config:
@@ -31,26 +40,34 @@ config:
     confContent: true
 #end
     # Whether to deploy sample content
-    sampleContent: false
+    sampleContent: true
+
+  httpd:
+    headers:
+      # Set default expiration time for text/html responses (also affects dispatcher caching/invalidation)
+      htmlExpirationTimeMin: 0
 
   # Replication configuration not required for AEM cloud service
   replication:
     author.generatePackage: false
     publish.generatePackage: false
 
-  # Use this AEM configuration for STAGE and PROD environments in AEM Cloud service
-  # Please note: the dispatcher configuration is used for DEV as well, because AEM cloud service supports only a single dispatcher configuration
-  cloudManager.target:
-  - stage
-  - prod
-
 
 tenants:
 - tenant: ${projectName}
   config:
     httpd:
+      # Simplified server name setup that can be deployed to any host name using "*" als server alias
+#if ( $optionWcmioHandler != "y" )
+      # This simplified setup may lead to invalid links generated on the publish instances - use the alternative listed below instead
+#end
       serverName: publish
       serverAliasNames:
       - "*"
+      # Alternative: Use this setup to configure individual hostnames for dev/stage/prod in the cloud
+      #cloudManagerConditional:
+      #  dev.serverName: publish-XXX.adobeaemcloud.com
+      #  stage.serverName: publish-XXX.adobeaemcloud.com
+      #  prod.serverName: publish-XXX.adobeaemcloud.com
       rootRedirect.url: /en.html
     sling.mapping.rootPath: /content/${projectName}

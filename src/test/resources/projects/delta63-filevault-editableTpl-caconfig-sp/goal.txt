@@ -1,1 +1,0 @@
--f ../delta63Project -U clean package

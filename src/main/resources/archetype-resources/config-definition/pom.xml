@@ -14,7 +14,8 @@
   <version>${version}</version>
   <packaging>config-definition</packaging>
 
-  <description>AEM Application CONGA roles and templates</description>
+  <name>${projectName} config-definition</name>
+  <description>CONGA roles and template definitions</description>
 
   <dependencies>
 
@@ -119,8 +120,8 @@
             </goals>
             <configuration>
               <group>${packageGroupName}</group>
-              <!-- Use separate dependency chains for immutable and mutable packages -->
-              <autoDependenciesSeparateMutable>true</autoDependenciesSeparateMutable>
+              <!-- Workaround because Cloud Manager does not properly support dependencies for mutable content packages yet -->
+              <autoDependenciesMode>IMMUTABLE_ONLY</autoDependenciesMode>
             </configuration>
           </execution>
 
@@ -151,7 +152,7 @@
 
 #if ( $optionAemVersion == "cloud" )
   <profiles>
-  
+
     <!-- Skip building of Cloud Manager ZIP in "fast" profile -->
     <profile>
       <id>fast</id>
@@ -163,7 +164,7 @@
         <conga.cloudManager.dispatcherConfig.skip>true</conga.cloudManager.dispatcherConfig.skip>
       </properties>
     </profile>
-  
+
   </profiles>
 
 #end
