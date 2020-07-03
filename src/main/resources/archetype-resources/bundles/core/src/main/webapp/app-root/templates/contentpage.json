@@ -3,7 +3,7 @@
   "jcr:title": "${projectName} Content",
   "ranking": 10,
 
-  "allowedPaths": "^/content/${projectName}/.+$",
+  "allowedPaths": "^/content/${projectName}(/.+)?$",
   "allowedChildren": "^/apps/${projectName}/core/.*$",
 
   "jcr:content": {

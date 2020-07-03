@@ -3,7 +3,7 @@
     jcr:primaryType="cq:Template"
     jcr:title="${projectName} Content"
     allowedChildren="^/apps/${projectName}/.*$"
-    allowedPaths="^/content/${projectName}/.+$"
+    allowedPaths="^/content/${projectName}(/.+)?$"
     ranking="{Long}10">
     <jcr:content
         jcr:primaryType="cq:PageContent"
