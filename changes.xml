@@ -31,6 +31,9 @@
         Default Sling logging configuration: Enabled "packaging data".
       </action>
       <action type="update" dev="sseifert">
+        conf-content: Make sure activated status is not set in initial content section of editable templates.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
