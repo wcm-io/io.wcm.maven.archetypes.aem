@@ -146,6 +146,10 @@ if (optionContextAwareConfig == "n" && optionWcmioHandler == "n" ) {
 if (optionEditableTemplates == "n") {
   removeModule(rootPom, "content-packages/conf-content")
   confContentPackage.deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/global/xfpage.json").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/global/xfpage").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/global/xfpage").deleteDir()
+  assert new File(sampleContentPackage, "jcr_root/content/experience-fragments").deleteDir()
 }
 else {
   // set last activated date in conf-content to current date

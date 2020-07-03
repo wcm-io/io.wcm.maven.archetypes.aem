@@ -6,6 +6,9 @@
     </filter>
     <filter root="/content/${projectName}"/>
 #if( $optionEditableTemplates == "y" )
+    <filter root="/content/experience-fragments/${projectName}"/>
+#end
+#if( $optionContextAwareConfig == "y" )
     <filter root="/conf/${projectName}">
         <include pattern="/conf/${projectName}/.*"/>
         <exclude pattern="/conf/${projectName}/rep:policy(/.*)?"/>

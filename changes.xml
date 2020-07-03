@@ -25,9 +25,12 @@
 
     <release version="3.2.0" date="not released">
       <action type="add" dev="sseifert">
-        Add proxy components for all core components.
+        Add experience fragment template.
       </action>
       <action type="add" dev="sseifert">
+        Add proxy components for all core components.
+      </action>
+      <action type="update" dev="sseifert">
         Rename custom carousel component to customcarousel.
       </action>
       <action type="update" dev="sseifert">
