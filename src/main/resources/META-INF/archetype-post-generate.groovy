@@ -85,8 +85,8 @@ if (optionWcmioHandler == "n") {
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs/${projectName}.app/css").deleteDir()
 
   if (optionFrontend == "y") {
-    assert new File(frontend, "src/components/carousel/carousel.scss").delete()
-    assert new File(frontend, "src/components/image").deleteDir()
+    assert new File(frontend, "src/components/customcarousel/customcarousel.scss").delete()
+    assert new File(frontend, "src/components/responsiveimage").deleteDir()
   }
 
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/admin/redirect").deleteDir()
