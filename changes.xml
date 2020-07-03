@@ -25,6 +25,12 @@
 
     <release version="3.1.2" date="not released">
       <action type="update" dev="sseifert">
+        Do not generate source JARs for content package projects.
+      </action>
+      <action type="update" dev="sseifert">
+        Default Sling logging configuration: Enabled "packaging data".
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
