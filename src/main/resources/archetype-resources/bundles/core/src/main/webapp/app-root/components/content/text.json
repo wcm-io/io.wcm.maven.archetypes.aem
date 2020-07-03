@@ -1,6 +1,6 @@
 {
   "jcr:primaryType": "cq:Component",
   "jcr:title": "Text",
-  "componentGroup": "${projectName}",
-  "sling:resourceSuperType": "#if($optionWcmioHandler=='y')wcm-io/wcm/core/components/text/v2/text#{else}core/wcm/components/text/v2/text#end"
+  "componentGroup": "${projectName} Content",
+  "sling:resourceSuperType": "#if($optionWcmioHandler=='y')wcm-io/wcm/core/components/#{else}core/wcm/components/#{end}text/v2/text"
 }

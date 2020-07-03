@@ -3,10 +3,10 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
-        cq:template="#if($optionEditableTemplates=="y")/conf/${projectName}/settings/wcm/templates/homepage#{else}/apps/${projectName}/core/templates/homepage#end"
+        cq:template="#if($optionEditableTemplates=="y")/conf/${projectName}/settings/wcm/templates/contentpage#{else}/apps/${projectName}/core/templates/contentpage#end"
         jcr:primaryType="cq:PageContent"
         jcr:title="en"
-        sling:resourceType="#if($optionEditableTemplates=="y")${projectName}/core/components/global/page#{else}${projectName}/core/components/page/homepage#end"
+        sling:resourceType="#if($optionEditableTemplates=="y")${projectName}/core/components/global/page#{else}${projectName}/core/components/page/contentpage#end"
         navTitle="HOME"
         pageTitle="${projectName} Sample Site">
 #if ($optionEditableTemplates == "y")
@@ -14,33 +14,33 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
 #end
-            <carousel
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="${projectName}/core/components/content/carousel">
-                <slides jcr:primaryType="nt:unstructured">
-                    <item0
-                        jcr:primaryType="nt:unstructured"
-#if ($optionWcmioHandler == 'n')
-                        sling:resourceType="${projectName}/core/components/content/image"
-#end
-                        fileReference="/content/dam/${projectName}/chicago.jpg"/>
-                    <item1
-                        jcr:primaryType="nt:unstructured"
-#if ($optionWcmioHandler == 'n')
-                        sling:resourceType="${projectName}/core/components/content/image"
-#end
-                        fileReference="/content/dam/${projectName}/nature.jpg"/>
-                    <item2
-                        jcr:primaryType="nt:unstructured"
-#if ($optionWcmioHandler == 'n')
-                        sling:resourceType="${projectName}/core/components/content/image"
-#end
-                        fileReference="/content/dam/${projectName}/prague.jpg"/>
-                </slides>
-            </carousel>
             <content
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="#if($optionEditableTemplates == "y")wcm/foundation/components/responsivegrid#{else}#if($optionWcmioHandler=='y')wcm-io/wcm/parsys/components/parsys#{else}foundation/components/parsys#end#end">
+                sling:resourceType="#if($optionEditableTemplates == "y")${projectName}/core/components/container/container#{else}#if($optionWcmioHandler=='y')wcm-io/wcm/parsys/components/parsys#{else}foundation/components/parsys#end#end">
+                <customcarousel
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="${projectName}/core/components/content/customcarousel">
+                    <slides jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+#if ($optionWcmioHandler == 'n')
+                            sling:resourceType="${projectName}/core/components/content/image"
+#end
+                            fileReference="/content/dam/${projectName}/chicago.jpg"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+#if ($optionWcmioHandler == 'n')
+                            sling:resourceType="${projectName}/core/components/content/image"
+#end
+                            fileReference="/content/dam/${projectName}/nature.jpg"/>
+                        <item2
+                            jcr:primaryType="nt:unstructured"
+#if ($optionWcmioHandler == 'n')
+                            sling:resourceType="${projectName}/core/components/content/image"
+#end
+                            fileReference="/content/dam/${projectName}/prague.jpg"/>
+                    </slides>
+                </customcarousel>
                 <title
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Hello ${projectName}"

@@ -4,9 +4,14 @@
     "${projectName}.all"
   ],
   "embed": [
+    "core.wcm.components.commons.datalayer.v1",
+    "core.wcm.components.commons.site.container",
 #if ( $optionWcmioHandler != "y" )
     "core.wcm.components.image.v2",
 #end
+    "core.wcm.components.carousel.v1",
+    "core.wcm.components.tabs.v1",
+    "core.wcm.components.accordion.v1",
     "${projectName}.3rdparty",
     "${projectName}.app"
   ],

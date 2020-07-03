@@ -23,7 +23,13 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
-    <release version="3.1.2" date="not released">
+    <release version="3.2.0" date="not released">
+      <action type="add" dev="sseifert">
+        Add proxy components for all core components.
+      </action>
+      <action type="add" dev="sseifert">
+        Rename custom carousel component to customcarousel.
+      </action>
       <action type="update" dev="sseifert">
         Do not generate source JARs for content package projects.
       </action>
@@ -35,6 +41,9 @@
       </action>
       <action type="update" dev="sseifert">
         Update dependencies.
+      </action>
+      <action type="remove" dev="sseifert">
+        Remove homepage template.
       </action>
     </release>
 

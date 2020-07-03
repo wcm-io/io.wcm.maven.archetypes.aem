@@ -3,6 +3,37 @@
     jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="cq:Page">
     <rep:policy/>
+    <${projectName} jcr:primaryType="nt:unstructured">
+        <core jcr:primaryType="nt:unstructured">
+            <components jcr:primaryType="nt:unstructured">
+                <container jcr:primaryType="nt:unstructured">
+                    <container jcr:primaryType="nt:unstructured">
+                        <content-container
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Content Container"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[group:${projectName} Container,group:${projectName} Content]">
+                            <jcr:content
+                                jcr:primaryType="nt:unstructured"
+                                jcr:mixinTypes="[cq:ReplicationStatus]"
+                                cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
+                                cq:lastReplicationAction="Activate"/>
+                            <cq:authoring jcr:primaryType="nt:unstructured">
+                                <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        assetGroup="media"
+                                        assetMimetype="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                        droptarget="image"
+                                        resourceType="#if($optionWcmioHandler=='y')${projectName}/core/components/content/responsiveimage#{else}${projectName}/core/components/content/image#end"/>
+                                </assetToComponentMapping>
+                            </cq:authoring>
+                        </content-container>
+                    </container>
+                </container>
+            </components>
+        </core>
+    </${projectName}>
     <wcm jcr:primaryType="nt:unstructured">
         <foundation jcr:primaryType="nt:unstructured">
             <components jcr:primaryType="nt:unstructured">
@@ -11,34 +42,13 @@
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Root Container"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/libs/wcm/foundation/components/responsivegrid,/apps/${projectName}/core/components/content/carousel,/apps/${projectName}/core/components/content/image,/apps/${projectName}/core/components/structure/imprint]">
+                        components="[/apps/${projectName}/core/components/container/container,group:${projectName} Templating]">
                         <jcr:content
                             jcr:primaryType="nt:unstructured"
                             jcr:mixinTypes="[cq:ReplicationStatus]"
                             cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
                             cq:lastReplicationAction="Activate"/>
                     </root-container>
-                    <content-container
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Content Container"
-                        sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/apps/${projectName}/core/components/content/image,/apps/${projectName}/core/components/content/text,/apps/${projectName}/core/components/content/title]">
-                        <jcr:content
-                            jcr:primaryType="nt:unstructured"
-                            jcr:mixinTypes="[cq:ReplicationStatus]"
-                            cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
-                            cq:lastReplicationAction="Activate"/>
-                        <cq:authoring jcr:primaryType="nt:unstructured">
-                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
-                                <image
-                                    jcr:primaryType="nt:unstructured"
-                                    assetGroup="media"
-                                    assetMimetype="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
-                                    droptarget="image"
-                                    resourceType="${projectName}/core/components/content/image"/>
-                            </assetToComponentMapping>
-                        </cq:authoring>
-                    </content-container>
                 </responsivegrid>
             </components>
         </foundation>

@@ -1,7 +1,7 @@
 import $ from "jquery";
-import Carousel from "./components/carousel/carousel";
+import CustomCarousel from "./components/customcarousel/customcarousel";
 
 // Document Ready
 $(() => {
-  Carousel();
+  CustomCarousel();
 });

@@ -4,5 +4,4 @@
     jcr:primaryType="cq:Page">
     <rep:policy/>
     <contentpage/>
-    <homepage/>
 </jcr:root>

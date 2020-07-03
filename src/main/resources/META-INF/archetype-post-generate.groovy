@@ -79,6 +79,7 @@ if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/redirect.json").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/content/responsiveimage.json").delete()
 
   assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root/${projectName}.app/css").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs/${projectName}.app/css").deleteDir()
@@ -89,13 +90,17 @@ if (optionWcmioHandler == "n") {
   }
 
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/admin/redirect").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/admin/redirect").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/admin/page/redirect").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/content/responsiveimage").deleteDir()
 
   assert new File(configDefinition, "src/main/templates/${projectName}-aem-cms/${projectName}-aem-cms-rewriter-config.json.hbs").delete()
 }
 else {
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/structureElement").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/content/image.json").delete()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/admin/page/structureElement/structureElement.html").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/content/image").deleteDir()
 }
 
 // refactor project layout when multi bundle layout is switched off
@@ -159,12 +164,9 @@ if (optionEditableTemplates == "y") {
   assert new File(coreBundle, "src/main/webapp/app-root/components/page").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/contentpage.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/contentpage").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root/templates/homepage.json").delete()
-  assert new File(coreBundle, "src/main/webapp/app-root/templates/homepage").deleteDir()
 
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/page").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/contentpage").deleteDir()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/homepage").deleteDir()
 }
 else {
   assert new File(confContentPackage, "jcr_root/conf/${projectName}/settings").deleteDir()
