@@ -34,6 +34,9 @@
         Rename custom carousel component to customcarousel.
       </action>
       <action type="update" dev="sseifert">
+        LinkHandler: Enable InternalCrossContextLinkType by default.
+      </action>
+      <action type="update" dev="sseifert">
         Do not generate source JARs for content package projects.
       </action>
       <action type="update" dev="sseifert">
