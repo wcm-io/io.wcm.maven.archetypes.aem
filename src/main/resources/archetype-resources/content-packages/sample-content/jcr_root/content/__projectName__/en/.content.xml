@@ -3,10 +3,10 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
-        cq:template="#if($optionEditableTemplates=="y")/conf/${projectName}/settings/wcm/templates/contentpage#{else}/apps/${projectName}/core/templates/contentpage#end"
+        cq:template="#if($optionEditableTemplates=="y")/conf/${projectName}/settings/wcm/templates/homepage#{else}/apps/${projectName}/core/templates/homepage#end"
         jcr:primaryType="cq:PageContent"
         jcr:title="en"
-        sling:resourceType="#if($optionEditableTemplates=="y")${projectName}/core/components/global/page#{else}${projectName}/core/components/page/contentpage#end"
+        sling:resourceType="#if($optionEditableTemplates=="y")${projectName}/core/components/global/page#{else}${projectName}/core/components/page/homepage#end"
         navTitle="HOME"
         pageTitle="${projectName} Sample Site">
 #if ($optionEditableTemplates == "y")

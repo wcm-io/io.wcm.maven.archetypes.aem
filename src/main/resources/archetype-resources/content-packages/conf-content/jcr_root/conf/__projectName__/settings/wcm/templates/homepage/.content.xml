@@ -4,9 +4,9 @@
     <jcr:content
         cq:templateType="/conf/${projectName}/settings/wcm/template-types/content"
         jcr:primaryType="cq:PageContent"
-        jcr:title="${projectName} Content"
-        allowedPaths="^/content/${projectName}/.+$"
-        ranking="{Long}10"
+        jcr:title="${projectName} Homepage"
+        allowedPaths="^/content/${projectName}(/.+)?$"
+        ranking="{Long}20"
         status="enabled"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"

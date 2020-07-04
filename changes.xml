@@ -45,9 +45,6 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
-      <action type="remove" dev="sseifert">
-        Remove homepage template.
-      </action>
     </release>
 
     <release version="3.1.0" date="2020-06-28">

@@ -168,9 +168,12 @@ if (optionEditableTemplates == "y") {
   assert new File(coreBundle, "src/main/webapp/app-root/components/page").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/contentpage.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/contentpage").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root/templates/homepage.json").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root/templates/homepage").deleteDir()
 
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/page").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/contentpage").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/homepage").deleteDir()
 }
 else {
   assert new File(confContentPackage, "jcr_root/conf/${projectName}/settings").deleteDir()
