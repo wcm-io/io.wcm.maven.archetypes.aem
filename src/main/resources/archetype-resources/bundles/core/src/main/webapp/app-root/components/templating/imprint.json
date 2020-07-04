@@ -1,6 +1,6 @@
 {
   "jcr:primaryType": "cq:Component",
-  "jcr:title": "Imprint",
+  "jcr:title": "Imprint (Custom)",
   "componentGroup": "${projectName} Templating",
 
   "cq:editConfig": {

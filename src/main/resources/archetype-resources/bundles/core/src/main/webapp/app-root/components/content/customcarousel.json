@@ -1,6 +1,6 @@
 {
   "jcr:primaryType": "cq:Component",
-  "jcr:title": "Custom Carousel",
+  "jcr:title": "Carousel (Custom)",
   "componentGroup": "${projectName} Content",
 
 #if ($optionWcmioHandler == 'y')
@@ -15,7 +15,7 @@
   "cq:dialog": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "cq/gui/components/authoring/dialog",
-    "jcr:title": "Custom Carousel",
+    "jcr:title": "Carousel (Custom)",
     "content": {
       "sling:resourceType": "granite/ui/components/coral/foundation/fixedcolumns",
       "items": {
