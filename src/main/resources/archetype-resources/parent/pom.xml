@@ -119,7 +119,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.7.2</version>
+        <version>1.7.3-SNAPSHOT</version>
       </dependency>
 #end
 #if ( $optionWcmioHandler == "y" )
