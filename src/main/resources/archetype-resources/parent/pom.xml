@@ -36,8 +36,7 @@
     <!-- Versions -->
     <core.wcm.components.version>2.10.0</core.wcm.components.version>
 #if( $optionAcsCommons == "y" )
-    <!-- Stick with version 4.5.2 until https://github.com/Adobe-Consulting-Services/acs-aem-commons/issues/2298 is solved -->
-    <acs.aem.commons.version>4.5.2</acs.aem.commons.version>
+    <acs.aem.commons.version>4.7.2</acs.aem.commons.version>
 #end
 
     <!-- Enable reproducible builds -->
