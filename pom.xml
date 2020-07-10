@@ -96,6 +96,15 @@
         </executions>
       </plugin>
 
+      <!-- No failsafe integration tests in archetype itself - make sure not to execute those from the generated test projects -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+
     </plugins>
 
     <pluginManagement>

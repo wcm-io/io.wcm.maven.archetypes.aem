@@ -128,6 +128,11 @@
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
+    <!-- Generate an integration tests project based on AEM testing clients. -->
+    <requiredProperty key="optionIntegrationTests">
+      <defaultValue>n</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
 
   </requiredProperties>
 
@@ -390,6 +395,29 @@
           <directory>src/main/dev-environments</directory>
           <includes>
             <include>**/*.yaml</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
+    <module id="${rootArtifactId}.tests.integration" dir="tests/integration" name="${rootArtifactId}.tests.integration">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>README.md</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+          <directory>src/test/java</directory>
+          <includes>
+            <include>**/*.java</include>
           </includes>
         </fileSet>
       </fileSets>

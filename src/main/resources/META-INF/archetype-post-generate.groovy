@@ -13,6 +13,7 @@ def optionEditableTemplates = request.getProperties().get("optionEditableTemplat
 def optionMultiBundleLayout = request.getProperties().get("optionMultiBundleLayout")
 def optionContextAwareConfig = request.getProperties().get("optionContextAwareConfig")
 def optionWcmioHandler = request.getProperties().get("optionWcmioHandler")
+def optionIntegrationTests = request.getProperties().get("optionIntegrationTests")
 
 def coreBundle = new File(rootDir, "bundles/core")
 def clientlibsBundle = new File(rootDir, "bundles/clientlibs")
@@ -23,6 +24,7 @@ def configDefinition = new File(rootDir, "config-definition")
 def frontend = new File(rootDir, "frontend")
 def rootPom = new File(rootDir, "pom.xml")
 def parentPom = new File(rootDir, "parent/pom.xml")
+def tests = new File(rootDir, "tests")
 
 // validate parameters - throw exceptions for invalid combinations
 if (optionAemServicePack == "n" && optionAemVersion == "6.4") {
@@ -45,6 +47,9 @@ if (!(javaPackage ==~ /^[a-z0-9\.]+$/)) {
 }
 if (optionJavaVersion == "11" && (optionAemVersion == "6.4")) {
   throw new RuntimeException("Java 11 is only supported for AEM 6.5 and higher.")
+}
+if (optionIntegrationTests == "<" && optionAemVersion == "6.4") {
+  throw new RuntimeException("Integration tests not supported for AEM 6.4.")
 }
 
 // helper methods
@@ -210,6 +215,12 @@ else {
   // remove environments only relevant for AEM Cloud service
   assert new File(configDefinition, "src/main/dev-environments/cloud.yaml").delete()
 }
+
+if (optionIntegrationTests == "n") {
+  removeModule(rootPom, "tests/integration")
+  tests.deleteDir()
+}
+
 
 // convert all line endings to unix-style
 rootDir.eachFileRecurse(FileType.FILES) { file ->

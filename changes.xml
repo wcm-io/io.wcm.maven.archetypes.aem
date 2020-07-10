@@ -30,6 +30,9 @@
       <action type="add" dev="sseifert">
         Add proxy components for all core components.
       </action>
+      <action type="add" dev="sseifert"><![CDATA[
+        Add integration tests based on <a href="https://github.com/adobe/aem-testing-clients" target="_blank">AEM testing clients</a>.
+      ]]></action>
       <action type="update" dev="sseifert">
         Rename custom carousel component to customcarousel.
       </action>

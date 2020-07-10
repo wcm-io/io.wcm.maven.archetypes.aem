@@ -54,7 +54,7 @@ Modules of this project:
 #end
 #if ( $optionSlingInitialContentBundle == "y" )
 * [bundles/core](bundles/core/): OSGi bundle containing:
-  * Java classes (e.g. Sling Models, Servlets, business logic)
+  * Java classes (e.g. Sling Models, Servlets, business logic) with unit tests
 #if ( $optionEditableTemplates == "y" )
   * AEM components with their scripts and dialog definitions (included as `Sling-Initial-Content`)
 #else
@@ -84,6 +84,7 @@ Modules of this project:
 #end
 * [content-packages/sample-content](content-packages/sample-content/): AEM content package containing sample content (for development and test purposes)
 * [config-definition](config-definition/): Defines the CONGA roles and templates for this application. Also contains a `development` CONGA environment for deploying to local development instances.
+* [tests/integration/](tests/integration/): Integration tests running against the HTTP interface of AEM
 
 
 [wcmio-maven-archetype-aem]: https://wcm.io/tooling/maven/archetypes/aem/
