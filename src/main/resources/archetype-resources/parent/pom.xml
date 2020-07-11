@@ -311,6 +311,7 @@
         <version>${mockitoVersion}</version>
       </dependency>
 
+#if ( $optionIntegrationTests == "y" )
       <!-- Integration Tests -->
       <dependency>
         <groupId>junit</groupId>
@@ -342,6 +343,7 @@
         <version>1.7.25</version>
       </dependency>
 
+#end
 #if ( $optionAemVersion == "6.4" )
       <!-- For build compatibility with Java 11 -->
       <dependency>

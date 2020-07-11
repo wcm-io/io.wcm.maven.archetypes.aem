@@ -84,7 +84,9 @@ Modules of this project:
 #end
 * [content-packages/sample-content](content-packages/sample-content/): AEM content package containing sample content (for development and test purposes)
 * [config-definition](config-definition/): Defines the CONGA roles and templates for this application. Also contains a `development` CONGA environment for deploying to local development instances.
+#if ( $optionIntegrationTests == "y" )
 * [tests/integration/](tests/integration/): Integration tests running against the HTTP interface of AEM
+#end
 
 
 [wcmio-maven-archetype-aem]: https://wcm.io/tooling/maven/archetypes/aem/
