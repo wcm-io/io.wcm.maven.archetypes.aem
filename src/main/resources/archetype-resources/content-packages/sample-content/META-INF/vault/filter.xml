@@ -12,7 +12,7 @@
     <filter root="/conf/${projectName}">
         <include pattern="/conf/${projectName}/.*"/>
         <exclude pattern="/conf/${projectName}/rep:policy(/.*)?"/>
-        <exclude pattern="/conf/${projectName}/settings(/.*)?"/>
+        <exclude pattern="/conf/${projectName}/settings/wcm(/.*)?"/>
     </filter>
 #end
 </workspaceFilter>

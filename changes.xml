@@ -49,6 +49,9 @@
         conf-content: Make sure activated status is not set in initial content section of editable templates.
       </action>
       <action type="update" dev="sseifert">
+        sample-content: Enable cloud configurations folder by default.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
