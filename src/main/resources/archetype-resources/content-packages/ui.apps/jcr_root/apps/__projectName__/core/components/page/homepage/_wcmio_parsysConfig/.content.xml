@@ -4,6 +4,6 @@
     <paths jcr:primaryType="nt:unstructured">
         <content
             jcr:primaryType="nt:unstructured"
-            allowedChildren="[${projectName}/core/components/content/image,${projectName}/core/components/content/text,${projectName}/core/components/content/title]"/>
+            allowedChildren="[${projectName}/core/components/content/customcarousel,#if($optionWcmioHandler=='y')${projectName}/core/components/content/responsiveimage#{else}${projectName}/core/components/content/image#end,${projectName}/core/components/content/text,${projectName}/core/components/content/title]"/>
     </paths>
 </jcr:root>

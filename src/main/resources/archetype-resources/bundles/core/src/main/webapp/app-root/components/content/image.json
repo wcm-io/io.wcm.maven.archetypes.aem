@@ -1,6 +1,6 @@
 {
   "jcr:primaryType": "cq:Component",
   "jcr:title": "Image",
-  "componentGroup": "${projectName}",
-  "sling:resourceSuperType": "#if($optionWcmioHandler=='y')wcm-io/wcm/core/components/wcmio/responsiveimage/v1/responsiveimage#{else}core/wcm/components/image/v2/image#end"
+  "componentGroup": "${projectName} Content",
+  "sling:resourceSuperType": "#if($optionWcmioHandler=='y')wcm-io/wcm/core/components/#{else}core/wcm/components/#{end}image/v2/image"
 }

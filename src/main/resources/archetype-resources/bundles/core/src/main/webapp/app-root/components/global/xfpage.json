@@ -1,0 +1,4 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "sling:resourceSuperType": "cq/experience-fragments/components/xfpage"
+}

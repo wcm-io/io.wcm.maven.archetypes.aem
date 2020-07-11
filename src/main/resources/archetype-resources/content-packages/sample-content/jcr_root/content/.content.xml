@@ -4,17 +4,11 @@
     jcr:primaryType="sling:OrderedFolder">
     <rep:policy/>
     <dam/>
+    <campaigns/>
+    <projects/>
     <experience-fragments/>
     <cq:tags/>
-    <projects/>
     <usergenerated/>
-    <screens/>
-    <catalogs/>
     <launches/>
-    <campaigns/>
-    <communities/>
-    <sites/>
-    <forms/>
-    <community/>
     <${projectName}/>
 </jcr:root>

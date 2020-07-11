@@ -11,6 +11,7 @@ import io.wcm.wcm.commons.util.TemplatePathInfo;
 /**
  * List of templates with special handling in code.
  */
+@SuppressWarnings("CQRules:CQBP-71") // allow hard-coded template paths
 public enum AppTemplate implements TemplatePathInfo {
 
   /**

@@ -35,7 +35,17 @@ module.exports = {
     {
       name: "${projectName}.all",
       serializationFormat: "${serializationFormat}",
-      embed: [#if($optionWcmioHandler!='y')"core.wcm.components.image.v1", #{end}"${projectName}.app"],
+      embed: [
+        "core.wcm.components.commons.datalayer.v1",
+        "core.wcm.components.commons.site.container",
+#if ( $optionWcmioHandler != "y" )
+        "core.wcm.components.image.v2",
+#end
+        "core.wcm.components.carousel.v1",
+        "core.wcm.components.tabs.v1",
+        "core.wcm.components.accordion.v1",
+        "${projectName}.app"
+      ],
       jsProcessor: ["default:none", "min:gcc;compilationLevel=whitespace"],
 #if ( $optionAemVersion != "cloud" )
       longCacheKey: "${project.version}-${buildNumber}",

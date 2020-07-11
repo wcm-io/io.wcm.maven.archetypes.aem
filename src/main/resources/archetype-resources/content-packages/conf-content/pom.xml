@@ -61,6 +61,10 @@
             If this is not case, remove this configuration.
           -->
           <markReplicationActivated>true</markReplicationActivated>
+          <markReplicationActivatedIncludeNodes>
+            <path>^/conf/.+/settings/wcm/policies/.+/jcr:content$</path>
+            <path>^/conf/.+/settings/wcm/templates/[^/]+(/policies|/structure)?/jcr:content$</path>
+          </markReplicationActivatedIncludeNodes>
         </configuration>
       </plugin>
 
@@ -73,12 +77,12 @@
         </configuration>
       </plugin>
 
-      <!-- Do not deploy sources to repository -->
+      <!-- Do not generate sources JAR -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
         <configuration>
-          <attach>false</attach>
+          <skipSource>true</skipSource>
         </configuration>
       </plugin>
 

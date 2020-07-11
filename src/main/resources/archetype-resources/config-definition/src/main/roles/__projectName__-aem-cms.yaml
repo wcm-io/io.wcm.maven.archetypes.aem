@@ -124,13 +124,6 @@ config:
 #end
     sampleContent: false
 
-#if ( $optionAemVersion == "cloud" )
-  # Replication configuration not required for AEM cloud service
-  replication:
-    author.generatePackage: false
-    publish.generatePackage: false
-
-#end
   # Log levels
   log:
     projectSpecificLogLevel: warn

@@ -41,6 +41,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 | **optionNodeJsPlugin**              | n       | Use [wcm.io Node JS plugin][nodejs-maven--plugin] for frontend build (recommended when [Maven NodeJS Proxy][maven-nodejs-proxy] is used). If not enabled the [frontend-maven-plugin][frontend-maven-plugin] is used instead. For AEM Cloud Service it is recommended to stick with frontend-maven-plugin.
 | **optionWcmioHandler**              | n       | Setup project using wcm.io AEM libraries, especially the [wcm.io Handler][wcmio-handler] Infrastructure and [wcm.io WCM Core Components][wcmio-wcm-core-components]. _Requires optionContextAwareConfig='y'._
 | **optionAcsCommons**                | n       | Deploy [ACS AEM Commons][acs-aem-commons].
+| **optionIntegrationTests**          | n       | Generate an integration tests project based on [AEM testing clients][aem-testing-clients].
 
 \*) Sensible default
 
@@ -73,7 +74,8 @@ mvn archetype:generate -DinteractiveMode=false \
   -DoptionWcmioHandler=y \
   -DoptionAcsCommons=n \
   -DoptionFrontend=y \
-  -DoptionNodeJsPlugin=n
+  -DoptionNodeJsPlugin=n \
+  -DoptionIntegrationTests=n
 ```
 
 ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Minimal AEM project with FileVault package layout and Java 8 for AEM Cloud Service
@@ -100,9 +102,10 @@ mvn archetype:generate -DinteractiveMode=false \
   -DoptionMultiBundleLayout=n \
   -DoptionContextAwareConfig=y \
   -DoptionWcmioHandler=n \
-  -DoptionAcsCommons=y \
+  -DoptionAcsCommons=n \
   -DoptionFrontend=n \
-  -DoptionNodeJsPlugin=n
+  -DoptionNodeJsPlugin=n \
+  -DoptionIntegrationTests=n
 ```
 
 
@@ -132,3 +135,4 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 [nodejs-maven--plugin]: https://wcm.io/tooling/maven/plugins/nodejs-maven-plugin/
 [frontend-maven-plugin]: https://github.com/eirslett/frontend-maven-plugin
 [maven-nodejs-proxy]: https://github.com/wcm-io-devops/maven-nodejs-proxy
+[aem-testing-clients]: https://github.com/adobe/aem-testing-clients

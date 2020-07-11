@@ -23,6 +23,39 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
+    <release version="3.2.0" date="2020-07-11">
+      <action type="add" dev="sseifert">
+        Add experience fragment template.
+      </action>
+      <action type="add" dev="sseifert">
+        Add proxy components for all core components.
+      </action>
+      <action type="add" dev="sseifert"><![CDATA[
+        Add integration tests based on <a href="https://github.com/adobe/aem-testing-clients" target="_blank">AEM testing clients</a> (optional).
+      ]]></action>
+      <action type="update" dev="sseifert">
+        Rename custom carousel component to customcarousel.
+      </action>
+      <action type="update" dev="sseifert">
+        LinkHandler: Enable InternalCrossContextLinkType by default.
+      </action>
+      <action type="update" dev="sseifert">
+        Do not generate source JARs for content package projects.
+      </action>
+      <action type="update" dev="sseifert">
+        Default Sling logging configuration: Enabled "packaging data".
+      </action>
+      <action type="update" dev="sseifert">
+        conf-content: Make sure activated status is not set in initial content section of editable templates.
+      </action>
+      <action type="update" dev="sseifert">
+        sample-content: Enable cloud configurations folder by default.
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+    </release>
+
     <release version="3.1.0" date="2020-06-28">
       <action type="update" dev="sseifert">
         AEM cloud service: Use a single "cloud" CONGA environment for all cloud environments because AEM cloud service does not yet support deploying environment runmode-depending packages.

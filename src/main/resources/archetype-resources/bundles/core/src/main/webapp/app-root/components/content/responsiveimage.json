@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Responsive Image",
+  "componentGroup": "${projectName} Content",
+  "sling:resourceSuperType": "wcm-io/wcm/core/components/wcmio/responsiveimage/v1/responsiveimage"
+}

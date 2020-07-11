@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Navigation",
+  "componentGroup": "${projectName} Templating",
+  "sling:resourceSuperType": "#if($optionWcmioHandler=='y')wcm-io/wcm/core/components/#{else}core/wcm/components/#{end}navigation/v1/navigation"
+}

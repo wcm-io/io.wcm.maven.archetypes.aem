@@ -1,0 +1,6 @@
+<link rel="shortcut icon" href="#if($optionWcmioHandler=='y')/apps#{else}/etc.clientlibs#{end}/${projectName}/clientlibs/${projectName}.app/resources/img/favicon.ico" />
+
+<sly
+    data-sly-use.clientLib="#if($optionWcmioHandler=='y')/apps/wcm-io/wcm/ui/clientlibs/sightly/templates/clientlib.html#{else}/libs/granite/sightly/templates/clientlib.html#end"
+    data-sly-call="${symbol_dollar}{clientLib.css @ categories=['${projectName}.all']}"
+/>

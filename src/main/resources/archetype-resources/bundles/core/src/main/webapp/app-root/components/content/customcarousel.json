@@ -1,0 +1,60 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Carousel (Custom)",
+  "componentGroup": "${projectName} Content",
+
+#if ($optionWcmioHandler == 'y')
+  "wcmio:mediaFormats": ["wide"],
+  "wcmio:mediaCropAuto": true,
+
+#end
+  "cq:editConfig": {
+    "jcr:primaryType": "cq:EditConfig"
+  },
+
+  "cq:dialog": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "cq/gui/components/authoring/dialog",
+    "jcr:title": "Carousel (Custom)",
+    "content": {
+      "sling:resourceType": "granite/ui/components/coral/foundation/fixedcolumns",
+      "items": {
+        "column": {
+          "sling:resourceType": "granite/ui/components/coral/foundation/container",
+          "items": {
+
+            "slideMedia": {
+              "sling:resourceType": "granite/ui/components/coral/foundation/form/multifield",
+              "composite": true,
+              "fieldLabel": "Slide Assets",
+              "field": {
+                "sling:resourceType": "granite/ui/components/coral/foundation/container",
+                "name": "./slides",
+                "items": {
+#if ($optionWcmioHandler == 'y')
+                  "fileReference": {
+                    "sling:resourceType": "wcm-io/handler/media/components/granite/form/pathfield"
+                  }
+#else
+                  "fileReference": {
+                    "sling:resourceType": "granite/ui/components/coral/foundation/form/pathfield",
+                    "name": "./fileReference",
+                    "rootPath": "/content/dam/${projectName}"
+                  },
+                  "resourceType": {
+                    "sling:resourceType": "granite/ui/components/coral/foundation/form/hidden",
+                    "name": "./sling:resourceType",
+                    "value": "${projectName}/components/content/image"
+                  }
+#end
+                }
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+}

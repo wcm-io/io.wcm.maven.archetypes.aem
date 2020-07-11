@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "cq:Component",
+  "jcr:title": "Teaser",
+  "componentGroup": "${projectName} Content",
+  "sling:resourceSuperType": "#if($optionWcmioHandler=='y')wcm-io/wcm/core/components/#{else}core/wcm/components/#{end}teaser/v1/teaser"
+}

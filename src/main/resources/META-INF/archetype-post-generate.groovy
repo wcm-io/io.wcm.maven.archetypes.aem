@@ -13,6 +13,7 @@ def optionEditableTemplates = request.getProperties().get("optionEditableTemplat
 def optionMultiBundleLayout = request.getProperties().get("optionMultiBundleLayout")
 def optionContextAwareConfig = request.getProperties().get("optionContextAwareConfig")
 def optionWcmioHandler = request.getProperties().get("optionWcmioHandler")
+def optionIntegrationTests = request.getProperties().get("optionIntegrationTests")
 
 def coreBundle = new File(rootDir, "bundles/core")
 def clientlibsBundle = new File(rootDir, "bundles/clientlibs")
@@ -23,6 +24,7 @@ def configDefinition = new File(rootDir, "config-definition")
 def frontend = new File(rootDir, "frontend")
 def rootPom = new File(rootDir, "pom.xml")
 def parentPom = new File(rootDir, "parent/pom.xml")
+def tests = new File(rootDir, "tests")
 
 // validate parameters - throw exceptions for invalid combinations
 if (optionAemServicePack == "n" && optionAemVersion == "6.4") {
@@ -45,6 +47,9 @@ if (!(javaPackage ==~ /^[a-z0-9\.]+$/)) {
 }
 if (optionJavaVersion == "11" && (optionAemVersion == "6.4")) {
   throw new RuntimeException("Java 11 is only supported for AEM 6.5 and higher.")
+}
+if (optionIntegrationTests == "<" && optionAemVersion == "6.4") {
+  throw new RuntimeException("Integration tests not supported for AEM 6.4.")
 }
 
 // helper methods
@@ -79,23 +84,28 @@ if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/redirect.json").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/content/responsiveimage.json").delete()
 
   assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root/${projectName}.app/css").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs/${projectName}.app/css").deleteDir()
 
   if (optionFrontend == "y") {
-    assert new File(frontend, "src/components/carousel/carousel.scss").delete()
-    assert new File(frontend, "src/components/image").deleteDir()
+    assert new File(frontend, "src/components/customcarousel/customcarousel.scss").delete()
+    assert new File(frontend, "src/components/responsiveimage").deleteDir()
   }
 
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/admin/redirect").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/templates/admin/redirect").deleteDir()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/admin/page/redirect").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/content/responsiveimage").deleteDir()
 
   assert new File(configDefinition, "src/main/templates/${projectName}-aem-cms/${projectName}-aem-cms-rewriter-config.json.hbs").delete()
 }
 else {
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/structureElement").deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/content/image.json").delete()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/admin/page/structureElement/structureElement.html").delete()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/content/image").deleteDir()
 }
 
 // refactor project layout when multi bundle layout is switched off
@@ -141,6 +151,10 @@ if (optionContextAwareConfig == "n" && optionWcmioHandler == "n" ) {
 if (optionEditableTemplates == "n") {
   removeModule(rootPom, "content-packages/conf-content")
   confContentPackage.deleteDir()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/global/xfpage.json").delete()
+  assert new File(coreBundle, "src/main/webapp/app-root/components/global/xfpage").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/global/xfpage").deleteDir()
+  assert new File(sampleContentPackage, "jcr_root/content/experience-fragments").deleteDir()
 }
 else {
   // set last activated date in conf-content to current date
@@ -201,6 +215,12 @@ else {
   // remove environments only relevant for AEM Cloud service
   assert new File(configDefinition, "src/main/dev-environments/cloud.yaml").delete()
 }
+
+if (optionIntegrationTests == "n") {
+  removeModule(rootPom, "tests/integration")
+  tests.deleteDir()
+}
+
 
 // convert all line endings to unix-style
 rootDir.eachFileRecurse(FileType.FILES) { file ->
