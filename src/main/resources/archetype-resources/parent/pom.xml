@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.4.14</version>
+    <version>1.4.16</version>
     <relativePath/>
   </parent>
 
@@ -34,9 +34,9 @@
     <eclipse.settings.nullanalysis>enabled</eclipse.settings.nullanalysis>
 
     <!-- Versions -->
-    <core.wcm.components.version>2.10.0</core.wcm.components.version>
+    <core.wcm.components.version>2.11.1</core.wcm.components.version>
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>4.7.2</acs.aem.commons.version>
+    <acs.aem.commons.version>4.8.4</acs.aem.commons.version>
 #end
 
     <!-- Enable reproducible builds -->
@@ -133,7 +133,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.9.2</version>
+        <version>1.9.4</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -148,12 +148,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-#if ( $optionAemVersion == "cloud" )
-        <!-- Workaround for OSGi wiring problem accessing package com.adobe.cq.wcm.core.components.models.datalayer on AEM Cloud service -->
-        <version>1.2.2-2.8.0</version>
-#else
-        <version>1.4.2-2.10.0</version>
-#end
+        <version>1.5.0-2.11.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
