@@ -242,7 +242,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.5.5.0001-SNAPSHOT#{else}6.5.0.0002-SNAPSHOT#end</version>
+        <version>#if($optionAemServicePack=="y")6.5.6.0000-SNAPSHOT#{else}6.5.0.0002-SNAPSHOT#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
