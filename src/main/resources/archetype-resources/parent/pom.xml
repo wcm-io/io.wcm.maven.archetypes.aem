@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.4.16</version>
+    <version>1.4.18</version>
     <relativePath/>
   </parent>
 
@@ -148,7 +148,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.5.0-2.11.0</version>
+        <version>1.5.2-2.11.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -169,14 +169,14 @@
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
         <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
-        <version>1.8.0</version>
+        <version>1.8.2</version>
       </dependency>
 
       <!-- wcm.io Testing -->
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
-        <version>3.0.2</version>
+        <version>3.1.0</version>
       </dependency>
 #if ( $optionAemVersion == "6.4" || ($optionAemVersion == "6.5" && $optionAemServicePack=="n") )
       <dependency>
@@ -226,7 +226,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.4.8.0001#{else}6.4.0.0000#end</version>
+        <version>#if($optionAemServicePack=="y")6.4.8.0002#{else}6.4.0.0001#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -242,7 +242,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.5.5.0000#{else}6.5.0.0001#end</version>
+        <version>#if($optionAemServicePack=="y")6.5.6.0000#{else}6.5.0.0002#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

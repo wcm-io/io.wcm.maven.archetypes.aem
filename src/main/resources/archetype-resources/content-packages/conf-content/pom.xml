@@ -65,6 +65,7 @@
             <path>^/conf/.+/settings/wcm/policies/.+/jcr:content$</path>
             <path>^/conf/.+/settings/wcm/templates/[^/]+(/policies|/structure)?/jcr:content$</path>
           </markReplicationActivatedIncludeNodes>
+          <dateLastReplicated>2020-01-01T00:00:00.000+02:00</dateLastReplicated>
         </configuration>
       </plugin>
 
