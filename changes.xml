@@ -23,7 +23,7 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
-    <release version="3.2.4" date="not released">
+    <release version="3.2.4" date="2020-09-26">
       <action type="update" dev="sseifert">
         conf-content: Set fixed date when downloading content package and marking nodes as replicated.
       </action>
