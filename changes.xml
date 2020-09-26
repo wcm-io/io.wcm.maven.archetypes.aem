@@ -30,6 +30,9 @@
       <action type="update" dev="sseifert">
         Add support for AEM 6.5 SP6.
       </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
     </release>
 
     <release version="3.2.2" date="2020-08-26">
