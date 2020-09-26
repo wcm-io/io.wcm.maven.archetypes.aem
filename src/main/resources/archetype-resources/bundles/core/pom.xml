@@ -165,11 +165,13 @@
     </dependency>
 #end
 
+#if ( $optionAemVersion != "cloud" )
     <dependency>
       <groupId>com.adobe.cq</groupId>
       <artifactId>core.wcm.components.core</artifactId>
       <scope>compile</scope>
     </dependency>
+#end
 #if( $optionAcsCommons == "y" )
     <dependency>
       <groupId>com.adobe.acs</groupId>
