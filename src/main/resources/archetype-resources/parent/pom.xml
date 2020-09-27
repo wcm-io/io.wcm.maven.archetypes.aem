@@ -62,7 +62,7 @@
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.models.impl</artifactId>
-        <version>1.4.10</version>
+        <version>1.4.12</version>
       </dependency>
 #end
 #if ( $optionContextAwareConfig == "y" )

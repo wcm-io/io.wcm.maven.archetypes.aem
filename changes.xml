@@ -23,6 +23,18 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
+    <release version="3.2.6" date="2020-09-27">
+      <action type="add" dev="sseifert">
+        Generate archetype.properties with parameters used to generate the project.
+      </action>
+      <action type="fix" dev="sseifert"><![CDATA[
+        Workaround for <a href="https://github.com/adobe/aem-core-wcm-components/issues/1187">#1187</a>: Use responsive grid mode for content container in sample templates.
+      ]]></action>
+      <action type="fix" dev="sseifert">
+        Fix custom carousel CSS error when generating without frontend module.
+      </action>
+    </release>
+
     <release version="3.2.4" date="2020-09-26">
       <action type="update" dev="sseifert">
         conf-content: Set fixed date when downloading content package and marking nodes as replicated.

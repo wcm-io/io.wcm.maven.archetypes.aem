@@ -143,6 +143,7 @@
         <include>build-deploy-publish.sh</include>
         <include>build-deploy.sh</include>
         <include>README.md</include>
+        <include>archetype.properties</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">

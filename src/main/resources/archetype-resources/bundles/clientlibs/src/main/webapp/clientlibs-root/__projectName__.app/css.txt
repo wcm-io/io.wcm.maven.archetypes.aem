@@ -5,5 +5,5 @@ ${symbol_pound}base=css
 #if ( $optionWcmioHandler == "y" )
 
 image.css
-carousel.css
+customcarousel.css
 #end

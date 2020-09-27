@@ -35,7 +35,7 @@ You can deploy individual bundles or content packages to the local AEM instances
 $symbol_pound$symbol_pound$symbol_pound System requirements
 
 * JDK 1.8
-* Apache Maven 3.5.2 or higher
+* Apache Maven 3.6.0 or higher
 * AEM ${optionAemVersion} author instance running on port ${aemAuthorPort}
 * Optional: AEM ${optionAemVersion} publish instance running on port ${aemPublishPort}
 * Include the [Adobe Public Maven Repository][adobe-public-maven-repo] in your maven settings, see [wcm.io Maven Repositories][wcmio-maven] for details.
@@ -85,7 +85,7 @@ Modules of this project:
 * [content-packages/sample-content](content-packages/sample-content/): AEM content package containing sample content (for development and test purposes)
 * [config-definition](config-definition/): Defines the CONGA roles and templates for this application. Also contains a `development` CONGA environment for deploying to local development instances.
 #if ( $optionIntegrationTests == "y" )
-* [tests/integration/](tests/integration/): Integration tests running against the HTTP interface of AEM
+* [tests/integration](tests/integration/): Integration tests running against the HTTP interface of AEM
 #end
 
 
