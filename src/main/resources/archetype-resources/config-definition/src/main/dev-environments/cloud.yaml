@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-# AEM configuration for AEM Cloud Service (STAGE + PROD)
+# AEM configuration for AEM Cloud Service (DEV/STAGE/PROD)
 
 nodes:
 
