@@ -12,7 +12,9 @@
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Content Container"
                             sling:resourceType="wcm/core/components/policy/policy"
-                            components="[group:${projectName} Container,group:${projectName} Content]">
+                            components="[group:${projectName} Container,group:${projectName} Content]"
+                            layout="responsiveGrid"
+                            layoutDisabled="false">
                             <jcr:content
                                 jcr:primaryType="nt:unstructured"
                                 jcr:mixinTypes="[cq:ReplicationStatus]"
