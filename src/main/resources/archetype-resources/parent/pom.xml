@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.4.18</version>
+    <version>1.4.19-SNAPSHOT</version>
     <relativePath/>
   </parent>
 
@@ -367,4 +367,108 @@
     </pluginManagement>
   </build>
 
+#if ( $optionAemVersion == "cloud" )
+  <profiles>
+    <!-- Profile gets active when building in Cloud Manager -->
+    <profile>
+      <id>cmBuild</id>
+      <activation>
+        <property>
+          <name>env.CM_BUILD</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+
+          <!-- Define Java version for Cloud Manager -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-toolchains-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>toolchain</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <toolchains>
+                <jdk>
+#if ( $optionJavaVersion == "8" )
+                  <version>1.8</version>
+#else
+                  <version>${optionJavaVersion}</version>
+#end
+                  <vendor>oracle</vendor>
+               </jdk>
+              </toolchains>
+            </configuration>
+          </plugin>
+
+#if ( $optionJavaVersion != "8" )
+          <!-- Enforcer plugin is not supported by toolchain, thus stick with Java 8 requirement for it in Cloud Manager -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>enforce-default</id>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <configuration>
+                  <rules>
+                    <requireMavenVersion>
+                      <version>[${maven.min-version},)</version>
+                    </requireMavenVersion>
+                    <requireJavaVersion>
+                      <version>[1.8,]</version>
+                    </requireJavaVersion>
+                  </rules>
+                </configuration>
+              </execution>
+              <execution>
+                <id>enforce-clean</id>
+                <phase>pre-clean</phase>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <configuration>
+                  <rules>
+                    <requireMavenVersion>
+                      <version>[${maven.min-version},)</version>
+                    </requireMavenVersion>
+                    <requireJavaVersion>
+                      <version>[1.8,]</version>
+                    </requireJavaVersion>
+                  </rules>
+                </configuration>
+              </execution>
+              <execution>
+                <id>enforce-site</id>
+                <phase>pre-site</phase>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <configuration>
+                  <rules>
+                    <requireMavenVersion>
+                      <version>[${maven.min-version},)</version>
+                    </requireMavenVersion>
+                    <requireJavaVersion>
+                      <version>[1.8,]</version>
+                    </requireJavaVersion>
+                  </rules>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+#end
+        </plugins>
+      </build>
+    </profile>  
+  </profiles>
+
+#end
 </project>

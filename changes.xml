@@ -25,6 +25,9 @@
 
     <release version="3.2.8" date="not released">
       <action type="update" dev="sseifert">
+        Support Java 11 in Cloud Manager.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
