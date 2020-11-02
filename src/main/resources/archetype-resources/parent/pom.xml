@@ -34,7 +34,7 @@
     <eclipse.settings.nullanalysis>enabled</eclipse.settings.nullanalysis>
 
     <!-- Versions -->
-    <core.wcm.components.version>2.11.1</core.wcm.components.version>
+    <core.wcm.components.version>2.12.0</core.wcm.components.version>
 #if( $optionAcsCommons == "y" )
     <acs.aem.commons.version>4.8.6</acs.aem.commons.version>
 #end
@@ -133,7 +133,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.9.4</version>
+        <version>1.9.5-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -148,7 +148,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.5.2-2.11.0</version>
+        <version>1.6.0-2.12.0-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
