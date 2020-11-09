@@ -30,6 +30,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="fix" dev="twolfart">
+        Allow deployment with cleaned config-definition.
+      </action>
     </release>
 
     <release version="3.2.6" date="2020-09-27">
