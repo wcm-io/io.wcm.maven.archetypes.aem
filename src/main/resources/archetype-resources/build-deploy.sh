@@ -217,7 +217,7 @@ execute_deploy() {
     MAVEN_ARGS+="-Dsling.password=${SLING_PASSWORD} "
   fi
 
-  mvn $MAVEN_ARGS -f config-definition conga-aem:package-install
+  mvn $MAVEN_ARGS -f config-definition compile conga-aem:package-install
 
   if [ "$?" -ne "0" ]; then
     exit_with_error "*** DEPLOY FAILED ***"
