@@ -28,6 +28,9 @@
         Support Java 11 in Cloud Manager.
       </action>
       <action type="update" dev="sseifert">
+        Use core component container as root container in editable templates.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
