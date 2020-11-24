@@ -8,13 +8,43 @@
             <components jcr:primaryType="nt:unstructured">
                 <container jcr:primaryType="nt:unstructured">
                     <container jcr:primaryType="nt:unstructured">
+                        <root-container
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Root Container"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[/apps/${projectName}/core/components/container/container,group:${projectName} Templating]">
+                            <jcr:content
+                                jcr:primaryType="nt:unstructured"
+                                jcr:mixinTypes="[cq:ReplicationStatus]"
+                                cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
+                                cq:lastReplicationAction="Activate"/>
+                        </root-container>
+                        <experience-fragment
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Experience Fragment"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[group:${projectName} Container,group:${projectName} Content]">
+                            <jcr:content
+                                jcr:primaryType="nt:unstructured"
+                                jcr:mixinTypes="[cq:ReplicationStatus]"
+                                cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
+                                cq:lastReplicationAction="Activate"/>
+                            <cq:authoring jcr:primaryType="nt:unstructured">
+                                <assetToComponentMapping jcr:primaryType="nt:unstructured">
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        assetGroup="media"
+                                        assetMimetype="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                        droptarget="image"
+                                        resourceType="${projectName}/core/components/content/#if($optionWcmioHandler=='y')responsiveimage#{else}image#end"/>
+                                </assetToComponentMapping>
+                            </cq:authoring>
+                        </experience-fragment>
                         <content-container
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Content Container"
                             sling:resourceType="wcm/core/components/policy/policy"
-                            components="[group:${projectName} Container,group:${projectName} Content]"
-                            layout="responsiveGrid"
-                            layoutDisabled="false">
+                            components="[group:${projectName} Container,group:${projectName} Content]">
                             <jcr:content
                                 jcr:primaryType="nt:unstructured"
                                 jcr:mixinTypes="[cq:ReplicationStatus]"
@@ -36,44 +66,4 @@
             </components>
         </core>
     </${projectName}>
-    <wcm jcr:primaryType="nt:unstructured">
-        <foundation jcr:primaryType="nt:unstructured">
-            <components jcr:primaryType="nt:unstructured">
-                <responsivegrid jcr:primaryType="nt:unstructured">
-                    <root-container
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Root Container"
-                        sling:resourceType="wcm/core/components/policy/policy"
-                        components="[/apps/${projectName}/core/components/container/container,group:${projectName} Templating]">
-                        <jcr:content
-                            jcr:primaryType="nt:unstructured"
-                            jcr:mixinTypes="[cq:ReplicationStatus]"
-                            cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
-                            cq:lastReplicationAction="Activate"/>
-                    </root-container>
-                    <experience-fragment
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Experience Fragment"
-                        sling:resourceType="wcm/core/components/policy/policy"
-                        components="[group:${projectName} Container,group:${projectName} Content]">
-                        <jcr:content
-                            jcr:primaryType="nt:unstructured"
-                            jcr:mixinTypes="[cq:ReplicationStatus]"
-                            cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
-                            cq:lastReplicationAction="Activate"/>
-                        <cq:authoring jcr:primaryType="nt:unstructured">
-                            <assetToComponentMapping jcr:primaryType="nt:unstructured">
-                                <image
-                                    jcr:primaryType="nt:unstructured"
-                                    assetGroup="media"
-                                    assetMimetype="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
-                                    droptarget="image"
-                                    resourceType="${projectName}/core/components/content/#if($optionWcmioHandler=='y')responsiveimage#{else}image#end"/>
-                            </assetToComponentMapping>
-                        </cq:authoring>
-                    </experience-fragment>
-                </responsivegrid>
-            </components>
-        </foundation>
-    </wcm>
 </jcr:root>

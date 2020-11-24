@@ -8,6 +8,6 @@
         sling:resourceType="${projectName}/core/components/global/xfpage">
         <root
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="wcm/foundation/components/responsivegrid"/>
+            sling:resourceType="${projectName}/core/components/container/container"/>
     </jcr:content>
 </jcr:root>
