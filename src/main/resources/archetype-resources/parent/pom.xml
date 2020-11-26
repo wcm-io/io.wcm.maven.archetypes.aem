@@ -363,6 +363,32 @@
           </configuration>
         </plugin>
 
+        <plugin>
+          <groupId>org.apache.jackrabbit</groupId>
+          <artifactId>filevault-package-maven-plugin</artifactId>
+          <configuration>
+            <validatorsSettings>
+              <jackrabbit-nodetypes>
+                <options>
+                  <!-- use the nodetypes and namespaces from the aem-nodetypes.jar provided in the plugin dependencies -->
+                  <cnds>tccl:aem.cnd</cnds>
+                </options>
+              </jackrabbit-nodetypes>
+            </validatorsSettings>
+          </configuration>
+          <dependencies>
+            <dependency>
+              <groupId>biz.netcentric.aem</groupId>
+              <artifactId>aem-nodetypes</artifactId>
+#if ( $optionAemVersion == "cloud" )
+              <version>2020.09.0</version>
+#else
+              <version>6.5.5.0</version>
+#end
+            </dependency>
+          </dependencies>
+        </plugin>
+
       </plugins>
     </pluginManagement>
   </build>

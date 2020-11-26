@@ -31,6 +31,9 @@
         Use core component container as root container in editable templates.
       </action>
       <action type="update" dev="sseifert">
+        Use AEM-specific node type definitions for filevault-package-maven-plugin validation.
+      </action>
+      <action type="update" dev="sseifert">
         Add support for AEM 6.5 SP7.
       </action>
       <action type="update" dev="sseifert">
