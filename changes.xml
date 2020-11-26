@@ -34,6 +34,9 @@
         Use AEM-specific node type definitions for filevault-package-maven-plugin validation.
       </action>
       <action type="update" dev="sseifert">
+        Define valid roots in conf and sample content packages for filevault-package-maven-plugin validation.
+      </action>
+      <action type="update" dev="sseifert">
         Add support for AEM 6.5 SP7.
       </action>
       <action type="update" dev="sseifert">

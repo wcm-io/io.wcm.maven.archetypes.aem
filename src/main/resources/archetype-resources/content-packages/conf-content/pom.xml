@@ -40,6 +40,13 @@
           <group>${contentPackage.group}</group>
           <packageType>content</packageType>
           <accessControlHandling>merge</accessControlHandling>
+          <validatorsSettings>
+            <jackrabbit-filter>
+              <options>
+                <validRoots>/conf#if($optionEditableTemplates=="y"),/conf/${projectName}/settings#{end}</validRoots>
+              </options>
+            </jackrabbit-filter>
+          </validatorsSettings>
 #if ( $optionAemVersion == "cloud" )
 
           <!-- Do not deploy directly via AEM cloud manager, only as part of CONGA-generated "all" package -->
