@@ -1,13 +1,13 @@
 <img src="https://wcm.io/images/favicon-16@2x.png"/> wcm.io Maven Archetype for AEM
 ======
-[![Build Status](https://travis-ci.org/wcm-io/wcm-io-maven-archetype-aem.png?branch=develop)](https://travis-ci.org/wcm-io/wcm-io-maven-archetype-aem)
+[![Build Status](https://travis-ci.com/wcm-io/wcm-io-maven-archetype-aem.png?branch=develop)](https://travis-ci.com/wcm-io/wcm-io-maven-archetype-aem)
 
 Maven Archetype for creating new AEM projects.
 
 Documentation: https://wcm.io/tooling/maven/archetypes/aem/<br/>
 Issues: https://wcm-io.atlassian.net/browse/WTOOL<br/>
 Wiki: https://wcm-io.atlassian.net/wiki/<br/>
-Continuous Integration: https://travis-ci.org/wcm-io/wcm-io-maven-archetype-aem/<br/>
+Continuous Integration: https://travis-ci.com/wcm-io/wcm-io-maven-archetype-aem/<br/>
 Commercial support: https://wcm.io/commercial-support.html
 
 
