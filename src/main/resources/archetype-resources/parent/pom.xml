@@ -363,21 +363,6 @@
           </configuration>
         </plugin>
 
-#if ( $optionAemVersion != "cloud" )
-        <plugin>
-          <groupId>org.apache.jackrabbit</groupId>
-          <artifactId>filevault-package-maven-plugin</artifactId>
-          <dependencies>
-            <dependency>
-              <groupId>biz.netcentric.aem</groupId>
-              <artifactId>aem-nodetypes</artifactId>
-              <!-- Switch back to node type definitions for AEM 6.5 -->
-              <version>6.5.5.0</version>
-            </dependency>
-          </dependencies>
-        </plugin>
-
-#end
       </plugins>
     </pluginManagement>
   </build>
