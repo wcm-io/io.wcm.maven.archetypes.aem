@@ -25,7 +25,7 @@ if [[ $0 == *":\\"* ]]; then
   DISPLAY_PAUSE_MESSAGE=true
 fi
 
-mvn -Dconga.nodeDirectory=target/configuration/${CONGA_ENVIRONMENT}/${CONGA_NODE} clean install conga-aem:package-install
+mvn -Pfast -Dconga.environments=${CONGA_ENVIRONMENT} -Dconga.nodeDirectory=target/configuration/${CONGA_ENVIRONMENT}/${CONGA_NODE} clean install conga-aem:package-install
 
 if [ "$DISPLAY_PAUSE_MESSAGE" = true ]; then
   echo ""
