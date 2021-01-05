@@ -37,6 +37,9 @@
         Define valid roots in conf and sample content packages for filevault-package-maven-plugin validation.
       </action>
       <action type="update" dev="sseifert">
+        wcm.io Handler: Add configuration to support previews of inline images in edit dialogs on Authoring instances for these resource types.
+      </action>
+      <action type="update" dev="sseifert">
         Add support for AEM 6.5 SP7.
       </action>
       <action type="update" dev="sseifert">

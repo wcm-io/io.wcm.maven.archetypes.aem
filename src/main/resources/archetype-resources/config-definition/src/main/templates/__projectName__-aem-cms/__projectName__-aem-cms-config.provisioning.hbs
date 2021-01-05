@@ -64,6 +64,10 @@
   org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-media
     user.mapping=["io.wcm.handler.media\=${projectName}DamSystemUser"]
 
+  # Support previews of inline images in edit dialogs on Authoring instances for these resource types
+  io.wcm.handler.media.impl.InlineImageAuthorPreviewServlet
+    sling.servlet.resourceTypes=["wcm-io/wcm/core/components/wcmio/responsiveimage/v1/responsiveimage"]
+
 #end
 
 [configurations runModes=publish]
