@@ -48,9 +48,13 @@
 
 #end
 #if ( $optionWcmioHandler == "y" )
-  # Define service user for wcm.io URL handler
+  # Service user mapping for wcm.io URL handler
   org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-wcm
     user.mapping=["io.wcm.handler.url:clientlibs-service\=[sling-scripting]","io.wcm.wcm.commons:component-properties\=[sling-scripting]"]
+
+  # Service user mapping for wcm.io Media Handler
+  org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-media-dynamicmedia
+    user.mapping=["io.wcm.handler.media:dynamic-media-support\=[configuration-reader-service]"]
 
 #end
 [configurations runModes=author]
@@ -61,8 +65,8 @@
 
 #if ( $optionWcmioHandler == "y" )
   # Service user mapping for wcm.io Media Handler
-  org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-media
-    user.mapping=["io.wcm.handler.media\=[dam-writer-service]"]
+  org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-media-metadata
+    user.mapping=["io.wcm.handler.media:dam-rendition-metadata\=[dam-writer-service]"]
 
   # Support previews of inline images in edit dialogs on Authoring instances for these resource types
   io.wcm.handler.media.impl.InlineImageAuthorPreviewServlet
