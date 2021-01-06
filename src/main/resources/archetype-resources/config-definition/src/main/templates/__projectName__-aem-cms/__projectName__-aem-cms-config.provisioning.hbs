@@ -50,7 +50,7 @@
 #if ( $optionWcmioHandler == "y" )
   # Define service user for wcm.io URL handler
   org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-wcm
-    user.mapping=["io.wcm.handler.url:clientlibs-service\=sling-scripting","io.wcm.wcm.commons:component-properties\=sling-scripting"]
+    user.mapping=["io.wcm.handler.url:clientlibs-service\=[sling-scripting]","io.wcm.wcm.commons:component-properties\=[sling-scripting]"]
 
 #end
 [configurations runModes=author]
@@ -62,7 +62,7 @@
 #if ( $optionWcmioHandler == "y" )
   # Service user mapping for wcm.io Media Handler
   org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-media
-    user.mapping=["io.wcm.handler.media\=${projectName}DamSystemUser"]
+    user.mapping=["io.wcm.handler.media\=[dam-writer-service]"]
 
   # Support previews of inline images in edit dialogs on Authoring instances for these resource types
   io.wcm.handler.media.impl.InlineImageAuthorPreviewServlet
@@ -93,13 +93,3 @@
 [:repoinit]
 # Create root folder below /apps for application
 create path /apps/${projectName}(sling:Folder)
-
-#if ( $optionWcmioHandler == "y" )
-[:repoinit runModes=author]
-# Create service user for wcm.io Media Handler
-create service user ${projectName}DamSystemUser
-set ACL on /content/dam
-  allow jcr:read,rep:write for ${projectName}DamSystemUser
-end
-
-#end

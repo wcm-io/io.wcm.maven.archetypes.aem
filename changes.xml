@@ -40,6 +40,9 @@
         wcm.io Handler: Add configuration to support previews of inline images in edit dialogs on Authoring instances for these resource types.
       </action>
       <action type="update" dev="sseifert">
+        Use principal-based authentication for service user mapping of wcm.io services. Use dam-writer-service instead of creating a custom service user for media handler.
+      </action>
+      <action type="update" dev="sseifert">
         Add support for AEM 6.5 SP7.
       </action>
       <action type="update" dev="sseifert">
