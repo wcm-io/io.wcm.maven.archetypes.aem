@@ -36,7 +36,7 @@
     <!-- Versions -->
     <core.wcm.components.version>2.12.2</core.wcm.components.version>
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>4.9.2</acs.aem.commons.version>
+    <acs.aem.commons.version>4.11.2</acs.aem.commons.version>
 #end
 
     <!-- Enable reproducible builds -->
