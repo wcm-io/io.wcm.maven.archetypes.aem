@@ -34,7 +34,7 @@ You can deploy individual bundles or content packages to the local AEM instances
 
 $symbol_pound$symbol_pound$symbol_pound System requirements
 
-* JDK 1.8
+* Java ${optionJavaVersion}
 * Apache Maven 3.6.0 or higher
 * AEM ${optionAemVersion} author instance running on port ${aemAuthorPort}
 * Optional: AEM ${optionAemVersion} publish instance running on port ${aemPublishPort}
