@@ -45,15 +45,6 @@
       <type>zip</type>
       <scope>provided</scope>
     </dependency>
-#if ( $optionSlingInitialContentBundle == "n" )
-    <dependency>
-      <groupId>${groupId}</groupId>
-      <artifactId>${rootArtifactId}.ui.apps</artifactId>
-      <version>${version}</version>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-#end
 
 #if ( $optionAemVersion != "cloud" )
 #if ( $optionSlingModelsLatest == "y" )
@@ -167,13 +158,6 @@
               <type>jar</type>
             </embedded>
 #end
-#end
-#if( $optionSlingInitialContentBundle == "n" )
-            <embedded>
-              <groupId>${groupId}</groupId>
-              <artifactId>${rootArtifactId}.ui.apps</artifactId>
-              <type>zip</type>
-            </embedded>
 #end
           </embeddeds>
 

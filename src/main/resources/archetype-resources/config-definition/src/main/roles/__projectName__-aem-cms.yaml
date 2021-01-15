@@ -98,6 +98,10 @@ files:
 # Application package
 - url: mvn:${groupId}/${rootArtifactId}.complete//zip
   dir: packages
+#if( $optionSlingInitialContentBundle == "n" )
+- url: mvn:${groupId}/${rootArtifactId}.ui.apps//zip
+  dir: packages
+#end
 
 #if ( $optionEditableTemplates == "y" )
 # Application conf content package
