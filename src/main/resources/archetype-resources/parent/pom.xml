@@ -499,7 +499,7 @@
 #end
         </plugins>
       </build>
-    </profile>  
+    </profile>
   </profiles>
 
 #end
