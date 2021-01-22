@@ -42,7 +42,16 @@
           <validatorsSettings>
             <jackrabbit-filter>
               <options>
-                <validRoots>#if($optionContextAwareConfig=="y")/conf,#{end}/content,/content/dam#if($optionEditableTemplates=="y"),/content/experience-fragments#{end}</validRoots>
+                <validRoots>
+#if($optionContextAwareConfig=="y")
+                  /conf,
+#{end}
+                  /content,
+#if($optionEditableTemplates=="y")
+                  /content/experience-fragments,
+#{end}
+                  /content/dam
+                </validRoots>
               </options>
             </jackrabbit-filter>
           </validatorsSettings>

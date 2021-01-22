@@ -38,13 +38,15 @@
       <scope>provided</scope>
     </dependency>
 #end
+#if ( $optionSlingInitialContentBundle == "n" )
     <dependency>
       <groupId>${groupId}</groupId>
-      <artifactId>${rootArtifactId}.apps-repository-structure</artifactId>
+      <artifactId>${rootArtifactId}.ui.apps</artifactId>
       <version>${version}</version>
       <type>zip</type>
       <scope>provided</scope>
     </dependency>
+#end
 
 #if ( $optionAemVersion != "cloud" )
 #if ( $optionSlingModelsLatest == "y" )
@@ -107,6 +109,15 @@
           <name>${contentPackage.name}</name>
           <group>${contentPackage.group}</group>
           <packageType>container</packageType>
+          <validatorsSettings>
+            <jackrabbit-filter>
+              <options>
+                <validRoots>
+                  /apps/${projectName}
+                </validRoots>
+              </options>
+            </jackrabbit-filter>
+          </validatorsSettings>
 
           <filters>
             <filter>
@@ -160,13 +171,6 @@
 #end
 #end
           </embeddeds>
-
-          <repositoryStructurePackages>
-            <repositoryStructurePackage>
-              <groupId>${groupId}</groupId>
-              <artifactId>${rootArtifactId}.apps-repository-structure</artifactId>
-            </repositoryStructurePackage>
-          </repositoryStructurePackages>
 
         </configuration>
       </plugin>

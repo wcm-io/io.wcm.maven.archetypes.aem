@@ -43,7 +43,12 @@
           <validatorsSettings>
             <jackrabbit-filter>
               <options>
-                <validRoots>/conf#if($optionEditableTemplates=="y"),/conf/${projectName}/settings#{end}</validRoots>
+                <validRoots>
+#if($optionEditableTemplates=="y")
+                  /conf/${projectName}/settings,
+#{end}
+                  /conf
+                </validRoots>
               </options>
             </jackrabbit-filter>
           </validatorsSettings>
