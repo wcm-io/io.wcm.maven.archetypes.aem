@@ -34,6 +34,15 @@
       <type>zip</type>
       <scope>compile</scope>
     </dependency>
+#if ( $optionSlingInitialContentBundle == "n" )
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.ui.apps</artifactId>
+      <version>${version}</version>
+      <type>zip</type>
+      <scope>provided</scope>
+    </dependency>
+#end
 #if ( $optionEditableTemplates == "y" )
     <dependency>
       <groupId>${groupId}</groupId>

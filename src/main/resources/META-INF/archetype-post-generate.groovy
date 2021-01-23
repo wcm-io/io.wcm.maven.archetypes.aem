@@ -165,7 +165,7 @@ else {
         w << fileContent
       }
     }
-  }  
+  }
 }
 
 // prepare project for editable templates

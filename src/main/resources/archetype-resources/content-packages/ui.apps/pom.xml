@@ -22,18 +22,6 @@
     <contentPackage.group>${packageGroupName}</contentPackage.group>
   </properties>
 
-  <dependencies>
-
-    <dependency>
-      <groupId>${groupId}</groupId>
-      <artifactId>${rootArtifactId}.apps-repository-structure</artifactId>
-      <version>${version}</version>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-
-  </dependencies>
-
   <build>
     <finalName>${contentPackage.name}-${project.version}</finalName>
     <resources>
@@ -55,6 +43,15 @@
 #if ( $optionAemVersion != "cloud" )
           <enableJcrRootFiltering>true</enableJcrRootFiltering>
 #end
+          <validatorsSettings>
+            <jackrabbit-filter>
+              <options>
+                <validRoots>
+                  /apps/${projectName}
+                </validRoots>
+              </options>
+            </jackrabbit-filter>
+          </validatorsSettings>
 
 #if ( $optionAemVersion == "cloud" )
           <!-- Do not deploy directly via AEM cloud manager, only as part of CONGA-generated "all" package -->
@@ -63,13 +60,6 @@
           </properties>
 
 #end
-          <repositoryStructurePackages>
-            <repositoryStructurePackage>
-              <groupId>${groupId}</groupId>
-              <artifactId>${rootArtifactId}.apps-repository-structure</artifactId>
-            </repositoryStructurePackage>
-          </repositoryStructurePackages>
-
         </configuration>
       </plugin>
 

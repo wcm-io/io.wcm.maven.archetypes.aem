@@ -8,7 +8,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Basic usage
 Generate a new AEM project using interactive mode by executing:
 
 ```
-mvn archetype:generate \
+mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.archetype.version']}:generate \
   -DarchetypeGroupId=io.wcm.maven.archetypes \
   -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
   -DarchetypeVersion=${project.properties['releasedVersion.version']}
@@ -51,7 +51,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Usage examples
 ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} AEM project with wcm.io and Sling-Initial-Content project layout and Java 11 for AEM 6.5
 
 ```
-mvn archetype:generate -DinteractiveMode=false \
+mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.archetype.version']}:generate -DinteractiveMode=false \
   -DarchetypeGroupId=io.wcm.maven.archetypes \
   -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
   -DarchetypeVersion=${project.properties['releasedVersion.version']} \
@@ -81,7 +81,7 @@ mvn archetype:generate -DinteractiveMode=false \
 ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Minimal AEM project with FileVault package layout and Java 8 for AEM Cloud Service
 
 ```
-mvn archetype:generate -DinteractiveMode=false \
+mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.archetype.version']}:generate -DinteractiveMode=false \
   -DarchetypeGroupId=io.wcm.maven.archetypes \
   -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
   -DarchetypeVersion=${project.properties['releasedVersion.version']} \

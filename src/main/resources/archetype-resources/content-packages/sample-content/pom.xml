@@ -39,6 +39,22 @@
           <name>${contentPackage.name}</name>
           <group>${contentPackage.group}</group>
           <packageType>content</packageType>
+          <validatorsSettings>
+            <jackrabbit-filter>
+              <options>
+                <validRoots>
+#if($optionContextAwareConfig=="y")
+                  /conf,
+#{end}
+                  /content,
+#if($optionEditableTemplates=="y")
+                  /content/experience-fragments,
+#{end}
+                  /content/dam
+                </validRoots>
+              </options>
+            </jackrabbit-filter>
+          </validatorsSettings>
 #if ( $optionAemVersion == "cloud" )
 
           <!-- Do not deploy directly via AEM cloud manager, only as part of CONGA-generated "all" package -->

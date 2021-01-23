@@ -34,12 +34,14 @@ You can deploy individual bundles or content packages to the local AEM instances
 
 $symbol_pound$symbol_pound$symbol_pound System requirements
 
-* JDK 1.8
+* Java ${optionJavaVersion}
 * Apache Maven 3.6.0 or higher
 * AEM ${optionAemVersion} author instance running on port ${aemAuthorPort}
 * Optional: AEM ${optionAemVersion} publish instance running on port ${aemPublishPort}
 * Include the [Adobe Public Maven Repository][adobe-public-maven-repo] in your maven settings, see [wcm.io Maven Repositories][wcmio-maven] for details.
+#if ( $optionAemVersion != "cloud" )
 * To obtain the latest service packs via Maven you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
+#end
 
 It is recommended to set up the local AEM instances with `nosamplecontent` run mode.
 
@@ -92,3 +94,6 @@ Modules of this project:
 [wcmio-maven-archetype-aem]: https://wcm.io/tooling/maven/archetypes/aem/
 [adobe-public-maven-repo]: https://repo.adobe.com/nexus/content/groups/public/
 [wcmio-maven]: https://wcm.io/maven.html
+#if ( $optionAemVersion != "cloud" )
+[aem-binaries-conventions]: https://wcm-io.atlassian.net/wiki/x/AYC9Aw
+#end
