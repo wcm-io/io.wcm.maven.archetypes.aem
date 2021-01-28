@@ -53,6 +53,11 @@
     <tag>HEAD</tag>
   </scm>
 
+  <ciManagement>
+    <system>GitHub Actions</system>
+    <url>https://github.com/wcm-io/wcm-io-maven-archetype-aem/actions</url>
+  </ciManagement>
+
   <build>
     <extensions>
       <extension>
