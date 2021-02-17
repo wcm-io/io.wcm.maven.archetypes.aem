@@ -1,4 +1,5 @@
 # Declare text files with unix file ending
+*.any text eol=lf
 *.cfg text eol=lf
 *.conf text eol=lf
 *.config text eol=lf
@@ -6,6 +7,7 @@
 *.dtd text eol=lf
 *.esp text eol=lf
 *.ecma text eol=lf
+*.farm text eol=lf
 *.gdsl text eol=lf
 *.groovy text eol=lf
 *.hbrs text eol=lf
@@ -28,6 +30,7 @@
 *.properties text eol=lf
 *.props text eol=lf
 *.py text eol=lf
+*.rules text eol=lf
 *.sass text eol=lf
 *.scss text eol=lf
 *.sh text eol=lf
@@ -38,6 +41,7 @@
 *.tf text eol=lf
 *.ts text eol=lf
 *.txt text eol=lf
+*.vhost text eol=lf
 *.vm text eol=lf
 *.xml text eol=lf
 *.xsd text eol=lf
