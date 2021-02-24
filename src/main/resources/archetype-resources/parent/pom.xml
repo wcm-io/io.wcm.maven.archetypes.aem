@@ -32,9 +32,13 @@
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
     <eclipse.settings.nullanalysis>enabled</eclipse.settings.nullanalysis>
+#if ( $optionAemVersion != "cloud" or $optionAcsCommons == "y" )
 
     <!-- Versions -->
+#end
+#if ( $optionAemVersion != "cloud" )
     <core.wcm.components.version>2.13.4</core.wcm.components.version>
+#end
 #if( $optionAcsCommons == "y" )
     <acs.aem.commons.version>4.11.2</acs.aem.commons.version>
 #end
@@ -279,21 +283,21 @@
       </dependency>
 #end
 
+#if ( $optionAemVersion != "cloud" )
       <!-- AEM Core WCM Components -->
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>core.wcm.components.core</artifactId>
         <version>${core.wcm.components.version}</version>
       </dependency>
-#if ( $optionAemVersion != "cloud" )
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>core.wcm.components.all</artifactId>
         <version>${core.wcm.components.version}</version>
         <type>zip</type>
       </dependency>
-#end
 
+#end
 #if( $optionAcsCommons == "y" )
       <!-- ACS AEM Commons -->
       <dependency>

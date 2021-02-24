@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="update" dev="sseifert">
+        Do not define property core.wcm.components.version in parent POM if AEM Cloud SDK is used, it's version is defined in io.wcm.maven.aem-cloud-dependencies.
+      </action>
     </release>
 
     <release version="3.3.0" date="2021-01-23">
