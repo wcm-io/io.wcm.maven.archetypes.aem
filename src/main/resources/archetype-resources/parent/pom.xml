@@ -37,10 +37,10 @@
     <!-- Versions -->
 #end
 #if ( $optionAemVersion != "cloud" )
-    <core.wcm.components.version>2.13.4</core.wcm.components.version>
+    <core.wcm.components.version>2.15.0</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>4.11.2</acs.aem.commons.version>
+    <acs.aem.commons.version>5.0.4</acs.aem.commons.version>
 #end
 
     <!-- Enable reproducible builds -->
@@ -168,7 +168,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.10.0</version>
+        <version>1.11.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -183,12 +183,12 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.7.2-2.13.0</version>
+        <version>1.8.0-2.15.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
-        <version>1.6.0</version>
+        <version>1.6.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
