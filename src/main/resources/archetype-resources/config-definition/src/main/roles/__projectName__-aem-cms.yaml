@@ -105,6 +105,8 @@ files:
   dir: packages
 - url: mvn:io.wcm/io.wcm.handler.richtext//zip/content
   dir: packages
+- url: mvn:io.wcm/io.wcm.wcm.core.components//zip/content
+  dir: packages
 - url: mvn:io.wcm/io.wcm.wcm.parsys//zip/content
   dir: packages
 - url: mvn:io.wcm/io.wcm.wcm.ui.granite//zip/content

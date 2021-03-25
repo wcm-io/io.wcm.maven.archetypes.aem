@@ -219,8 +219,17 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.8.0-2.15.0</version>
+        <version>1.8.1-2.15.0-SNAPSHOT</version>
       </dependency>
+#if ( $optionAemVersion == "cloud" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.core.components</artifactId>
+        <classifier>content</classifier>
+        <type>zip</type>
+        <version>1.8.1-2.15.0-SNAPSHOT</version>
+      </dependency>
+#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>

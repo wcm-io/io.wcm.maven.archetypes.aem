@@ -120,6 +120,13 @@
     </dependency>
     <dependency>
       <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.wcm.core.components</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
       <artifactId>io.wcm.wcm.parsys</artifactId>
       <classifier>content</classifier>
       <type>zip</type>
