@@ -95,6 +95,22 @@ files:
       rootPath: /apps/${projectName}/config/rewriter
 
 #end
+#if ( $optionWcmioHandler == "y" && $optionAemVersion == "cloud" )
+# wcm.io
+- url: mvn:io.wcm/io.wcm.handler.url//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.handler.link//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.handler.media//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.handler.richtext//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.wcm.parsys//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.wcm.ui.granite//zip/content
+  dir: packages
+
+#end
 # Application package
 - url: mvn:${groupId}/${rootArtifactId}.complete//zip
   dir: packages

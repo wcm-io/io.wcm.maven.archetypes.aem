@@ -88,6 +88,52 @@
     </dependency>
 
 #end
+#if ( $optionWcmioHandler == "y" && $optionAemVersion == "cloud" )
+    <!-- wcm.io - Content packages with Sling-Initial-Content, see https://wcm-io.atlassian.net/l/c/d2FuEgf8 for details -->
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.url</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.link</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.media</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.richtext</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.wcm.parsys</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.wcm.ui.granite</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+
+#end
   </dependencies>
 
   <build>
