@@ -1,0 +1,1 @@
+Separate list of test projects to be used on Github Actions - which does not have access to non-public Adobe service pack binaries.

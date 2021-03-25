@@ -25,13 +25,13 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.parent</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.2</version>
     <relativePath />
   </parent>
 
   <groupId>io.wcm.maven.archetypes</groupId>
   <artifactId>io.wcm.maven.archetypes.aem</artifactId>
-  <version>3.3.0</version>
+  <version>3.3.2</version>
   <packaging>maven-archetype</packaging>
 
   <name>wcm.io Maven Archetype for AEM</name>
@@ -52,6 +52,11 @@
     <url>https://github.com/wcm-io/wcm-io-maven-archetype-aem</url>
     <tag>HEAD</tag>
   </scm>
+
+  <ciManagement>
+    <system>GitHub Actions</system>
+    <url>https://github.com/wcm-io/wcm-io-maven-archetype-aem/actions</url>
+  </ciManagement>
 
   <build>
     <extensions>
@@ -102,6 +107,23 @@
         <artifactId>maven-failsafe-plugin</artifactId>
         <configuration>
           <skip>true</skip>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <topSiteURL>${site.deploy.url}</topSiteURL>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-scm-publish-plugin</artifactId>
+        <configuration>
+          <subDirectory>${site.url.module.prefix}</subDirectory>
+          <skipDeletedFiles>true</skipDeletedFiles>
         </configuration>
       </plugin>
 
@@ -157,7 +179,7 @@
   <distributionManagement>
     <site>
       <id>${site.deploy.id}</id>
-      <url>${site.deploy.url}${site.url.module.prefix}</url>
+      <url>${site.deploy.url}</url>
     </site>
   </distributionManagement>
 

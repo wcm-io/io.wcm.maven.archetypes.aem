@@ -114,13 +114,11 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 * Java 8 or Java 11
 * Apache Maven 3.3.9 or higher
 * AEM 6.4, 6.5 or AEM Cloud Service
-* Include the [Adobe Public Maven Repository][adobe-public-maven-repo] in your maven settings, see [wcm.io Maven Repositories][wcmio-maven] for details.
 * Optional: If you want to install latest service packs you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
 
 
 
 
-[adobe-public-maven-repo]: https://repo.adobe.com/nexus/content/groups/public/
 [wcmio-maven]: https://wcm.io/maven.html
 [aem-binaries-conventions]: https://wcm-io.atlassian.net/wiki/x/AYC9Aw
 [aem-eclipse-ide]: https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/aem-eclipse.html
