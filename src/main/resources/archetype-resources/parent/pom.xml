@@ -131,12 +131,12 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.extensions</artifactId>
-        <version>1.8.0</version>
+        <version>1.8.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.8.0</version>
+        <version>1.8.2</version>
       </dependency>
 #end
 #if ( $optionWcmioHandler == "y" )
@@ -186,7 +186,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.12.0</version>
+        <version>1.12.4</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -194,7 +194,7 @@
         <artifactId>io.wcm.handler.media</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.12.0</version>
+        <version>1.12.4</version>
       </dependency>
 #end
       <dependency>
