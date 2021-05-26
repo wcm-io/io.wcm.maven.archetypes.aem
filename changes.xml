@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="fix" dev="sseifert" issue="WTOOL-75">
+        Fix super resource type of 'Content Fragment List' component.
+      </action>
     </release>
 
     <release version="3.3.2" date="2021-03-25">
