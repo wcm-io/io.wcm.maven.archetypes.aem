@@ -392,7 +392,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "3.7.0" )
+#set( $mockitoVersion = "3.10.0" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
@@ -415,7 +415,7 @@
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>aem-cloud-testing-clients</artifactId>
-        <version>0.4.0</version>
+        <version>0.7.1</version>
       </dependency>
 #elseif ( $optionAemVersion == "6.5" )
       <dependency>
