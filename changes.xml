@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="update" dev="sseifert">
+        Set project.build.outputTimestamp to current date when generating project.
+      </action>
       <action type="fix" dev="sseifert" issue="WTOOL-75">
         Fix super resource type of 'Content Fragment List' component.
       </action>
