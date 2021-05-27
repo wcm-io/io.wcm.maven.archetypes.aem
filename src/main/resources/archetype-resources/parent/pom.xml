@@ -37,7 +37,7 @@
     <!-- Versions -->
 #end
 #if ( $optionAemVersion != "cloud" )
-    <core.wcm.components.version>2.15.2</core.wcm.components.version>
+    <core.wcm.components.version>2.16.4</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
     <acs.aem.commons.version>5.0.4</acs.aem.commons.version>

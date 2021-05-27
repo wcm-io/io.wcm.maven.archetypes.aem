@@ -11,6 +11,9 @@ import static io.wcm.handler.media.MediaNameConstants.PN_MEDIA_REF_STANDARD;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+#if ($optionWcmioHandler == 'n')
+import static org.mockito.Mockito.mock;
+#end
 
 import java.util.stream.Collectors;
 
@@ -20,7 +23,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 #if ($optionWcmioHandler == 'n')
+import com.adobe.cq.wcm.core.components.internal.link.DefaultPathProcessor;
 import com.adobe.cq.wcm.core.components.models.Image;
+import com.day.cq.commons.Externalizer;
 #end
 import com.day.cq.wcm.api.Page;
 import com.google.common.collect.ImmutableList;
@@ -48,6 +53,12 @@ class CustomCarouselTest {
     page = context.create().page("/content/mypage");
     resource = context.create().resource(page.getContentResource().getPath() + "/myresource");
     context.currentResource(resource);
+#if ($optionWcmioHandler == 'n')
+
+    // required for link handling in core components
+    context.registerService(Externalizer.class, mock(Externalizer.class));
+    context.registerInjectActivateService(new DefaultPathProcessor());
+#end
   }
 
   @Test
