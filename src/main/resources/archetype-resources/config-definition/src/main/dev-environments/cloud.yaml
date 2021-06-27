@@ -57,7 +57,7 @@ tenants:
 - tenant: ${projectName}
   config:
     httpd:
-      # Simplified server name setup that can be deployed to any host name using "*" als server alias
+      # Simplified server name setup that can be deployed to any host name using "*" as server alias
 #if ( $optionWcmioHandler != "y" )
       # This simplified setup may lead to invalid links generated on the publish instances - use the alternative listed below instead
 #end

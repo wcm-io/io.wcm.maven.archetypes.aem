@@ -62,6 +62,13 @@ def removeModule(pomFile, module) {
   }
 }
 
+// parent: set build timestamp to current date
+def parentPomContent = parentPom.getText("UTF-8")
+parentPomContent = parentPomContent.replaceAll('\\Q2020-01-01T00:00:00Z\\E', new Date().format("yyyy-MM-dd'T00:00:00Z'"))
+parentPom.newWriter("UTF-8").withWriter { w ->
+  w << parentPomContent
+}
+
 // frontend
 if (optionFrontend == "y") {
   assert new File(clientlibsBundle, "src").deleteDir()

@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.5.4</version>
+    <version>1.5.8</version>
     <relativePath/>
   </parent>
 
@@ -37,14 +37,14 @@
     <!-- Versions -->
 #end
 #if ( $optionAemVersion != "cloud" )
-    <core.wcm.components.version>2.15.2</core.wcm.components.version>
+    <core.wcm.components.version>2.17.0</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
     <acs.aem.commons.version>5.0.4</acs.aem.commons.version>
 #end
 
     <!-- Enable reproducible builds -->
-    <project.build.outputTimestamp>${timestamp}</project.build.outputTimestamp>
+    <project.build.outputTimestamp>2020-01-01T00:00:00Z</project.build.outputTimestamp>
 
   </properties>
 
@@ -131,12 +131,12 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.extensions</artifactId>
-        <version>1.8.0</version>
+        <version>1.8.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.8.0</version>
+        <version>1.8.2</version>
       </dependency>
 #end
 #if ( $optionWcmioHandler == "y" )
@@ -172,7 +172,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.6.2</version>
+        <version>1.6.4</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -180,13 +180,13 @@
         <artifactId>io.wcm.handler.link</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.6.2</version>
+        <version>1.6.4</version>
       </dependency>
 #end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.11.2</version>
+        <version>1.13.0</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -194,7 +194,7 @@
         <artifactId>io.wcm.handler.media</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.11.2</version>
+        <version>1.13.0</version>
       </dependency>
 #end
       <dependency>
@@ -214,12 +214,12 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.commons</artifactId>
-        <version>1.8.0</version>
+        <version>1.8.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.8.2-2.15.0</version>
+        <version>1.8.4-2.15.0</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -227,13 +227,13 @@
         <artifactId>io.wcm.wcm.core.components</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.8.2-2.15.0</version>
+        <version>1.8.4-2.15.0</version>
       </dependency>
 #end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
-        <version>1.6.4</version>
+        <version>1.6.6</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -241,13 +241,13 @@
         <artifactId>io.wcm.wcm.parsys</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.6.4</version>
+        <version>1.6.6</version>
       </dependency>
 #end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.7.4</version>
+        <version>1.7.6</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -255,7 +255,7 @@
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.7.4</version>
+        <version>1.7.6</version>
       </dependency>
 #end
       <dependency>
@@ -274,7 +274,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
-        <version>4.0.2</version>
+        <version>4.1.0</version>
       </dependency>
 #if ( $optionAemVersion == "6.4" || ($optionAemVersion == "6.5" && $optionAemServicePack=="n") )
       <dependency>
@@ -340,7 +340,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.5.8.0000#{else}6.5.0.0004#end</version>
+        <version>#if($optionAemServicePack=="y")6.5.9.0000#{else}6.5.0.0004#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -392,7 +392,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "3.7.0" )
+#set( $mockitoVersion = "3.10.0" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
@@ -415,7 +415,7 @@
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>aem-cloud-testing-clients</artifactId>
-        <version>0.4.0</version>
+        <version>0.7.1</version>
       </dependency>
 #elseif ( $optionAemVersion == "6.5" )
       <dependency>

@@ -11,12 +11,12 @@
     "build:clientlibs": "npm run build:prod && clientlib"
   },
   "dependencies": {
-    "bootstrap": "4.5.3",
-    "jquery": "3.5.1",
+    "bootstrap": "4.6.0",
+    "jquery": "3.6.0",
     "popper.js": "1.16.1"
   },
   "devDependencies": {
-    "@babel/core": "7.12.10",
+    "@babel/core": "7.14.3",
     "aem-clientlib-generator": "1.7.5",
     "babel-core": "6.26.3",
     "babel-loader": "8.2.2",
@@ -25,18 +25,18 @@
     "babel-preset-env": "1.7.0",
     "babel-register": "6.26.0",
     "clean-webpack-plugin": "3.0.0",
-    "copy-webpack-plugin": "7.0.0",
-    "css-loader": "5.0.1",
-    "handlebars": "4.7.6",
+    "copy-webpack-plugin": "9.0.0",
+    "css-loader": "5.2.6",
+    "handlebars": "4.7.7",
     "handlebars-loader": "1.7.1",
-    "html-webpack-plugin": "4.5.0",
-    "mini-css-extract-plugin": "1.3.3",
-    "node-sass": "5.0.0",
-    "postcss-loader": "4.1.0",
-    "sass-loader": "10.1.0",
-    "webpack": "5.10.3",
-    "webpack-cli": "4.2.0",
-    "webpack-dev-server": "3.11.0",
-    "webpack-merge": "5.7.2"
+    "html-webpack-plugin": "5.3.1",
+    "mini-css-extract-plugin": "1.6.0",
+    "node-sass": "6.0.0",
+    "postcss-loader": "5.3.0",
+    "sass-loader": "11.1.1",
+    "webpack": "5.37.1",
+    "webpack-cli": "4.7.0",
+    "webpack-dev-server": "3.11.2",
+    "webpack-merge": "5.7.3"
   }
 }
