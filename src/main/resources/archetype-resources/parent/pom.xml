@@ -37,10 +37,10 @@
     <!-- Versions -->
 #end
 #if ( $optionAemVersion != "cloud" )
-    <core.wcm.components.version>2.17.0</core.wcm.components.version>
+    <core.wcm.components.version>2.17.2</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>5.0.4</acs.aem.commons.version>
+    <acs.aem.commons.version>5.0.6</acs.aem.commons.version>
 #end
 
     <!-- Enable reproducible builds -->
@@ -172,7 +172,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.6.4</version>
+        <version>1.6.5-SNAPSHOT</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -180,13 +180,13 @@
         <artifactId>io.wcm.handler.link</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.6.4</version>
+        <version>1.6.5-SNAPSHOT</version>
       </dependency>
 #end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.13.0</version>
+        <version>1.13.1-SNAPSHOT</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -194,7 +194,7 @@
         <artifactId>io.wcm.handler.media</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.13.0</version>
+        <version>1.13.1-SNAPSHOT</version>
       </dependency>
 #end
       <dependency>
@@ -219,7 +219,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.8.4-2.15.0</version>
+        <version>1.9.0-2.17.2-SNAPSHOT</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -227,7 +227,7 @@
         <artifactId>io.wcm.wcm.core.components</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.8.4-2.15.0</version>
+        <version>1.9.0-2.17.2-SNAPSHOT</version>
       </dependency>
 #end
       <dependency>
