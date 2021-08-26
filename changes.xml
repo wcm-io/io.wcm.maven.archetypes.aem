@@ -30,6 +30,9 @@
       <action type="update" dev="sseifert">
         Update proxy components for core components: Update to latest core component versions.
       </action>
+      <action type="update" dev="sseifert">
+        Add support for AEM 6.5 SP10.
+      </action>
     </release>
 
     <release version="3.3.4" date="2021-06-27">
