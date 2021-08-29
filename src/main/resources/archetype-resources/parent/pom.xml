@@ -40,7 +40,7 @@
     <core.wcm.components.version>2.17.2</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>5.0.6</acs.aem.commons.version>
+    <acs.aem.commons.version>5.0.8</acs.aem.commons.version>
 #end
 
     <!-- Enable reproducible builds -->
@@ -274,7 +274,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
-        <version>4.1.0</version>
+        <version>4.1.1-SNAPSHOT</version>
       </dependency>
 #if ( $optionAemVersion == "6.4" || ($optionAemVersion == "6.5" && $optionAemServicePack=="n") )
       <dependency>
