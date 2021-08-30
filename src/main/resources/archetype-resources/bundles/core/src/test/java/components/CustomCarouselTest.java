@@ -47,7 +47,7 @@ class CustomCarouselTest {
   @BeforeEach
   void setUp() {
     page = context.create().page("/content/mypage");
-    resource = context.create().resource(page.getContentResource().getPath() + "/myresource");
+    resource = context.create().resource(page, "myresource");
     context.currentResource(resource);
 #if ($optionWcmioHandler == 'n')
 
