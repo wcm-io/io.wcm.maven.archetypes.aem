@@ -172,7 +172,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.6.5-SNAPSHOT</version>
+        <version>1.7.0</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -180,13 +180,13 @@
         <artifactId>io.wcm.handler.link</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.6.5-SNAPSHOT</version>
+        <version>1.7.0</version>
       </dependency>
 #end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.13.1-SNAPSHOT</version>
+        <version>1.13.2</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -194,7 +194,7 @@
         <artifactId>io.wcm.handler.media</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.13.1-SNAPSHOT</version>
+        <version>1.13.2</version>
       </dependency>
 #end
       <dependency>
@@ -219,7 +219,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.9.0-2.17.2-SNAPSHOT</version>
+        <version>1.9.0-2.17.2</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -227,7 +227,7 @@
         <artifactId>io.wcm.wcm.core.components</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.9.0-2.17.2-SNAPSHOT</version>
+        <version>1.9.0-2.17.2</version>
       </dependency>
 #end
       <dependency>
@@ -340,7 +340,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.5.10.0000-SNAPSHOT#{else}6.5.0.0004#end</version>
+        <version>#if($optionAemServicePack=="y")6.5.10.0000#{else}6.5.0.0004#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
