@@ -37,14 +37,14 @@
     <!-- Versions -->
 #end
 #if ( $optionAemVersion != "cloud" )
-    <core.wcm.components.version>2.17.2</core.wcm.components.version>
+    <core.wcm.components.version>2.17.10</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>5.0.8</acs.aem.commons.version>
+    <acs.aem.commons.version>5.0.10</acs.aem.commons.version>
 #end
 
     <!-- Enable reproducible builds -->
-    <project.build.outputTimestamp>2020-01-01T00:00:00Z</project.build.outputTimestamp>
+    <project.build.outputTimestamp>2021-01-01T00:00:00Z</project.build.outputTimestamp>
 
   </properties>
 
@@ -287,6 +287,13 @@
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.logging.logback</artifactId>
         <version>1.0.0</version>
+      </dependency>
+#end
+#if ( $optionAemVersion != "cloud" )
+      <dependency>
+        <groupId>com.adobe.cq</groupId>
+        <artifactId>core.wcm.components.testing.aem-mock-plugin</artifactId>
+        <version>${core.wcm.components.version}</version>
       </dependency>
 #end
 #if ( $optionContextAwareConfig == "y" )

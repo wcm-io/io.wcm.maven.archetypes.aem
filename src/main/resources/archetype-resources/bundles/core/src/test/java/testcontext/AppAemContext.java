@@ -3,6 +3,7 @@
 #set( $symbol_escape = '\' )
 package ${package}.testcontext;
 
+import static com.adobe.cq.wcm.core.components.testing.mock.ContextPlugins.CORE_COMPONENTS;
 #if ( $optionContextAwareConfig == "y" )
 import static io.wcm.testing.mock.wcmio.caconfig.ContextPlugins.WCMIO_CACONFIG;
 #end
@@ -52,9 +53,11 @@ public final class AppAemContext {
         .plugin(CACONFIG)
 #end
 #if ( $optionWcmioHandler == "y" )
-        .plugin(WCMIO_SLING, WCMIO_WCM, WCMIO_CACONFIG, WCMIO_HANDLER)
+        .plugin(CORE_COMPONENTS, WCMIO_SLING, WCMIO_WCM, WCMIO_CACONFIG, WCMIO_HANDLER)
 #elseif ( $optionContextAwareConfig == "y" )
-        .plugin(WCMIO_CACONFIG)
+        .plugin(CORE_COMPONENTS, WCMIO_CACONFIG)
+#else
+        .plugin(CORE_COMPONENTS)
 #end
         .afterSetUp(SETUP_CALLBACK)
         .build();
