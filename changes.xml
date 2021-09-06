@@ -28,6 +28,9 @@
         Add AEM WCM Core Components Plugin for AEM Mocks.
       </action>
       <action type="update" dev="sseifert">
+        Define Java version via .cloudmanager/java-version - makes customization of toolchain plugin obsolete.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
       <action type="update" dev="sseifert">

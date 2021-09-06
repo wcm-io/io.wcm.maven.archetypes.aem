@@ -144,6 +144,7 @@
         <include>build-deploy.sh</include>
         <include>README.md</include>
         <include>archetype.properties</include>
+        <include>.cloudmanager/java-version</include>
       </includes>
     </fileSet>
     <fileSet encoding="UTF-8">
