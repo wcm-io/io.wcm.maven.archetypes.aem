@@ -37,6 +37,9 @@
         Update proxy components for core components: Update to latest core component versions.
       </action>
       <action type="update" dev="sseifert">
+        Change default replication agent name to "publish" (for compatibility with AEMaaCS).
+      </action>
+      <action type="update" dev="sseifert">
         Add support for AEM 6.5 SP10.
       </action>
     </release>
