@@ -91,7 +91,6 @@ files:
     contentPackage:
       name: ${projectName}-aem-cms-rewriter-config
       packageType: application
-      acHandling: merge
       rootPath: /apps/${projectName}/config/rewriter
 
 #end
