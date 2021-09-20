@@ -468,6 +468,17 @@
           </configuration>
         </plugin>
 
+#if ( $optionJavaVersion == "8" )
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <configuration>
+            <!-- Avoid https://bugs.openjdk.java.net/browse/JDK-8212233 while building for Java 8 -->
+            <detectJavaApiLink>false</detectJavaApiLink> 
+          </configuration>
+        </plugin>
+
+#end
       </plugins>
     </pluginManagement>
   </build>

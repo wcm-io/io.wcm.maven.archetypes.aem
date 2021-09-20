@@ -45,6 +45,9 @@
       <action type="fix" dev="sseifert">
         aem-cms-rewriter-config package: Remove obsolete acHandling definition.
       </action>
+      <action type="fix" dev="sseifert">
+        maven-javadoc-plugin with Java 8: Avoid https://bugs.openjdk.java.net/browse/JDK-8212233
+      </action>
     </release>
 
     <release version="3.3.4" date="2021-06-27">
