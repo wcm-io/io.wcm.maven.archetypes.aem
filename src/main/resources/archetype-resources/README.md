@@ -1,6 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
+#set($aemProductName = "#if($optionAemVersion=='cloud')AEMaaCS SDK#{else}AEM ${optionAemVersion}#end")
 ${projectName}
 ${projectName.replaceAll('.','=')}
 
@@ -36,8 +37,8 @@ $symbol_pound$symbol_pound$symbol_pound System requirements
 
 * Java ${optionJavaVersion}
 * Apache Maven 3.6.0 or higher
-* AEM ${optionAemVersion} author instance running on port ${aemAuthorPort}
-* Optional: AEM ${optionAemVersion} publish instance running on port ${aemPublishPort}
+* $aemProductName author instance running on port ${aemAuthorPort}
+* Optional: $aemProductName publish instance running on port ${aemPublishPort}
 #if ( $optionAemVersion != "cloud" )
 * To obtain the latest service packs via Maven you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
 #end
