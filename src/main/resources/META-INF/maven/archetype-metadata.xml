@@ -140,8 +140,9 @@
     <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
       <includes>
-        <include>build-deploy-publish.sh</include>
         <include>build-deploy.sh</include>
+        <include>build-deploy-author-and-publish.sh</include>
+        <include>build-deploy-publish.sh</include>
         <include>README.md</include>
         <include>archetype.properties</include>
         <include>.cloudmanager/java-version</include>
