@@ -64,6 +64,10 @@
     rootmapping.target="/sites.html"
 
 #if ( $optionWcmioHandler == "y" )
+  # Instance type
+  io.wcm.wcm.commons.instancetype.impl.InstanceTypeServiceImpl
+    instance.type="author"
+
   # Service user mapping for wcm.io Media Handler
   org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-media-metadata
     user.mapping=["io.wcm.handler.media:dam-rendition-metadata\=[dam-writer-service]"]
@@ -93,6 +97,12 @@
     aliases="xml:pdf"
     json.maximumresults=I"100"
 
+#if ( $optionWcmioHandler == "y" )
+  # Instance type
+  io.wcm.wcm.commons.instancetype.impl.InstanceTypeServiceImpl
+    instance.type="publish"
+
+#end
 
 [:repoinit]
 # Create root folder below /apps for application

@@ -30,6 +30,9 @@
       <action type="add" dev="sseifert">
         Add convenience script "build-deploy-author-and-publish.sh" that builds and then deploys to author and publish instance in parallel.
       </action>
+      <action type="add" dev="sseifert">
+        Add author/publish instance type configuration based on new instance type service in WCM Commons.
+      </action>
       <action type="update" dev="sseifert">
         Define Java version via .cloudmanager/java-version - makes customization of toolchain plugin obsolete.
       </action>

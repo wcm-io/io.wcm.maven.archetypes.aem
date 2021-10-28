@@ -158,7 +158,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.url</artifactId>
-        <version>1.5.2</version>
+        <version>1.5.3-SNAPSHOT</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -166,13 +166,13 @@
         <artifactId>io.wcm.handler.url</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.5.2</version>
+        <version>1.5.3-SNAPSHOT</version>
       </dependency>
 #end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.7.0</version>
+        <version>1.7.1-SNAPSHOT</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -180,13 +180,13 @@
         <artifactId>io.wcm.handler.link</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.7.0</version>
+        <version>1.7.1-SNAPSHOT</version>
       </dependency>
 #end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.13.2</version>
+        <version>1.13.3-SNAPSHOT</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -194,7 +194,7 @@
         <artifactId>io.wcm.handler.media</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.13.2</version>
+        <version>1.13.3-SNAPSHOT</version>
       </dependency>
 #end
       <dependency>
@@ -214,7 +214,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.commons</artifactId>
-        <version>1.8.2</version>
+        <version>1.8.3-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -233,7 +233,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
-        <version>1.6.6</version>
+        <version>1.6.7-SNAPSHOT</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -317,7 +317,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.wcm</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.1-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
