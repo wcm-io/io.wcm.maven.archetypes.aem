@@ -38,7 +38,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 | **optionMultiBundleLayout**         | n       | Split up AEM application in multiple bundles for modularizing large AM applications. _Requires optionSlingInitialContentBundle='y'._
 | **optionContextAwareConfig**        | y       | Setup project with [Sling Context-Aware Configuration][sling-caconfig] and [wcm.io Context-Aware Configuration][wcmio-caconfig] extensions.
 | **optionFrontend**                  | n       | Setup frontend build project with [webpack][webpack]
-| **optionNodeJsPlugin**              | n       | Use [wcm.io Node JS plugin][nodejs-maven--plugin] for frontend build (recommended when [Maven NodeJS Proxy][maven-nodejs-proxy] is used). If not enabled the [frontend-maven-plugin][frontend-maven-plugin] is used instead. For AEM Cloud Service it is recommended to stick with frontend-maven-plugin.
+| **optionNodeJsPlugin**              | n       | Use [wcm.io Node JS plugin][nodejs-maven--plugin] for frontend build (recommended when [Maven NodeJS Proxy][maven-nodejs-proxy] is used). If not enabled the [frontend-maven-plugin][frontend-maven-plugin] is used instead. For AEMaaCS it is recommended to stick with frontend-maven-plugin.
 | **optionWcmioHandler**              | n       | Setup project using wcm.io AEM libraries, especially the [wcm.io Handler][wcmio-handler] Infrastructure and [wcm.io WCM Core Components][wcmio-wcm-core-components]. _Requires optionContextAwareConfig='y'._
 | **optionAcsCommons**                | n       | Deploy [ACS AEM Commons][acs-aem-commons].
 | **optionIntegrationTests**          | n       | Generate an integration tests project based on [AEM testing clients][aem-testing-clients].
@@ -48,7 +48,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Usage examples
 
-${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} AEM project with wcm.io and Sling-Initial-Content project layout and Java 11 for AEM 6.5
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Minimal AEM project with FileVault package layout and Java 11 for AEMaaCS
 
 ```
 mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.archetype.version']}:generate -DinteractiveMode=false \
@@ -60,6 +60,36 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DartifactId=mycompany.myprojectgroup.myproject1 \
   -Dversion=1.0.0-SNAPSHOT \
   -Dpackage=mycompany.myprojectgroup.myproject1 \
+  -DpackageGroupName=mycompany \
+  -DaemAuthorPort=4502 \
+  -DaemPublishPort=4503 \
+  -DoptionJavaVersion=11 \
+  -DoptionAemVersion=cloud \
+  -DoptionAemServicePack=n \
+  -DoptionSlingModelsLatest=n \
+  -DoptionSlingInitialContentBundle=n \
+  -DoptionEditableTemplates=y \
+  -DoptionMultiBundleLayout=n \
+  -DoptionContextAwareConfig=y \
+  -DoptionWcmioHandler=n \
+  -DoptionAcsCommons=n \
+  -DoptionFrontend=n \
+  -DoptionNodeJsPlugin=n \
+  -DoptionIntegrationTests=n
+```
+
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} AEM project with wcm.io and Sling-Initial-Content project layout and Java 11 for AEM 6.5
+
+```
+mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.archetype.version']}:generate -DinteractiveMode=false \
+  -DarchetypeGroupId=io.wcm.maven.archetypes \
+  -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
+  -DarchetypeVersion=${project.properties['releasedVersion.version']} \
+  -DprojectName=myproject2 \
+  -DgroupId=mycompany.myprojectgroup \
+  -DartifactId=mycompany.myprojectgroup.myproject2 \
+  -Dversion=1.0.0-SNAPSHOT \
+  -Dpackage=mycompany.myprojectgroup.myproject2 \
   -DpackageGroupName=mycompany \
   -DaemAuthorPort=4502 \
   -DaemPublishPort=4503 \
@@ -78,42 +108,12 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionIntegrationTests=n
 ```
 
-${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Minimal AEM project with FileVault package layout and Java 8 for AEM Cloud Service
-
-```
-mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.archetype.version']}:generate -DinteractiveMode=false \
-  -DarchetypeGroupId=io.wcm.maven.archetypes \
-  -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
-  -DarchetypeVersion=${project.properties['releasedVersion.version']} \
-  -DprojectName=myproject2 \
-  -DgroupId=mycompany.myprojectgroup \
-  -DartifactId=mycompany.myprojectgroup.myproject2 \
-  -Dversion=1.0.0-SNAPSHOT \
-  -Dpackage=mycompany.myprojectgroup.myproject2 \
-  -DpackageGroupName=mycompany \
-  -DaemAuthorPort=4502 \
-  -DaemPublishPort=4503 \
-  -DoptionJavaVersion=8 \
-  -DoptionAemVersion=cloud \
-  -DoptionAemServicePack=n \
-  -DoptionSlingModelsLatest=n \
-  -DoptionSlingInitialContentBundle=n \
-  -DoptionEditableTemplates=y \
-  -DoptionMultiBundleLayout=n \
-  -DoptionContextAwareConfig=y \
-  -DoptionWcmioHandler=n \
-  -DoptionAcsCommons=n \
-  -DoptionFrontend=n \
-  -DoptionNodeJsPlugin=n \
-  -DoptionIntegrationTests=n
-```
-
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 
 * Java 8 or Java 11
 * Apache Maven 3.3.9 or higher
-* AEM 6.4, 6.5 or AEM Cloud Service
+* AEM 6.4, 6.5 or AEMaaCS
 * Optional: If you want to install latest service packs you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
 
 
