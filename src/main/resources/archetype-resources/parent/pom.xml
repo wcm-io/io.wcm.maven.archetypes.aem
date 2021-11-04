@@ -395,11 +395,11 @@
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>5.7.0</version>
+        <version>5.8.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "3.10.0" )
+#set( $mockitoVersion = "4.0.0" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
@@ -416,13 +416,13 @@
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.13.1</version>
+        <version>4.13.2</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>aem-cloud-testing-clients</artifactId>
-        <version>0.7.1</version>
+        <version>0.8.2</version>
       </dependency>
 #elseif ( $optionAemVersion == "6.5" )
       <dependency>
