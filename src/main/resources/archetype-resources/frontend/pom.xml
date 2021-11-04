@@ -16,6 +16,9 @@
 
   <name>${projectName} Frontend</name>
 
+#set( $nodeJsVersion = "16.13.0" )
+#set( $npmVersion = "8.1.0" )
+
   <build>
 
     <plugins>
@@ -44,7 +47,7 @@
           </execution>
         </executions>
         <configuration>
-          <nodeJsVersion>16.13.0</nodeJsVersion>
+          <nodeJsVersion>${nodeJsVersion}</nodeJsVersion>
           <tasks>
             <npmInstallTask>
               <workingDirectory>${project.basedir}</workingDirectory>
@@ -73,9 +76,9 @@
             </goals>
             <phase>process-resources</phase>
             <configuration>
-              <nodeVersion>v16.13.0</nodeVersion>
+              <nodeVersion>v${nodeJsVersion}</nodeVersion>
 ## Explicitly define NPM version for frontend-maven-plugin to avoid build problems on Jenkins
-              <npmVersion>8.1.0</npmVersion>
+              <npmVersion>${npmVersion}</npmVersion>
             </configuration>
           </execution>
           <execution>
