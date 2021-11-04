@@ -49,6 +49,7 @@
 #{end}
                   /conf
                 </validRoots>
+                <severityForUncoveredAncestorNodes>info</severityForUncoveredAncestorNodes>
               </options>
             </jackrabbit-filter>
           </validatorsSettings>
