@@ -41,9 +41,9 @@ $symbol_pound$symbol_pound$symbol_pound System requirements
 * Optional: $aemProductName publish instance running on port ${aemPublishPort}
 #if ( $optionAemVersion != "cloud" )
 * To obtain the latest service packs via Maven you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
-#end
 
 It is recommended to set up the local AEM instances with `nosamplecontent` run mode.
+#end
 
 
 $symbol_pound$symbol_pound$symbol_pound Project overview
