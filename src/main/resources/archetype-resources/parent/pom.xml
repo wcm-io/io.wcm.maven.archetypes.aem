@@ -37,10 +37,10 @@
     <!-- Versions -->
 #end
 #if ( $optionAemVersion != "cloud" )
-    <core.wcm.components.version>2.17.10</core.wcm.components.version>
+    <core.wcm.components.version>2.17.12</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>5.0.12</acs.aem.commons.version>
+    <acs.aem.commons.version>5.0.14</acs.aem.commons.version>
 #end
 
     <!-- Enable reproducible builds -->
@@ -172,7 +172,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.7.2</version>
+        <version>1.7.3-SNAPSHOT</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -180,13 +180,13 @@
         <artifactId>io.wcm.handler.link</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.7.2</version>
+        <version>1.7.3-SNAPSHOT</version>
       </dependency>
 #end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.13.4</version>
+        <version>1.13.5-SNAPSHOT</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -194,7 +194,7 @@
         <artifactId>io.wcm.handler.media</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.13.4</version>
+        <version>1.13.5-SNAPSHOT</version>
       </dependency>
 #end
       <dependency>
@@ -219,7 +219,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.9.0-2.17.2</version>
+        <version>1.9.1-2.17.12-SNAPSHOT</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -227,7 +227,7 @@
         <artifactId>io.wcm.wcm.core.components</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.9.0-2.17.2</version>
+        <version>1.9.1-2.17.12-SNAPSHOT</version>
       </dependency>
 #end
       <dependency>
@@ -247,7 +247,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.7.8</version>
+        <version>1.7.9-SNAPSHOT</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -255,7 +255,7 @@
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.7.8</version>
+        <version>1.7.9-SNAPSHOT</version>
       </dependency>
 #end
       <dependency>
