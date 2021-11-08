@@ -110,6 +110,8 @@ files:
   dir: packages
 - url: mvn:io.wcm/io.wcm.wcm.ui.granite//zip/content
   dir: packages
+- url: mvn:io.wcm/io.wcm.wcm.ui.clientlibs//zip/content
+  dir: packages
 
 #end
 # Application package

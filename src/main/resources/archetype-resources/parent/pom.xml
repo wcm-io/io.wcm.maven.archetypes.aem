@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>1.15.11-SNAPSHOT</version>
+    <version>1.15.12</version>
     <relativePath/>
   </parent>
 
@@ -172,7 +172,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.7.3-SNAPSHOT</version>
+        <version>1.7.4</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -180,13 +180,13 @@
         <artifactId>io.wcm.handler.link</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.7.3-SNAPSHOT</version>
+        <version>1.7.4</version>
       </dependency>
 #end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.13.5-SNAPSHOT</version>
+        <version>1.13.6</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -194,7 +194,7 @@
         <artifactId>io.wcm.handler.media</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.13.5-SNAPSHOT</version>
+        <version>1.13.6</version>
       </dependency>
 #end
       <dependency>
@@ -219,7 +219,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.9.1-2.17.12-SNAPSHOT</version>
+        <version>1.9.2-2.17.12</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -227,7 +227,7 @@
         <artifactId>io.wcm.wcm.core.components</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.9.1-2.17.12-SNAPSHOT</version>
+        <version>1.9.2-2.17.12</version>
       </dependency>
 #end
       <dependency>
@@ -247,7 +247,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.7.9-SNAPSHOT</version>
+        <version>1.8.0</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
@@ -255,19 +255,28 @@
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
         <classifier>content</classifier>
         <type>zip</type>
-        <version>1.7.9-SNAPSHOT</version>
+        <version>1.8.0</version>
       </dependency>
 #end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
-        <version>1.2.0</version>
+        <version>1.2.2</version>
       </dependency>
+#if ( $optionAemVersion == "cloud" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
+        <classifier>content</classifier>
+        <type>zip</type>
+        <version>1.2.2</version>
+      </dependency>
+#end
 #end
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
         <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
-        <version>1.11.1-SNAPSHOT</version>
+        <version>1.11.2</version>
       </dependency>
 
       <!-- wcm.io Testing -->
