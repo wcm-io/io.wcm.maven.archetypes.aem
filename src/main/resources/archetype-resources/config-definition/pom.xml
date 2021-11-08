@@ -139,6 +139,13 @@
       <type>zip</type>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
 
 #end
   </dependencies>

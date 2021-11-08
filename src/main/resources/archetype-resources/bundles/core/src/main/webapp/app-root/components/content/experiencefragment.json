@@ -2,5 +2,5 @@
   "jcr:primaryType": "cq:Component",
   "jcr:title": "Experience Fragment",
   "componentGroup": "${projectName} Content",
-  "sling:resourceSuperType": "#if($optionWcmioHandler=='y')wcm-io/wcm/core/components/#{else}core/wcm/components/#{end}experiencefragment/v1/experiencefragment"
+  "sling:resourceSuperType": "#if($optionWcmioHandler=='y')wcm-io/wcm/core/components/#{else}core/wcm/components/#{end}experiencefragment/v2/experiencefragment"
 }

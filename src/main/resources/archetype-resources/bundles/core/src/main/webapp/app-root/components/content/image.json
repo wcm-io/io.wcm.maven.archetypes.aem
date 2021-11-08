@@ -2,5 +2,5 @@
   "jcr:primaryType": "cq:Component",
   "jcr:title": "Image",
   "componentGroup": "${projectName} Content",
-  "sling:resourceSuperType": "#if($optionWcmioHandler=='y')wcm-io/wcm/core/components/#{else}core/wcm/components/#{end}image/v2/image"
+  "sling:resourceSuperType": "core/wcm/components/image/v3/image"
 }

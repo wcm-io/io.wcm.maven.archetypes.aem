@@ -52,6 +52,7 @@
 #{end}
                   /content/dam
                 </validRoots>
+                <severityForUncoveredAncestorNodes>debug</severityForUncoveredAncestorNodes>
               </options>
             </jackrabbit-filter>
           </validatorsSettings>

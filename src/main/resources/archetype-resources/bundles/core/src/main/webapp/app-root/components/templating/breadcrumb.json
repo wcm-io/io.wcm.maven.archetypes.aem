@@ -2,5 +2,5 @@
   "jcr:primaryType": "cq:Component",
   "jcr:title": "Breadcrumb",
   "componentGroup": "${projectName} Templating",
-  "sling:resourceSuperType": "#if($optionWcmioHandler=='y')wcm-io/wcm/core/components/#{else}core/wcm/components/#{end}breadcrumb/v2/breadcrumb"
+  "sling:resourceSuperType": "#if($optionWcmioHandler=='y')wcm-io/wcm/core/components/#{else}core/wcm/components/#{end}breadcrumb/v3/breadcrumb"
 }

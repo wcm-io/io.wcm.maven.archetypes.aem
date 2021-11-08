@@ -23,6 +23,39 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
+    <release version="3.4.0" date="2021-11-08">
+      <action type="add" dev="sseifert">
+        Add AEM WCM Core Components Plugin for AEM Mocks.
+      </action>
+      <action type="add" dev="sseifert">
+        Add convenience script "build-deploy-author-and-publish.sh" that builds and then deploys to author and publish instance in parallel.
+      </action>
+      <action type="add" dev="sseifert">
+        Add author/publish instance type configuration based on new instance type service in WCM Commons.
+      </action>
+      <action type="update" dev="sseifert">
+        Define Java version via .cloudmanager/java-version - makes customization of toolchain plugin obsolete.
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+      <action type="update" dev="sseifert">
+        Update proxy components for core components: Update to latest core component versions.
+      </action>
+      <action type="update" dev="sseifert">
+        Change default replication agent name to "publish" (for compatibility with AEMaaCS).
+      </action>
+      <action type="update" dev="sseifert">
+        Add support for AEM 6.5 SP10.
+      </action>
+      <action type="fix" dev="sseifert">
+        aem-cms-rewriter-config package: Remove obsolete acHandling definition.
+      </action>
+      <action type="fix" dev="sseifert">
+        maven-javadoc-plugin with Java 8: Avoid https://bugs.openjdk.java.net/browse/JDK-8212233
+      </action>
+    </release>
+
     <release version="3.3.4" date="2021-06-27">
       <action type="update" dev="sseifert">
         Update dependencies.

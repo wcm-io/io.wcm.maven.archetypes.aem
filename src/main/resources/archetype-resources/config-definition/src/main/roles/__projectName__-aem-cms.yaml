@@ -32,7 +32,7 @@ files:
     delayAfterInstallSec: 30
 #elseif ( $optionAemVersion == '6.5' )
 # AEM Service Pack
-- url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.9/zip
+- url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.10/zip
   dir: packages
   modelOptions:
     delayAfterInstallSec: 30
@@ -91,7 +91,6 @@ files:
     contentPackage:
       name: ${projectName}-aem-cms-rewriter-config
       packageType: application
-      acHandling: merge
       rootPath: /apps/${projectName}/config/rewriter
 
 #end
@@ -110,6 +109,8 @@ files:
 - url: mvn:io.wcm/io.wcm.wcm.parsys//zip/content
   dir: packages
 - url: mvn:io.wcm/io.wcm.wcm.ui.granite//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.wcm.ui.clientlibs//zip/content
   dir: packages
 
 #end

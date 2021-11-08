@@ -20,7 +20,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 #if ($optionWcmioHandler == 'n')
-import com.adobe.cq.wcm.core.components.internal.link.DefaultPathProcessor;
 import com.adobe.cq.wcm.core.components.models.Image;
 #end
 import com.day.cq.wcm.api.Page;
@@ -47,13 +46,8 @@ class CustomCarouselTest {
   @BeforeEach
   void setUp() {
     page = context.create().page("/content/mypage");
-    resource = context.create().resource(page.getContentResource().getPath() + "/myresource");
+    resource = context.create().resource(page, "myresource");
     context.currentResource(resource);
-#if ($optionWcmioHandler == 'n')
-
-    // required for link handling in core components
-    context.registerInjectActivateService(new DefaultPathProcessor());
-#end
   }
 
   @Test
