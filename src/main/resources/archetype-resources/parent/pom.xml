@@ -340,7 +340,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.4.8.0004#{else}6.4.0.0003#end</version>
+        <version>#if($optionAemServicePack=="y")6.4.8.0005-SNAPSHOT#{else}6.4.0.0004-SNAPSHOT#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -356,7 +356,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.5.11.0000-SNAPSHOT#{else}6.5.0.0004#end</version>
+        <version>#if($optionAemServicePack=="y")6.5.11.0000-SNAPSHOT#{else}6.5.0.0005-SNAPSHOT#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
