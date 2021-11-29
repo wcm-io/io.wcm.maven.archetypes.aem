@@ -122,16 +122,16 @@
       <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
       <scope>test</scope>
     </dependency>
-#if ( $optionAemVersion == "6.4" || ($optionAemVersion == "6.5" && $optionAemServicePack=="n") )
+#if ( $optionAemVersion == "6.5" && $optionAemServicePack=="y" )
     <dependency>
-      <groupId>org.apache.sling</groupId>
-      <artifactId>org.apache.sling.testing.logging-mock</artifactId>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.testing.logging.logback</artifactId>
       <scope>test</scope>
     </dependency>
 #else
     <dependency>
-      <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.testing.logging.logback</artifactId>
+      <groupId>org.apache.sling</groupId>
+      <artifactId>org.apache.sling.testing.logging-mock</artifactId>
       <scope>test</scope>
     </dependency>
 #end
