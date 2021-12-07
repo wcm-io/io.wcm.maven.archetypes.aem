@@ -168,7 +168,6 @@
             <include>README.md</include>
             <include>clientlib.config.js</include>
             <include>package.json</include>
-            <include>package-lock.json</include>
             <include>src\index.*</include>
           </includes>
         </fileSet>
@@ -181,7 +180,6 @@
             <exclude>README.md</exclude>
             <exclude>clientlib.config.js</exclude>
             <exclude>package.json</exclude>
-            <exclude>package-lock.json</exclude>
             <exclude>src\index.*</exclude>
           </excludes>
         </fileSet>

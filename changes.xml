@@ -30,6 +30,9 @@
       <action type="update" dev="sseifert">
         Add support for AEM 6.5 SP11.
       </action>
+      <action type="remove" dev="sseifert">
+        Remove package-lock.json from archetype. It will be created automatically on first project build.
+      </action>
     </release>
 
     <release version="3.4.0" date="2021-11-08">
