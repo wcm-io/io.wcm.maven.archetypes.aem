@@ -19,6 +19,7 @@ import static org.apache.sling.testing.mock.caconfig.ContextPlugins.CACONFIG;
 import java.io.IOException;
 
 import org.apache.sling.api.resource.PersistenceException;
+import org.apache.sling.testing.mock.sling.ResourceResolverType;
 import org.jetbrains.annotations.NotNull;
 
 import io.wcm.testing.mock.aem.junit5.AemContext;
@@ -48,7 +49,21 @@ public final class AppAemContext {
    * @return {@link AemContext}
    */
   public static AemContext newAemContext() {
-    return new AemContextBuilder()
+    return newAemContextBuilder().build();
+  }
+
+  /**
+   * @return {@link AemContextBuilder}
+   */
+  public static AemContextBuilder newAemContextBuilder() {
+    return newAemContextBuilder(ResourceResolverType.RESOURCERESOLVER_MOCK);
+  }
+
+  /**
+   * @return {@link AemContextBuilder}
+   */
+  public static AemContextBuilder newAemContextBuilder(@NotNull ResourceResolverType resourceResolverType) {
+    return new AemContextBuilder(resourceResolverType)
 #if ( $optionContextAwareConfig == "y" )
         .plugin(CACONFIG)
 #end
@@ -59,8 +74,7 @@ public final class AppAemContext {
 #else
         .plugin(CORE_COMPONENTS)
 #end
-        .afterSetUp(SETUP_CALLBACK)
-        .build();
+        .afterSetUp(SETUP_CALLBACK);
   }
 
   /**
@@ -81,9 +95,9 @@ public final class AppAemContext {
 #end
 #if ( $optionWcmioHandler == "y" )
       // setup handler
-      context.registerInjectActivateService(new LinkHandlerConfigImpl());
-      context.registerInjectActivateService(new MediaHandlerConfigImpl());
-      context.registerInjectActivateService(new MediaFormatProviderImpl());
+      context.registerInjectActivateService(LinkHandlerConfigImpl.class);
+      context.registerInjectActivateService(MediaHandlerConfigImpl.class);
+      context.registerInjectActivateService(MediaFormatProviderImpl.class);
 
 #end
     }
