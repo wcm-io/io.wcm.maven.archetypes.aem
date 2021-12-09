@@ -194,7 +194,7 @@
     <dependency>
       <groupId>com.adobe.aem</groupId>
       <artifactId>uber-jar</artifactId>
-#if ( $optionAemVersion == "6.4" || ($optionAemVersion == "6.5" && $optionAemServicePack=="n") )
+#if ( $optionAemVersion == "6.5" && $optionAemServicePack=="n" )
       <classifier>apis</classifier>
 #end
       <scope>provided</scope>

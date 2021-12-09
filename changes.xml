@@ -23,7 +23,7 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
-    <release version="3.4.2" date="not released">
+    <release version="3.5.0" date="not released">
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
@@ -32,6 +32,9 @@
       </action>
       <action type="remove" dev="sseifert">
         Remove package-lock.json from archetype. It will be created automatically on first project build.
+      </action>
+      <action type="remove" dev="sseifert">
+        Drop support for AEM 6.4.
       </action>
     </release>
 

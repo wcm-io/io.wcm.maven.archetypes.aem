@@ -30,7 +30,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 | **aemAuthorPort**                   | 4502    | Default port for local AEM author instance
 | **aemPublishPort**                  | 4503    | Default port for local AEM publish instance
 | **optionJavaVersion**               | 8       | Java version (8 or 11)
-| **optionAemVersion**                | cloud   | AEM major version (`6.4`, `6.5` or `cloud`)
+| **optionAemVersion**                | cloud   | AEM major version (`6.5` or `cloud`)
 | **optionAemServicePack**            | n       | Use latest service pack for AEM version - you need to deploy artifacts following [these conventions][aem-binaries-conventions]
 | **optionSlingModelsLatest**         | n       | Use latest Sling Models version
 | **optionSlingInitialContentBundle** | y       | **y**: AEM application projects is set up with scripts and content parts as JSON files within the OSGi bundle with Sling-Initial Content, suitable for [File System Resource Provider][fsresource-adaptto-talk]. _Works with all AEM versions._<br/>**n**: Projects are set up with FileVault package layout, suitable for [AEM Developer Tools for Eclipse][aem-eclipse-ide] ([Sling IDE][sling-eclipse-ide]).
@@ -113,7 +113,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 
 * Java 8 or Java 11
 * Apache Maven 3.3.9 or higher
-* AEM 6.4, 6.5 or AEMaaCS
+* AEM 6.5 or AEMaaCS
 * Optional: If you want to install latest service packs you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
 
 

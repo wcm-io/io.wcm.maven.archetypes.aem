@@ -1,1 +1,0 @@
--f ../beta64Project -U clean package
