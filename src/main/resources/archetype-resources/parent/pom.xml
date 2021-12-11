@@ -275,7 +275,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
-        <version>4.1.7-SNAPSHOT</version>
+        <version>4.1.8</version>
       </dependency>
 #if ( $optionAemVersion == "6.5" && $optionAemServicePack=="y" )
       <dependency>
@@ -301,7 +301,7 @@
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.testing.caconfig-mock-plugin</artifactId>
-        <version>1.3.5-SNAPSHOT</version>
+        <version>1.3.6</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
