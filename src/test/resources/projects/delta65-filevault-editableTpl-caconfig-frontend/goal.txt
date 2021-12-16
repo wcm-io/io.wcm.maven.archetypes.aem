@@ -1,1 +1,1 @@
--f ../delta65Project -U clean package
+-f ../delta65Project -U clean verify

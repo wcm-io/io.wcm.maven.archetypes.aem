@@ -1,1 +1,1 @@
--f ../epsilon65Project -U clean package
+-f ../epsilon65Project -U clean verify

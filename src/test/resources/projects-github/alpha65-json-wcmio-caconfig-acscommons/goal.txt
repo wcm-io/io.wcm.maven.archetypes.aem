@@ -1,1 +1,1 @@
--f ../alpha65Project -U clean package
+-f ../alpha65Project -U clean verify

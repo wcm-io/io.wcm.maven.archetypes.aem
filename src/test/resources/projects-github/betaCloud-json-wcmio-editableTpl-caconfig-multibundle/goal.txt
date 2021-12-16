@@ -1,1 +1,1 @@
--f ../betacloudProject -U clean package
+-f ../betacloudProject -U clean verify
