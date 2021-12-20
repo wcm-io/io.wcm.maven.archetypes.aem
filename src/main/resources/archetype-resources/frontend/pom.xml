@@ -117,20 +117,33 @@
   </build>
 
 #if ( $optionNodeJsPlugin == "y" && $optionAemVersion == "cloud" )
-  <!-- Proxy repository to download NodeJS binaries -->
-  <repositories>
-    <repository>
-      <id>maven-nodejs-proxy</id>
-      <url>https://maven-nodejs-proxy.pvtool.org/</url>
-      <layout>default</layout>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
+  <profiles>
+    <!-- Profile gets active when building in Cloud Manager -->
+    <profile>
+      <id>cmBuild</id>
+      <activation>
+        <property>
+          <name>env.CM_BUILD</name>
+        </property>
+      </activation>
+
+      <!-- Proxy repository to download NodeJS binaries -->
+      <repositories>
+        <repository>
+          <id>maven-nodejs-proxy</id>
+          <url>https://maven-nodejs-proxy.pvtool.org/</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+
+    </profile>
+  </profiles>
 
 #end
 </project>
