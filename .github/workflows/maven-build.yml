@@ -19,8 +19,13 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ ubuntu-latest ]
         java: [11, 17]
+        os: [ ubuntu-latest ]
+        include:
+          - java: 11
+            os: windows-latest
+          - java: 11
+            os: macos-latest
 
     steps:
       # Check out Git repository
@@ -44,4 +49,4 @@ jobs:
 
       # Build & verify
       - name: Build and verify
-        run: ./mvnw -s ./.maven-settings.xml -Pcontinuous-integration -B -U -Darchetype.test.settingsFile=./.maven-settings.xml -Darchetype.test.projectsDirectory=target/test-classes/projects-github clean verify
+        run: ./mvnw -s ./.maven-settings.xml -Pcontinuous-integration -B -U -D"archetype.test.settingsFile=./.maven-settings.xml" -D"archetype.test.projectsDirectory=target/test-classes/projects-github" clean verify
