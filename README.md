@@ -1,6 +1,7 @@
 <img src="https://wcm.io/images/favicon-16@2x.png"/> wcm.io Maven Archetype for AEM
 ======
 [![Build](https://github.com/wcm-io/io.wcm.maven.archetypes.aem/workflows/Build/badge.svg?branch=develop)](https://github.com/wcm-io/io.wcm.maven.archetypes.aem/actions?query=workflow%3ABuild+branch%3Adevelop)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.wcm.maven.archetypes/io.wcm.maven.archetypes.aem/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.wcm.maven.archetypes/io.wcm.maven.archetypes.aem)
 
 Maven Archetype for creating new AEM projects.
 
