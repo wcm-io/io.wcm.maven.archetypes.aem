@@ -47,15 +47,15 @@
   </properties>
 
   <scm>
-    <connection>scm:git:https://github.com/wcm-io/wcm-io-maven-archetype-aem.git</connection>
-    <developerConnection>scm:git:https://github.com/wcm-io/wcm-io-maven-archetype-aem.git</developerConnection>
-    <url>https://github.com/wcm-io/wcm-io-maven-archetype-aem</url>
+    <connection>scm:git:https://github.com/wcm-io/io.wcm.maven.archetypes.aem.git</connection>
+    <developerConnection>scm:git:https://github.com/wcm-io/io.wcm.maven.archetypes.aem.git</developerConnection>
+    <url>https://github.com/wcm-io/io.wcm.maven.archetypes.aem</url>
     <tag>HEAD</tag>
   </scm>
 
   <ciManagement>
     <system>GitHub Actions</system>
-    <url>https://github.com/wcm-io/wcm-io-maven-archetype-aem/actions</url>
+    <url>https://github.com/wcm-io/io.wcm.maven.archetypes.aem/actions</url>
   </ciManagement>
 
   <build>
