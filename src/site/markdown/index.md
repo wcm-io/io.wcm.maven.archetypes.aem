@@ -35,6 +35,11 @@ See [Usage][usage] for a detailed documentation.
 If you want to setup AEM infrastructure for deployment of this project you can use the [Maven Archetype for AEM Configuration Management][aem-confmgmt-archetype].
 
 
+### GitHub Repository
+
+Sources: https://github.com/wcm-io/io.wcm.maven.archetypes.aem
+
+
 ### Further Resources
 
 * [adaptTo() 2018 Talk: Maven Archetypes for AEM][adaptto-talk-2018-aem-archetypes]
