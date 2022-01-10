@@ -205,19 +205,6 @@
       <artifactId>javax.servlet-api</artifactId>
       <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>org.apache.geronimo.specs</groupId>
-      <artifactId>geronimo-atinject_1.0_spec</artifactId>
-      <scope>provided</scope>
-    </dependency>
-#if ( $optionJavaVersion == "8" )
-    <!-- For build compatibility with Java 11 -->
-#end
-    <dependency>
-      <groupId>org.apache.geronimo.specs</groupId>
-      <artifactId>geronimo-annotation_1.3_spec</artifactId>
-      <scope>provided</scope>
-    </dependency>
 
   </dependencies>
 
