@@ -67,15 +67,6 @@
 
     <plugins>
 
-      <!-- Skip JSON validation -->
-      <plugin>
-        <groupId>org.apache.sling</groupId>
-        <artifactId>sling-maven-plugin</artifactId>
-        <configuration>
-          <skip>true</skip>
-        </configuration>
-      </plugin>
-
       <!-- Do not generate eclipse project files -->
       <plugin>
         <groupId>io.wcm.devops.maven.plugins</groupId>
