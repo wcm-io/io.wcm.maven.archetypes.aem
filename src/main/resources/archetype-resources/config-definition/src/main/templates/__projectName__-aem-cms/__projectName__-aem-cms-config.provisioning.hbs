@@ -43,6 +43,18 @@
   org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-media-dynamicmedia
     user.mapping=["io.wcm.handler.media:dynamic-media-support\=[configuration-reader-service]"]
 
+  # Required DS components for systemready check
+  org.apache.felix.hc.generalchecks.DsComponentsCheck-${projectName}-systemready
+    hc.name="${projectName}\ -\ Required Components"
+    hc.tags=["${projectName}","systemready"]
+    statusForMissing="TEMPORARILY_UNAVAILABLE"
+    components.list=[ \
+      "${package}.config.impl.LinkHandlerConfigImpl", \
+      "${package}.config.impl.MediaFormatProviderImpl", \
+      "${package}.config.impl.MediaHandlerConfigImpl", \
+      "io.wcm.caconfig.extensions.contextpath.impl.RootTemplateContextPathStrategy", \
+      "io.wcm.caconfig.extensions.persistence.impl.PagePersistenceStrategy"]
+
 #end
 [configurations runModes=author]
 
