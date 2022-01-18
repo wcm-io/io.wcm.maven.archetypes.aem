@@ -30,6 +30,9 @@
       <action type="add" dev="sseifert">
         Add OSGi config with required DS components for systemready check.
       </action>
+      <action type="add" dev="sseifert">
+        Introduce option 'optionContextAwareConfigLatest' to include latest Sling Context-Aware Configuration bundles (including new org.apache.sling.models.caconfig bundle).
+      </action>
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
