@@ -20,6 +20,7 @@ To build and deploy the application to your local AEM instance use these scripts
 
 * `build-deploy.sh` - Build and deploy to author instance
 * `build-deploy-publish.sh` - Build and deploy to publish instance
+* `build-deploy-author-and-publish.sh` - Build, and then deploy to author and publish instance (in parallel)
 
 The first deployment may take a while until all updated OSGi bundles are installed.
 
