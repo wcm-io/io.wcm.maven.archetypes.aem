@@ -34,6 +34,26 @@
       <type>zip</type>
       <scope>compile</scope>
     </dependency>
+#if ( $optionSlingInitialContentBundle == "y" && $optionAemVersion == "cloud" )
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.core</artifactId>
+      <version>${version}</version>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+#if ( $optionMultiBundleLayout == "y" )
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.clientlibs</artifactId>
+      <version>${version}</version>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+#end
+#end
 #if ( $optionSlingInitialContentBundle == "n" )
     <dependency>
       <groupId>${groupId}</groupId>
@@ -88,8 +108,18 @@
     </dependency>
 
 #end
-#if ( $optionWcmioHandler == "y" && $optionAemVersion == "cloud" )
+#if ( $optionAemVersion == "cloud" && ($optionContextAwareConfig == "y" || $optionWcmioHandler == "y") )
     <!-- wcm.io - Content packages with Sling-Initial-Content, see https://wcm-io.atlassian.net/l/c/d2FuEgf8 for details -->
+#if ( $optionContextAwareConfig == "y" )
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.caconfig.editor</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+#end
+#if ( $optionWcmioHandler == "y" )
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.handler.url</artifactId>
@@ -114,6 +144,13 @@
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.handler.richtext</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.wcm.commons</artifactId>
       <classifier>content</classifier>
       <type>zip</type>
       <scope>compile</scope>
@@ -146,6 +183,7 @@
       <type>zip</type>
       <scope>compile</scope>
     </dependency>
+#end
 
 #end
   </dependencies>

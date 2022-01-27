@@ -75,8 +75,13 @@ files:
       rootPath: /apps/${projectName}/config/rewriter
 
 #end
-#if ( $optionWcmioHandler == "y" && $optionAemVersion == "cloud" )
+#if ( $optionAemVersion == "cloud" && ($optionContextAwareConfig == "y" || $optionWcmioHandler == "y") )
 # wcm.io
+#if ( $optionContextAwareConfig == "y" )
+- url: mvn:io.wcm/io.wcm.caconfig.editor//zip/content
+  dir: packages
+#end
+#if ( $optionWcmioHandler == "y" )
 - url: mvn:io.wcm/io.wcm.handler.url//zip/content
   dir: packages
 - url: mvn:io.wcm/io.wcm.handler.link//zip/content
@@ -84,6 +89,8 @@ files:
 - url: mvn:io.wcm/io.wcm.handler.media//zip/content
   dir: packages
 - url: mvn:io.wcm/io.wcm.handler.richtext//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.wcm.commons//zip/content
   dir: packages
 - url: mvn:io.wcm/io.wcm.wcm.core.components//zip/content
   dir: packages
@@ -93,11 +100,21 @@ files:
   dir: packages
 - url: mvn:io.wcm/io.wcm.wcm.ui.clientlibs//zip/content
   dir: packages
+#end
 
 #end
 # Application package
 - url: mvn:${groupId}/${rootArtifactId}.complete//zip
   dir: packages
+#if ( $optionSlingInitialContentBundle == "y" && $optionAemVersion == "cloud" )
+- url: mvn:${groupId}/${rootArtifactId}.core//zip/content
+  dir: packages
+#if ( $optionMultiBundleLayout == "y" )
+- url: mvn:${groupId}/${rootArtifactId}.clientlibs//zip/content
+  dir: packages
+#end
+#end
+
 #if( $optionSlingInitialContentBundle == "n" )
 - url: mvn:${groupId}/${rootArtifactId}.ui.apps//zip
   dir: packages

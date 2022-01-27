@@ -39,6 +39,9 @@
       <action type="update" dev="sseifert">
         Add support for AEM 6.5 SP11.
       </action>
+      <action type="update" dev="sseifert" issue="WTOOL-72">
+        AEMaaCS: Apply workaround for deploying "Sling-Initial-Content" for OSGi bundles via separate content packages for all OSGi bundles.
+      </action>
       <action type="remove" dev="sseifert">
         Remove package-lock.json from archetype. It will be created automatically on first project build.
       </action>
@@ -106,7 +109,7 @@
         Add support for AEM 6.5 SP8.
       </action>
       <action type="fix" dev="sseifert" issue="WTOOL-72">
-        Apply workaround for deploying "Sling-Initial-Content" for OSGi bundles with authoring client libraries via separate content packages.
+        AEMaaCS: Apply workaround for deploying "Sling-Initial-Content" for OSGi bundles with authoring client libraries via separate content packages.
       </action>
     </release>
 
