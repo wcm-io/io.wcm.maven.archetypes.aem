@@ -114,7 +114,6 @@ files:
   dir: packages
 #end
 #end
-
 #if( $optionSlingInitialContentBundle == "n" )
 - url: mvn:${groupId}/${rootArtifactId}.ui.apps//zip
   dir: packages

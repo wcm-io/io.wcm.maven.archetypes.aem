@@ -136,7 +136,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.extensions</artifactId>
-#if ( $optionContextAwareConfigLatest == "y" )
+#if ( $optionContextAwareConfigLatest == "y" || $optionAemVersion == "cloud" )
         <version>1.9.0</version>
 #else
         <!-- Stick with version 1.8.x because 1.9.x depends on latest Sling Context-Aware Configuration SPI/Impl -->
