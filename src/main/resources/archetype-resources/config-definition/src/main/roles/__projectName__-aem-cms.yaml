@@ -106,7 +106,7 @@ files:
 # Application package
 - url: mvn:${groupId}/${rootArtifactId}.complete//zip
   dir: packages
-#if ( $optionSlingInitialContentBundle == "y" && $optionAemVersion == "cloud" )
+#if ( $optionSlingInitialContentBundle == "y" && $optionSlingInitialContentBundleContentPackage == "y" && $optionAemVersion == "cloud" )
 - url: mvn:${groupId}/${rootArtifactId}.core//zip/content
   dir: packages
 #if ( $optionMultiBundleLayout == "y" )

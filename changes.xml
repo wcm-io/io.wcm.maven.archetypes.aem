@@ -41,6 +41,7 @@
       </action>
       <action type="update" dev="sseifert" issue="WTOOL-72">
         AEMaaCS: Apply workaround for deploying "Sling-Initial-Content" for OSGi bundles via separate content packages for all OSGi bundles.
+        Introduce parameter 'optionSlingInitialContentBundleContentPackage' to enable this also for the application bundles.
       </action>
       <action type="remove" dev="sseifert">
         Remove package-lock.json from archetype. It will be created automatically on first project build.

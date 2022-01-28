@@ -88,6 +88,11 @@
       <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
+    <!-- If set to 'y': Generate application content package out of Sling-Initial-Content store in OSGi bundles as workaround in AEMaaCS e.g. if the bundle contains client libraries hookind into Page Editor, see https://wcm-io.atlassian.net/l/c/ECGe9qZT -->
+    <requiredProperty key="optionSlingInitialContentBundleContentPackage">
+      <defaultValue>n</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
     <!-- Set up projects using editable templates. -->
     <requiredProperty key="optionEditableTemplates">
       <defaultValue>y</defaultValue>
@@ -118,12 +123,12 @@
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Use latest Sling Models version (ignored for AEMaaCS) -->
+    <!-- Use latest Sling Models versions (ignored for AEMaaCS) -->
     <requiredProperty key="optionSlingModelsLatest">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Use latest Sling Models version (ignored for AEMaaCS) -->
+    <!-- Use latest Context-Aware Configuration versions (ignored for AEMaaCS) -->
     <requiredProperty key="optionContextAwareConfigLatest">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>

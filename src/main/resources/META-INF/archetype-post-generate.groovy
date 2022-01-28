@@ -28,10 +28,13 @@ def tests = new File(rootDir, "tests")
 
 // validate parameters - throw exceptions for invalid combinations
 if (optionAemServicePack == "y" && optionAemVersion == "cloud") {
-  throw new RuntimeException("For AEM Cloud Service optionAemServicePack='y' is not allowed - there are no service packs for the cloud.")
+  throw new RuntimeException("For AEMaaCS optionAemServicePack='y' is not allowed - there are no service packs for the cloud.")
 }
 if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
   throw new RuntimeException("Parameter optionMultiBundleLayout='y' is only supported with optionSlingInitialContentBundle='y'.")
+}
+if (optionSlingInitialContentBundleContentPackage == "y" && optionAemVersion != "cloud") {
+  throw new RuntimeException("Parameter optionSlingInitialContentBundleContentPackage='y' is only supported with optionAemVersion='cloud'.")
 }
 if (optionWcmioHandler == "y" && optionContextAwareConfig == "n") {
   throw new RuntimeException("Parameter optionWcmioHandler='y' is only supported with optionContextAwareConfig='y'.")
@@ -210,7 +213,7 @@ if (optionAemVersion == "cloud") {
   }
 }
 else {
-  // remove environments only relevant for AEM Cloud service
+  // remove environments only relevant for AEMaaCS
   assert new File(configDefinition, "src/main/dev-environments/cloud.yaml").delete()
 }
 

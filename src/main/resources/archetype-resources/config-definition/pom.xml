@@ -34,7 +34,7 @@
       <type>zip</type>
       <scope>compile</scope>
     </dependency>
-#if ( $optionSlingInitialContentBundle == "y" && $optionAemVersion == "cloud" )
+#if ( $optionSlingInitialContentBundle == "y" && $optionSlingInitialContentBundleContentPackage == "y" && $optionAemVersion == "cloud" )
     <dependency>
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.core</artifactId>

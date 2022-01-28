@@ -477,7 +477,7 @@
   </dependencyManagement>
 
   <build>
-#if ( $optionSlingInitialContentBundle == "y" && $optionAemVersion == "cloud" )
+#if ( $optionSlingInitialContentBundle == "y" && $optionSlingInitialContentBundleContentPackage == "y" && $optionAemVersion == "cloud" )
     <plugins>
     
       <!-- For OSGi bundles with Sling-Initial-Content: Additionaly generated two attached files for each bundle containing the content 
