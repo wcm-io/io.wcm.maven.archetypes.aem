@@ -1,1 +1,1 @@
--f ../gammacloudProject -U clean package
+-f ../gammacloudProject -U clean verify

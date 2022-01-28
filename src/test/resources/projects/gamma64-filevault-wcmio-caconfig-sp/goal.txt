@@ -1,1 +1,0 @@
--f ../gamma64Project -U clean package

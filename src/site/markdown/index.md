@@ -18,7 +18,7 @@ The wcm.io Maven Archetype for AEM allows you to set up new Maven projects for d
 
 Features:
 
-* Supports AEM 6.4 SP8, AEM 6.5 SP10 and AEM Cloud Service
+* Supports AEM 6.5 and AEM as a Cloud Service (AEMaaCS)
 * Supports Java 8 and Java 11
 * Unit Tests based on JUnit 5 and [AEM Mocks][aem-mock]
 * Supports both Sling-Initial-Content JSON-style project layout and FileVault package layout
@@ -33,6 +33,11 @@ Features:
 See [Usage][usage] for a detailed documentation.
 
 If you want to setup AEM infrastructure for deployment of this project you can use the [Maven Archetype for AEM Configuration Management][aem-confmgmt-archetype].
+
+
+### GitHub Repository
+
+Sources: https://github.com/wcm-io/io.wcm.maven.archetypes.aem
 
 
 ### Further Resources

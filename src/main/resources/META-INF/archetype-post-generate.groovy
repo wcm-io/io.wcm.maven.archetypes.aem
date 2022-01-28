@@ -27,14 +27,14 @@ def parentPom = new File(rootDir, "parent/pom.xml")
 def tests = new File(rootDir, "tests")
 
 // validate parameters - throw exceptions for invalid combinations
-if (optionAemServicePack == "n" && optionAemVersion == "6.4") {
-  throw new RuntimeException("For AEM 6.4 optionAemServicePack='y' is required because AEM 6.4 is only supported with latest service pack.")
-}
 if (optionAemServicePack == "y" && optionAemVersion == "cloud") {
-  throw new RuntimeException("For AEM Cloud Service optionAemServicePack='y' is not allowed - there are no service packs for the cloud.")
+  throw new RuntimeException("For AEMaaCS optionAemServicePack='y' is not allowed - there are no service packs for the cloud.")
 }
 if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
   throw new RuntimeException("Parameter optionMultiBundleLayout='y' is only supported with optionSlingInitialContentBundle='y'.")
+}
+if (optionSlingInitialContentBundleContentPackage == "y" && optionAemVersion != "cloud") {
+  throw new RuntimeException("Parameter optionSlingInitialContentBundleContentPackage='y' is only supported with optionAemVersion='cloud'.")
 }
 if (optionWcmioHandler == "y" && optionContextAwareConfig == "n") {
   throw new RuntimeException("Parameter optionWcmioHandler='y' is only supported with optionContextAwareConfig='y'.")
@@ -44,12 +44,6 @@ if (optionEditableTemplates == "n" && optionWcmioHandler == "n") {
 }
 if (!(javaPackage ==~ /^[a-z0-9\.]+$/)) {
   throw new RuntimeException("Java package name is invalid: " + javaPackage)
-}
-if (optionJavaVersion == "11" && (optionAemVersion == "6.4")) {
-  throw new RuntimeException("Java 11 is only supported for AEM 6.5 and higher.")
-}
-if (optionIntegrationTests == "<" && optionAemVersion == "6.4") {
-  throw new RuntimeException("Integration tests not supported for AEM 6.4.")
 }
 
 // helper methods
@@ -219,7 +213,7 @@ if (optionAemVersion == "cloud") {
   }
 }
 else {
-  // remove environments only relevant for AEM Cloud service
+  // remove environments only relevant for AEMaaCS
   assert new File(configDefinition, "src/main/dev-environments/cloud.yaml").delete()
 }
 

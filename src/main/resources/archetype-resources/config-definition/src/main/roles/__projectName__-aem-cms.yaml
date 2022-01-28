@@ -12,31 +12,12 @@ templateDir: ${projectName}-aem-cms
 
 files:
 
-#if ( $optionAemServicePack == 'y' )
-#if ( $optionAemVersion == '6.3' )
+#if ( $optionAemVersion == '6.5' && $optionAemServicePack == 'y' )
 # AEM Service Pack
-- url: mvn:adobe.binary.aem.63.servicepack/AEM-6.3.3.0/6.3.3/zip
+- url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.11/zip
   dir: packages
   modelOptions:
     delayAfterInstallSec: 30
-# Minimum CFP required by AEM core components. There was a "first deployment" problem with CFP7, so use CFP4.
-- url: mvn:adobe.binary.aem.63.cumulativefixpack/AEM-CFP-6.3.3.4/4.0/zip
-  dir: packages
-  modelOptions:
-    delayAfterInstallSec: 30
-#elseif ( $optionAemVersion == '6.4' )
-# AEM Service Pack
-- url: mvn:adobe.binary.aem.64.servicepack/AEM-6.4.8.0/6.4.8/zip
-  dir: packages
-  modelOptions:
-    delayAfterInstallSec: 30
-#elseif ( $optionAemVersion == '6.5' )
-# AEM Service Pack
-- url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.10/zip
-  dir: packages
-  modelOptions:
-    delayAfterInstallSec: 30
-#end
 #end
 
 #if ( $optionAemVersion != "cloud" )
@@ -94,8 +75,13 @@ files:
       rootPath: /apps/${projectName}/config/rewriter
 
 #end
-#if ( $optionWcmioHandler == "y" && $optionAemVersion == "cloud" )
+#if ( $optionAemVersion == "cloud" && ($optionContextAwareConfig == "y" || $optionWcmioHandler == "y") )
 # wcm.io
+#if ( $optionContextAwareConfig == "y" )
+- url: mvn:io.wcm/io.wcm.caconfig.editor//zip/content
+  dir: packages
+#end
+#if ( $optionWcmioHandler == "y" )
 - url: mvn:io.wcm/io.wcm.handler.url//zip/content
   dir: packages
 - url: mvn:io.wcm/io.wcm.handler.link//zip/content
@@ -103,6 +89,8 @@ files:
 - url: mvn:io.wcm/io.wcm.handler.media//zip/content
   dir: packages
 - url: mvn:io.wcm/io.wcm.handler.richtext//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.wcm.commons//zip/content
   dir: packages
 - url: mvn:io.wcm/io.wcm.wcm.core.components//zip/content
   dir: packages
@@ -112,11 +100,20 @@ files:
   dir: packages
 - url: mvn:io.wcm/io.wcm.wcm.ui.clientlibs//zip/content
   dir: packages
+#end
 
 #end
 # Application package
 - url: mvn:${groupId}/${rootArtifactId}.complete//zip
   dir: packages
+#if ( $optionSlingInitialContentBundle == "y" && $optionSlingInitialContentBundleContentPackage == "y" && $optionAemVersion == "cloud" )
+- url: mvn:${groupId}/${rootArtifactId}.core//zip/content
+  dir: packages
+#if ( $optionMultiBundleLayout == "y" )
+- url: mvn:${groupId}/${rootArtifactId}.clientlibs//zip/content
+  dir: packages
+#end
+#end
 #if( $optionSlingInitialContentBundle == "n" )
 - url: mvn:${groupId}/${rootArtifactId}.ui.apps//zip
   dir: packages

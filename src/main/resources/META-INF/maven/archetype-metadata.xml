@@ -72,18 +72,13 @@
       <defaultValue>8</defaultValue>
       <validationRegex>^(8|11)$</validationRegex>
     </requiredProperty>
-    <!-- AEM major version (6.4, 6.5 or cloud) -->
+    <!-- AEM major version (6.5 or cloud) -->
     <requiredProperty key="optionAemVersion">
       <defaultValue>cloud</defaultValue>
-      <validationRegex>^(6\.4|6\.5|cloud)$</validationRegex>
+      <validationRegex>^(6\.5|cloud)$</validationRegex>
     </requiredProperty>
     <!-- Use latest service pack for AEM version - you need to deploy artifacts following these conventions https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
     <requiredProperty key="optionAemServicePack">
-      <defaultValue>n</defaultValue>
-      <validationRegex>^(y|n)$</validationRegex>
-    </requiredProperty>
-    <!-- Use latest Sling Models version -->
-    <requiredProperty key="optionSlingModelsLatest">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
@@ -91,6 +86,11 @@
          n: Projects are set up with FileVault package layout, suitable for AEM Developer Tools for Eclipse (Sling IDE). -->
     <requiredProperty key="optionSlingInitialContentBundle">
       <defaultValue>y</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
+    <!-- If set to 'y': Generate application content package out of Sling-Initial-Content store in OSGi bundles as workaround in AEMaaCS e.g. if the bundle contains client libraries hookind into Page Editor, see https://wcm-io.atlassian.net/l/c/ECGe9qZT -->
+    <requiredProperty key="optionSlingInitialContentBundleContentPackage">
+      <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
     <!-- Set up projects using editable templates. -->
@@ -120,6 +120,16 @@
     </requiredProperty>
     <!-- Setup project using wcm.io AEM libraries, especially the wcm.io Handler infrastructure. Requires optionContextAwareConfig='y'. -->
     <requiredProperty key="optionWcmioHandler">
+      <defaultValue>n</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
+    <!-- Use latest Sling Models versions (ignored for AEMaaCS) -->
+    <requiredProperty key="optionSlingModelsLatest">
+      <defaultValue>n</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
+    <!-- Use latest Context-Aware Configuration versions (ignored for AEMaaCS) -->
+    <requiredProperty key="optionContextAwareConfigLatest">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
@@ -168,7 +178,6 @@
             <include>README.md</include>
             <include>clientlib.config.js</include>
             <include>package.json</include>
-            <include>package-lock.json</include>
             <include>src\index.*</include>
           </includes>
         </fileSet>
@@ -181,7 +190,6 @@
             <exclude>README.md</exclude>
             <exclude>clientlib.config.js</exclude>
             <exclude>package.json</exclude>
-            <exclude>package-lock.json</exclude>
             <exclude>src\index.*</exclude>
           </excludes>
         </fileSet>

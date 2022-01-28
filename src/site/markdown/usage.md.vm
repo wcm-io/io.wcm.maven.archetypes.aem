@@ -30,16 +30,18 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 | **aemAuthorPort**                   | 4502    | Default port for local AEM author instance
 | **aemPublishPort**                  | 4503    | Default port for local AEM publish instance
 | **optionJavaVersion**               | 8       | Java version (8 or 11)
-| **optionAemVersion**                | cloud   | AEM major version (`6.4`, `6.5` or `cloud`)
+| **optionAemVersion**                | cloud   | AEM major version (`6.5` or `cloud`)
 | **optionAemServicePack**            | n       | Use latest service pack for AEM version - you need to deploy artifacts following [these conventions][aem-binaries-conventions]
-| **optionSlingModelsLatest**         | n       | Use latest Sling Models version
 | **optionSlingInitialContentBundle** | y       | **y**: AEM application projects is set up with scripts and content parts as JSON files within the OSGi bundle with Sling-Initial Content, suitable for [File System Resource Provider][fsresource-adaptto-talk]. _Works with all AEM versions._<br/>**n**: Projects are set up with FileVault package layout, suitable for [AEM Developer Tools for Eclipse][aem-eclipse-ide] ([Sling IDE][sling-eclipse-ide]).
+| **optionSlingInitialContentBundleContentPackage** | n       | If set to **'y'**: Generate application content package out of Sling-Initial-Content store in OSGi bundles as workaround in AEMaaCS e.g. if the bundle contains client libraries hookind into Page Editor, see https://wcm-io.atlassian.net/l/c/ECGe9qZT
 | **optionEditableTemplates**         | y       | Set up projects using editable templates.
 | **optionMultiBundleLayout**         | n       | Split up AEM application in multiple bundles for modularizing large AM applications. _Requires optionSlingInitialContentBundle='y'._
 | **optionContextAwareConfig**        | y       | Setup project with [Sling Context-Aware Configuration][sling-caconfig] and [wcm.io Context-Aware Configuration][wcmio-caconfig] extensions.
 | **optionFrontend**                  | n       | Setup frontend build project with [webpack][webpack]
 | **optionNodeJsPlugin**              | n       | Use [wcm.io Node JS plugin][nodejs-maven--plugin] for frontend build (recommended when [Maven NodeJS Proxy][maven-nodejs-proxy] is used). If not enabled the [frontend-maven-plugin][frontend-maven-plugin] is used instead. For AEMaaCS it is recommended to stick with frontend-maven-plugin.
 | **optionWcmioHandler**              | n       | Setup project using wcm.io AEM libraries, especially the [wcm.io Handler][wcmio-handler] Infrastructure and [wcm.io WCM Core Components][wcmio-wcm-core-components]. _Requires optionContextAwareConfig='y'._
+| **optionSlingModelsLatest**         | n       | Use latest Sling Models bundles (ignored for AEMaaCS)
+| **optionContextAwareConfigLatest**  | n       | Use latest Context-Aware Configuration bundles (ignored for AEMaaCS)
 | **optionAcsCommons**                | n       | Deploy [ACS AEM Commons][acs-aem-commons].
 | **optionIntegrationTests**          | n       | Generate an integration tests project based on [AEM testing clients][aem-testing-clients].
 
@@ -66,12 +68,13 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionJavaVersion=11 \
   -DoptionAemVersion=cloud \
   -DoptionAemServicePack=n \
-  -DoptionSlingModelsLatest=n \
   -DoptionSlingInitialContentBundle=n \
   -DoptionEditableTemplates=y \
   -DoptionMultiBundleLayout=n \
   -DoptionContextAwareConfig=y \
   -DoptionWcmioHandler=n \
+  -DoptionSlingModelsLatest=n \
+  -DoptionContextAwareConfigLatest=n \
   -DoptionAcsCommons=n \
   -DoptionFrontend=n \
   -DoptionNodeJsPlugin=n \
@@ -96,12 +99,13 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionJavaVersion=11 \
   -DoptionAemVersion=6.5 \
   -DoptionAemServicePack=n \
-  -DoptionSlingModelsLatest=y \
   -DoptionSlingInitialContentBundle=y \
   -DoptionEditableTemplates=y \
   -DoptionMultiBundleLayout=n \
   -DoptionContextAwareConfig=y \
   -DoptionWcmioHandler=y \
+  -DoptionSlingModelsLatest=n \
+  -DoptionContextAwareConfigLatest=n \
   -DoptionAcsCommons=n \
   -DoptionFrontend=y \
   -DoptionNodeJsPlugin=n \
@@ -113,7 +117,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 
 * Java 8 or Java 11
 * Apache Maven 3.3.9 or higher
-* AEM 6.4, 6.5 or AEMaaCS
+* AEM 6.5 or AEMaaCS
 * Optional: If you want to install latest service packs you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
 
 

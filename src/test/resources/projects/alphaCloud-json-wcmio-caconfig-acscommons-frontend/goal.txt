@@ -1,1 +1,1 @@
--f ../alphacloudProject -U clean package
+-f ../alphacloudProject -U clean verify

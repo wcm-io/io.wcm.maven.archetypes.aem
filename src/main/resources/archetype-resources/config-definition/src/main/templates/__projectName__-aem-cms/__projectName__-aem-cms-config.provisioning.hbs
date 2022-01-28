@@ -3,21 +3,8 @@
 
 [configurations]
 
-#if ( $optionAemVersion != "cloud" )
-  # Default LogManager configuration
-  org.apache.sling.commons.log.LogManager
-    org.apache.sling.commons.log.pattern="{0,date,dd.MM.yyyy\ HH:mm:ss.SSS}\ *{4}*\ [{2}]\ {3}\ {5}"
-    org.apache.sling.commons.log.file="logs/error.log"
-    org.apache.sling.commons.log.level="warn"
-    org.apache.sling.commons.log.file.size="'.'yyyy-MM-dd"
-    org.apache.sling.commons.log.file.number=I"7"
-    org.apache.sling.commons.log.numOfLines=I"10000"
-    org.apache.sling.commons.log.packagingDataEnabled=B"true"
-
-#end
   # Set loglevel for project-specific bundles
   org.apache.sling.commons.log.LogManager.factory.config-${projectName}
-    org.apache.sling.commons.log.pattern="{0,date,dd.MM.yyyy\ HH:mm:ss.SSS}\ *{4}*\ [{2}]\ {3}\ {5}"
     org.apache.sling.commons.log.file="logs/error.log"
     org.apache.sling.commons.log.level="{{app.logLevel}}"
     org.apache.sling.commons.log.names=["io.wcm","${package}"]
@@ -27,7 +14,7 @@
     linkcheckertransformer.disableChecking=B"true"
 
 #if ( $optionContextAwareConfig == "y" )
-#if ( $optionAemVersion == "6.4" or $optionAemVersion == "6.5" )
+#if ( $optionAemVersion == "6.5" )
   # Update Context-Aware config settings as it is configured by default in latest AEM version
   org.apache.sling.caconfig.management.impl.ConfigurationManagementSettingsImpl
     ignorePropertyNameRegex=["^(jcr|cq):.+$","^sling:resourceType$"]
@@ -55,6 +42,18 @@
   # Service user mapping for wcm.io Media Handler
   org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-${projectName}-wcmio-handler-media-dynamicmedia
     user.mapping=["io.wcm.handler.media:dynamic-media-support\=[configuration-reader-service]"]
+
+  # Required DS components for systemready check
+  org.apache.felix.hc.generalchecks.DsComponentsCheck-${projectName}-systemready
+    hc.name="${projectName}\ -\ Required Components"
+    hc.tags=["${projectName}","systemready"]
+    statusForMissing="TEMPORARILY_UNAVAILABLE"
+    components.list=[ \
+      "${package}.config.impl.LinkHandlerConfigImpl", \
+      "${package}.config.impl.MediaFormatProviderImpl", \
+      "${package}.config.impl.MediaHandlerConfigImpl", \
+      "io.wcm.caconfig.extensions.contextpath.impl.RootTemplateContextPathStrategy", \
+      "io.wcm.caconfig.extensions.persistence.impl.PagePersistenceStrategy"]
 
 #end
 [configurations runModes=author]
