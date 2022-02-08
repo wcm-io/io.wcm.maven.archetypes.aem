@@ -247,13 +247,13 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.9.2-2.17.12</version>
+        <version>1.9.3-2.17.12-SNAPSHOT</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.9.2-2.17.12</version>
+        <version>1.9.3-2.17.12-SNAPSHOT</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>
