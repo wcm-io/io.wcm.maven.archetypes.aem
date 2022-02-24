@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="update" dev="sseifert">
+        Add support for AEM 6.5 SP12.
+      </action>
     </release>
 
     <release version="3.5.0" date="2022-01-28">
