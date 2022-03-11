@@ -37,7 +37,7 @@
     <!-- Versions -->
 #end
 #if ( $optionAemVersion != "cloud" )
-    <core.wcm.components.version>2.18.0</core.wcm.components.version>
+    <core.wcm.components.version>2.18.6</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
     <acs.aem.commons.version>5.2.0</acs.aem.commons.version>
@@ -428,7 +428,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "4.3.1" )
+#set( $mockitoVersion = "4.4.0" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
