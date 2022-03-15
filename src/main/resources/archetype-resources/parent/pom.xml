@@ -191,13 +191,13 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.9.0</version>
+        <version>1.9.2</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.9.0</version>
+        <version>1.9.2</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>
