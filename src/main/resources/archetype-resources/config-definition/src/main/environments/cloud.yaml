@@ -32,6 +32,13 @@ nodes:
 
 config:
   contentPackage.group: ${packageGroupName}
+
+#if ( $optionAemVersion == "cloud" )
+  aem:
+    # Disable user tracking in author environment
+    disableAuthorUsageStatisticsCollection: false
+
+#end
   app:
     # Default log level for application code
     logLevel: warn

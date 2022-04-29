@@ -28,6 +28,9 @@
         CONGA "all" package generation: Set runModeOptimization=ELIMINATE_DUPLICATES which produces only a single "all" package.
       </action>
       <action type="update" dev="sseifert">
+        AEMaaCS projects: Introduce CONGA parameter aem.disableAuthorUsageStatisticsCollection to disable usage tracking on AEM author instances (activated by default for local environment).
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
       <action type="update" dev="sseifert">

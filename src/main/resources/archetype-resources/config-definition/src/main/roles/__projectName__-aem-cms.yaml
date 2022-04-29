@@ -175,6 +175,12 @@ config:
     group: ${packageGroupName}
     #[[version: ${version}]]#
 
+#if ( $optionAemVersion == "cloud" )
+  aem:
+    # Disable user tracking in author environment
+    disableAuthorUsageStatisticsCollection: false
+
+#end
   app:
 #if ( $optionContextAwareConfig == "y" || $optionEditableTemplates == "y" )
     confContent: true
