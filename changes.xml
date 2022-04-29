@@ -25,6 +25,9 @@
 
     <release version="3.5.4" date="not released">
       <action type="update" dev="sseifert">
+        Disable AEM usage tracking by default for admins (esp. for local usage).
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
