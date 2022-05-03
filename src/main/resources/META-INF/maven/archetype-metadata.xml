@@ -392,7 +392,7 @@
           </includes>
         </fileSet>
         <fileSet filtered="true" encoding="UTF-8">
-          <directory>src/main/dev-environments</directory>
+          <directory>src/main/environments</directory>
           <includes>
             <include>**/*.yaml</include>
           </includes>
