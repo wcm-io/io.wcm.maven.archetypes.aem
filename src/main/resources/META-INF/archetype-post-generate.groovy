@@ -214,7 +214,7 @@ if (optionAemVersion == "cloud") {
 }
 else {
   // remove environments only relevant for AEMaaCS
-  assert new File(configDefinition, "src/main/dev-environments/cloud.yaml").delete()
+  assert new File(configDefinition, "src/main/environments/cloud.yaml").delete()
 }
 
 if (optionIntegrationTests == "n") {

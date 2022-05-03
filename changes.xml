@@ -25,6 +25,9 @@
 
     <release version="3.5.4" date="not released">
       <action type="update" dev="sseifert">
+        Use "environments" as CONGA directory name instead of the customized "dev-environments".
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
