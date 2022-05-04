@@ -1,8 +1,8 @@
-#[[#!/bin/bash
+#!/bin/bash
 # #%L
 #  wcm.io
 #  %%
-#  Copyright (C) 2017 - 2021 wcm.io
+#  Copyright (C) 2017 - 2022 wcm.io
 #  %%
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -37,8 +37,6 @@ DEPLOY=false
 HELP=false
 DEFAULT_COMMANDS=true
 
-####
-
 help_message_exit() {
   echo ""
   echo "  Syntax <parameters> <commands>"
@@ -60,7 +58,7 @@ help_message_exit() {
 
   exit 0
 }
-
+#[[
 parse_parameters() {
 
   for i in "$@"
@@ -123,7 +121,7 @@ parse_parameters() {
     DEPLOY=true
   fi
 }
-
+]]#
 welcome_message() {
   echo "********************************************************************"
   if ([ "$BUILD" = true ] && [ "$DEPLOY" = true ]) || [ "$HELP" = true ]; then
@@ -165,8 +163,6 @@ completion_message() {
   pause_message
 }
 
-####
-
 execute_build() {
   echo ""
   echo -e "*** \e[1mBuild application\e[0m ***"
@@ -189,8 +185,6 @@ execute_build() {
     exit_with_error "*** BUILD FAILED ***"
   fi
 }
-
-####
 
 execute_deploy() {
   echo ""
@@ -225,8 +219,6 @@ execute_deploy() {
 
 }
 
-####
-
 # Display a pause message (only when the script was executed via double-click on windows)
 pause_message() {
   if [ "$DISPLAY_PAUSE_MESSAGE" = true ]; then
@@ -243,7 +235,6 @@ exit_with_error() {
   exit 1
 }
 
-####
 
 START_TIME=$SECONDS
 
@@ -259,4 +250,3 @@ if [ "$DEPLOY" = true ]; then
   execute_deploy
 fi
 completion_message
-]]#
