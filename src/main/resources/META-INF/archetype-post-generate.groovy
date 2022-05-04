@@ -17,6 +17,7 @@ def optionIntegrationTests = request.getProperties().get("optionIntegrationTests
 
 def coreBundle = new File(rootDir, "bundles/core")
 def clientlibsBundle = new File(rootDir, "bundles/clientlibs")
+def completeContentPackage = new File(rootDir, "content-packages/complete")
 def confContentPackage = new File(rootDir, "content-packages/conf-content")
 def sampleContentPackage = new File(rootDir, "content-packages/sample-content")
 def uiAppsPackage = new File(rootDir, "content-packages/ui.apps")
@@ -211,6 +212,10 @@ if (optionAemVersion == "cloud") {
   parentPom.newWriter("UTF-8").withWriter { w ->
     w << pomContent
   }
+
+  // delete complete package - deployment is done via "all" package which includes the application bundles
+  assert completeContentPackage.deleteDir()
+  removeModule(rootPom, "content-packages/complete")
 }
 else {
   // remove environments only relevant for AEMaaCS

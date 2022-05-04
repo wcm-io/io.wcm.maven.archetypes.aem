@@ -161,14 +161,70 @@
 #if ( $optionWcmioHandler == "y" )
       <dependency>
         <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.sling.commons</artifactId>
+        <version>1.4.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
         <artifactId>io.wcm.sling.models</artifactId>
         <version>1.6.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.sling.commons</artifactId>
-        <version>1.4.0</version>
+        <artifactId>io.wcm.wcm.commons</artifactId>
+        <version>1.9.0</version>
       </dependency>
+#if ( $optionAemVersion == "cloud" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.commons</artifactId>
+        <version>1.9.0</version>
+        <classifier>content</classifier>
+        <type>zip</type>
+      </dependency>
+#end
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.parsys</artifactId>
+        <version>1.6.8</version>
+      </dependency>
+#if ( $optionAemVersion == "cloud" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.parsys</artifactId>
+        <version>1.6.8</version>
+        <classifier>content</classifier>
+        <type>zip</type>
+      </dependency>
+#end
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.ui.granite</artifactId>
+        <version>1.9.2</version>
+      </dependency>
+#if ( $optionAemVersion == "cloud" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.ui.granite</artifactId>
+        <version>1.9.2</version>
+        <classifier>content</classifier>
+        <type>zip</type>
+      </dependency>
+#end
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
+        <version>1.2.2</version>
+      </dependency>
+#if ( $optionAemVersion == "cloud" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
+        <version>1.2.2</version>
+        <classifier>content</classifier>
+        <type>zip</type>
+      </dependency>
+#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.commons</artifactId>
@@ -190,28 +246,28 @@
 #end
       <dependency>
         <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.9.2</version>
+        <artifactId>io.wcm.handler.media</artifactId>
+        <version>1.14.2</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
         <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.9.2</version>
+        <artifactId>io.wcm.handler.media</artifactId>
+        <version>1.14.2</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>
 #end
       <dependency>
         <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.14.2</version>
+        <artifactId>io.wcm.handler.link</artifactId>
+        <version>1.9.2</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
         <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.14.2</version>
+        <artifactId>io.wcm.handler.link</artifactId>
+        <version>1.9.2</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>
@@ -232,20 +288,6 @@
 #end
       <dependency>
         <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.commons</artifactId>
-        <version>1.9.0</version>
-      </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.commons</artifactId>
-        <version>1.9.0</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
-      <dependency>
-        <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
         <version>1.10.0-2.18.6</version>
       </dependency>
@@ -254,48 +296,6 @@
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
         <version>1.10.0-2.18.6</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.parsys</artifactId>
-        <version>1.6.8</version>
-      </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.parsys</artifactId>
-        <version>1.6.8</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.9.2</version>
-      </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.9.2</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
-        <version>1.2.2</version>
-      </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
-        <version>1.2.2</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>

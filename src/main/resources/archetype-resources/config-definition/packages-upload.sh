@@ -2,7 +2,7 @@
 # #%L
 #  wcm.io
 #  %%
-#  Copyright (C) 2017 wcm.io
+#  Copyright (C) 2017 - 2022 wcm.io
 #  %%
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -25,7 +25,11 @@ if [[ $0 == *":\\"* ]]; then
   DISPLAY_PAUSE_MESSAGE=true
 fi
 
+#if ( $optionAemVersion == "cloud" )
+mvn -Pfast -Dvault.file=target/${CONGA_ENVIRONMENT}.${CONGA_NODE}.all.zip -Dvault.force=true clean install wcmio-content-package:install
+#else
 mvn -Pfast -Dconga.environments=${CONGA_ENVIRONMENT} -Dconga.nodeDirectory=target/configuration/${CONGA_ENVIRONMENT}/${CONGA_NODE} clean install conga-aem:package-install
+#end
 
 if [ "$DISPLAY_PAUSE_MESSAGE" = true ]; then
   echo ""
