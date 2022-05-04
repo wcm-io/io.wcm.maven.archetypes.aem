@@ -373,7 +373,7 @@
 
     <module id="${rootArtifactId}.config-definition" dir="config-definition" name="${rootArtifactId}.config-definition">
       <fileSets>
-        <fileSet encoding="UTF-8">
+        <fileSet filtered="true" encoding="UTF-8">
           <directory></directory>
           <includes>
             <include>packages-upload.sh</include>
