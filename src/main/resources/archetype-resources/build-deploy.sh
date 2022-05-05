@@ -199,7 +199,11 @@ execute_deploy() {
     MAVEN_ARGS+="--activate-profiles=${MAVEN_PROFILES} "
   fi
   if [ -n "${CONGA_ENVIRONMENT}" ] && [ -n "${CONGA_NODE}" ]; then
+#if ( $optionAemVersion == "cloud" )
+    MAVEN_ARGS+="-Dvault.file=target/${CONGA_ENVIRONMENT}.${CONGA_NODE}.all.zip -Dvault.force=true"
+#else
     MAVEN_ARGS+="-Dconga.environments=${CONGA_ENVIRONMENT} -Dconga.nodeDirectory=target/configuration/${CONGA_ENVIRONMENT}/${CONGA_NODE} "
+#end
   fi
   if [ -n "${SLING_URL}" ]; then
     MAVEN_ARGS+="-Dsling.url=${SLING_URL} "
@@ -211,7 +215,11 @@ execute_deploy() {
     MAVEN_ARGS+="-Dsling.password=${SLING_PASSWORD} "
   fi
 
+#if ( $optionAemVersion == "cloud" )
+  mvn $MAVEN_ARGS -f config-definition wcmio-content-package:install
+#else
   mvn $MAVEN_ARGS -f config-definition conga-aem:package-install
+#end
 
   if [ "$?" -ne "0" ]; then
     exit_with_error "*** DEPLOY FAILED ***"

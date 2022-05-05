@@ -78,34 +78,71 @@ files:
 #if ( $optionAemVersion == "cloud" && ($optionContextAwareConfig == "y" || $optionWcmioHandler == "y") )
 # wcm.io
 #if ( $optionContextAwareConfig == "y" )
+- url: mvn:io.wcm/io.wcm.caconfig.extensions
+  dir: bundles
+- url: mvn:io.wcm/io.wcm.caconfig.editor
+  dir: bundles
 - url: mvn:io.wcm/io.wcm.caconfig.editor//zip/content
   dir: packages
 #end
 #if ( $optionWcmioHandler == "y" )
-- url: mvn:io.wcm/io.wcm.handler.url//zip/content
-  dir: packages
-- url: mvn:io.wcm/io.wcm.handler.link//zip/content
-  dir: packages
-- url: mvn:io.wcm/io.wcm.handler.media//zip/content
-  dir: packages
-- url: mvn:io.wcm/io.wcm.handler.richtext//zip/content
-  dir: packages
+- url: mvn:io.wcm/io.wcm.sling.commons
+  dir: bundles
+- url: mvn:io.wcm/io.wcm.sling.models
+  dir: bundles
+- url: mvn:io.wcm/io.wcm.wcm.commons
+  dir: bundles
 - url: mvn:io.wcm/io.wcm.wcm.commons//zip/content
   dir: packages
-- url: mvn:io.wcm/io.wcm.wcm.core.components//zip/content
-  dir: packages
+- url: mvn:io.wcm/io.wcm.wcm.parsys
+  dir: bundles
 - url: mvn:io.wcm/io.wcm.wcm.parsys//zip/content
   dir: packages
+- url: mvn:io.wcm/io.wcm.wcm.ui.granite
+  dir: bundles
 - url: mvn:io.wcm/io.wcm.wcm.ui.granite//zip/content
   dir: packages
+- url: mvn:io.wcm/io.wcm.wcm.ui.clientlibs
+  dir: bundles
 - url: mvn:io.wcm/io.wcm.wcm.ui.clientlibs//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.handler.commons
+  dir: bundles
+- url: mvn:io.wcm/io.wcm.handler.url
+  dir: bundles
+- url: mvn:io.wcm/io.wcm.handler.url//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.handler.media
+  dir: bundles
+- url: mvn:io.wcm/io.wcm.handler.media//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.handler.link
+  dir: bundles
+- url: mvn:io.wcm/io.wcm.handler.link//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.handler.richtext
+  dir: bundles
+- url: mvn:io.wcm/io.wcm.handler.richtext//zip/content
+  dir: packages
+- url: mvn:io.wcm/io.wcm.wcm.core.components
+  dir: bundles
+- url: mvn:io.wcm/io.wcm.wcm.core.components//zip/content
   dir: packages
 #end
 
 #end
-# Application package
+# Application #if($optionAemVersion=='cloud')bundles and#{end}packages
+#if ( $optionAemVersion == "cloud" )
+- url: mvn:${groupId}/${rootArtifactId}.core
+  dir: bundles
+#if ( $optionMultiBundleLayout == "y" )
+- url: mvn:${groupId}/${rootArtifactId}.clientlibs
+  dir: bundles
+#end
+#else
 - url: mvn:${groupId}/${rootArtifactId}.complete//zip
   dir: packages
+#end
 #if ( $optionSlingInitialContentBundle == "y" && $optionSlingInitialContentBundleContentPackage == "y" && $optionAemVersion == "cloud" )
 - url: mvn:${groupId}/${rootArtifactId}.core//zip/content
   dir: packages

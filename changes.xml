@@ -23,7 +23,10 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
-    <release version="3.5.4" date="not released">
+    <release version="3.6.0" date="not released">
+      <action type="update" dev="sseifert">
+        Eliminate "complete" package for AEMaaCS projects and include application bundles directly in "all" content package. Use "all" content package also for local deployment to AEMaaCS SDK.
+      </action>
       <action type="update" dev="sseifert">
         Use "environments" as CONGA directory name instead of the customized "dev-environments".
       </action>
