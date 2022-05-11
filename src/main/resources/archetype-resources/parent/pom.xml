@@ -40,7 +40,7 @@
     <core.wcm.components.version>2.19.0</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>5.2.0</acs.aem.commons.version>
+    <acs.aem.commons.version>5.3.0</acs.aem.commons.version>
 #end
 
     <!-- Enable reproducible builds -->
@@ -408,14 +408,12 @@
         <groupId>com.adobe.acs</groupId>
         <artifactId>acs-aem-commons-ui.apps</artifactId>
         <version>${acs.aem.commons.version}</version>
-        <classifier>min</classifier>
         <type>zip</type>
       </dependency>
       <dependency>
         <groupId>com.adobe.acs</groupId>
         <artifactId>acs-aem-commons-ui.content</artifactId>
         <version>${acs.aem.commons.version}</version>
-        <classifier>min</classifier>
         <type>zip</type>
       </dependency>
 
