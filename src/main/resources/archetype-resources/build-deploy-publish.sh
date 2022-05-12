@@ -1,4 +1,4 @@
-#[[#!/bin/bash
+#!/bin/bash
 # #%L
 #  wcm.io
 #  %%
@@ -27,4 +27,3 @@ if [[ $0 == *":\\"* ]]; then
 fi
 
 ./build-deploy.sh --maven.profiles=${MAVEN_PROFILES} --conga.node=${CONGA_NODE} --display.pause.message=${DISPLAY_PAUSE_MESSAGE} "$@"
-]]#

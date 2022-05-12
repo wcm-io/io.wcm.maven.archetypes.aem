@@ -26,7 +26,23 @@
       <scope>compile</scope>
     </dependency>
 
-    <!-- Application packages -->
+    <!-- Application #if($optionAemVersion=='cloud')bundles and#{end}packages -->
+#if ( $optionAemVersion == "cloud" )
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.core</artifactId>
+      <version>${version}</version>
+      <scope>provided</scope>
+    </dependency>
+#if ( $optionMultiBundleLayout == "y" )
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.clientlibs</artifactId>
+      <version>${version}</version>
+      <scope>provided</scope>
+    </dependency>
+#end
+#else
     <dependency>
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.complete</artifactId>
@@ -34,6 +50,7 @@
       <type>zip</type>
       <scope>compile</scope>
     </dependency>
+#end
 #if ( $optionSlingInitialContentBundle == "y" && $optionSlingInitialContentBundleContentPackage == "y" && $optionAemVersion == "cloud" )
     <dependency>
       <groupId>${groupId}</groupId>
@@ -95,22 +112,30 @@
     <dependency>
       <groupId>com.adobe.acs</groupId>
       <artifactId>acs-aem-commons-ui.apps</artifactId>
-      <classifier>min</classifier>
       <type>zip</type>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.adobe.acs</groupId>
       <artifactId>acs-aem-commons-ui.content</artifactId>
-      <classifier>min</classifier>
       <type>zip</type>
       <scope>compile</scope>
     </dependency>
 
 #end
 #if ( $optionAemVersion == "cloud" && ($optionContextAwareConfig == "y" || $optionWcmioHandler == "y") )
-    <!-- wcm.io - Content packages with Sling-Initial-Content, see https://wcm-io.atlassian.net/l/c/d2FuEgf8 for details -->
+    <!-- wcm.io -->
 #if ( $optionContextAwareConfig == "y" )
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.caconfig.extensions</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.caconfig.editor</artifactId>
+      <scope>compile</scope>
+    </dependency>
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.caconfig.editor</artifactId>
@@ -122,30 +147,17 @@
 #if ( $optionWcmioHandler == "y" )
     <dependency>
       <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.handler.url</artifactId>
-      <classifier>content</classifier>
-      <type>zip</type>
+      <artifactId>io.wcm.sling.commons</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.handler.link</artifactId>
-      <classifier>content</classifier>
-      <type>zip</type>
+      <artifactId>io.wcm.sling.models</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.handler.media</artifactId>
-      <classifier>content</classifier>
-      <type>zip</type>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.handler.richtext</artifactId>
-      <classifier>content</classifier>
-      <type>zip</type>
+      <artifactId>io.wcm.wcm.commons</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -157,9 +169,7 @@
     </dependency>
     <dependency>
       <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.wcm.core.components</artifactId>
-      <classifier>content</classifier>
-      <type>zip</type>
+      <artifactId>io.wcm.wcm.parsys</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -172,6 +182,11 @@
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.wcm.ui.granite</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.wcm.ui.granite</artifactId>
       <classifier>content</classifier>
       <type>zip</type>
       <scope>compile</scope>
@@ -179,6 +194,76 @@
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.commons</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.url</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.url</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.media</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.media</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.link</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.link</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.richtext</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.richtext</artifactId>
+      <classifier>content</classifier>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.wcm.core.components</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.wcm.core.components</artifactId>
       <classifier>content</classifier>
       <type>zip</type>
       <scope>compile</scope>
@@ -199,14 +284,11 @@
 
           <!-- Generate configuration for environments defined in this application code repository -->
           <execution>
-            <id>dev-environment-config</id>
+            <id>environment-config</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>generate</goal>
             </goals>
-            <configuration>
-              <environmentDir>${basedir}/src/main/dev-environments</environmentDir>
-            </configuration>
           </execution>
 
         </executions>
@@ -289,7 +371,6 @@
         <activeByDefault>false</activeByDefault>
       </activation>
       <properties>
-        <conga.cloudManager.allPackage.skip>true</conga.cloudManager.allPackage.skip>
         <conga.cloudManager.dispatcherConfig.skip>true</conga.cloudManager.dispatcherConfig.skip>
         <aem.analyser.skip>true</aem.analyser.skip>
       </properties>

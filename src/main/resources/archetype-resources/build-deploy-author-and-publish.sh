@@ -1,4 +1,4 @@
-#[[#!/bin/bash
+#!/bin/bash
 # #%L
 #  wcm.io
 #  %%
@@ -47,4 +47,3 @@ fi
 
 wait
 pause_message
-]]#
