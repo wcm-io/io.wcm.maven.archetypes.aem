@@ -26,7 +26,7 @@ if [[ $0 == *":\\"* ]]; then
 fi
 
 #if ( $optionAemVersion == "cloud" )
-mvn -Pfast -Dvault.file=target/${CONGA_ENVIRONMENT}.${CONGA_NODE}.all.zip -Dvault.force=true clean install wcmio-content-package:install
+mvn -Pfast -Dconga.environments=${CONGA_ENVIRONMENT} -Dvault.file=target/${CONGA_ENVIRONMENT}.${CONGA_NODE}.all.zip -Dvault.force=true clean install wcmio-content-package:install
 #else
 mvn -Pfast -Dconga.environments=${CONGA_ENVIRONMENT} -Dconga.nodeDirectory=target/configuration/${CONGA_ENVIRONMENT}/${CONGA_NODE} clean install conga-aem:package-install
 #end

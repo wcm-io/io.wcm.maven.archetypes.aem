@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="update" dev="sseifert">
+        config-definition/packages-upload.sh: Fix CONGA execution for cloud environment.
+      </action>
     </release>
 
     <release version="3.6.0" date="2022-05-12">
