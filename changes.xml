@@ -30,6 +30,9 @@
       <action type="update" dev="sseifert">
         config-definition/packages-upload.sh: Fix CONGA execution for cloud environment.
       </action>
+      <action type="update" dev="sseifert">
+        Update to AEM 6.5 SP13.
+      </action>
     </release>
 
     <release version="3.6.0" date="2022-05-12">
@@ -49,7 +52,7 @@
         Update dependencies.
       </action>
       <action type="update" dev="sseifert">
-        Add support for AEM 6.5 SP12.
+        Update to AEM 6.5 SP12.
       </action>
     </release>
 
@@ -67,7 +70,7 @@
         Update dependencies.
       </action>
       <action type="update" dev="sseifert">
-        Add support for AEM 6.5 SP11.
+        Update to AEM 6.5 SP11.
       </action>
       <action type="update" dev="sseifert" issue="WTOOL-72">
         AEMaaCS: Apply workaround for deploying "Sling-Initial-Content" for OSGi bundles via separate content packages for all OSGi bundles.
