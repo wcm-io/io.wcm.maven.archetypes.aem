@@ -19,14 +19,16 @@
 
 
 CONGA_ENVIRONMENT="local"
+#if ( $optionAemVersion != "cloud" )
 CONGA_NODE="aem-author"
+#end
 
 if [[ $0 == *":\\"* ]]; then
   DISPLAY_PAUSE_MESSAGE=true
 fi
 
 #if ( $optionAemVersion == "cloud" )
-mvn -Pfast -Dconga.environments=${CONGA_ENVIRONMENT} -Dvault.file=target/${CONGA_ENVIRONMENT}.${CONGA_NODE}.all.zip -Dvault.force=true clean install wcmio-content-package:install
+mvn -Pfast -Dconga.environments=${CONGA_ENVIRONMENT} -Dvault.file=target/${CONGA_ENVIRONMENT}.all.zip -Dvault.force=true clean install wcmio-content-package:install
 #else
 mvn -Pfast -Dconga.environments=${CONGA_ENVIRONMENT} -Dconga.nodeDirectory=target/configuration/${CONGA_ENVIRONMENT}/${CONGA_NODE} clean install conga-aem:package-install
 #end
