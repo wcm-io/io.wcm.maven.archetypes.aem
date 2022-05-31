@@ -25,6 +25,9 @@
 
     <release version="3.6.2" date="not released">
       <action type="update" dev="sseifert">
+        CONGA "all" package generation: Set runModeOptimization=ELIMINATE_DUPLICATES which produces only a single "all" package.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
       <action type="update" dev="sseifert">
