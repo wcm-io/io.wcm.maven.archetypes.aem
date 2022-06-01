@@ -31,10 +31,10 @@
         Update dependencies.
       </action>
       <action type="update" dev="sseifert">
-        config-definition/packages-upload.sh: Fix CONGA execution for cloud environment.
-      </action>
-      <action type="update" dev="sseifert">
         Update to AEM 6.5 SP13.
+      </action>
+      <action type="fix" dev="sseifert">
+        config-definition/packages-upload.sh: Fix CONGA execution for cloud environment.
       </action>
     </release>
 
