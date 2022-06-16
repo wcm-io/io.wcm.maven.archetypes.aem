@@ -62,6 +62,14 @@
   com.day.cq.commons.servlets.RootMappingServlet
     rootmapping.target="/sites.html"
 
+#if ( $optionAemVersion == "cloud" )
+#[[{{#if aem.disableAuthorUsageStatisticsCollection ~}}]]#
+  # Disable usage tracking by default for admins (esp. for local usage)
+  com.adobe.cq.experiencelog.impl.ExperienceLogConfigServlet
+    enabled=B"false"
+
+{{/if ~}}
+#end
 #if ( $optionWcmioHandler == "y" )
   # Instance type
   io.wcm.wcm.commons.instancetype.impl.InstanceTypeServiceImpl

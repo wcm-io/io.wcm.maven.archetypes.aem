@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>2.0.8</version>
+    <version>2.0.10</version>
     <relativePath/>
   </parent>
 
@@ -37,7 +37,7 @@
     <!-- Versions -->
 #end
 #if ( $optionAemVersion != "cloud" )
-    <core.wcm.components.version>2.19.0</core.wcm.components.version>
+    <core.wcm.components.version>2.19.2</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
     <acs.aem.commons.version>5.3.0</acs.aem.commons.version>
@@ -146,13 +146,13 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.11.0</version>
+        <version>1.12.0</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.11.0</version>
+        <version>1.12.0</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>
@@ -200,13 +200,13 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.9.2</version>
+        <version>1.9.4</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.9.2</version>
+        <version>1.9.4</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>
@@ -247,13 +247,13 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.14.2</version>
+        <version>1.14.4</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.14.2</version>
+        <version>1.14.4</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>
@@ -275,13 +275,13 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.richtext</artifactId>
-        <version>1.5.8</version>
+        <version>1.6.0</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.richtext</artifactId>
-        <version>1.5.8</version>
+        <version>1.6.0</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>
@@ -368,7 +368,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.5.12.0001#{else}6.5.0.0005#end</version>
+        <version>#if($optionAemServicePack=="y")6.5.13.0000#{else}6.5.0.0005#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

@@ -23,6 +23,24 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
+    <release version="3.6.2" date="2022-06-16">
+      <action type="update" dev="sseifert">
+        CONGA "all" package generation: Set runModeOptimization=ELIMINATE_DUPLICATES which produces only a single "all" package.
+      </action>
+      <action type="update" dev="sseifert">
+        AEMaaCS projects: Introduce CONGA parameter aem.disableAuthorUsageStatisticsCollection to disable usage tracking on AEM author instances (activated by default for local environment).
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+      <action type="update" dev="sseifert">
+        Update to AEM 6.5 SP13.
+      </action>
+      <action type="fix" dev="sseifert">
+        config-definition/packages-upload.sh: Fix CONGA execution for cloud environment.
+      </action>
+    </release>
+
     <release version="3.6.0" date="2022-05-12">
       <action type="update" dev="sseifert">
         Eliminate "complete" package for AEMaaCS projects and include application bundles directly in "all" content package. Use "all" content package also for local deployment to AEMaaCS SDK.
@@ -40,7 +58,7 @@
         Update dependencies.
       </action>
       <action type="update" dev="sseifert">
-        Add support for AEM 6.5 SP12.
+        Update to AEM 6.5 SP12.
       </action>
     </release>
 
@@ -58,7 +76,7 @@
         Update dependencies.
       </action>
       <action type="update" dev="sseifert">
-        Add support for AEM 6.5 SP11.
+        Update to AEM 6.5 SP11.
       </action>
       <action type="update" dev="sseifert" issue="WTOOL-72">
         AEMaaCS: Apply workaround for deploying "Sling-Initial-Content" for OSGi bundles via separate content packages for all OSGi bundles.
