@@ -28,6 +28,8 @@ files:
 #end
 #if( $optionAcsCommons == "y" )
 # ACS AEM Commons
+- url: mvn:com.adobe.acs/acs-aem-commons-bundle
+  dir: bundles
 - url: mvn:com.adobe.acs/acs-aem-commons-ui.apps//zip
   dir: packages
   postProcessorOptions:
