@@ -200,13 +200,13 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.9.4</version>
+        <version>1.9.6</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.9.4</version>
+        <version>1.9.6</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>
