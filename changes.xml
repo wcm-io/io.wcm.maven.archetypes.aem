@@ -31,6 +31,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="fix" dev="mrozati" issue="WTOOL-95">
+        Include acs-aem-commons-bundle in CONGA role/complete package as it is no longer included in acs-commons-ui.apps package since 3.5.0.
+      </action>
     </release>
 
     <release version="3.6.2" date="2022-06-16">
