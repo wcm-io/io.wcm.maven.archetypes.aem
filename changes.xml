@@ -29,6 +29,9 @@
         This option does not depend on the service pack binaries not available in Maven central.
       </action>
       <action type="update" dev="sseifert">
+        AEM 6.5.13 is minimum version (due to Core Components).
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
       <action type="fix" dev="mrozati" issue="WTOOL-95">
