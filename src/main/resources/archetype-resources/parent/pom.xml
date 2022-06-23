@@ -313,7 +313,7 @@
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
         <version>5.0.0</version>
       </dependency>
-#if ( $optionAemVersion == "6.5" && $optionAemServicePack=="y" )
+#if ( $optionAemVersion == "6.5" && ($optionAemServicePack=="y" || $optionAemServicePackAPI=="y") )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.logging.logback</artifactId>
@@ -368,7 +368,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y")6.5.13.0000#{else}6.5.0.0005#end</version>
+        <version>#if($optionAemServicePack=="y" || $optionAemServicePackAPI=="y")6.5.13.0000#{else}6.5.0.0005#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

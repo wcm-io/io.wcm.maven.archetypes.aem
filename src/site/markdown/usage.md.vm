@@ -31,7 +31,8 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 | **aemPublishPort**                  | 4503    | Default port for local AEM publish instance
 | **optionJavaVersion**               | 8       | Java version (8 or 11)
 | **optionAemVersion**                | cloud   | AEM major version (`6.5` or `cloud`)
-| **optionAemServicePack**            | n       | Use latest service pack for AEM version - you need to deploy artifacts following [these conventions][aem-binaries-conventions]
+| **optionAemServicePack**            | n       | Use latest service pack for AEM 6.5. You need to deploy artifacts following [these conventions][aem-binaries-conventions]
+| **optionAemServicePackAPI**         | n       | Use AEM API from latest service pack for AEM 6.5. This is implicitly activated if optionAemServicePack = y.
 | **optionSlingInitialContentBundle** | y       | **y**: AEM application projects is set up with scripts and content parts as JSON files within the OSGi bundle with Sling-Initial Content, suitable for [File System Resource Provider][fsresource-adaptto-talk]. _Works with all AEM versions._<br/>**n**: Projects are set up with FileVault package layout, suitable for [AEM Developer Tools for Eclipse][aem-eclipse-ide] ([Sling IDE][sling-eclipse-ide]).
 | **optionSlingInitialContentBundleContentPackage** | n       | If set to **'y'**: Generate application content package out of Sling-Initial-Content store in OSGi bundles as workaround in AEMaaCS e.g. if the bundle contains client libraries hookind into Page Editor, see https://wcm-io.atlassian.net/l/c/ECGe9qZT
 | **optionEditableTemplates**         | y       | Set up projects using editable templates.
@@ -68,6 +69,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionJavaVersion=11 \
   -DoptionAemVersion=cloud \
   -DoptionAemServicePack=n \
+  -optionAemServicePackAPI=n \
   -DoptionSlingInitialContentBundle=n \
   -DoptionEditableTemplates=y \
   -DoptionMultiBundleLayout=n \
@@ -99,6 +101,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionJavaVersion=11 \
   -DoptionAemVersion=6.5 \
   -DoptionAemServicePack=n \
+  -optionAemServicePackAPI=n \
   -DoptionSlingInitialContentBundle=y \
   -DoptionEditableTemplates=y \
   -DoptionMultiBundleLayout=n \

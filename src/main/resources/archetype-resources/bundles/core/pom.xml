@@ -139,7 +139,7 @@
       <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
       <scope>test</scope>
     </dependency>
-#if ( $optionAemVersion == "6.5" && $optionAemServicePack=="y" )
+#if ( $optionAemVersion == "6.5" && ($optionAemServicePack=="y" || $optionAemServicePackAPI=="y") )
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.testing.logging.logback</artifactId>
@@ -211,7 +211,7 @@
     <dependency>
       <groupId>com.adobe.aem</groupId>
       <artifactId>uber-jar</artifactId>
-#if ( $optionAemVersion == "6.5" && $optionAemServicePack=="n" )
+#if ( $optionAemVersion == "6.5" && $optionAemServicePack=="n" && $optionAemServicePackAPI=="n" )
       <classifier>apis</classifier>
 #end
       <scope>provided</scope>
