@@ -23,6 +23,22 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
+    <release version="3.6.4" date="2022-06-23">
+      <action type="add" dev="sseifert">
+        Add new parameter optionAemServicePackAPI which allows to configure independently from optionAemServicePack if an AEM 6.5 project should be set up to compile against latest AEM service pack API or not.
+        This option does not depend on the service pack binaries not available in Maven central.
+      </action>
+      <action type="update" dev="sseifert">
+        AEM 6.5.13 is minimum version (due to Core Components).
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+      <action type="fix" dev="mrozati" issue="WTOOL-95">
+        Include acs-aem-commons-bundle in CONGA role/complete package as it is no longer included in acs-commons-ui.apps package since 3.5.0.
+      </action>
+    </release>
+
     <release version="3.6.2" date="2022-06-16">
       <action type="update" dev="sseifert">
         CONGA "all" package generation: Set runModeOptimization=ELIMINATE_DUPLICATES which produces only a single "all" package.

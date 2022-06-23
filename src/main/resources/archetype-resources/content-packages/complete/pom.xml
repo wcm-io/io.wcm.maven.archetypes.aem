@@ -88,6 +88,15 @@
     </dependency>
 #end
 
+#if ( $optionAcsCommons == "y" && $optionAemVersion != "cloud" )
+    <!-- ACS AEM Commons -->
+    <dependency>
+      <groupId>com.adobe.acs</groupId>
+      <artifactId>acs-aem-commons-bundle</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+#end
   </dependencies>
 
   <build>
@@ -161,6 +170,18 @@
               <type>jar</type>
             </embedded>
 #end
+#end
+#if( $optionAcsCommons == "y" && $optionAemVersion != "cloud" )
+            <!-- ACS AEM Commons -->
+            <embedded>
+              <groupId>
+                com.adobe.acs
+              </groupId>
+              <artifactId>
+                acs-aem-commons-bundle
+              </artifactId>
+              <type>jar</type>
+            </embedded>
 #end
           </embeddeds>
 

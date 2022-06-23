@@ -8,6 +8,8 @@ import groovy.util.XmlSlurper
 def rootDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId())
 def javaPackage = request.getProperties().get("package")
 def optionAemVersion = request.getProperties().get("optionAemVersion")
+def optionAemServicePack = request.getProperties().get("optionAemServicePack")
+def optionAemServicePackAPI = request.getProperties().get("optionAemServicePackAPI")
 def optionSlingInitialContentBundle = request.getProperties().get("optionSlingInitialContentBundle")
 def optionEditableTemplates = request.getProperties().get("optionEditableTemplates")
 def optionMultiBundleLayout = request.getProperties().get("optionMultiBundleLayout")
@@ -28,8 +30,8 @@ def parentPom = new File(rootDir, "parent/pom.xml")
 def tests = new File(rootDir, "tests")
 
 // validate parameters - throw exceptions for invalid combinations
-if (optionAemServicePack == "y" && optionAemVersion == "cloud") {
-  throw new RuntimeException("For AEMaaCS optionAemServicePack='y' is not allowed - there are no service packs for the cloud.")
+if ((optionAemServicePack=="y" || optionAemServicePackAPI=="y") && optionAemVersion == "cloud") {
+  throw new RuntimeException("For AEMaaCS optionAemServicePack='y' or optionAemServicePackAPI='y' is not allowed - there are no service packs for the cloud.")
 }
 if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
   throw new RuntimeException("Parameter optionMultiBundleLayout='y' is only supported with optionSlingInitialContentBundle='y'.")
