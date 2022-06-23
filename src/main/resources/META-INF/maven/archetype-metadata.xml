@@ -77,8 +77,13 @@
       <defaultValue>cloud</defaultValue>
       <validationRegex>^(6\.5|cloud)$</validationRegex>
     </requiredProperty>
-    <!-- Use latest service pack for AEM version - you need to deploy artifacts following these conventions https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
+    <!-- Use latest service pack for AEM 6.5. You need to deploy artifacts following these conventions https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
     <requiredProperty key="optionAemServicePack">
+      <defaultValue>n</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
+    <!-- Use AEM API from latest service pack for AEM 6.5. This is implicitly activated if optionAemServicePack = y. -->
+    <requiredProperty key="optionAemServicePackAPI">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
