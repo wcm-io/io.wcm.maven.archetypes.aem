@@ -23,7 +23,7 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
-    <release version="3.6.4" date="not released">
+    <release version="3.6.4" date="2022-06-23">
       <action type="add" dev="sseifert">
         Add new parameter optionAemServicePackAPI which allows to configure independently from optionAemServicePack if an AEM 6.5 project should be set up to compile against latest AEM service pack API or not.
         This option does not depend on the service pack binaries not available in Maven central.
