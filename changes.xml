@@ -32,7 +32,7 @@
         Update dependencies.
       </action>
       <action type="fix" dev="mrozati" issue="WTOOL-95">
-        CONGA role installs ACS Commons bundle because this is missing un acs-commons-ui.apps since 3.5.0
+        Include acs-aem-commons-bundle in CONGA role/complete package as it is no longer included in acs-commons-ui.apps package since 3.5.0.
       </action>
     </release>
 
