@@ -3,7 +3,7 @@ About Maven Archetype for AEM
 
 Maven Archetype for creating new AEM projects.
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.wcm.maven.archetypes/io.wcm.maven.archetypes.aem/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.wcm.maven.archetypes/io.wcm.maven.archetypes.aem)
+[![Maven Central](https://img.shields.io/maven-central/v/io.wcm.maven.archetypes/io.wcm.maven.archetypes.aem)](https://repo1.maven.org/maven2/io/wcm/maven/archetypes/io.wcm.maven.archetypes.aem)
 
 
 ### Documentation
