@@ -69,7 +69,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionJavaVersion=11 \
   -DoptionAemVersion=cloud \
   -DoptionAemServicePack=n \
-  -optionAemServicePackAPI=n \
+  -DoptionAemServicePackAPI=n \
   -DoptionSlingInitialContentBundle=n \
   -DoptionEditableTemplates=y \
   -DoptionMultiBundleLayout=n \
@@ -101,7 +101,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionJavaVersion=11 \
   -DoptionAemVersion=6.5 \
   -DoptionAemServicePack=n \
-  -optionAemServicePackAPI=n \
+  -DoptionAemServicePackAPI=n \
   -DoptionSlingInitialContentBundle=y \
   -DoptionEditableTemplates=y \
   -DoptionMultiBundleLayout=n \
