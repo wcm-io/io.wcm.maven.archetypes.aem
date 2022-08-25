@@ -126,7 +126,7 @@
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.models.caconfig</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.2</version>
       </dependency>
 
 #end
