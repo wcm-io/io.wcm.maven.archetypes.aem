@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:ns1_1_="http://cipa.jp/exif/1.0/" xmlns:Iptc4xmpCore="http://iptc.org/std/Iptc4xmpCore/1.0/xmlns/" xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:psAux="http://ns.adobe.com/exif/1.0/aux/" xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:ns1_1_="http://cipa.jp/exif/1.0/" xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:psAux="http://ns.adobe.com/exif/1.0/aux/" xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="dam:Asset">
-    <jcr:content
-        cq:name="nature.jpg"
-        cq:parentPath="/content/dam/${projectName}"
-        jcr:primaryType="dam:AssetContent">
+    <jcr:content jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
             dam:Fileformat="JPEG"
@@ -15,24 +12,49 @@
             dam:Physicalheightininches="{Decimal}4.266666889190674"
             dam:Physicalwidthindpi="{Long}300"
             dam:Physicalwidthininches="{Decimal}6.400000095367432"
-            dam:Progressive="no"
-            dc:description="Image by Schwoaze from Pixabay - https://pixabay.com/photos/nature-landscape-mountains-sky-3616194/"
+            dam:Progressive="yes"
+            dam:size="{Long}322106"
+            dam:TimeCreated="155602+0200"
+            dc:date="{Long}[20180818]"
+            dc:date_xmpArrayType="rdf:Bag"
+            dc:description="Nature"
             dc:format="image/jpeg"
-            dc:title="Nature"
+            exif:ApertureValue="5655638/1000000"
+            exif:ColorSpace="{Long}65535"
             exif:DateTimeOriginal="{Date}2018-08-18T15:56:02.000+02:00"
+            exif:ExifVersion="0231"
             exif:ExposureTime="1/1000"
             exif:FNumber="71/10"
             exif:FocalLength="500/10"
+            exif:PixelXDimension="{Long}1920"
+            exif:PixelYDimension="{Long}1280"
+            exif:ShutterSpeedValue="9965784/1000000"
             jcr:primaryType="nt:unstructured"
             ns1_1_:LensModel="E 18-135mm F3.5-5.6 OSS"
+            photoshop:AuthorsPosition="Image by Schwoaze from Pixabay -"
+            photoshop:ColorMode="{Long}3"
             photoshop:DateCreated="{Date}2018-08-18T15:56:02.000+02:00"
+            photoshop:LegacyIPTCDigest="14985F55542B303CDDF5E03A5BF42A56"
             psAux:Lens="E 18-135mm F3.5-5.6 OSS"
+            tiff:BitsPerSample="{Long}[8,8,8]"
+            tiff:BitsPerSample_xmpArrayType="rdf:Seq"
             tiff:ImageLength="{Long}1280"
             tiff:ImageWidth="{Long}1920"
             tiff:Make="SONY"
-            tiff:Model="ILCE-6000">
-            <Iptc4xmpCore:CreatorContactInfo jcr:primaryType="nt:unstructured"/>
-        </metadata>
+            tiff:Model="ILCE-6000"
+            tiff:Orientation="{Long}1"
+            tiff:PhotometricInterpretation="{Long}2"
+            tiff:ResolutionUnit="{Long}2"
+            tiff:SamplesPerPixel="{Long}3"
+            tiff:XResolution="3000000/10000"
+            tiff:YResolution="3000000/10000"
+            xmp:CreateDate="{Date}2018-08-18T15:56:02.000+02:00"
+            xmp:CreatorTool="Adobe Photoshop 23.5 (Windows)"
+            xmp:MetadataDate="{Date}2022-08-25T17:26:56.000+02:00"
+            xmp:ModifyDate="{Date}2022-08-25T17:26:56.000+02:00"
+            xmpMM:DocumentID="7123030BBD73CA0C3200CFC9673FA8FF"
+            xmpMM:InstanceID="xmp.iid:c9581756-440d-4741-bc4d-313fbe107a42"
+            xmpMM:OriginalDocumentID="7123030BBD73CA0C3200CFC9673FA8FF"/>
         <related jcr:primaryType="nt:unstructured"/>
         <renditionsMetadata jcr:primaryType="nt:unstructured">
             <cq5dam.thumbnail.48.48.png
@@ -51,19 +73,6 @@
                 jcr:primaryType="nt:unstructured"
                 imageHeight="{Long}853"
                 imageWidth="{Long}1280"/>
-            <nature-8to3.jpg
-                jcr:primaryType="nt:unstructured"
-                imageHeight="{Long}720"
-                imageWidth="{Long}1920"/>
         </renditionsMetadata>
-        <usages
-            dam:score="{Long}1"
-            jcr:primaryType="nt:unstructured"
-            usedBy="[aem]">
-            <aem
-                jcr:primaryType="nt:unstructured"
-                count="{Long}1"
-                lastUsed="{Date}2019-04-03T15:44:10.331+02:00"/>
-        </usages>
     </jcr:content>
 </jcr:root>
