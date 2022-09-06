@@ -25,6 +25,9 @@
 
     <release version="3.6.6" date="not released">
       <action type="update" dev="sseifert">
+        Automatically set activation date for all content pages and asset in sample content.
+      </action>
+      <action type="update" dev="sseifert">
         Update to AEM 6.5 SP14.
       </action>
       <action type="update" dev="sseifert">

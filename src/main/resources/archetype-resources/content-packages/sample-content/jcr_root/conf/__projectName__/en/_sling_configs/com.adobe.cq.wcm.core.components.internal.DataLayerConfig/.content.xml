@@ -4,5 +4,8 @@
     <jcr:content
         jcr:primaryType="cq:PageContent"
         sling:configPropertyInherit="{Boolean}false"
-        enabled="{Boolean}true"/>
+        enabled="{Boolean}true"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
+        cq:lastReplicationAction="Activate"/>
 </jcr:root>
