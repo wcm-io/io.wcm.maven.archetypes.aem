@@ -9,7 +9,10 @@
         jcr:title="en"
         sling:resourceType="#if($optionEditableTemplates=="y")${projectName}/core/components/global/page#{else}${projectName}/core/components/page/homepage#end"
         navTitle="HOME"
-        pageTitle="${projectName} Sample Site">
+        pageTitle="${projectName} Sample Site"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
+        cq:lastReplicationAction="Activate">
 #if ($optionEditableTemplates == "y")
         <root
             jcr:primaryType="nt:unstructured"

@@ -46,7 +46,7 @@ module.exports = {
         "core.wcm.components.accordion.v1",
         "${projectName}.app"
       ],
-      jsProcessor: ["default:none", "min:gcc;compilationLevel=whitespace"],
+      jsProcessor: ["default:none", "min:gcc;compilationLevel=whitespace;languageIn=ECMASCRIPT_2018;languageOut=ECMASCRIPT_2018"],
 #if ( $optionAemVersion != "cloud" )
       longCacheKey: "${project.version}-${buildNumber}",
 #end
