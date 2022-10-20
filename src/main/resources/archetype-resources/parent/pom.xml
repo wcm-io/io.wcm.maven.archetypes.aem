@@ -247,13 +247,13 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.14.12</version>
+        <version>1.14.14</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.14.12</version>
+        <version>1.14.14</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>
@@ -275,13 +275,13 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.richtext</artifactId>
-        <version>1.6.0</version>
+        <version>1.6.2</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.richtext</artifactId>
-        <version>1.6.0</version>
+        <version>1.6.2</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>
