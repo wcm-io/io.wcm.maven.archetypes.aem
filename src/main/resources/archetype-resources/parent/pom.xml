@@ -247,13 +247,13 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.14.14</version>
+        <version>1.14.16</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.14.14</version>
+        <version>1.14.16</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>
