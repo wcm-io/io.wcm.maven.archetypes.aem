@@ -146,13 +146,13 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.13.0</version>
+        <version>1.14.0</version>
       </dependency>
 #if ( $optionAemVersion == "cloud" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.13.0</version>
+        <version>1.14.0</version>
         <classifier>content</classifier>
         <type>zip</type>
       </dependency>
