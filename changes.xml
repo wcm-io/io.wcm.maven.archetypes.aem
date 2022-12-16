@@ -28,6 +28,9 @@
         Update to AEM 6.5 SP15.
       </action>
       <action type="update" dev="sseifert">
+        Minimum Java Version supported is Java 11. Java 8 is no longer supported.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>

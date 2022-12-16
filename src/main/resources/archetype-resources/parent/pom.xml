@@ -19,12 +19,7 @@
   <properties>
 
     <!-- Java version -->
-#if ( $optionJavaVersion == "8" )
-    <java.version>1.8</java.version>
-    <build.compiler.release>8</build.compiler.release>
-#else
     <java.version>${optionJavaVersion}</java.version>
-#end
 
     <!-- AEM instance parameters -->
     <sling.url>http://localhost:${aemAuthorPort}</sling.url>
@@ -509,17 +504,6 @@
           </configuration>
         </plugin>
 
-#if ( $optionJavaVersion == "8" )
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <configuration>
-            <!-- Avoid https://bugs.openjdk.java.net/browse/JDK-8212233 while building for Java 8 -->
-            <detectJavaApiLink>false</detectJavaApiLink> 
-          </configuration>
-        </plugin>
-
-#end
       </plugins>
     </pluginManagement>
   </build>
