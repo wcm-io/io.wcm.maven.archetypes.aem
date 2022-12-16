@@ -270,13 +270,6 @@
             <!-- All wcm.io Handler SPI implementation only get active for the resource paths of this application -->
             Wcmio-CAService-ContextPathRegex: ^(/content|/content/dam|/content/experience-fragments|/conf)/${projectName}(/.*)?$
 #end
-#if ( $optionJavaVersion == "8" )
-
-            <!-- For build compatibility with Java 11 -->
-            Import-Package:  \
-              javax.annotation;version="[0.0,2)", \
-              *
-#end
           </bnd>
         </configuration>
       </plugin>
