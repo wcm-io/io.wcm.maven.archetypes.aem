@@ -28,6 +28,7 @@ public class MediaHandlerConfigImpl extends MediaHandlerConfig {
       InlineMediaSource.class);
 
   @Override
+  @SuppressWarnings("squid:S2384") // returned list is immutable
   public @NotNull List<Class<? extends MediaSource>> getSources() {
     return MEDIA_SOURCES;
   }

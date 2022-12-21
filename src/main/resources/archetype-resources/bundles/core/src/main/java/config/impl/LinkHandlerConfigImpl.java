@@ -35,6 +35,7 @@ public class LinkHandlerConfigImpl extends LinkHandlerConfig {
       MediaLinkType.class);
 
   @Override
+  @SuppressWarnings("squid:S2384") // returned list is immutable
   public @NotNull List<Class<? extends LinkType>> getLinkTypes() {
     return DEFAULT_LINK_TYPES;
   }
