@@ -33,6 +33,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="update" dev="sseifert">
+        config-definition: Exclusion of 'bundle-content' task no longer required with recent aemanalyser-maven-plugin releases.
+      </action>
     </release>
 
     <release version="3.6.6" date="2022-09-30">
