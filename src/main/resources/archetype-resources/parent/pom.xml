@@ -35,7 +35,7 @@
     <core.wcm.components.version>2.21.2</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>5.5.2</acs.aem.commons.version>
+    <acs.aem.commons.version>5.7.0</acs.aem.commons.version>
 #end
 
     <!-- Enable reproducible builds -->
@@ -92,12 +92,12 @@
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.models.api</artifactId>
-        <version>1.4.0</version>
+        <version>1.4.2</version>
       </dependency>
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.models.impl</artifactId>
-        <version>1.5.0</version>
+        <version>1.5.4</version>
       </dependency>
 
 #end
@@ -141,7 +141,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.15.3-SNAPSHOT</version>
+        <version>1.15.4</version>
       </dependency>
 #end
 #if ( $optionWcmioHandler == "y" )
@@ -163,12 +163,12 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
-        <version>1.6.9-SNAPSHOT</version>
+        <version>1.7.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.9.9-SNAPSHOT</version>
+        <version>1.9.10</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -188,12 +188,12 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.15.3-SNAPSHOT</version>
+        <version>1.15.4</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.10.1-SNAPSHOT</version>
+        <version>1.10.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -203,7 +203,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.12.3-2.21.2-SNAPSHOT</version>
+        <version>1.12.4-2.21.2</version>
       </dependency>
 #end
       <dependency>
@@ -331,7 +331,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "5.0.0" )
+#set( $mockitoVersion = "5.1.1" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
