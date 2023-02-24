@@ -24,8 +24,19 @@
   <body>
 
     <release version="3.7.2" date="not released">
+      <action type="update" dev="sseifert" issue="WTOOL-72">
+        AEMaaCS: Remove workaround for deploying "Sling-Initial-Content" for OSGi bundles via separate content packages for all OSGi bundles -
+        transforming Sling-Initial-Content to content packages now happens automatically as part of Cloud Manager deployment with the help of Sling feature cpconverter.
+        Remove parameter 'optionSlingInitialContentBundleContentPackage' which is now obsolete.
+      </action>
       <action type="update" dev="sseifert">
         Update to AEM 6.5 SP16.
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+      <action type="fix" dev="sseifert">
+        Sling-Initial-Content: Register non-standard JCR namespaces for conversion with cp2fm into enhanced DocView files.
       </action>
     </release>
 

@@ -46,6 +46,12 @@
           <bnd>
             Sling-Initial-Content: \
               SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName}/clientlibs
+
+            Sling-Namespaces: \
+              wcmio=http://wcm.io/ns,\
+              cq=http://www.day.com/jcr/cq/1.0,\
+              granite=http://www.adobe.com/jcr/granite/1.0,\
+              sling=http://sling.apache.org/jcr/sling/1.0
           </bnd>
         </configuration>
       </plugin>

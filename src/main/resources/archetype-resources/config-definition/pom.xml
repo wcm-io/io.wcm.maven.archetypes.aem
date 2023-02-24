@@ -51,26 +51,6 @@
       <scope>compile</scope>
     </dependency>
 #end
-#if ( $optionSlingInitialContentBundle == "y" && $optionSlingInitialContentBundleContentPackage == "y" && $optionAemVersion == "cloud" )
-    <dependency>
-      <groupId>${groupId}</groupId>
-      <artifactId>${rootArtifactId}.core</artifactId>
-      <version>${version}</version>
-      <classifier>content</classifier>
-      <type>zip</type>
-      <scope>compile</scope>
-    </dependency>
-#if ( $optionMultiBundleLayout == "y" )
-    <dependency>
-      <groupId>${groupId}</groupId>
-      <artifactId>${rootArtifactId}.clientlibs</artifactId>
-      <version>${version}</version>
-      <classifier>content</classifier>
-      <type>zip</type>
-      <scope>compile</scope>
-    </dependency>
-#end
-#end
 #if ( $optionSlingInitialContentBundle == "n" )
     <dependency>
       <groupId>${groupId}</groupId>
@@ -143,13 +123,6 @@
       <artifactId>io.wcm.caconfig.editor</artifactId>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.caconfig.editor</artifactId>
-      <classifier>content</classifier>
-      <type>zip</type>
-      <scope>compile</scope>
-    </dependency>
 #end
 #if ( $optionWcmioHandler == "y" )
     <dependency>
@@ -169,21 +142,7 @@
     </dependency>
     <dependency>
       <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.wcm.commons</artifactId>
-      <classifier>content</classifier>
-      <type>zip</type>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.wcm</groupId>
       <artifactId>io.wcm.wcm.parsys</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.wcm.parsys</artifactId>
-      <classifier>content</classifier>
-      <type>zip</type>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -193,21 +152,7 @@
     </dependency>
     <dependency>
       <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.wcm.ui.granite</artifactId>
-      <classifier>content</classifier>
-      <type>zip</type>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.wcm</groupId>
       <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
-      <classifier>content</classifier>
-      <type>zip</type>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -222,21 +167,7 @@
     </dependency>
     <dependency>
       <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.handler.url</artifactId>
-      <classifier>content</classifier>
-      <type>zip</type>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.wcm</groupId>
       <artifactId>io.wcm.handler.media</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.handler.media</artifactId>
-      <classifier>content</classifier>
-      <type>zip</type>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -246,33 +177,12 @@
     </dependency>
     <dependency>
       <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.handler.link</artifactId>
-      <classifier>content</classifier>
-      <type>zip</type>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.wcm</groupId>
       <artifactId>io.wcm.handler.richtext</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.handler.richtext</artifactId>
-      <classifier>content</classifier>
-      <type>zip</type>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.wcm</groupId>
       <artifactId>io.wcm.wcm.core.components</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.wcm.core.components</artifactId>
-      <classifier>content</classifier>
-      <type>zip</type>
       <scope>compile</scope>
     </dependency>
 #end
@@ -335,6 +245,7 @@
       <plugin>
         <groupId>com.adobe.aem</groupId>
         <artifactId>aemanalyser-maven-plugin</artifactId>
+        <version>1.5.9-SNAPSHOT</version>
         <executions>
           <execution>
             <id>aem-analyser</id>

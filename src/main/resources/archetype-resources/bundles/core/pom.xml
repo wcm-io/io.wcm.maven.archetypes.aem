@@ -260,10 +260,16 @@
 
             Sling-Initial-Content: \
 #if ( $optionMultiBundleLayout == "n" )
-              SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName}/clientlibs, \
+              SLING-INF/clientlibs-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName}/clientlibs,\
 #end
-              SLING-INF/app-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName}/core, \
+              SLING-INF/app-root;overwrite:=true;ignoreImportProviders:=xml;path:=/apps/${projectName}/core,\
               SLING-INF/app-i18n;overwrite:=true;ignoreImportProviders:=json;path:=/apps/${projectName}/core/i18n
+
+            Sling-Namespaces: \
+              wcmio=http://wcm.io/ns,\
+              cq=http://www.day.com/jcr/cq/1.0,\
+              granite=http://www.adobe.com/jcr/granite/1.0,\
+              sling=http://sling.apache.org/jcr/sling/1.0
 #end
 #if ( $optionWcmioHandler == "y" )
 

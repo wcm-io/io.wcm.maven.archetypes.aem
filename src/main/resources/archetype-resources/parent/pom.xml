@@ -141,17 +141,8 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.15.2</version>
+        <version>1.15.3-SNAPSHOT</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.15.2</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
 #end
 #if ( $optionWcmioHandler == "y" )
       <dependency>
@@ -169,57 +160,21 @@
         <artifactId>io.wcm.wcm.commons</artifactId>
         <version>1.9.0</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.commons</artifactId>
-        <version>1.9.0</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
-        <version>1.6.8</version>
+        <version>1.6.9-SNAPSHOT</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.parsys</artifactId>
-        <version>1.6.8</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.9.8</version>
+        <version>1.9.9-SNAPSHOT</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.9.8</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
         <version>1.2.2</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
-        <version>1.2.2</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.commons</artifactId>
@@ -230,71 +185,26 @@
         <artifactId>io.wcm.handler.url</artifactId>
         <version>1.10.0</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.handler.url</artifactId>
-        <version>1.10.0</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.15.2</version>
+        <version>1.15.3-SNAPSHOT</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.15.2</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.10.0</version>
+        <version>1.10.1-SNAPSHOT</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.10.0</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.richtext</artifactId>
         <version>1.6.2</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.handler.richtext</artifactId>
-        <version>1.6.2</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.12.2-2.21.2</version>
+        <version>1.12.3-2.21.2-SNAPSHOT</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.12.2-2.21.2</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
 #end
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
@@ -470,29 +380,6 @@
   </dependencyManagement>
 
   <build>
-#if ( $optionSlingInitialContentBundle == "y" && $optionSlingInitialContentBundleContentPackage == "y" && $optionAemVersion == "cloud" )
-    <plugins>
-    
-      <!-- For OSGi bundles with Sling-Initial-Content: Additionaly generated two attached files for each bundle containing the content 
-           in a content package and the OGSi bundle without Sling-Initial-Content as an alternative for AEMaaCS deployment.
-           See https://wcm-io.atlassian.net/l/c/3wZPHGBo for more context -->
-      <plugin>
-        <groupId>io.wcm.maven.plugins</groupId>
-        <artifactId>sling-initial-content-transform-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>transform</goal>
-            </goals>
-            <configuration>
-              <group>${packageGroupName}</group>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-    </plugins>
-#end
     <pluginManagement>
       <plugins>
 
