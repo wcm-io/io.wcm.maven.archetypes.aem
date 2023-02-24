@@ -245,7 +245,6 @@
       <plugin>
         <groupId>com.adobe.aem</groupId>
         <artifactId>aemanalyser-maven-plugin</artifactId>
-        <version>1.5.9-SNAPSHOT</version>
         <executions>
           <execution>
             <id>aem-analyser</id>
