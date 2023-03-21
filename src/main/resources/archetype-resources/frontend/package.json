@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "Frontend build pipeline for AEM projects",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build:dev": "webpack --mode development",
