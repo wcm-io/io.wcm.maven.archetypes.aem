@@ -143,13 +143,13 @@
         <artifactId>io.wcm.caconfig.editor</artifactId>
         <version>1.15.4</version>
       </dependency>
-#end
-#if ( $optionWcmioHandler == "y" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.sling.commons</artifactId>
         <version>1.6.0</version>
       </dependency>
+#end
+#if ( $optionWcmioHandler == "y" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.sling.models</artifactId>

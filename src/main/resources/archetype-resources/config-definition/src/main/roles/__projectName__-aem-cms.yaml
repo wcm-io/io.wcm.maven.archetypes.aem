@@ -86,10 +86,10 @@ files:
   dir: bundles
 - url: mvn:io.wcm/io.wcm.caconfig.editor
   dir: bundles
-#end
-#if ( $optionWcmioHandler == "y" )
 - url: mvn:io.wcm/io.wcm.sling.commons
   dir: bundles
+#end
+#if ( $optionWcmioHandler == "y" )
 - url: mvn:io.wcm/io.wcm.sling.models
   dir: bundles
 - url: mvn:io.wcm/io.wcm.wcm.commons
