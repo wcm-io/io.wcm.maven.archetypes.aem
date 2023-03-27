@@ -14,7 +14,7 @@ files:
 
 #if ( $optionAemVersion == '6.5' && $optionAemServicePack == 'y' )
 # AEM Service Pack
-- url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.15.0/zip
+- url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.16.0/zip
   dir: packages
   modelOptions:
     delayAfterInstallSec: 30
@@ -86,52 +86,32 @@ files:
   dir: bundles
 - url: mvn:io.wcm/io.wcm.caconfig.editor
   dir: bundles
-- url: mvn:io.wcm/io.wcm.caconfig.editor//zip/content
-  dir: packages
-#end
-#if ( $optionWcmioHandler == "y" )
 - url: mvn:io.wcm/io.wcm.sling.commons
   dir: bundles
+#end
+#if ( $optionWcmioHandler == "y" )
 - url: mvn:io.wcm/io.wcm.sling.models
   dir: bundles
 - url: mvn:io.wcm/io.wcm.wcm.commons
   dir: bundles
-- url: mvn:io.wcm/io.wcm.wcm.commons//zip/content
-  dir: packages
 - url: mvn:io.wcm/io.wcm.wcm.parsys
   dir: bundles
-- url: mvn:io.wcm/io.wcm.wcm.parsys//zip/content
-  dir: packages
 - url: mvn:io.wcm/io.wcm.wcm.ui.granite
   dir: bundles
-- url: mvn:io.wcm/io.wcm.wcm.ui.granite//zip/content
-  dir: packages
 - url: mvn:io.wcm/io.wcm.wcm.ui.clientlibs
   dir: bundles
-- url: mvn:io.wcm/io.wcm.wcm.ui.clientlibs//zip/content
-  dir: packages
 - url: mvn:io.wcm/io.wcm.handler.commons
   dir: bundles
 - url: mvn:io.wcm/io.wcm.handler.url
   dir: bundles
-- url: mvn:io.wcm/io.wcm.handler.url//zip/content
-  dir: packages
 - url: mvn:io.wcm/io.wcm.handler.media
   dir: bundles
-- url: mvn:io.wcm/io.wcm.handler.media//zip/content
-  dir: packages
 - url: mvn:io.wcm/io.wcm.handler.link
   dir: bundles
-- url: mvn:io.wcm/io.wcm.handler.link//zip/content
-  dir: packages
 - url: mvn:io.wcm/io.wcm.handler.richtext
   dir: bundles
-- url: mvn:io.wcm/io.wcm.handler.richtext//zip/content
-  dir: packages
 - url: mvn:io.wcm/io.wcm.wcm.core.components
   dir: bundles
-- url: mvn:io.wcm/io.wcm.wcm.core.components//zip/content
-  dir: packages
 #end
 
 #end
@@ -146,14 +126,6 @@ files:
 #else
 - url: mvn:${groupId}/${rootArtifactId}.complete//zip
   dir: packages
-#end
-#if ( $optionSlingInitialContentBundle == "y" && $optionSlingInitialContentBundleContentPackage == "y" && $optionAemVersion == "cloud" )
-- url: mvn:${groupId}/${rootArtifactId}.core//zip/content
-  dir: packages
-#if ( $optionMultiBundleLayout == "y" )
-- url: mvn:${groupId}/${rootArtifactId}.clientlibs//zip/content
-  dir: packages
-#end
 #end
 #if( $optionSlingInitialContentBundle == "n" )
 - url: mvn:${groupId}/${rootArtifactId}.ui.apps//zip

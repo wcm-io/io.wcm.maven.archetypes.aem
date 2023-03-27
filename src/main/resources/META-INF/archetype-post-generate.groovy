@@ -36,9 +36,6 @@ if ((optionAemServicePack=="y" || optionAemServicePackAPI=="y") && optionAemVers
 if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
   throw new RuntimeException("Parameter optionMultiBundleLayout='y' is only supported with optionSlingInitialContentBundle='y'.")
 }
-if (optionSlingInitialContentBundleContentPackage == "y" && optionAemVersion != "cloud") {
-  throw new RuntimeException("Parameter optionSlingInitialContentBundleContentPackage='y' is only supported with optionAemVersion='cloud'.")
-}
 if (optionWcmioHandler == "y" && optionContextAwareConfig == "n") {
   throw new RuntimeException("Parameter optionWcmioHandler='y' is only supported with optionContextAwareConfig='y'.")
 }

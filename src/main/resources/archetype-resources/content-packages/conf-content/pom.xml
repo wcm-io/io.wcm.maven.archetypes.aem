@@ -20,6 +20,9 @@
   <properties>
     <contentPackage.name>${projectName}-conf-content</contentPackage.name>
     <contentPackage.group>${packageGroupName}</contentPackage.group>
+
+    <!-- Disable reproducible builds for this package as workaround for https://issues.apache.org/jira/browse/JCRVLT-699 -->
+    <project.build.outputTimestamp></project.build.outputTimestamp>
   </properties>
 
   <build>

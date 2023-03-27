@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>2.1.0</version>
+    <version>2.1.2</version>
     <relativePath/>
   </parent>
 
@@ -35,7 +35,7 @@
     <core.wcm.components.version>2.21.2</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>5.4.0</acs.aem.commons.version>
+    <acs.aem.commons.version>6.0.6</acs.aem.commons.version>
 #end
 
     <!-- Enable reproducible builds -->
@@ -92,12 +92,12 @@
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.models.api</artifactId>
-        <version>1.4.0</version>
+        <version>1.4.2</version>
       </dependency>
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.models.impl</artifactId>
-        <version>1.5.0</version>
+        <version>1.5.4</version>
       </dependency>
 
 #end
@@ -141,24 +141,15 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.15.2</version>
+        <version>1.15.6</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.15.2</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
-#end
-#if ( $optionWcmioHandler == "y" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.sling.commons</artifactId>
         <version>1.6.0</version>
       </dependency>
+#end
+#if ( $optionWcmioHandler == "y" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.sling.models</artifactId>
@@ -169,57 +160,21 @@
         <artifactId>io.wcm.wcm.commons</artifactId>
         <version>1.9.0</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.commons</artifactId>
-        <version>1.9.0</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
-        <version>1.6.8</version>
+        <version>1.7.0</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.parsys</artifactId>
-        <version>1.6.8</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.9.8</version>
+        <version>1.9.10</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.9.8</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
         <version>1.2.2</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
-        <version>1.2.2</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.commons</artifactId>
@@ -230,83 +185,38 @@
         <artifactId>io.wcm.handler.url</artifactId>
         <version>1.10.0</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.handler.url</artifactId>
-        <version>1.10.0</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.15.2</version>
+        <version>1.15.4</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.15.2</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.10.0</version>
+        <version>1.10.2</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.handler.link</artifactId>
-        <version>1.10.0</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.richtext</artifactId>
         <version>1.6.2</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.handler.richtext</artifactId>
-        <version>1.6.2</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.12.2-2.21.2</version>
+        <version>1.12.4-2.21.2</version>
       </dependency>
-#if ( $optionAemVersion == "cloud" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.12.2-2.21.2</version>
-        <classifier>content</classifier>
-        <type>zip</type>
-      </dependency>
-#end
 #end
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
         <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
-        <version>1.14.0</version>
+        <version>1.15.0</version>
       </dependency>
 
       <!-- wcm.io Testing -->
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
-        <version>5.1.2</version>
+        <version>5.2.0</version>
       </dependency>
 #if ( $optionAemVersion == "6.5" && ($optionAemServicePack=="y" || $optionAemServicePackAPI=="y") )
       <dependency>
@@ -344,7 +254,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.sling</artifactId>
-        <version>1.1.0</version>
+        <version>1.2.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -363,7 +273,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y" || $optionAemServicePackAPI=="y")6.5.15.0000#{else}6.5.0.0005#end</version>
+        <version>#if($optionAemServicePack=="y" || $optionAemServicePackAPI=="y")6.5.16.0000#{else}6.5.0.0005#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -421,7 +331,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "4.11.0" )
+#set( $mockitoVersion = "5.2.0" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
@@ -470,29 +380,6 @@
   </dependencyManagement>
 
   <build>
-#if ( $optionSlingInitialContentBundle == "y" && $optionSlingInitialContentBundleContentPackage == "y" && $optionAemVersion == "cloud" )
-    <plugins>
-    
-      <!-- For OSGi bundles with Sling-Initial-Content: Additionaly generated two attached files for each bundle containing the content 
-           in a content package and the OGSi bundle without Sling-Initial-Content as an alternative for AEMaaCS deployment.
-           See https://wcm-io.atlassian.net/l/c/3wZPHGBo for more context -->
-      <plugin>
-        <groupId>io.wcm.maven.plugins</groupId>
-        <artifactId>sling-initial-content-transform-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>transform</goal>
-            </goals>
-            <configuration>
-              <group>${packageGroupName}</group>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-    </plugins>
-#end
     <pluginManagement>
       <plugins>
 

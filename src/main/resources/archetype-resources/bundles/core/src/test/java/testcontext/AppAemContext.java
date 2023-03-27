@@ -64,16 +64,7 @@ public final class AppAemContext {
    */
   public static AemContextBuilder newAemContextBuilder(@NotNull ResourceResolverType resourceResolverType) {
     return new AemContextBuilder(resourceResolverType)
-#if ( $optionContextAwareConfig == "y" )
-        .plugin(CACONFIG)
-#end
-#if ( $optionWcmioHandler == "y" )
-        .plugin(CORE_COMPONENTS, WCMIO_SLING, WCMIO_WCM, WCMIO_CACONFIG, WCMIO_HANDLER)
-#elseif ( $optionContextAwareConfig == "y" )
-        .plugin(CORE_COMPONENTS, WCMIO_CACONFIG)
-#else
-        .plugin(CORE_COMPONENTS)
-#end
+        .plugin(CORE_COMPONENTS#if($optionContextAwareConfig=="y"), CACONFIG, WCMIO_CACONFIG#{end}#if($optionWcmioHandler=="y"), WCMIO_SLING, WCMIO_WCM, WCMIO_HANDLER#{end})
         .afterSetUp(SETUP_CALLBACK);
   }
 
