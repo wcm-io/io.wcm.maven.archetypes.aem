@@ -23,7 +23,7 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
-    <release version="3.7.2" date="not released">
+    <release version="3.7.2" date="2023-03-27">
       <action type="update" dev="sseifert" issue="WTOOL-72">
         AEMaaCS: Remove workaround for deploying "Sling-Initial-Content" for OSGi bundles via separate content packages for all OSGi bundles -
         transforming Sling-Initial-Content to content packages now happens automatically as part of Cloud Manager deployment with the help of Sling feature cpconverter.
