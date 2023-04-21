@@ -23,6 +23,7 @@ import org.apache.commons.lang3.StringUtils;
 #end
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 #if ($optionWcmioHandler == 'n')
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
@@ -31,10 +32,14 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 #if ($optionWcmioHandler == 'n')
 import org.apache.sling.models.factory.ModelFactory;
 #end
+import org.jetbrains.annotations.NotNull;
 
+import com.adobe.cq.export.json.ComponentExporter;
+import com.adobe.cq.export.json.ExporterConstants;
 #if ($optionWcmioHandler == 'n')
 import com.adobe.cq.wcm.core.components.models.Image;
 #else
+
 import io.wcm.handler.media.Media;
 import io.wcm.handler.media.MediaHandler;
 #end
@@ -47,9 +52,13 @@ import io.wcm.handler.media.MediaHandler;
  * This demo component is only an example for a custom standalone component.
  * </p>
  */
-@Model(adaptables = SlingHttpServletRequest.class)
-public class CustomCarousel {
+@Model(adaptables = SlingHttpServletRequest.class,
+    adapters = { CustomCarousel.class, ComponentExporter.class },
+    resourceType = CustomCarousel.RESOURCE_TYPE)
+@Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
+public class CustomCarousel implements ComponentExporter {
 
+  static final String RESOURCE_TYPE = "${projectName}/core/components/content/customcarousel";
   static final String NN_SLIDES = "slides";
 
   private String id;
@@ -116,6 +125,11 @@ public class CustomCarousel {
    */
   public List<$imageClass> getSlideImages() {
     return Collections.unmodifiableList(this.slideImages);
+  }
+
+  @Override
+  public @NotNull String getExportedType() {
+    return RESOURCE_TYPE;
   }
 
 }

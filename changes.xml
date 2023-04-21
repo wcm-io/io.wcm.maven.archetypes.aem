@@ -25,6 +25,9 @@
 
     <release version="3.7.4" date="not released">
       <action type="update" dev="sseifert">
+        Add Sling Model Exporter definition for CustomCarousel sample component.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
