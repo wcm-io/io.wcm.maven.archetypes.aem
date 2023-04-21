@@ -9,6 +9,10 @@ import static io.wcm.testing.mock.wcmio.caconfig.ContextPlugins.WCMIO_CACONFIG;
 #end
 #if ( $optionWcmioHandler == "y" )
 import static io.wcm.testing.mock.wcmio.handler.ContextPlugins.WCMIO_HANDLER;
+#if ( $optionWcmioSiteApi == "y" )
+import static io.wcm.testing.mock.wcmio.siteapi.handler.ContextPlugins.WCMIO_SITEAPI_HANDLER;
+import static io.wcm.testing.mock.wcmio.siteapi.processor.ContextPlugins.WCMIO_SITEAPI_PROCESSOR;
+#end
 import static io.wcm.testing.mock.wcmio.sling.ContextPlugins.WCMIO_SLING;
 import static io.wcm.testing.mock.wcmio.wcm.ContextPlugins.WCMIO_WCM;
 #end
@@ -64,7 +68,7 @@ public final class AppAemContext {
    */
   public static AemContextBuilder newAemContextBuilder(@NotNull ResourceResolverType resourceResolverType) {
     return new AemContextBuilder(resourceResolverType)
-        .plugin(CORE_COMPONENTS#if($optionContextAwareConfig=="y"), CACONFIG, WCMIO_CACONFIG#{end}#if($optionWcmioHandler=="y"), WCMIO_SLING, WCMIO_WCM, WCMIO_HANDLER#{end})
+        .plugin(CORE_COMPONENTS#if($optionContextAwareConfig=="y"), CACONFIG, WCMIO_CACONFIG#{end}#if($optionWcmioHandler=="y"), WCMIO_SLING#if($optionWcmioSiteApi=="y"), WCMIO_SITEAPI_PROCESSOR#{end}, WCMIO_WCM, WCMIO_HANDLER#if($optionWcmioSiteApi=="y"), WCMIO_SITEAPI_HANDLER#{end}#{end})
         .afterSetUp(SETUP_CALLBACK);
   }
 

@@ -205,6 +205,18 @@
         <artifactId>io.wcm.wcm.core.components</artifactId>
         <version>1.12.4-2.21.2</version>
       </dependency>
+#if ( $optionWcmioSiteApi == "y" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.site-api.processor</artifactId>
+        <version>1.0.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.site-api.handler</artifactId>
+        <version>1.0.0</version>
+      </dependency>
+#end
 #end
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
@@ -261,11 +273,25 @@
         <artifactId>io.wcm.testing.wcm-io-mock.wcm</artifactId>
         <version>1.2.0</version>
       </dependency>
+#if ( $optionWcmioSiteApi == "y" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.wcm-io-mock.site-api.processor</artifactId>
+        <version>1.0.0</version>
+      </dependency>
+#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.handler</artifactId>
         <version>1.4.0</version>
       </dependency>
+#if ( $optionWcmioSiteApi == "y" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.wcm-io-mock.site-api.handler</artifactId>
+        <version>1.0.0</version>
+      </dependency>
+#end
 #end
 
       <!-- AEM dependencies -->
@@ -354,19 +380,13 @@
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>aem-cloud-testing-clients</artifactId>
-        <version>1.0.5</version>
+        <version>1.2.0</version>
       </dependency>
 #elseif ( $optionAemVersion == "6.5" )
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>cq-testing-clients-65</artifactId>
         <version>1.1.1</version>
-      </dependency>
-#else
-      <dependency>
-        <groupId>com.adobe.cq</groupId>
-        <artifactId>cq-testing-clients-64</artifactId>
-        <version>0.1.3</version>
       </dependency>
 #end
       <dependency>
