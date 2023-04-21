@@ -123,6 +123,11 @@
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
+    <!-- Setup AEM headless project based on wcm.io Site API. Requires optionWcmioHandler='y'. -->
+    <requiredProperty key="optionWcmioSiteApi">
+      <defaultValue>n</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
     <!-- Use latest Sling Models versions (ignored for AEMaaCS) -->
     <requiredProperty key="optionSlingModelsLatest">
       <defaultValue>n</defaultValue>

@@ -27,7 +27,7 @@ Features:
 * Optional inclusion of latest service packs
 * Optional integration with a [Webpack][webpack]-based Frontend Build
 * Optional support for [Sling Context-Aware Configuration][sling-caconfig] and [wcm.io Context-Aware Configuration Extensions][wcmio-caconfig]
-* Optional support for [wcm.io Handler][wcmio-handler] infrastructure and [wcm.io WCM Core Components][wcmio-wcm-core-components]
+* Optional support for [wcm.io Handler][wcmio-handler] infrastructure, [wcm.io WCM Core Components][wcmio-wcm-core-components] and [wcm.io Site API][wcmio-siteapi]
 * Optional support for [ACS AEM Commons][acs-aem-commons]
 
 See [Usage][usage] for a detailed documentation.
@@ -64,6 +64,7 @@ Alternatively to the wcm.io AEM archetype you can use these tools to set up new 
 [wcmio-caconfig]: https://wcm.io/caconfig/
 [wcmio-handler]: https://wcm.io/handler
 [wcmio-wcm-core-components]: https://wcm.io/wcm/core-components/
+[wcmio-siteapi]: https://wcm.io/site-api/
 [acs-aem-commons]: https://adobe-consulting-services.github.io/acs-aem-commons/
 [adobe-aem-archetype]: https://github.com/Adobe-Marketing-Cloud/aem-project-archetype
 [acs-aem-lazybones]: https://github.com/Adobe-Consulting-Services/lazybones-aem-templates

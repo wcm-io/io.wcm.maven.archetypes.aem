@@ -42,6 +42,9 @@ if (optionWcmioHandler == "y" && optionContextAwareConfig == "n") {
 if (optionEditableTemplates == "n" && optionWcmioHandler == "n") {
   throw new RuntimeException("You have to specify either parameter optionEditableTemplates='y' or optionWcmioHandler='y'.")
 }
+if (optionWcmioSiteApi == "y" && optionWcmioHandler == "n") {
+  throw new RuntimeException("Parameter optionSiteApi='y' is only supported with optionWcmioHandler='y'.")
+}
 if (!(javaPackage ==~ /^[a-z0-9\.]+$/)) {
   throw new RuntimeException("Java package name is invalid: " + javaPackage)
 }

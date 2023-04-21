@@ -40,6 +40,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 | **optionFrontend**                  | n       | Setup frontend build project with [webpack][webpack]
 | **optionNodeJsPlugin**              | n       | Use [wcm.io Node JS plugin][nodejs-maven--plugin] for frontend build (recommended when [Maven NodeJS Proxy][maven-nodejs-proxy] is used). If not enabled the [frontend-maven-plugin][frontend-maven-plugin] is used instead. For AEMaaCS it is recommended to stick with frontend-maven-plugin.
 | **optionWcmioHandler**              | n       | Setup project using wcm.io AEM libraries, especially the [wcm.io Handler][wcmio-handler] Infrastructure and [wcm.io WCM Core Components][wcmio-wcm-core-components]. _Requires optionContextAwareConfig='y'._
+| **optionWcmioSiteApi**              | n       | Setup AEM headless project based on [wcm.io Site API][wcmio-siteapi]. _Requires optionWcmioHandler='y'._
 | **optionSlingModelsLatest**         | n       | Use latest Sling Models bundles (ignored for AEMaaCS)
 | **optionContextAwareConfigLatest**  | n       | Use latest Context-Aware Configuration bundles (ignored for AEMaaCS)
 | **optionAcsCommons**                | n       | Deploy [ACS AEM Commons][acs-aem-commons].
@@ -134,6 +135,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 [wcmio-caconfig]: https://wcm.io/caconfig/
 [wcmio-handler]: https://wcm.io/handler
 [wcmio-wcm-core-components]: https://wcm.io/wcm/core-components/
+[wcmio-siteapi]: https://wcm.io/site-api/
 [acs-aem-commons]: https://adobe-consulting-services.github.io/acs-aem-commons/
 [webpack]: https://webpack.js.org/
 [nodejs-maven--plugin]: https://wcm.io/tooling/maven/plugins/nodejs-maven-plugin/
