@@ -35,7 +35,7 @@
     <core.wcm.components.version>2.21.2</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>6.0.6</acs.aem.commons.version>
+    <acs.aem.commons.version>6.0.8</acs.aem.commons.version>
 #end
 
     <!-- Enable reproducible builds -->
@@ -331,7 +331,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "5.3.0" )
+#set( $mockitoVersion = "5.3.1" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
