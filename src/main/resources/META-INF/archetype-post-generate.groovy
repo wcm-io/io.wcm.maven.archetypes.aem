@@ -232,6 +232,7 @@ else {
 
 if (optionWcmioSiteApi == "n") {
   assert new File(coreBundle, "src/main/java/${javaPackagePath}/reference").deleteDir()
+  assert new File(coreBundle, "src/test/java/${javaPackagePath}/reference").deleteDir()
   removeModule(rootPom, "bundles/site-api-spec")
   siteApiSpecBundle.deleteDir()
 }

@@ -38,6 +38,10 @@ import ${package}.config.AppTemplate;
 import ${package}.config.impl.LinkHandlerConfigImpl;
 import ${package}.config.impl.MediaFormatProviderImpl;
 import ${package}.config.impl.MediaHandlerConfigImpl;
+#if ( $optionWcmioSiteApi == "y" )
+import ${package}.reference.impl.LinkReferenceDecorator;
+import ${package}.reference.impl.MediaReferenceDecorator;
+#end
 
 #end
 /**
@@ -94,6 +98,12 @@ public final class AppAemContext {
       context.registerInjectActivateService(MediaHandlerConfigImpl.class);
       context.registerInjectActivateService(MediaFormatProviderImpl.class);
 
+#if ( $optionWcmioSiteApi == "y" )
+      // Site API
+      context.registerInjectActivateService(LinkReferenceDecorator.class);
+      context.registerInjectActivateService(MediaReferenceDecorator.class);
+
+#end
 #end
     }
   };
