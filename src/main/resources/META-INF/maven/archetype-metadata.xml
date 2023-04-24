@@ -267,6 +267,33 @@
       </fileSets>
     </module>
 
+    <module id="${rootArtifactId}.site-api-spec" dir="bundles/site-api-spec" name="${rootArtifactId}.site-api-spec">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/spec</directory>
+          <includes>
+            <include>**/*.yaml</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+          <directory>src/test/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>index.html</include>
+            <include>package.json</include>
+            <include>README.md</include>
+            <include>webpack.config.js</include>
+            <include>src/index.js</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
     <module id="${rootArtifactId}.ui.apps" dir="content-packages/ui.apps" name="${rootArtifactId}.ui.apps">
       <fileSets>
         <fileSet filtered="true" encoding="UTF-8">

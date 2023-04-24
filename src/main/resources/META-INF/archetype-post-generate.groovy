@@ -15,10 +15,12 @@ def optionEditableTemplates = request.getProperties().get("optionEditableTemplat
 def optionMultiBundleLayout = request.getProperties().get("optionMultiBundleLayout")
 def optionContextAwareConfig = request.getProperties().get("optionContextAwareConfig")
 def optionWcmioHandler = request.getProperties().get("optionWcmioHandler")
+def optionWcmioSiteApi = request.getProperties().get("optionWcmioSiteApi")
 def optionIntegrationTests = request.getProperties().get("optionIntegrationTests")
 
 def coreBundle = new File(rootDir, "bundles/core")
 def clientlibsBundle = new File(rootDir, "bundles/clientlibs")
+def siteApiSpecBundle = new File(rootDir, "bundles/site-api-spec")
 def completeContentPackage = new File(rootDir, "content-packages/complete")
 def confContentPackage = new File(rootDir, "content-packages/conf-content")
 def sampleContentPackage = new File(rootDir, "content-packages/sample-content")
@@ -224,6 +226,11 @@ if (optionAemVersion == "cloud") {
 else {
   // remove environments only relevant for AEMaaCS
   assert new File(configDefinition, "src/main/environments/cloud.yaml").delete()
+}
+
+if (optionWcmioSiteApi == "n") {
+  removeModule(rootPom, "bundles/site-api-spec")
+  siteApiSpecBundle.deleteDir()
 }
 
 if (optionIntegrationTests == "n") {
