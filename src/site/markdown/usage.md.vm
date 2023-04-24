@@ -51,7 +51,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Usage examples
 
-${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Minimal AEM project with FileVault package layout and Java 11 for AEMaaCS
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Minimal AEM project with FileVault package layout for AEMaaCS
 
 ```
 mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.archetype.version']}:generate -DinteractiveMode=false \
@@ -75,6 +75,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionMultiBundleLayout=n \
   -DoptionContextAwareConfig=y \
   -DoptionWcmioHandler=n \
+  -DoptionWcmioSiteApi=n \
   -DoptionSlingModelsLatest=n \
   -DoptionContextAwareConfigLatest=n \
   -DoptionAcsCommons=n \
@@ -83,18 +84,18 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionIntegrationTests=n
 ```
 
-${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} AEM project with wcm.io and Sling-Initial-Content project layout and Java 11 for AEM 6.5
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} AEM project with wcm.io and Sling-Initial-Content project layout for AEM 6.5
 
 ```
 mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.archetype.version']}:generate -DinteractiveMode=false \
   -DarchetypeGroupId=io.wcm.maven.archetypes \
   -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
   -DarchetypeVersion=${project.properties['releasedVersion.version']} \
-  -DprojectName=myproject2 \
+  -DprojectName=myproject \
   -DgroupId=mycompany.myprojectgroup \
-  -DartifactId=mycompany.myprojectgroup.myproject2 \
+  -DartifactId=mycompany.myprojectgroup.myproject \
   -Dversion=1.0.0-SNAPSHOT \
-  -Dpackage=mycompany.myprojectgroup.myproject2 \
+  -Dpackage=mycompany.myprojectgroup.myproject \
   -DpackageGroupName=mycompany \
   -DaemAuthorPort=4502 \
   -DaemPublishPort=4503 \
@@ -107,6 +108,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionMultiBundleLayout=n \
   -DoptionContextAwareConfig=y \
   -DoptionWcmioHandler=y \
+  -DoptionWcmioSiteApi=n \
   -DoptionSlingModelsLatest=n \
   -DoptionContextAwareConfigLatest=n \
   -DoptionAcsCommons=n \
@@ -115,14 +117,45 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionIntegrationTests=n
 ```
 
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} AEM headless project with wcm.io Site API and Sling-Initial-Content project layout for AEMaaCS
+
+```
+mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.archetype.version']}:generate -DinteractiveMode=false \
+  -DarchetypeGroupId=io.wcm.maven.archetypes \
+  -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
+  -DarchetypeVersion=${project.properties['releasedVersion.version']} \
+  -DprojectName=myproject \
+  -DgroupId=mycompany.myprojectgroup \
+  -DartifactId=mycompany.myprojectgroup.myproject \
+  -Dversion=1.0.0-SNAPSHOT \
+  -Dpackage=mycompany.myprojectgroup.myproject \
+  -DpackageGroupName=mycompany \
+  -DaemAuthorPort=4502 \
+  -DaemPublishPort=4503 \
+  -DoptionJavaVersion=11 \
+  -DoptionAemVersion=cloud \
+  -DoptionAemServicePack=n \
+  -DoptionAemServicePackAPI=n \
+  -DoptionSlingInitialContentBundle=y \
+  -DoptionEditableTemplates=y \
+  -DoptionMultiBundleLayout=y \
+  -DoptionContextAwareConfig=y \
+  -DoptionWcmioHandler=y \
+  -DoptionWcmioSiteApi=y \
+  -DoptionSlingModelsLatest=n \
+  -DoptionContextAwareConfigLatest=n \
+  -DoptionAcsCommons=n \
+  -DoptionFrontend=n \
+  -DoptionNodeJsPlugin=n \
+  -DoptionIntegrationTests=y
+```
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 
-* Java 8 or Java 11
+* Java 11
 * Apache Maven 3.3.9 or higher
 * AEM 6.5 or AEMaaCS
 * Optional: If you want to install latest service packs you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
-
 
 
 
