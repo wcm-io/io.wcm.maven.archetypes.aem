@@ -216,6 +216,11 @@
         <artifactId>io.wcm.site-api.handler</artifactId>
         <version>1.0.0</version>
       </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.site-api.openapi-validator</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+      </dependency>
 #end
 #end
       <dependency>
