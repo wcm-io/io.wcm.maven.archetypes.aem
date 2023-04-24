@@ -438,6 +438,7 @@
           <directory></directory>
           <includes>
             <include>README.md</include>
+            <include>run-integration-tests-locally.sh</include>
           </includes>
         </fileSet>
         <fileSet filtered="true" packaged="true" encoding="UTF-8">
