@@ -89,22 +89,9 @@
 #end
 #if( $optionAcsCommons == "y" )
     <!-- ACS AEM Commons -->
-#if ( $optionAemVersion == "cloud" )
     <dependency>
       <groupId>com.adobe.acs</groupId>
-      <artifactId>acs-aem-commons-bundle</artifactId>
-      <scope>compile</scope>
-    </dependency>
-#end
-    <dependency>
-      <groupId>com.adobe.acs</groupId>
-      <artifactId>acs-aem-commons-ui.apps</artifactId>
-      <type>zip</type>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.adobe.acs</groupId>
-      <artifactId>acs-aem-commons-ui.content</artifactId>
+      <artifactId>acs-aem-commons-all</artifactId>
       <type>zip</type>
       <scope>compile</scope>
     </dependency>
