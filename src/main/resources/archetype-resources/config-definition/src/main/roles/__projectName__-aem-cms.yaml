@@ -28,18 +28,8 @@ files:
 #end
 #if( $optionAcsCommons == "y" )
 # ACS AEM Commons
-#if ( $optionAemVersion == "cloud" )
-- url: mvn:com.adobe.acs/acs-aem-commons-bundle
-  dir: bundles
-#end
-- url: mvn:com.adobe.acs/acs-aem-commons-ui.apps//zip
+- url: mvn:com.adobe.acs/acs-aem-commons-all//zip
   dir: packages
-  postProcessorOptions:
-    contentPackage.packageType: application
-- url: mvn:com.adobe.acs/acs-aem-commons-ui.content//zip
-  dir: packages
-  postProcessorOptions:
-    contentPackage.packageType: content
 
 #end
 # AEM OSGi System Configuration

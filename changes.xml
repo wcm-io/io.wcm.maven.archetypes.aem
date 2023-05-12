@@ -31,6 +31,9 @@
         Add Sling Model Exporter definition for CustomCarousel sample component.
       </action>
       <action type="update" dev="sseifert">
+        Switch to acs-aem-commons-all artifact for ACS AEM Commons deployment.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
