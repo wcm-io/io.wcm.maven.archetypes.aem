@@ -15,20 +15,31 @@
   <packaging>jar</packaging>
 
   <name>${projectName} Integration Tests</name>
+  <description>Custom Functional Tests to be executed in Cloud Manager.</description>
 
   <dependencies>
+
+#if ( $optionWcmioSiteApi == "y" )
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.site-api-spec</artifactId>
+      <version>${version}</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.site-api.integration-test-support</artifactId>
+      <scope>compile</scope>
+    </dependency> 
+
+#end
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <scope>compile</scope>
     </dependency>
-#if ( $optionAemVersion == "cloud" )
-    <dependency>
-      <groupId>com.adobe.cq</groupId>
-      <artifactId>aem-cloud-testing-clients</artifactId>
-      <scope>compile</scope>
-    </dependency>
-#elseif ( $optionAemVersion == "6.5" )
+#if ( $optionAemVersion == "6.5" )
     <dependency>
       <groupId>com.adobe.cq</groupId>
       <artifactId>cq-testing-clients-65</artifactId>
@@ -37,7 +48,7 @@
 #else
     <dependency>
       <groupId>com.adobe.cq</groupId>
-      <artifactId>cq-testing-clients-64</artifactId>
+      <artifactId>aem-cloud-testing-clients</artifactId>
       <scope>compile</scope>
     </dependency>
 #end
@@ -46,6 +57,7 @@
       <artifactId>slf4j-simple</artifactId>
       <scope>compile</scope>
     </dependency>
+
   </dependencies>
 
   <build>

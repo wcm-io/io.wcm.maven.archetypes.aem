@@ -117,6 +117,18 @@
       <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
       <scope>compile</scope>
     </dependency>
+#if ( $optionWcmioSiteApi == "y" )
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.site-api.processor</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.site-api.handler</artifactId>
+      <scope>compile</scope>
+    </dependency>
+#end
 
 #end
     <dependency>
@@ -180,11 +192,25 @@
       <artifactId>io.wcm.testing.wcm-io-mock.wcm</artifactId>
       <scope>test</scope>
     </dependency>
+#if ( $optionWcmioSiteApi == "y" )
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.testing.wcm-io-mock.site-api.processor</artifactId>
+      <scope>test</scope>
+    </dependency>
+#end
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.testing.wcm-io-mock.handler</artifactId>
       <scope>test</scope>
     </dependency>
+#if ( $optionWcmioSiteApi == "y" )
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.testing.wcm-io-mock.site-api.handler</artifactId>
+      <scope>test</scope>
+    </dependency>
+#end
 #end
 
     <dependency>

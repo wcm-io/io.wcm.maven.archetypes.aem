@@ -89,22 +89,9 @@
 #end
 #if( $optionAcsCommons == "y" )
     <!-- ACS AEM Commons -->
-#if ( $optionAemVersion == "cloud" )
     <dependency>
       <groupId>com.adobe.acs</groupId>
-      <artifactId>acs-aem-commons-bundle</artifactId>
-      <scope>compile</scope>
-    </dependency>
-#end
-    <dependency>
-      <groupId>com.adobe.acs</groupId>
-      <artifactId>acs-aem-commons-ui.apps</artifactId>
-      <type>zip</type>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.adobe.acs</groupId>
-      <artifactId>acs-aem-commons-ui.content</artifactId>
+      <artifactId>acs-aem-commons-all</artifactId>
       <type>zip</type>
       <scope>compile</scope>
     </dependency>
@@ -185,6 +172,18 @@
       <artifactId>io.wcm.wcm.core.components</artifactId>
       <scope>compile</scope>
     </dependency>
+#if ( $optionWcmioSiteApi == "y" )
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.site-api.processor</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.site-api.handler</artifactId>
+      <scope>compile</scope>
+    </dependency>
+#end
 #end
 
 #end
