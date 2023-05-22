@@ -23,7 +23,7 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
-    <release version="3.8.0" date="not released">
+    <release version="3.8.0" date="2023-05-22">
       <action type="add" dev="sseifert"><![CDATA[
         Add new option "optionWcmioSiteApi" which allows to setup an AEM headless project based <a href="https://wcm.io/site-api/">wcm.io Site API</a>.
       ]]></action>
