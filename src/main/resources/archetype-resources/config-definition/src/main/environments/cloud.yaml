@@ -66,9 +66,12 @@ config:
     sampleContent: true
 
   httpd:
-    headers:
-      # Set default expiration time for text/html responses (also affects dispatcher caching/invalidation)
-      htmlExpirationTimeSec: 0
+    # Set default expiration time for text/html responses (also affects dispatcher caching/invalidation)
+    # Configuration is different per dev/stage/prod environment
+    cloudManagerConditional:
+      dev.headers.htmlExpirationTimeSec: 5
+      stage.headers.htmlExpirationTimeSec: 300
+      prod.headers.htmlExpirationTimeSec: 300
 
   # Replication configuration not required for AEM cloud service
   replication:
