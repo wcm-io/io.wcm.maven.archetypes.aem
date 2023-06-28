@@ -69,7 +69,7 @@ config:
     # Set default expiration time for text/html responses (also affects dispatcher caching/invalidation)
     # Configuration is different per dev/stage/prod environment
     cloudManagerConditional:
-      dev.headers.htmlExpirationTimeSec: 0
+      dev.headers.htmlExpirationTimeSec: 5
       stage.headers.htmlExpirationTimeSec: 300
       prod.headers.htmlExpirationTimeSec: 300
 
