@@ -24,6 +24,9 @@
   <body>
 
     <release version="3.8.2" date="not released">
+      <action type="update" dev="sseifert"><![CDATA[
+        Dispatcher Configuration for AEMaaCS: Configure <code>httpd.headers.htmlExpirationTimeSec</code> conditionally per environment (DEV: 0 sec, STAGE/PROD: 300 sec by default).
+      ]]></action>
       <action type="update" dev="sseifert">
         Update to AEM 6.5 SP17.
       </action>
