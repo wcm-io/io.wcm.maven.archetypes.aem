@@ -37,6 +37,9 @@ def integrationTests = new File(rootDir, "tests/integration")
 if ((optionAemServicePack=="y" || optionAemServicePackAPI=="y") && optionAemVersion == "cloud") {
   throw new RuntimeException("For AEMaaCS optionAemServicePack='y' or optionAemServicePackAPI='y' is not allowed - there are no service packs for the cloud.")
 }
+if (optionAemServicePackAPI != "y" && optionAemVersion != "cloud") {
+  throw new RuntimeException("For AEM 6.5 optionAemServicePackAPI='y' is mandatory. Also set optionAemServicePack='y' or deploy the service pack manually.")
+}
 if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
   throw new RuntimeException("Parameter optionMultiBundleLayout='y' is only supported with optionSlingInitialContentBundle='y'.")
 }

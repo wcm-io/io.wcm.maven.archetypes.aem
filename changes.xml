@@ -23,6 +23,18 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
+    <release version="3.8.2" date="2023-07-03">
+      <action type="update" dev="sseifert"><![CDATA[
+        Dispatcher Configuration for AEMaaCS: Configure <code>httpd.headers.htmlExpirationTimeSec</code> conditionally per environment (DEV: 5 sec, STAGE/PROD: 300 sec by default).
+      ]]></action>
+      <action type="update" dev="sseifert">
+        Update to AEM 6.5 SP17.
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+    </release>
+
     <release version="3.8.0" date="2023-05-22">
       <action type="add" dev="sseifert"><![CDATA[
         Add new option "optionWcmioSiteApi" which allows to setup an AEM headless project based <a href="https://wcm.io/site-api/">wcm.io Site API</a>.
