@@ -233,7 +233,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
-        <version>5.2.2</version>
+        <version>5.2.3-SNAPSHOT</version>
       </dependency>
 #if ( $optionAemVersion == "6.5" && ($optionAemServicePack=="y" || $optionAemServicePackAPI=="y") )
       <dependency>
