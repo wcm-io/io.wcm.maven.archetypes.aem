@@ -32,7 +32,7 @@
     <!-- Versions -->
 #end
 #if ( $optionAemVersion != "cloud" )
-    <core.wcm.components.version>2.22.10</core.wcm.components.version>
+    <core.wcm.components.version>2.23.2</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
     <acs.aem.commons.version>6.0.14</acs.aem.commons.version>
@@ -203,7 +203,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.13.1-2.22.6-SNAPSHOT</version>
+        <version>1.13.2-2.22.6</version>
       </dependency>
 #if ( $optionWcmioSiteApi == "y" )
       <dependency>
@@ -233,7 +233,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
-        <version>5.2.3-SNAPSHOT</version>
+        <version>5.3.0</version>
       </dependency>
 #if ( $optionAemVersion == "6.5" && ($optionAemServicePack=="y" || $optionAemServicePackAPI=="y") )
       <dependency>
@@ -352,7 +352,7 @@
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>5.9.3</version>
+        <version>5.10.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
