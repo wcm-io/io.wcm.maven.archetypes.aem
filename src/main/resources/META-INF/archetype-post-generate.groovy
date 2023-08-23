@@ -17,6 +17,7 @@ def optionMultiBundleLayout = request.getProperties().get("optionMultiBundleLayo
 def optionContextAwareConfig = request.getProperties().get("optionContextAwareConfig")
 def optionWcmioHandler = request.getProperties().get("optionWcmioHandler")
 def optionWcmioSiteApi = request.getProperties().get("optionWcmioSiteApi")
+def optionWcmioSiteApiGenericEdit = request.getProperties().get("optionWcmioSiteApiGenericEdit")
 def optionIntegrationTests = request.getProperties().get("optionIntegrationTests")
 
 def coreBundle = new File(rootDir, "bundles/core")
@@ -51,6 +52,9 @@ if (optionEditableTemplates == "n" && optionWcmioHandler == "n") {
 }
 if (optionWcmioSiteApi == "y" && optionWcmioHandler == "n") {
   throw new RuntimeException("Parameter optionSiteApi='y' is only supported with optionWcmioHandler='y'.")
+}
+if (optionWcmioSiteApiGenericEdit == "y" && optionWcmioSiteApi == "n") {
+  throw new RuntimeException("Parameter optionWcmioSiteApiGenericEdit='y' is only supported with optionWcmioSiteApi='y'.")
 }
 if (!(javaPackage ==~ /^[a-z0-9\.]+$/)) {
   throw new RuntimeException("Java package name is invalid: " + javaPackage)
