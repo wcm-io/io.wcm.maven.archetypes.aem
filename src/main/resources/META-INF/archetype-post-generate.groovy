@@ -123,6 +123,22 @@ else {
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/content/image").deleteDir()
 }
 
+// remove empty component HTL files
+[
+  new File(coreBundle, "src/main/webapp/app-root/components"),
+  new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/component")
+].each { componentsFolder ->
+  if (componentsFolder.exists()) {
+    componentsFolder.eachFileRecurse(FileType.FILES) { file ->
+      if (file.name =~ /\.html$/) {
+        if (file.getText("UTF-8").empty) {
+          assert file.delete()
+        }
+      }
+    }
+  }
+}
+
 // refactor project layout when multi bundle layout is switched off
 if (optionMultiBundleLayout == "n") {
   // move .gitignore for clientlibs-root
