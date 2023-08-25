@@ -24,11 +24,14 @@
   <body>
 
     <release version="3.8.4" date="not released">
-      <action type="fix" dev="sseifert">
-        Teaser Component: Set imageDelegate property if wcm.io Handler is not used.
+      <action type="update" dev="sseifert">
+        Update to AEM 6.5 SP18.
       </action>
       <action type="update" dev="sseifert">
         Update dependencies.
+      </action>
+      <action type="fix" dev="sseifert">
+        Teaser Component: Set imageDelegate property if wcm.io Handler is not used.
       </action>
     </release>
 

@@ -168,7 +168,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.9.12</version>
+        <version>1.9.13-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -328,7 +328,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y" || $optionAemServicePackAPI=="y")6.5.17.0001#{else}6.5.0.0005#end</version>
+        <version>#if($optionAemServicePack=="y" || $optionAemServicePackAPI=="y")6.5.18.0000#{else}6.5.0.0005#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
