@@ -6,7 +6,8 @@
 #if ($optionWcmioSiteApiGenericEdit == "y")
 <sly
     data-sly-use.clientLib="#if($optionWcmioHandler=='y')/apps/wcm-io/wcm/ui/clientlibs/sightly/templates/clientlib.html#{else}/libs/granite/sightly/templates/clientlib.html#end"
-    data-sly-call="${symbol_dollar}{clientlib.css @ categories=['io.wcm.site-api.generic-edit']}"></sly>
+    data-sly-call="${symbol_dollar}{clientlib.css @ categories=['io.wcm.site-api.generic-edit']}"
+/>
 #else
 <sly
     data-sly-use.clientLib="#if($optionWcmioHandler=='y')/apps/wcm-io/wcm/ui/clientlibs/sightly/templates/clientlib.html#{else}/libs/granite/sightly/templates/clientlib.html#end"
