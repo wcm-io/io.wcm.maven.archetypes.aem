@@ -203,7 +203,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.13.2-2.22.6</version>
+        <version>1.14.0-2.23.2-SNAPSHOT</version>
       </dependency>
 #if ( $optionWcmioSiteApi == "y" )
       <dependency>
