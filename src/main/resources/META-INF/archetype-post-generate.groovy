@@ -129,9 +129,7 @@ if (optionWcmioHandler == "n") {
 }
 else {
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/structureElement").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root/components/content/image.json").delete()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/admin/page/structureElement/structureElement.html").delete()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/content/image").deleteDir()
 }
 
 // remove empty component HTL files
