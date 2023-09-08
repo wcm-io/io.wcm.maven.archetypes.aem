@@ -17,6 +17,7 @@ def optionMultiBundleLayout = request.getProperties().get("optionMultiBundleLayo
 def optionContextAwareConfig = request.getProperties().get("optionContextAwareConfig")
 def optionWcmioHandler = request.getProperties().get("optionWcmioHandler")
 def optionWcmioSiteApi = request.getProperties().get("optionWcmioSiteApi")
+def optionWcmioSiteApiGenericEdit = request.getProperties().get("optionWcmioSiteApiGenericEdit")
 def optionIntegrationTests = request.getProperties().get("optionIntegrationTests")
 
 def coreBundle = new File(rootDir, "bundles/core")
@@ -51,6 +52,12 @@ if (optionEditableTemplates == "n" && optionWcmioHandler == "n") {
 }
 if (optionWcmioSiteApi == "y" && optionWcmioHandler == "n") {
   throw new RuntimeException("Parameter optionSiteApi='y' is only supported with optionWcmioHandler='y'.")
+}
+if (optionWcmioSiteApiGenericEdit == "y" && optionWcmioSiteApi == "n") {
+  throw new RuntimeException("Parameter optionWcmioSiteApiGenericEdit='y' is only supported with optionWcmioSiteApi='y'.")
+}
+if (optionWcmioSiteApiGenericEdit == "y" && optionFrontend == "y") {
+  throw new RuntimeException("Parameter optionWcmioSiteApiGenericEdit='y' is not allowed together with optionFrontend='y'.")
 }
 if (!(javaPackage ==~ /^[a-z0-9\.]+$/)) {
   throw new RuntimeException("Java package name is invalid: " + javaPackage)
@@ -87,6 +94,12 @@ else {
   // remove frontend module entry from root pom
   removeModule(rootPom, "frontend")
 }
+if (optionWcmioSiteApiGenericEdit == "y") {
+  assert clientlibsBundle.deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs").deleteDir()
+  // remove bundles/clientlibs module entry from root pom
+  removeModule(rootPom, "bundles/clientlibs")
+}
 
 // remove files only relevant for wcm.io Handler projects
 if (optionWcmioHandler == "n") {
@@ -97,8 +110,10 @@ if (optionWcmioHandler == "n") {
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/content/responsiveimage.json").delete()
 
-  assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root/${projectName}.app/css").deleteDir()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs/${projectName}.app/css").deleteDir()
+  if (optionWcmioSiteApiGenericEdit == "n") {
+    assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root/${projectName}.app/css").deleteDir()
+    assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs/${projectName}.app/css").deleteDir()
+  }
 
   if (optionFrontend == "y") {
     assert new File(frontend, "src/components/customcarousel/customcarousel.scss").delete()
@@ -114,13 +129,27 @@ if (optionWcmioHandler == "n") {
 }
 else {
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/structureElement").deleteDir()
-  assert new File(coreBundle, "src/main/webapp/app-root/components/content/image.json").delete()
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/admin/page/structureElement/structureElement.html").delete()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/content/image").deleteDir()
+}
+
+// remove empty component HTL files
+[
+  new File(coreBundle, "src/main/webapp/app-root/components"),
+  new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/component")
+].each { componentsFolder ->
+  if (componentsFolder.exists()) {
+    componentsFolder.eachFileRecurse(FileType.FILES) { file ->
+      if (file.name =~ /\.html$/) {
+        if (file.getText("UTF-8").empty) {
+          assert file.delete()
+        }
+      }
+    }
+  }
 }
 
 // refactor project layout when multi bundle layout is switched off
-if (optionMultiBundleLayout == "n") {
+if (optionMultiBundleLayout == "n" && optionWcmioSiteApiGenericEdit == "n") {
   // move .gitignore for clientlibs-root
   if (optionFrontend == "y") {
     assert new File(clientlibsBundle, ".gitignore").renameTo(new File(coreBundle, ".gitignore"))

@@ -41,6 +41,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 | **optionNodeJsPlugin**              | n       | Use [wcm.io Node JS plugin][nodejs-maven--plugin] for frontend build (recommended when [Maven NodeJS Proxy][maven-nodejs-proxy] is used). If not enabled the [frontend-maven-plugin][frontend-maven-plugin] is used instead. For AEMaaCS it is recommended to stick with frontend-maven-plugin.
 | **optionWcmioHandler**              | n       | Setup project using wcm.io AEM libraries, especially the [wcm.io Handler][wcmio-handler] Infrastructure and [wcm.io WCM Core Components][wcmio-wcm-core-components]. _Requires optionContextAwareConfig='y'._
 | **optionWcmioSiteApi**              | n       | Setup AEM headless project based on [wcm.io Site API][wcmio-siteapi]. _Requires optionWcmioHandler='y'._
+| **optionWcmioSiteApiGenericEdit**   | n       | Setup AEM headless project based on [wcm.io Site API Generic Edit][wcmio-siteapi-generic-edit]. _Requires optionWcmioHandler='y' and optionWcmioSiteApi='y'._
 | **optionSlingModelsLatest**         | n       | Use latest Sling Models bundles (ignored for AEMaaCS)
 | **optionContextAwareConfigLatest**  | n       | Use latest Context-Aware Configuration bundles (ignored for AEMaaCS)
 | **optionAcsCommons**                | n       | Deploy [ACS AEM Commons][acs-aem-commons].
@@ -76,6 +77,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionContextAwareConfig=y \
   -DoptionWcmioHandler=n \
   -DoptionWcmioSiteApi=n \
+  -DoptionWcmioSiteApiGenericEdit=n \
   -DoptionSlingModelsLatest=n \
   -DoptionContextAwareConfigLatest=n \
   -DoptionAcsCommons=n \
@@ -109,6 +111,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionContextAwareConfig=y \
   -DoptionWcmioHandler=y \
   -DoptionWcmioSiteApi=n \
+  -DoptionWcmioSiteApiGenericEdit=n \
   -DoptionSlingModelsLatest=n \
   -DoptionContextAwareConfigLatest=n \
   -DoptionAcsCommons=n \
@@ -142,6 +145,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionContextAwareConfig=y \
   -DoptionWcmioHandler=y \
   -DoptionWcmioSiteApi=y \
+  -DoptionWcmioSiteApiGenericEdit=y \
   -DoptionSlingModelsLatest=n \
   -DoptionContextAwareConfigLatest=n \
   -DoptionAcsCommons=n \
@@ -169,6 +173,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 [wcmio-handler]: https://wcm.io/handler
 [wcmio-wcm-core-components]: https://wcm.io/wcm/core-components/
 [wcmio-siteapi]: https://wcm.io/site-api/
+[wcmio-siteapi-generic-edit]: https://wcm.io/site-api/generic-edit/
 [acs-aem-commons]: https://adobe-consulting-services.github.io/acs-aem-commons/
 [webpack]: https://webpack.js.org/
 [nodejs-maven--plugin]: https://wcm.io/tooling/maven/plugins/nodejs-maven-plugin/

@@ -3,6 +3,7 @@
 
 // Components
 #if ( $optionWcmioHandler == "y" )
+@import "components/image/image";
 @import "components/responsiveimage/responsiveimage";
 @import "components/customcarousel/customcarousel";
 #end

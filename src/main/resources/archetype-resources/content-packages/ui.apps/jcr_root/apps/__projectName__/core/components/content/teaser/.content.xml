@@ -3,4 +3,7 @@
     jcr:primaryType="cq:Component"
     jcr:title="Teaser"
     sling:resourceSuperType="#if($optionWcmioHandler=='y')wcm-io/wcm/core/components/#{else}core/wcm/components/#{end}teaser/v2/teaser"
+#if ($optionWcmioHandler != 'y')
+    imageDelegate="${projectName}/core/components/core-components/content/image"
+#end
     componentGroup="${projectName} Content"/>

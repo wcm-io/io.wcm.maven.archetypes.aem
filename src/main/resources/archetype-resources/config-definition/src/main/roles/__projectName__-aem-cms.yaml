@@ -14,7 +14,7 @@ files:
 
 #if ( $optionAemVersion == '6.5' && $optionAemServicePack == 'y' )
 # AEM Service Pack
-- url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.17.0/zip
+- url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.18.0/zip
   dir: packages
   modelOptions:
     delayAfterInstallSec: 30
@@ -106,6 +106,12 @@ files:
 - url: mvn:io.wcm/io.wcm.site-api.processor
   dir: bundles
 - url: mvn:io.wcm/io.wcm.site-api.handler
+  dir: bundles
+#end
+#if ( $optionWcmioSiteApiGenericEdit == "y" )
+- url: mvn:io.wcm/io.wcm.site-api.generic-edit
+  dir: bundles
+- url: mvn:io.wcm/io.wcm.site-api.generic-edit.handler
   dir: bundles
 #end
 #end

@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>2.1.4</version>
+    <version>2.1.6</version>
     <relativePath/>
   </parent>
 
@@ -32,10 +32,10 @@
     <!-- Versions -->
 #end
 #if ( $optionAemVersion != "cloud" )
-    <core.wcm.components.version>2.22.10</core.wcm.components.version>
+    <core.wcm.components.version>2.23.2</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>6.0.10</acs.aem.commons.version>
+    <acs.aem.commons.version>6.0.14</acs.aem.commons.version>
 #end
 
     <!-- Enable reproducible builds -->
@@ -168,7 +168,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
-        <version>1.9.12</version>
+        <version>1.9.14</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -188,7 +188,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>1.15.6</version>
+        <version>1.15.8</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -203,18 +203,18 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>1.13.0-2.22.6</version>
+        <version>1.14.0-2.23.2</version>
       </dependency>
 #if ( $optionWcmioSiteApi == "y" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.site-api.processor</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.site-api.handler</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -222,18 +222,30 @@
         <version>1.0.0</version>
       </dependency>
 #end
+#if ( $optionWcmioSiteApiGenericEdit == "y" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.site-api.generic-edit</artifactId>
+        <version>1.0.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.site-api.generic-edit.handler</artifactId>
+        <version>1.0.0</version>
+      </dependency>
+#end
 #end
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
         <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
-        <version>2.0.0</version>
+        <version>2.0.2</version>
       </dependency>
 
       <!-- wcm.io Testing -->
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
-        <version>5.2.2</version>
+        <version>5.3.0</version>
       </dependency>
 #if ( $optionAemVersion == "6.5" && ($optionAemServicePack=="y" || $optionAemServicePackAPI=="y") )
       <dependency>
@@ -297,6 +309,18 @@
         <version>1.0.0</version>
       </dependency>
 #end
+#if ( $optionWcmioSiteApiGenericEdit == "y" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.wcm-io-mock.site-api.generic-edit</artifactId>
+        <version>1.0.0</version>
+      </dependency> 
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.wcm-io-mock.site-api.generic-edit.handler</artifactId>
+        <version>1.0.0</version>
+      </dependency> 
+#end
 #end
 
       <!-- AEM dependencies -->
@@ -304,7 +328,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y" || $optionAemServicePackAPI=="y")6.5.17.0001#{else}6.5.0.0005#end</version>
+        <version>#if($optionAemServicePack=="y" || $optionAemServicePackAPI=="y")6.5.18.0000#{else}6.5.0.0005#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -352,11 +376,11 @@
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>5.9.3</version>
+        <version>5.10.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "5.4.0" )
+#set( $mockitoVersion = "5.5.0" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
