@@ -23,7 +23,7 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
-    <release version="3.8.4" date="not released">
+    <release version="3.8.4" date="2023-09-08">
       <action type="add" dev="sseifert"><![CDATA[
         Add new option "optionWcmioSiteApiGenericEdit" which allows to setup an AEM headless project based on wcm.io Site API and using <a href="https://wcm.io/site-api/generic-edit/">wcm.io Site API Generic Edit</a>.
       ]]></action>
