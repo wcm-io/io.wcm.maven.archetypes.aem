@@ -226,7 +226,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.site-api.generic-edit</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.2</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -313,7 +313,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.site-api.generic-edit</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
+        <version>1.0.0</version>
       </dependency> 
       <dependency>
         <groupId>io.wcm</groupId>
