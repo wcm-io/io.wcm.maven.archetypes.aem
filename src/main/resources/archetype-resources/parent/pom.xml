@@ -5,7 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>2.1.10</version>
+    <version>2.1.11-SNAPSHOT</version>
     <relativePath/>
   </parent>
 
@@ -376,11 +376,11 @@
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>5.10.0</version>
+        <version>5.10.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "5.5.0" )
+#set( $mockitoVersion = "5.7.0" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
@@ -409,7 +409,7 @@
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>aem-cloud-testing-clients</artifactId>
-        <version>1.2.0</version>
+        <version>1.2.1</version>
       </dependency>
 #end
 #if ( $optionWcmioSiteApi == "y" )
