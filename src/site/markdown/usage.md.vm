@@ -117,7 +117,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 
-* Java 8 or Java 11
+* Java 11
 * Apache Maven 3.3.9 or higher
 * AEM 6.5 or AEMaaCS
 * Optional: If you want to install latest service packs you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
