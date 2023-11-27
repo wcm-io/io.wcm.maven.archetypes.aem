@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="update" dev="sseifert">
+        Remove Site API options.
+      </action>
     </release>
 
     <release version="3.8.4" date="2023-09-08">
