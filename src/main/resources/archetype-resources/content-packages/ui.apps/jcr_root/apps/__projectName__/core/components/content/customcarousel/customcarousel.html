@@ -1,9 +1,6 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-#if ( $optionWcmioSiteApiGenericEdit == "y" )
-<sly data-sly-include="/apps/wcm-io/site-api/generic-edit/components/component/component.html"/>
-#else
 <div data-sly-use.carousel="${package}.components.CustomCarousel"
     id="${symbol_dollar}{carousel.id}" class="carousel slide">
   <ol class="carousel-indicators">
@@ -32,4 +29,3 @@
 
 <sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
     data-sly-call="${symbol_dollar}{templates.placeholder @ isEmpty=carousel.slideImages.empty}"></sly>
-#end

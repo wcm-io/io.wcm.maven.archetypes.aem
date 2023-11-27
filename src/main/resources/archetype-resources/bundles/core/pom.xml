@@ -129,18 +129,6 @@
       <scope>compile</scope>
     </dependency>
 #end
-#if ( $optionWcmioSiteApiGenericEdit == "y" )
-    <dependency>
-      <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.site-api.generic-edit</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.site-api.generic-edit.handler</artifactId>
-      <scope>compile</scope>
-    </dependency>
-#end
 
 #end
     <dependency>
@@ -222,18 +210,6 @@
       <artifactId>io.wcm.testing.wcm-io-mock.site-api.handler</artifactId>
       <scope>test</scope>
     </dependency>
-#end
-#if ( $optionWcmioSiteApiGenericEdit == "y" )
-    <dependency>
-      <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.testing.wcm-io-mock.site-api.generic-edit</artifactId>
-      <scope>test</scope>
-    </dependency> 
-    <dependency>
-      <groupId>io.wcm</groupId>
-      <artifactId>io.wcm.testing.wcm-io-mock.site-api.generic-edit.handler</artifactId>
-      <scope>test</scope>
-    </dependency> 
 #end
 #end
 

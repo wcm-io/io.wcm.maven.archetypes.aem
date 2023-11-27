@@ -222,18 +222,6 @@
         <version>1.0.0</version>
       </dependency>
 #end
-#if ( $optionWcmioSiteApiGenericEdit == "y" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.site-api.generic-edit</artifactId>
-        <version>1.0.2</version>
-      </dependency>
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.site-api.generic-edit.handler</artifactId>
-        <version>1.0.0</version>
-      </dependency>
-#end
 #end
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
@@ -308,18 +296,6 @@
         <artifactId>io.wcm.testing.wcm-io-mock.site-api.handler</artifactId>
         <version>1.0.0</version>
       </dependency>
-#end
-#if ( $optionWcmioSiteApiGenericEdit == "y" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.testing.wcm-io-mock.site-api.generic-edit</artifactId>
-        <version>1.0.0</version>
-      </dependency> 
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.testing.wcm-io-mock.site-api.generic-edit.handler</artifactId>
-        <version>1.0.0</version>
-      </dependency> 
 #end
 #end
 
