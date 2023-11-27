@@ -102,18 +102,6 @@ files:
   dir: bundles
 - url: mvn:io.wcm/io.wcm.wcm.core.components
   dir: bundles
-#if ( $optionWcmioSiteApi == "y" )
-- url: mvn:io.wcm/io.wcm.site-api.processor
-  dir: bundles
-- url: mvn:io.wcm/io.wcm.site-api.handler
-  dir: bundles
-#end
-#if ( $optionWcmioSiteApiGenericEdit == "y" )
-- url: mvn:io.wcm/io.wcm.site-api.generic-edit
-  dir: bundles
-- url: mvn:io.wcm/io.wcm.site-api.generic-edit.handler
-  dir: bundles
-#end
 #end
 
 #end

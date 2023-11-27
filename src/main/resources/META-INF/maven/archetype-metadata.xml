@@ -123,16 +123,6 @@
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Setup AEM headless project based on wcm.io Site API. Requires optionWcmioHandler='y'. -->
-    <requiredProperty key="optionWcmioSiteApi">
-      <defaultValue>n</defaultValue>
-      <validationRegex>^(y|n)$</validationRegex>
-    </requiredProperty>
-    <!-- Setup AEM headless project based on wcm.io Site API Generic Edit. Requires optionWcmioHandler='y' and optionWcmioSiteApi='y'. -->
-    <requiredProperty key="optionWcmioSiteApiGenericEdit">
-      <defaultValue>n</defaultValue>
-      <validationRegex>^(y|n)$</validationRegex>
-    </requiredProperty>
     <!-- Use latest Sling Models versions (ignored for AEMaaCS) -->
     <requiredProperty key="optionSlingModelsLatest">
       <defaultValue>n</defaultValue>
@@ -267,33 +257,6 @@
           <directory></directory>
           <includes>
             <include>.gitignore</include>
-          </includes>
-        </fileSet>
-      </fileSets>
-    </module>
-
-    <module id="${rootArtifactId}.site-api-spec" dir="bundles/site-api-spec" name="${rootArtifactId}.site-api-spec">
-      <fileSets>
-        <fileSet filtered="true" encoding="UTF-8">
-          <directory>src/spec</directory>
-          <includes>
-            <include>**/*.yaml</include>
-          </includes>
-        </fileSet>
-        <fileSet filtered="true" packaged="true" encoding="UTF-8">
-          <directory>src/test/java</directory>
-          <includes>
-            <include>**/*.java</include>
-          </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-          <directory></directory>
-          <includes>
-            <include>index.html</include>
-            <include>package.json</include>
-            <include>README.md</include>
-            <include>webpack.config.js</include>
-            <include>src/index.js</include>
           </includes>
         </fileSet>
       </fileSets>
@@ -443,7 +406,6 @@
           <directory></directory>
           <includes>
             <include>README.md</include>
-            <include>run-integration-tests-locally.sh</include>
           </includes>
         </fileSet>
         <fileSet filtered="true" packaged="true" encoding="UTF-8">

@@ -205,35 +205,6 @@
         <artifactId>io.wcm.wcm.core.components</artifactId>
         <version>1.14.0-2.23.2</version>
       </dependency>
-#if ( $optionWcmioSiteApi == "y" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.site-api.processor</artifactId>
-        <version>1.1.0</version>
-      </dependency>
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.site-api.handler</artifactId>
-        <version>1.1.0</version>
-      </dependency>
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.site-api.openapi-validator</artifactId>
-        <version>1.0.0</version>
-      </dependency>
-#end
-#if ( $optionWcmioSiteApiGenericEdit == "y" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.site-api.generic-edit</artifactId>
-        <version>1.0.2</version>
-      </dependency>
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.site-api.generic-edit.handler</artifactId>
-        <version>1.0.0</version>
-      </dependency>
-#end
 #end
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
@@ -290,37 +261,11 @@
         <artifactId>io.wcm.testing.wcm-io-mock.wcm</artifactId>
         <version>1.2.0</version>
       </dependency>
-#if ( $optionWcmioSiteApi == "y" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.testing.wcm-io-mock.site-api.processor</artifactId>
-        <version>1.0.0</version>
-      </dependency>
-#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.handler</artifactId>
         <version>1.4.0</version>
       </dependency>
-#if ( $optionWcmioSiteApi == "y" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.testing.wcm-io-mock.site-api.handler</artifactId>
-        <version>1.0.0</version>
-      </dependency>
-#end
-#if ( $optionWcmioSiteApiGenericEdit == "y" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.testing.wcm-io-mock.site-api.generic-edit</artifactId>
-        <version>1.0.0</version>
-      </dependency> 
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.testing.wcm-io-mock.site-api.generic-edit.handler</artifactId>
-        <version>1.0.0</version>
-      </dependency> 
-#end
 #end
 
       <!-- AEM dependencies -->
@@ -411,13 +356,6 @@
         <artifactId>aem-cloud-testing-clients</artifactId>
         <version>1.2.1</version>
       </dependency>
-#end
-#if ( $optionWcmioSiteApi == "y" )
-      <dependency>
-        <groupId>io.wcm</groupId>
-        <artifactId>io.wcm.site-api.integration-test-support</artifactId>
-        <version>1.0.0</version>
-      </dependency> 
 #end
       <dependency>
         <groupId>org.slf4j</groupId>

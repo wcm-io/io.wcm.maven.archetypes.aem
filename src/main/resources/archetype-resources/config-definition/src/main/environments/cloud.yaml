@@ -21,21 +21,6 @@ nodes:
     variant: aem-publish
   config:
     dispatcher:
-#if ( $optionWcmioSiteApi == "y" )
-      # Allow access to Site API
-      filter:
-      - _merge_
-      - url: /content(/.*)?
-        extension: api
-        selectors: site
-        type: allow
-      cache:
-        # Also invalidate *.api on cache flush
-        invalidate:
-        - _merge_
-        - glob: "*.api"
-          type: allow
-#else
       # Allow access to model.json
       filter:
       - _merge_
@@ -43,7 +28,6 @@ nodes:
         extension: json
         selectors: model
         type: allow
-#end
 
 
 config:
@@ -95,9 +79,5 @@ tenants:
       #  dev.serverName: publish-XXX.adobeaemcloud.com
       #  stage.serverName: publish-XXX.adobeaemcloud.com
       #  prod.serverName: publish-XXX.adobeaemcloud.com
-#if ( $optionWcmioSiteApi == "y" )
-      rootRedirect.url: /content/${projectName}/en.html
-#else
       rootRedirect.url: /en.html
     sling.mapping.rootPath: /content/${projectName}
-#end
