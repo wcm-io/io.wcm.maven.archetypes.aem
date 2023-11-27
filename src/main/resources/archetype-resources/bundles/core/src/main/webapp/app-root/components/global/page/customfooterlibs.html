@@ -1,3 +1,6 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 <sly
     data-sly-use.clientLib="#if($optionWcmioHandler=='y')/apps/wcm-io/wcm/ui/clientlibs/sightly/templates/clientlib.html#{else}/libs/granite/sightly/templates/clientlib.html#end"
     data-sly-call="${symbol_dollar}{clientLib.js @ categories=['${projectName}.all']}"

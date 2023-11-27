@@ -28,7 +28,7 @@ import ${package}.config.AppTemplate;
 @Component(service = LinkHandlerConfig.class)
 public class LinkHandlerConfigImpl extends LinkHandlerConfig {
 
-  private static final List<Class<? extends LinkType>> DEFAULT_LINK_TYPES = List.of(
+  private static final List<Class<? extends LinkType>> LINK_TYPES = List.of(
       InternalLinkType.class,
       InternalCrossContextLinkType.class,
       ExternalLinkType.class,
@@ -37,7 +37,7 @@ public class LinkHandlerConfigImpl extends LinkHandlerConfig {
   @Override
   @SuppressWarnings("squid:S2384") // returned list is immutable
   public @NotNull List<Class<? extends LinkType>> getLinkTypes() {
-    return DEFAULT_LINK_TYPES;
+    return LINK_TYPES;
   }
 
   @Override
