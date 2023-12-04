@@ -325,7 +325,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "5.7.0" )
+#set( $mockitoVersion = "5.8.0" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
