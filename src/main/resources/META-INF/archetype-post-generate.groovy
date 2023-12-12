@@ -7,7 +7,6 @@ import groovy.util.XmlSlurper
 
 def rootDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId())
 def javaPackage = request.getProperties().get("package")
-def javaPackagePath = javaPackage.replace('.','/')
 def optionAemVersion = request.getProperties().get("optionAemVersion")
 def optionAemServicePack = request.getProperties().get("optionAemServicePack")
 def optionAemServicePackAPI = request.getProperties().get("optionAemServicePackAPI")
@@ -16,13 +15,10 @@ def optionEditableTemplates = request.getProperties().get("optionEditableTemplat
 def optionMultiBundleLayout = request.getProperties().get("optionMultiBundleLayout")
 def optionContextAwareConfig = request.getProperties().get("optionContextAwareConfig")
 def optionWcmioHandler = request.getProperties().get("optionWcmioHandler")
-def optionWcmioSiteApi = request.getProperties().get("optionWcmioSiteApi")
-def optionWcmioSiteApiGenericEdit = request.getProperties().get("optionWcmioSiteApiGenericEdit")
 def optionIntegrationTests = request.getProperties().get("optionIntegrationTests")
 
 def coreBundle = new File(rootDir, "bundles/core")
 def clientlibsBundle = new File(rootDir, "bundles/clientlibs")
-def siteApiSpecBundle = new File(rootDir, "bundles/site-api-spec")
 def completeContentPackage = new File(rootDir, "content-packages/complete")
 def confContentPackage = new File(rootDir, "content-packages/conf-content")
 def sampleContentPackage = new File(rootDir, "content-packages/sample-content")
@@ -32,7 +28,6 @@ def frontend = new File(rootDir, "frontend")
 def rootPom = new File(rootDir, "pom.xml")
 def parentPom = new File(rootDir, "parent/pom.xml")
 def tests = new File(rootDir, "tests")
-def integrationTests = new File(rootDir, "tests/integration")
 
 // validate parameters - throw exceptions for invalid combinations
 if ((optionAemServicePack=="y" || optionAemServicePackAPI=="y") && optionAemVersion == "cloud") {
@@ -49,15 +44,6 @@ if (optionWcmioHandler == "y" && optionContextAwareConfig == "n") {
 }
 if (optionEditableTemplates == "n" && optionWcmioHandler == "n") {
   throw new RuntimeException("You have to specify either parameter optionEditableTemplates='y' or optionWcmioHandler='y'.")
-}
-if (optionWcmioSiteApi == "y" && optionWcmioHandler == "n") {
-  throw new RuntimeException("Parameter optionSiteApi='y' is only supported with optionWcmioHandler='y'.")
-}
-if (optionWcmioSiteApiGenericEdit == "y" && optionWcmioSiteApi == "n") {
-  throw new RuntimeException("Parameter optionWcmioSiteApiGenericEdit='y' is only supported with optionWcmioSiteApi='y'.")
-}
-if (optionWcmioSiteApiGenericEdit == "y" && optionFrontend == "y") {
-  throw new RuntimeException("Parameter optionWcmioSiteApiGenericEdit='y' is not allowed together with optionFrontend='y'.")
 }
 if (!(javaPackage ==~ /^[a-z0-9\.]+$/)) {
   throw new RuntimeException("Java package name is invalid: " + javaPackage)
@@ -94,26 +80,18 @@ else {
   // remove frontend module entry from root pom
   removeModule(rootPom, "frontend")
 }
-if (optionWcmioSiteApiGenericEdit == "y") {
-  assert clientlibsBundle.deleteDir()
-  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs").deleteDir()
-  // remove bundles/clientlibs module entry from root pom
-  removeModule(rootPom, "bundles/clientlibs")
-}
 
 // remove files only relevant for wcm.io Handler projects
 if (optionWcmioHandler == "n") {
-  assert new File(coreBundle, "src/main/java/${javaPackagePath}/config").deleteDir()
+  assert new File(coreBundle, "src/main/java/" + javaPackage.replace('.','/') + "/config").deleteDir()
 
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect").deleteDir()
   assert new File(coreBundle, "src/main/webapp/app-root/templates/admin/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/admin/page/redirect.json").delete()
   assert new File(coreBundle, "src/main/webapp/app-root/components/content/responsiveimage.json").delete()
 
-  if (optionWcmioSiteApiGenericEdit == "n") {
-    assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root/${projectName}.app/css").deleteDir()
-    assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs/${projectName}.app/css").deleteDir()
-  }
+  assert new File(clientlibsBundle, "src/main/webapp/clientlibs-root/${projectName}.app/css").deleteDir()
+  assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/clientlibs/${projectName}.app/css").deleteDir()
 
   if (optionFrontend == "y") {
     assert new File(frontend, "src/components/customcarousel/customcarousel.scss").delete()
@@ -132,24 +110,8 @@ else {
   assert new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/components/admin/page/structureElement/structureElement.html").delete()
 }
 
-// remove empty component HTL files
-[
-  new File(coreBundle, "src/main/webapp/app-root/components"),
-  new File(uiAppsPackage, "jcr_root/apps/${projectName}/core/component")
-].each { componentsFolder ->
-  if (componentsFolder.exists()) {
-    componentsFolder.eachFileRecurse(FileType.FILES) { file ->
-      if (file.name =~ /\.html$/) {
-        if (file.getText("UTF-8").empty) {
-          assert file.delete()
-        }
-      }
-    }
-  }
-}
-
 // refactor project layout when multi bundle layout is switched off
-if (optionMultiBundleLayout == "n" && optionWcmioSiteApiGenericEdit == "n") {
+if (optionMultiBundleLayout == "n") {
   // move .gitignore for clientlibs-root
   if (optionFrontend == "y") {
     assert new File(clientlibsBundle, ".gitignore").renameTo(new File(coreBundle, ".gitignore"))
@@ -262,26 +224,9 @@ else {
   assert new File(configDefinition, "src/main/environments/cloud.yaml").delete()
 }
 
-if (optionWcmioSiteApi == "n") {
-  assert new File(coreBundle, "src/main/java/${javaPackagePath}/reference").deleteDir()
-  assert new File(coreBundle, "src/test/java/${javaPackagePath}/reference").deleteDir()
-  removeModule(rootPom, "bundles/site-api-spec")
-  siteApiSpecBundle.deleteDir()
-}
-
 if (optionIntegrationTests == "n") {
   removeModule(rootPom, "tests/integration")
   tests.deleteDir()
-}
-else if (optionWcmioSiteApi == "y") {
-  // remove non-Site API integration test code
-  assert new File(integrationTests, "src/main/java/${javaPackagePath}/it/components").deleteDir()
-  assert new File(integrationTests, "src/main/java/${javaPackagePath}/it/rules").deleteDir()
-  assert new File(integrationTests, "src/main/java/${javaPackagePath}/it/tests").deleteDir()
-}
-else {
-  // remove Site API integration test code
-  assert new File(integrationTests, "src/main/java/${javaPackagePath}/it/siteapi").deleteDir()
 }
 
 
