@@ -23,6 +23,15 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
+    <release version="3.8.8" date="not released">
+      <action type="update" dev="sseifert">
+        Update to Handler 2.x.
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+    </release>
+
     <release version="3.8.6" date="2023-12-12">
       <action type="update" dev="sseifert">
         Update to AEM 6.5 SP19.
