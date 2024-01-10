@@ -33,9 +33,11 @@ files:
 
 #end
 # AEM OSGi System Configuration
-- file: ${projectName}-aem-cms-config.provisioning
+- file: ${projectName}-aem-cms-config.osgiconfig.json
   dir: packages
-  template: ${projectName}-aem-cms-config.provisioning.hbs
+  template: ${projectName}-aem-cms-config.osgiconfig.json.hbs
+  validators:
+  - none
   postProcessors:
   - aem-contentpackage-osgiconfig
   postProcessorOptions:
