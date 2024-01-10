@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Update to Handler 2.x.
       </action>
+      <action type="update" dev="sseifert" issue="38">
+        Switch to JSON HBS template for defining OSGi configurations.
+      </action>
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
