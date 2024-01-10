@@ -37,7 +37,7 @@ files:
   dir: packages
   template: ${projectName}-aem-cms-config.osgiconfig.json.hbs
   validators:
-  - none
+  - none  # allow trailing commas in JSON picked up by post processor
   postProcessors:
   - aem-contentpackage-osgiconfig
   postProcessorOptions:
