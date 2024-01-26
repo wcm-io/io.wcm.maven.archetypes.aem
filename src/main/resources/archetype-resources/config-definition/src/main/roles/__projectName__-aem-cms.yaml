@@ -33,9 +33,11 @@ files:
 
 #end
 # AEM OSGi System Configuration
-- file: ${projectName}-aem-cms-config.provisioning
+- file: ${projectName}-aem-cms-config.osgiconfig.json
   dir: packages
-  template: ${projectName}-aem-cms-config.provisioning.hbs
+  template: ${projectName}-aem-cms-config.osgiconfig.json.hbs
+  validators:
+  - none  # allow trailing commas in JSON picked up by post processor
   postProcessors:
   - aem-contentpackage-osgiconfig
   postProcessorOptions:
