@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --mode development --open",
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
-    "build:clientlibs": "npm run build:prod && clientlib"
+    "build:clientlibs": "npm run build:prod && clientlib clientlib.config.cjs"
   },
   "dependencies": {
     "bootstrap": "4.6.2",

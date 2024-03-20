@@ -9,12 +9,9 @@
 #set( $serializationFormat = "xml" )
 #set( $clientlibDestPath = "content-packages/ui.apps/jcr_root/apps/${projectName}/clientlibs" )
 #end
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-export default {
+module.exports = {
   // default working directory (can be changed per 'cwd' in every asset option)
-  context: dirname(fileURLToPath(import.meta.url)),
+  context: __dirname,
 
   // path to the clientlib root folder (output)
   clientLibRoot: "../${clientlibDestPath}",
