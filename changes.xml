@@ -24,6 +24,9 @@
   <body>
 
     <release version="3.8.10" date="not released">
+      <action type="update" dev="sseifert" issue="39">
+        Switch frontend to ES6 modules.
+      </action>
       <action type="update" dev="sseifert">
         Update to AEM 6.5 SP20.
       </action>
