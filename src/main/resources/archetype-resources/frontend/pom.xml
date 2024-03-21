@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-#set( $nodeJsVersion = "20.9.0" )
-#set( $npmVersion = "10.1.0" )
+#set( $nodeJsVersion = "20.11.1" )
 
   <parent>
     <groupId>${groupId}</groupId>
@@ -76,8 +75,6 @@
             <phase>process-resources</phase>
             <configuration>
               <nodeVersion>v${nodeJsVersion}</nodeVersion>
-## Explicitly define NPM version for frontend-maven-plugin to avoid build problems on Jenkins
-              <npmVersion>${npmVersion}</npmVersion>
             </configuration>
           </execution>
           <execution>

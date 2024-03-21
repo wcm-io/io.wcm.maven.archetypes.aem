@@ -176,7 +176,7 @@
           <directory></directory>
           <includes>
             <include>README.md</include>
-            <include>clientlib.config.js</include>
+            <include>clientlib.config.cjs</include>
             <include>package.json</include>
             <include>src\index.*</include>
           </includes>
