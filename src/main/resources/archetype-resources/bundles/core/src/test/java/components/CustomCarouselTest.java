@@ -77,8 +77,8 @@ class CustomCarouselTest {
 #end
 #if ($optionWcmioHandler == 'n')
     assertEquals(List.of(
-        "/content/mypage/_jcr_content/myresource/slides/item1.img.png",
-        "/content/mypage/_jcr_content/myresource/slides/item2.img.png"),
+        "/content/mypage/_jcr_content/myresource/slides/item1.coreimg.png",
+        "/content/mypage/_jcr_content/myresource/slides/item2.coreimg.png"),
         underTest.getSlideImages().stream()
             .map(Image::getSrc)
             .collect(Collectors.toList()));

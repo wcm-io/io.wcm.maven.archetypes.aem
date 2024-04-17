@@ -32,10 +32,10 @@
     <!-- Versions -->
 #end
 #if ( $optionAemVersion != "cloud" )
-    <core.wcm.components.version>2.23.4</core.wcm.components.version>
+    <core.wcm.components.version>2.24.4</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>6.4.0</acs.aem.commons.version>
+    <acs.aem.commons.version>6.6.0</acs.aem.commons.version>
 #end
 
     <!-- Enable reproducible builds -->
