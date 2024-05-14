@@ -107,7 +107,7 @@ files:
 #end
 
 #end
-# Application #if($optionAemVersion=='cloud')bundles and#{end}packages
+# Application #if($optionAemVersion=='cloud')bundles and #{end}packages
 #if ( $optionAemVersion == "cloud" )
 - url: mvn:${groupId}/${rootArtifactId}.core
   dir: bundles
