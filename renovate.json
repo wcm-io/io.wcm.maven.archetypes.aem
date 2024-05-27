@@ -3,6 +3,10 @@
   "extends": [
     "config:recommended"
   ],
+  "enabledManagers": [
+    "npm",
+    "maven"
+  ],
   "npm": {
     "minimumReleaseAge": "3 days"
   }
