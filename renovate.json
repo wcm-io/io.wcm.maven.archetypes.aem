@@ -6,7 +6,8 @@
   ],
   "enabledManagers": [
     "npm",
-    "maven"
+    "maven",
+    "custom.regex"
   ],
   "npm": {
     "minimumReleaseAge": "3 days"
