@@ -1,13 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    "customManagers:mavenPropertyVersions"
+    "config:recommended"
   ],
   "enabledManagers": [
     "npm",
-    "maven",
-    "custom.regex"
+    "maven"
   ],
   "npm": {
     "minimumReleaseAge": "3 days"
