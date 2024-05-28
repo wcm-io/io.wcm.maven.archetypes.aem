@@ -15,13 +15,12 @@
   "customManagers": [
     {
       "customType": "regex",
-      "datasourceTemplate": "maven",
-      "versioningTemplate": "maven",
+      "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}maven{{/if}}",
       "fileMatch": ["(^|/)pom\\.xml$"],
       "matchStrings": [
-        "##\\s?renovate: depName=(?<depName>[^\\s]+?)\\s+<.+\\.version>(?<currentValue>.+)<\\/.+\\.version>",
-        "##\\s?renovate: depName=(?<depName>[^\\s]+?)\\s+<version>(?<currentValue>.+)<\\/version>"
-      ]
+        "##\\s??renovate:( datasource=(?<datasource>[a-z-.]+?))? depName=(?<depName>[^\\s]+?)(?: packageName=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?\\s+<(.+\\.)?version>(?<currentValue>.+)<\\/(.+\\.)?version>"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}maven{{/if}}"
     }
   ]
 }

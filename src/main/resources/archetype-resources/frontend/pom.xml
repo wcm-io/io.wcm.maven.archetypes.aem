@@ -17,7 +17,7 @@
   <name>${projectName} Frontend</name>
 
   <properties>
-    <!-- renovate: datasource=node-version depName=node -->
+## renovate: datasource=node-version depName=node
     <nodejs.version>v20.13.1</nodejs.version>
   </properties>
 
