@@ -1,7 +1,0 @@
-{
-  "name": "io.wcm.maven.archetypes.aem",
-  "private": true,
-  "devDependencies": {
-    "renovate": "^37.381.0"
-  }
-}
