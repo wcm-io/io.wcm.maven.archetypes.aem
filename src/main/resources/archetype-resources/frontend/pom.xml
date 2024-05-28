@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-#set( $nodeJsVersion = "20.13.1" )
 
   <parent>
     <groupId>${groupId}</groupId>
@@ -16,6 +15,11 @@
   <packaging>pom</packaging>
 
   <name>${projectName} Frontend</name>
+
+  <properties>
+## renovate: datasource=node-version depName=node
+    <nodejs.version>v20.13.1</nodejs.version>
+  </properties>
 
   <build>
 
@@ -45,7 +49,7 @@
           </execution>
         </executions>
         <configuration>
-          <nodeJsVersion>${nodeJsVersion}</nodeJsVersion>
+          <nodeJsVersion>${nodejs.version}</nodeJsVersion>
           <tasks>
             <npmInstallTask>
               <workingDirectory>${project.basedir}</workingDirectory>
@@ -74,7 +78,7 @@
             </goals>
             <phase>process-resources</phase>
             <configuration>
-              <nodeVersion>v${nodeJsVersion}</nodeVersion>
+              <nodeVersion>${nodejs.version}</nodeVersion>
             </configuration>
           </execution>
           <execution>
