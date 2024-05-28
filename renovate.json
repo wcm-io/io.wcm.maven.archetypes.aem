@@ -1,12 +1,17 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended", "customManagers:mavenPropertyVersions"
   ],
   "enabledManagers": [
+    "npm",
+    "nvm",
     "maven",
     "custom.regex"
   ],
+  "npm": {
+    "minimumReleaseAge": "3 days"
+  },
   "customManagers": [
     {
       "customType": "regex",
@@ -14,7 +19,8 @@
       "versioningTemplate": "maven",
       "fileMatch": ["(^|/)pom\\.xml$"],
       "matchStrings": [
-        "#\\s?renovate: image=(?<depName>.*?)\\s?appVersion:\\s?\\\"?(?<currentValue>[\\w+\\.\\-]*)\""
+        "##\\s?renovate: depName=(?<depName>[^\\s]+?)\\s+<.+\\.version>(?<currentValue>.+)<\\/.+\\.version>",
+        "##\\s?renovate: depName=(?<depName>[^\\s]+?)\\s+<version>(?<currentValue>.+)<\\/version>"
       ]
     }
   ]
