@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:exif="http://ns.adobe.com/exif/1.0/" xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-    jcr:primaryType="dam:Asset">
-    <jcr:content xmlns:cq="http://www.day.com/jcr/cq/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:exif="http://ns.adobe.com/exif/1.0/"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="ee4eacbd-5186-43d2-b547-7e51f8809936">
+    <jcr:content
         jcr:primaryType="dam:AssetContent"
         jcr:mixinTypes="[cq:ReplicationStatus]"
-        cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
+        cq:lastReplicated="{Date}2024-05-30T00:00:00.000+02:00"
         cq:lastReplicationAction="Activate">
         <metadata
             dam:Bitsperpixel="{Long}24"
@@ -42,10 +44,10 @@
             xmp:CreateDate="{Date}2022-08-25T17:25:37.000+02:00"
             xmp:CreatorTool="Adobe Photoshop 23.5 (Windows)"
             xmp:MetadataDate="{Date}2022-08-25T17:27:08.000+02:00"
-            xmp:ModifyDate="{Date}2022-08-25T17:27:08.000+02:00"
             xmpMM:DocumentID="9C4C672A11C813BF532ADA4201EE2112"
             xmpMM:InstanceID="xmp.iid:728440f6-f881-284c-9c9a-6863f105ddc5"
-            xmpMM:OriginalDocumentID="9C4C672A11C813BF532ADA4201EE2112"/>
+            xmpMM:OriginalDocumentID="9C4C672A11C813BF532ADA4201EE2112"
+            xmp:ModifyDate="{Date}2022-08-25T17:27:08.000+02:00"/>
         <related jcr:primaryType="nt:unstructured"/>
         <renditionsMetadata jcr:primaryType="nt:unstructured">
             <cq5dam.thumbnail.319.319.png
