@@ -6,7 +6,7 @@
     <jcr:content
         jcr:primaryType="dam:AssetContent"
         jcr:mixinTypes="[cq:ReplicationStatus]"
-        cq:lastReplicated="{Date}2024-05-30T00:00:00.000+02:00"
+        cq:lastReplicated="{Date}2020-01-01T00:00:00.000+02:00"
         cq:lastReplicationAction="Activate">
         <metadata
             dam:Bitsperpixel="{Long}24"
