@@ -127,7 +127,9 @@
           <version>${maven.archetype.version}</version>
           <configuration>
              <!-- Make sure .git* files can be included as well -->
+             <!-- Use for maven-archetype-plugin 3.3.0 and up:
              <useDefaultExcludes>false</useDefaultExcludes>
+             -->
           </configuration>
         </plugin>
 
