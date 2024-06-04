@@ -5,6 +5,7 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
+## renovate: depName=io.wcm.maven:io.wcm.maven.aem-global-parent
     <version>2.1.18</version>
     <relativePath/>
   </parent>
