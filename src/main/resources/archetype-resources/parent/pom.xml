@@ -5,7 +5,8 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.aem-global-parent</artifactId>
-    <version>2.1.16</version>
+## renovate: depName=io.wcm.maven:io.wcm.maven.aem-global-parent
+    <version>2.1.18</version>
     <relativePath/>
   </parent>
 
@@ -27,16 +28,18 @@
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
     <eclipse.settings.nullanalysis>enabled</eclipse.settings.nullanalysis>
-#if ( $optionAemVersion != "cloud" or $optionAcsCommons == "y" )
 
     <!-- Versions -->
-#end
 #if ( $optionAemVersion != "cloud" )
-    <core.wcm.components.version>2.23.4</core.wcm.components.version>
+## renovate: depName=com.adobe.cq:core.wcm.components.core
+    <core.wcm.components.version>2.25.4</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
-    <acs.aem.commons.version>6.4.0</acs.aem.commons.version>
+## renovate: depName=com.adobe.acs:acs-aem-commons-bundle
+    <acs.aem.commons.version>6.6.0</acs.aem.commons.version>
 #end
+## renovate: depName=org.mockito:mockito-core
+    <mockito.version>5.12.0</mockito.version>
 
     <!-- Enable reproducible builds -->
     <project.build.outputTimestamp>2021-01-01T00:00:00Z</project.build.outputTimestamp>
@@ -92,11 +95,13 @@
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.models.api</artifactId>
+## renovate: depName=org.apache.sling:org.apache.sling.models.api
         <version>1.5.0</version>
       </dependency>
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.models.impl</artifactId>
+## renovate: depName=org.apache.sling:org.apache.sling.models.impl
         <version>1.6.4</version>
       </dependency>
 
@@ -106,21 +111,25 @@
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.caconfig.api</artifactId>
+## renovate: depName=org.apache.sling:org.apache.sling.caconfig.api
         <version>1.3.0</version>
       </dependency>
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.caconfig.spi</artifactId>
+## renovate: depName=org.apache.sling:org.apache.sling.caconfig.spi
         <version>1.4.0</version>
       </dependency>
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.caconfig.impl</artifactId>
+## renovate: depName=org.apache.sling:org.apache.sling.caconfig.impl
         <version>1.6.0</version>
       </dependency>
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.models.caconfig</artifactId>
+## renovate: depName=org.apache.sling:org.apache.sling.models.caconfig
         <version>1.0.2</version>
       </dependency>
 
@@ -132,6 +141,7 @@
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.extensions</artifactId>
 #if ( $optionContextAwareConfigLatest == "y" || $optionAemVersion == "cloud" )
+## renovate: depName=io.wcm:io.wcm.caconfig.extensions
         <version>1.9.4</version>
 #else
         <!-- Stick with version 1.8.x because 1.9.x depends on latest Sling Context-Aware Configuration SPI/Impl -->
@@ -141,11 +151,13 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
-        <version>1.15.8</version>
+## renovate: depName=io.wcm:io.wcm.caconfig.editor
+        <version>1.16.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.sling.commons</artifactId>
+## renovate: depName=io.wcm:io.wcm.sling.commons
         <version>1.6.4</version>
       </dependency>
 #end
@@ -153,62 +165,74 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.sling.models</artifactId>
+## renovate: depName=io.wcm:io.wcm.sling.models
         <version>1.6.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.commons</artifactId>
+## renovate: depName=io.wcm:io.wcm.wcm.commons
         <version>1.10.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
+## renovate: depName=io.wcm:io.wcm.wcm.parsys
         <version>1.7.4</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
+## renovate: depName=io.wcm:io.wcm.wcm.ui.granite
         <version>1.10.4</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
+## renovate: depName=io.wcm:io.wcm.wcm.ui.clientlibs
         <version>1.3.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.commons</artifactId>
+## renovate: depName=io.wcm:io.wcm.handler.commons
         <version>2.0.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.url</artifactId>
+## renovate: depName=io.wcm:io.wcm.handler.url
         <version>2.1.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.media</artifactId>
-        <version>2.0.2</version>
+## renovate: depName=io.wcm:io.wcm.handler.media
+        <version>2.0.8</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
-        <version>2.1.0</version>
+## renovate: depName=io.wcm:io.wcm.handler.link
+        <version>2.2.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.richtext</artifactId>
+## renovate: depName=io.wcm:io.wcm.handler.richtext
         <version>2.0.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.core.components</artifactId>
-        <version>2.0.2-2.23.2</version>
+## renovate: depName=io.wcm:io.wcm.wcm.core.components
+        <version>2.0.4-2.25.4</version>
       </dependency>
 #end
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
         <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
+## renovate: depName=io.wcm.devops.conga.definitions:io.wcm.devops.conga.definitions.aem
         <version>2.0.4</version>
       </dependency>
 
@@ -216,18 +240,21 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
-        <version>5.5.0</version>
+## renovate: depName=io.wcm:io.wcm.testing.aem-mock.junit5
+        <version>5.5.2</version>
       </dependency>
 #if ( $optionAemVersion == "6.5" && ($optionAemServicePack=="y" || $optionAemServicePackAPI=="y") )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.logging.logback</artifactId>
+## renovate: depName=io.wcm:io.wcm.testing.logging.logback
         <version>1.0.0</version>
       </dependency>
 #else
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.testing.logging-mock</artifactId>
+## renovate: depName=org.apache.sling:org.apache.sling.testing.logging-mock
         <version>2.0.0</version>
       </dependency>
 #end
@@ -242,11 +269,13 @@
       <dependency>
         <groupId>org.apache.sling</groupId>
         <artifactId>org.apache.sling.testing.caconfig-mock-plugin</artifactId>
+## renovate: depName=org.apache.sling:org.apache.sling.testing.caconfig-mock-plugin
         <version>1.5.4</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.caconfig</artifactId>
+## renovate: depName=io.wcm:io.wcm.testing.wcm-io-mock.caconfig
         <version>1.2.0</version>
       </dependency>
 #end
@@ -254,16 +283,19 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.sling</artifactId>
+## renovate: depName=io.wcm:io.wcm.testing.wcm-io-mock.sling
         <version>1.2.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.wcm</artifactId>
+## renovate: depName=io.wcm:io.wcm.testing.wcm-io-mock.wcm
         <version>1.2.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.handler</artifactId>
+## renovate: depName=io.wcm:io.wcm.testing.wcm-io-mock.handler
         <version>2.0.0</version>
       </dependency>
 #end
@@ -273,7 +305,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y" || $optionAemServicePackAPI=="y")6.5.20.0000#{else}6.5.0.0005#end</version>
+        <version>#if($optionAemServicePack=="y" || $optionAemServicePackAPI=="y")6.5.21.0000#{else}6.5.0.0005#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -321,20 +353,20 @@
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
+## renovate: depName=org.junit:junit-bom
         <version>5.10.2</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-#set( $mockitoVersion = "5.11.0" )
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
-        <version>${mockitoVersion}</version>
+        <version>${mockito.version}</version>
       </dependency>
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-junit-jupiter</artifactId>
-        <version>${mockitoVersion}</version>
+        <version>${mockito.version}</version>
       </dependency>
 
 #if ( $optionIntegrationTests == "y" )
@@ -342,19 +374,22 @@
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
+## renovate: depName=junit:junit
         <version>4.13.2</version>
       </dependency>
 #if ( $optionAemVersion == "6.5" )
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>cq-testing-clients-65</artifactId>
+## renovate: depName=com.adobe.cq:cq-testing-clients-65
         <version>1.1.1</version>
       </dependency>
 #else
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>aem-cloud-testing-clients</artifactId>
-        <version>1.2.3</version>
+## renovate: depName=com.adobe.cq:aem-cloud-testing-clients
+        <version>1.2.5</version>
       </dependency>
 #end
 

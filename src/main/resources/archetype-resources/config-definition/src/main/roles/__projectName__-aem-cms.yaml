@@ -14,7 +14,7 @@ files:
 
 #if ( $optionAemVersion == '6.5' && $optionAemServicePack == 'y' )
 # AEM Service Pack
-- url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.20.0/zip
+- url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.21.0/zip
   dir: packages
   modelOptions:
     delayAfterInstallSec: 30
@@ -107,7 +107,7 @@ files:
 #end
 
 #end
-# Application #if($optionAemVersion=='cloud')bundles and#{end}packages
+# Application #if($optionAemVersion=='cloud')bundles and #{end}packages
 #if ( $optionAemVersion == "cloud" )
 - url: mvn:${groupId}/${rootArtifactId}.core
   dir: bundles

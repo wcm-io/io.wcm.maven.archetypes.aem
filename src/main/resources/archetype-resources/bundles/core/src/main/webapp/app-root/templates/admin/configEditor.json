@@ -8,6 +8,8 @@
 
   "jcr:content": {
     "jcr:primaryType": "cq:PageContent",
-    "sling:resourceType": "${projectName}/core/components/admin/page/configEditor"
+    "sling:resourceType": "${projectName}/core/components/admin/page/configEditor",
+    "hideInNav": true,
+    "cq:robotsTags": ["noindex","nofollow"]
   }
 }

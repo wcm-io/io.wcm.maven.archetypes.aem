@@ -25,13 +25,13 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.parent</artifactId>
-    <version>2.1.6</version>
+    <version>2.1.8</version>
     <relativePath />
   </parent>
 
   <groupId>io.wcm.maven.archetypes</groupId>
   <artifactId>io.wcm.maven.archetypes.aem</artifactId>
-  <version>3.8.10</version>
+  <version>3.8.12</version>
   <packaging>maven-archetype</packaging>
 
   <name>wcm.io Maven Archetype for AEM</name>
@@ -127,7 +127,9 @@
           <version>${maven.archetype.version}</version>
           <configuration>
              <!-- Make sure .git* files can be included as well -->
+             <!-- Use for maven-archetype-plugin 3.3.0 and up:
              <useDefaultExcludes>false</useDefaultExcludes>
+             -->
           </configuration>
         </plugin>
 

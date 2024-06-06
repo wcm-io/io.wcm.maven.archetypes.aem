@@ -26,9 +26,9 @@ jobs:
           - java: 11
             os: windows-latest
             distribution: temurin
-          - java: 11
-            os: macos-latest
-            distribution: temurin
+          #- java: 11
+          #  os: macos-latest
+          #  distribution: temurin
 
     steps:
       - name: Checkout code
