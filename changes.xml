@@ -28,6 +28,9 @@
         Set hideInNav=true and cq:robotsTags=noindex,nofollow by default for structure element and config editor pages.
       </action>
       <action type="update" dev="sseifert">
+        Update to AEM 6.5 SP21.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
