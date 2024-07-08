@@ -172,7 +172,7 @@
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.commons</artifactId>
 ## renovate: depName=io.wcm:io.wcm.wcm.commons
-        <version>1.10.1-SNAPSHOT</version>
+        <version>1.11.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
