@@ -310,6 +310,17 @@
         <scope>import</scope>
       </dependency>
 #else
+#if ( $optionWcmioHandler != "y" )
+      <!-- Adobe AEM WCM Core Components implementation relies on JSONP1.1 -->
+      <dependency>
+        <groupId>io.wcm.maven</groupId>
+        <artifactId>io.wcm.maven.aem-cloud-dependencies-mixin-jsonp11</artifactId>
+## renovate: depName=io.wcm.maven:io.wcm.maven.aem-cloud-dependencies-mixin-jsonp11
+        <version>1.0.0-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+#end
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-cloud-dependencies</artifactId>
