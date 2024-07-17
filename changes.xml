@@ -28,6 +28,9 @@
         Apply <a href="https://github.com/wcm-io/io.wcm.maven.aem-cloud-dependencies-mixin-jsonp11">AEM Cloud Service Dependencies - Mixin for JSONP 1.1</a> when wcm.io Handler is not activated for compatibility with Adobe AEM WCM Core Components implementation.
       ]]></action>
       <action type="update" dev="sseifert">
+        Set module version for exported OSGi packages.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
