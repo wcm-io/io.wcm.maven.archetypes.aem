@@ -152,7 +152,7 @@
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
 ## renovate: depName=io.wcm:io.wcm.caconfig.editor
-        <version>1.16.0</version>
+        <version>1.16.1-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
@@ -241,7 +241,7 @@
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
 ## renovate: depName=io.wcm:io.wcm.testing.aem-mock.junit5
-        <version>5.5.2</version>
+        <version>5.5.3-SNAPSHOT</version>
       </dependency>
 #if ( $optionAemVersion == "6.5" && ($optionAemServicePack=="y" || $optionAemServicePackAPI=="y") )
       <dependency>
