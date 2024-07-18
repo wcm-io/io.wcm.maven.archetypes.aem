@@ -241,7 +241,7 @@
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
 ## renovate: depName=io.wcm:io.wcm.testing.aem-mock.junit5
-        <version>5.5.3-SNAPSHOT</version>
+        <version>5.5.4</version>
       </dependency>
 #if ( $optionAemVersion == "6.5" && ($optionAemServicePack=="y" || $optionAemServicePackAPI=="y") )
       <dependency>
