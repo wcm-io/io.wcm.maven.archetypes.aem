@@ -23,7 +23,7 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
-    <release version="3.8.14" date="not released">
+    <release version="3.8.14" date="2024-07-18">
       <action type="update" dev="sseifert" issue="66"><![CDATA[
         Apply <a href="https://github.com/wcm-io/io.wcm.maven.aem-cloud-dependencies-mixin-jsonp11">AEM Cloud Service Dependencies - Mixin for JSONP 1.1</a> when wcm.io Handler is not activated for compatibility with Adobe AEM WCM Core Components implementation.
       ]]></action>
