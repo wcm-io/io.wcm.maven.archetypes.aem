@@ -255,7 +255,7 @@
           <bnd>
             <!-- Export all non-internal packages by default -->
             Export-Package: !*.impl.*,!*.internal.*,\
-              ${package}.*
+              ${package}.*;version=${project.version}
 #if ( $optionSlingInitialContentBundle == "y" )
 
             Sling-Initial-Content: \
