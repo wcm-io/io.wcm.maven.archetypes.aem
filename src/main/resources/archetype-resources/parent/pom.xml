@@ -400,7 +400,7 @@
         <groupId>com.adobe.cq</groupId>
         <artifactId>aem-cloud-testing-clients</artifactId>
 ## renovate: depName=com.adobe.cq:aem-cloud-testing-clients
-        <version>1.2.5</version>
+        <version>1.2.6</version>
       </dependency>
 #end
 
