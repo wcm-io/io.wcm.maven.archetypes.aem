@@ -174,12 +174,14 @@
 ## renovate: depName=io.wcm:io.wcm.wcm.commons
         <version>1.11.0</version>
       </dependency>
+#if ( $optionEditableTemplates != "y" )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
 ## renovate: depName=io.wcm:io.wcm.wcm.parsys
         <version>1.7.4</version>
       </dependency>
+#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>

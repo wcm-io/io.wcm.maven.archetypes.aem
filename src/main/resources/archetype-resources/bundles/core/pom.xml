@@ -102,11 +102,13 @@
       <artifactId>io.wcm.wcm.core.components</artifactId>
       <scope>compile</scope>
     </dependency>
+#if ( $optionEditableTemplates != "y" )
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.wcm.parsys</artifactId>
       <scope>compile</scope>
     </dependency>
+#end
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.wcm.ui.granite</artifactId>

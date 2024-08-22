@@ -86,8 +86,10 @@ files:
   dir: bundles
 - url: mvn:io.wcm/io.wcm.wcm.commons
   dir: bundles
+#if ( $optionEditableTemplates != "y" )
 - url: mvn:io.wcm/io.wcm.wcm.parsys
   dir: bundles
+#end
 - url: mvn:io.wcm/io.wcm.wcm.ui.granite
   dir: bundles
 - url: mvn:io.wcm/io.wcm.wcm.ui.clientlibs
