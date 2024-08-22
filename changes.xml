@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="update" dev="sseifert" issue="83">
+        Include wcm.io Parsys module only for projects without AEM editable templates.
+      </action>
     </release>
 
     <release version="3.8.14" date="2024-07-18">
