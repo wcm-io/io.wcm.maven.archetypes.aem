@@ -185,6 +185,10 @@
           <name>${contentPackage.name}</name>
           <group>${contentPackage.group}</group>
           <packageType>container</packageType>
+#if( $optionAcsCommons == "y" )
+          <!-- skip sub package validation for now as some vendor packages as ACS AEM Commons will not pass -->
+          <skipSubPackageValidation>true</skipSubPackageValidation>
+#end
           <validatorsSettings>
             <jackrabbit-filter>
               <options>
