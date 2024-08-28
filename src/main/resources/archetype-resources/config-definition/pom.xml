@@ -32,14 +32,14 @@
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.core</artifactId>
       <version>${version}</version>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
 #if ( $optionMultiBundleLayout == "y" )
     <dependency>
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.clientlibs</artifactId>
       <version>${version}</version>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
 #end
 #else
@@ -57,7 +57,7 @@
       <artifactId>${rootArtifactId}.ui.apps</artifactId>
       <version>${version}</version>
       <type>zip</type>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
 #end
 #if ( $optionEditableTemplates == "y" )
