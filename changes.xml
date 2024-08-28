@@ -30,7 +30,7 @@
       <action type="update" dev="sseifert" issue="83">
         Include wcm.io Parsys module only for projects without AEM editable templates.
       </action>
-      <action type="update" dev="sseifert"><![CDATA[
+      <action type="update" dev="sseifert" issue="89"><![CDATA[
         Remove obsolete workaround for <a href="https://issues.apache.org/jira/browse/JCRVLT-699">JCRVLT-699</a>.
       ]]></action>
     </release>
