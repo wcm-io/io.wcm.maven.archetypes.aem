@@ -1,9 +1,13 @@
-@Grab(group="org.codehaus.groovy", module="groovy-xml", version="2.4.16")
+@Grab(group="org.codehaus.groovy", module="groovy-xml", version="3.0.22")
+@Grab(group="net.lingala.zip4j", module="zip4j", version="2.11.5")
 import java.util.regex.Pattern
+import java.util.concurrent.Callable
+import java.util.concurrent.Executors
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 import groovy.io.FileType
 import groovy.util.XmlSlurper
+import net.lingala.zip4j.ZipFile
 
 def rootDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId())
 def javaPackage = request.getProperties().get("package")
@@ -248,12 +252,52 @@ if (optionWcmioConga == "y") {
   dispatcher.deleteDir()
 }
 else {
-  if (optionWcmioHandler != "y") {
+  /*
+   * For AEM projects without CONGA, we do not maintain redundant definitions for OSGi and dispatcher configurations
+   * in this archetype. Instead, we run CONGA once during the generation of the project, copy over the generated
+   * configuration files to the respective maven modules and delete the CONGA module afterwards. With this, CONGA
+   * is only used once during project generation, but the generated projects is no longer using CONGA.
+   */
+  // execute CONGA via maven
+  def mavenCall = "mvn -f $rootDir/config-definition -Dconga.environments=cloud generate-resources"
+  def isWindows = System.getProperty("os.name").toLowerCase().startsWith("windows")
+  def execCommand = isWindows ? ["cmd.exe", "/c", mavenCall] : ["/bin/sh", "-c", mavenCall]
+  def proc = execCommand.execute()
+  def pool = Executors.newFixedThreadPool(2)
+  def stdoutFuture = pool.submit({ -> proc.inputStream.text} as Callable<String>)
+  def stderrFuture = pool.submit({ -> proc.errorStream.text} as Callable<String>)
+  proc.waitFor()
+  def exitValue = proc.exitValue()
+  if (exitValue != 0) {
+      System.err.println(stderrFuture.get())
+      throw new RuntimeException("$execCommand returned $exitValue")
+  }
+
+  // unzip osgi-config
+  def congaAemCmsConfigZip = new File(configDefinition, "target/configuration/cloud/aem-author/packages/${projectName}-aem-cms-config.zip")
+  new ZipFile(congaAemCmsConfigZip).extractAll(osgiConfigContentPackage.toPath().toString())
+  new File(osgiConfigContentPackage, "META-INF/vault/definition").deleteDir()
+  assert new File(osgiConfigContentPackage, "META-INF/vault/config.xml").delete()
+  assert new File(osgiConfigContentPackage, "META-INF/vault/properties.xml").delete()
+  assert new File(osgiConfigContentPackage, "META-INF/vault/settings.xml").delete()
+
+  if (optionWcmioHandler == "y") {
+    // unzip rewriter config
+    def congaAemCmsRewriterConfigZip = new File(configDefinition, "target/configuration/cloud/aem-author/packages/${projectName}-aem-cms-rewriter-config.zip")
+    new ZipFile(congaAemCmsRewriterConfigZip).extractAll(rewriterConfigContentPackage.toPath().toString())
+    new File(rewriterConfigContentPackage, "META-INF/vault/definition").deleteDir()
+    assert new File(rewriterConfigContentPackage, "META-INF/vault/config.xml").delete()
+    assert new File(rewriterConfigContentPackage, "META-INF/vault/properties.xml").delete()
+    assert new File(rewriterConfigContentPackage, "META-INF/vault/settings.xml").delete()
+  }
+  else {
     removeModule(rootPom, "content-packages/rewriter-config")
     rewriterConfigContentPackage.deleteDir()
   }
 
-  // TODO: run CONGA to generate content packages and dispatcher config
+  // unzip dispatcher config
+  def congaDispatcherZip = new File(configDefinition, "target/cloud.aem-dispatcher.dispatcher-config.zip")
+  new ZipFile(congaDispatcherZip).extractAll(new File(dispatcher, "src").toPath().toString())
 
   removeModule(rootPom, "config-definition")
   configDefinition.deleteDir()

@@ -1,1 +1,1 @@
--f ../iotaCloud -U clean verify
+-f ../iotaCloudProject -U clean verify

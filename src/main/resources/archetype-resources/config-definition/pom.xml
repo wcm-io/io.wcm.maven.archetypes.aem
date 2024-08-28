@@ -30,6 +30,7 @@
       <scope>compile</scope>
     </dependency>
 
+#if ( $optionWcmioConga == "y" )
     <!-- Application #if($optionAemVersion=='cloud')bundles and#{end}packages -->
 #if ( $optionAemVersion == "cloud" )
     <dependency>
@@ -180,6 +181,7 @@
     </dependency>
 #end
 
+#end
 #end
   </dependencies>
 
