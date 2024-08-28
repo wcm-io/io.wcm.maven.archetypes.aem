@@ -58,7 +58,7 @@
           </validatorsSettings>
 #if ( $optionAemVersion == "cloud" )
 
-          <!-- Do not deploy directly via AEM cloud manager, only as part of CONGA-generated "all" package -->
+          <!-- Do not deploy directly via AEM cloud manager, only as part of "all" package -->
           <properties>
             <cloudManagerTarget>none</cloudManagerTarget>
           </properties>

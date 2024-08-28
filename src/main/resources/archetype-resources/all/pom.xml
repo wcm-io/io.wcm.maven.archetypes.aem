@@ -27,16 +27,44 @@
     <!-- Application bundles andpackages -->
     <dependency>
       <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.osgi-config</artifactId>
+      <version>${version}</version>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+#if ( $optionWcmioHandler == "y" )
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.rewriter-config</artifactId>
+      <version>${version}</version>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+#end
+    <dependency>
+      <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.core</artifactId>
       <version>${version}</version>
       <scope>provided</scope>
     </dependency>
+#if ( $optionMultiBundleLayout == "y" )
     <dependency>
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.clientlibs</artifactId>
       <version>${version}</version>
       <scope>provided</scope>
     </dependency>
+#end
+#if ( $optionSlingInitialContentBundle == "n" )
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.ui.apps</artifactId>
+      <version>${version}</version>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+#end
+#if ( $optionEditableTemplates == "y" )
     <dependency>
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.conf-content</artifactId>
@@ -44,6 +72,7 @@
       <type>zip</type>
       <scope>compile</scope>
     </dependency>
+#end
     <dependency>
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.sample-content</artifactId>
@@ -52,7 +81,19 @@
       <scope>compile</scope>
     </dependency>
 
+#if( $optionAcsCommons == "y" )
+    <!-- ACS AEM Commons -->
+    <dependency>
+      <groupId>com.adobe.acs</groupId>
+      <artifactId>acs-aem-commons-all</artifactId>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+
+#end
+#if ($optionContextAwareConfig == "y" || $optionWcmioHandler == "y")
     <!-- wcm.io -->
+#if ( $optionContextAwareConfig == "y" )
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.caconfig.extensions</artifactId>
@@ -68,6 +109,8 @@
       <artifactId>io.wcm.sling.commons</artifactId>
       <scope>compile</scope>
     </dependency>
+#end
+#if ( $optionWcmioHandler == "y" )
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.sling.models</artifactId>
@@ -78,6 +121,13 @@
       <artifactId>io.wcm.wcm.commons</artifactId>
       <scope>compile</scope>
     </dependency>
+#if ( $optionEditableTemplates != "y" )
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.wcm.parsys</artifactId>
+      <scope>compile</scope>
+    </dependency>
+#end
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.wcm.ui.granite</artifactId>
@@ -118,7 +168,9 @@
       <artifactId>io.wcm.wcm.core.components</artifactId>
       <scope>compile</scope>
     </dependency>
+#end
 
+#end
   </dependencies>
 
   <build>
@@ -148,20 +200,46 @@
             <!-- Application bundles andpackages -->
             <embedded>
               <groupId>${groupId}</groupId>
+              <artifactId>${rootArtifactId}.osgi-config</artifactId>
+              <type>zip</type>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+#if ( $optionWcmioHandler == "y" )
+            <embedded>
+              <groupId>${groupId}</groupId>
+              <artifactId>${rootArtifactId}.rewriter-config</artifactId>
+              <type>zip</type>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+#end
+            <embedded>
+              <groupId>${groupId}</groupId>
               <artifactId>${rootArtifactId}.core</artifactId>
               <target>/apps/${projectName}-packages/application/install</target>
             </embedded>
+#if ( $optionMultiBundleLayout == "y" )
             <embedded>
               <groupId>${groupId}</groupId>
               <artifactId>${rootArtifactId}.clientlibs</artifactId>
               <target>/apps/${projectName}-packages/application/install</target>
             </embedded>
+#end
+#if ( $optionSlingInitialContentBundle == "n" )
+            <embedded>
+              <groupId>${groupId}</groupId>
+              <artifactId>${rootArtifactId}.ui.apps</artifactId>
+              <type>zip</type>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+#end
+#if ( $optionEditableTemplates == "y" )
             <embedded>
               <groupId>${groupId}</groupId>
               <artifactId>${rootArtifactId}.conf-content</artifactId>
               <type>zip</type>
               <target>/apps/${projectName}-packages/content/install</target>
             </embedded>
+#end
             <embedded>
               <groupId>${groupId}</groupId>
               <artifactId>${rootArtifactId}.sample-content</artifactId>
@@ -169,7 +247,18 @@
               <target>/apps/${projectName}-packages/content/install</target>
             </embedded>
 
+#if( $optionAcsCommons == "y" )
+            <!-- ACS AEM Commons -->
+            <embedded>
+              <groupId>com.adobe.acs</groupId>
+              <artifactId>acs-aem-commons-all</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+        
+#end
+#if ($optionContextAwareConfig == "y" || $optionWcmioHandler == "y")
             <!-- wcm.io -->
+#if ( $optionContextAwareConfig == "y" )
             <embedded>
               <groupId>io.wcm</groupId>
               <artifactId>io.wcm.caconfig.extensions</artifactId>
@@ -185,6 +274,8 @@
               <artifactId>io.wcm.sling.commons</artifactId>
               <target>/apps/${projectName}-packages/application/install</target>
             </embedded>
+#end
+#if ( $optionWcmioHandler == "y" )
             <embedded>
               <groupId>io.wcm</groupId>
               <artifactId>io.wcm.sling.models</artifactId>
@@ -195,6 +286,13 @@
               <artifactId>io.wcm.wcm.commons</artifactId>
               <target>/apps/${projectName}-packages/application/install</target>
             </embedded>
+#if ( $optionEditableTemplates != "y" )
+            <embedded>
+              <groupId>io.wcm</groupId>
+              <artifactId>io.wcm.wcm.parsys</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+#end
             <embedded>
               <groupId>io.wcm</groupId>
               <artifactId>io.wcm.wcm.ui.granite</artifactId>
@@ -235,7 +333,9 @@
               <artifactId>io.wcm.wcm.core.components</artifactId>
               <target>/apps/${projectName}-packages/application/install</target>
             </embedded>
+#end
 
+#end
           </embeddeds>
         </configuration>
       </plugin>

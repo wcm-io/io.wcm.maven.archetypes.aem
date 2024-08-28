@@ -238,7 +238,15 @@ if (optionIntegrationTests == "n") {
 }
 
 if (optionWcmioConga == "n") {
-  // TODO: implement
+  if (optionWcmioHandler != "y") {
+    removeModule(rootPom, "content-packages/rewriter-config")
+    rewriterConfigContentPackage.deleteDir()
+  }
+
+  // TODO: run CONGA to generate content packages and dispatcher config
+
+  removeModule(rootPom, "config-definition")
+  configDefinition.deleteDir()
 }
 else {
   removeModule(rootPom, "content-packages/osgi-config")

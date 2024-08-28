@@ -23,6 +23,10 @@
     <dependency>
       <groupId>io.wcm.devops.conga.definitions</groupId>
       <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
+#if ( $optionWcmioConga != "y" )
+      ## renovate: depName=io.wcm.devops.conga.definitions:io.wcm.devops.conga.definitions.aem
+      <version>2.0.4</version>
+#end
       <scope>compile</scope>
     </dependency>
 
