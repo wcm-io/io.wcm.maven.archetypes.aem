@@ -24,8 +24,10 @@ MAVEN_PROFILES="fast"
 SLING_URL=""
 SLING_USER=""
 SLING_PASSWORD=""
+#if ( $optionWcmioConga == "y" )
 CONGA_ENVIRONMENT="local"
 CONGA_NODE="aem-author"
+#end
 JVM_ARGS=""
 
 # display pause message only when script was executed via double-click on windows
@@ -46,8 +48,10 @@ help_message_exit() {
   echo "    --sling.url=${SLING_URL}                 or -Dsling.url=${SLING_URL}"
   echo "    --sling.user=${SLING_USER}               or -Dsling.user=${SLING_USER}"
   echo "    --sling.password=${SLING_PASSWORD}       or -Dsling.password=${SLING_PASSWORD}"
+#if ( $optionWcmioConga == "y" )
   echo "    --conga.environment=${CONGA_ENVIRONMENT} or -Dconga.environment=${CONGA_ENVIRONMENT}"
   echo "    --conga.node=${CONGA_NODE}               or -Dconga.node=${CONGA_NODE}"
+#end
   echo "    --jvm.args=${JVM_ARGS}                   or -Djvm.args=${JVM_ARGS}"
   echo ""
   echo "  Commands:"
@@ -80,6 +84,7 @@ parse_parameters() {
       SLING_PASSWORD="${i#*=}"
       shift # past argument=value
       ;;
+#if ( $optionWcmioConga == "y" )
       --conga\.environment=*|-Dconga\.environment=*)
       CONGA_ENVIRONMENT="${i#*=}"
       shift # past argument=value
@@ -88,6 +93,7 @@ parse_parameters() {
       CONGA_NODE="${i#*=}"
       shift # past argument=value
       ;;
+#end
       --jvm\.args=*|-Djvm\.args=*)
       JVM_ARGS="${i#*=}"
       shift # past argument=value
@@ -141,7 +147,11 @@ welcome_message() {
     echo -e "\e[96m  |___/|___|_| |____\___/ |_|\e[0m"
   fi
   echo ""
+#if ( $optionWcmioConga == "y" )
   echo -e "  Destination: \e[1m${CONGA_NODE}\e[0m (${MAVEN_PROFILES})"
+#else
+  echo -e "  Profiles: ${MAVEN_PROFILES}"
+#end
   echo ""
   echo "********************************************************************"
 }
@@ -175,9 +185,11 @@ execute_build() {
   if [ -n "${MAVEN_PROFILES}" ]; then
     MAVEN_ARGS+="--activate-profiles ${MAVEN_PROFILES} "
   fi
+#if ( $optionWcmioConga == "y" )
   if [ -n "${CONGA_ENVIRONMENT}" ]; then
     MAVEN_ARGS+="-Dconga.environments=${CONGA_ENVIRONMENT} "
   fi
+#end
 
   mvn $MAVEN_ARGS clean install eclipse:eclipse
 
@@ -198,6 +210,7 @@ execute_deploy() {
   if [ -n "${MAVEN_PROFILES}" ]; then
     MAVEN_ARGS+="--activate-profiles=${MAVEN_PROFILES} "
   fi
+#if ( $optionWcmioConga == "y" )
 #if ( $optionAemVersion == "cloud" )
   if [ -n "${CONGA_ENVIRONMENT}" ]; then
     MAVEN_ARGS+="-Dvault.file=target/${CONGA_ENVIRONMENT}.all.zip -Dvault.force=true"
@@ -206,6 +219,7 @@ execute_deploy() {
   if [ -n "${CONGA_ENVIRONMENT}" ] && [ -n "${CONGA_NODE}" ]; then
     MAVEN_ARGS+="-Dconga.environments=${CONGA_ENVIRONMENT} -Dconga.nodeDirectory=target/configuration/${CONGA_ENVIRONMENT}/${CONGA_NODE} "
   fi
+#end
 #end
   if [ -n "${SLING_URL}" ]; then
     MAVEN_ARGS+="-Dsling.url=${SLING_URL} "
@@ -218,7 +232,11 @@ execute_deploy() {
   fi
 
 #if ( $optionAemVersion == "cloud" )
+#if ( $optionWcmioConga == "y" )
   mvn $MAVEN_ARGS -f config-definition wcmio-content-package:install
+#else
+  mvn $MAVEN_ARGS -f all wcmio-content-package:install
+#end
 #else
   mvn $MAVEN_ARGS -f config-definition conga-aem:package-install
 #end
