@@ -123,6 +123,11 @@
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
+    <!-- Setup project using CONGA. Mandatory for AEM 6.5 projects, optional (but default) for AEMaaCS projects. -->
+    <requiredProperty key="optionWcmioConga">
+      <defaultValue>y</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
     <!-- Use latest Sling Models versions (ignored for AEMaaCS) -->
     <requiredProperty key="optionSlingModelsLatest">
       <defaultValue>n</defaultValue>
