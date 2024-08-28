@@ -237,7 +237,17 @@ if (optionIntegrationTests == "n") {
   tests.deleteDir()
 }
 
-if (optionWcmioConga == "n") {
+if (optionWcmioConga == "y") {
+  removeModule(rootPom, "content-packages/osgi-config")
+  osgiConfigContentPackage.deleteDir()
+  removeModule(rootPom, "content-packages/rewriter-config")
+  rewriterConfigContentPackage.deleteDir()
+  removeModule(rootPom, "all")
+  allContentPackage.deleteDir()
+  removeModule(rootPom, "dispatcher")
+  dispatcher.deleteDir()
+}
+else {
   if (optionWcmioHandler != "y") {
     removeModule(rootPom, "content-packages/rewriter-config")
     rewriterConfigContentPackage.deleteDir()
@@ -247,16 +257,6 @@ if (optionWcmioConga == "n") {
 
   removeModule(rootPom, "config-definition")
   configDefinition.deleteDir()
-}
-else {
-  removeModule(rootPom, "content-packages/osgi-config")
-  osgiConfigContentPackage.deleteDir()
-  removeModule(rootPom, "content-packages/rewriter-config")
-  rewriterConfigContentPackage.deleteDir()
-  removeModule(rootPom, "all")
-  allContentPackage.deleteDir()
-  removeModule(rootPom, "dispatcher")
-  dispatcher.deleteDir()
 }
 
 

@@ -83,11 +83,22 @@ Modules of this project:
 #if ( $optionAemVersion != "cloud" )
 * [content-packages/complete](content-packages/complete/): AEM content package containing all OSGi bundles of the application and their dependencies
 #end
+#if ( $optionWcmioConga != "y" )
+* [content-packages/osgi-config](content-packages/osgi-config/): AEM content package with OSGi configuration
+#if ( $optionWcmioHandler == "y" )
+* [content-packages/rewriter-config](content-packages/osgi-config/): AEM content package with rewriter configuration
+#end
+#end
 #if ( $optionEditableTemplates == "y" )
 * [content-packages/conf-content](content-packages/conf-content/): AEM content package with editable templates stored at `/conf`
 #end
 * [content-packages/sample-content](content-packages/sample-content/): AEM content package containing sample content (for development and test purposes)
+#if ( $optionWcmioConga == "y" )
 * [config-definition](config-definition/): Defines the CONGA roles and templates for this application. Also contains a `development` CONGA environment for deploying to local development instances.
+#else
+* [all](all/): AEM content package containing all files for cloud deployment
+* [dispatcher](dispatcher/): HTTP & Dispatcher configuration files
+#end
 #if ( $optionIntegrationTests == "y" )
 * [tests/integration](tests/integration/): Integration tests running against the HTTP interface of AEM
 #end
