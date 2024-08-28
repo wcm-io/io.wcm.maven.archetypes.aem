@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>${groupId}</groupId>
+    <artifactId>${rootArtifactId}.parent</artifactId>
+    <version>${version}</version>
+    <relativePath>../parent/pom.xml</relativePath>
+  </parent>
+
+  <groupId>${groupId}</groupId>
+  <artifactId>${rootArtifactId}.all</artifactId>
+  <version>${version}</version>
+  <packaging>content-package</packaging>
+
+  <name>${projectName} All</name>
+  <description>All content package for Cloud Deployment</description>
+
+  <properties>
+    <contentPackage.name>${projectName}-all</contentPackage.name>
+    <contentPackage.group>${packageGroupName}</contentPackage.group>
+  </properties>
+
+  <dependencies>
+
+    <!-- Application bundles andpackages -->
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.core</artifactId>
+      <version>${version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.clientlibs</artifactId>
+      <version>${version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.conf-content</artifactId>
+      <version>${version}</version>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.sample-content</artifactId>
+      <version>${version}</version>
+      <type>zip</type>
+      <scope>compile</scope>
+    </dependency>
+
+    <!-- wcm.io -->
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.caconfig.extensions</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.caconfig.editor</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.sling.commons</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.sling.models</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.wcm.commons</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.wcm.ui.granite</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.commons</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.url</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.media</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.link</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.handler.richtext</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.wcm.core.components</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <finalName>${contentPackage.name}-${project.version}</finalName>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.jackrabbit</groupId>
+        <artifactId>filevault-package-maven-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <name>${contentPackage.name}</name>
+          <group>${contentPackage.group}</group>
+          <packageType>container</packageType>
+          <validatorsSettings>
+            <jackrabbit-filter>
+              <options>
+                <validRoots>
+                  /apps
+                </validRoots>
+                <severityForUncoveredAncestorNodes>debug</severityForUncoveredAncestorNodes>
+              </options>
+            </jackrabbit-filter>
+          </validatorsSettings>
+          <embeddeds>
+
+            <!-- Application bundles andpackages -->
+            <embedded>
+              <groupId>${groupId}</groupId>
+              <artifactId>${rootArtifactId}.core</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+            <embedded>
+              <groupId>${groupId}</groupId>
+              <artifactId>${rootArtifactId}.clientlibs</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+            <embedded>
+              <groupId>${groupId}</groupId>
+              <artifactId>${rootArtifactId}.conf-content</artifactId>
+              <type>zip</type>
+              <target>/apps/${projectName}-packages/content/install</target>
+            </embedded>
+            <embedded>
+              <groupId>${groupId}</groupId>
+              <artifactId>${rootArtifactId}.sample-content</artifactId>
+              <type>zip</type>
+              <target>/apps/${projectName}-packages/content/install</target>
+            </embedded>
+
+            <!-- wcm.io -->
+            <embedded>
+              <groupId>io.wcm</groupId>
+              <artifactId>io.wcm.caconfig.extensions</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+            <embedded>
+              <groupId>io.wcm</groupId>
+              <artifactId>io.wcm.caconfig.editor</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+            <embedded>
+              <groupId>io.wcm</groupId>
+              <artifactId>io.wcm.sling.commons</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+            <embedded>
+              <groupId>io.wcm</groupId>
+              <artifactId>io.wcm.sling.models</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+            <embedded>
+              <groupId>io.wcm</groupId>
+              <artifactId>io.wcm.wcm.commons</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+            <embedded>
+              <groupId>io.wcm</groupId>
+              <artifactId>io.wcm.wcm.ui.granite</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+            <embedded>
+              <groupId>io.wcm</groupId>
+              <artifactId>io.wcm.wcm.ui.clientlibs</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+            <embedded>
+              <groupId>io.wcm</groupId>
+              <artifactId>io.wcm.handler.commons</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+            <embedded>
+              <groupId>io.wcm</groupId>
+              <artifactId>io.wcm.handler.url</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+            <embedded>
+              <groupId>io.wcm</groupId>
+              <artifactId>io.wcm.handler.media</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+            <embedded>
+              <groupId>io.wcm</groupId>
+              <artifactId>io.wcm.handler.link</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+            <embedded>
+              <groupId>io.wcm</groupId>
+              <artifactId>io.wcm.handler.richtext</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+            <embedded>
+              <groupId>io.wcm</groupId>
+              <artifactId>io.wcm.wcm.core.components</artifactId>
+              <target>/apps/${projectName}-packages/application/install</target>
+            </embedded>
+
+          </embeddeds>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>com.adobe.aem</groupId>
+        <artifactId>aemanalyser-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>aem-analyser</id>
+            <goals>
+              <goal>project-analyse</goal>                           
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Do not generate eclipse project files -->
+      <plugin>
+        <groupId>io.wcm.devops.maven.plugins</groupId>
+        <artifactId>eclipse-maven-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+
+      <!-- Do not generate sources JAR -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <configuration>
+          <skipSource>true</skipSource>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <profiles>
+
+    <!-- Skip building of Cloud Manager ZIP in "fast" profile -->
+    <profile>
+      <id>fast</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+        <aem.analyser.skip>true</aem.analyser.skip>
+      </properties>
+    </profile>
+
+  </profiles>
+
+</project>

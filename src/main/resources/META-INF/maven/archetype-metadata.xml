@@ -312,6 +312,28 @@
 
     <module id="${rootArtifactId}.complete" dir="content-packages/complete" name="${rootArtifactId}.complete"/>
 
+    <module id="${rootArtifactId}.osgi-config" dir="content-packages/osgi-config" name="${rootArtifactId}.osgi-config">
+      <fileSets>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>content-upload.sh</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
+    <module id="${rootArtifactId}.rewriter-config" dir="content-packages/rewriter-config" name="${rootArtifactId}.rewriter-config">
+      <fileSets>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>content-upload.sh</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
     <module id="${rootArtifactId}.conf-content" dir="content-packages/conf-content" name="${rootArtifactId}.conf-content">
       <fileSets>
         <fileSet encoding="UTF-8">
@@ -400,6 +422,28 @@
           <directory>src/main/environments</directory>
           <includes>
             <include>**/*.yaml</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
+    <module id="${rootArtifactId}.all" dir="all" name="${rootArtifactId}.all">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>META-INF/vault</directory>
+          <includes>
+            <include>filter.xml</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
+    <module id="${rootArtifactId}.dispatcher" dir="dispatcher" name="${rootArtifactId}.dispatcher">
+      <fileSets>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>assembly.xml</include>
           </includes>
         </fileSet>
       </fileSets>

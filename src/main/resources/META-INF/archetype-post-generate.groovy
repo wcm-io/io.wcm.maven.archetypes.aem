@@ -15,15 +15,20 @@ def optionEditableTemplates = request.getProperties().get("optionEditableTemplat
 def optionMultiBundleLayout = request.getProperties().get("optionMultiBundleLayout")
 def optionContextAwareConfig = request.getProperties().get("optionContextAwareConfig")
 def optionWcmioHandler = request.getProperties().get("optionWcmioHandler")
+def optionWcmioConga = request.getProperties().get("optionWcmioConga")
 def optionIntegrationTests = request.getProperties().get("optionIntegrationTests")
 
 def coreBundle = new File(rootDir, "bundles/core")
 def clientlibsBundle = new File(rootDir, "bundles/clientlibs")
 def completeContentPackage = new File(rootDir, "content-packages/complete")
+def osgiConfigContentPackage = new File(rootDir, "content-packages/osgi-config")
+def rewriterConfigContentPackage = new File(rootDir, "content-packages/rewriter-config")
 def confContentPackage = new File(rootDir, "content-packages/conf-content")
 def sampleContentPackage = new File(rootDir, "content-packages/sample-content")
 def uiAppsPackage = new File(rootDir, "content-packages/ui.apps")
 def configDefinition = new File(rootDir, "config-definition")
+def allContentPackage = new File(rootDir, "all")
+def dispatcher = new File(rootDir, "dispatcher")
 def frontend = new File(rootDir, "frontend")
 def rootPom = new File(rootDir, "pom.xml")
 def parentPom = new File(rootDir, "parent/pom.xml")
@@ -41,6 +46,9 @@ if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
 }
 if (optionWcmioHandler == "y" && optionContextAwareConfig == "n") {
   throw new RuntimeException("Parameter optionWcmioHandler='y' is only supported with optionContextAwareConfig='y'.")
+}
+if (optionWcmioConga == "n" && optionAemVersion != "cloud") {
+  throw new RuntimeException("Parameter optionWcmioConga='n' is only supported with optionAemVersion='cloud'.")
 }
 if (optionEditableTemplates == "n" && optionWcmioHandler == "n") {
   throw new RuntimeException("You have to specify either parameter optionEditableTemplates='y' or optionWcmioHandler='y'.")
@@ -227,6 +235,20 @@ else {
 if (optionIntegrationTests == "n") {
   removeModule(rootPom, "tests/integration")
   tests.deleteDir()
+}
+
+if (optionWcmioConga == "n") {
+  // TODO: implement
+}
+else {
+  removeModule(rootPom, "content-packages/osgi-config")
+  osgiConfigContentPackage.deleteDir()
+  removeModule(rootPom, "content-packages/rewriter-config")
+  rewriterConfigContentPackage.deleteDir()
+  removeModule(rootPom, "all")
+  allContentPackage.deleteDir()
+  removeModule(rootPom, "dispatcher")
+  dispatcher.deleteDir()
 }
 
 
