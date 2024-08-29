@@ -1,0 +1,1 @@
+-f ../kappaCloudProject -U clean verify

@@ -10,15 +10,15 @@
   </parent>
 
   <groupId>${groupId}</groupId>
-  <artifactId>${artifactId}</artifactId>
+  <artifactId>${rootArtifactId}.osgi-config</artifactId>
   <version>${version}</version>
   <packaging>content-package</packaging>
 
-  <name>${projectName} Package ui.apps</name>
-  <description>AEM Application</description>
+  <name>${projectName} Package osgi-config</name>
+  <description>AEM Application OSGi configuration</description>
 
   <properties>
-    <contentPackage.name>${projectName}-ui.apps</contentPackage.name>
+    <contentPackage.name>${projectName}-osgi-config</contentPackage.name>
     <contentPackage.group>${packageGroupName}</contentPackage.group>
   </properties>
 
@@ -38,28 +38,22 @@
         <configuration>
           <name>${contentPackage.name}</name>
           <group>${contentPackage.group}</group>
-          <packageType>application</packageType>
-          <jcrRootSourceDirectory>${project.build.outputDirectory}</jcrRootSourceDirectory>
-#if ( $optionAemVersion != "cloud" )
-          <enableJcrRootFiltering>true</enableJcrRootFiltering>
-#end
+          <packageType>container</packageType>
           <validatorsSettings>
             <jackrabbit-filter>
               <options>
                 <validRoots>
-                  /apps/${projectName}
+                  /apps
                 </validRoots>
+                <severityForUncoveredAncestorNodes>debug</severityForUncoveredAncestorNodes>
               </options>
             </jackrabbit-filter>
           </validatorsSettings>
 
-#if ( $optionAemVersion == "cloud" )
           <!-- Do not deploy directly via AEM cloud manager, only as part of "all" package -->
           <properties>
             <cloudManagerTarget>none</cloudManagerTarget>
           </properties>
-
-#end
         </configuration>
       </plugin>
 

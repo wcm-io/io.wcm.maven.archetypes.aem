@@ -231,12 +231,14 @@
         <version>2.0.4-2.25.4</version>
       </dependency>
 #end
+#if ( $optionWcmioConga == "y" )
       <dependency>
         <groupId>io.wcm.devops.conga.definitions</groupId>
         <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
 ## renovate: depName=io.wcm.devops.conga.definitions:io.wcm.devops.conga.definitions.aem
         <version>2.0.4</version>
       </dependency>
+#end
 
       <!-- wcm.io Testing -->
       <dependency>

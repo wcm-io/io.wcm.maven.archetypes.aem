@@ -40,10 +40,10 @@ if [ "$?" -ne "0" ]; then
 fi
 
 # Deploy to author (in parallel)
-./build-deploy.sh deploy --maven.profiles=fast --conga.node=aem-author "$@" &
+./build-deploy.sh deploy --maven.profiles=fast #if($optionWcmioConga=='y')--conga.node=aem-author #{end}"$@" &
 
 # Deploy to publish (in parallel)
-./build-deploy.sh deploy --maven.profiles=fast,publish --conga.node=aem-publish "$@" &
+./build-deploy.sh deploy --maven.profiles=fast,publish #if($optionWcmioConga=='y')--conga.node=aem-publish #{end}"$@" &
 
 wait
 pause_message

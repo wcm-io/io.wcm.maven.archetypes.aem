@@ -2,7 +2,7 @@
 # #%L
 #  wcm.io
 #  %%
-#  Copyright (C) 2017 - 2021 wcm.io
+#  Copyright (C) 2017 wcm.io
 #  %%
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -17,15 +17,14 @@
 #  limitations under the License.
 #  #L%
 
-# Call with "help" parameter to display syntax information
-
-MAVEN_PROFILES="fast,publish"
-#if ( $optionWcmioConga == "y" )
-CONGA_NODE="aem-publish"
-#end
 
 if [[ $0 == *":\\"* ]]; then
   DISPLAY_PAUSE_MESSAGE=true
 fi
 
-./build-deploy.sh --maven.profiles=${MAVEN_PROFILES} #if($optionWcmioConga=='y')--conga.node=${CONGA_NODE} #{end}--display.pause.message=${DISPLAY_PAUSE_MESSAGE} "$@"
+mvn clean package wcmio-content-package:install
+
+if [ "$DISPLAY_PAUSE_MESSAGE" = true ]; then
+  echo ""
+  read -n1 -r -p "Press any key to continue..."
+fi
