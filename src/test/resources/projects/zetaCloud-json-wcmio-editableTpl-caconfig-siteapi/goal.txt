@@ -1,1 +1,0 @@
--f ../zetacloudProject -U clean verify
