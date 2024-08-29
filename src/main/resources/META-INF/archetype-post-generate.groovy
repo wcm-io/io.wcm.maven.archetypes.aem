@@ -258,6 +258,10 @@ else {
    * configuration files to the respective maven modules and delete the CONGA module afterwards. With this, CONGA
    * is only used once during project generation, but the generated projects is no longer using CONGA.
    */
+  println ""
+  println "Running CONGA once to generate OSGi and dispatcher configurations..."
+  println ""
+
   // execute CONGA via maven
   def mavenCall = "mvn -f $rootDir/config-definition -Dconga.environments=cloud generate-resources"
   def isWindows = System.getProperty("os.name").toLowerCase().startsWith("windows")
@@ -272,6 +276,7 @@ else {
       System.err.println(stderrFuture.get())
       throw new RuntimeException("$execCommand returned $exitValue")
   }
+  println(stdoutFuture.get())
 
   // unzip osgi-config
   def congaAemCmsConfigZip = new File(configDefinition, "target/configuration/cloud/aem-author/packages/${projectName}-aem-cms-config.zip")
@@ -301,8 +306,9 @@ else {
 
   removeModule(rootPom, "config-definition")
   configDefinition.deleteDir()
-}
 
+  println "Configuration from CONGA generated, CONGA is removed from the project."
+}
 
 // convert all line endings to unix-style
 rootDir.eachFileRecurse(FileType.FILES) { file ->
@@ -329,7 +335,18 @@ Closure<Boolean> removeEmptyFolders = {
 }
 while (removeEmptyFolders()) continue
 
-// rename root folder to project name
-def newRootDir = new File(request.getOutputDirectory() + "/" + projectName)
-Files.move(rootDir.toPath(), newRootDir.toPath(), StandardCopyOption.REPLACE_EXISTING)
-assert newRootDir.exists()
+// rename root folder to project name (if it fails it's not a problem)
+try {
+  def newRootDir = new File(request.getOutputDirectory() + "/" + projectName)
+  Files.move(rootDir.toPath(), newRootDir.toPath(), StandardCopyOption.REPLACE_EXISTING)
+  assert newRootDir.exists()
+
+  println ""
+  println "Your new AEM project is ready at ${newRootDir.toPath()}"
+  println ""
+}
+catch (Exception ex) {
+  println ""
+  println "Your new AEM project is ready at ${rootDir.toPath()}"
+  println ""
+}
