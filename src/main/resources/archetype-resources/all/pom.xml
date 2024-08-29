@@ -24,7 +24,7 @@
 
   <dependencies>
 
-    <!-- Application bundles andpackages -->
+    <!-- Application bundles and packages -->
     <dependency>
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.osgi-config</artifactId>
@@ -201,7 +201,7 @@
           </validatorsSettings>
           <embeddeds>
 
-            <!-- Application bundles andpackages -->
+            <!-- Application bundles and packages -->
             <embedded>
               <groupId>${groupId}</groupId>
               <artifactId>${rootArtifactId}.osgi-config</artifactId>
