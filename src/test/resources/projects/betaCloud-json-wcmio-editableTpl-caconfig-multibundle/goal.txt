@@ -1,1 +1,0 @@
--f ../betacloudProject -U clean verify
