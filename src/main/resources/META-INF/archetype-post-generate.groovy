@@ -38,6 +38,8 @@ def rootPom = new File(rootDir, "pom.xml")
 def parentPom = new File(rootDir, "parent/pom.xml")
 def tests = new File(rootDir, "tests")
 
+def isWindows = System.getProperty("os.name").toLowerCase().startsWith("windows")
+
 // validate parameters - throw exceptions for invalid combinations
 if ((optionAemServicePack=="y" || optionAemServicePackAPI=="y") && optionAemVersion == "cloud") {
   throw new RuntimeException("For AEMaaCS optionAemServicePack='y' or optionAemServicePackAPI='y' is not allowed - there are no service packs for the cloud.")
@@ -264,7 +266,6 @@ else {
 
   // execute CONGA via maven
   def mavenCall = "mvn -f $rootDir/config-definition -Dconga.environments=cloud generate-resources"
-  def isWindows = System.getProperty("os.name").toLowerCase().startsWith("windows")
   def execCommand = isWindows ? ["cmd.exe", "/c", mavenCall] : ["/bin/sh", "-c", mavenCall]
   def proc = execCommand.execute()
   def pool = Executors.newFixedThreadPool(2)
@@ -337,6 +338,11 @@ while (removeEmptyFolders()) continue
 
 // rename root folder to project name
 try {
+  if (isWindows) {
+    // workaround: in windows FS sometimes this final rename files with access denied exception
+    sleep(1000)
+  }
+
   def newRootDir = new File(request.getOutputDirectory() + "/" + projectName)
   Files.move(rootDir.toPath(), newRootDir.toPath(), StandardCopyOption.REPLACE_EXISTING)
   assert newRootDir.exists()
