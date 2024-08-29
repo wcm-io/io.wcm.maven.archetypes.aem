@@ -1,1 +1,0 @@
--f ../delta66Project -U clean verify
