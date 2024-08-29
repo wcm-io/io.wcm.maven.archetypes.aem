@@ -335,7 +335,7 @@ Closure<Boolean> removeEmptyFolders = {
 }
 while (removeEmptyFolders()) continue
 
-// rename root folder to project name (if it fails it's not a problem)
+// rename root folder to project name
 try {
   def newRootDir = new File(request.getOutputDirectory() + "/" + projectName)
   Files.move(rootDir.toPath(), newRootDir.toPath(), StandardCopyOption.REPLACE_EXISTING)
@@ -346,7 +346,5 @@ try {
   println ""
 }
 catch (Exception ex) {
-  println ""
-  println "Your new AEM project is ready at ${rootDir.toPath()}"
-  println ""
+  throw new RuntimeException("Failed to rename root folder to project name: " + ex.getMessage())
 }
