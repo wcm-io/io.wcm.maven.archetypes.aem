@@ -83,18 +83,18 @@ parse_parameters() {
       --sling\.password=*|-Dsling\.password=*)
       SLING_PASSWORD="${i#*=}"
       shift # past argument=value
-      ;;
+      ;;]]#
 #if ( $optionWcmioConga == "y" )
-      --conga\.environment=*|-Dconga\.environment=*)
+#[[      --conga\.environment=*|-Dconga\.environment=*)
       CONGA_ENVIRONMENT="${i#*=}"
       shift # past argument=value
       ;;
       --conga\.node=*|-Dconga\.node=*)
       CONGA_NODE="${i#*=}"
       shift # past argument=value
-      ;;
+      ;;]]#
 #end
-      --jvm\.args=*|-Djvm\.args=*)
+#[[      --jvm\.args=*|-Djvm\.args=*)
       JVM_ARGS="${i#*=}"
       shift # past argument=value
       ;;
@@ -117,7 +117,7 @@ parse_parameters() {
       shift # past argument with no value
       ;;
       *)
-            # unknown option
+      # unknown option
       ;;
   esac
   done
