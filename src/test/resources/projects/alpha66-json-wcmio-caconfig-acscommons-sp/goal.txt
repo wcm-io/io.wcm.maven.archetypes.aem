@@ -1,1 +1,0 @@
--f ../alpha66Project -U clean verify
