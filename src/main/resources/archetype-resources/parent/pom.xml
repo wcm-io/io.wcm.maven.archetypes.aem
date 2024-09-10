@@ -32,7 +32,7 @@
     <!-- Versions -->
 #if ( $optionAemVersion != "cloud" )
 ## renovate: depName=com.adobe.cq:core.wcm.components.core
-    <core.wcm.components.version>2.26.0</core.wcm.components.version>
+    <core.wcm.components.version>2.27.0</core.wcm.components.version>
 #end
 #if( $optionAcsCommons == "y" )
 ## renovate: depName=com.adobe.acs:acs-aem-commons-bundle
