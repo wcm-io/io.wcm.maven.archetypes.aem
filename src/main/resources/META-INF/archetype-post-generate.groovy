@@ -75,7 +75,8 @@ def removeModule(pomFile, module) {
 
 // parent: set build timestamp to current date
 def parentPomContent = parentPom.getText("UTF-8")
-parentPomContent = parentPomContent.replaceAll('\\Q2020-01-01T00:00:00Z\\E', new Date().format("yyyy-MM-dd'T00:00:00Z'"))
+def currentDate = new java.text.SimpleDateFormat("yyyy-MM-dd'T00:00:00Z'").format(new Date())
+parentPomContent = parentPomContent.replaceAll('\\Q2020-01-01T00:00:00Z\\E', currentDate)
 parentPom.newWriter("UTF-8").withWriter { w ->
   w << parentPomContent
 }
