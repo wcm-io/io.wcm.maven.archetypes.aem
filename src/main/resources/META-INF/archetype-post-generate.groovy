@@ -3,6 +3,7 @@
 import java.util.regex.Pattern
 import java.util.concurrent.Callable
 import java.util.concurrent.Executors
+import java.text.SimpleDateFormat
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 import groovy.io.FileType
@@ -75,7 +76,7 @@ def removeModule(pomFile, module) {
 
 // parent: set build timestamp to current date
 def parentPomContent = parentPom.getText("UTF-8")
-parentPomContent = parentPomContent.replaceAll('\\Q2020-01-01T00:00:00Z\\E', new Date().format("yyyy-MM-dd'T00:00:00Z'"))
+parentPomContent = parentPomContent.replaceAll('\\Q2020-01-01T00:00:00Z\\E', new SimpleDateFormat("yyyy-MM-dd'T00:00:00Z'").format(new Date()))
 parentPom.newWriter("UTF-8").withWriter { w ->
   w << parentPomContent
 }
@@ -177,7 +178,7 @@ else {
   [confContentPackage,sampleContentPackage].each { packageFolder ->
     packageFolder.eachFileRecurse(FileType.FILES) { file ->
       if (file.name =~ /(\.content|pom)\.xml$/) {
-        def fileContent = file.getText("UTF-8").replaceAll('\\Q2020-01-01T00:00:00.000+02:00\\E', new Date().format("yyyy-MM-dd'T00:00:00.000'XXX"))
+        def fileContent = file.getText("UTF-8").replaceAll('\\Q2020-01-01T00:00:00.000+02:00\\E', new SimpleDateFormat("yyyy-MM-dd'T00:00:00.000'XXX").format(new Date()))
         file.newWriter("UTF-8").withWriter { w ->
           w << fileContent
         }

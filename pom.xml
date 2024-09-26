@@ -40,8 +40,7 @@
 
   <properties>
     <site.url.module.prefix>tooling/maven/archetypes/aem</site.url.module.prefix>
-    <!-- Stick with version 3.1.0 until https://issues.apache.org/jira/browse/ARCHETYPE-584 is solved, should be fixed in version 3.3.0 -->
-    <maven.archetype.version>3.1.0</maven.archetype.version>
+    <maven.archetype.version>3.3.0</maven.archetype.version>
   </properties>
 
   <scm>
@@ -127,9 +126,7 @@
           <version>${maven.archetype.version}</version>
           <configuration>
              <!-- Make sure .git* files can be included as well -->
-             <!-- Use for maven-archetype-plugin 3.3.0 and up:
              <useDefaultExcludes>false</useDefaultExcludes>
-             -->
           </configuration>
         </plugin>
 
