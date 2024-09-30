@@ -20,9 +20,6 @@
   <properties>
     <contentPackage.name>${projectName}-ui.apps</contentPackage.name>
     <contentPackage.group>${packageGroupName}</contentPackage.group>
-
-    <!-- Disable reproducible builds for this package as workaround for https://issues.apache.org/jira/browse/JCRVLT-699 -->
-    <project.build.outputTimestamp></project.build.outputTimestamp>
   </properties>
 
   <build>
@@ -57,7 +54,7 @@
           </validatorsSettings>
 
 #if ( $optionAemVersion == "cloud" )
-          <!-- Do not deploy directly via AEM cloud manager, only as part of CONGA-generated "all" package -->
+          <!-- Do not deploy directly via AEM cloud manager, only as part of "all" package -->
           <properties>
             <cloudManagerTarget>none</cloudManagerTarget>
           </properties>

@@ -12,6 +12,7 @@ templateDir: ${projectName}-aem-cms
 
 files:
 
+#if ( $optionWcmioConga == "y" )
 #if ( $optionAemVersion == '6.5' && $optionAemServicePack == 'y' )
 # AEM Service Pack
 - url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.21.0/zip
@@ -31,6 +32,7 @@ files:
 - url: mvn:com.adobe.acs/acs-aem-commons-all//zip
   dir: packages
 
+#end
 #end
 # AEM OSGi System Configuration
 - file: ${projectName}-aem-cms-config.osgiconfig.json
@@ -71,6 +73,7 @@ files:
       rootPath: /apps/${projectName}/config/rewriter
 
 #end
+#if ( $optionWcmioConga == "y" )
 #if ( $optionAemVersion == "cloud" && ($optionContextAwareConfig == "y" || $optionWcmioHandler == "y") )
 # wcm.io
 #if ( $optionContextAwareConfig == "y" )
@@ -86,8 +89,10 @@ files:
   dir: bundles
 - url: mvn:io.wcm/io.wcm.wcm.commons
   dir: bundles
+#if ( $optionEditableTemplates != "y" )
 - url: mvn:io.wcm/io.wcm.wcm.parsys
   dir: bundles
+#end
 - url: mvn:io.wcm/io.wcm.wcm.ui.granite
   dir: bundles
 - url: mvn:io.wcm/io.wcm.wcm.ui.clientlibs
@@ -136,6 +141,7 @@ files:
   dir: packages
   condition: ${app.sampleContent}
 
+#end
 
 # Defines configuration parameters and default values
 config:

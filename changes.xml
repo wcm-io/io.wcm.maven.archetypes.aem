@@ -23,6 +23,21 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
+    <release version="3.9.0" date="2024-09-30">
+      <action type="add" dev="sseifert" issue="90">
+        Add new option "optionWcmioConga" which is enabled by default. For AEMaaCS projects it is possible to disable it to create a cloud project without CONGA.
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+      <action type="update" dev="sseifert" issue="83">
+        Include wcm.io Parsys module only for projects without AEM editable templates.
+      </action>
+      <action type="update" dev="sseifert" issue="89"><![CDATA[
+        Remove obsolete workaround for <a href="https://issues.apache.org/jira/browse/JCRVLT-699">JCRVLT-699</a>.
+      ]]></action>
+    </release>
+
     <release version="3.8.14" date="2024-07-18">
       <action type="update" dev="sseifert" issue="66"><![CDATA[
         Apply <a href="https://github.com/wcm-io/io.wcm.maven.aem-cloud-dependencies-mixin-jsonp11">AEM Cloud Service Dependencies - Mixin for JSONP 1.1</a> when wcm.io Handler is not activated for compatibility with Adobe AEM WCM Core Components implementation.

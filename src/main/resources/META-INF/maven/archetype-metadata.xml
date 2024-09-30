@@ -123,6 +123,11 @@
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
+    <!-- Setup project using CONGA. Mandatory for AEM 6.5 projects, optional (but default) for AEMaaCS projects. -->
+    <requiredProperty key="optionWcmioConga">
+      <defaultValue>y</defaultValue>
+      <validationRegex>^(y|n)$</validationRegex>
+    </requiredProperty>
     <!-- Use latest Sling Models versions (ignored for AEMaaCS) -->
     <requiredProperty key="optionSlingModelsLatest">
       <defaultValue>n</defaultValue>
@@ -307,6 +312,28 @@
 
     <module id="${rootArtifactId}.complete" dir="content-packages/complete" name="${rootArtifactId}.complete"/>
 
+    <module id="${rootArtifactId}.osgi-config" dir="content-packages/osgi-config" name="${rootArtifactId}.osgi-config">
+      <fileSets>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>content-upload.sh</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
+    <module id="${rootArtifactId}.rewriter-config" dir="content-packages/rewriter-config" name="${rootArtifactId}.rewriter-config">
+      <fileSets>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>content-upload.sh</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
     <module id="${rootArtifactId}.conf-content" dir="content-packages/conf-content" name="${rootArtifactId}.conf-content">
       <fileSets>
         <fileSet encoding="UTF-8">
@@ -395,6 +422,28 @@
           <directory>src/main/environments</directory>
           <includes>
             <include>**/*.yaml</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
+    <module id="${rootArtifactId}.all" dir="all" name="${rootArtifactId}.all">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>META-INF/vault</directory>
+          <includes>
+            <include>filter.xml</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+
+    <module id="${rootArtifactId}.dispatcher" dir="dispatcher" name="${rootArtifactId}.dispatcher">
+      <fileSets>
+        <fileSet encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>assembly.xml</include>
           </includes>
         </fileSet>
       </fileSets>

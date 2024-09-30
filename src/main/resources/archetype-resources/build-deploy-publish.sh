@@ -20,10 +20,12 @@
 # Call with "help" parameter to display syntax information
 
 MAVEN_PROFILES="fast,publish"
+#if ( $optionWcmioConga == "y" )
 CONGA_NODE="aem-publish"
+#end
 
 if [[ $0 == *":\\"* ]]; then
   DISPLAY_PAUSE_MESSAGE=true
 fi
 
-./build-deploy.sh --maven.profiles=${MAVEN_PROFILES} --conga.node=${CONGA_NODE} --display.pause.message=${DISPLAY_PAUSE_MESSAGE} "$@"
+./build-deploy.sh --maven.profiles=${MAVEN_PROFILES} #if($optionWcmioConga=='y')--conga.node=${CONGA_NODE} #{end}--display.pause.message=${DISPLAY_PAUSE_MESSAGE} "$@"

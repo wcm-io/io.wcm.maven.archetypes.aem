@@ -23,23 +23,28 @@
     <dependency>
       <groupId>io.wcm.devops.conga.definitions</groupId>
       <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
+#if ( $optionWcmioConga != "y" )
+      ## renovate: depName=io.wcm.devops.conga.definitions:io.wcm.devops.conga.definitions.aem
+      <version>2.0.4</version>
+#end
       <scope>compile</scope>
     </dependency>
 
+#if ( $optionWcmioConga == "y" )
     <!-- Application #if($optionAemVersion=='cloud')bundles and#{end}packages -->
 #if ( $optionAemVersion == "cloud" )
     <dependency>
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.core</artifactId>
       <version>${version}</version>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
 #if ( $optionMultiBundleLayout == "y" )
     <dependency>
       <groupId>${groupId}</groupId>
       <artifactId>${rootArtifactId}.clientlibs</artifactId>
       <version>${version}</version>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
 #end
 #else
@@ -57,7 +62,7 @@
       <artifactId>${rootArtifactId}.ui.apps</artifactId>
       <version>${version}</version>
       <type>zip</type>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
 #end
 #if ( $optionEditableTemplates == "y" )
@@ -127,11 +132,13 @@
       <artifactId>io.wcm.wcm.commons</artifactId>
       <scope>compile</scope>
     </dependency>
+#if ( $optionEditableTemplates != "y" )
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.wcm.parsys</artifactId>
       <scope>compile</scope>
     </dependency>
+#end
     <dependency>
       <groupId>io.wcm</groupId>
       <artifactId>io.wcm.wcm.ui.granite</artifactId>
@@ -174,6 +181,7 @@
     </dependency>
 #end
 
+#end
 #end
   </dependencies>
 
