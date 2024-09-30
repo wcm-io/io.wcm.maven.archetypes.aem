@@ -152,7 +152,7 @@
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.editor</artifactId>
 ## renovate: depName=io.wcm:io.wcm.caconfig.editor
-        <version>1.16.5-SNAPSHOT</version>
+        <version>1.16.6</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
