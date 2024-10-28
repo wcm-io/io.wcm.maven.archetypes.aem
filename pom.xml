@@ -40,7 +40,7 @@
 
   <properties>
     <site.url.module.prefix>tooling/maven/archetypes/aem</site.url.module.prefix>
-    <maven.archetype.version>3.3.0</maven.archetype.version>
+    <maven.archetype.version>3.3.1</maven.archetype.version>
   </properties>
 
   <scm>
