@@ -1,4 +1,4 @@
-@Grab(group="org.codehaus.groovy", module="groovy-xml", version="3.0.22")
+@Grab(group="org.apache.groovy", module="groovy-xml", version="4.0.23")
 @Grab(group="net.lingala.zip4j", module="zip4j", version="2.11.5")
 import java.util.regex.Pattern
 import java.util.concurrent.Callable
@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 import groovy.io.FileType
-import groovy.util.XmlSlurper
+import groovy.xml.XmlSlurper
 import net.lingala.zip4j.ZipFile
 
 def rootDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId())
