@@ -31,7 +31,7 @@
 
   <groupId>io.wcm.maven.archetypes</groupId>
   <artifactId>io.wcm.maven.archetypes.aem</artifactId>
-  <version>3.9.0</version>
+  <version>3.9.2</version>
   <packaging>maven-archetype</packaging>
 
   <name>wcm.io Maven Archetype for AEM</name>
@@ -40,7 +40,7 @@
 
   <properties>
     <site.url.module.prefix>tooling/maven/archetypes/aem</site.url.module.prefix>
-    <maven.archetype.version>3.3.0</maven.archetype.version>
+    <maven.archetype.version>3.3.1</maven.archetype.version>
   </properties>
 
   <scm>
