@@ -25,6 +25,9 @@
 
     <release version="3.9.4" date="not released">
       <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+      <action type="update" dev="sseifert">
         Update to AEM 6.5 SP22.
       </action>
     </release>
