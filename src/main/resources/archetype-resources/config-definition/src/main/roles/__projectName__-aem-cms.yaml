@@ -15,7 +15,7 @@ files:
 #if ( $optionWcmioConga == "y" )
 #if ( $optionAemVersion == '6.5' && $optionAemServicePack == 'y' )
 # AEM Service Pack
-- url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.21.0/zip
+- url: mvn:adobe.binary.aem.65.servicepack/aem-service-pkg/6.5.22.0/zip
   dir: packages
   modelOptions:
     delayAfterInstallSec: 30
