@@ -31,7 +31,7 @@
     </dependency>
 
 #if ( $optionWcmioConga == "y" )
-    <!-- Application #if($optionAemVersion=='cloud')bundles and#{end}packages -->
+    <!-- Application #if($optionAemVersion=='cloud')bundles and #{end}packages -->
 #if ( $optionAemVersion == "cloud" )
     <dependency>
       <groupId>${groupId}</groupId>
