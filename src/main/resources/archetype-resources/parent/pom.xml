@@ -216,7 +216,7 @@
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.handler.link</artifactId>
 ## renovate: depName=io.wcm:io.wcm.handler.link
-        <version>2.2.2</version>
+        <version>2.2.4</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
