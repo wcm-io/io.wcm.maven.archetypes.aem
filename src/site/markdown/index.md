@@ -56,7 +56,7 @@ Alternatively to the wcm.io AEM archetype you can use these tools to set up new 
 
 
 [usage]: usage.html
-[changelog]: changes-report.html
+[changelog]: changes.html
 [aem-mock]: https://wcm.io/testing/aem-mock/
 [conga]: https://devops.wcm.io/conga
 [aem-core-wcm-components]: https://github.com/Adobe-Marketing-Cloud/aem-core-wcm-components
