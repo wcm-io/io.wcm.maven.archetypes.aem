@@ -28,7 +28,7 @@
       <action type="update" dev="sseifert" issue="170">
         Refactor integration tests successfully run them on AEMaaCS author and publish instances. Allow accessing content with unshortened path if integration tests are enabled.
       </action>
-      <action type="update" dev="sseifert">
+      <action type="update" dev="sseifert" issue="171">
         Allow to switch to Java 17 and Java 21 builds. AEM 6.5 is only supported for Java 17 (with AEM 6.5.2025).
       </action>
       <action type="update" dev="sseifert">
