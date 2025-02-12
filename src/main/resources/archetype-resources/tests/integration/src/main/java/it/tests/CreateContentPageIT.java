@@ -5,9 +5,12 @@ import static ${package}.it.rules.Templates.CONTENTPAGE_TEMPLATE_PATH;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeoutException;
 
 import org.apache.sling.testing.clients.ClientException;
 import org.apache.sling.testing.clients.SlingHttpResponse;
+import org.apache.sling.testing.clients.util.poller.Polling;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Rule;
@@ -18,7 +21,6 @@ import org.slf4j.LoggerFactory;
 import com.adobe.cq.testing.client.CQClient;
 import com.adobe.cq.testing.client.ComponentClient;
 import com.adobe.cq.testing.client.ReplicationClient;
-import com.adobe.cq.testing.junit.assertion.CQAssert;
 import com.adobe.cq.testing.junit.rules.CQAuthorPublishClassRule;
 import com.adobe.cq.testing.junit.rules.CQRule;
 
@@ -36,17 +38,17 @@ public class CreateContentPageIT {
    * Represents author and publish service. Hostname and port are read from system properties.
    */
   @ClassRule
-  public static final CQAuthorPublishClassRule CQ_BASE_CLASS_RULE = new CQAuthorPublishClassRule();
+  public static final CQAuthorPublishClassRule CQ_AUTHOR_PUBLISH_CLASS_RULE = new CQAuthorPublishClassRule(false, true);
 
   /**
    * Decorates the test and adds additional functionality on top of it, like session stickyness,
    * test filtering and identification of the test on the remote service.
    */
   @Rule
-  public CQRule cqBaseRule = new CQRule(CQ_BASE_CLASS_RULE.authorRule, CQ_BASE_CLASS_RULE.publishRule);
+  public CQRule cqBaseRule = new CQRule(CQ_AUTHOR_PUBLISH_CLASS_RULE.authorRule, CQ_AUTHOR_PUBLISH_CLASS_RULE.publishRule);
 
-  private static CQClient adminAuthor;
-  private static CQClient adminPublish;
+  private static CQClient authorClient;
+  private static CQClient publishClient;
 
   /**
    * Create two CQClient instances bound to the admin user on both the author and publish service.
@@ -54,8 +56,8 @@ public class CreateContentPageIT {
   @BeforeClass
   @SuppressWarnings("null")
   public static void beforeClass() {
-    adminAuthor = CQ_BASE_CLASS_RULE.authorRule.getAdminClient(CQClient.class);
-    adminPublish = CQ_BASE_CLASS_RULE.publishRule.getAdminClient(CQClient.class);
+    authorClient = CQ_AUTHOR_PUBLISH_CLASS_RULE.authorRule.getAdminClient(ReplicationClient.class);
+    publishClient = CQ_AUTHOR_PUBLISH_CLASS_RULE.publishRule.getClient(CQClient.class, null, null);
   }
 
 
@@ -63,7 +65,7 @@ public class CreateContentPageIT {
    * This rules creates a site with a root page using the project's homepage template.
    */
   @Rule
-  public SiteRule site = new SiteRule(CQ_BASE_CLASS_RULE.authorRule);
+  public SiteRule site = new SiteRule(CQ_AUTHOR_PUBLISH_CLASS_RULE.authorRule);
 
   /**
    * Create a content page with a component.
@@ -77,14 +79,14 @@ public class CreateContentPageIT {
 
     log.info("Create content page below {}", site.getRootPath());
     String contentPagePath;
-    try (SlingHttpResponse response = adminAuthor.createPage("my-content", "My Content", site.getRootPath(),
+    try (SlingHttpResponse response = authorClient.createPage("my-content", "My Content", site.getRootPath(),
         CONTENTPAGE_TEMPLATE_PATH)) {
       contentPagePath = response.getSlingPath();
     }
 
     log.info("Create title component in {}", contentPagePath);
-    ComponentClient componentClient = adminAuthor.adaptTo(ComponentClient.class);
-    componentClient.setDefaultComponentRelativeLocation("/jcr:content#if($optionEditableTemplates=="y")/root#{end}/content/*");
+    ComponentClient componentClient = authorClient.adaptTo(ComponentClient.class);
+    componentClient.setDefaultComponentRelativeLocation("/jcr:content/root/content/*");
     Title title = componentClient.addComponent(Title.class, contentPagePath);
 
     log.info("Set custom title for {}", title.getComponentPath());
@@ -93,16 +95,43 @@ public class CreateContentPageIT {
     title.save();
 
     log.info("Activate page {}", contentPagePath);
-    ReplicationClient replicationClient = adminAuthor.adaptTo(ReplicationClient.class);
+    ReplicationClient replicationClient = authorClient.adaptTo(ReplicationClient.class);
     replicationClient.activate(contentPagePath);
 
     log.info("Assert page on publish {}", contentPagePath);
-    CQAssert.assertCQPageExistsWithTimeout(adminPublish, contentPagePath, 20000, 1000);
+    assertHtmlPageExistsWithTimeout(publishClient, contentPagePath, 20000, 1000);
 
     log.info("Assert custom title is set on publish {}", contentPagePath);
-    String url = adminPublish.getUrl(contentPagePath + "/.html").toString();
-    try (SlingHttpResponse response = adminPublish.doGet(url, 200)) {
+    String url = publishClient.getUrl(contentPagePath + ".html").toString();
+    try (SlingHttpResponse response = publishClient.doGet(url, 200)) {
       response.checkContentContains(titleString);
+    }
+  }
+
+  static void assertHtmlPageExistsWithTimeout(final CQClient client, final String path,
+      final long timeout, final long delay) throws InterruptedException {
+    Polling pageExistsPolling = new Polling() {
+      @Override
+      public Boolean call() {
+        // Get HTML page content
+        String url = client.getUrl(path + ".html").toString();
+        try {
+          client.doGet(url, 200);
+        }
+        catch (ClientException ex) {
+          return false;
+        }
+        return true;
+      }
+    };
+    try {
+      pageExistsPolling.poll(timeout, delay);
+    }
+    catch (TimeoutException e) {
+      if (pageExistsPolling.getLastException() != null) {
+        log.error("HTML page existence check timed out. Last Exception: ", pageExistsPolling.getLastException());
+      }
+      Assert.fail("Timeout reached while waiting for HTML page " + path);
     }
   }
 
