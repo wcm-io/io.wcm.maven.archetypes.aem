@@ -29,7 +29,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 | **packageGroupName**                | \*)     | Group name for AEM content package
 | **aemAuthorPort**                   | 4502    | Default port for local AEM author instance
 | **aemPublishPort**                  | 4503    | Default port for local AEM publish instance
-| **optionJavaVersion**               | 11      | Java version (11)
+| **optionJavaVersion**               | 11      | Java version (11, 17 or 21)
 | **optionAemVersion**                | cloud   | AEM major version (`6.5` or `cloud`)
 | **optionAemServicePack**            | n       | Use latest service pack for AEM 6.5. You need to deploy artifacts following [these conventions][aem-binaries-conventions]
 | **optionAemServicePackAPI**         | n       | Use AEM API from latest service pack for AEM 6.5. This is implicitly activated if optionAemServicePack = y.
@@ -51,7 +51,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Usage examples
 
-${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Minimal AEM project with FileVault package layout and Java 11 for AEMaaCS
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} Minimal AEM project with FileVault package layout and Java 21 for AEMaaCS
 
 ```
 mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.archetype.version']}:generate -DinteractiveMode=false \
@@ -66,7 +66,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DpackageGroupName=mycompany \
   -DaemAuthorPort=4502 \
   -DaemPublishPort=4503 \
-  -DoptionJavaVersion=11 \
+  -DoptionJavaVersion=21 \
   -DoptionAemVersion=cloud \
   -DoptionAemServicePack=n \
   -DoptionAemServicePackAPI=n \
@@ -118,7 +118,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 
-* Java 11
+* Java 11, 17 or 21
 * Apache Maven 3.3.9 or higher
 * AEM 6.5 or AEMaaCS
 * Optional: If you want to install latest service packs you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
