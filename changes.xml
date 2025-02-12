@@ -31,7 +31,7 @@
       <action type="update" dev="sseifert">
         Update to AEM 6.5 SP22.
       </action>
-      <action type="update" dev="sseifert">
+      <action type="update" dev="sseifert" issue="170">
         Refactor integration tests successfully run them on AEMaaCS author and publish instances. Allow accessing content with unshortened path if integration tests are enabled.
       </action>
     </release>
