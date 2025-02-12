@@ -38,7 +38,11 @@ public class CreateContentPageIT {
    * Represents author and publish service. Hostname and port are read from system properties.
    */
   @ClassRule
+#if ( $optionAemVersion == "cloud" )
   public static final CQAuthorPublishClassRule CQ_AUTHOR_PUBLISH_CLASS_RULE = new CQAuthorPublishClassRule(false, true);
+#else
+  public static final CQAuthorPublishClassRule CQ_AUTHOR_PUBLISH_CLASS_RULE = new CQAuthorPublishClassRule();
+#end
 
   /**
    * Decorates the test and adds additional functionality on top of it, like session stickyness,
@@ -128,9 +132,11 @@ public class CreateContentPageIT {
       pageExistsPolling.poll(timeout, delay);
     }
     catch (TimeoutException e) {
+#if ( $optionAemVersion == "cloud" )
       if (pageExistsPolling.getLastException() != null) {
         log.error("HTML page existence check timed out. Last Exception: ", pageExistsPolling.getLastException());
       }
+#end
       Assert.fail("Timeout reached while waiting for HTML page " + path);
     }
   }
