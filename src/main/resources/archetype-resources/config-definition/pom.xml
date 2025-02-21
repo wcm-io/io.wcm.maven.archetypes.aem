@@ -25,13 +25,13 @@
       <artifactId>io.wcm.devops.conga.definitions.aem</artifactId>
 #if ( $optionWcmioConga != "y" )
       ## renovate: depName=io.wcm.devops.conga.definitions:io.wcm.devops.conga.definitions.aem
-      <version>2.0.4</version>
+      <version>2.0.8</version>
 #end
       <scope>compile</scope>
     </dependency>
 
 #if ( $optionWcmioConga == "y" )
-    <!-- Application #if($optionAemVersion=='cloud')bundles and#{end}packages -->
+    <!-- Application #if($optionAemVersion=='cloud')bundles and #{end}packages -->
 #if ( $optionAemVersion == "cloud" )
     <dependency>
       <groupId>${groupId}</groupId>

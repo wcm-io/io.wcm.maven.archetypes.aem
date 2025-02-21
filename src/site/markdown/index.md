@@ -19,7 +19,7 @@ The wcm.io Maven Archetype for AEM allows you to set up new Maven projects for d
 Features:
 
 * Supports AEM 6.5 (with latest service pack) and AEM as a Cloud Service (AEMaaCS)
-* Supports Java 11
+* Supports Java 11, 17 and 21
 * Unit Tests based on JUnit 5 and [AEM Mocks][aem-mock]
 * Supports both Sling-Initial-Content JSON-style project layout and FileVault package layout
 * Based on [CONGA][conga] to manage AEM configuration and package deployment
@@ -56,7 +56,7 @@ Alternatively to the wcm.io AEM archetype you can use these tools to set up new 
 
 
 [usage]: usage.html
-[changelog]: changes-report.html
+[changelog]: changes.html
 [aem-mock]: https://wcm.io/testing/aem-mock/
 [conga]: https://devops.wcm.io/conga
 [aem-core-wcm-components]: https://github.com/Adobe-Marketing-Cloud/aem-core-wcm-components

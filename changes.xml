@@ -19,9 +19,25 @@
   #L%
   -->
 
-<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/changes/1.0.0"
-    xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 https://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
+<document xmlns="http://maven.apache.org/changes/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/changes/2.0.0 https://maven.apache.org/xsd/changes-2.0.0.xsd">
   <body>
+
+    <release version="3.9.4" date="2025-02-21">
+      <action type="update" dev="sseifert" issue="170">
+        Refactor integration tests successfully run them on AEMaaCS author and publish instances. Allow accessing content with unshortened path if integration tests are enabled.
+      </action>
+      <action type="update" dev="sseifert" issue="171">
+        Allow to switch to Java 17 and Java 21 builds. AEM 6.x is only supported with Java 17 (with AEM 6.5 LTS/AEM 6.6).
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+      <action type="update" dev="sseifert">
+        Update to AEM 6.5 SP22.
+      </action>
+    </release>
 
     <release version="3.9.2" date="2024-11-18">
       <action type="update" dev="sseifert">

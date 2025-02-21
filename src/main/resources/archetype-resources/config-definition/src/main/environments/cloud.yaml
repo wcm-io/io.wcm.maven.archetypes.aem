@@ -80,4 +80,9 @@ tenants:
       #  stage.serverName: publish-XXX.adobeaemcloud.com
       #  prod.serverName: publish-XXX.adobeaemcloud.com
       rootRedirect.url: /en.html
-    sling.mapping.rootPath: /content/${projectName}
+    sling.mapping:
+      rootPath: /content/${projectName}
+#if ( $optionIntegrationTests == "y" )
+      # required for integration tests
+      allowUnshortenedPath: true
+#end
