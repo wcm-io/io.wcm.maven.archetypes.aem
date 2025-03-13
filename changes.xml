@@ -25,6 +25,9 @@
   <body>
 
     <release version="3.9.6" date="not released">
+      <action type="add" dev="sseifert" issue="186">
+        Add support for AEM 6.6 (AEM 6.5 LTS).
+      </action>
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>

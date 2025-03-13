@@ -28,7 +28,7 @@
       <artifactId>aem-cloud-testing-clients</artifactId>
       <scope>compile</scope>
     </dependency>
-#elseif ( $optionAemVersion == "6.5" )
+#else
     <dependency>
       <groupId>com.adobe.cq</groupId>
       <artifactId>cq-testing-clients-65</artifactId>
