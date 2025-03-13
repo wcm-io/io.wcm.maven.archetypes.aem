@@ -1,1 +1,1 @@
--f ../gamma65Project -U clean verify
+-f ../gamma66Project -U clean verify

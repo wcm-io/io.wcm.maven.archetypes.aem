@@ -1,1 +1,1 @@
--f ../delta65Project -U clean verify
+-f ../delta66Project -U clean verify

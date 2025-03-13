@@ -1,1 +1,1 @@
--f ../beta65Project -U clean verify
+-f ../beta66Project -U clean verify
