@@ -247,7 +247,7 @@
 ## renovate: depName=io.wcm:io.wcm.testing.aem-mock.junit5
         <version>5.6.8</version>
       </dependency>
-#if ( $optionAemVersion == "6.5" && ($optionAemServicePack=="y" || $optionAemServicePackAPI=="y") )
+#if ( ($optionAemVersion == "6.5" && ($optionAemServicePack=="y" || $optionAemServicePackAPI=="y")) || ($optionAemVersion == "6.6") )
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.logging.logback</artifactId>
@@ -310,6 +310,14 @@
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
         <version>#if($optionAemServicePack=="y" || $optionAemServicePackAPI=="y")6.5.22.0000#{else}6.5.0.0005#end</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+#elseif ( $optionAemVersion == "6.6" )
+      <dependency>
+        <groupId>io.wcm.maven</groupId>
+        <artifactId>io.wcm.maven.aem-dependencies</artifactId>
+        <version>#if($optionAemServicePack=="y" || $optionAemServicePackAPI=="y")6.6.0.0000#{else}6.6.0.0000#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -392,19 +400,19 @@
 ## renovate: depName=junit:junit
         <version>4.13.2</version>
       </dependency>
-#if ( $optionAemVersion == "6.5" )
-      <dependency>
-        <groupId>com.adobe.cq</groupId>
-        <artifactId>cq-testing-clients-65</artifactId>
-## renovate: depName=com.adobe.cq:cq-testing-clients-65
-        <version>1.1.1</version>
-      </dependency>
-#else
+#if ( $optionAemVersion == "cloud" )
       <dependency>
         <groupId>com.adobe.cq</groupId>
         <artifactId>aem-cloud-testing-clients</artifactId>
 ## renovate: depName=com.adobe.cq:aem-cloud-testing-clients
         <version>1.2.9</version>
+      </dependency>
+#else
+      <dependency>
+        <groupId>com.adobe.cq</groupId>
+        <artifactId>cq-testing-clients-65</artifactId>
+## renovate: depName=com.adobe.cq:cq-testing-clients-65
+        <version>1.1.1</version>
       </dependency>
 #end
 
