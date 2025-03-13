@@ -72,17 +72,17 @@
       <defaultValue>11</defaultValue>
       <validationRegex>^(11|17|21)$</validationRegex>
     </requiredProperty>
-    <!-- AEM major version (6.5 or cloud) -->
+    <!-- AEM major version (6.5, 6.6 or cloud) -->
     <requiredProperty key="optionAemVersion">
       <defaultValue>cloud</defaultValue>
-      <validationRegex>^(6\.5|cloud)$</validationRegex>
+      <validationRegex>^(6\.5|6\.6|cloud)$</validationRegex>
     </requiredProperty>
-    <!-- Use latest service pack for AEM 6.5. You need to deploy artifacts following these conventions https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
+    <!-- Use latest service pack for AEM 6.x. You need to deploy artifacts following these conventions https://wcm-io.atlassian.net/wiki/x/AYC9Aw -->
     <requiredProperty key="optionAemServicePack">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Use AEM API from latest service pack for AEM 6.5. This is implicitly activated if optionAemServicePack = y. -->
+    <!-- Use AEM API from latest service pack for AEM 6.x. This is implicitly activated if optionAemServicePack = y. -->
     <requiredProperty key="optionAemServicePackAPI">
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
@@ -123,7 +123,7 @@
       <defaultValue>n</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
     </requiredProperty>
-    <!-- Setup project using CONGA. Mandatory for AEM 6.5 projects, optional (but default) for AEMaaCS projects. -->
+    <!-- Setup project using CONGA. Mandatory for AEM 6.x projects, optional (but default) for AEMaaCS projects. -->
     <requiredProperty key="optionWcmioConga">
       <defaultValue>y</defaultValue>
       <validationRegex>^(y|n)$</validationRegex>
