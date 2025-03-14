@@ -86,6 +86,9 @@
     <dependency>
       <groupId>com.adobe.acs</groupId>
       <artifactId>acs-aem-commons-all</artifactId>
+#if ( $optionAemVersion == "cloud" )
+      <classifier>cloud</classifier>
+#end
       <type>zip</type>
       <scope>compile</scope>
     </dependency>
@@ -256,6 +259,9 @@
             <embedded>
               <groupId>com.adobe.acs</groupId>
               <artifactId>acs-aem-commons-all</artifactId>
+#if ( $optionAemVersion == "cloud" )
+              <classifier>cloud</classifier>
+#end
               <target>/apps/${projectName}-packages/application/install</target>
             </embedded>
         

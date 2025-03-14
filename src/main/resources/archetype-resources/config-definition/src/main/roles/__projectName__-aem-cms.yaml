@@ -29,7 +29,11 @@ files:
 #end
 #if( $optionAcsCommons == "y" )
 # ACS AEM Commons
+#if ( $optionAemVersion == "cloud" )
+- url: mvn:com.adobe.acs/acs-aem-commons-all//zip/cloud
+#else
 - url: mvn:com.adobe.acs/acs-aem-commons-all//zip
+#end
   dir: packages
 
 #end
