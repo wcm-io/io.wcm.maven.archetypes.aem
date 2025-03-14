@@ -368,6 +368,9 @@
         <groupId>com.adobe.acs</groupId>
         <artifactId>acs-aem-commons-all</artifactId>
         <version>${acs.aem.commons.version}</version>
+#if ( $optionAemVersion == "cloud" )
+        <classifier>cloud</classifier>
+#end
         <type>zip</type>
       </dependency>
 
