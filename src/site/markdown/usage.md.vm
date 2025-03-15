@@ -29,8 +29,8 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 | **packageGroupName**                | \*)     | Group name for AEM content package
 | **aemAuthorPort**                   | 4502    | Default port for local AEM author instance
 | **aemPublishPort**                  | 4503    | Default port for local AEM publish instance
-| **optionJavaVersion**               | 11      | Java version (11, 17 or 21)
-| **optionAemVersion**                | cloud   | AEM major version (`6.5`, `6.6` or `cloud`)
+| **optionJavaVersion**               | 11      | Java version: 11, 17 or 21
+| **optionAemVersion**                | cloud   | AEM major version: `6.5`, `6.6` (6.5 LTS) or `cloud` (AEM as a Cloud Service)
 | **optionAemServicePack**            | n       | Use latest service pack for AEM 6.x. You need to deploy artifacts following [these conventions][aem-binaries-conventions]
 | **optionAemServicePackAPI**         | n       | Use AEM API from latest service pack for AEM 6.x. This is implicitly activated if optionAemServicePack = y.
 | **optionSlingInitialContentBundle** | y       | **y**: AEM application projects is set up with scripts and content parts as JSON files within the OSGi bundle with Sling-Initial Content, suitable for [File System Resource Provider][fsresource-adaptto-talk]. _Works with all AEM versions._<br/>**n**: Projects are set up with FileVault package layout, suitable for [AEM Developer Tools for Eclipse][aem-eclipse-ide] ([Sling IDE][sling-eclipse-ide]).
