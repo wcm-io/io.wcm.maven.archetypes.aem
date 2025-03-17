@@ -1,18 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    ":semanticCommitsDisabled"
+    "github>wcm-io/renovate-config:maven",
+    "github>wcm-io/renovate-config:npm",
+    "github>wcm-io/renovate-config:automerge-all-minor"
   ],
   "enabledManagers": [
-    "npm",
-    "nvm",
-    "maven",
     "custom.regex"
   ],
-  "npm": {
-    "minimumReleaseAge": "3 days"
-  },
   "customManagers": [
     {
       "customType": "regex",
