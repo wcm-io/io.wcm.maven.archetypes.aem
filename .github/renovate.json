@@ -6,6 +6,9 @@
     "github>wcm-io/renovate-config:automerge-all-minor"
   ],
   "enabledManagers": [
+    "maven",
+    "npm",
+    "nvm",
     "custom.regex"
   ],
   "customManagers": [
