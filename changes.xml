@@ -29,6 +29,9 @@
         Add support for AEM 6.6 (AEM 6.5 LTS).
       </action>
       <action type="update" dev="sseifert">
+        Switch to Java 21 by default, but ensure only supported java version is used for AEM 6.5 and 6.6.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
