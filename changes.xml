@@ -24,7 +24,7 @@
     xsi:schemaLocation="http://maven.apache.org/changes/2.0.0 https://maven.apache.org/xsd/changes-2.0.0.xsd">
   <body>
 
-    <release version="3.9.6" date="not released">
+    <release version="3.9.6" date="2025-03-21">
       <action type="add" dev="sseifert" issue="186">
         Add support for AEM 6.6 (AEM 6.5 LTS).
       </action>
