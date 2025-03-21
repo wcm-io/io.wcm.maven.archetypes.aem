@@ -28,16 +28,10 @@
       <artifactId>aem-cloud-testing-clients</artifactId>
       <scope>compile</scope>
     </dependency>
-#elseif ( $optionAemVersion == "6.5" )
-    <dependency>
-      <groupId>com.adobe.cq</groupId>
-      <artifactId>cq-testing-clients-65</artifactId>
-      <scope>compile</scope>
-    </dependency>
 #else
     <dependency>
       <groupId>com.adobe.cq</groupId>
-      <artifactId>cq-testing-clients-64</artifactId>
+      <artifactId>cq-testing-clients-65</artifactId>
       <scope>compile</scope>
     </dependency>
 #end

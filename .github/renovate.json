@@ -1,18 +1,16 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    ":semanticCommitsDisabled"
+    "github>wcm-io/renovate-config:maven",
+    "github>wcm-io/renovate-config:npm",
+    "github>wcm-io/renovate-config:automerge-all-minor"
   ],
   "enabledManagers": [
+    "maven",
     "npm",
     "nvm",
-    "maven",
     "custom.regex"
   ],
-  "npm": {
-    "minimumReleaseAge": "3 days"
-  },
   "customManagers": [
     {
       "customType": "regex",
@@ -22,6 +20,14 @@
         "##\\s??renovate:( datasource=(?<datasource>[a-z-.]+?))? depName=(?<depName>[^\\s]+?)(?: packageName=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?\\s+<(.+\\.)?version>(?<currentValue>.+)<\\/(.+\\.)?version>"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}maven{{/if}}"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "com.adobe.cq:core.wcm.components.core"
+      ],
+      "automerge": false
     }
   ]
 }

@@ -1,0 +1,1 @@
+-f ../beta66Project -U clean verify

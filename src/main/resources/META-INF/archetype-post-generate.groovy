@@ -45,7 +45,7 @@ def isWindows = System.getProperty("os.name").toLowerCase().startsWith("windows"
 if ((optionAemServicePack=="y" || optionAemServicePackAPI=="y") && optionAemVersion == "cloud") {
   throw new RuntimeException("For AEMaaCS optionAemServicePack='y' or optionAemServicePackAPI='y' is not allowed - there are no service packs for the cloud.")
 }
-if (optionAemServicePackAPI != "y" && optionAemVersion != "cloud") {
+if (optionAemServicePackAPI != "y" && optionAemVersion == "6.5") {
   throw new RuntimeException("For AEM 6.5 optionAemServicePackAPI='y' is mandatory. Also set optionAemServicePack='y' or deploy the service pack manually.")
 }
 if (optionMultiBundleLayout == "y" && optionSlingInitialContentBundle == "n") {
@@ -62,6 +62,12 @@ if (optionEditableTemplates == "n" && optionWcmioHandler == "n") {
 }
 if (!(javaPackage ==~ /^[a-z0-9\.]+$/)) {
   throw new RuntimeException("Java package name is invalid: " + javaPackage)
+}
+if (optionAemVersion == "6.5" && optionJavaVersion != "11") {
+  throw new RuntimeException("AEM 6.5 only supports Java 11.")
+}
+if (optionAemVersion == "6.6" && optionJavaVersion == "21") {
+  throw new RuntimeException("AEM 6.6 does not support Java 21.")
 }
 
 // helper methods
