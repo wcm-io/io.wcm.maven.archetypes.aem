@@ -39,7 +39,7 @@
     <acs.aem.commons.version>6.11.0</acs.aem.commons.version>
 #end
 ## renovate: depName=org.mockito:mockito-core
-    <mockito.version>5.16.1</mockito.version>
+    <mockito.version>5.17.0</mockito.version>
 
     <!-- Enable reproducible builds -->
     <project.build.outputTimestamp>2021-01-01T00:00:00Z</project.build.outputTimestamp>
