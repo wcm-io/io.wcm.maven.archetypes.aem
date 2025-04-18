@@ -27,7 +27,8 @@
       "matchPackageNames": [
         "com.adobe.cq:core.wcm.components.core"
       ],
-      "automerge": false
+      "automerge": false,
+      "labels": ["dependencies"]
     }
   ]
 }
