@@ -1,4 +1,3 @@
-@Grab(group="org.apache.groovy", module="groovy-xml", version="4.0.23")
 @Grab(group="net.lingala.zip4j", module="zip4j", version="2.11.5")
 import java.util.regex.Pattern
 import java.util.concurrent.Callable
