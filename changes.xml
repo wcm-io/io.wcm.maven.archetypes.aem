@@ -28,6 +28,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="update" dev="sseifert">
+        Update to AEM 6.5 SP23.
+      </action>
     </release>
 
     <release version="3.9.6" date="2025-03-21">
