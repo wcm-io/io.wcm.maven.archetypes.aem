@@ -56,10 +56,47 @@
         "${package}.config.impl.MediaHandlerConfigImpl",
         "io.wcm.caconfig.extensions.contextpath.impl.RootTemplateContextPathStrategy",
         "io.wcm.caconfig.extensions.persistence.impl.PagePersistenceStrategy",
-        "io.wcm.handler.mediasource.dam.impl.dynamicmedia.DynamicMediaSupportServiceImpl"
+        "io.wcm.handler.mediasource.dam.impl.dynamicmedia.DynamicMediaSupportServiceImpl"if ( $optionWcmioSiteApi == "y" ),
+        "io.wcm.siteapi.processor.impl.SiteApiServlet",
+        "io.wcm.siteapi.processor.caconfig.impl.ContextAwareConfigurationExportImpl",
+        "io.wcm.siteapi.handler.url.impl.HandlerUrlBuilder"#{end}
       ]
     },
 
+#if ( $optionWcmioSiteApi == "y" )
+    // Enable built-in wcm.io Site API processors
+    "io.wcm.siteapi.processor.impl.index.IndexProcessor": {
+      "enabled": true
+    }
+
+    "io.wcm.siteapi.processor.impl.content.ContentProcessor": {
+      "enabled": true
+    },
+
+    "io.wcm.siteapi.processor.impl.caconfig.ContextAwareConfigurationProcessor": {
+      "enabled": true
+    },
+
+    "io.wcm.siteapi.handler.processor.impl.navigation.NavigationProcessor": {
+      "enabled": true
+    },
+
+    // Ensure consistent ordering of JSON data in Sling Models Exporter
+    "org.apache.sling.models.jacksonexporter.impl.JacksonExporter": {
+      "mapping.options": [
+        "SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS\=true",
+        "MapperFeature.SORT_PROPERTIES_ALPHABETICALLY\=true"
+      ]
+    }
+
+    // Enable Auto-Mode for wcm.io URL Handler for whole instance
+    "org.apache.sling.caconfig.impl.override.OsgiConfigurationOverrideProvider-siteapi-test-siteurl": {
+      "description": "wcm.io Handler Site URLs",
+      "overrides": "io.wcm.handler.url.SiteConfig\={\"siteUrl\":\"<auto>\",\"siteUrlAuthor\":\"<auto>\"}",
+      "enabled": true
+    }
+
+#end
 #end
   },
 

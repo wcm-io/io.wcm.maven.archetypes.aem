@@ -230,6 +230,35 @@
 ## renovate: depName=io.wcm:io.wcm.wcm.core.components
         <version>2.0.6-2.25.4</version>
       </dependency>
+#if ( $optionWcmioSiteApi == "y" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.site-api.processor</artifactId>
+        <version>1.2.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.site-api.handler</artifactId>
+        <version>1.2.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.site-api.openapi-validator</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
+      </dependency>
+#end
+#if ( $optionWcmioSiteApiGenericEdit == "y" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.site-api.generic-edit</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.site-api.generic-edit.handler</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
+      </dependency>
+#end
 #end
 #if ( $optionWcmioConga == "y" )
       <dependency>
@@ -296,12 +325,38 @@
 ## renovate: depName=io.wcm:io.wcm.testing.wcm-io-mock.wcm
         <version>1.2.0</version>
       </dependency>
+#if ( $optionWcmioSiteApi == "y" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.wcm-io-mock.site-api.processor</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
+      </dependency>
+#end
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.handler</artifactId>
 ## renovate: depName=io.wcm:io.wcm.testing.wcm-io-mock.handler
         <version>2.0.0</version>
       </dependency>
+#if ( $optionWcmioSiteApi == "y" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.wcm-io-mock.site-api.handler</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
+      </dependency>
+#end
+#if ( $optionWcmioSiteApiGenericEdit == "y" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.wcm-io-mock.site-api.generic-edit</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
+      </dependency> 
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.testing.wcm-io-mock.site-api.generic-edit.handler</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
+      </dependency> 
+#end
 #end
 
       <!-- AEM dependencies -->
@@ -417,6 +472,13 @@
 ## renovate: depName=com.adobe.cq:cq-testing-clients-65
         <version>1.1.1</version>
       </dependency>
+#end
+#if ( $optionWcmioSiteApi == "y" )
+      <dependency>
+        <groupId>io.wcm</groupId>
+        <artifactId>io.wcm.site-api.integration-test-support</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
+      </dependency> 
 #end
 
 #end
