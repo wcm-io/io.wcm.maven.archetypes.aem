@@ -17,7 +17,7 @@
     "popper.js": "1.16.1"
   },
   "devDependencies": {
-    "@babel/core": "7.27.3",
+    "@babel/core": "7.27.4",
     "@babel/preset-env": "7.27.2",
     "@babel/register": "7.27.1",
     "aem-clientlib-generator": "1.8.2",
