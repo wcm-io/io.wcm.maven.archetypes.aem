@@ -84,15 +84,15 @@
     // Ensure consistent ordering of JSON data in Sling Models Exporter
     "org.apache.sling.models.jacksonexporter.impl.JacksonExporter": {
       "mapping.options": [
-        "SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS\=true",
-        "MapperFeature.SORT_PROPERTIES_ALPHABETICALLY\=true"
+        "SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS=true",
+        "MapperFeature.SORT_PROPERTIES_ALPHABETICALLY=true"
       ]
     },
 
     // Enable Auto-Mode for wcm.io URL Handler for whole instance
     "org.apache.sling.caconfig.impl.override.OsgiConfigurationOverrideProvider-siteapi-test-siteurl": {
       "description": "wcm.io Handler Site URLs",
-      "overrides": "io.wcm.handler.url.SiteConfig\={\"siteUrl\":\"<auto>\",\"siteUrlAuthor\":\"<auto>\"}",
+      "overrides": "io.wcm.handler.url.SiteConfig={\"siteUrl\":\"<auto>\",\"siteUrlAuthor\":\"<auto>\"}",
       "enabled": true
     },
 
