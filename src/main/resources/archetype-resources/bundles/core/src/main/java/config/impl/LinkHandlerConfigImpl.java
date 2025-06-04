@@ -12,12 +12,23 @@ import org.osgi.service.component.annotations.Component;
 
 import com.day.cq.wcm.api.Page;
 
+#if ( $optionWcmioSiteApi == "y" )
+import io.wcm.handler.link.markup.SimpleLinkMarkupBuilder;
+#end
 import io.wcm.handler.link.spi.LinkHandlerConfig;
+#if ( $optionWcmioSiteApi == "y" )
+import io.wcm.handler.link.spi.LinkMarkupBuilder;
+import io.wcm.handler.link.spi.LinkProcessor;
+#end
 import io.wcm.handler.link.spi.LinkType;
 import io.wcm.handler.link.type.ExternalLinkType;
 import io.wcm.handler.link.type.InternalCrossContextLinkType;
 import io.wcm.handler.link.type.InternalLinkType;
 import io.wcm.handler.link.type.MediaLinkType;
+#if ( $optionWcmioSiteApi == "y" )
+import io.wcm.siteapi.handler.link.SiteApiLinkMarkupBuilder;
+import io.wcm.siteapi.handler.link.SiteApiLinkPreProcessor;
+#end
 import io.wcm.wcm.commons.util.Template;
 
 import ${package}.config.AppTemplate;
@@ -34,12 +45,35 @@ public class LinkHandlerConfigImpl extends LinkHandlerConfig {
       ExternalLinkType.class,
       MediaLinkType.class);
 
+#if ( $optionWcmioSiteApi == "y" )
+  private static final List<Class<? extends LinkProcessor>> PRE_PROCESSORS = List.of(
+      SiteApiLinkPreProcessor.class);
+
+  private static final List<Class<? extends LinkMarkupBuilder>> LINK_MARKUP_BUILDERS = List.of(
+      SiteApiLinkMarkupBuilder.class,
+      SimpleLinkMarkupBuilder.class);
+
+#end
   @Override
   @SuppressWarnings("squid:S2384") // returned list is immutable
   public @NotNull List<Class<? extends LinkType>> getLinkTypes() {
     return LINK_TYPES;
   }
 
+#if ( $optionWcmioSiteApi == "y" )
+  @Override
+  @SuppressWarnings("squid:S2384") // returned list is immutable
+  public @NotNull List<Class<? extends LinkProcessor>> getPreProcessors() {
+    return PRE_PROCESSORS;
+  }
+
+  @Override
+  @SuppressWarnings("squid:S2384") // returned list is immutable
+  public @NotNull List<Class<? extends LinkMarkupBuilder>> getMarkupBuilders() {
+    return LINK_MARKUP_BUILDERS;
+  }
+
+#end
   @Override
   public boolean isValidLinkTarget(@NotNull Page page) {
     return !Template.is(page, AppTemplate.ADMIN_STRUCTURE_ELEMENT);

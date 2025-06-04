@@ -25,11 +25,14 @@
   <body>
 
     <release version="3.9.8" date="not released">
-      <action type="update" dev="sseifert">
-        Update dependencies.
-      </action>
+      <action type="add" dev="sseifert" issue="229"><![CDATA[
+        Add options "optionWcmioSiteApi" and "optionWcmioSiteApiGenericEdit" which allows to setup an AEM headless project based <a href="https://wcm.io/site-api/">wcm.io Site API</a>.
+      ]]></action>
       <action type="update" dev="sseifert">
         Update to AEM 6.5 SP23.
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
       </action>
     </release>
 

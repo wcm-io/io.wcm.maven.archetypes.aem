@@ -27,7 +27,13 @@ The first deployment may take a while until all updated OSGi bundles are install
 After deployment you can open the sample content page in your browser:
 
 * Author: http://localhost:${aemAuthorPort}/editor.html/content/${projectName}/en.html
+#if ( $optionWcmioSiteApi == "y")
+  * Site API: http://localhost:${aemAuthorPort}/content/${projectName}/en.site.api/index.json
+#end
 * Publish: http://localhost:${aemPublishPort}/content/${projectName}/en.html
+#if ( $optionWcmioSiteApi == "y")
+  * Site API: http://localhost:${aemPublishPort}/content/${projectName}/en.site.api/index.json
+#end
 
 You can deploy individual bundles or content packages to the local AEM instances by using:
 
@@ -79,6 +85,9 @@ Modules of this project:
 #end
   * HTML client libraries with JavaScript and CSS
   * i18n
+#end
+#if ( $optionWcmioSiteApi == "y")
+* [bundles/site-api-spec](bundles/site-api-spec/): Site API Spec
 #end
 #if ( $optionAemVersion != "cloud" )
 * [content-packages/complete](content-packages/complete/): AEM content package containing all OSGi bundles of the application and their dependencies

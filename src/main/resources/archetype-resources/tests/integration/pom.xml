@@ -15,8 +15,25 @@
   <packaging>jar</packaging>
 
   <name>${projectName} Integration Tests</name>
+  <description>Custom Functional Tests to be executed in Cloud Manager.</description>
 
   <dependencies>
+
+#if ( $optionWcmioSiteApi == "y" )
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>${rootArtifactId}.site-api-spec</artifactId>
+      <version>${version}</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.site-api.integration-test-support</artifactId>
+      <scope>compile</scope>
+    </dependency> 
+
+#end
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
