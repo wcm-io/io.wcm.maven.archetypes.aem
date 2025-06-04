@@ -79,6 +79,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionWcmioHandler=n \
   -DoptionWcmioSiteApi=n \
   -DoptionWcmioSiteApiGenericEdit=n \
+  -DoptionWcmioConga=y \
   -DoptionSlingModelsLatest=n \
   -DoptionContextAwareConfigLatest=n \
   -DoptionAcsCommons=n \
@@ -113,6 +114,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionWcmioHandler=y \
   -DoptionWcmioSiteApi=n \
   -DoptionWcmioSiteApiGenericEdit=n \
+  -DoptionWcmioConga=y \
   -DoptionSlingModelsLatest=n \
   -DoptionContextAwareConfigLatest=n \
   -DoptionAcsCommons=n \
@@ -147,6 +149,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionWcmioHandler=y \
   -DoptionWcmioSiteApi=y \
   -DoptionWcmioSiteApiGenericEdit=y \
+  -DoptionWcmioConga=y \
   -DoptionSlingModelsLatest=n \
   -DoptionContextAwareConfigLatest=n \
   -DoptionAcsCommons=n \
