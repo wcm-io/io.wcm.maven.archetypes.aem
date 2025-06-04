@@ -79,10 +79,10 @@ public class ContentPageReplicationIT {
    * Force basic authentication (=no auth in this case) for publish instance.
    */
   @ClassRule
-  #if ( $optionAemVersion == "6.5" )
-  public static final CQAuthorPublishClassRule CQ_AUTHOR_PUBLISH_CLASS_RULE = new CQAuthorPublishClassRule(false);
-  #else
+  #if ( $optionAemVersion == "cloud" )
   public static final CQAuthorPublishClassRule CQ_AUTHOR_PUBLISH_CLASS_RULE = new CQAuthorPublishClassRule(false, true);
+  #else
+  public static final CQAuthorPublishClassRule CQ_AUTHOR_PUBLISH_CLASS_RULE = new CQAuthorPublishClassRule(false);
   #end
 
   /**

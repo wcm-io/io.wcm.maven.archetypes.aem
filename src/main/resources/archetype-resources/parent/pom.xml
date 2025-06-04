@@ -140,7 +140,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.caconfig.extensions</artifactId>
-#if ( $optionContextAwareConfigLatest == "y" || $optionAemVersion == "cloud" )
+#if ( $optionContextAwareConfigLatest == "y" || $optionAemVersion != "6.5" )
 ## renovate: depName=io.wcm:io.wcm.caconfig.extensions
         <version>1.10.4</version>
 #else
