@@ -16,7 +16,7 @@
   "dependencies": {
     "css-loader": "6.7.3",
     "json-loader": "0.5.7",
-    "style-loader": "3.3.1",
+    "style-loader": "3.3.4",
     "swagger-ui": "4.17.1",
     "yaml-loader": "0.8.0"
   }
