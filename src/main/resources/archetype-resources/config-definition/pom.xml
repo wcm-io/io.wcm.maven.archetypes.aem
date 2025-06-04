@@ -182,6 +182,30 @@
       <artifactId>io.wcm.wcm.core.components</artifactId>
       <scope>compile</scope>
     </dependency>
+#if ( $optionWcmioSiteApi == "y" )
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.site-api.processor</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.site-api.handler</artifactId>
+      <scope>compile</scope>
+    </dependency>
+#end
+#if ( $optionWcmioSiteApiGenericEdit == "y" )
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.site-api.generic-edit</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.wcm</groupId>
+      <artifactId>io.wcm.site-api.generic-edit.handler</artifactId>
+      <scope>compile</scope>
+    </dependency>
+#end
 #end
 
 #end

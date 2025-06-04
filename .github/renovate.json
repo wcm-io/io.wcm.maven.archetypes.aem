@@ -15,7 +15,9 @@
     {
       "customType": "regex",
       "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}maven{{/if}}",
-      "fileMatch": ["(^|/)pom\\.xml$"],
+      "managerFilePatterns": [
+        "/(^|/)pom\\.xml$/"
+      ],
       "matchStrings": [
         "##\\s??renovate:( datasource=(?<datasource>[a-z-.]+?))? depName=(?<depName>[^\\s]+?)(?: packageName=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?\\s+<(.+\\.)?version>(?<currentValue>.+)<\\/(.+\\.)?version>"
       ],
@@ -27,7 +29,10 @@
       "matchPackageNames": [
         "com.adobe.cq:core.wcm.components.core"
       ],
-      "automerge": false
+      "automerge": false,
+      "labels": [
+        "dependencies"
+      ]
     }
   ]
 }

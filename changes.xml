@@ -24,6 +24,21 @@
     xsi:schemaLocation="http://maven.apache.org/changes/2.0.0 https://maven.apache.org/xsd/changes-2.0.0.xsd">
   <body>
 
+    <release version="3.10.0" date="2025-06-04">
+      <action type="add" dev="sseifert" issue="229"><![CDATA[
+        Add options "optionWcmioSiteApi" and "optionWcmioSiteApiGenericEdit" which allows to setup an AEM headless project based <a href="https://wcm.io/site-api/">wcm.io Site API</a>.
+      ]]></action>
+      <action type="update" dev="sseifert">
+        Update to AEM 6.5 SP23.
+      </action>
+      <action type="update" dev="sseifert">
+        Make compatible with maven-archetype-plugin 3.4.0.
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+    </release>
+
     <release version="3.9.6" date="2025-03-21">
       <action type="add" dev="sseifert" issue="186">
         Add support for AEM 6.6 (AEM 6.5 LTS).

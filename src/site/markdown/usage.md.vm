@@ -40,6 +40,8 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 | **optionFrontend**                  | n       | Setup frontend build project with [webpack][webpack]
 | **optionNodeJsPlugin**              | n       | Use [wcm.io Node JS plugin][nodejs-maven--plugin] for frontend build (recommended when [Maven NodeJS Proxy][maven-nodejs-proxy] is used). If not enabled the [frontend-maven-plugin][frontend-maven-plugin] is used instead. For AEMaaCS it is recommended to stick with frontend-maven-plugin.
 | **optionWcmioHandler**              | n       | Setup project using wcm.io AEM libraries, especially the [wcm.io Handler][wcmio-handler] Infrastructure and [wcm.io WCM Core Components][wcmio-wcm-core-components]. _Requires optionContextAwareConfig='y'._
+| **optionWcmioSiteApi**              | n       | Setup AEM headless project based on [wcm.io Site API][wcmio-siteapi]. _Requires optionWcmioHandler='y'._
+| **optionWcmioSiteApiGenericEdit**   | n       | Setup AEM headless project based on [wcm.io Site API Generic Edit][wcmio-siteapi-generic-edit]. _Requires optionWcmioHandler='y' and optionWcmioSiteApi='y'._
 | **optionWcmioConga**                | y       | Setup project using [CONGA][wcmio-conga]. Mandatory for 6.x projects, optional (but default) for `cloud` projects.
 | **optionSlingModelsLatest**         | n       | Use latest Sling Models bundles (ignored for AEMaaCS)
 | **optionContextAwareConfigLatest**  | n       | Use latest Context-Aware Configuration bundles (ignored for AEMaaCS)
@@ -75,6 +77,9 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionMultiBundleLayout=n \
   -DoptionContextAwareConfig=y \
   -DoptionWcmioHandler=n \
+  -DoptionWcmioSiteApi=n \
+  -DoptionWcmioSiteApiGenericEdit=n \
+  -DoptionWcmioConga=y \
   -DoptionSlingModelsLatest=n \
   -DoptionContextAwareConfigLatest=n \
   -DoptionAcsCommons=n \
@@ -107,6 +112,9 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionMultiBundleLayout=n \
   -DoptionContextAwareConfig=y \
   -DoptionWcmioHandler=y \
+  -DoptionWcmioSiteApi=n \
+  -DoptionWcmioSiteApiGenericEdit=n \
+  -DoptionWcmioConga=y \
   -DoptionSlingModelsLatest=n \
   -DoptionContextAwareConfigLatest=n \
   -DoptionAcsCommons=n \
@@ -115,6 +123,40 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionIntegrationTests=n
 ```
 
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} AEM headless project with wcm.io Site API and Sling-Initial-Content project layout for AEMaaCS
+
+```
+mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.archetype.version']}:generate -DinteractiveMode=false \
+  -DarchetypeGroupId=io.wcm.maven.archetypes \
+  -DarchetypeArtifactId=io.wcm.maven.archetypes.aem \
+  -DarchetypeVersion=${project.properties['releasedVersion.version']} \
+  -DprojectName=myproject3 \
+  -DgroupId=mycompany.myprojectgroup \
+  -DartifactId=mycompany.myprojectgroup.myproject3 \
+  -Dversion=1.0.0-SNAPSHOT \
+  -Dpackage=mycompany.myprojectgroup.myproject3 \
+  -DpackageGroupName=mycompany \
+  -DaemAuthorPort=4502 \
+  -DaemPublishPort=4503 \
+  -DoptionJavaVersion=21 \
+  -DoptionAemVersion=cloud \
+  -DoptionAemServicePack=n \
+  -DoptionAemServicePackAPI=n \
+  -DoptionSlingInitialContentBundle=y \
+  -DoptionEditableTemplates=y \
+  -DoptionMultiBundleLayout=y \
+  -DoptionContextAwareConfig=y \
+  -DoptionWcmioHandler=y \
+  -DoptionWcmioSiteApi=y \
+  -DoptionWcmioSiteApiGenericEdit=y \
+  -DoptionWcmioConga=y \
+  -DoptionSlingModelsLatest=n \
+  -DoptionContextAwareConfigLatest=n \
+  -DoptionAcsCommons=n \
+  -DoptionFrontend=n \
+  -DoptionNodeJsPlugin=n \
+  -DoptionIntegrationTests=y
+```
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 
@@ -122,7 +164,6 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 * Apache Maven 3.3.9 or higher
 * AEM 6.5, AEM 6.6 (6.5 LTS) or AEMaaCS
 * Optional: If you want to install latest service packs you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
-
 
 
 
@@ -136,6 +177,8 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 [wcmio-handler]: https://wcm.io/handler
 [wcmio-conga]: https://devops.wcm.io/conga/
 [wcmio-wcm-core-components]: https://wcm.io/wcm/core-components/
+[wcmio-siteapi]: https://wcm.io/site-api/
+[wcmio-siteapi-generic-edit]: https://wcm.io/site-api/generic-edit/
 [acs-aem-commons]: https://adobe-consulting-services.github.io/acs-aem-commons/
 [webpack]: https://webpack.js.org/
 [nodejs-maven--plugin]: https://wcm.io/tooling/maven/plugins/nodejs-maven-plugin/
