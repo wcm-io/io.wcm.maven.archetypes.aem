@@ -234,16 +234,19 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.site-api.processor</artifactId>
+## renovate: depName=io.wcm:io.wcm.site-api.processor
         <version>1.2.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.site-api.handler</artifactId>
+## renovate: depName=io.wcm:io.wcm.site-api.handler
         <version>1.2.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.site-api.openapi-validator</artifactId>
+## renovate: depName=io.wcm:io.wcm.site-api.openapi-validator
         <version>1.1.0</version>
       </dependency>
 #end
@@ -251,11 +254,13 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.site-api.generic-edit</artifactId>
+## renovate: depName=io.wcm:io.wcm.site-api.generic-edit
         <version>1.1.0</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.site-api.generic-edit.handler</artifactId>
+## renovate: depName=io.wcm:io.wcm.site-api.generic-edit.handler
         <version>1.1.0</version>
       </dependency>
 #end
@@ -329,6 +334,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.site-api.processor</artifactId>
+## renovate: depName=io.wcm:io.wcm.testing.wcm-io-mock.site-api.processor
         <version>1.1.0</version>
       </dependency>
 #end
@@ -342,6 +348,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.site-api.handler</artifactId>
+## renovate: depName=io.wcm:io.wcm.testing.wcm-io-mock.site-api.handler
         <version>1.1.0</version>
       </dependency>
 #end
@@ -349,11 +356,13 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.site-api.generic-edit</artifactId>
+## renovate: depName=io.wcm:io.wcm.testing.wcm-io-mock.site-api.generic-edit
         <version>1.1.0</version>
       </dependency> 
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.testing.wcm-io-mock.site-api.generic-edit.handler</artifactId>
+## renovate: depName=io.wcm:io.wcm.testing.wcm-io-mock.site-api.generic-edit.handler
         <version>1.1.0</version>
       </dependency> 
 #end
@@ -477,6 +486,7 @@
       <dependency>
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.site-api.integration-test-support</artifactId>
+## renovate: depName=io.wcm:io.wcm.site-api.integration-test-support
         <version>1.1.0</version>
       </dependency> 
 #end
