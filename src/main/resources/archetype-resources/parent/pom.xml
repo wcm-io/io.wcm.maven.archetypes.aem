@@ -36,7 +36,7 @@
 #end
 #if( $optionAcsCommons == "y" )
 ## renovate: depName=com.adobe.acs:acs-aem-commons-bundle
-    <acs.aem.commons.version>6.12.0</acs.aem.commons.version>
+    <acs.aem.commons.version>6.14.0</acs.aem.commons.version>
 #end
 ## renovate: depName=org.mockito:mockito-core
     <mockito.version>5.18.0</mockito.version>
