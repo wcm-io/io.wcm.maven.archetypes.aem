@@ -5,11 +5,11 @@
 <sly data-sly-include="/apps/wcm-io/site-api/generic-edit/components/component/component.html"/>
 #else
 <div data-sly-use.carousel="${package}.components.CustomCarousel"
-    id="${symbol_dollar}{carousel.id}" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-sly-repeat.image="${symbol_dollar}{carousel.slideImages}"
-        data-target="#${symbol_dollar}{carousel.id}" data-slide-to="${symbol_dollar}{imageList.index}" class="${symbol_dollar}{imageList.first ? 'active' : ''}"></li>
-  </ol>
+    id="${symbol_dollar}{carousel.id}" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button data-sly-repeat.image="${symbol_dollar}{carousel.slideImages}" type="button"
+        data-bs-target="#${symbol_dollar}{carousel.id}" data-bs-slide-to="${symbol_dollar}{imageList.index}" class="${symbol_dollar}{imageList.first ? 'active' : ''}"></button>
+  </div>
   <div class="carousel-inner">
     <div data-sly-repeat.image="${symbol_dollar}{carousel.slideImages}"
         class="carousel-item ${symbol_dollar}{imageList.first ? 'active' : ''}">
@@ -20,14 +20,14 @@
 #end
     </div>
   </div>
-  <a class="carousel-control-prev" href="#${symbol_dollar}{carousel.id}" role="button" data-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#${symbol_dollar}{carousel.id}" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#${symbol_dollar}{carousel.id}" role="button" data-slide="next">
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#${symbol_dollar}{carousel.id}" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
 <sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
