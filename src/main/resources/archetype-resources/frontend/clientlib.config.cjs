@@ -47,6 +47,7 @@ module.exports = {
         "${projectName}.app"
       ],
       jsProcessor: ["default:none", "min:gcc;compilationLevel=whitespace;languageIn=ECMASCRIPT_2018;languageOut=ECMASCRIPT_2018"],
+      cssProcessor: ["default:none", "min:none"],
 #if ( $optionAemVersion != "cloud" )
       longCacheKey: "${project.version}-${buildNumber}",
 #end

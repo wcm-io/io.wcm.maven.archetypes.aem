@@ -12,9 +12,8 @@
     "build:clientlibs": "npm run build:prod && clientlib clientlib.config.cjs"
   },
   "dependencies": {
-    "bootstrap": "4.6.2",
-    "jquery": "3.7.1",
-    "popper.js": "1.16.1"
+    "bootstrap": "5.3.3",
+    "@popperjs/core": "2.11.8"
   },
   "devDependencies": {
     "@babel/core": "7.28.0",
