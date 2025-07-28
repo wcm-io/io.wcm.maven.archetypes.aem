@@ -3,7 +3,6 @@
 
     // Set loglevel for project-specific bundles
     "org.apache.sling.commons.log.LogManager.factory.config-${projectName}": {
-      "org.apache.sling.commons.log.file": "logs/error.log",
       "org.apache.sling.commons.log.level": "{{app.logLevel}}",
       "org.apache.sling.commons.log.names": ["io.wcm","${package}"]
     },

@@ -24,6 +24,15 @@
     xsi:schemaLocation="http://maven.apache.org/changes/2.0.0 https://maven.apache.org/xsd/changes-2.0.0.xsd">
   <body>
 
+    <release version="3.10.2" date="2025-07-28">
+      <action type="update" dev="sseifert" issue="277">
+        Frontend sample code: Update to Bootstrap 5.
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+    </release>
+
     <release version="3.10.0" date="2025-06-04">
       <action type="add" dev="sseifert" issue="229"><![CDATA[
         Add options "optionWcmioSiteApi" and "optionWcmioSiteApiGenericEdit" which allows to setup an AEM headless project based <a href="https://wcm.io/site-api/">wcm.io Site API</a>.
