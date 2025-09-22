@@ -24,6 +24,12 @@
     xsi:schemaLocation="http://maven.apache.org/changes/2.0.0 https://maven.apache.org/xsd/changes-2.0.0.xsd">
   <body>
 
+    <release version="3.10.4" date="2025-09-22">
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+    </release>
+
     <release version="3.10.2" date="2025-07-28">
       <action type="update" dev="sseifert" issue="277">
         Frontend sample code: Update to Bootstrap 5.
