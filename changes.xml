@@ -28,7 +28,7 @@
       <action type="update" dev="sseifert">
         Switch to Java 17.
       </action>
-      <action type="update" dev="sseifert">
+      <action type="update" dev="sseifert" issue="317">
         Configure Mockito instrumentation for inline mocking.
       </action>
       <action type="update" dev="sseifert">
