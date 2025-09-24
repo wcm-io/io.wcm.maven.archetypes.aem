@@ -29,6 +29,9 @@
         Switch to Java 17.
       </action>
       <action type="update" dev="sseifert">
+        Configure Mockito instrumentation for inline mocking.
+      </action>
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
