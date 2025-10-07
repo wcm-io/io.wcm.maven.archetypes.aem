@@ -19,7 +19,7 @@
     "@babel/core": "7.28.4",
     "@babel/preset-env": "7.28.3",
     "@babel/register": "7.28.3",
-    "aem-clientlib-generator": "1.9.0",
+    "aem-clientlib-generator": "1.10.0",
     "babel-loader": "10.0.0",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-es2015-arrow-functions": "6.22.0",
