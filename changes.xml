@@ -26,6 +26,9 @@
 
     <release version="3.11.0" date="not released">
       <action type="update" dev="sseifert">
+        frontend: Switch clientlib.config.js to ESM syntax.
+      </action>
+      <action type="update" dev="sseifert">
         Switch to Java 17.
       </action>
       <action type="update" dev="sseifert">
