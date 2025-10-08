@@ -186,7 +186,7 @@
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.ui.granite</artifactId>
 ## renovate: depName=io.wcm:io.wcm.wcm.ui.granite
-        <version>1.11.4</version>
+        <version>1.11.5-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>io.wcm</groupId>
