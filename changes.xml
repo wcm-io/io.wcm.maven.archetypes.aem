@@ -25,7 +25,7 @@
   <body>
 
     <release version="3.11.0" date="not released">
-      <action type="update" dev="sseifert">
+      <action type="update" dev="sseifert" issue="333">
         frontend: Switch clientlib.config.js to ESM syntax.
       </action>
       <action type="update" dev="sseifert">
