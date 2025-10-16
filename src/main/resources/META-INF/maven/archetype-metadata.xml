@@ -191,7 +191,7 @@
           <directory></directory>
           <includes>
             <include>README.md</include>
-            <include>clientlib.config.cjs</include>
+            <include>clientlib.config.js</include>
             <include>package.json</include>
             <include>src\index.*</include>
           </includes>
@@ -203,7 +203,6 @@
           </includes>
           <excludes>
             <exclude>README.md</exclude>
-            <exclude>clientlib.config.js</exclude>
             <exclude>package.json</exclude>
             <exclude>src\index.*</exclude>
           </excludes>

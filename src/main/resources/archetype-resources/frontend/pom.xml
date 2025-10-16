@@ -18,7 +18,7 @@
 
   <properties>
 ## renovate: datasource=node-version depName=node
-    <nodejs.version>v22.19.0</nodejs.version>
+    <nodejs.version>v22.20.0</nodejs.version>
   </properties>
 
   <build>
