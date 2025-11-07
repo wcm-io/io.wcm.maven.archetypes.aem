@@ -172,7 +172,7 @@
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.commons</artifactId>
 ## renovate: depName=io.wcm:io.wcm.wcm.commons
-        <version>1.11.1-SNAPSHOT</version>
+        <version>1.11.2</version>
       </dependency>
 #if ( $optionEditableTemplates != "y" )
       <dependency>
