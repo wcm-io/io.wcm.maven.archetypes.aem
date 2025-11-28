@@ -24,6 +24,15 @@
     xsi:schemaLocation="http://maven.apache.org/changes/2.0.0 https://maven.apache.org/xsd/changes-2.0.0.xsd">
   <body>
 
+    <release version="3.11.2" date="not released">
+      <action type="update" dev="sseifert">
+        Update to AEM 6.5 SP24.
+      </action>
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+    </release>
+
     <release version="3.11.0" date="2025-10-16">
       <action type="update" dev="sseifert" issue="333">
         frontend: Switch clientlib.config.js to ESM syntax.
