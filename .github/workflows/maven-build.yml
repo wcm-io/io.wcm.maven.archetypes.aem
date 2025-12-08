@@ -15,15 +15,15 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        # Build only with Java 21 as we have some ITs that require Java 21
-        java: [21]
+        # Build only with Java 21+ as we have some ITs that require Java 21
+        java: [21, 25]
         os: [ubuntu-latest]
         distribution: [temurin]
         include:
           - java: 21
             os: windows-latest
             distribution: temurin
-          #- java: 17
+          #- java: 21
           #  os: macos-latest
           #  distribution: temurin
 
