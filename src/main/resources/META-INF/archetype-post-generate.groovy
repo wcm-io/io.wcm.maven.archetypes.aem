@@ -340,16 +340,9 @@ else {
   def stdout = stdoutFuture.get()
   def stderr = stderrFuture.get()
   pool.shutdown()
-  
-  // Print both stdout and stderr for debugging
-  if (stdout) {
-    println(stdout)
-  }
   if (stderr) {
-    System.err.println("Maven stderr output:")
     System.err.println(stderr)
   }
-  
   if (exitValue != 0) {
       throw new RuntimeException("Maven command failed with exit code $exitValue: $execCommand")
   }
