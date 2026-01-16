@@ -40,3 +40,11 @@ jobs:
 
       - name: Build and verify
         run: ./mvnw -s ./.maven-settings.xml -Pcontinuous-integration -B -U -D"archetype.test.settingsFile=./.maven-settings.xml" -D"archetype.test.projectsDirectory=target/test-classes/projects-github" clean verify
+
+      - name: Upload build logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs-${{ matrix.os }}-java${{ matrix.java }}
+          path: target/test-classes/projects/**/build.log
+          if-no-files-found: ignore
