@@ -340,6 +340,9 @@ else {
   def stdout = stdoutFuture.get()
   def stderr = stderrFuture.get()
   pool.shutdown()
+  if (stdout) {
+    println(stdout)
+  }
   if (stderr) {
     System.err.println(stderr)
   }
