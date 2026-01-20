@@ -326,11 +326,17 @@ else {
   println ""
 
   // execute CONGA via maven
-  def mavenCmd = isWindows ? "mvn.cmd" : "mvn"
-  def execCommand = isWindows 
-    ? ["cmd.exe", "/c", mavenCmd, "-f", "$rootDir/config-definition", "-Dconga.environments=cloud", "generate-resources"]
-    : [mavenCmd, "-f", "$rootDir/config-definition", "-Dconga.environments=cloud", "generate-resources"]
-  
+  def execCommand = isWindows ? ["cmd.exe", "/c", "mvn.cmd"] : ["mvn"]
+  def mavenSettings = System.getProperty("maven.settings")
+  if (mavenSettings) {
+    execCommand.add("-s")
+    execCommand.add(mavenSettings)
+  }
+  execCommand.add("-f")
+  execCommand.add("$rootDir/config-definition")
+  execCommand.add("-Dconga.environments=cloud")
+  execCommand.add("generate-resources")
+
   def proc = execCommand.execute(null, rootDir)
   def pool = Executors.newFixedThreadPool(2)
   def stdoutFuture = pool.submit({ -> proc.inputStream.text} as Callable<String>)
