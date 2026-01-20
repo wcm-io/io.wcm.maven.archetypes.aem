@@ -25,7 +25,7 @@
   <body>
 
     <release version="3.11.4" date="not released">
-      <action type="fix" dev="sseifert">
+      <action type="fix" dev="sseifert" issue="399">
         Use maven settings used for running the archetype plugin when calling maven to generate a project without CONGA.
       </action>
     </release>
