@@ -327,7 +327,7 @@ else {
 
   // execute CONGA via maven
   def execCommand = isWindows ? ["cmd.exe", "/c", "mvn.cmd"] : ["mvn"]
-  def mavenSettings = System.getProperty("maven.settings")
+  def mavenSettings = request.mavenSession.request.userSettingsFile?.absolutePath
   if (mavenSettings) {
     execCommand.add("-s")
     execCommand.add(mavenSettings)
