@@ -337,6 +337,9 @@ else {
   execCommand.add("-Dconga.environments=cloud")
   execCommand.add("generate-resources")
 
+  println "Executing command: " + execCommand.join(" ")
+  println ""
+
   def proc = execCommand.execute(null, rootDir)
   def pool = Executors.newFixedThreadPool(2)
   def stdoutFuture = pool.submit({ -> proc.inputStream.text} as Callable<String>)
