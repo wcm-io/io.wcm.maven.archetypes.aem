@@ -9,9 +9,6 @@
   "jcr:content": {
     "jcr:primaryType": "cq:PageContent",
     "sling:resourceType": "${projectName}/core/components/page/homepage",
-
-    /* This is only required for the homepage to enable responsive preview mode */
     "cq:deviceGroups": ["mobile/groups/responsive"]
-
   }
 }

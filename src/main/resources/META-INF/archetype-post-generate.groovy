@@ -326,19 +326,38 @@ else {
   println ""
 
   // execute CONGA via maven
-  def mavenCall = "mvn -f $rootDir/config-definition -Dconga.environments=cloud generate-resources"
-  def execCommand = isWindows ? ["cmd.exe", "/c", mavenCall] : ["/bin/sh", "-c", mavenCall]
-  def proc = execCommand.execute()
+  def execCommand = isWindows ? ["cmd.exe", "/c", "mvn.cmd"] : ["mvn"]
+  def mavenSettings = request.mavenSession?.request?.userSettingsFile?.absolutePath
+  if (mavenSettings) {
+    execCommand.add("-s")
+    execCommand.add(mavenSettings)
+  }
+  execCommand.add("-f")
+  execCommand.add("$rootDir/config-definition")
+  execCommand.add("-Dconga.environments=cloud")
+  execCommand.add("generate-resources")
+
+  println "Executing command: " + execCommand.join(" ")
+  println ""
+
+  def proc = execCommand.execute(null, rootDir)
   def pool = Executors.newFixedThreadPool(2)
   def stdoutFuture = pool.submit({ -> proc.inputStream.text} as Callable<String>)
   def stderrFuture = pool.submit({ -> proc.errorStream.text} as Callable<String>)
   proc.waitFor()
   def exitValue = proc.exitValue()
-  if (exitValue != 0) {
-      System.err.println(stderrFuture.get())
-      throw new RuntimeException("$execCommand returned $exitValue")
+  def stdout = stdoutFuture.get()
+  def stderr = stderrFuture.get()
+  pool.shutdown()
+  if (stdout) {
+    println(stdout)
   }
-  println(stdoutFuture.get())
+  if (stderr) {
+    System.err.println(stderr)
+  }
+  if (exitValue != 0) {
+      throw new RuntimeException("Maven command failed with exit code $exitValue: $execCommand")
+  }
 
   // unzip osgi-config
   def congaAemCmsConfigZip = new File(configDefinition, "target/configuration/cloud/aem-author/packages/${projectName}-aem-cms-config.zip")
