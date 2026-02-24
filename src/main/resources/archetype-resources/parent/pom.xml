@@ -179,7 +179,7 @@
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.wcm.parsys</artifactId>
 ## renovate: depName=io.wcm:io.wcm.wcm.parsys
-        <version>1.7.5-SNAPSHOT</version>
+        <version>1.7.6</version>
       </dependency>
 #end
       <dependency>
