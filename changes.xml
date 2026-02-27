@@ -24,6 +24,12 @@
     xsi:schemaLocation="http://maven.apache.org/changes/2.0.0 https://maven.apache.org/xsd/changes-2.0.0.xsd">
   <body>
 
+    <release version="3.11.6" date="not released">
+      <action type="update" dev="sseifert">
+        Update dependencies.
+      </action>
+    </release>
+
     <release version="3.11.4" date="2026-02-24">
       <action type="fix" dev="sseifert" issue="399">
         Use maven settings used for running the archetype plugin when calling maven to generate a project without CONGA.
