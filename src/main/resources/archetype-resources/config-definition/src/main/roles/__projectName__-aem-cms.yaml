@@ -132,6 +132,7 @@ files:
   condition: ${app.confContent}
 
 #end
+#end
 # AEM OSGi System Configuration
 - file: ${projectName}-aem-cms-config.osgiconfig.json
   dir: packages
@@ -152,6 +153,7 @@ files:
         - rule: exclude
           pattern: /apps/${projectName}/config/rewriter(/.*)?
 
+#if ( $optionWcmioConga == "y" )
 # Application sample content package
 - url: mvn:${groupId}/${rootArtifactId}.sample-content//zip
   dir: packages
