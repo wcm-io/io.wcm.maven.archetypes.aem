@@ -28,6 +28,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="update" dev="sseifert">
+        CONGA configuration: Deploy OSGi configuration after deploying wcm.io and application bundles, as they contain system health checks depending on them.
+      </action>
     </release>
 
     <release version="3.11.4" date="2026-02-24">
