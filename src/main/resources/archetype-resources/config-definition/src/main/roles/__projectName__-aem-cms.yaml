@@ -38,26 +38,6 @@ files:
 
 #end
 #end
-# AEM OSGi System Configuration
-- file: ${projectName}-aem-cms-config.osgiconfig.json
-  dir: packages
-  template: ${projectName}-aem-cms-config.osgiconfig.json.hbs
-  validators:
-  - none  # allow trailing commas in JSON picked up by post processor
-  postProcessors:
-  - aem-contentpackage-osgiconfig
-  postProcessorOptions:
-    contentPackage:
-      name: ${projectName}-aem-cms-config
-      rootPath: /apps/${projectName}/config
-      filters:
-      - filter: /apps/${projectName}
-        rules:
-        - rule: include
-          pattern: /apps/${projectName}/config(\..*)?(/.*)?
-        - rule: exclude
-          pattern: /apps/${projectName}/config/rewriter(/.*)?
-
 #if ( $optionWcmioHandler == "y" )
 # Include URL handler in Sling Rewriter configuration
 - file: ${projectName}-aem-cms-rewriter-config.json
@@ -152,6 +132,28 @@ files:
   condition: ${app.confContent}
 
 #end
+#end
+# AEM OSGi System Configuration
+- file: ${projectName}-aem-cms-config.osgiconfig.json
+  dir: packages
+  template: ${projectName}-aem-cms-config.osgiconfig.json.hbs
+  validators:
+  - none  # allow trailing commas in JSON picked up by post processor
+  postProcessors:
+  - aem-contentpackage-osgiconfig
+  postProcessorOptions:
+    contentPackage:
+      name: ${projectName}-aem-cms-config
+      rootPath: /apps/${projectName}/config
+      filters:
+      - filter: /apps/${projectName}
+        rules:
+        - rule: include
+          pattern: /apps/${projectName}/config(\..*)?(/.*)?
+        - rule: exclude
+          pattern: /apps/${projectName}/config/rewriter(/.*)?
+
+#if ( $optionWcmioConga == "y" )
 # Application sample content package
 - url: mvn:${groupId}/${rootArtifactId}.sample-content//zip
   dir: packages
