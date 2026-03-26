@@ -79,9 +79,6 @@ if (!(javaPackage ==~ /^[a-z0-9\.]+$/)) {
 if (optionAemVersion == "6.5" && optionJavaVersion != "11") {
   throw new RuntimeException("AEM 6.5 only supports Java 11.")
 }
-if (optionAemVersion == "6.6" && optionJavaVersion == "21") {
-  throw new RuntimeException("AEM 6.6 does not support Java 21.")
-}
 
 // helper methods
 def removeModule(pomFile, module) {

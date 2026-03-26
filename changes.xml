@@ -31,6 +31,9 @@
       <action type="update" dev="sseifert" issue="441">
         CONGA configuration: Deploy OSGi configuration after deploying wcm.io and application bundles, as they contain system health checks depending on them.
       </action>
+      <action type="fix" dev="sseifert">
+        AEM 6.6 (AEM 6.5 LTS): Don't restrict Java version to Java 17.
+      </action>
     </release>
 
     <release version="3.11.4" date="2026-02-24">
