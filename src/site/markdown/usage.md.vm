@@ -88,7 +88,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DoptionIntegrationTests=n
 ```
 
-${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} AEM project with wcm.io and Sling-Initial-Content project layout and Java 17 for AEM 6.6
+${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} AEM project with wcm.io and Sling-Initial-Content project layout and Java 21 for AEMaaCS
 
 ```
 mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.archetype.version']}:generate -DinteractiveMode=false \
@@ -103,8 +103,8 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DpackageGroupName=mycompany \
   -DaemAuthorPort=4502 \
   -DaemPublishPort=4503 \
-  -DoptionJavaVersion=17 \
-  -DoptionAemVersion=6.6 \
+  -DoptionJavaVersion=21 \
+  -DoptionAemVersion=cloud \
   -DoptionAemServicePack=n \
   -DoptionAemServicePackAPI=n \
   -DoptionSlingInitialContentBundle=y \
