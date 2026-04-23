@@ -28,15 +28,9 @@ jobs:
           #  distribution: temurin
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v5
-
-      - name: Setup JDK
-        uses: actions/setup-java@v5
+      - name: Maven Build
+        uses: wcm-io-devops/github-action-maven-build@v1
         with:
-          distribution: ${{ matrix.distribution }}
           java-version: ${{ matrix.java }}
-          cache: maven
-
-      - name: Build and verify
-        run: ./mvnw -s ./.maven-settings.xml -Pcontinuous-integration -B -U -D"archetype.test.settingsFile=./.maven-settings.xml" -D"archetype.test.projectsDirectory=target/test-classes/projects-github" clean verify
+          maven-executable: ./mvnw
+          maven-additional-args: -D"archetype.test.settingsFile=./.maven-settings.xml" -D"archetype.test.projectsDirectory=target/test-classes/projects-github"
