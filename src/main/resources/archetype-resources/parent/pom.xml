@@ -373,7 +373,7 @@
       <dependency>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.aem-dependencies</artifactId>
-        <version>#if($optionAemServicePack=="y" || $optionAemServicePackAPI=="y")6.5.24.0000#{else}6.5.0.0008#end</version>
+        <version>#if($optionAemServicePack=="y" || $optionAemServicePackAPI=="y")6.5.25.0000#{else}6.5.0.0008#end</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
