@@ -5,7 +5,6 @@ package ${package}.config.impl;
 
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.osgi.service.component.annotations.Component;
