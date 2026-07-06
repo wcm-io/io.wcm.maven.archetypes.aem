@@ -260,6 +260,8 @@ else {
 }
 
 if (optionAemVersion == "cloud") {
+  // This direct URL fetch is not handled by Maven Wagon, so explicitly honor OS proxy settings.
+  System.setProperty("java.net.useSystemProxies", "true")
   // insert latest version of io.wcm.maven.aem-cloud-dependencies available on maven central
   def metadata = new XmlSlurper().parse("https://repo1.maven.org/maven2/io/wcm/maven/io.wcm.maven.aem-cloud-dependencies/maven-metadata.xml")
   def wcmioAemCloudDependenciesLatestVersion = metadata.versioning.latest.toString()
