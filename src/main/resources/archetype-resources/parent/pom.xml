@@ -158,7 +158,7 @@
         <groupId>io.wcm</groupId>
         <artifactId>io.wcm.sling.commons</artifactId>
 ## renovate: depName=io.wcm:io.wcm.sling.commons
-        <version>1.7.0-SNAPSHOT</version>
+        <version>1.7.0</version>
       </dependency>
 #end
 #if ( $optionWcmioHandler == "y" )
