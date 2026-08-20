@@ -28,6 +28,9 @@
       <action type="update" dev="sseifert">
         Update dependencies.
       </action>
+      <action type="update" dev="sseifert">
+        Update to AEM 6.6.3.
+      </action>
     </release>
 
     <release version="3.11.8" date="2026-06-29">
