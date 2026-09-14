@@ -16,9 +16,9 @@
     "@popperjs/core": "2.11.8"
   },
   "devDependencies": {
-    "@babel/core": "8.0.1",
-    "@babel/preset-env": "8.0.2",
-    "@babel/register": "8.0.1",
+    "@babel/core": "8.0.5",
+    "@babel/preset-env": "8.0.5",
+    "@babel/register": "8.0.5",
     "aem-clientlib-generator": "2.0.3",
     "babel-loader": "10.1.1",
     "clean-webpack-plugin": "4.0.0",
