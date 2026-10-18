@@ -19,7 +19,7 @@
     "@babel/core": "8.0.7",
     "@babel/preset-env": "8.0.7",
     "@babel/register": "8.0.6",
-    "aem-clientlib-generator": "2.0.3",
+    "aem-clientlib-generator": "2.0.4",
     "babel-loader": "10.1.1",
     "clean-webpack-plugin": "4.0.0",
     "copy-webpack-plugin": "14.0.0",
