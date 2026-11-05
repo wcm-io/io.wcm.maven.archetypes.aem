@@ -28,7 +28,7 @@
       <action type="update" dev="sseifert">
         Support Java 25 and use it by default for new projects.
       </action>
-      <action type="update" dev="sseifert">
+      <action type="update" dev="sseifert" issue="583">
         Update dependencies.
       </action>
     </release>
