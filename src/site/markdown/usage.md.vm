@@ -29,7 +29,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Archetype parameters
 | **packageGroupName**                | \*)     | Group name for AEM content package
 | **aemAuthorPort**                   | 4502    | Default port for local AEM author instance
 | **aemPublishPort**                  | 4503    | Default port for local AEM publish instance
-| **optionJavaVersion**               | 21      | Java version: 11, 17 or 21
+| **optionJavaVersion**               | 25      | Java version: 11, 17, 21 or 25
 | **optionAemVersion**                | cloud   | AEM major version: `6.5`, `6.6` (6.5 LTS) or `cloud` (AEM as a Cloud Service)
 | **optionAemServicePack**            | n       | Use latest service pack for AEM 6.x. You need to deploy artifacts following [these conventions][aem-binaries-conventions]
 | **optionAemServicePackAPI**         | n       | Use AEM API from latest service pack for AEM 6.x. This is implicitly activated if optionAemServicePack = y.
@@ -68,7 +68,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DpackageGroupName=mycompany \
   -DaemAuthorPort=4502 \
   -DaemPublishPort=4503 \
-  -DoptionJavaVersion=21 \
+  -DoptionJavaVersion=25 \
   -DoptionAemVersion=cloud \
   -DoptionAemServicePack=n \
   -DoptionAemServicePackAPI=n \
@@ -103,7 +103,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DpackageGroupName=mycompany \
   -DaemAuthorPort=4502 \
   -DaemPublishPort=4503 \
-  -DoptionJavaVersion=21 \
+  -DoptionJavaVersion=25 \
   -DoptionAemVersion=cloud \
   -DoptionAemServicePack=n \
   -DoptionAemServicePackAPI=n \
@@ -138,7 +138,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
   -DpackageGroupName=mycompany \
   -DaemAuthorPort=4502 \
   -DaemPublishPort=4503 \
-  -DoptionJavaVersion=21 \
+  -DoptionJavaVersion=25 \
   -DoptionAemVersion=cloud \
   -DoptionAemServicePack=n \
   -DoptionAemServicePackAPI=n \
@@ -160,7 +160,7 @@ mvn org.apache.maven.plugins:maven-archetype-plugin:${project.properties['maven.
 
 ${symbol_pound}${symbol_pound}${symbol_pound} Requirements
 
-* Java 11, 17 or 21
+* Java 11, 17, 21 or 25
 * Apache Maven 3.3.9 or higher
 * AEM 6.5, AEM 6.6 (6.5 LTS) or AEMaaCS
 * Optional: If you want to install latest service packs you have to upload them manually to your Maven Artifact Manager following [these conventions][aem-binaries-conventions] for naming them.
