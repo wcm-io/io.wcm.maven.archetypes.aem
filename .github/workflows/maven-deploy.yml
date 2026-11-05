@@ -19,7 +19,7 @@ jobs:
       - name: Maven Deploy with Site
         uses: wcm-io-devops/github-action-maven-deploy-site@v1
         with:
-          java-version: 21
+          java-version: 25
           maven-executable: ./mvnw
           maven-additional-args: -Dmaven.test.skip=true
           sonatype-username: ${{ secrets.SONATYPE_USERNAME }}
