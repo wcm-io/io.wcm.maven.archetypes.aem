@@ -25,11 +25,11 @@
   <body>
 
     <release version="3.11.12" date="not released">
+      <action type="update" dev="sseifert" issue="587">
+        Resolve latest version of io.wcm.maven.aem-cloud-dependencies via Maven resolver to respect configured repositories, mirrors and proxies.
+      </action>
       <action type="update" dev="sseifert">
         Update dependencies.
-      </action>
-      <action type="fix" dev="sseifert">
-        Resolve latest version of io.wcm.maven.aem-cloud-dependencies via Maven resolver to respect configured repositories, mirrors and proxies.
       </action>
     </release>
 
