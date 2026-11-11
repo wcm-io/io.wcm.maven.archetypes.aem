@@ -31,7 +31,7 @@
       <action type="update" dev="sseifert" issue="587">
         Resolve latest version of io.wcm.maven.aem-cloud-dependencies via Maven resolver to respect configured repositories, mirrors and proxies.
       </action>
-      <action type="update" dev="sseifert" issue="583">
+      <action type="update" dev="sseifert">
         Update dependencies.
       </action>
     </release>
