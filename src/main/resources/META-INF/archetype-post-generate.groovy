@@ -8,6 +8,8 @@ import java.nio.file.StandardCopyOption
 import groovy.io.FileType
 import groovy.xml.XmlSlurper
 import net.lingala.zip4j.ZipFile
+import org.eclipse.aether.artifact.DefaultArtifact
+import org.eclipse.aether.resolution.VersionRangeRequest
 
 def rootDir = new File(request.getOutputDirectory() + "/" + request.getArtifactId())
 def javaPackage = request.getProperties().get("package")
@@ -88,6 +90,31 @@ def removeModule(pomFile, module) {
   pomFile.newWriter("UTF-8").withWriter { w ->
     w << pomContent
   }
+}
+
+def getLatestReleaseVersion(groupId, artifactId) {
+  def repositorySystem = request.hasProperty("repositorySystem") ? request.repositorySystem : null
+  def repositorySession = request.hasProperty("repositorySession") ? request.repositorySession : null
+  def remoteRepositories = request.hasProperty("remoteRepositories") ? request.remoteRepositories : null
+  def latestVersion
+  if (repositorySystem && repositorySession && remoteRepositories) {
+    // resolve via Maven resolver to respect configured repositories, mirrors, proxies, authentication and offline mode
+    def artifact = new DefaultArtifact(groupId, artifactId, "pom", "[0,)")
+    def rangeResult = repositorySystem.resolveVersionRange(repositorySession,
+        new VersionRangeRequest(artifact, remoteRepositories, null))
+    def releaseVersions = rangeResult.versions.findAll { !it.toString().endsWith("-SNAPSHOT") }
+    latestVersion = releaseVersions ? releaseVersions.last().toString() : null
+  }
+  else {
+    // fallback if Maven resolver is not available (e.g. in archetype:integration-test)
+    def groupPath = groupId.replace('.', '/')
+    def metadata = new XmlSlurper().parse("https://repo1.maven.org/maven2/${groupPath}/${artifactId}/maven-metadata.xml")
+    latestVersion = metadata.versioning.release.toString()
+  }
+  if (!latestVersion) {
+    throw new RuntimeException("Unable to resolve latest release version of ${groupId}:${artifactId}.")
+  }
+  return latestVersion
 }
 
 // parent: set build timestamp to current date
@@ -260,10 +287,8 @@ else {
 }
 
 if (optionAemVersion == "cloud") {
-  // insert latest version of io.wcm.maven.aem-cloud-dependencies available on maven central
-  def metadata = new XmlSlurper().parse("https://repo1.maven.org/maven2/io/wcm/maven/io.wcm.maven.aem-cloud-dependencies/maven-metadata.xml")
-  def wcmioAemCloudDependenciesLatestVersion = metadata.versioning.latest.toString()
-  assert wcmioAemCloudDependenciesLatestVersion != null && wcmioAemCloudDependenciesLatestVersion != ""
+  // insert latest version of io.wcm.maven.aem-cloud-dependencies
+  def wcmioAemCloudDependenciesLatestVersion = getLatestReleaseVersion("io.wcm.maven", "io.wcm.maven.aem-cloud-dependencies")
   def pomContent = parentPom.getText("UTF-8")
   pomContent = pomContent.replaceAll("WCMIO_AEM_CLOUD_DEPENDENCIES_LATEST_VERSION", wcmioAemCloudDependenciesLatestVersion)
   parentPom.newWriter("UTF-8").withWriter { w ->
